@@ -114,7 +114,7 @@ const jsonLd = {
       logo: "https://construction-sites.co.uk/og-image.png",
       description:
         "We build stunning websites for construction businesses and tradespeople. Custom design, SEO, Google Ads optimised, all included.",
-      email: "gaffer@construction-sites.co.uk",
+      email: "patrick@construction-sites.co.uk",
       telephone: "+447572698923",
       sameAs: [],
       contactPoint: {
@@ -132,7 +132,7 @@ const jsonLd = {
       description: "Web design agency specialising in websites for construction and trade businesses across the UK.",
       url: "https://construction-sites.co.uk",
       telephone: "+447572698923",
-      email: "gaffer@construction-sites.co.uk",
+      email: "patrick@construction-sites.co.uk",
       image: "https://construction-sites.co.uk/og-image.png",
       priceRange: "££",
       openingHoursSpecification: [

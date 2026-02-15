@@ -237,10 +237,10 @@ export default function ContactPage() {
               <span role="img" aria-label="email">📧</span> Drop Us an Email
             </h3>
             <a
-              href="mailto:gaffer@construction-sites.co.uk"
+              href="mailto:patrick@construction-sites.co.uk"
               className="text-hivis hover:text-hivis-bright transition-colors"
             >
-              gaffer@construction-sites.co.uk
+              patrick@construction-sites.co.uk
             </a>
           </div>
 

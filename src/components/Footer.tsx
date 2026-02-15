@@ -103,10 +103,10 @@ export default function Footer() {
                     />
                   </svg>
                   <a
-                    href="mailto:gaffer@construction-sites.co.uk"
+                    href="mailto:patrick@construction-sites.co.uk"
                     className="text-sm text-slate-light transition-colors hover:text-hivis"
                   >
-                    gaffer@construction-sites.co.uk
+                    patrick@construction-sites.co.uk
                   </a>
                 </li>
               </ul>
