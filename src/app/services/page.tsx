@@ -23,7 +23,7 @@ const services = [
   {
     icon: "🎨",
     title: "Custom Website Design",
-    tagline: "Look like the biggest outfit in your area.",
+    tagline: "Look like the best outfit in your area.",
     description:
       "No templates. Every site is built from scratch around your business. We study your competitors and build something that makes you look like the firm to hire. Customers see your site and think: these lot know what they\u2019re doing.",
   },
