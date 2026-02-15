@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ScaledPreview from "@/components/ScaledPreview";
 
 export const metadata = {
   title: "Our Work | Construction Sites",
@@ -75,20 +74,31 @@ export default function OurWorkPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {sites.map((site) => (
-            <div
+            <a
               key={site.file}
-              className="group rounded-xl border border-white/5 bg-charcoal p-3 transition-all duration-300 hover:border-hivis/40 hover:shadow-[0_0_25px_rgba(245,158,11,0.15)]"
+              href={`/portfolio-sites/${site.file}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block rounded-xl border border-white/5 bg-charcoal p-3 transition-all duration-300 hover:border-hivis/40 hover:shadow-[0_0_25px_rgba(245,158,11,0.15)]"
             >
-              <ScaledPreview bg={site.bg}>
+              <div
+                className="relative aspect-[4/3] overflow-hidden rounded-lg"
+                style={{ backgroundColor: site.bg }}
+              >
                 <iframe
                   src={`/portfolio-sites/${site.file}`}
-                  width={1000}
-                  height={750}
-                  style={{ border: "none" }}
+                  title={site.name}
+                  className="pointer-events-none absolute left-0 top-0 border-none"
+                  width={1440}
+                  height={1080}
+                  style={{
+                    transform: "scale(0.278)",
+                    transformOrigin: "top left",
+                  }}
                   loading="lazy"
                   tabIndex={-1}
                 />
-              </ScaledPreview>
+              </div>
 
               <div className="mt-3 px-1">
                 <h3 className="truncate font-semibold text-white text-sm">
@@ -97,7 +107,7 @@ export default function OurWorkPage() {
                 <p className="text-xs text-hivis mt-0.5">{site.trade}</p>
                 <p className="text-xs text-slate-light">{site.location}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
