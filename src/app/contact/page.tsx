@@ -201,7 +201,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="text-xl font-bold text-hivis hover:text-hivis-bright transition-colors"
             >
-              07572 698923
+              Message us on WhatsApp
             </a>
           </div>
 

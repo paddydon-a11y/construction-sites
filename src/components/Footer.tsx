@@ -84,7 +84,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-sm text-slate-light transition-colors hover:text-hivis"
                   >
-                    WhatsApp: 07572 698923
+                    Message us on WhatsApp
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
