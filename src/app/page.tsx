@@ -211,30 +211,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 6. REFERRAL SECTION ─── */}
-      <section className="bg-hivis py-20 px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-dark sm:text-4xl md:text-5xl">
-            £200 For Every Mate You Send Our&nbsp;Way
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-dark/80 sm:text-xl">
-            Know a business that needs a website? Send them to us. When they
-            sign up, you get £200 cash. No cap, no catch, no small print.
-          </p>
-
-          <div className="mt-10">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-dark px-8 py-4 text-lg font-semibold text-hivis transition-colors hover:bg-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
-            >
-              Refer a Mate
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 7. FINAL CTA ─── */}
+      {/* ─── 6. FINAL CTA ─── */}
       <section className="blueprint-grid py-20 px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
