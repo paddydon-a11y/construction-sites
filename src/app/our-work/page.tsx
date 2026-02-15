@@ -98,11 +98,11 @@ export default function OurWorkPage() {
               </div>
 
               <div className="mt-3 px-1">
-                <h3 className="truncate font-semibold text-white text-sm">
+                <h3 className="truncate font-semibold text-white text-base">
                   {site.name}
                 </h3>
-                <p className="text-xs text-hivis mt-0.5">{site.trade}</p>
-                <p className="text-xs text-slate-light">{site.location}</p>
+                <p className="text-sm text-hivis mt-0.5">{site.trade}</p>
+                <p className="text-sm text-slate-light">{site.location}</p>
               </div>
             </div>
           ))}
