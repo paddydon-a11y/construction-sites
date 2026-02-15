@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🔨</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Hard hat favicon in hi-vis orange -->
+  <!-- Brim -->
+  <ellipse cx="32" cy="44" rx="28" ry="8" fill="#f59e0b"/>
+  <!-- Dome -->
+  <path d="M8 44 C8 24 18 10 32 10 C46 10 56 24 56 44" fill="#f59e0b"/>
+  <!-- Centre ridge -->
+  <path d="M32 10 L32 44" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
+  <!-- Side ridges -->
+  <path d="M20 18 C20 30 18 38 14 44" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M44 18 C44 30 46 38 50 44" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Highlight -->
+  <path d="M18 28 C22 18 28 13 32 12" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+</svg>
