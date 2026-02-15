@@ -18,14 +18,14 @@ const comparisonRows = [
   { feature: "Custom Website", typical: "£3,000 - £6,000", us: "Included" },
   { feature: "Monthly Hosting", typical: "£30 - £50/month", us: "Included" },
   { feature: "SSL Certificate", typical: "£50 - £100/year", us: "Included" },
-  { feature: "SEO Setup", typical: "£500 - £1,500", us: "Included" },
-  { feature: "Google Ads Optimised", typical: "£300 - £500", us: "Included" },
   { feature: "Monthly Edits (1hr)", typical: "£50 - £100/hour", us: "FREE" },
+  { feature: "Google Ads Optimised", typical: "£300 - £500", us: "Included" },
   {
     feature: "Google Business Setup",
     typical: "£200 - £400",
     us: "Included",
   },
+  { feature: "SEO Setup", typical: "£500 - £1,500", us: "Included" },
 ];
 
 export default function PricingPage() {
@@ -103,7 +103,6 @@ export default function PricingPage() {
           {[
             "No contract. Cancel anytime.",
             "No setup fee. No hidden costs.",
-            "Site comes down if you stop paying. No penalties, no fuss.",
             "Less than a tank of diesel for a website that pays for itself.",
           ].map((point) => (
             <p
