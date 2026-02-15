@@ -111,9 +111,6 @@ export default function OurWorkPage() {
               Load More Sites
               <span aria-hidden="true">🔨</span>
             </button>
-            <p className="mt-3 text-sm text-slate-light">
-              Showing {shown.length} of {sites.length} sites
-            </p>
           </div>
         )}
       </section>
