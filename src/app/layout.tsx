@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://construction-sites.co.uk",
     siteName: "Construction Sites",
-    title: "Construction Sites | Websites for Construction Businesses",
+    title: "Get Better Work with a Better Website",
     description:
-      "We build stunning websites for construction businesses. £100/month. No contracts. Live in 7 days. Your phone starts ringing.",
+      "Construction Sites. We build sites. You build everything else.",
     images: [
       {
         url: "https://construction-sites.co.uk/og-image.png",
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Construction Sites | Websites for Construction Businesses",
+    title: "Get Better Work with a Better Website",
     description:
-      "We build stunning websites for construction businesses. £100/month. No contracts. Live in 7 days. Your phone starts ringing.",
+      "Construction Sites. We build sites. You build everything else.",
     images: ["https://construction-sites.co.uk/og-image.png"],
   },
   robots: {

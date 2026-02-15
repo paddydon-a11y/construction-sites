@@ -90,42 +90,14 @@ const html = `<!DOCTYPE html>
   h1 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
-    font-size: 64px;
+    font-size: 76px;
     line-height: 1.05;
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    margin-bottom: 20px;
   }
 
   h1 .highlight { color: #f59e0b; }
-
-  .tagline {
-    font-size: 22px;
-    color: #94a3b8;
-    font-weight: 500;
-    line-height: 1.5;
-    margin-bottom: 28px;
-  }
-
-  .stats { display: flex; gap: 32px; }
-
-  .stat { display: flex; flex-direction: column; }
-
-  .stat-value {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: #f59e0b;
-  }
-
-  .stat-label {
-    font-size: 14px;
-    color: #64748b;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
 
   .right {
     width: 440px;
@@ -179,13 +151,7 @@ const html = `<!DOCTYPE html>
         <span class="logo-icon">🏗️</span>
         <span class="logo-text">Construction Sites</span>
       </div>
-      <h1>We Build <span class="highlight">Sites.</span><br>You Build<br>Everything <span class="highlight">Else.</span></h1>
-      <p class="tagline">Stunning websites for construction businesses.<br>No templates. No nonsense. Just results.</p>
-      <div class="stats">
-        <div class="stat"><span class="stat-value">£100/mo</span><span class="stat-label">All inclusive</span></div>
-        <div class="stat"><span class="stat-value">7 Days</span><span class="stat-label">Live &amp; ready</span></div>
-        <div class="stat"><span class="stat-value">2,000+</span><span class="stat-label">Sites built</span></div>
-      </div>
+      <h1>Get <span class="highlight">Better Work</span><br>with a <span class="highlight">Better</span><br>Website.</h1>
     </div>
     <div class="right">
       <div class="thumb"><img src="${t1}" /></div>
