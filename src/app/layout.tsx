@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | Construction Sites",
   },
   description:
-    "We build stunning websites for tradespeople and construction businesses. Custom design, SEO, Google Ads — all included for just £100/month. No templates. No nonsense.",
+    "We build stunning websites for tradespeople and construction businesses. Custom design, SEO, Google Ads, all included for just £100/month. No templates. No nonsense.",
   keywords: [
     "tradesman website",
     "construction website design",
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     siteName: "Construction Sites",
     title: "Construction Sites | Web Design for Tradespeople",
     description:
-      "We build stunning websites for tradespeople and construction businesses. Custom design, SEO, Google Ads — all for £100/month.",
+      "We build stunning websites for tradespeople and construction businesses. Custom design, SEO, Google Ads, all for £100/month.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Construction Sites — We Build Sites. You Build Everything Else.",
+        alt: "Construction Sites: We Build Sites. You Build Everything Else.",
       },
     ],
   },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Construction Sites | Web Design for Tradespeople",
     description:
-      "Stunning websites for tradespeople. Custom design, SEO, Google Ads — all for £100/month.",
+      "Stunning websites for tradespeople. Custom design, SEO, Google Ads, all for £100/month.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -89,7 +89,7 @@ const jsonLd = {
       name: "Construction Sites",
       url: "https://construction-sites.co.uk",
       description:
-        "We build stunning websites for tradespeople and construction businesses. Custom design, SEO, Google Ads — all included.",
+        "We build stunning websites for tradespeople and construction businesses. Custom design, SEO, Google Ads, all included.",
       email: "hello@construction-sites.co.uk",
       telephone: "0800 123 4567",
       sameAs: [],

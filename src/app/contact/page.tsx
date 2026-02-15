@@ -232,7 +232,7 @@ export default function ContactPage() {
       {/* EXTRA LINE */}
       <section className="text-center pb-16 px-4">
         <p className="text-slate-light text-lg max-w-2xl mx-auto">
-          Not ready to commit? No pressure. We don&apos;t do hard sells — just
+          Not ready to commit? No pressure. We don&apos;t do hard sells, just
           honest chats over a brew. ☕
         </p>
       </section>

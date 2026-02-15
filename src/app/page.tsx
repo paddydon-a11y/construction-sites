@@ -111,7 +111,7 @@ export default function HomePage() {
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
                 We jump on a call, learn about your trade, and plan your site.
-                No jargon, no waffle — just a proper chat about what you need.
+                No jargon, no waffle. Just a proper chat about what you need.
               </p>
             </article>
 
@@ -170,7 +170,7 @@ export default function HomePage() {
                   &ldquo;{testimonial.text}&rdquo;
                 </blockquote>
                 <p className="mt-4 font-semibold text-white">
-                  — {testimonial.name}, {testimonial.trade},{" "}
+                  {testimonial.name}, {testimonial.trade},{" "}
                   {testimonial.location}
                 </p>
               </article>

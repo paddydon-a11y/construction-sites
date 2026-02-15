@@ -128,8 +128,8 @@ export default function AboutPage() {
                   You Get In Touch
                 </h3>
                 <p className="mt-2 leading-relaxed text-slate-light">
-                  Fill in the form, give us a bell, send a carrier pigeon —
-                  whatever works. We&rsquo;ll have a quick chat about your
+                  Fill in the form, give us a bell, send a carrier pigeon.
+                  Whatever works. We&rsquo;ll have a quick chat about your
                   trade, your area, and what you need.
                 </p>
               </div>
@@ -186,7 +186,7 @@ export default function AboutPage() {
                   We Keep It Running
                 </h3>
                 <p className="mt-2 leading-relaxed text-slate-light">
-                  Hosting, security, updates, edits — we handle the lot. You
+                  Hosting, security, updates, edits. We handle the lot. You
                   focus on the tools, we&rsquo;ll focus on the tech.
                 </p>
               </div>

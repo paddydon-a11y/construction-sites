@@ -4,7 +4,7 @@ import { faqs } from "@/lib/data";
 export const metadata = {
   title: "Pricing | Construction Sites",
   description:
-    "Custom websites for tradespeople at just £100/month. No hidden fees, no contracts. Everything included — hosting, SEO, Google Ads, and monthly edits.",
+    "Custom websites for tradespeople at just £100/month. No hidden fees, no contracts. Everything included: hosting, SEO, Google Ads, and monthly edits.",
 };
 
 const strikethroughPrices = [

@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Services",
   description:
-    "Custom website design, SEO, Google Ads, monthly maintenance and more — everything your trade business needs to get found online.",
+    "Custom website design, SEO, Google Ads, monthly maintenance and more. Everything your trade business needs to get found online.",
 };
 
 const services = [

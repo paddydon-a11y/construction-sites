@@ -2,7 +2,7 @@ export interface Project {
   name: string;
   trade: string;
   location: string;
-  // Hero style config — each combo creates a unique look
+  // Hero style config: each combo creates a unique look
   bg: string;           // tailwind gradient/bg classes
   accent: string;       // accent colour for buttons/highlights
   textColor: string;    // main text colour
@@ -96,7 +96,7 @@ export const testimonials: Testimonial[] = [
     name: "J&R Plastering",
     trade: "Plasterer",
     location: "Sheffield",
-    text: "Clean, simple, looks the business. The lads get it — they know what tradespeople need. No faff, no jargon, just results.",
+    text: "Clean, simple, looks the business. The lads get it. They know what tradespeople need. No faff, no jargon, just results.",
     rating: 5,
   },
 ];
@@ -117,7 +117,7 @@ export const faqs: FAQ[] = [
   },
   {
     question: "How long does it take to build?",
-    answer: "Most sites are live within 5-7 working days. We've done same-week turnarounds for lads who needed it yesterday. We move fast — no one wants to wait around for a website.",
+    answer: "Most sites are live within 5-7 working days. We've done same-week turnarounds for lads who needed it yesterday. We move fast because no one wants to wait around for a website.",
   },
   {
     question: "Do I own my domain?",
@@ -133,7 +133,7 @@ export const faqs: FAQ[] = [
   },
   {
     question: "What if I need more than a basic website?",
-    answer: "We can add extras like booking systems, gallery pages, or multi-location setups. We'll quote anything extra upfront — no surprises. But honestly, most tradesmen only need what's in the standard package.",
+    answer: "We can add extras like booking systems, gallery pages, or multi-location setups. We'll quote anything extra upfront, no surprises. But honestly, most tradesmen only need what's in the standard package.",
   },
   {
     question: "Do you do e-commerce / online shops?",

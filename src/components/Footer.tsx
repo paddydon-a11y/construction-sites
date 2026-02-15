@@ -34,7 +34,7 @@ export default function Footer() {
               </p>
               <p className="mt-2 text-sm text-slate-light/70">
                 Professional websites for tradespeople who want their phone to
-                ring. No faff, no jargon — just results.
+                ring. No faff, no jargon. Just results.
               </p>
             </div>
 

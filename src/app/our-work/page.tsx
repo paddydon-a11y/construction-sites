@@ -119,7 +119,7 @@ export default function OurWorkPage() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl text-lg text-slate-light">
-            Let&rsquo;s build yours next. Every site is custom&nbsp;&mdash; no
+            Let&rsquo;s build yours next. Every site is custom and no
             two are the same.
           </p>
 
