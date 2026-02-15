@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Access Solutions | Scaffolding Specialists in Derby</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0c1b33;
+            --amber: #f59e0b;
+            --amber-dark: #d97706;
+            --slate: #64748b;
+            --light-slate: #94a3b8;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --light-bg: #f1f5f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #334155;
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--white);
+            box-shadow: 0 1px 10px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            height: 72px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-brand .icon-box {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--amber);
+            font-weight: 900;
+            font-size: 1.1rem;
+            border-radius: 6px;
+        }
+
+        .nav-brand .brand-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .nav-brand .brand-text span {
+            color: var(--slate);
+            font-weight: 400;
+            font-size: 0.85rem;
+            display: block;
+            line-height: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--slate);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--navy);
+        }
+
+        .nav-cta {
+            background: var(--amber);
+            color: var(--navy);
+            padding: 0.6rem 1.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--amber-dark);
+        }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            margin-top: 72px;
+            position: relative;
+            height: 85vh;
+            min-height: 550px;
+            background: url('../portfolio-images/scaffolder-04.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(12,27,51,0.95) 0%, rgba(12,27,51,0.5) 50%, rgba(12,27,51,0.2) 100%);
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 4rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: end;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            color: var(--white);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 span {
+            color: var(--amber);
+        }
+
+        .hero-text p {
+            color: var(--light-slate);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 450px;
+        }
+
+        .hero-text .btn-amber {
+            display: inline-block;
+            background: var(--amber);
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .hero-text .btn-amber:hover {
+            background: var(--amber-dark);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .hero-stat {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .hero-stat .number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--amber);
+        }
+
+        .hero-stat .label {
+            color: var(--light-slate);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        /* ===================== SERVICES ===================== */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--off-white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title .overline {
+            color: var(--amber);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            font-weight: 800;
+        }
+
+        .section-title p {
+            color: var(--slate);
+            max-width: 550px;
+            margin: 0.75rem auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s, transform 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+
+        .svc-icon {
+            width: 55px;
+            height: 55px;
+            min-width: 55px;
+            background: var(--navy);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--amber);
+        }
+
+        .svc-text h3 {
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .svc-text p {
+            color: var(--slate);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== WHY ATLAS ===================== */
+        .why-atlas {
+            padding: 4rem 2rem;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .why-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 2rem auto 0;
+        }
+
+        .why-item {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .why-item .circle {
+            width: 65px;
+            height: 65px;
+            border: 2px solid var(--amber);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--amber);
+        }
+
+        .why-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .why-item p {
+            color: var(--light-slate);
+            font-size: 0.85rem;
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .test-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--amber);
+        }
+
+        .test-card .stars {
+            color: var(--amber);
+            margin-bottom: 1rem;
+        }
+
+        .test-card blockquote {
+            color: var(--slate);
+            font-style: italic;
+            font-size: 0.93rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .test-author {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.9rem;
+        }
+
+        .test-loc {
+            color: var(--slate);
+            font-size: 0.8rem;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--navy);
+            color: var(--light-slate);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1050px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-bar {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--slate);
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            nav ul, .nav-cta { display: none; }
+            .hero-inner { grid-template-columns: 1fr; padding: 3rem 2rem; }
+            .hero-stats { grid-template-columns: 1fr 1fr; }
+            .hero-text h1 { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-brand">
+            <div class="icon-box">A</div>
+            <div class="brand-text">
+                Atlas Access Solutions
+                <span>Scaffolding &amp; Access Specialists</span>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Free Quote</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1>Trusted <span>Scaffolding</span> Across Derby &amp; the East Midlands</h1>
+                <p>Atlas Access Solutions provides safe, compliant scaffolding for commercial developers, builders, and homeowners. Fully insured with CISRS-qualified operatives.</p>
+                <a href="#contact" class="btn-amber">Request a Quote</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="number">18+</div>
+                    <div class="label">Years Trading</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number">5,400</div>
+                    <div class="label">Projects Done</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number">98%</div>
+                    <div class="label">Client Retention</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number">24hr</div>
+                    <div class="label">Rapid Response</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <div class="overline">What We Do</div>
+            <h2>Our Scaffolding Services</h2>
+            <p>Tailored access solutions for every project, from residential extensions to large-scale commercial developments.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="svc-icon">&#9633;</div>
+                <div class="svc-text">
+                    <h3>Domestic Scaffolding</h3>
+                    <p>Safe scaffold solutions for loft conversions, re-roofing, rendering, and home extensions. Competitively priced with fast turnaround.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9635;</div>
+                <div class="svc-text">
+                    <h3>Commercial Scaffolding</h3>
+                    <p>Large-scale access for new builds, refurbishments, and industrial maintenance. Full design service with TG20 calculations.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9651;</div>
+                <div class="svc-text">
+                    <h3>Temporary Roofs &amp; Encapsulation</h3>
+                    <p>Weatherproof solutions to keep your project on track. Full encapsulation available for sensitive sites and asbestos removal.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9670;</div>
+                <div class="svc-text">
+                    <h3>Scaffold Design</h3>
+                    <p>In-house design team producing bespoke scaffold drawings and engineering calculations for complex and non-standard structures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY ATLAS -->
+    <section class="why-atlas">
+        <div class="section-title">
+            <h2 style="color:#fff;">Why Choose Atlas?</h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="circle">&#9733;</div>
+                <h4>CISRS Accredited</h4>
+                <p>All operatives hold current CISRS cards and CSCS qualifications.</p>
+            </div>
+            <div class="why-item">
+                <div class="circle">&#128736;</div>
+                <h4>Rapid Response</h4>
+                <p>24-hour emergency scaffold erection for urgent projects.</p>
+            </div>
+            <div class="why-item">
+                <div class="circle">&#128203;</div>
+                <h4>Fully Compliant</h4>
+                <p>Full risk assessments, method statements, and insurance documentation.</p>
+            </div>
+            <div class="why-item">
+                <div class="circle">&#128176;</div>
+                <h4>Competitive Pricing</h4>
+                <p>Transparent, fair pricing with no hidden extras or surprise costs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <div class="overline">Testimonials</div>
+            <h2>Trusted by Builders &amp; Homeowners</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Atlas have been our go-to scaffolding company for three years now. Always dependable, always professional, and the lads are a pleasure to work with on site.</blockquote>
+                <div class="test-author">Steve Bradshaw</div>
+                <div class="test-loc">Bradshaw Building Ltd, Derby</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Had scaffolding put up for a full re-render of our house. Atlas were the most competitive quote by far and the service was first class. Took it down promptly after too.</blockquote>
+                <div class="test-author">Fiona McKenzie</div>
+                <div class="test-loc">Allestree, Derby</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Needed a temporary roof for a church restoration project. Atlas handled the whole thing brilliantly, including all the planning and risk assessments. Couldn't fault them.</blockquote>
+                <div class="test-author">Paul Greenfield</div>
+                <div class="test-loc">Belper, Derbyshire</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-top">
+            <div class="footer-col">
+                <h3>Atlas Access Solutions</h3>
+                <p>Atlas Access Solutions Ltd<br>
+                Unit 9, Meteor Centre<br>
+                Mansfield Road, Derby DE21 4SY</p>
+                <p style="margin-top: 1rem;">
+                    Tel: 01332 781 456<br>
+                    Mob: 07712 845 392<br>
+                    Email: enquiries@atlasaccess.co.uk
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li>Domestic Scaffolding</li>
+                    <li>Commercial Scaffolding</li>
+                    <li>Temporary Roofs</li>
+                    <li>Encapsulation</li>
+                    <li>Scaffold Design</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Areas Covered</h3>
+                <ul>
+                    <li>Derby</li>
+                    <li>Nottingham</li>
+                    <li>Burton upon Trent</li>
+                    <li>Belper</li>
+                    <li>Ilkeston</li>
+                    <li>Ashbourne</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bar">
+            &copy; 2026 Atlas Access Solutions Ltd. All rights reserved. Company Reg. No. 07345219. CISRS Accredited. &pound;10M Public Liability Insurance.
+        </div>
+    </footer>
+
+</body>
+</html>

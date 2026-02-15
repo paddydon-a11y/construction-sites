@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kitchen Workshop | Kitchen Fitting in Norwich</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #444;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 0 3rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 68px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        nav .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #1d4ed8;
+            letter-spacing: 0.5px;
+        }
+
+        nav .logo span {
+            color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav ul li a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1d4ed8;
+        }
+
+        /* Hero - Large Image with Overlapping Text Card */
+        .hero {
+            position: relative;
+            margin-top: 68px;
+            padding: 2rem;
+            padding-bottom: 5rem;
+            background: #f9fafb;
+        }
+
+        .hero-image-wrapper {
+            width: 100%;
+            height: 70vh;
+            min-height: 450px;
+            overflow: hidden;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .hero-image-wrapper img-placeholder {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-image-bg {
+            width: 100%;
+            height: 100%;
+            background: url('../portfolio-images/kitchen-fitter-03.jpg') center center / cover no-repeat;
+            border-radius: 12px;
+        }
+
+        .hero-card {
+            position: absolute;
+            bottom: -2rem;
+            right: 4rem;
+            background: #fff;
+            padding: 3rem;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            z-index: 2;
+        }
+
+        .hero-card .tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: #1d4ed8;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 14px;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card h1 {
+            font-size: 2.4rem;
+            color: #111;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card h1 span {
+            color: #1d4ed8;
+        }
+
+        .hero-card p {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 1.75rem;
+            line-height: 1.7;
+        }
+
+        .btn-cobalt {
+            display: inline-block;
+            padding: 13px 34px;
+            background: #1d4ed8;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            border-radius: 6px;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-cobalt:hover {
+            background: #1e40af;
+        }
+
+        /* About */
+        .about {
+            padding: 6rem 2rem 5rem;
+            background: #fff;
+        }
+
+        .about-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner h2 {
+            font-size: 2rem;
+            color: #111;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-inner h2 span {
+            color: #1d4ed8;
+        }
+
+        .cobalt-bar {
+            width: 40px;
+            height: 3px;
+            background: #1d4ed8;
+            margin: 1rem auto 1.5rem;
+        }
+
+        .about-inner p {
+            color: #6b7280;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Services - Clean Cards */
+        .services {
+            padding: 5rem 2rem;
+            background: #f9fafb;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-header h2 {
+            font-size: 2rem;
+            color: #111;
+        }
+
+        .services-header p {
+            color: #9ca3af;
+            margin-top: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .s-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .s-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-color: #1d4ed8;
+        }
+
+        .s-card .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            background: #eff6ff;
+            color: #1d4ed8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .s-card h3 {
+            font-size: 1.05rem;
+            color: #111;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .s-card p {
+            font-size: 0.88rem;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2rem;
+            color: #111;
+        }
+
+        .testimonials-header p {
+            color: #9ca3af;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .t-card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .t-card .stars {
+            color: #1d4ed8;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .t-card .quote {
+            font-style: italic;
+            color: #6b7280;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .t-card .author {
+            font-weight: 700;
+            color: #111;
+            font-size: 0.9rem;
+        }
+
+        .t-card .location {
+            font-size: 0.8rem;
+            color: #1d4ed8;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #9ca3af;
+            padding: 3.5rem 2rem 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: #1d4ed8;
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col p {
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.88rem;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #1d4ed8;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.78rem;
+            color: #4b5563;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-card {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 1.5rem;
+                max-width: 100%;
+            }
+            .hero-card h1 { font-size: 1.8rem; }
+            .services-grid,
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><span>The</span> Kitchen Workshop</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-image-wrapper">
+            <div class="hero-image-bg"></div>
+        </div>
+        <div class="hero-card">
+            <div class="tag">Norwich &amp; Norfolk</div>
+            <h1>Kitchens Designed <span>Around You</span></h1>
+            <p>The Kitchen Workshop designs and fits beautiful, practical kitchens for homes across Norwich and Norfolk. Quality craftsmanship, honest pricing, outstanding service.</p>
+            <a href="#contact" class="btn-cobalt">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2>Welcome to <span>The Kitchen Workshop</span></h2>
+            <div class="cobalt-bar"></div>
+            <p>Founded in 2012 by Mark Townsend, The Kitchen Workshop is an independent kitchen fitting company based in Norwich. We specialise in designing and installing kitchens that combine style, practicality, and lasting quality.</p>
+            <p>Our small, dedicated team manages every project personally. From the initial design consultation through to the final finishing touches, you'll work directly with the people who care about getting it right. We're fully insured and proud members of the Kitchen Bathroom Bedroom Specialists Association (KBSA).</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p>Everything you need for your new kitchen</p>
+            <div class="cobalt-bar"></div>
+        </div>
+        <div class="services-grid">
+            <div class="s-card">
+                <div class="icon">&#x1f4d0;</div>
+                <h3>Free Design Service</h3>
+                <p>Home visits with full 3D design and planning. We measure, design, and quote at no cost. See your new kitchen before committing.</p>
+            </div>
+            <div class="s-card">
+                <div class="icon">&#x1f6e0;</div>
+                <h3>Complete Installation</h3>
+                <p>Full kitchen fitting including removal of old kitchen, plumbing, electrics, tiling, flooring, and decorating. One team, one point of contact.</p>
+            </div>
+            <div class="s-card">
+                <div class="icon">&#x2b1c;</div>
+                <h3>Worktop Fitting</h3>
+                <p>Template and fit granite, quartz, solid surface, and timber worktops. Precision cutting, seamless joins, and a beautiful finish.</p>
+            </div>
+            <div class="s-card">
+                <div class="icon">&#x1f4a1;</div>
+                <h3>Kitchen Electrics</h3>
+                <p>All electrical work by our Part P certified electricians. Lighting design, socket repositioning, appliance connections, and consumer unit upgrades.</p>
+            </div>
+            <div class="s-card">
+                <div class="icon">&#x1fa9c;</div>
+                <h3>Kitchen Refurbishment</h3>
+                <p>Refresh your existing kitchen with new doors, worktops, handles, and splashbacks. A cost-effective way to transform your space.</p>
+            </div>
+            <div class="s-card">
+                <div class="icon">&#x1f527;</div>
+                <h3>Appliance Supply</h3>
+                <p>We source and install premium appliances at competitive prices. Expert advice on which brands and models suit your needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>Happy Customers</h2>
+            <p>Real reviews from real homeowners</p>
+            <div class="cobalt-bar"></div>
+        </div>
+        <div class="testimonials-grid">
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Mark and his team were fantastic from start to finish. The design process was really enjoyable and the installation was completed in just over a week. Our new kitchen is exactly what we wanted. Highly recommend."</div>
+                <div class="author">Simon and Lucy Barrett</div>
+                <div class="location">Eaton, Norwich</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"We had a very small galley kitchen and The Kitchen Workshop made the absolute most of the space. The design is clever and practical, and the quality of the units and worktop is superb. Great value too."</div>
+                <div class="author">Hannah Taylor</div>
+                <div class="location">Thorpe St Andrew, Norwich</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Second kitchen we've had fitted by Mark, this time in our new house. The same excellent service and quality we experienced before. Wouldn't go anywhere else. The attention to detail is really impressive."</div>
+                <div class="author">Peter and Diane Howard</div>
+                <div class="location">Cringleford, Norwich</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>The Kitchen Workshop</h3>
+                <p>Independent kitchen designers and fitters serving Norwich and Norfolk since 2012. KBSA member. Fully insured. Free design consultations and no-obligation quotes.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Get in Touch</h3>
+                <p>Unit 3, Hall Road Trading Estate<br>Norwich, NR4 6DG</p>
+                <p>Tel: 01603 487 293</p>
+                <p>info@thekitchenworkshop.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 The Kitchen Workshop Ltd. Registered in England &amp; Wales. No. 08523914
+        </div>
+    </footer>
+
+</body>
+</html>

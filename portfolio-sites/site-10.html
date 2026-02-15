@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K&S Bricklaying — Bricklayers in Brighton | Extensions, Walls & New Builds</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --terracotta: #a0522d;
+    --terracotta-dark: #8a4526;
+    --terracotta-light: rgba(160, 82, 45, 0.1);
+    --off-white: #f5f0ea;
+    --brown: #2a1810;
+    --brown-mid: #5c3d2e;
+    --white: #ffffff;
+    --text-light: #7a6a5e;
+    --font-main: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-main);
+    color: var(--brown);
+    background: var(--off-white);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===================== NAV ===================== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--off-white);
+    border-bottom: 1px solid rgba(42, 24, 16, 0.08);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .nav-logo {
+    text-decoration: none;
+    color: var(--terracotta);
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .nav-logo .ks {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+  }
+
+  .nav-logo .sep {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--brown-mid);
+    opacity: 0.4;
+  }
+
+  .nav-logo .trade {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brown-mid);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: var(--terracotta);
+  }
+
+  .nav-quote-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--terracotta);
+    color: var(--white) !important;
+    border-radius: 6px;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: background 0.3s;
+  }
+
+  .nav-quote-btn:hover {
+    background: var(--terracotta-dark);
+  }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: url('../portfolio-images/bricklayer-01.jpg') center/cover no-repeat;
+    padding: 80px 30px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(42, 24, 16, 0.6);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    color: var(--white);
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .hero p {
+    font-size: 19px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 36px;
+    line-height: 1.5;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-terracotta {
+    display: inline-block;
+    padding: 15px 32px;
+    background: var(--terracotta);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 2px solid var(--terracotta);
+    transition: all 0.3s ease;
+  }
+
+  .btn-terracotta:hover {
+    background: var(--terracotta-dark);
+    border-color: var(--terracotta-dark);
+  }
+
+  .btn-outline-white {
+    display: inline-block;
+    padding: 15px 32px;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 2px solid rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-white:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--white);
+  }
+
+  /* ===================== ABOUT ===================== */
+  .about {
+    padding: 80px 30px;
+    background: var(--off-white);
+  }
+
+  .about-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .about-image {
+    position: relative;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .about-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 8px;
+    height: 100%;
+    background: var(--terracotta);
+    border-radius: 4px 0 0 4px;
+  }
+
+  .about-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--brown);
+  }
+
+  .about-content p {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  .about-quals {
+    margin-top: 24px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-quals li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--brown);
+  }
+
+  .about-quals li .tick {
+    width: 22px;
+    height: 22px;
+    background: var(--terracotta-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--terracotta);
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ===================== SERVICES ===================== */
+  .services {
+    padding: 80px 30px;
+    background: var(--white);
+  }
+
+  .services-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+
+  .section-heading p {
+    font-size: 16px;
+    color: var(--text-light);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(42, 24, 16, 0.07);
+    border-top: 4px solid var(--terracotta);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(42, 24, 16, 0.12);
+  }
+
+  .service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .service-card-body {
+    padding: 24px 20px;
+  }
+
+  .service-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--brown);
+  }
+
+  .service-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  /* ===================== GALLERY ===================== */
+  .gallery {
+    padding: 80px 30px;
+    background: var(--off-white);
+  }
+
+  .gallery-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(42, 24, 16, 0.08);
+    aspect-ratio: 4/3;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  /* ===================== AREAS ===================== */
+  .areas {
+    padding: 70px 30px;
+    background: var(--white);
+  }
+
+  .areas-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .areas-inner h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+
+  .areas-inner > p {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 36px;
+  }
+
+  .area-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .area-pill {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 2px solid var(--terracotta);
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--terracotta);
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .area-pill:hover {
+    background: var(--terracotta);
+    color: var(--white);
+  }
+
+  /* ===================== REVIEWS ===================== */
+  .reviews {
+    padding: 80px 30px;
+    background: var(--off-white);
+  }
+
+  .reviews-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .review-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 30px 28px;
+    box-shadow: 0 2px 16px rgba(42, 24, 16, 0.06);
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+
+  .review-star {
+    color: var(--terracotta);
+    font-size: 18px;
+  }
+
+  .review-card blockquote {
+    font-size: 15px;
+    color: var(--brown);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: normal;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .review-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--terracotta-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--terracotta);
+    flex-shrink: 0;
+  }
+
+  .review-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brown);
+  }
+
+  .review-location {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 1px;
+  }
+
+  .review-source {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .review-source .g {
+    font-weight: 700;
+    color: var(--terracotta);
+  }
+
+  /* ===================== CTA ===================== */
+  .cta {
+    background: var(--terracotta);
+    padding: 80px 30px;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--white);
+  }
+
+  .cta h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .cta p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+  }
+
+  .cta-phone {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 20px 0 30px;
+    display: block;
+  }
+
+  .cta-phone a {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .btn-white-outline {
+    display: inline-block;
+    padding: 15px 36px;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 6px;
+    border: 2px solid var(--white);
+    transition: all 0.3s ease;
+  }
+
+  .btn-white-outline:hover {
+    background: var(--white);
+    color: var(--terracotta);
+  }
+
+  /* ===================== FOOTER ===================== */
+  .footer {
+    background: var(--brown);
+    padding: 60px 30px 30px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    color: rgba(245, 240, 234, 0.5);
+    line-height: 1.7;
+    margin-top: 12px;
+    max-width: 260px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    text-decoration: none;
+  }
+
+  .footer-logo .ks {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--terracotta);
+    letter-spacing: -1px;
+  }
+
+  .footer-logo .trade {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 234, 0.5);
+  }
+
+  .footer h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(245, 240, 234, 0.8);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer ul {
+    list-style: none;
+  }
+
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer ul a {
+    text-decoration: none;
+    font-size: 14px;
+    color: rgba(245, 240, 234, 0.45);
+    transition: color 0.3s;
+  }
+
+  .footer ul a:hover {
+    color: var(--terracotta);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(245, 240, 234, 0.1);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+    color: rgba(245, 240, 234, 0.3);
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .nav-inner { padding: 0 16px; }
+    .nav-links { gap: 16px; }
+    .nav-links li:nth-child(-n+2) { display: none; }
+    .about-inner { grid-template-columns: 1fr; }
+    .about-image { order: -1; }
+    .services-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .cta-phone { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="ks">K&amp;S</span>
+      <span class="sep">|</span>
+      <span class="trade">Bricklaying</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#cta">Contact</a></li>
+      <li><a href="#cta" class="nav-quote-btn">Free Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Brighton's Trusted Bricklayers</h1>
+    <p>Extensions, Garden Walls &amp; New Builds &mdash; Built to Last</p>
+    <div class="hero-buttons">
+      <a href="#cta" class="btn-terracotta">Get a Free Quote</a>
+      <a href="#gallery" class="btn-outline-white">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1704311571651-7fbe29e3bd85?w=600&h=500&fit=crop&auto=format" alt="K&S Bricklaying team at work" loading="lazy">
+    </div>
+    <div class="about-content">
+      <h2>About K&amp;S</h2>
+      <p>K&amp;S Bricklaying is a family-run business established in 2008. Founded by brothers Kevin and Steve Marsh, we've been laying bricks across Brighton and the surrounding Sussex area for over 17 years.</p>
+      <p>We take pride in honest work, fair prices, and doing the job right first time. From a single garden wall to a full two-storey extension, we treat every project with the same care and attention to detail.</p>
+      <ul class="about-quals">
+        <li><span class="tick">&#10003;</span> Fully insured &mdash; public liability up to &pound;5m</li>
+        <li><span class="tick">&#10003;</span> NHBC registered &amp; CSCS card holders</li>
+        <li><span class="tick">&#10003;</span> City &amp; Guilds qualified bricklayers</li>
+        <li><span class="tick">&#10003;</span> References available on request</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-heading">
+      <h2>What We Do</h2>
+      <p>Quality bricklaying services for homes across Sussex</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1661348540993-9b1a4fcb4ad5?w=500&h=360&fit=crop&auto=format" alt="House extension brickwork" loading="lazy">
+        <div class="service-card-body">
+          <h3>House Extensions</h3>
+          <p>Single and double-storey extensions built to building regs. We handle all the brickwork and blockwork, coordinating with your builder or working as your main contractor.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1730461747568-7250e49eb50c?w=500&h=360&fit=crop&auto=format" alt="Garden wall brickwork" loading="lazy">
+        <div class="service-card-body">
+          <h3>Garden Walls</h3>
+          <p>Boundary walls, retaining walls, raised planters and decorative garden features. We work with reclaimed and new bricks to match the character of your property.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1768321916212-17ae334a3d63?w=500&h=360&fit=crop&auto=format" alt="Blockwork and footings" loading="lazy">
+        <div class="service-card-body">
+          <h3>Blockwork &amp; Footings</h3>
+          <p>Foundations and below-ground blockwork for new builds, extensions and outbuildings. We work to engineer's specifications and ensure everything is level and true.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1667491294945-9f38f0910c545?w=500&h=360&fit=crop&auto=format" alt="Repointing repair work" loading="lazy">
+        <div class="service-card-body">
+          <h3>Repointing &amp; Repair</h3>
+          <p>Tired mortar joints bringing your walls down? We repoint in lime or cement mortar, replace damaged bricks and restore walls to their former glory.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="section-heading">
+      <h2>Our Work</h2>
+      <p>Recent projects from across Brighton and Sussex</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1729986694893-facaf4bce2e6?w=600&h=450&fit=crop&auto=format" alt="Bricklaying project 1" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1757472530694-dca86e926b91?w=600&h=450&fit=crop&auto=format" alt="Bricklaying project 2" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1696269667842-e258d3c24ad8?w=600&h=450&fit=crop&auto=format" alt="Bricklaying project 3" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1760886810583-dbb87686d08c?w=600&h=450&fit=crop&auto=format" alt="Bricklaying project 4" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1615238168577-0970b17e4a5f?w=600&h=450&fit=crop&auto=format" alt="Bricklaying project 5" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1729183672500-46c52a897de5?w=600&h=450&fit=crop&auto=format" alt="Bricklaying project 6" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas" id="areas">
+  <div class="areas-inner">
+    <h2>Areas We Cover</h2>
+    <p>Based in Brighton, we work right across East and West Sussex</p>
+    <div class="area-pills">
+      <span class="area-pill">Brighton</span>
+      <span class="area-pill">Hove</span>
+      <span class="area-pill">Worthing</span>
+      <span class="area-pill">Lewes</span>
+      <span class="area-pill">Eastbourne</span>
+      <span class="area-pill">Shoreham</span>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="section-heading">
+      <h2>What Our Customers Say</h2>
+      <p>Genuine reviews from happy customers</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+        </div>
+        <blockquote>Kevin and Steve built a rear extension for us and the brickwork is spot on. They matched the existing Victorian brick perfectly &mdash; you honestly can't tell where the old ends and the new begins. Tidy workers, on time every day, and very fair on price. Would recommend them to anyone.</blockquote>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=42&h=42&fit=crop&auto=format" alt="Mark Henderson">
+          <div>
+            <div class="review-name">Mark Henderson</div>
+            <div class="review-location">Brighton, BN1</div>
+            <div class="review-source"><span class="g">G</span> Google Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+        </div>
+        <blockquote>Had a garden wall rebuilt after it collapsed in a storm. K&amp;S came out the same week to quote and started the following Monday. The new wall looks fantastic and they even cleaned up all the rubble from the old one. Proper job, proper tradesmen. Five stars.</blockquote>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=42&h=42&fit=crop&auto=format" alt="Janet Williams">
+          <div>
+            <div class="review-name">Janet Williams</div>
+            <div class="review-location">Hove, BN3</div>
+            <div class="review-source"><span class="g">G</span> Google Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+          <span class="review-star">&#9733;</span>
+        </div>
+        <blockquote>Used K&amp;S for the brickwork on our new garage build. Excellent communication from start to finish. Steve kept me updated throughout and the quality of the pointing is the best I've seen. Building inspector was very impressed too. Highly recommended.</blockquote>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=42&h=42&fit=crop&auto=format" alt="Richard Parsons">
+          <div>
+            <div class="review-name">Richard Parsons</div>
+            <div class="review-location">Lewes, BN7</div>
+            <div class="review-source"><span class="g">G</span> Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="cta-inner">
+    <h2>Need a Bricklayer?</h2>
+    <p>Give us a call or request a free, no-obligation quote</p>
+    <span class="cta-phone"><a href="tel:01273485210">01273 485 210</a></span>
+    <a href="tel:01273485210" class="btn-white-outline">Call Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <span class="ks">K&amp;S</span>
+          <span class="trade">Bricklaying</span>
+        </a>
+        <p>Family-run bricklayers serving Brighton and Sussex since 2008. Honest work, fair prices, built to last.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">House Extensions</a></li>
+          <li><a href="#">Garden Walls</a></li>
+          <li><a href="#">Blockwork &amp; Footings</a></li>
+          <li><a href="#">Repointing &amp; Repair</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Areas</h4>
+        <ul>
+          <li><a href="#">Brighton</a></li>
+          <li><a href="#">Hove</a></li>
+          <li><a href="#">Worthing</a></li>
+          <li><a href="#">Lewes</a></li>
+          <li><a href="#">Eastbourne</a></li>
+          <li><a href="#">Shoreham</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:01273485210">01273 485 210</a></li>
+          <li><a href="mailto:info@ksbricklaying.co.uk">info@ksbricklaying.co.uk</a></li>
+          <li><a href="#">Based in Brighton, BN1</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 K&amp;S Bricklaying. All rights reserved.</p>
+      <p>Designed with care in Brighton</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

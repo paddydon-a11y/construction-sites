@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotswold Stonework | Master Stonemasons in Cirencester</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --stone: #b8a88a;
+            --stone-light: #d4c9b2;
+            --charcoal: #2c2418;
+            --cream: #f8f5ef;
+            --warm-gray: #7a6b55;
+            --deep-cream: #efe8db;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: var(--charcoal);
+            line-height: 1.7;
+            background: var(--cream);
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--charcoal);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            height: 72px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--cream);
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--stone);
+            font-style: italic;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--stone-light);
+            font-size: 0.9rem;
+            font-family: 'Segoe UI', sans-serif;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--cream);
+        }
+
+        /* ===================== HERO (FULL-WIDTH) ===================== */
+        .hero {
+            margin-top: 72px;
+            position: relative;
+            height: 90vh;
+            min-height: 550px;
+            background: url('../portfolio-images/stonemason-01.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(44,36,24,0.9) 0%, rgba(44,36,24,0.3) 50%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 4rem;
+            max-width: 700px;
+        }
+
+        .hero-content .craft-label {
+            display: inline-block;
+            border: 1px solid var(--stone);
+            color: var(--stone);
+            padding: 0.3rem 1rem;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Segoe UI', sans-serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--cream);
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            color: var(--stone-light);
+            font-size: 1.15rem;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--stone);
+            color: var(--charcoal);
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: var(--stone-light);
+        }
+
+        /* ===================== INTRO ===================== */
+        .intro {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--cream);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro h2 {
+            font-size: 2rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .intro .orn {
+            width: 40px;
+            height: 2px;
+            background: var(--stone);
+            margin: 0.8rem auto 1.5rem;
+        }
+
+        .intro p {
+            color: var(--warm-gray);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        /* ===================== SERVICES (MASONRY GRID) ===================== */
+        .services {
+            padding: 0 2rem 5rem;
+            background: var(--cream);
+        }
+
+        .sec-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .sec-title h2 {
+            font-size: 2.2rem;
+            color: var(--charcoal);
+        }
+
+        .sec-title .orn {
+            width: 40px;
+            height: 2px;
+            background: var(--stone);
+            margin: 0.8rem auto;
+        }
+
+        .sec-title p {
+            color: var(--warm-gray);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .masonry-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            columns: 3;
+            column-gap: 2rem;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            background: var(--deep-cream);
+            border: 1px solid var(--stone-light);
+            padding: 2.5rem 2rem;
+        }
+
+        .masonry-item:nth-child(2),
+        .masonry-item:nth-child(5) {
+            padding: 3.5rem 2rem;
+        }
+
+        .m-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--charcoal);
+            color: var(--stone);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .masonry-item h3 {
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            margin-bottom: 0.7rem;
+        }
+
+        .masonry-item p {
+            color: var(--warm-gray);
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+
+        /* ===================== QUOTE BANNER ===================== */
+        .quote-banner {
+            background: var(--charcoal);
+            color: var(--cream);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .quote-banner blockquote {
+            font-size: 1.6rem;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 1rem;
+            line-height: 1.6;
+        }
+
+        .quote-banner cite {
+            color: var(--stone);
+            font-size: 0.9rem;
+            font-style: normal;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--deep-cream);
+        }
+
+        .test-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .test-card {
+            background: var(--cream);
+            border: 1px solid var(--stone-light);
+            padding: 2rem;
+        }
+
+        .test-card .stars {
+            color: var(--stone);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .test-card blockquote {
+            color: var(--warm-gray);
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .test-author {
+            font-weight: 700;
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .test-loc {
+            color: var(--warm-gray);
+            font-size: 0.8rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--charcoal);
+            color: var(--stone-light);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1050px;
+            margin: 0 auto 3rem;
+        }
+
+        .foot-col h3 {
+            color: var(--cream);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .foot-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .foot-col ul {
+            list-style: none;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .foot-col ul li {
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            color: var(--stone-light);
+        }
+
+        .foot-bottom {
+            border-top: 1px solid rgba(184,168,138,0.2);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--warm-gray);
+            max-width: 1050px;
+            margin: 0 auto;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content { padding: 2rem; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .masonry-grid { columns: 1; }
+            .test-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Cotswold <span>Stonework</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="craft-label">Master Stonemasons &middot; Est. 1992</div>
+            <h1>The Art of Stone, Perfected</h1>
+            <p>Cotswold Stonework brings centuries-old masonry craft to homes, gardens, and heritage buildings across the Cotswolds and Gloucestershire.</p>
+            <a href="#contact" class="hero-btn">Enquire Today</a>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <div class="intro">
+        <h2>Craftsmanship in Every Stone</h2>
+        <div class="orn"></div>
+        <p>For over thirty years, Cotswold Stonework has been shaping, carving, and building with natural Cotswold limestone. From drystone boundary walls to intricate carved fireplaces, we bring skill, patience, and pride to every commission. Based in Cirencester, we serve clients throughout the Cotswolds and beyond.</p>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="sec-title">
+            <h2>Our Craft</h2>
+            <div class="orn"></div>
+            <p>Traditional stonemasonry services for new builds, restorations, and bespoke commissions.</p>
+        </div>
+        <div class="masonry-grid">
+            <div class="masonry-item">
+                <div class="m-icon">&#9634;</div>
+                <h3>Drystone Walling</h3>
+                <p>Traditional Cotswold drystone walls built and repaired by hand using locally sourced limestone. Boundary walls, retaining walls, and garden features.</p>
+            </div>
+            <div class="masonry-item">
+                <div class="m-icon">&#10070;</div>
+                <h3>Stone Carving</h3>
+                <p>Bespoke stone carving for architectural features, house name plates, memorials, and decorative elements. Hand-carved to your specification by our master craftsmen.</p>
+            </div>
+            <div class="masonry-item">
+                <div class="m-icon">&#9632;</div>
+                <h3>New Build Stonework</h3>
+                <p>Natural stone building for extensions, new homes, and outbuildings in traditional Cotswold style. Working in partnership with architects and builders.</p>
+            </div>
+            <div class="masonry-item">
+                <div class="m-icon">&#10047;</div>
+                <h3>Heritage Restoration</h3>
+                <p>Sympathetic restoration of period stonework on listed buildings, churches, and historic properties. Lime mortar pointing, stone indent repairs, and like-for-like replacement.</p>
+            </div>
+            <div class="masonry-item">
+                <div class="m-icon">&#9675;</div>
+                <h3>Fireplaces &amp; Surrounds</h3>
+                <p>Hand-carved stone fireplaces, surrounds, and hearths in natural Cotswold stone. From simple inglenook styles to elaborate period designs.</p>
+            </div>
+            <div class="masonry-item">
+                <div class="m-icon">&#9826;</div>
+                <h3>Garden Stonework</h3>
+                <p>Stone patios, pathways, steps, raised beds, and water features. Creating beautiful outdoor spaces with natural materials that complement the landscape.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE BANNER -->
+    <div class="quote-banner">
+        <blockquote>&ldquo;There is something timeless about working with stone. Each piece tells a story, and our job is to help it find its place.&rdquo;</blockquote>
+        <cite>&mdash; Robert Kingsley, Master Mason &amp; Founder</cite>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="sec-title">
+            <h2>Client Testimonials</h2>
+            <div class="orn"></div>
+        </div>
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Cotswold Stonework rebuilt the boundary wall around our property and it looks absolutely stunning. They matched the original stone perfectly and the craftsmanship is exceptional. You can tell they genuinely love what they do.</blockquote>
+                <div class="test-author">Catherine Whitfield</div>
+                <div class="test-loc">Bibury, Gloucestershire</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>We commissioned a carved fireplace surround for our farmhouse kitchen. Robert and his team created something truly beautiful. It's now the centrepiece of the room and we couldn't be happier.</blockquote>
+                <div class="test-author">Oliver &amp; Sarah Pemberton</div>
+                <div class="test-loc">Northleach, Gloucestershire</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>These chaps restored the stonework on our Grade I listed manor house with extraordinary care and skill. They understand lime mortars, traditional techniques, and the importance of getting every detail right.</blockquote>
+                <div class="test-author">Lord Fitzwilliam</div>
+                <div class="test-loc">Barnsley Park Estate</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Cotswold Stonework built a beautiful drystone retaining wall and steps in our garden. It blends perfectly with the surrounding landscape and has transformed the outdoor space. Highly recommended.</blockquote>
+                <div class="test-author">Diana Marchmont</div>
+                <div class="test-loc">Tetbury, Gloucestershire</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="foot-col">
+                <h3>Cotswold Stonework</h3>
+                <p>Cotswold Stonework Ltd<br>
+                The Old Yard, Querns Lane<br>
+                Cirencester, Gloucestershire GL7 1RL</p>
+                <p style="margin-top: 1rem;">
+                    Tel: 01285 654 823<br>
+                    Mob: 07814 392 756<br>
+                    Email: enquiries@cotswoldstonework.co.uk
+                </p>
+            </div>
+            <div class="foot-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li>Drystone Walling</li>
+                    <li>Stone Carving</li>
+                    <li>New Build Stonework</li>
+                    <li>Heritage Restoration</li>
+                    <li>Fireplaces &amp; Surrounds</li>
+                    <li>Garden Stonework</li>
+                </ul>
+            </div>
+            <div class="foot-col">
+                <h3>Areas Covered</h3>
+                <ul>
+                    <li>Cirencester</li>
+                    <li>Cheltenham</li>
+                    <li>Stroud</li>
+                    <li>Tetbury</li>
+                    <li>Burford</li>
+                    <li>Stow-on-the-Wold</li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            &copy; 2026 Cotswold Stonework Ltd. All rights reserved. Company Reg. No. 04512389. Guild of Master Craftsmen Member.
+        </div>
+    </footer>
+
+</body>
+</html>

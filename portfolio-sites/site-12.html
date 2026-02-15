@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornerstone Brickwork | Expert Bricklayers in Nottingham</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 0 3rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+            border-bottom: 3px solid #d4702a;
+        }
+
+        nav .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #4a4a4a;
+        }
+
+        nav .logo span {
+            color: #d4702a;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav ul li a {
+            color: #4a4a4a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        nav ul li a:hover {
+            color: #d4702a;
+        }
+
+        /* Hero - Split Layout */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+            margin-top: 72px;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 4rem;
+            background: #f7f5f3;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: #d4702a;
+            color: #fff;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 3px;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            color: #4a4a4a;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-text h1 span {
+            color: #d4702a;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 480px;
+            line-height: 1.7;
+        }
+
+        .hero-text .cta-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 36px;
+            background: #d4702a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            background: #b85e22;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 14px 36px;
+            border: 2px solid #4a4a4a;
+            color: #4a4a4a;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-secondary:hover {
+            background: #4a4a4a;
+            color: #fff;
+        }
+
+        .hero-image {
+            background: url('../portfolio-images/bricklayer-03.jpg') center center / cover no-repeat;
+            min-height: 500px;
+        }
+
+        /* About */
+        .about {
+            padding: 5rem 3rem;
+            background: #fff;
+        }
+
+        .about-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner h2 {
+            font-size: 2.2rem;
+            color: #4a4a4a;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-inner h2 span {
+            color: #d4702a;
+        }
+
+        .about-inner p {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .divider {
+            width: 50px;
+            height: 3px;
+            background: #d4702a;
+            margin: 2rem auto;
+        }
+
+        /* Services - 2x2 Grid */
+        .services {
+            padding: 5rem 3rem;
+            background: #f7f5f3;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-header h2 {
+            font-size: 2.2rem;
+            color: #4a4a4a;
+            margin-bottom: 0.5rem;
+        }
+
+        .services-header p {
+            color: #888;
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #d4702a;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 8px;
+            background: #fdf0e6;
+            color: #d4702a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 3rem;
+            background: #4a4a4a;
+            color: #fff;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        .testimonials-header p {
+            color: #bbb;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.07);
+            padding: 2rem;
+            border-radius: 6px;
+            border-top: 3px solid #d4702a;
+        }
+
+        .testimonial-card .stars {
+            color: #d4702a;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            color: #ddd;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-card .location {
+            font-size: 0.8rem;
+            color: #d4702a;
+        }
+
+        /* Footer */
+        footer {
+            background: #3a3a3a;
+            color: #bbb;
+            padding: 3.5rem 3rem 1.5rem;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #999;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-col ul li a {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #d4702a;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.82rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-text { padding: 3rem 2rem; }
+            .hero-text h1 { font-size: 2rem; }
+            .hero-image { min-height: 350px; }
+            .services-grid,
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Cornerstone <span>Brickwork</span></div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <div class="badge">Established 2003</div>
+            <h1>Nottingham's Trusted <span>Brickwork</span> Specialists</h1>
+            <p>From residential extensions to large-scale commercial builds, Cornerstone Brickwork delivers exceptional craftsmanship across the East Midlands.</p>
+            <div class="cta-row">
+                <a href="#contact" class="btn-primary">Free Quote</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2>Building <span>Trust</span>, One Brick at a Time</h2>
+            <div class="divider"></div>
+            <p>Cornerstone Brickwork was founded by brothers Tom and Phil Reeves in 2003. What started as a two-man operation has grown into one of Nottingham's most respected bricklaying firms, with a team of twelve skilled tradesmen.</p>
+            <p>We're proud members of the Federation of Master Builders and carry full public liability insurance. Every project we take on receives the same level of care and attention to detail, whether it's a garden wall or a multi-unit development.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>What We Do</h2>
+            <p>Comprehensive brickwork solutions for every project</p>
+            <div class="divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#x1f3e0;</div>
+                <h3>Residential Extensions</h3>
+                <p>Expert brickwork for single and double storey extensions, orangeries, and conservatory bases. We match existing brickwork seamlessly and work to your architect's specifications.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f3d7;</div>
+                <h3>New Build Projects</h3>
+                <p>Full brickwork packages for housing developments and individual new builds. We've completed work for several major developers across the Midlands region.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f9f1;</div>
+                <h3>Walls &amp; Boundaries</h3>
+                <p>Retaining walls, garden boundaries, and feature walls. We work with all brick types and can incorporate decorative bonding patterns into your design.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f527;</div>
+                <h3>Repairs &amp; Repointing</h3>
+                <p>Structural repairs, crack stitching, and complete repointing services. We use traditional lime mortars where appropriate for period properties.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>Client Testimonials</h2>
+            <p>Hear from our satisfied customers</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Cornerstone built our two-storey extension and the brickwork is stunning. Tom and his team were professional, reliable and left the site spotless every day. The brick match is perfect."</div>
+                <div class="author">Richard Pearson</div>
+                <div class="location">West Bridgford, Nottingham</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Brilliant job on our boundary wall. They even suggested a better design than what we'd originally planned. Very fair pricing and the lads were a pleasure to have on site. Highly recommended."</div>
+                <div class="author">Helen Stafford</div>
+                <div class="location">Beeston, Nottingham</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"We've used Cornerstone on three separate developments now and the quality is consistently excellent. They turn up when they say they will and the workmanship is second to none."</div>
+                <div class="author">Mark Jennings</div>
+                <div class="location">Mapperley, Nottingham</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Had our Victorian terrace fully repointed and it looks absolutely fantastic. They were very careful with the lime mortar and took their time getting it right. Great value for money."</div>
+                <div class="author">Susan Gallagher</div>
+                <div class="location">The Park, Nottingham</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h3>Cornerstone Brickwork</h3>
+                <p>Nottingham's trusted brickwork specialists since 2003. Federation of Master Builders member. Fully insured with public liability cover up to &pound;5 million.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Get in Touch</h3>
+                <p>17 Castle Marina Road<br>Nottingham, NG7 1TN</p>
+                <p>Tel: 0115 924 6671</p>
+                <p>info@cornerstonebrickwork.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Cornerstone Brickwork Ltd. All rights reserved. Reg. No. 05128743
+        </div>
+    </footer>
+
+</body>
+</html>

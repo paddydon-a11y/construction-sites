@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Building Solutions | Builders in Birmingham</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --slate: #1e293b;
+    --slate-light: #273549;
+    --slate-dark: #0f172a;
+    --orange: #f97316;
+    --orange-hover: #ea580c;
+    --white: #ffffff;
+    --gray-100: #f1f5f9;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--white);
+    background: var(--slate);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--slate-dark);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--white);
+  }
+
+  .nav-logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 900;
+    border-radius: 6px;
+    line-height: 1;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--gray-300);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--orange);
+    color: var(--white) !important;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.8px;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--orange-hover) !important;
+    color: var(--white) !important;
+    transform: translateY(-1px);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('../portfolio-images/builder-01.jpg') center/cover no-repeat;
+    z-index: 0;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(15,23,42,0.82) 0%,
+      rgba(30,41,59,0.75) 50%,
+      rgba(15,23,42,0.92) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 24px;
+    margin-bottom: 80px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    line-height: 1.08;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+  }
+
+  .hero-sub {
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--white);
+    padding: 16px 40px;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .hero-btn:hover {
+    background: var(--orange-hover);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background: rgba(15,23,42,0.88);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--orange);
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+  }
+
+  /* ===== SERVICES ===== */
+  .service-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+  }
+
+  .service-row.dark { background: var(--slate); }
+  .service-row.light { background: var(--slate-light); }
+
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 400px;
+  }
+
+  .service-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 64px;
+  }
+
+  .service-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+
+  .service-text h3 {
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .service-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gray-300);
+    margin-bottom: 28px;
+    max-width: 480px;
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: gap 0.2s;
+  }
+
+  .service-link:hover { gap: 14px; }
+
+  .service-row.reverse .service-img { order: 2; }
+  .service-row.reverse .service-text { order: 1; }
+
+  /* ===== PROJECTS ===== */
+  .projects {
+    padding: 100px 0;
+    background: var(--slate-dark);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    font-size: 16px;
+    color: var(--gray-400);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .section-header .accent-line {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--orange);
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .project-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .project-card:hover img { transform: scale(1.08); }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(15,23,42,0.9) 0%,
+      rgba(15,23,42,0.1) 50%,
+      transparent 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px 24px;
+    transition: background 0.3s;
+  }
+
+  .project-card:hover .project-overlay {
+    background: linear-gradient(
+      0deg,
+      rgba(249,115,22,0.85) 0%,
+      rgba(15,23,42,0.2) 50%,
+      transparent 100%
+    );
+  }
+
+  .project-type {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--orange);
+    margin-bottom: 6px;
+    transition: color 0.3s;
+  }
+
+  .project-card:hover .project-type { color: var(--white); }
+
+  .project-name {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+
+  /* ===== WHY US ===== */
+  .why-us {
+    padding: 100px 0;
+    background: var(--orange);
+    color: var(--slate-dark);
+  }
+
+  .why-us .section-header h2 { color: var(--slate-dark); }
+  .why-us .section-header p { color: rgba(15,23,42,0.6); }
+  .why-us .accent-line { background: var(--slate-dark) !important; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .why-card {
+    text-align: center;
+    padding: 40px 28px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+  }
+
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--slate-dark);
+    color: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 900;
+    margin: 0 auto 24px;
+  }
+
+  .why-card h4 {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    color: var(--slate-dark);
+  }
+
+  .why-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(15,23,42,0.7);
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials {
+    padding: 100px 0;
+    background: var(--slate);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .testimonial-card {
+    background: var(--slate-light);
+    border-radius: 10px;
+    padding: 40px 32px;
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+  }
+
+  .testimonial-quote {
+    font-size: 64px;
+    line-height: 1;
+    color: var(--orange);
+    font-family: Georgia, serif;
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    opacity: 0.3;
+  }
+
+  .testimonial-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-stars span {
+    color: var(--orange);
+    font-size: 18px;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--gray-300);
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+  }
+
+  .testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--orange);
+  }
+
+  .testimonial-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+  }
+
+  .testimonial-role {
+    font-size: 13px;
+    color: var(--gray-400);
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    position: relative;
+    padding: 120px 0;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1768807126136-74150df7a51b?w=1600&h=600&fit=crop&auto=format') center/cover no-repeat;
+    z-index: 0;
+  }
+
+  .cta-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15,23,42,0.85);
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 18px;
+    color: var(--gray-300);
+    margin-bottom: 36px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--white);
+    padding: 18px 48px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .cta-button:hover {
+    background: var(--orange-hover);
+    transform: translateY(-2px);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--slate-dark);
+    padding: 80px 0 0;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 60px;
+  }
+
+  .footer-brand .nav-logo { margin-bottom: 16px; }
+
+  .footer-brand p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--gray-400);
+    max-width: 300px;
+  }
+
+  .footer h5 {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .footer ul { list-style: none; }
+
+  .footer ul li { margin-bottom: 10px; }
+
+  .footer ul a {
+    font-size: 14px;
+    color: var(--gray-400);
+    transition: color 0.2s;
+  }
+
+  .footer ul a:hover { color: var(--orange); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--gray-400);
+  }
+
+  .footer-bottom a {
+    color: var(--gray-400);
+    transition: color 0.2s;
+  }
+
+  .footer-bottom a:hover { color: var(--orange); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 32px; letter-spacing: 1px; }
+    .hero-sub { font-size: 14px; letter-spacing: 3px; }
+    .hero-stats-inner { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .service-row { grid-template-columns: 1fr; }
+    .service-row.reverse .service-img { order: 0; }
+    .service-row.reverse .service-text { order: 1; }
+    .service-text { padding: 40px 24px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .why-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-icon">&#9650;</span>
+      APEX
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#quote" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Building Birmingham's<br>Future</h1>
+    <div class="hero-sub">One Project at a Time</div>
+    <a href="#quote" class="hero-btn">Start Your Project</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="stat">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">30</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">&pound;50M+</div>
+        <div class="stat-label">Total Built Value</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Fully Insured</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <!-- Service 1: Image Left, Text Right -->
+  <div class="service-row dark">
+    <img src="https://images.unsplash.com/photo-1758899183445-1c20011cbab9?w=800&h=600&fit=crop&auto=format" alt="House Extensions" class="service-img">
+    <div class="service-text">
+      <div class="service-tag">Our Services</div>
+      <h3>House Extensions</h3>
+      <p>Need more space? Our house extensions are designed to seamlessly blend with your existing property while adding real value. From single-storey rear extensions to wraparound builds, we manage every detail from planning applications through to final handover. Our team works closely with architects and structural engineers to deliver a finished product that exceeds your expectations.</p>
+      <a href="#" class="service-link">Learn More <span>&rarr;</span></a>
+    </div>
+  </div>
+
+  <!-- Service 2: Text Left, Image Right -->
+  <div class="service-row light reverse">
+    <img src="https://images.unsplash.com/photo-1760449867527-26d7d732f88e?w=800&h=600&fit=crop&auto=format" alt="Loft Conversions" class="service-img">
+    <div class="service-text">
+      <div class="service-tag">Our Services</div>
+      <h3>Loft Conversions</h3>
+      <p>Transform your unused loft space into a stunning bedroom, home office, or living area. We specialise in all types of loft conversions including dormer, hip-to-gable, and Velux installations. Every project is fully project-managed, building-regulation compliant, and delivered on time. We handle steelwork, insulation, electrics, and plastering under one roof.</p>
+      <a href="#" class="service-link">Learn More <span>&rarr;</span></a>
+    </div>
+  </div>
+
+  <!-- Service 3: Image Left, Text Right -->
+  <div class="service-row dark">
+    <img src="https://images.unsplash.com/photo-1758367620590-cd80c6d2affc?w=800&h=600&fit=crop&auto=format" alt="New Builds" class="service-img">
+    <div class="service-text">
+      <div class="service-tag">Our Services</div>
+      <h3>New Builds</h3>
+      <p>From groundworks to golden key, Apex Building Solutions delivers complete new-build projects for residential and commercial clients across the West Midlands. We work with developers, landowners, and private clients to bring construction projects to life on budget and on schedule. Our team includes experienced project managers, site foremen, and skilled tradespeople.</p>
+      <a href="#" class="service-link">Learn More <span>&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+      <p>A selection of our most recent builds across Birmingham and the West Midlands region.</p>
+      <span class="accent-line"></span>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1760450020488-f612fc5689d9?w=600&h=800&fit=crop&auto=format" alt="Edgbaston Residence">
+        <div class="project-overlay">
+          <div class="project-type">New Build</div>
+          <div class="project-name">Edgbaston Residence</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1760450247262-f25722a53e78?w=600&h=800&fit=crop&auto=format" alt="Harborne Extension">
+        <div class="project-overlay">
+          <div class="project-type">Extension</div>
+          <div class="project-name">Harborne Family Home</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1769556864184-69178fb0be82?w=600&h=800&fit=crop&auto=format" alt="Solihull Loft">
+        <div class="project-overlay">
+          <div class="project-type">Loft Conversion</div>
+          <div class="project-name">Solihull Dormer Loft</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1768807125235-ba7fae41e35d?w=600&h=800&fit=crop&auto=format" alt="Moseley Townhouse">
+        <div class="project-overlay">
+          <div class="project-type">Renovation</div>
+          <div class="project-name">Moseley Townhouse</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us" id="about">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why Choose Apex</h2>
+      <p>We set the standard for quality construction in the West Midlands.</p>
+      <span class="accent-line"></span>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">&#10003;</div>
+        <h4>Fully Accredited</h4>
+        <p>We hold FMB, NHBC, and Constructionline Gold accreditations. Every project is backed by comprehensive warranties and full public liability insurance up to &pound;10 million.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">&#10003;</div>
+        <h4>Fixed-Price Contracts</h4>
+        <p>No hidden costs, no surprise invoices. Every project starts with a detailed, fixed-price quotation so you know exactly what you're paying before a single brick is laid.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">&#10003;</div>
+        <h4>Dedicated Project Manager</h4>
+        <p>Your single point of contact from day one. Our project managers provide weekly progress updates, handle all scheduling, and ensure your build runs smoothly from start to finish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2>Client Testimonials</h2>
+      <p>Don't just take our word for it. Here's what our clients have to say.</p>
+      <span class="accent-line"></span>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">&ldquo;</div>
+        <div class="testimonial-stars">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+        </div>
+        <blockquote>Apex completed our two-storey rear extension in Edgbaston and the quality of workmanship was outstanding. The project manager kept us informed every step of the way. Genuinely couldn't fault them.</blockquote>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&auto=format" alt="Sarah Mitchell" class="testimonial-avatar">
+          <div>
+            <div class="testimonial-name">Sarah Mitchell</div>
+            <div class="testimonial-role">Homeowner, Edgbaston</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">&ldquo;</div>
+        <div class="testimonial-stars">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+        </div>
+        <blockquote>We used Apex for a full loft conversion and it transformed our home. The team was professional, tidy, and respectful of our space. They finished on time and the final result was even better than the 3D renders.</blockquote>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&auto=format" alt="David Chen" class="testimonial-avatar">
+          <div>
+            <div class="testimonial-name">David Chen</div>
+            <div class="testimonial-role">Homeowner, Harborne</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">&ldquo;</div>
+        <div class="testimonial-stars">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+        </div>
+        <blockquote>As a property developer, I've worked with many builders. Apex are a cut above. They delivered a six-unit residential development on budget and ahead of schedule. Already planning the next project with them.</blockquote>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&auto=format" alt="James Hartley" class="testimonial-avatar">
+          <div>
+            <div class="testimonial-name">James Hartley</div>
+            <div class="testimonial-role">Director, Hartley Developments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg"></div>
+  <div class="cta-content">
+    <h2>Ready to Build?</h2>
+    <p>Get in touch today for a free, no-obligation consultation and quotation for your project.</p>
+    <a href="#quote" class="cta-button">Get Your Free Quote</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="quote">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="nav-logo-icon">&#9650;</span>
+          APEX
+        </div>
+        <p>Apex Building Solutions has been delivering quality construction projects across Birmingham and the West Midlands for over 30 years. Fully accredited, fully insured, and built on reputation.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">House Extensions</a></li>
+          <li><a href="#">Loft Conversions</a></li>
+          <li><a href="#">New Builds</a></li>
+          <li><a href="#">Renovations</a></li>
+          <li><a href="#">Commercial Fit-Outs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">0121 496 0320</a></li>
+          <li><a href="#">info@apexbuilding.co.uk</a></li>
+          <li><a href="#">Unit 14, Aston Business Park</a></li>
+          <li><a href="#">Birmingham, B6 4RZ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Apex Building Solutions Ltd. All rights reserved.</div>
+      <div>
+        <a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a> &nbsp;&middot;&nbsp; <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

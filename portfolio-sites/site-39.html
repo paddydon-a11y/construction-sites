@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mosaic Bathrooms | Luxury Bathroom Fitting in Aberdeen</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #111111;
+            --dark: #1a1a1a;
+            --card: #222222;
+            --rose-gold: #b76e5c;
+            --rose-light: #d4a090;
+            --white: #ffffff;
+            --text-muted: #999999;
+            --border-dark: #2a2a2a;
+            --border-subtle: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(17,17,17,0.9);
+            backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            height: 70px;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--white);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--rose-gold);
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--rose-gold);
+        }
+
+        /* ===================== HERO (FULL SCREEN) ===================== */
+        .hero {
+            margin-top: 70px;
+            position: relative;
+            height: calc(100vh - 70px);
+            min-height: 550px;
+            background: url('../portfolio-images/tiler-03.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(17,17,17,0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            padding: 0 2rem;
+        }
+
+        .hero-content .thin-line {
+            width: 50px;
+            height: 1px;
+            background: var(--rose-gold);
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.15;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--rose-gold);
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            border: 1px solid var(--rose-gold);
+            color: var(--rose-gold);
+            padding: 0.9rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            font-weight: 600;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: var(--rose-gold);
+            color: var(--black);
+        }
+
+        /* ===================== INTRO STRIP ===================== */
+        .intro-strip {
+            background: var(--dark);
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 3rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        .intro-item {
+            text-align: center;
+        }
+
+        .intro-item .val {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--rose-gold);
+            letter-spacing: 2px;
+        }
+
+        .intro-item .lbl {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* ===================== SERVICES ===================== */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--black);
+        }
+
+        .sec-head {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .sec-head .thin-line {
+            width: 40px;
+            height: 1px;
+            background: var(--rose-gold);
+            margin: 0 auto 1rem;
+        }
+
+        .sec-head h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .sec-head p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 1rem auto 0;
+            font-weight: 300;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--border-subtle);
+        }
+
+        .service-card {
+            background: var(--dark);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .service-card:hover {
+            background: var(--card);
+        }
+
+        .svc-icon {
+            font-size: 2rem;
+            color: var(--rose-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: var(--white);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--dark);
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .test-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            border: 1px solid var(--border-subtle);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '\201C';
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 4rem;
+            color: var(--rose-gold);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial blockquote {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .test-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .test-author {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .test-loc {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .test-stars {
+            color: var(--rose-gold);
+            font-size: 0.85rem;
+        }
+
+        /* ===================== CTA ===================== */
+        .cta {
+            background: var(--rose-gold);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--black);
+            margin-bottom: 0.75rem;
+        }
+
+        .cta p {
+            color: rgba(17,17,17,0.7);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .cta-dark-btn {
+            display: inline-block;
+            background: var(--black);
+            color: var(--rose-gold);
+            padding: 0.9rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .cta-dark-btn:hover {
+            opacity: 0.85;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--black);
+            color: var(--text-muted);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--rose-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col p {
+            font-size: 0.88rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            font-size: 0.88rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-dark);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #555;
+            max-width: 1000px;
+            margin: 0 auto;
+            letter-spacing: 1px;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h1 { font-size: 2rem; letter-spacing: 2px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .intro-strip { gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo"><span>Mosaic</span> Bathrooms</div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="thin-line"></div>
+            <h1>Luxury <span>Bathroom</span> Design &amp; Fitting</h1>
+            <p>Mosaic Bathrooms creates exquisite bathroom spaces for discerning clients across Aberdeen and Aberdeenshire.</p>
+            <a href="#contact" class="hero-btn">Book a Consultation</a>
+        </div>
+    </section>
+
+    <!-- INTRO STRIP -->
+    <div class="intro-strip">
+        <div class="intro-item">
+            <div class="val">14+</div>
+            <div class="lbl">Years Experience</div>
+        </div>
+        <div class="intro-item">
+            <div class="val">800+</div>
+            <div class="lbl">Bathrooms Completed</div>
+        </div>
+        <div class="intro-item">
+            <div class="val">100%</div>
+            <div class="lbl">Satisfaction Guarantee</div>
+        </div>
+        <div class="intro-item">
+            <div class="val">5 Year</div>
+            <div class="lbl">Workmanship Warranty</div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="sec-head">
+            <div class="thin-line"></div>
+            <h2>Our Services</h2>
+            <p>From concept to completion, we deliver bathrooms that combine beauty with practicality.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="svc-icon">&#9670;</div>
+                <h3>Bathroom Design</h3>
+                <p>Bespoke design consultations to create a bathroom that reflects your style. 3D visualisations available so you can see the finished result before we start.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9632;</div>
+                <h3>Full Installation</h3>
+                <p>Complete bathroom fitting including plumbing, electrics, tiling, sanitaryware, and all finishing touches. One team manages every aspect of your project.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9675;</div>
+                <h3>Wet Rooms</h3>
+                <p>Walk-in wet room installations with precision tanking, underfloor heating, and premium large-format tiles for a seamless, luxurious finish.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9651;</div>
+                <h3>Precision Tiling</h3>
+                <p>Expert tiling in porcelain, ceramic, natural stone, and mosaic. Complex patterns, feature walls, and intricate details executed to perfection.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9826;</div>
+                <h3>Underfloor Heating</h3>
+                <p>Electric and water-fed underfloor heating systems installed beneath your tiles. Warm, comfortable floors all year round with energy-efficient technology.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#10070;</div>
+                <h3>En-Suite &amp; Cloakrooms</h3>
+                <p>Clever space planning for en-suites and cloakrooms. We maximise every square inch while maintaining an airy, luxurious feel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="sec-head">
+            <div class="thin-line"></div>
+            <h2>Client Experiences</h2>
+        </div>
+        <div class="test-container">
+            <div class="testimonial">
+                <blockquote>Mosaic Bathrooms transformed our master en-suite into something truly special. The attention to detail is extraordinary - every tile, every fitting, everything is just perfect. It feels like a private spa.</blockquote>
+                <div class="test-footer">
+                    <div>
+                        <div class="test-author">Victoria MacPherson</div>
+                        <div class="test-loc">Cults, Aberdeen</div>
+                    </div>
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <blockquote>We had a wet room installed in our Victorian townhouse and the result is stunning. The team worked around the quirks of the old building with real skill and patience. A truly first-class service.</blockquote>
+                <div class="test-footer">
+                    <div>
+                        <div class="test-author">Dr Alistair Grant</div>
+                        <div class="test-loc">Rubislaw, Aberdeen</div>
+                    </div>
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <blockquote>From the initial design meeting to the final reveal, Mosaic were professional, creative, and meticulous. They completed three bathrooms in our new-build to an impeccable standard. Cannot recommend them highly enough.</blockquote>
+                <div class="test-footer">
+                    <div>
+                        <div class="test-author">Fraser &amp; Ailsa Henderson</div>
+                        <div class="test-loc">Westhill, Aberdeenshire</div>
+                    </div>
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Ready for Your Dream Bathroom?</h2>
+        <p>Book a free consultation with our design team to discuss your project.</p>
+        <a href="#contact" class="cta-dark-btn">Get in Touch</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Mosaic Bathrooms Ltd<br>
+                15 Thistle Street<br>
+                Aberdeen AB10 1XZ</p>
+                <p style="margin-top: 1rem;">
+                    Tel: 01224 637 295<br>
+                    Mob: 07745 821 364<br>
+                    Email: hello@mosaicbathrooms.co.uk
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li>Bathroom Design</li>
+                    <li>Full Installation</li>
+                    <li>Wet Rooms</li>
+                    <li>Precision Tiling</li>
+                    <li>Underfloor Heating</li>
+                    <li>En-Suite &amp; Cloakrooms</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Areas</h3>
+                <ul>
+                    <li>Aberdeen</li>
+                    <li>Westhill</li>
+                    <li>Stonehaven</li>
+                    <li>Inverurie</li>
+                    <li>Banchory</li>
+                    <li>Ellon</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Mosaic Bathrooms Ltd. All rights reserved. Company Reg. SC487215. Fully Insured.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinnacle Painters | Painting & Decorating in Exeter</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+            color: #3a302a;
+            background: #f8f4ef;
+            line-height: 1.7;
+        }
+
+        :root {
+            --off-white: #f8f4ef;
+            --off-white-dark: #ede6db;
+            --red: #991b1b;
+            --red-light: #b91c1c;
+            --red-pale: #fef2f2;
+            --brown: #3a302a;
+            --brown-dark: #292017;
+            --brown-light: #6b5d52;
+            --cream: #fdfbf7;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--brown-dark);
+            height: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        .nav-brand {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            letter-spacing: 1px;
+        }
+        .nav-brand span {
+            color: var(--red-light);
+            font-weight: 700;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(248,244,239,0.7);
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--off-white); }
+
+        /* Hero - Side Text */
+        .hero {
+            margin-top: 66px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            min-height: 600px;
+        }
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 70px 60px;
+            background: var(--off-white);
+        }
+        .hero-eyebrow {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--red);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .hero-text h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            color: var(--brown-dark);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+        .hero-text h1 em {
+            color: var(--red);
+            font-style: italic;
+        }
+        .hero-text p {
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--brown-light);
+            font-size: 1rem;
+            margin-bottom: 28px;
+            max-width: 440px;
+            line-height: 1.8;
+        }
+        .hero-cta {
+            display: inline-block;
+            padding: 13px 32px;
+            background: var(--red);
+            color: var(--off-white);
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+            align-self: flex-start;
+        }
+        .hero-cta:hover { background: var(--red-light); }
+        .hero-image {
+            background: url('../portfolio-images/painter-02.jpg') center center / cover no-repeat;
+            min-height: 480px;
+        }
+
+        /* Intro */
+        .intro {
+            padding: 90px 50px;
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .intro-ornament {
+            color: var(--red);
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+        .intro h2 {
+            font-size: 1.9rem;
+            font-weight: 400;
+            color: var(--brown-dark);
+            margin-bottom: 16px;
+        }
+        .intro p {
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--brown-light);
+            font-size: 0.98rem;
+            line-height: 1.9;
+        }
+
+        /* Services - 2 Column */
+        .services {
+            padding: 80px 50px;
+            background: var(--cream);
+        }
+        .services-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .services-header h2 {
+            font-size: 1.9rem;
+            font-weight: 400;
+            color: var(--brown-dark);
+            margin-bottom: 8px;
+        }
+        .services-header p {
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--brown-light);
+            font-size: 0.9rem;
+        }
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .svc-card {
+            background: var(--off-white);
+            padding: 36px 30px;
+            border-left: 3px solid var(--red);
+            transition: background 0.3s;
+        }
+        .svc-card:hover { background: var(--red-pale); }
+        .svc-icon-text {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+        .svc-dot {
+            width: 40px;
+            height: 40px;
+            background: var(--red);
+            color: var(--off-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            min-width: 40px;
+        }
+        .svc-card h3 {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--brown-dark);
+        }
+        .svc-card p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.88rem;
+            color: var(--brown-light);
+            line-height: 1.7;
+        }
+
+        /* Promise */
+        .promise {
+            padding: 80px 50px;
+            background: var(--red);
+            color: var(--off-white);
+        }
+        .promise h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+        }
+        .promise-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .promise-item {
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+        }
+        .promise-item h3 {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+        .promise-item p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        .promise-num {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            opacity: 0.4;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 90px 50px;
+            background: var(--off-white);
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 1.9rem;
+            font-weight: 400;
+            color: var(--brown-dark);
+            margin-bottom: 50px;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .test-card {
+            background: var(--cream);
+            padding: 36px;
+            border-bottom: 3px solid var(--red);
+        }
+        .test-card .stars {
+            color: var(--red);
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+        .test-card blockquote {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--brown-light);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        .test-card cite {
+            font-family: 'Segoe UI', sans-serif;
+            font-style: normal;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--red);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 80px 50px;
+            background: var(--brown-dark);
+            text-align: center;
+        }
+        .cta h2 {
+            color: var(--off-white);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 14px;
+        }
+        .cta p {
+            color: var(--brown-light);
+            font-family: 'Segoe UI', sans-serif;
+            margin-bottom: 28px;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 13px 36px;
+            border: 1px solid var(--red);
+            color: var(--red-light);
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .cta a:hover {
+            background: var(--red);
+            color: var(--off-white);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a130e;
+            color: rgba(248,244,239,0.6);
+            padding: 50px;
+        }
+        .ft-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .ft-brand h3 {
+            color: var(--off-white);
+            font-size: 1.15rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .ft-brand h3 span { color: var(--red-light); }
+        .ft-brand p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+        .ft-col h4 {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--red-light);
+            margin-bottom: 12px;
+        }
+        .ft-col p, .ft-col a {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.88rem;
+            color: rgba(248,244,239,0.5);
+            text-decoration: none;
+            display: block;
+            line-height: 2;
+        }
+        .ft-col a:hover { color: var(--off-white); }
+        .ft-bar {
+            max-width: 960px;
+            margin: 24px auto 0;
+            padding-top: 16px;
+            border-top: 1px solid rgba(248,244,239,0.08);
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.78rem;
+            opacity: 0.4;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-text { padding: 50px 30px; }
+            .hero-text h1 { font-size: 2rem; }
+            .svc-grid, .test-grid { grid-template-columns: 1fr; }
+            .ft-grid { grid-template-columns: 1fr; }
+            .promise-grid { flex-direction: column; gap: 24px; }
+            nav { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand"><span>Pinnacle</span> Painters</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#promise">Our Promise</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <div class="hero-eyebrow">Exeter &amp; Devon</div>
+            <h1>Traditional Craftsmanship, <em>Modern Standards</em></h1>
+            <p>Painting and decorating of the highest quality for homes and businesses across Exeter and Devon. Established 2008, built on reputation.</p>
+            <a href="#contact" class="hero-cta">Request a Quote</a>
+        </div>
+        <div class="hero-image" role="img" aria-label="Pinnacle Painters at work"></div>
+    </section>
+
+    <section class="intro">
+        <div class="intro-ornament">&#10070;</div>
+        <h2>The Finish You Deserve</h2>
+        <p>Pinnacle Painters has been providing first-class painting and decorating to homes and commercial properties across Exeter and the wider Devon area for over seventeen years. We believe that good decorating is about patience, preparation and skill. Every surface is properly cleaned, filled and primed before we apply a single coat of paint. The result? A finish that looks beautiful and lasts for years.</p>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p>Complete painting and decorating for homes and businesses</p>
+        </div>
+        <div class="svc-grid">
+            <div class="svc-card">
+                <div class="svc-icon-text">
+                    <div class="svc-dot">&#127912;</div>
+                    <h3>Interior Decorating</h3>
+                </div>
+                <p>Full interior painting including walls, ceilings, doors, skirting boards and window frames. Careful masking and a meticulous finish throughout.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon-text">
+                    <div class="svc-dot">&#127968;</div>
+                    <h3>Exterior Painting</h3>
+                </div>
+                <p>Weather-resistant exterior painting for rendered walls, timber cladding, fascias, soffits and front doors. Proper surface preparation for lasting results.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon-text">
+                    <div class="svc-dot">&#9998;</div>
+                    <h3>Wallpaper Hanging</h3>
+                </div>
+                <p>Professional wallpapering from standard prints to luxury designer papers. Precise pattern matching, clean edges and seamless joins every time.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon-text">
+                    <div class="svc-dot">&#128296;</div>
+                    <h3>Period Property Specialists</h3>
+                </div>
+                <p>Sympathetic decoration of listed buildings, Victorian and Georgian homes. Experience with lime plaster, traditional paints and heritage colours.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon-text">
+                    <div class="svc-dot">&#9733;</div>
+                    <h3>Commercial Decorating</h3>
+                </div>
+                <p>Offices, shops, restaurants and hotels decorated to a high standard with minimal disruption. Flexible hours including evenings and weekends.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon-text">
+                    <div class="svc-dot">&#9632;</div>
+                    <h3>Coving &amp; Plaster Repair</h3>
+                </div>
+                <p>Coving installation, picture rail fitting, crack repair and plaster skim patching to prepare your walls and ceilings for a perfect finish.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="promise" id="promise">
+        <h2>Our Promise to You</h2>
+        <div class="promise-grid">
+            <div class="promise-item">
+                <div class="promise-num">01</div>
+                <h3>Honest Quoting</h3>
+                <p>Clear, detailed quotes with no hidden costs or surprise extras</p>
+            </div>
+            <div class="promise-item">
+                <div class="promise-num">02</div>
+                <h3>Full Preparation</h3>
+                <p>Surfaces properly prepped &mdash; the secret to a lasting finish</p>
+            </div>
+            <div class="promise-item">
+                <div class="promise-num">03</div>
+                <h3>Quality Materials</h3>
+                <p>Trade-quality paints from trusted brands, always</p>
+            </div>
+            <div class="promise-item">
+                <div class="promise-num">04</div>
+                <h3>Spotless Site</h3>
+                <p>We leave your home cleaner than we found it</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Pinnacle painted the exterior of our Victorian terrace in Exeter. The preparation work was thorough &mdash; they spent two days just filling and sanding before any paint went on. The result is superb."</blockquote>
+                <cite>Robert &amp; Ann Crossley, St Leonard's, Exeter</cite>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Absolutely first-class decorators. They wallpapered our dining room with a William Morris print and the pattern matching is flawless. Attention to detail is second to none."</blockquote>
+                <cite>Fiona Blackwood, Topsham</cite>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"We had our entire upstairs redecorated while we were on holiday. Came back to perfect results, furniture all back in place, everything spotless. Wonderful service."</blockquote>
+                <cite>Mark &amp; Joanne Hillier, Heavitree</cite>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"I've been using Pinnacle for my rental properties for years. Reliable, fast, and always a professional finish. They understand landlord deadlines and never let me down."</blockquote>
+                <cite>Stephen Groves, Property Investor, Exeter</cite>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Let's Transform Your Space</h2>
+        <p>Contact us today for a free, no-obligation quotation.</p>
+        <a href="#contact">Get Your Free Quote</a>
+    </section>
+
+    <footer id="contact">
+        <div class="ft-grid">
+            <div class="ft-brand">
+                <h3><span>Pinnacle</span> Painters</h3>
+                <p>Quality painting and decorating across Exeter, Topsham, Crediton, and the wider Devon area since 2008. Fully insured, DBS checked, and passionate about delivering a perfect finish every time.</p>
+            </div>
+            <div class="ft-col">
+                <h4>Contact</h4>
+                <p>01392 841 637</p>
+                <a href="mailto:info@pinnaclepainters.co.uk">info@pinnaclepainters.co.uk</a>
+                <p>Mon &ndash; Fri: 8am &ndash; 5pm</p>
+                <p>Sat: 9am &ndash; 12pm</p>
+            </div>
+            <div class="ft-col">
+                <h4>Address</h4>
+                <p>Pinnacle Painters</p>
+                <p>8 Fore Street</p>
+                <p>Exeter</p>
+                <p>EX4 3AN</p>
+            </div>
+        </div>
+        <div class="ft-bar">
+            &copy; 2026 Pinnacle Painters Ltd. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

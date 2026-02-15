@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thornfield Landscaping | Modern Landscaping in Chester</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+            color: #374151;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        :root {
+            --slate: #374151;
+            --slate-dark: #1f2937;
+            --slate-light: #6b7280;
+            --green: #4ade80;
+            --green-dark: #22c55e;
+            --green-pale: #f0fdf4;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.98);
+            border-bottom: 1px solid var(--gray-200);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 48px;
+            backdrop-filter: blur(12px);
+        }
+        .nav-logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--slate-dark);
+            letter-spacing: -0.5px;
+        }
+        .nav-logo span {
+            color: var(--green-dark);
+            font-weight: 400;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--slate-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--slate-dark); }
+        .nav-cta {
+            padding: 8px 20px;
+            background: var(--green);
+            color: var(--slate-dark) !important;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            font-size: 0.85rem;
+            transition: background 0.3s !important;
+        }
+        .nav-cta:hover { background: var(--green-dark) !important; }
+
+        /* Hero - Large image with floating card */
+        .hero {
+            margin-top: 64px;
+            position: relative;
+            height: 88vh;
+            min-height: 520px;
+            background: url('../portfolio-images/landscaper-05.jpg') center center / cover no-repeat;
+        }
+        .hero-card {
+            position: absolute;
+            bottom: 60px;
+            left: 60px;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+            padding: 44px;
+            max-width: 520px;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .hero-tag {
+            display: inline-block;
+            background: var(--green-pale);
+            color: var(--green-dark);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .hero-card h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--slate-dark);
+            line-height: 1.2;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+        .hero-card p {
+            color: var(--slate-light);
+            font-size: 1rem;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 12px;
+        }
+        .btn-primary {
+            padding: 12px 28px;
+            background: var(--green);
+            color: var(--slate-dark);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover { background: var(--green-dark); }
+        .btn-outline {
+            padding: 12px 28px;
+            border: 1px solid var(--gray-200);
+            color: var(--slate);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: border-color 0.3s;
+        }
+        .btn-outline:hover { border-color: var(--slate); }
+
+        /* Trust bar */
+        .trust {
+            padding: 30px 48px;
+            background: var(--slate-dark);
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+        .trust-item {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.82rem;
+        }
+        .trust-item strong {
+            color: var(--green);
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Services - Clean Grid */
+        .services {
+            padding: 90px 48px;
+            background: var(--white);
+        }
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .services h2 {
+            font-size: 2rem;
+            color: var(--slate-dark);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        .services > p {
+            color: var(--slate-light);
+            font-size: 1rem;
+            margin-bottom: 50px;
+            max-width: 540px;
+        }
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+        }
+        .svc-item {
+            padding: 32px;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .svc-item:hover {
+            border-color: var(--green);
+            box-shadow: 0 4px 20px rgba(74,222,128,0.1);
+        }
+        .svc-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--green-pale);
+            color: var(--green-dark);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+        .svc-item h3 {
+            font-size: 1rem;
+            color: var(--slate-dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .svc-item p {
+            color: var(--slate-light);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* About */
+        .about {
+            padding: 90px 48px;
+            background: var(--gray-50);
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-text { max-width: 500px; }
+        .about-text h2 {
+            font-size: 1.8rem;
+            color: var(--slate-dark);
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+        .about-text p {
+            color: var(--slate-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .af-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--slate);
+        }
+        .af-check {
+            width: 22px;
+            height: 22px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: var(--slate-dark);
+            min-width: 22px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 90px 48px;
+            background: var(--white);
+        }
+        .testimonials h2 {
+            font-size: 2rem;
+            color: var(--slate-dark);
+            margin-bottom: 50px;
+            letter-spacing: -0.5px;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+        }
+        .test-card {
+            padding: 32px;
+            background: var(--gray-50);
+            border-radius: 8px;
+            border: 1px solid var(--gray-100);
+        }
+        .test-card .stars {
+            color: var(--green);
+            margin-bottom: 14px;
+            font-size: 0.9rem;
+        }
+        .test-card blockquote {
+            font-size: 0.92rem;
+            color: var(--slate);
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-style: normal;
+        }
+        .test-author {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--slate-dark);
+        }
+        .test-location {
+            font-size: 0.8rem;
+            color: var(--slate-light);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 80px 48px;
+            background: var(--slate-dark);
+            text-align: center;
+        }
+        .cta h2 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        .cta p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 28px;
+            font-size: 1rem;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--green);
+            color: var(--slate-dark);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .cta a:hover { background: var(--green-dark); }
+
+        /* Footer */
+        footer {
+            padding: 50px 48px;
+            background: #111827;
+            color: rgba(255,255,255,0.6);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1100px;
+        }
+        .ft-brand h3 {
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        .ft-brand p {
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+        .ft-col h4 {
+            font-size: 0.75rem;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        .ft-col p, .ft-col a {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            display: block;
+            line-height: 2;
+        }
+        .ft-col a:hover { color: var(--green); }
+        .ft-bar {
+            max-width: 1100px;
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.78rem;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .hero-card { left: 20px; right: 20px; bottom: 30px; padding: 28px; }
+            .hero-card h1 { font-size: 1.8rem; }
+            .svc-grid, .test-grid { grid-template-columns: 1fr; }
+            .about { flex-direction: column; padding: 60px 30px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .trust { flex-wrap: wrap; gap: 30px; }
+            .hero-btns { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">Thornfield <span>Landscaping</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-card">
+            <div class="hero-tag">Professional Landscaping</div>
+            <h1>Transform Your Outdoor Space</h1>
+            <p>Expert landscaping services across Chester and Cheshire. Clean designs, quality materials, and craftsmanship you can rely on.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-primary">Get a Free Quote</a>
+                <a href="#services" class="btn-outline">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust">
+        <div class="trust-item"><strong>12+</strong>Years Experience</div>
+        <div class="trust-item"><strong>380+</strong>Projects Completed</div>
+        <div class="trust-item"><strong>4.9</strong>Google Rating</div>
+        <div class="trust-item"><strong>100%</strong>Fully Insured</div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="section-label">What We Do</div>
+        <h2>Our Services</h2>
+        <p>From garden design to complete landscape construction, we handle every aspect of your outdoor project.</p>
+        <div class="svc-grid">
+            <div class="svc-item">
+                <div class="svc-icon">&#127807;</div>
+                <h3>Garden Design &amp; Build</h3>
+                <p>Complete garden transformations from concept to completion. We create outdoor spaces that match your lifestyle and enhance your property.</p>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#9632;</div>
+                <h3>Patios &amp; Paving</h3>
+                <p>Porcelain, natural stone and block paving installed with proper sub-base preparation and drainage for a finish that lasts.</p>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#128296;</div>
+                <h3>Fencing &amp; Boundaries</h3>
+                <p>Quality close-board, featheredge and composite fencing. Sturdy timber gates and bespoke boundary solutions.</p>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#127795;</div>
+                <h3>Turfing &amp; Lawn Care</h3>
+                <p>Fresh turf supply and laying, lawn levelling, and seasonal maintenance programmes for a pristine green space.</p>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#128167;</div>
+                <h3>Drainage Solutions</h3>
+                <p>Land drainage, soakaways and grading to resolve waterlogging issues and protect your garden investment.</p>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#9733;</div>
+                <h3>Decking &amp; Pergolas</h3>
+                <p>Composite and hardwood decking, custom pergolas and garden structures that create defined outdoor living spaces.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-text">
+            <div class="section-label">About Us</div>
+            <h2>Landscaping Done Properly</h2>
+            <p>Thornfield Landscaping is a family-run business based in Chester. We've built our reputation on clean workmanship, honest pricing and genuine care for the outdoor spaces we create.</p>
+            <p>Every job is managed by company director Tom Thornfield, who oversees each project personally from start to finish. No subcontractors, no shortcuts, no surprises.</p>
+            <div class="about-features">
+                <div class="af-item"><div class="af-check">&#10003;</div>Fully insured</div>
+                <div class="af-item"><div class="af-check">&#10003;</div>Free quotes</div>
+                <div class="af-item"><div class="af-check">&#10003;</div>No subcontractors</div>
+                <div class="af-item"><div class="af-check">&#10003;</div>Tidy site policy</div>
+                <div class="af-item"><div class="af-check">&#10003;</div>Waste removed</div>
+                <div class="af-item"><div class="af-check">&#10003;</div>Written guarantee</div>
+            </div>
+        </div>
+        <div><!-- Placeholder for symmetry --></div>
+    </section>
+
+    <section class="testimonials" id="reviews">
+        <h2>What Our Clients Say</h2>
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Thornfield completely transformed our back garden. New patio, fencing, and turf &mdash; all done in a week. The team were friendly, professional and left the site spotless every evening."</blockquote>
+                <div class="test-author">Paul &amp; Lisa Hargreaves</div>
+                <div class="test-location">Handbridge, Chester</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Excellent communication from start to finish. Tom talked us through every option and the final result is better than we imagined. Our neighbours are already asking for his number."</blockquote>
+                <div class="test-author">Rachel Simmons</div>
+                <div class="test-location">Vicars Cross, Chester</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Third time we've used Thornfield and they never disappoint. This time it was a complete patio replacement in porcelain &mdash; the finish is immaculate. Highly recommend."</blockquote>
+                <div class="test-author">Derek &amp; Jean Cartwright</div>
+                <div class="test-location">Hoole, Chester</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Get Started?</h2>
+        <p>Get in touch for a free, no-obligation quote. We cover Chester and all of Cheshire.</p>
+        <a href="#contact">Request Your Free Quote</a>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="ft-brand">
+                <h3>Thornfield Landscaping</h3>
+                <p>Professional landscaping services across Chester and Cheshire. Family run, fully insured, and committed to quality. Free quotes and honest advice on every project.</p>
+            </div>
+            <div class="ft-col">
+                <h4>Contact</h4>
+                <p>01244 681 204</p>
+                <a href="mailto:info@thornfieldlandscaping.co.uk">info@thornfieldlandscaping.co.uk</a>
+                <p>Mon &ndash; Fri: 8am &ndash; 5pm</p>
+                <p>Sat: 9am &ndash; 12pm</p>
+            </div>
+            <div class="ft-col">
+                <h4>Address</h4>
+                <p>Unit 3, Brook Lane</p>
+                <p>Boughton Heath</p>
+                <p>Chester</p>
+                <p>CH3 5QR</p>
+            </div>
+        </div>
+        <div class="ft-bar">
+            &copy; 2026 Thornfield Landscaping Ltd. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whitfield Construction | Builders in York</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #444;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c2c2c;
+            padding: 0 3rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        nav .logo span {
+            color: #0d9488;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0d9488;
+        }
+
+        /* Hero - Full Screen */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('../portfolio-images/builder-02.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 6rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to top,
+                rgba(44, 44, 44, 0.95) 0%,
+                rgba(44, 44, 44, 0.4) 50%,
+                rgba(44, 44, 44, 0.2) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 4rem;
+            max-width: 700px;
+        }
+
+        .hero-content .tag {
+            display: inline-block;
+            background: #0d9488;
+            color: #fff;
+            padding: 6px 18px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.25rem;
+            border-radius: 2px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #bbb;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .btn-teal {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #0d9488;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 3px;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-teal:hover {
+            background: #0a7b71;
+        }
+
+        /* Section Utilities */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: #777;
+            font-size: 1.05rem;
+        }
+
+        .teal-bar {
+            width: 50px;
+            height: 4px;
+            background: #0d9488;
+            margin: 1rem auto 0;
+        }
+
+        /* About */
+        .about {
+            padding: 5rem 3rem;
+            background: #f9f9f9;
+        }
+
+        .about-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner p {
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Services - Alternating Rows */
+        .services {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            align-items: start;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .service-row:hover {
+            background: #f0fdfa;
+        }
+
+        .service-row:nth-child(even) {
+            direction: rtl;
+        }
+
+        .service-row:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .service-row .icon-box {
+            width: 80px;
+            height: 80px;
+            background: #2c2c2c;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #0d9488;
+            flex-shrink: 0;
+        }
+
+        .service-row .text h3 {
+            font-size: 1.3rem;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-row .text p {
+            font-size: 0.95rem;
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #2c2c2c;
+            color: #fff;
+        }
+
+        .testimonials .section-header h2 {
+            color: #fff;
+        }
+
+        .testimonials .section-header p {
+            color: #999;
+        }
+
+        .testimonials .teal-bar {
+            background: #0d9488;
+        }
+
+        .testimonial-row {
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            flex: 1;
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 6px;
+            border-bottom: 3px solid #0d9488;
+        }
+
+        .testimonial-card .stars {
+            color: #0d9488;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .testimonial-card .location {
+            font-size: 0.82rem;
+            color: #0d9488;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 3.5rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #0d9488;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content { padding: 0 2rem; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .service-row { grid-template-columns: 1fr; }
+            .service-row:nth-child(even) { direction: ltr; }
+            .testimonial-row { flex-direction: column; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Whitfield <span>Construction</span></div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="tag">York &amp; North Yorkshire</div>
+            <h1>Building With Purpose &amp; Precision</h1>
+            <p>Whitfield Construction delivers quality building services across York and North Yorkshire. From extensions to full new builds, we bring your vision to life.</p>
+            <a href="#contact" class="btn-teal">Start Your Project</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-header">
+            <h2>About Whitfield Construction</h2>
+            <div class="teal-bar"></div>
+        </div>
+        <div class="about-inner">
+            <p>Whitfield Construction is a York-based building company with over 20 years of experience in residential and commercial construction. Founded by Paul Whitfield in 2004, we've grown from a small team to a well-established company with a reputation for reliability and quality.</p>
+            <p>We manage projects from start to finish, coordinating all trades and ensuring every build meets the highest standards. We're fully insured, CITB registered, and proud members of the Federation of Master Builders.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive construction solutions</p>
+            <div class="teal-bar"></div>
+        </div>
+
+        <div class="service-row">
+            <div class="icon-box">&#x1f3e0;</div>
+            <div class="text">
+                <h3>Home Extensions</h3>
+                <p>Single and double storey extensions designed and built to transform your living space. We manage the entire project including planning applications, building regulations, and all finishing trades.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="icon-box">&#x1f3d7;</div>
+            <div class="text">
+                <h3>New Build Homes</h3>
+                <p>Complete new build construction from foundations to handover. We work with your architect to deliver bespoke homes built to the highest specifications and energy efficiency standards.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="icon-box">&#x1f527;</div>
+            <div class="text">
+                <h3>Renovations &amp; Refurbishments</h3>
+                <p>Full property renovations, including structural alterations, reconfigured layouts, and complete internal refurbishments. We breathe new life into tired properties.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="icon-box">&#x1f3db;</div>
+            <div class="text">
+                <h3>Loft Conversions</h3>
+                <p>Dormer, hip-to-gable, and Velux loft conversions that add valuable living space. Full structural work, insulation, and finishing to create rooms you'll love.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="icon-box">&#x1f3e2;</div>
+            <div class="text">
+                <h3>Commercial Fit-Outs</h3>
+                <p>Office renovations, shop fit-outs, and commercial building works. We deliver on time and minimise disruption to your business operations.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="icon-box">&#x1f6e0;</div>
+            <div class="text">
+                <h3>Structural Repairs</h3>
+                <p>Subsidence repairs, underpinning, lintel replacement, and structural wall modifications. Fully engineered solutions with professional project management.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>Client Feedback</h2>
+            <p>What our customers say about our work</p>
+            <div class="teal-bar"></div>
+        </div>
+        <div class="testimonial-row">
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Whitfield built our two-storey extension and managed the whole project brilliantly. Paul kept us informed every step of the way, the tradesmen were all excellent, and they finished right on schedule. The quality of the build is superb."</div>
+                <div class="author">Andrew and Claire Mitchell</div>
+                <div class="location">Bishopthorpe, York</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"We hired Whitfield to renovate our Victorian terraced house, including knocking through walls and a full rewire. They were professional, tidy, and the finished result is exactly what we envisioned. Highly recommended."</div>
+                <div class="author">Emma Barrington</div>
+                <div class="location">The Groves, York</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Used Whitfield for a loft conversion and the transformation is incredible. From the initial survey to the final snag list, everything was handled efficiently. The attention to detail throughout was impressive."</div>
+                <div class="author">Tom Greenfield</div>
+                <div class="location">Acomb, York</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Whitfield Construction</h3>
+                <p>Quality building services across York and North Yorkshire. Fully insured. FMB member. Over 20 years' experience in residential and commercial construction.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#testimonials">Client Reviews</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Details</h3>
+                <p>Unit 8, Elvington Industrial Estate<br>York, YO41 4AR</p>
+                <p>Tel: 01904 637 215</p>
+                <p>info@whitfieldconstruction.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Whitfield Construction Ltd. All rights reserved. Reg. No. 06193847
+        </div>
+    </footer>
+
+</body>
+</html>

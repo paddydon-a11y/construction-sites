@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridgewater Builders | Premium Construction in Bath</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            background: #0f2942;
+            padding: 0 3rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+
+        nav .logo {
+            color: #c9a84c;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #8faabe;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #c9a84c;
+        }
+
+        /* Hero with Stats Bar */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 85vh;
+            min-height: 550px;
+            background: url('../portfolio-images/builder-03.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 72px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 41, 66, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            max-width: 750px;
+            padding: 0 2rem;
+        }
+
+        .hero-content .gold-line {
+            width: 60px;
+            height: 3px;
+            background: #c9a84c;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-content h1 span {
+            color: #c9a84c;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #a8c4dc;
+            margin-bottom: 2rem;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 14px 42px;
+            background: #c9a84c;
+            color: #0f2942;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 3px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-gold:hover {
+            background: #dbbf5e;
+            transform: translateY(-2px);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: #0f2942;
+            padding: 2.5rem 2rem;
+            border-top: 3px solid #c9a84c;
+        }
+
+        .stats-inner {
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #c9a84c;
+        }
+
+        .stat-item .label {
+            font-size: 0.85rem;
+            color: #8faabe;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 0.25rem;
+        }
+
+        /* About */
+        .about {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .about-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner h2 {
+            font-size: 2.2rem;
+            color: #0f2942;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-inner h2 span {
+            color: #c9a84c;
+        }
+
+        .about-inner p {
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .gold-divider {
+            width: 50px;
+            height: 3px;
+            background: #c9a84c;
+            margin: 1.5rem auto;
+        }
+
+        /* Services - 3 Col with Icons */
+        .services {
+            padding: 5rem 2rem;
+            background: #f6f8fa;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .services-header h2 {
+            font-size: 2.2rem;
+            color: #0f2942;
+        }
+
+        .services-header p {
+            color: #888;
+            font-size: 1.05rem;
+            margin-top: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top-color: #c9a84c;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #0f2942;
+            color: #c9a84c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            color: #0f2942;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #0f2942;
+            color: #fff;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        .testimonials-header p {
+            color: #6f95b4;
+        }
+
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .test-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            padding: 2rem;
+            border-radius: 6px;
+        }
+
+        .test-card .stars {
+            color: #c9a84c;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .test-card .quote {
+            font-style: italic;
+            color: #a8c4dc;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .test-card .author {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .test-card .location {
+            font-size: 0.82rem;
+            color: #c9a84c;
+        }
+
+        /* Footer */
+        footer {
+            background: #091c2f;
+            color: #6f95b4;
+            padding: 4rem 2rem 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: #c9a84c;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #6f95b4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #c9a84c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+            font-size: 0.8rem;
+            color: #4a6e8a;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .stats-inner { flex-direction: column; gap: 1.5rem; }
+            .services-grid,
+            .testimonial-cards { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><span>Bridgewater</span> Builders</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="gold-line"></div>
+            <h1>Premium <span>Building</span> Services in Bath</h1>
+            <p>Delivering exceptional construction projects across Bath and Somerset for over 15 years. Quality craftsmanship, reliable project management, outstanding results.</p>
+            <a href="#contact" class="btn-gold">Request a Consultation</a>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <div class="number">15+</div>
+                <div class="label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">400+</div>
+                <div class="label">Projects Delivered</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">98%</div>
+                <div class="label">Client Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">35</div>
+                <div class="label">Team Members</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2>Building <span>Excellence</span> in Bath</h2>
+            <div class="gold-divider"></div>
+            <p>Bridgewater Builders was established in 2010 by directors Steven Carr and James McNeil. With a combined 40 years of experience in the construction industry, they set out to create a building company that prioritises quality, communication, and reliability.</p>
+            <p>Based in Bath, we specialise in high-end residential construction, sympathetic renovations of period properties, and bespoke new builds. Our team of 35 skilled tradesmen and project managers ensures every project is delivered to the highest standards.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive building services tailored to your vision</p>
+            <div class="gold-divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#x1f3e0;</div>
+                <h3>Extensions &amp; Additions</h3>
+                <p>Beautifully designed extensions that complement Bath's distinctive Georgian and Victorian architecture. Full project management from planning to completion.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f3d7;</div>
+                <h3>New Build Homes</h3>
+                <p>Bespoke new homes built to your exact specifications. Energy-efficient designs with premium materials and finishes throughout.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f3db;</div>
+                <h3>Period Renovations</h3>
+                <p>Sensitive renovation of listed and period properties. We understand Bath stone, traditional construction methods, and conservation area requirements.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f527;</div>
+                <h3>Loft Conversions</h3>
+                <p>Maximise your living space with a professionally designed loft conversion. Full structural engineering, insulation, and high-quality finishing.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f6e0;</div>
+                <h3>Basement Conversions</h3>
+                <p>Transform unused basement space into luxurious living areas. Waterproofing, structural works, and complete fit-out services.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f3e2;</div>
+                <h3>Commercial Projects</h3>
+                <p>Office renovations, retail fit-outs, and commercial refurbishments. Professional project management with minimal business disruption.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by homeowners and professionals across Bath and Somerset</p>
+        </div>
+        <div class="testimonial-cards">
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Bridgewater completely renovated our Georgian townhouse and the results are stunning. They understood the character of the property and every detail has been handled with care. A truly professional outfit."</div>
+                <div class="author">Victoria and Hugh Pemberton</div>
+                <div class="location">Royal Crescent, Bath</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Steven and his team managed our new build from start to finish. The communication throughout was excellent, they stayed within budget, and the build quality is exceptional. We couldn't be happier with our new home."</div>
+                <div class="author">Charlotte Ainsworth</div>
+                <div class="location">Bathampton, Bath</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"As an architect, I've worked with many builders over the years. Bridgewater are among the best. Their attention to detail, reliability, and willingness to solve problems sets them apart. A pleasure to collaborate with."</div>
+                <div class="author">Philip Rhodes, RIBA</div>
+                <div class="location">Rhodes Architecture, Bath</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Bridgewater Builders</h3>
+                <p>Premium building services across Bath and Somerset since 2010. FMB member, fully insured, and committed to delivering excellence on every project.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Get in Touch</h3>
+                <p>12 Pulteney Bridge Road<br>Bath, BA2 4DS</p>
+                <p>Tel: 01225 463 812</p>
+                <p>info@bridgewaterbuilders.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Bridgewater Builders Ltd. Registered in England &amp; Wales. No. 07825194
+        </div>
+    </footer>
+
+</body>
+</html>

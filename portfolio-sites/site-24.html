@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eden Garden Design | Luxury Gardens in Harrogate</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Garamond', 'Georgia', serif;
+            color: #1c1c1c;
+            background: #fcfbf8;
+            line-height: 1.7;
+        }
+
+        :root {
+            --emerald: #065f46;
+            --emerald-light: #0d9668;
+            --emerald-pale: #ecfdf5;
+            --gold: #d4a843;
+            --gold-light: #e8c96d;
+            --gold-dark: #b08a2e;
+            --off-white: #fcfbf8;
+            --off-white-dark: #f2efe8;
+            --text: #1c1c1c;
+            --text-light: #5c5c5c;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--emerald);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        .nav-logo {
+            color: var(--off-white);
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+        }
+        .nav-logo span { color: var(--gold); }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+        .nav-links a {
+            color: rgba(252,251,248,0.8);
+            text-decoration: none;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Hero - Centered */
+        .hero {
+            margin-top: 70px;
+            position: relative;
+            height: 90vh;
+            min-height: 550px;
+            background: url('../portfolio-images/landscaper-04.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(6,95,70,0.45);
+        }
+        .hero-content {
+            position: relative;
+            max-width: 700px;
+            padding: 0 30px;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 20px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .hero-content h1 {
+            color: #fff;
+            font-size: 3.5rem;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+        .hero-content p {
+            color: rgba(255,255,255,0.85);
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 42px;
+            background: var(--gold);
+            color: var(--emerald);
+            text-decoration: none;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .hero-btn:hover { background: var(--gold-light); }
+
+        /* Intro */
+        .intro {
+            padding: 100px 50px;
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .intro-ornament {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .intro h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--emerald);
+            margin-bottom: 18px;
+        }
+        .intro p {
+            font-family: 'Helvetica Neue', sans-serif;
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 50px 100px;
+            background: var(--emerald);
+        }
+        .services h2 {
+            text-align: center;
+            color: var(--off-white);
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .services-sub {
+            text-align: center;
+            color: var(--gold);
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        .svc-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(212,168,67,0.2);
+            padding: 40px 30px;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .svc-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+        .svc-icon {
+            width: 56px;
+            height: 56px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin: 0 auto 20px;
+        }
+        .svc-card h3 {
+            color: var(--off-white);
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .svc-card p {
+            font-family: 'Helvetica Neue', sans-serif;
+            color: rgba(252,251,248,0.6);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* Process Timeline */
+        .timeline {
+            padding: 100px 50px;
+            background: var(--off-white);
+        }
+        .timeline h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--emerald);
+            margin-bottom: 60px;
+        }
+        .timeline-track {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .timeline-track::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gold);
+        }
+        .tl-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 44px;
+            align-items: flex-start;
+        }
+        .tl-dot {
+            width: 58px;
+            height: 58px;
+            min-width: 58px;
+            background: var(--emerald);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        .tl-content h3 {
+            font-size: 1.1rem;
+            color: var(--emerald);
+            font-weight: 400;
+            margin-bottom: 6px;
+        }
+        .tl-content p {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 50px;
+            background: var(--off-white-dark);
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--emerald);
+            margin-bottom: 60px;
+        }
+        .test-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-card {
+            text-align: center;
+            padding: 50px;
+            background: #fff;
+            border: 1px solid var(--off-white-dark);
+            margin-bottom: 30px;
+        }
+        .test-card .quote-mark {
+            color: var(--gold);
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .test-card blockquote {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .test-card cite {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--emerald);
+            letter-spacing: 1px;
+        }
+        .test-stars {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 100px 50px;
+            background: var(--emerald);
+            text-align: center;
+        }
+        .cta h2 {
+            color: var(--off-white);
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 14px;
+        }
+        .cta p {
+            color: rgba(252,251,248,0.7);
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 15px 42px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .cta a:hover {
+            background: var(--gold);
+            color: var(--emerald);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: var(--off-white);
+            padding: 50px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        .ft-brand h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .ft-brand h3 span { color: var(--gold); }
+        .ft-brand p {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.88rem;
+            opacity: 0.5;
+            line-height: 1.8;
+        }
+        .ft-col h4 {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .ft-col p, .ft-col a {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.88rem;
+            color: rgba(252,251,248,0.6);
+            text-decoration: none;
+            display: block;
+            line-height: 2;
+        }
+        .ft-col a:hover { color: var(--gold); }
+        .ft-bar {
+            max-width: 1080px;
+            margin: 28px auto 0;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            text-align: center;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.78rem;
+            opacity: 0.4;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.4rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            nav { padding: 0 20px; }
+            .nav-links { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">Eden <span>Garden Design</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Luxury Garden Design</div>
+            <h1>Gardens of Distinction</h1>
+            <p>Bespoke garden design for distinguished homes across Harrogate, the Yorkshire Dales, and beyond. Where vision meets craftsmanship.</p>
+            <a href="#contact" class="hero-btn">Request a Consultation</a>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="intro-ornament">&#10044;</div>
+        <h2>The Art of Garden Design</h2>
+        <p>Eden Garden Design creates exquisite outdoor spaces for discerning homeowners across North Yorkshire. Led by principal designer Katherine Stirling, our studio brings together horticultural expertise, architectural sensitivity, and an unwavering commitment to quality. Every garden we design is a unique response to its setting, its owners, and the landscape that surrounds it.</p>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Expertise</h2>
+        <p class="services-sub">Comprehensive garden design services</p>
+        <div class="services-grid">
+            <div class="svc-card">
+                <div class="svc-icon">&#9998;</div>
+                <h3>Full Garden Design</h3>
+                <p>Comprehensive design service from concept through to detailed planting plans, material specifications and construction drawings.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#127807;</div>
+                <h3>Planting Design</h3>
+                <p>Expertly curated plant palettes that provide year-round structure, colour and fragrance suited to your garden's conditions.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#128167;</div>
+                <h3>Water Gardens</h3>
+                <p>Formal reflecting pools, naturalistic ponds, cascading water features and contemporary rills designed to perfection.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#9733;</div>
+                <h3>Outdoor Living</h3>
+                <p>Garden rooms, covered dining areas, fire pits and entertaining terraces that extend your home into the landscape.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#128296;</div>
+                <h3>Hard Landscaping</h3>
+                <p>Yorkstone terraces, handmade brick paths, dry stone walling and bespoke metalwork to the highest standard.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#127795;</div>
+                <h3>Mature Planting</h3>
+                <p>Specimen tree sourcing, semi-mature planting and instant hedging to create established gardens from the outset.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline" id="process">
+        <h2>Our Design Process</h2>
+        <div class="timeline-track">
+            <div class="tl-item">
+                <div class="tl-dot">01</div>
+                <div class="tl-content">
+                    <h3>Initial Consultation</h3>
+                    <p>We visit your property to understand your aspirations, assess the site and discuss the scope and budget for your garden project.</p>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot">02</div>
+                <div class="tl-content">
+                    <h3>Concept Design</h3>
+                    <p>We develop initial design concepts with mood boards, sketch plans and material samples that capture the vision for your garden.</p>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot">03</div>
+                <div class="tl-content">
+                    <h3>Detailed Design</h3>
+                    <p>Full technical drawings, planting plans, lighting schemes and construction specifications are prepared for the build team.</p>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot">04</div>
+                <div class="tl-content">
+                    <h3>Construction &amp; Planting</h3>
+                    <p>We oversee every stage of construction with our trusted landscaping partners, ensuring the design is realised exactly as envisioned.</p>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot">05</div>
+                <div class="tl-content">
+                    <h3>Aftercare &amp; Maturation</h3>
+                    <p>We provide a detailed maintenance guide and seasonal garden care visits to ensure your garden flourishes for years to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2>Client Testimonials</h2>
+        <div class="test-slider">
+            <div class="test-card">
+                <div class="quote-mark">&ldquo;</div>
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Eden Garden Design understood our vision from the very first meeting. The formal parterre they created at the front of our house is simply stunning, and the walled garden has become the most peaceful spot imaginable.</blockquote>
+                <cite>Victoria &amp; Charles Beaumont, Harrogate</cite>
+            </div>
+            <div class="test-card">
+                <div class="quote-mark">&ldquo;</div>
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Katherine's eye for detail is extraordinary. From the choice of York stone to the selection of roses, every element of our garden feels considered and cohesive. It's a genuine work of art.</blockquote>
+                <cite>Sir William &amp; Lady Thornton, Ripon</cite>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Begin Your Garden Journey</h2>
+        <p>Every exceptional garden begins with a conversation. We would love to hear your vision.</p>
+        <a href="#contact">Arrange a Consultation</a>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="ft-brand">
+                <h3>Eden <span>Garden Design</span></h3>
+                <p>Luxury garden design for distinguished homes across Harrogate, North Yorkshire and the surrounding counties. RHS Chelsea Flower Show contributors. Member of the Society of Garden Designers.</p>
+            </div>
+            <div class="ft-col">
+                <h4>Contact</h4>
+                <p>01423 538 291</p>
+                <a href="mailto:studio@edengardendesign.co.uk">studio@edengardendesign.co.uk</a>
+                <p>Mon &ndash; Fri: 9am &ndash; 5pm</p>
+                <p>Weekends: By arrangement</p>
+            </div>
+            <div class="ft-col">
+                <h4>Studio</h4>
+                <p>The Coach House</p>
+                <p>14 Montpellier Parade</p>
+                <p>Harrogate</p>
+                <p>HG1 2TG</p>
+            </div>
+        </div>
+        <div class="ft-bar">
+            &copy; 2026 Eden Garden Design Ltd. All rights reserved. Registered in England &amp; Wales No. 09284731.
+        </div>
+    </footer>
+
+</body>
+</html>

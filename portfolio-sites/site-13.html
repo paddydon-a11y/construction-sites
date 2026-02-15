@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Brickwork | Traditional &amp; Modern Brickwork in Oxford</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #3a3a3a;
+            line-height: 1.7;
+            background: #f5f0e8;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2d4a3e;
+            padding: 0 3rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 68px;
+        }
+
+        nav .logo {
+            color: #f5f0e8;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: Georgia, serif;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span {
+            color: #8fb8a4;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #b8d4c6;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-family: 'Segoe UI', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+        }
+
+        /* Hero - Centered Text Over Image */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            min-height: 550px;
+            background: url('../portfolio-images/bricklayer-04.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 68px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(45, 74, 62, 0.5) 0%,
+                rgba(45, 74, 62, 0.7) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #f5f0e8;
+            max-width: 700px;
+            padding: 0 2rem;
+        }
+
+        .hero-content .subtitle {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #8fb8a4;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #d4e0d9;
+            margin-bottom: 2rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: transparent;
+            color: #f5f0e8;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid #8fb8a4;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-btn:hover {
+            background: #8fb8a4;
+            color: #2d4a3e;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: #f5f0e8;
+        }
+
+        .about-inner {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner h2 {
+            font-size: 2.2rem;
+            color: #2d4a3e;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-inner p {
+            font-family: 'Segoe UI', sans-serif;
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .leaf-divider {
+            margin: 2rem auto;
+            text-align: center;
+            color: #8fb8a4;
+            font-size: 1.5rem;
+        }
+
+        /* Services - Masonry Style */
+        .services {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-header h2 {
+            font-size: 2.2rem;
+            color: #2d4a3e;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .services-header p {
+            font-family: 'Segoe UI', sans-serif;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        .services-masonry {
+            max-width: 1000px;
+            margin: 0 auto;
+            columns: 3;
+            column-gap: 1.5rem;
+        }
+
+        .masonry-card {
+            break-inside: avoid;
+            background: #f5f0e8;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+            border-top: 3px solid #2d4a3e;
+        }
+
+        .masonry-card:nth-child(even) {
+            padding: 2.5rem 2rem;
+        }
+
+        .masonry-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .masonry-card h3 {
+            font-size: 1.15rem;
+            color: #2d4a3e;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .masonry-card p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #2d4a3e;
+            color: #f5f0e8;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .testimonials-header p {
+            color: #8fb8a4;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .testimonials-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .testimonial-item {
+            background: rgba(255,255,255,0.06);
+            padding: 2.5rem;
+            border-radius: 4px;
+            border-left: 4px solid #8fb8a4;
+        }
+
+        .testimonial-item .quote-mark {
+            font-size: 3rem;
+            color: #8fb8a4;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-item .quote {
+            font-style: italic;
+            color: #d4e0d9;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-item .author {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            color: #f5f0e8;
+            font-style: normal;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-item .location {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.82rem;
+            color: #8fb8a4;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e352c;
+            color: #8fb8a4;
+            padding: 3.5rem 2rem 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: #f5f0e8;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .footer-col p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: #7aa192;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            font-family: 'Segoe UI', sans-serif;
+            color: #7aa192;
+            text-decoration: none;
+            font-size: 0.88rem;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #f5f0e8;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.8rem;
+            color: #5e8a78;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h1 { font-size: 2rem; }
+            .services-masonry { columns: 1; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Heritage <span>Brickwork</span></div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="subtitle">Oxford's Finest Brickwork</div>
+            <h1>Preserving the Past, Building the Future</h1>
+            <p>Specialists in traditional and contemporary brickwork across Oxfordshire. Bringing craftsmanship and care to every project since 1995.</p>
+            <a href="#contact" class="hero-btn">Enquire Today</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2>Craftsmanship Rooted in Tradition</h2>
+            <p>Heritage Brickwork was established in 1995 by master craftsman Robert Simmonds. Based in the heart of Oxford, we specialise in both period restoration and modern construction, bringing the same meticulous attention to detail to every project.</p>
+            <p>Our team of eight experienced bricklayers has worked on listed buildings, college restorations, and contemporary new builds across Oxfordshire. We understand the unique requirements of working in a city with such rich architectural heritage.</p>
+            <div class="leaf-divider">&#9883;</div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>Our Expertise</h2>
+            <p>Traditional skills for modern and period properties</p>
+        </div>
+        <div class="services-masonry">
+            <div class="masonry-card">
+                <div class="icon">&#x1f3db;</div>
+                <h3>Period Restoration</h3>
+                <p>Sensitive restoration of listed and period buildings using traditional materials and techniques. We work with conservation officers to ensure all work meets heritage requirements.</p>
+            </div>
+            <div class="masonry-card">
+                <div class="icon">&#x1f3e0;</div>
+                <h3>Residential Extensions</h3>
+                <p>Beautiful extensions that complement your existing property. Careful brick matching and attention to architectural detail.</p>
+            </div>
+            <div class="masonry-card">
+                <div class="icon">&#x1f9f1;</div>
+                <h3>Decorative Brickwork</h3>
+                <p>Ornamental features, corbelling, arches, and decorative bond patterns. We bring artistic flair to functional brickwork, creating beautiful focal points.</p>
+            </div>
+            <div class="masonry-card">
+                <div class="icon">&#x1f527;</div>
+                <h3>Lime Mortar Repointing</h3>
+                <p>Specialist repointing using traditional lime mortars for period properties. We match existing mortar profiles and colours for an authentic finish.</p>
+            </div>
+            <div class="masonry-card">
+                <div class="icon">&#x1f3d7;</div>
+                <h3>New Build Projects</h3>
+                <p>Complete brickwork for new residential and commercial developments. We deliver consistent quality across projects of all sizes.</p>
+            </div>
+            <div class="masonry-card">
+                <div class="icon">&#x1f3e1;</div>
+                <h3>Garden Features</h3>
+                <p>Walls, pillars, barbecues, and bespoke garden structures. Crafted to enhance your outdoor living space.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>What People Say</h2>
+            <p>Trusted by homeowners and professionals across Oxfordshire</p>
+        </div>
+        <div class="testimonials-list">
+            <div class="testimonial-item">
+                <div class="quote-mark">&ldquo;</div>
+                <div class="quote">Heritage Brickwork restored the front elevation of our Grade II listed cottage and the result is simply wonderful. Robert and his team used traditional lime mortar and sourced reclaimed bricks that match perfectly. You'd never know any work had been done.</div>
+                <div class="author">Catherine Ashworth</div>
+                <div class="location">Jericho, Oxford</div>
+            </div>
+            <div class="testimonial-item">
+                <div class="quote-mark">&ldquo;</div>
+                <div class="quote">We commissioned Heritage to build a large garden wall with decorative pillars and they exceeded all our expectations. The craftsmanship is outstanding and the whole team were a pleasure to work with. Cannot recommend them highly enough.</div>
+                <div class="author">Dr Michael and Anne Thornton</div>
+                <div class="location">Summertown, Oxford</div>
+            </div>
+            <div class="testimonial-item">
+                <div class="quote-mark">&ldquo;</div>
+                <div class="quote">As an architect, I need bricklayers I can rely on for quality. Heritage Brickwork consistently delivers excellent results, even on our most challenging projects. Their understanding of both traditional and modern techniques is genuinely impressive.</div>
+                <div class="author">Jonathan Parry, RIBA</div>
+                <div class="location">Parry Associates Architects, Oxford</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Heritage Brickwork</h3>
+                <p>Master craftsmen serving Oxford and Oxfordshire since 1995. Specialists in period restoration and contemporary brickwork.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Get in Touch</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>The Old Workshop, Osney Mead<br>Oxford, OX2 0ES</p>
+                <p>Tel: 01865 302 847</p>
+                <p>enquiries@heritagebrickwork.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Heritage Brickwork Ltd. Registered in England &amp; Wales. No. 03947182
+        </div>
+    </footer>
+
+</body>
+</html>

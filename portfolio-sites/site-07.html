@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summit Scaffolding Solutions | London's Leading Scaffolding Contractor</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --dark-mid: #1a1a1a;
+    --dark-light: #222222;
+    --lime: #a3e635;
+    --white: #ffffff;
+    --gray: #888888;
+    --gray-dark: #444444;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--black);
+    border-bottom: 1px solid var(--dark-light);
+    padding: 0 60px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  .nav-logo-bar {
+    width: 4px;
+    height: 32px;
+    background: var(--lime);
+    flex-shrink: 0;
+  }
+
+  .nav-logo-text {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--lime);
+  }
+
+  .nav-cta {
+    background: var(--lime);
+    color: var(--black);
+    padding: 12px 28px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .nav-cta:hover {
+    background: #b8f040;
+    transform: translateY(-1px);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('../portfolio-images/scaffolder-01.jpg') center/cover no-repeat;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.82);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 60px 80px;
+    max-width: 800px;
+  }
+
+  .hero-heading {
+    font-size: 96px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+
+  .hero-heading .dot {
+    color: var(--lime);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+
+  .hero-line {
+    width: 60px;
+    height: 3px;
+    background: var(--lime);
+    margin-bottom: 36px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+  }
+
+  .btn-primary {
+    background: var(--lime);
+    color: var(--black);
+    padding: 16px 36px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: #b8f040;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 16px 36px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--white);
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: var(--white);
+    color: var(--black);
+  }
+
+  /* ── SERVICES STRIP ── */
+  .services-strip {
+    background: var(--dark);
+    padding: 80px 60px;
+  }
+
+  .services-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .service-item {
+    padding: 40px 30px;
+    border-right: 1px solid var(--dark-light);
+    position: relative;
+  }
+
+  .service-item:first-child {
+    padding-left: 0;
+  }
+
+  .service-item:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .service-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--lime);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .service-name {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ── PROJECTS ── */
+  .projects {
+    background: var(--black);
+    padding: 100px 60px;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+
+  .section-line {
+    width: 50px;
+    height: 3px;
+    background: var(--lime);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .project-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+
+  .project-name {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+
+  .project-location {
+    font-size: 13px;
+    color: var(--lime);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  /* ── SAFETY ── */
+  .safety {
+    background: var(--dark);
+    padding: 100px 60px;
+  }
+
+  .safety-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .safety h2 {
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 60px;
+  }
+
+  .safety-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .safety-card {
+    padding: 40px;
+    background: var(--dark-mid);
+    border-left: 4px solid var(--lime);
+  }
+
+  .safety-value {
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--lime);
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  .safety-label {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  .safety-desc {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ── CLIENTS ── */
+  .clients {
+    background: var(--black);
+    padding: 80px 60px;
+  }
+
+  .clients-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .clients h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+    margin-bottom: 40px;
+  }
+
+  .clients-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+
+  .client-logo {
+    border: 1px solid var(--dark-light);
+    padding: 28px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-dark);
+    transition: border-color 0.3s, color 0.3s;
+  }
+
+  .client-logo:hover {
+    border-color: var(--lime);
+    color: var(--white);
+  }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial {
+    background: var(--dark);
+    padding: 100px 60px;
+  }
+
+  .testimonial-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .testimonial-mark {
+    font-size: 120px;
+    font-weight: 900;
+    color: var(--lime);
+    line-height: 0.5;
+    margin-bottom: 30px;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  .testimonial-text {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 30px;
+  }
+
+  .testimonial-author {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--lime);
+    margin-bottom: 4px;
+  }
+
+  .testimonial-role {
+    font-size: 13px;
+    color: var(--gray);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── CTA ── */
+  .cta {
+    background: var(--lime);
+    padding: 80px 60px;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+
+  .cta p {
+    font-size: 16px;
+    color: rgba(10,10,10,0.7);
+    margin-bottom: 36px;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-black {
+    background: var(--black);
+    color: var(--white);
+    padding: 18px 44px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-black:hover {
+    background: #222;
+    transform: translateY(-2px);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #000000;
+    padding: 60px 60px 40px;
+    border-top: 1px solid var(--dark-light);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+  }
+
+  .footer-col h4 {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .footer-col p,
+  .footer-col a {
+    font-size: 14px;
+    color: var(--gray);
+    text-decoration: none;
+    line-height: 2;
+    display: block;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover {
+    color: var(--lime);
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid var(--dark-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+    color: var(--gray-dark);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-bottom a {
+    color: var(--gray-dark);
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 20px;
+    transition: color 0.2s;
+  }
+
+  .footer-bottom a:hover {
+    color: var(--lime);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero-heading { font-size: 64px; }
+    .services-row { grid-template-columns: 1fr 1fr; }
+    .service-item:nth-child(2) { border-right: none; }
+    .service-item:nth-child(3) { border-right: 1px solid var(--dark-light); }
+    .clients-row { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 24px 60px; }
+    .hero-heading { font-size: 48px; }
+    .services-strip { padding: 60px 24px; }
+    .services-row { grid-template-columns: 1fr; }
+    .service-item { border-right: none; border-bottom: 1px solid var(--dark-light); padding: 24px 0; }
+    .service-item:last-child { border-bottom: none; }
+    .projects { padding: 60px 24px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .safety { padding: 60px 24px; }
+    .safety-grid { grid-template-columns: 1fr; }
+    .clients { padding: 60px 24px; }
+    .clients-row { grid-template-columns: repeat(2, 1fr); }
+    .testimonial { padding: 60px 24px; }
+    .cta { padding: 60px 24px; }
+    .cta h2 { font-size: 32px; }
+    .footer { padding: 40px 24px 30px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-bar"></span>
+    <span class="nav-logo-text">Summit Scaffolding</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#safety">Safety</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#quote" class="nav-cta">Request Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-heading">SCAFFOLDING<span class="dot">.</span></h1>
+    <p class="hero-sub">London's leading scaffolding contractor.<br>Commercial. Residential. Industrial.</p>
+    <div class="hero-line"></div>
+    <div class="hero-buttons">
+      <a href="#quote" class="btn-primary">Get a Quote</a>
+      <a href="#projects" class="btn-outline">View Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<section id="services" class="services-strip">
+  <div class="services-row">
+    <div class="service-item">
+      <div class="service-number">01</div>
+      <div class="service-name">Domestic Scaffolding</div>
+      <p class="service-desc">Residential scaffold solutions for home extensions, loft conversions, re-roofing and external maintenance works across London.</p>
+    </div>
+    <div class="service-item">
+      <div class="service-number">02</div>
+      <div class="service-name">Commercial Projects</div>
+      <p class="service-desc">Large-scale commercial scaffolding for office buildings, retail developments, and mixed-use construction projects throughout the capital.</p>
+    </div>
+    <div class="service-item">
+      <div class="service-number">03</div>
+      <div class="service-name">Industrial Access</div>
+      <p class="service-desc">Specialist industrial scaffolding and access solutions for refineries, power stations, and heavy infrastructure maintenance.</p>
+    </div>
+    <div class="service-item">
+      <div class="service-number">04</div>
+      <div class="service-name">Temporary Roofing</div>
+      <p class="service-desc">Weather-tight temporary roofing systems allowing construction and refurbishment works to continue regardless of weather conditions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="section-header">
+    <h2>RECENT PROJECTS</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1737093351158-81a918125889?w=800&h=600&fit=crop&auto=format" alt="Canary Wharf Tower Project" loading="lazy">
+      <div class="project-overlay">
+        <div class="project-name">Canary Wharf Tower</div>
+        <div class="project-location">Docklands, London E14</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1727007429691-0f16c5c636f8?w=800&h=600&fit=crop&auto=format" alt="King's Cross Redevelopment" loading="lazy">
+      <div class="project-overlay">
+        <div class="project-name">King's Cross Redevelopment</div>
+        <div class="project-location">King's Cross, London N1</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1680552775137-6c127710fe61?w=800&h=600&fit=crop&auto=format" alt="Battersea Power Station" loading="lazy">
+      <div class="project-overlay">
+        <div class="project-name">Battersea Power Station</div>
+        <div class="project-location">Battersea, London SW11</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1646153063942-ceb5e5e7fdb8?w=800&h=600&fit=crop&auto=format" alt="Chelsea Harbour Residences" loading="lazy">
+      <div class="project-overlay">
+        <div class="project-name">Chelsea Harbour Residences</div>
+        <div class="project-location">Chelsea, London SW10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section id="safety" class="safety">
+  <div class="safety-inner">
+    <h2>SAFETY IS NOT NEGOTIABLE</h2>
+    <div class="safety-grid">
+      <div class="safety-card">
+        <div class="safety-value">CISRS</div>
+        <div class="safety-label">Fully Certified</div>
+        <p class="safety-desc">All operatives hold current CISRS cards. Our scaffolders are trained to the highest industry standards and undergo regular refresher courses.</p>
+      </div>
+      <div class="safety-card">
+        <div class="safety-value">100%</div>
+        <div class="safety-label">Safety Record</div>
+        <p class="safety-desc">Zero reportable incidents across 14 years of continuous operation. Safety isn't just a policy &mdash; it's embedded in everything we do.</p>
+      </div>
+      <div class="safety-card">
+        <div class="safety-value">&pound;10M</div>
+        <div class="safety-label">Fully Insured</div>
+        <p class="safety-desc">Comprehensive public and employer liability insurance to &pound;10 million, giving our clients complete peace of mind on every project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients">
+  <div class="clients-inner">
+    <h3>Trusted By</h3>
+    <div class="clients-row">
+      <div class="client-logo">Balfour Beatty</div>
+      <div class="client-logo">Kier Group</div>
+      <div class="client-logo">Wates Group</div>
+      <div class="client-logo">Mace</div>
+      <div class="client-logo">Galliford Try</div>
+      <div class="client-logo">Morgan Sindall</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="testimonial-inner">
+    <div class="testimonial-mark">&ldquo;</div>
+    <p class="testimonial-text">Summit delivered an exceptional scaffolding solution for our 22-storey residential tower in Southwark. Their team was professional, their safety standards impeccable, and they completed the erect two days ahead of schedule. We won't use anyone else.</p>
+    <div class="testimonial-author">James Hartley</div>
+    <div class="testimonial-role">Project Director &mdash; Kier Construction London</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="quote" class="cta">
+  <h2>GET A QUOTE IN 24 HOURS</h2>
+  <p>Call us or fill in our form and we'll respond within one working day with a detailed, no-obligation quotation.</p>
+  <a href="#contact" class="btn-black">Contact Us</a>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Summit Scaffolding</h4>
+      <p>London's trusted scaffolding contractor since 2011. Commercial, residential and industrial scaffolding solutions.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#safety">Safety</a>
+      <a href="#quote">Request a Quote</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Unit 7, Meridian Trading Estate</p>
+      <p>Charlton, London SE7 7FN</p>
+      <p style="margin-top: 8px;">020 7946 0321</p>
+      <a href="mailto:info@summitscaffolding.co.uk">info@summitscaffolding.co.uk</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Summit Scaffolding Solutions Ltd. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

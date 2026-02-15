@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearView Windows &amp; Doors | Cardiff</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #444;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1e293b;
+            padding: 0 3rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 68px;
+        }
+
+        nav .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        nav .logo span {
+            color: #0284c7;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0284c7;
+        }
+
+        /* Hero - Side by Side (Image Left, Text Right) */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            min-height: calc(100vh - 68px);
+            margin-top: 68px;
+        }
+
+        .hero-image {
+            background: url('../portfolio-images/glazier-01.jpg') center center / cover no-repeat;
+            min-height: 500px;
+            position: relative;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 100%;
+            background: linear-gradient(to left, #f0f9ff, transparent);
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            background: #f0f9ff;
+        }
+
+        .hero-text .tag {
+            display: inline-block;
+            color: #0284c7;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #0284c7;
+            padding-bottom: 4px;
+            width: fit-content;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            color: #1e293b;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-text h1 span {
+            color: #0284c7;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            max-width: 450px;
+            line-height: 1.7;
+        }
+
+        .hero-text .cta-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-sky {
+            display: inline-block;
+            padding: 14px 36px;
+            background: #0284c7;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-sky:hover {
+            background: #0369a1;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 14px 36px;
+            border: 2px solid #1e293b;
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-outline:hover {
+            background: #1e293b;
+            color: #fff;
+        }
+
+        /* About */
+        .about {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .about-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner h2 {
+            font-size: 2.2rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .about-inner h2 span {
+            color: #0284c7;
+        }
+
+        .sky-bar {
+            width: 50px;
+            height: 3px;
+            background: #0284c7;
+            margin: 1rem auto 1.5rem;
+        }
+
+        .about-inner p {
+            color: #64748b;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Services - Horizontal Scrolling */
+        .services {
+            padding: 5rem 0 5rem 2rem;
+            background: #f0f9ff;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-right: 2rem;
+        }
+
+        .services-header h2 {
+            font-size: 2.2rem;
+            color: #1e293b;
+        }
+
+        .services-header p {
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+
+        .services-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 1.5rem;
+            padding-right: 2rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .services-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .services-scroll::-webkit-scrollbar-track {
+            background: #e0f2fe;
+            border-radius: 3px;
+        }
+
+        .services-scroll::-webkit-scrollbar-thumb {
+            background: #0284c7;
+            border-radius: 3px;
+        }
+
+        .scroll-card {
+            min-width: 300px;
+            max-width: 300px;
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            scroll-snap-align: start;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-top: 3px solid #0284c7;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .scroll-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .scroll-card .icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
+            background: #e0f2fe;
+            color: #0284c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .scroll-card h3 {
+            font-size: 1.15rem;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+
+        .scroll-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #1e293b;
+            color: #fff;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        .testimonials-header p {
+            color: #64748b;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .t-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(2, 132, 199, 0.2);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .t-card .stars {
+            color: #0284c7;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .t-card .quote {
+            font-style: italic;
+            color: #94a3b8;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .t-card .author {
+            font-weight: 700;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        .t-card .location {
+            font-size: 0.82rem;
+            color: #0284c7;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #64748b;
+            padding: 4rem 2rem 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: #0284c7;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #0284c7;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.8rem;
+            color: #475569;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-image { min-height: 300px; }
+            .hero-text { padding: 2.5rem 2rem; }
+            .hero-text h1 { font-size: 2rem; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ClearView <span>Windows &amp; Doors</span></div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-text">
+            <div class="tag">Cardiff &amp; South Wales</div>
+            <h1>Beautiful Windows &amp; Doors, <span>Expertly Fitted</span></h1>
+            <p>ClearView supplies and installs premium uPVC, aluminium, and timber windows and doors across Cardiff and South Wales. FENSA registered and fully guaranteed.</p>
+            <div class="cta-row">
+                <a href="#contact" class="btn-sky">Free Survey</a>
+                <a href="#services" class="btn-outline">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2>Your Local <span>Window Specialists</span></h2>
+            <div class="sky-bar"></div>
+            <p>ClearView Windows & Doors has been serving Cardiff and the surrounding areas since 2011. Founded by Rhys and Carys Morgan, we've built a reputation for quality installations, competitive pricing, and outstanding customer service.</p>
+            <p>As FENSA registered installers, all our work is self-certified and comes with a comprehensive 10-year guarantee. We supply and fit the finest uPVC, aluminium, and timber windows and doors from leading UK manufacturers.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p>Scroll to explore our full range of window and door solutions</p>
+            <div class="sky-bar"></div>
+        </div>
+        <div class="services-scroll">
+            <div class="scroll-card">
+                <div class="icon">&#x1fa9f;</div>
+                <h3>uPVC Windows</h3>
+                <p>Energy-efficient A+ rated uPVC windows in a wide range of styles including casement, tilt and turn, and sliding sash. Available in over 30 colour options.</p>
+            </div>
+            <div class="scroll-card">
+                <div class="icon">&#x1f6aa;</div>
+                <h3>Composite Doors</h3>
+                <p>Secure, stylish composite front and back doors. Extensive range of colours, glass designs, and hardware options for a door that's uniquely yours.</p>
+            </div>
+            <div class="scroll-card">
+                <div class="icon">&#x2b1c;</div>
+                <h3>Bi-Fold Doors</h3>
+                <p>Stunning aluminium bi-fold doors that open up your home to the garden. Slim sightlines, smooth operation, and exceptional thermal performance.</p>
+            </div>
+            <div class="scroll-card">
+                <div class="icon">&#x1f3e0;</div>
+                <h3>Conservatories</h3>
+                <p>Bespoke conservatories designed to complement your home. From traditional Victorian styles to sleek modern designs with glass or tiled roofs.</p>
+            </div>
+            <div class="scroll-card">
+                <div class="icon">&#x1fa9f;</div>
+                <h3>Roof Windows</h3>
+                <p>Velux and Fakro roof window installations. Flood your loft conversion or extension with natural light. Professional fitting with full weatherproofing.</p>
+            </div>
+            <div class="scroll-card">
+                <div class="icon">&#x1f527;</div>
+                <h3>Repairs &amp; Upgrades</h3>
+                <p>Window and door repairs, glass replacements, hinge adjustments, and lock upgrades. We service all makes and types of windows and doors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>Customer Reviews</h2>
+            <p>What Cardiff homeowners say about ClearView</p>
+            <div class="sky-bar"></div>
+        </div>
+        <div class="testimonials-grid">
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"ClearView replaced all the windows in our Victorian terrace and the difference is incredible. The house is so much warmer and quieter. Rhys was brilliant throughout, really helpful with choosing the right style."</div>
+                <div class="author">Gareth and Sian Davies</div>
+                <div class="location">Pontcanna, Cardiff</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Had bi-fold doors fitted by ClearView and they've transformed our kitchen diner. The installation was spotless and the doors work perfectly. Really pleased with the quality and the price was very competitive."</div>
+                <div class="author">Laura Pritchard</div>
+                <div class="location">Whitchurch, Cardiff</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Excellent service from start to finish. New composite front door and three windows fitted in a day. The fitters were tidy, professional, and the finish is superb. Would recommend to anyone."</div>
+                <div class="author">Owen Rees</div>
+                <div class="location">Penarth, Vale of Glamorgan</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>ClearView Windows &amp; Doors</h3>
+                <p>Premium window and door installations across Cardiff and South Wales since 2011. FENSA registered. 10-year guarantee on all installations. Free surveys and no-obligation quotes.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Details</h3>
+                <p>Unit 9, Hadfield Road Industrial Estate<br>Cardiff, CF11 8AQ</p>
+                <p>Tel: 029 2034 7821</p>
+                <p>info@clearviewcardiff.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 ClearView Windows &amp; Doors Ltd. Registered in England &amp; Wales. No. 08362714
+        </div>
+    </footer>
+
+</body>
+</html>

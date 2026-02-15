@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Roofing | Traditional Roofers in Lincoln</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --terracotta: #b45309;
+            --cream: #faf5eb;
+            --dark-brown: #3b2006;
+            --mid-brown: #7c5a2e;
+            --light-tan: #efe4d0;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: var(--dark-brown);
+            line-height: 1.7;
+            background: var(--cream);
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--cream);
+            border-bottom: 2px solid var(--terracotta);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            height: 75px;
+        }
+
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark-brown);
+            letter-spacing: 1px;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+            font-style: italic;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        /* ===================== HERO (SPLIT) ===================== */
+        .hero {
+            margin-top: 75px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 85vh;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            background: var(--cream);
+        }
+
+        .hero-text .tagline {
+            font-size: 0.9rem;
+            color: var(--terracotta);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            color: var(--dark-brown);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--mid-brown);
+            max-width: 450px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--terracotta);
+            color: var(--cream);
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: background 0.3s;
+            width: fit-content;
+        }
+
+        .hero-btn:hover {
+            background: var(--dark-brown);
+        }
+
+        .hero-image {
+            background: url('../portfolio-images/roofer-03.jpg') center/cover no-repeat;
+            min-height: 400px;
+        }
+
+        /* ===================== TRUST BAR ===================== */
+        .trust-bar {
+            background: var(--dark-brown);
+            color: var(--cream);
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 2.5rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .trust-item .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .trust-item span {
+            display: block;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            opacity: 0.85;
+        }
+
+        /* ===================== SERVICES ===================== */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-brown);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title .divider {
+            width: 50px;
+            height: 3px;
+            background: var(--terracotta);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--mid-brown);
+            max-width: 550px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--light-tan);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(59, 32, 6, 0.12);
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--cream);
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: var(--dark-brown);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--mid-brown);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--dark-brown);
+            color: var(--cream);
+        }
+
+        .testimonials .section-title h2 {
+            color: var(--cream);
+        }
+
+        .testimonials .section-title p {
+            color: rgba(250, 245, 235, 0.7);
+        }
+
+        .testimonials-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .testimonial {
+            background: rgba(250, 245, 235, 0.08);
+            border-left: 4px solid var(--terracotta);
+            padding: 2rem 2.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(250, 245, 235, 0.85);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .testimonial-author {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            color: var(--cream);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-area {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .testimonial-rating {
+            color: var(--terracotta);
+            font-size: 1rem;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--cream);
+            border-top: 2px solid var(--terracotta);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1050px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-about p {
+            color: var(--mid-brown);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-heading {
+            font-size: 1.15rem;
+            color: var(--dark-brown);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--mid-brown);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .contact-details p {
+            font-size: 0.9rem;
+            color: var(--mid-brown);
+            margin-bottom: 0.4rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--mid-brown);
+            border-top: 1px solid var(--light-tan);
+            padding-top: 1.5rem;
+            max-width: 1050px;
+            margin: 0 auto;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-text { padding: 3rem 2rem; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-image { min-height: 350px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-logo">Heritage <span>Roofing</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <div class="tagline">Established 1998 &middot; Lincoln</div>
+            <h1>Traditional Roofing Craftsmanship for the Modern Home</h1>
+            <p>Heritage Roofing brings generations of expertise to every project. Specialists in period properties, listed buildings, and quality domestic roofing across Lincolnshire.</p>
+            <a href="#contact" class="hero-btn">Request a Survey</a>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="trust-item">
+            <div class="icon">&#127968;</div>
+            <span>Period Property Specialists</span>
+        </div>
+        <div class="trust-item">
+            <div class="icon">&#128208;</div>
+            <span>Fully Insured &amp; Guaranteed</span>
+        </div>
+        <div class="trust-item">
+            <div class="icon">&#127942;</div>
+            <span>25+ Years Experience</span>
+        </div>
+        <div class="trust-item">
+            <div class="icon">&#128100;</div>
+            <span>Family-Run Business</span>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>What We Do</h2>
+            <div class="divider"></div>
+            <p>From heritage restorations to modern re-roofs, we offer a complete range of roofing services across Lincoln and Lincolnshire.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#9651;</div>
+                <h3>Pitched Roof Repairs</h3>
+                <p>Expert repair and maintenance of pitched roofs including slate, clay, and concrete tile work. Storm damage repairs available at short notice.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9632;</div>
+                <h3>Flat Roof Systems</h3>
+                <p>Modern flat roofing solutions including GRP fibreglass and EPDM rubber, fully guaranteed for up to 25 years.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#10047;</div>
+                <h3>Heritage Restoration</h3>
+                <p>Sympathetic restoration of period roofs using traditional materials and techniques. Listed building experience throughout the county.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9674;</div>
+                <h3>Lead Work</h3>
+                <p>Skilled leadwork for valleys, flashings, dormers, and church roofs. Sand-cast and machine-rolled lead fitted to the highest standards.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#8966;</div>
+                <h3>Chimney Repairs</h3>
+                <p>Chimney repointing, rebuilds, cowl fitting, and flaunching. We ensure your chimney stack is safe and watertight.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9686;</div>
+                <h3>Guttering &amp; Rainwater</h3>
+                <p>Replacement and repair of all guttering systems, downpipes, and hoppers in uPVC, aluminium, and traditional cast iron.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>Customer Testimonials</h2>
+            <div class="divider"></div>
+            <p>Hear from homeowners and property managers who have trusted Heritage Roofing with their properties.</p>
+        </div>
+        <div class="testimonials-list">
+            <div class="testimonial">
+                <p>We have a Grade II listed cottage near the cathedral and needed someone who truly understood traditional materials. Heritage Roofing were absolutely superb. They sourced matching handmade tiles and the finished roof looks magnificent.</p>
+                <div class="testimonial-footer">
+                    <div>
+                        <div class="testimonial-author">Margaret Ainsworth</div>
+                        <div class="testimonial-area">Minster Yard, Lincoln</div>
+                    </div>
+                    <div class="testimonial-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>Had the entire roof stripped and re-tiled on our semi. The team were polite, hardworking, and incredibly tidy. Everything was explained clearly before work started and the price was very fair. Couldn't ask for more.</p>
+                <div class="testimonial-footer">
+                    <div>
+                        <div class="testimonial-author">James Underwood</div>
+                        <div class="testimonial-area">North Hykeham, Lincoln</div>
+                    </div>
+                    <div class="testimonial-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>Heritage Roofing carried out extensive leadwork on our church roof. Their craftsmanship was remarkable and they showed great respect for the building. A truly dependable company.</p>
+                <div class="testimonial-footer">
+                    <div>
+                        <div class="testimonial-author">Reverend Philip Hartley</div>
+                        <div class="testimonial-area">Nettleham, Lincolnshire</div>
+                    </div>
+                    <div class="testimonial-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3 class="footer-heading">Heritage Roofing</h3>
+                <p>Heritage Roofing is a family-run roofing company based in Lincoln, specialising in traditional craftsmanship and modern roofing solutions. We take pride in every project, no matter the size.</p>
+                <p>Established in 1998, we have built our reputation on honest pricing, quality materials, and workmanship that stands the test of time.</p>
+            </div>
+            <div>
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li>Pitched Roofing</li>
+                    <li>Flat Roofing</li>
+                    <li>Heritage Restoration</li>
+                    <li>Lead Work</li>
+                    <li>Chimney Repairs</li>
+                    <li>Free Quotes</li>
+                </ul>
+            </div>
+            <div class="contact-details">
+                <h3 class="footer-heading">Get in Touch</h3>
+                <p>Heritage Roofing Ltd</p>
+                <p>14 Broadgate, Lincoln LN2 1AQ</p>
+                <p>&nbsp;</p>
+                <p>Tel: 01522 804 217</p>
+                <p>Mob: 07923 461 085</p>
+                <p>Email: enquiries@heritageroofinglincoln.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Heritage Roofing Ltd. All rights reserved. Company Reg. No. 05982341.
+        </div>
+    </footer>
+
+</body>
+</html>

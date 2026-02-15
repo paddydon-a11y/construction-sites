@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline Scaffolding | Commercial &amp; Domestic Scaffolding in Plymouth</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --steel-blue: #1e3a5f;
+            --safety-orange: #ea580c;
+            --white: #ffffff;
+            --off-white: #f5f7fa;
+            --light-blue: #e8eef5;
+            --text-gray: #4a5568;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--steel-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            height: 68px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--safety-orange);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--safety-orange);
+        }
+
+        .nav-phone {
+            color: var(--safety-orange);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        /* ===================== HERO (FULL WIDTH) ===================== */
+        .hero {
+            margin-top: 68px;
+            position: relative;
+            height: 90vh;
+            min-height: 550px;
+            background: url('../portfolio-images/scaffolder-02.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(30,58,95,0.75), rgba(30,58,95,0.55));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--safety-orange);
+        }
+
+        .hero-content p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--safety-orange);
+            color: var(--white);
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #c2410c;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 0.85rem 2.2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--steel-blue);
+        }
+
+        /* ===================== STATS BAR ===================== */
+        .stats-bar {
+            background: var(--steel-blue);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            padding: 0;
+        }
+
+        .stat-item {
+            padding: 2.5rem 1rem;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--safety-orange);
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===================== SERVICES ===================== */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--off-white);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-heading h2 {
+            font-size: 2.2rem;
+            color: var(--steel-blue);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-heading .bar {
+            width: 50px;
+            height: 4px;
+            background: var(--safety-orange);
+            margin: 0.8rem auto;
+            border-radius: 2px;
+        }
+
+        .section-heading p {
+            color: var(--text-gray);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--safety-orange);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .svc-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-blue);
+            color: var(--steel-blue);
+            border-radius: 12px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            color: var(--steel-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== WHY US ===================== */
+        .why-us {
+            padding: 4rem 2rem;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .why-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 2rem auto 0;
+        }
+
+        .why-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+        }
+
+        .why-item .icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--safety-orange);
+            color: var(--white);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .why-item h4 {
+            color: var(--steel-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .why-item p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--off-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-card .stars {
+            color: var(--safety-orange);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card blockquote {
+            font-style: italic;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .tc-author {
+            font-weight: 700;
+            color: var(--steel-blue);
+            font-size: 0.9rem;
+        }
+
+        .tc-location {
+            color: var(--text-gray);
+            font-size: 0.8rem;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--steel-blue);
+            color: rgba(255,255,255,0.8);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1050px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-col ul li::before {
+            content: '>';
+            color: var(--safety-orange);
+            margin-right: 0.5rem;
+            font-weight: 700;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            nav ul, .nav-phone { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Skyline <span>Scaffolding</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-phone">01752 804 637</div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Safe, Reliable <span>Scaffolding</span> Across Plymouth</h1>
+            <p>Commercial and domestic scaffolding solutions from a team you can trust. CISRS-accredited, fully insured, and available at short notice.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Get a Free Quote</a>
+                <a href="#services" class="btn-outline">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Years in Business</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">4,200+</div>
+            <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Safety Record</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">48hr</div>
+            <div class="stat-label">Fast Turnaround</div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-heading">
+            <h2>Our Scaffolding Services</h2>
+            <div class="bar"></div>
+            <p>From single residential projects to large commercial builds, Skyline Scaffolding provides the access you need, safely and efficiently.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="svc-icon">&#9633;</div>
+                <h3>Domestic Scaffolding</h3>
+                <p>Safe scaffold erection for home improvements, loft conversions, extensions, and re-roofing. Competitive pricing for all domestic projects.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9635;</div>
+                <h3>Commercial Scaffolding</h3>
+                <p>Large-scale scaffolding for commercial builds, refurbishments, and maintenance. Full design service and site-specific risk assessments.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9649;</div>
+                <h3>Temporary Roofs</h3>
+                <p>Weatherproof temporary roof systems to allow work to continue in all conditions. Ideal for re-roofing and major renovations.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#8862;</div>
+                <h3>Access Towers</h3>
+                <p>Quick-to-erect aluminium tower scaffolds for internal and external access. Perfect for painting, decorating, and light maintenance.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9638;</div>
+                <h3>Birdcage Scaffolding</h3>
+                <p>Internal birdcage scaffolding for ceiling work, high-level access in churches, atriums, and industrial buildings.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9670;</div>
+                <h3>Event Scaffolding</h3>
+                <p>Bespoke scaffolding structures for events, stages, and platforms. Custom solutions designed to your exact requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-heading">
+            <h2>What Our Clients Say</h2>
+            <div class="bar"></div>
+            <p>Trusted by homeowners, builders, and developers across Plymouth and Devon.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Skyline put scaffolding up for our loft conversion in Plympton. Arrived on time, very professional, and the price was spot on. Took it down quickly once the job was done too.</blockquote>
+                <div class="tc-author">Rob &amp; Michelle Harris</div>
+                <div class="tc-location">Plympton, Plymouth</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>We use Skyline for all our scaffolding needs across multiple building sites. They're reliable, safety-conscious, and always deliver on time. Couldn't recommend them more highly.</blockquote>
+                <div class="tc-author">Andrew Trevelyan, Site Manager</div>
+                <div class="tc-location">Barrett Construction, Devon</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Needed a temporary roof over our renovation project during winter. Skyline had it up within two days and it made all the difference. Top-quality service from start to finish.</blockquote>
+                <div class="tc-author">Helen Goodwin</div>
+                <div class="tc-location">Tavistock, Devon</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact Skyline Scaffolding</h3>
+                <p>Skyline Scaffolding Ltd<br>
+                Unit 12, Coypool Industrial Estate<br>
+                Marsh Mills, Plymouth PL7 4NW</p>
+                <p style="margin-top: 1rem;">
+                    Tel: 01752 804 637<br>
+                    Mob: 07765 319 842<br>
+                    Email: info@skylinescaffolding.co.uk
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li>Domestic Scaffolding</li>
+                    <li>Commercial Scaffolding</li>
+                    <li>Temporary Roofs</li>
+                    <li>Access Towers</li>
+                    <li>Birdcage Scaffolding</li>
+                    <li>Event Structures</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Areas We Cover</h3>
+                <ul>
+                    <li>Plymouth</li>
+                    <li>Saltash</li>
+                    <li>Tavistock</li>
+                    <li>Ivybridge</li>
+                    <li>Totnes</li>
+                    <li>Torquay</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Skyline Scaffolding Ltd. All rights reserved. CISRS Accredited. Company Reg. No. 09453217.
+        </div>
+    </footer>
+
+</body>
+</html>

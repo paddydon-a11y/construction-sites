@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AquaFlow Plumbing &amp; Heating — Plumbers in Leeds</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --blue: #0077b6;
+    --blue-dark: #005a8c;
+    --blue-light: #e8f4fa;
+    --navy: #1a2332;
+    --white: #ffffff;
+    --gray-50: #f8f9fa;
+    --gray-100: #e9ecef;
+    --gray-300: #adb5bd;
+    --gray-600: #495057;
+    --gray-800: #212529;
+    --body-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body-font);
+    color: var(--gray-600);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+    padding: 0 24px;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .nav-logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--blue);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span {
+    color: var(--gray-800);
+    font-weight: 400;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--blue); }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s;
+    border: 2px solid transparent;
+    letter-spacing: 0.005em;
+  }
+
+  .btn-blue {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+  }
+
+  .btn-blue:hover {
+    background: var(--blue-dark);
+    border-color: var(--blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 119, 182, 0.3);
+  }
+
+  .btn-blue-outline {
+    background: transparent;
+    color: var(--blue);
+    border-color: var(--blue);
+  }
+
+  .btn-blue-outline:hover {
+    background: var(--blue);
+    color: var(--white);
+  }
+
+  .btn-white {
+    background: var(--white);
+    color: var(--blue);
+    border-color: var(--white);
+  }
+
+  .btn-white:hover {
+    background: var(--gray-50);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-sm {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .btn-emergency {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 0 96px;
+    background: var(--white);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--gray-800);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  .hero-content h1 span { color: var(--blue); }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    line-height: 1.75;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .hero-image img {
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  /* ── TRUST BADGES ── */
+  .trust-bar {
+    background: var(--blue-light);
+    border-top: 1px solid rgba(0, 119, 182, 0.08);
+    border-bottom: 1px solid rgba(0, 119, 182, 0.08);
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+  }
+
+  .trust-item {
+    padding: 32px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .trust-check {
+    width: 28px;
+    height: 28px;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .trust-label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--gray-800);
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 96px 0;
+  }
+
+  .section-gray { background: var(--gray-50); }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .section-header h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--gray-800);
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+
+  .section-header p {
+    font-size: 1.05rem;
+    color: var(--gray-600);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .accent-line {
+    width: 48px;
+    height: 3px;
+    background: var(--blue);
+    margin: 0 auto 20px;
+    border-radius: 2px;
+  }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--gray-100);
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .service-card-body { padding: 28px; }
+
+  .service-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .service-card .learn-more {
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+
+  .service-card .learn-more:hover { text-decoration: underline; }
+
+  /* ── WHY CHOOSE US ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .why-image img {
+    border-radius: 14px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  .why-content h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--gray-800);
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .why-content > p {
+    color: var(--gray-600);
+    margin-bottom: 32px;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  .why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .why-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .why-list-check {
+    width: 26px;
+    height: 26px;
+    background: var(--blue-light);
+    color: var(--blue);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .why-list h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 4px;
+  }
+
+  .why-list p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  /* ── REVIEWS ── */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .review-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 14px;
+    padding: 36px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .stars {
+    color: #f59e0b;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  .google-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--gray-300);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .google-dot { color: #4285f4; font-size: 1.1rem; }
+
+  .review-card blockquote {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.75;
+    margin-bottom: 22px;
+  }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .reviewer-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--blue);
+    font-size: 0.88rem;
+  }
+
+  .reviewer-name {
+    font-weight: 700;
+    color: var(--gray-800);
+    font-size: 0.92rem;
+  }
+
+  .reviewer-date {
+    font-size: 0.78rem;
+    color: var(--gray-300);
+  }
+
+  /* ── CTA ── */
+  .cta {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .cta p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 36px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-phone {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+    display: block;
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-btns {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy);
+    padding: 72px 0 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr;
+    gap: 56px;
+    padding-bottom: 56px;
+  }
+
+  .footer-logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .footer-logo span { color: var(--blue); }
+
+  .footer p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+  }
+
+  .footer h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  .footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer ul a {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s;
+  }
+
+  .footer ul a:hover { color: var(--white); }
+
+  .footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .footer-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-social a:hover {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.35);
+    transition: color 0.2s;
+  }
+
+  .footer-bottom-links a:hover { color: var(--white); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 2.4rem; }
+    .hero-image { order: -1; }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .cta h2 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">AquaFlow <span>Plumbing &amp; Heating</span></a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:01131234567" class="btn btn-blue btn-sm btn-emergency">&#9742; Emergency Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1>Leeds' Leading <span>Plumbing &amp; Heating</span> Specialists</h1>
+        <p>From boiler breakdowns to full bathroom installations, AquaFlow provides reliable, Gas Safe registered plumbing and heating services across Leeds and West Yorkshire. No call-out fees, fixed-price quotes, and a 12-month guarantee on all work.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-blue">Book a Plumber</a>
+          <a href="#services" class="btn btn-blue-outline">View Services</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="../portfolio-images/plumber-01.jpg" alt="Professional plumber at work">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-check">&#10003;</span>
+        <span class="trust-label">Gas Safe Registered</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-check">&#10003;</span>
+        <span class="trust-label">Fully Insured</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-check">&#10003;</span>
+        <span class="trust-label">No Call-Out Fee</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-check">&#10003;</span>
+        <span class="trust-label">Fixed Price Quotes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-gray" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="accent-line"></div>
+      <h2>Our Services</h2>
+      <p>Comprehensive plumbing and heating solutions for homes and businesses across Leeds.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1585128792020-803d29415281?w=600&h=400&fit=crop&auto=format" alt="Boiler Installation">
+        <div class="service-card-body">
+          <h3>Boiler Installation &amp; Repair</h3>
+          <p>Gas Safe registered engineers for all boiler makes and models. New installations, repairs, annual servicing, and landlord certificates.</p>
+          <a href="#" class="learn-more">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1628602813558-8c6ad5eafe4f?w=600&h=400&fit=crop&auto=format" alt="Bathroom Fitting">
+        <div class="service-card-body">
+          <h3>Bathroom Fitting</h3>
+          <p>Complete bathroom design and installation. From luxury suites to compact en-suites, we handle plumbing, tiling, and fixtures.</p>
+          <a href="#" class="learn-more">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1628602813576-3783a0394e8b?w=600&h=400&fit=crop&auto=format" alt="Central Heating">
+        <div class="service-card-body">
+          <h3>Central Heating</h3>
+          <p>Full central heating systems, radiator installations, underfloor heating, and powerflush services to keep your home warm and efficient.</p>
+          <a href="#" class="learn-more">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1628602813428-369d92b2711f?w=600&h=400&fit=crop&auto=format" alt="Emergency Plumbing">
+        <div class="service-card-body">
+          <h3>Emergency Plumbing</h3>
+          <p>Burst pipe? Leaking boiler? Our emergency team responds within the hour across Leeds. Available 24/7, 365 days a year.</p>
+          <a href="#" class="learn-more">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-image">
+        <img src="https://images.unsplash.com/photo-1628602813647-c70518049674?w=800&h=600&fit=crop&auto=format" alt="AquaFlow team">
+      </div>
+      <div class="why-content">
+        <div class="accent-line" style="margin: 0 0 20px;"></div>
+        <h2>Why Choose AquaFlow?</h2>
+        <p>We've built our reputation on honest pricing, quality workmanship, and treating every home like our own.</p>
+        <ul class="why-list">
+          <li>
+            <span class="why-list-check">&#10003;</span>
+            <div>
+              <h4>Transparent, Fixed-Price Quotes</h4>
+              <p>No hidden fees or surprise charges. We quote before we start, and the price you see is the price you pay.</p>
+            </div>
+          </li>
+          <li>
+            <span class="why-list-check">&#10003;</span>
+            <div>
+              <h4>12-Month Workmanship Guarantee</h4>
+              <p>Every job comes with a full 12-month guarantee. If anything goes wrong, we come back and fix it for free.</p>
+            </div>
+          </li>
+          <li>
+            <span class="why-list-check">&#10003;</span>
+            <div>
+              <h4>Gas Safe &amp; Fully Qualified</h4>
+              <p>All our engineers are Gas Safe registered, City &amp; Guilds qualified, and undergo regular training on the latest regulations.</p>
+            </div>
+          </li>
+          <li>
+            <span class="why-list-check">&#10003;</span>
+            <div>
+              <h4>Clean, Tidy &amp; Respectful</h4>
+              <p>We always wear shoe covers, lay dust sheets, and leave your property spotless. Our 4.9-star Google rating speaks for itself.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section section-gray" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="accent-line"></div>
+      <h2>What Our Customers Say</h2>
+      <p>Rated 4.9 out of 5 from over 320 Google reviews.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="google-badge"><span class="google-dot">&#9679;</span> Google Review</div>
+        </div>
+        <blockquote>"Had a new combi boiler fitted by AquaFlow and couldn't be happier. The engineer explained all my options, there was no hard sell, and the installation was completed in a single day. The house has never been warmer. Highly recommended."</blockquote>
+        <div class="reviewer">
+          <div class="reviewer-avatar">DW</div>
+          <div>
+            <div class="reviewer-name">David Whitaker</div>
+            <div class="reviewer-date">3 weeks ago</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="google-badge"><span class="google-dot">&#9679;</span> Google Review</div>
+        </div>
+        <blockquote>"AquaFlow transformed our dated bathroom into something out of a magazine. The attention to detail was incredible, and they managed the entire project from start to finish. Communication was excellent throughout. Would use again in a heartbeat."</blockquote>
+        <div class="reviewer">
+          <div class="reviewer-avatar">EP</div>
+          <div>
+            <div class="reviewer-name">Emma Priestley</div>
+            <div class="reviewer-date">1 month ago</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="google-badge"><span class="google-dot">&#9679;</span> Google Review</div>
+        </div>
+        <blockquote>"Called on a Saturday evening with a burst pipe flooding the kitchen. An engineer arrived within 40 minutes and sorted the problem quickly. No call-out fee either, which I couldn't believe. Absolute legends. Thank you, AquaFlow!"</blockquote>
+        <div class="reviewer">
+          <div class="reviewer-avatar">TH</div>
+          <div>
+            <div class="reviewer-name">Tom Hartley</div>
+            <div class="reviewer-date">2 weeks ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="container">
+    <h2>Need a Plumber Fast?</h2>
+    <p>Our emergency team is standing by. Call now for a rapid response across Leeds and West Yorkshire.</p>
+    <a href="tel:01131234567" class="cta-phone">0113 123 4567</a>
+    <div class="cta-btns">
+      <a href="tel:01131234567" class="btn btn-white">&#9742; Call Now</a>
+      <a href="#" class="btn btn-blue-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);">Request a Callback</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>AquaFlow</span> Plumbing &amp; Heating</div>
+        <p>Leeds' trusted plumbing and heating specialists. Gas Safe registered, fully insured, and committed to quality workmanship. Serving residential and commercial customers across West Yorkshire since 2008.</p>
+        <div class="footer-social">
+          <a href="#">FB</a>
+          <a href="#">TW</a>
+          <a href="#">IG</a>
+          <a href="#">YT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Boiler Installation</a></li>
+          <li><a href="#">Bathroom Fitting</a></li>
+          <li><a href="#">Central Heating</a></li>
+          <li><a href="#">Emergency Plumbing</a></li>
+          <li><a href="#">Landlord Certificates</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="tel:01131234567">0113 123 4567</a></li>
+          <li><a href="mailto:hello@aquaflow.co.uk">hello@aquaflow.co.uk</a></li>
+          <li><a href="#">12 Canal Wharf<br>Leeds LS11 5PS</a></li>
+        </ul>
+        <p style="margin-top: 20px; font-size: 0.82rem;">Mon&ndash;Fri: 8am&ndash;6pm<br>Sat: 9am&ndash;1pm<br>Emergency: 24/7</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AquaFlow Plumbing &amp; Heating Ltd. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
