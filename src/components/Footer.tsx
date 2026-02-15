@@ -103,10 +103,10 @@ export default function Footer() {
                     />
                   </svg>
                   <a
-                    href="mailto:patrick@construction-sites.co.uk"
+                    href="mailto:gaffer@construction-sites.co.uk"
                     className="text-sm text-slate-light transition-colors hover:text-hivis"
                   >
-                    patrick@construction-sites.co.uk
+                    gaffer@construction-sites.co.uk
                   </a>
                 </li>
               </ul>
@@ -118,7 +118,7 @@ export default function Footer() {
         <div className="border-t border-white/5">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 sm:flex-row sm:px-6 lg:px-8">
             <p className="text-xs text-slate-light/60">
-              &copy; 2025 Construction Sites. Built different.
+              &copy; 2026 Construction Sites. Built different.
             </p>
             <p className="text-xs text-slate-light/40">
               No hard hats required for browsing. 🏗️

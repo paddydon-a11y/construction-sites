@@ -114,7 +114,7 @@ const jsonLd = {
       logo: "https://construction-sites.co.uk/og-image.png",
       description:
         "We build stunning websites for construction businesses and tradespeople. Custom design, SEO, Google Ads optimised, all included.",
-      email: "patrick@construction-sites.co.uk",
+      email: "gaffer@construction-sites.co.uk",
       telephone: "+447572698923",
       sameAs: [],
       contactPoint: {
@@ -132,7 +132,7 @@ const jsonLd = {
       description: "Web design agency specialising in websites for construction and trade businesses across the UK.",
       url: "https://construction-sites.co.uk",
       telephone: "+447572698923",
-      email: "patrick@construction-sites.co.uk",
+      email: "gaffer@construction-sites.co.uk",
       image: "https://construction-sites.co.uk/og-image.png",
       priceRange: "££",
       openingHoursSpecification: [
@@ -160,6 +160,7 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${barlow.className} ${barlow.variable} ${barlowCondensed.variable} ${barlowSemiCondensed.variable}`}>
       <head>
+        <meta name="google-site-verification" content="XxT71Eqhp8-mMvRdME2D6yJS9Uw8YcND9GrlK2-M2Ps" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
