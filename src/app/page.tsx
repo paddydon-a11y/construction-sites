@@ -12,7 +12,7 @@ export default function HomePage() {
           Online&nbsp;Presence
         </h1>
 
-        <p className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-display)] text-2xl tracking-wide text-slate-light sm:text-3xl md:text-4xl">
+        <p className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-subheading)] text-2xl tracking-wide text-slate-light sm:text-3xl md:text-4xl">
           We build stunning websites for tradespeople and construction
           businesses. No templates. No nonsense. Just sites that get your phone
           ringing.

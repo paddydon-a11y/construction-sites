@@ -1,19 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Bebas_Neue } from "next/font/google";
+import { Barlow, Barlow_Condensed, Barlow_Semi_Condensed } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
+const barlow = Barlow({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-body",
 });
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
+const barlowCondensed = Barlow_Condensed({
+  weight: ["600", "700", "800"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-display",
+});
+
+const barlowSemiCondensed = Barlow_Semi_Condensed({
+  weight: ["500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-subheading",
 });
 
 export const metadata: Metadata = {
@@ -132,7 +141,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className} ${bebasNeue.variable}`}>
+    <html lang="en" className={`${barlow.className} ${barlow.variable} ${barlowCondensed.variable} ${barlowSemiCondensed.variable}`}>
       <head>
         <script
           type="application/ld+json"

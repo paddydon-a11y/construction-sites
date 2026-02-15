@@ -9,9 +9,9 @@
   --color-hivis-orange: #f97316;
   --color-slate-light: #94a3b8;
   --color-white: #ffffff;
-  --font-heading: 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-display: var(--font-display), 'Bebas Neue', system-ui, sans-serif;
+  --font-body: var(--font-body), 'Barlow', system-ui, sans-serif;
+  --font-display: var(--font-display), 'Barlow Condensed', system-ui, sans-serif;
+  --font-subheading: var(--font-subheading), 'Barlow Semi Condensed', system-ui, sans-serif;
 }
 
 /* ── Base ── */
@@ -23,6 +23,22 @@ body {
   background-color: var(--color-dark);
   color: var(--color-white);
   font-family: var(--font-body);
+}
+
+h1 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-family: var(--font-subheading);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+h3 {
+  font-family: var(--font-subheading);
 }
 
 /* ── Construction Tape ── */
