@@ -12,7 +12,7 @@ export default function ContactPage() {
     email: "",
     project: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -20,9 +20,25 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("sending");
+
+    try {
+      const res = await fetch("https://formspree.io/f/mjgewpwj", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -43,7 +59,7 @@ export default function ContactPage() {
       <section className="max-w-6xl mx-auto px-4 pb-16 grid grid-cols-1 lg:grid-cols-5 gap-10">
         {/* LEFT — CONTACT FORM */}
         <div className="lg:col-span-3 bg-charcoal rounded-2xl p-8">
-          {submitted ? (
+          {status === "success" ? (
             <div className="bg-green-900/50 border border-green-500 rounded-xl p-8 text-center">
               <p className="text-xl font-bold text-green-400 mb-2">
                 Nice one! We&apos;ve got your details.
@@ -177,12 +193,22 @@ export default function ContactPage() {
                 />
               </div>
 
+              {/* Error message */}
+              {status === "error" && (
+                <div className="bg-red-900/50 border border-red-500 rounded-xl p-4 text-center">
+                  <p className="text-red-400 font-semibold">
+                    Something went wrong. Please try again or message us on WhatsApp.
+                  </p>
+                </div>
+              )}
+
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full bg-hivis text-dark font-bold py-4 rounded-lg text-lg hover:bg-hivis-bright transition cursor-pointer"
+                disabled={status === "sending"}
+                className="w-full bg-hivis text-dark font-bold py-4 rounded-lg text-lg hover:bg-hivis-bright transition cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Enquiry 🔨
+                {status === "sending" ? "Sending..." : "Send Enquiry 🔨"}
               </button>
             </form>
           )}
