@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "About Us",
   description:
-    "We're a web design agency that works exclusively with tradespeople and construction businesses. No suits, no jargon, no agency prices.",
+    "We're a web design agency that works exclusively with construction and trade businesses. No suits, no jargon, no agency prices.",
 };
 
 export default function AboutPage() {
@@ -35,7 +35,7 @@ export default function AboutPage() {
 
           <p className="mt-8 text-lg leading-relaxed text-slate-light">
             We&rsquo;re a team of web designers and developers who work
-            exclusively with tradespeople and construction businesses.
+            exclusively with construction and trade businesses.
             That&rsquo;s it. That&rsquo;s all we do. We don&rsquo;t build sites
             for restaurants, salons, or accountants. Just trades.
           </p>
@@ -65,7 +65,7 @@ export default function AboutPage() {
                 We Know Your Customers
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                Every tradesperson&rsquo;s customer does the same thing: they
+                Every potential customer does the same thing: they
                 Google the trade they need + their location. &lsquo;Plumber
                 Leeds&rsquo;. &lsquo;Electrician Manchester&rsquo;. We build
                 sites that show up for exactly those searches.
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 We Know Your Budget
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                Most tradespeople don&rsquo;t want to drop &pound;5k on a
+                Most construction businesses don&rsquo;t want to drop &pound;5k on a
                 website. We get it. That&rsquo;s why we built a model that gets
                 you a premium site for less than your monthly diesel bill.
               </p>

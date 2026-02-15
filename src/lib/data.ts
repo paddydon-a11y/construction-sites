@@ -58,45 +58,45 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Dave the Spark",
-    trade: "Electrician",
+    name: "Mark, Spark Brothers Electrical",
+    trade: "Electrical Contractor",
     location: "Manchester",
-    text: "Had my site up in a week. Phone hasn't stopped ringing since. Best money I've spent outside Screwfix.",
+    text: "We've taken on two extra electricians since the site went live. Enquiries doubled in the first month, and we're now turning work away. Didn't expect that from a website.",
     rating: 5,
   },
   {
-    name: "Pete's Plumbing",
-    trade: "Plumber",
+    name: "Pete, AquaFlow Plumbing",
+    trade: "Plumbing & Heating",
     location: "Leeds",
-    text: "Was paying another agency £200 a month for a site that looked like it was built in 2005. These lads sorted me out proper. Looks unreal.",
+    text: "We were paying another agency £200 a month for a site that looked like it was built in 2005. Since switching, we've had more enquiries than ever. Even had a couple of good plumbers reach out asking to join us.",
     rating: 5,
   },
   {
-    name: "Sarah @ Apex Roofing",
-    trade: "Roofer",
+    name: "Sarah, Apex Roofing",
+    trade: "Roofing Contractor",
     location: "Bristol",
-    text: "I'm not tech savvy at all but the lads made it dead easy. Site looks professional, customers comment on it all the time. Worth every penny.",
+    text: "The site looks so professional that clients trust us before we even turn up. We've landed three commercial contracts since launch. On top of that, experienced roofers have been getting in touch wanting to work for us.",
     rating: 5,
   },
   {
-    name: "Big Kev's Bricklaying",
-    trade: "Bricklayer",
+    name: "Kev, K&S Bricklaying",
+    trade: "Bricklaying Contractor",
     location: "Birmingham",
-    text: "Went from zero online presence to page one of Google in my area. Getting 3-4 new enquiries a week now. Absolute game changer.",
+    text: "Went from zero online presence to page one of Google in our area. Getting 3-4 new enquiries a week now and the quality of work has gone up. Even had a couple of lads ask to come on board after seeing the site.",
     rating: 5,
   },
   {
-    name: "Thompson Landscapes",
-    trade: "Landscaper",
+    name: "James, Thompson Landscapes",
+    trade: "Landscaping",
     location: "Newcastle",
-    text: "The website paid for itself in the first month. Got a £12k garden job from someone who found me on Google. Can't argue with that.",
+    text: "The website paid for itself in the first month. Landed a £12k garden project from someone who found us on Google. We've also had skilled landscapers reaching out to join the team, which we never expected.",
     rating: 5,
   },
   {
-    name: "J&R Plastering",
-    trade: "Plasterer",
+    name: "Rob, J&R Plastering",
+    trade: "Plastering & Rendering",
     location: "Sheffield",
-    text: "Clean, simple, looks the business. The lads get it. They know what tradespeople need. No faff, no jargon, just results.",
+    text: "Clean, professional, does exactly what it needs to. We've seen a real uplift in the quality of enquiries coming through. A couple of experienced plasterers have even got in touch about working with us after seeing the site.",
     rating: 5,
   },
 ];
@@ -133,11 +133,11 @@ export const faqs: FAQ[] = [
   },
   {
     question: "What if I need more than a basic website?",
-    answer: "We can add extras like booking systems, gallery pages, or multi-location setups. We'll quote anything extra upfront, no surprises. But honestly, most tradesmen only need what's in the standard package.",
+    answer: "We can add extras like booking systems, gallery pages, or multi-location setups. We'll quote anything extra upfront, no surprises. But honestly, most businesses only need what's in the standard package.",
   },
   {
     question: "Do you do e-commerce / online shops?",
-    answer: "Nah, that's not our thing. We build websites for tradespeople who want their phone to ring. If you're trying to sell products online, we're probably not the right fit. But if you want leads? We're your lot.",
+    answer: "Nah, that's not our thing. We build websites for construction and trade businesses who want their phone to ring. If you're trying to sell products online, we're probably not the right fit. But if you want leads? We're your lot.",
   },
 ];
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Our Work | Construction Sites",
   description:
-    "Browse 2,000+ websites we've built for tradespeople across the UK. Electricians, plumbers, builders, roofers and more.",
+    "Browse 2,000+ websites we've built for construction and trade businesses across the UK. Builders, roofers, electricians, plumbers and more.",
 };
 
 const sites = [
@@ -63,7 +63,7 @@ export default function OurWorkPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-light sm:text-xl">
             A selection of the 2,000+ websites we&rsquo;ve built for
-            tradespeople across the UK.
+            construction and trade businesses across the UK.
           </p>
         </div>
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Services",
   description:
-    "Custom website design, SEO, Google Ads optimisation, monthly maintenance and more. Everything your trade business needs to get found online.",
+    "Custom website design, SEO, Google Ads optimisation, monthly maintenance and more. Everything your construction or trade business needs to get found online.",
 };
 
 const services = [
@@ -44,7 +44,7 @@ const services = [
     tagline:
       "70% of your customers are on their phones. Your site will look mint on all of them.",
     description:
-      "Every site we build is mobile-first. Fast loading, easy to navigate, thumb-friendly buttons. Because nobody\u2019s booking a tradesman from a desktop anymore.",
+      "Every site we build is mobile-first. Fast loading, easy to navigate, thumb-friendly buttons. Because nobody\u2019s hiring a contractor from a desktop anymore.",
   },
   {
     icon: "\uD83D\uDCE9",

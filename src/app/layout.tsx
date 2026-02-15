@@ -28,22 +28,24 @@ const barlowSemiCondensed = Barlow_Semi_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL("https://construction-sites.co.uk"),
   title: {
-    default: "Construction Sites | Web Design for Tradespeople",
+    default: "Construction Sites | Web Design for Construction & Trade Businesses",
     template: "%s | Construction Sites",
   },
   description:
-    "We build stunning websites for tradespeople and construction businesses. Custom design, SEO, Google Ads optimised, all included for just £100/month. No templates. No nonsense.",
+    "We build stunning websites for construction businesses and tradespeople. Custom design, SEO, Google Ads optimised, all included for just £100/month. No templates. No nonsense.",
   keywords: [
-    "tradesman website",
     "construction website design",
-    "web design for tradespeople",
+    "construction business website",
+    "web design for construction companies",
     "builder website",
     "plumber website",
     "electrician website",
     "roofer website",
     "trade website design",
-    "affordable tradesman website",
-    "SEO for tradespeople",
+    "affordable construction website",
+    "SEO for construction businesses",
+    "tradesman website",
+    "web design for tradespeople",
   ],
   authors: [{ name: "Construction Sites" }],
   creator: "Construction Sites",
@@ -53,9 +55,9 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://construction-sites.co.uk",
     siteName: "Construction Sites",
-    title: "Construction Sites | Web Design for Tradespeople",
+    title: "Construction Sites | Web Design for Construction & Trade Businesses",
     description:
-      "We build stunning websites for tradespeople and construction businesses. Custom design, SEO, Google Ads optimised, all for £100/month.",
+      "We build stunning websites for construction businesses and tradespeople. Custom design, SEO, Google Ads optimised, all for £100/month.",
     images: [
       {
         url: "/og-image.png",
@@ -67,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Construction Sites | Web Design for Tradespeople",
+    title: "Construction Sites | Web Design for Construction & Trade Businesses",
     description:
-      "Stunning websites for tradespeople. Custom design, SEO, Google Ads optimised, all for £100/month.",
+      "Stunning websites for construction and trade businesses. Custom design, SEO, Google Ads optimised, all for £100/month.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -96,7 +98,7 @@ const jsonLd = {
       "@id": "https://construction-sites.co.uk/#website",
       url: "https://construction-sites.co.uk",
       name: "Construction Sites",
-      description: "Web Design Agency for Tradespeople and Construction Businesses",
+      description: "Web Design Agency for Construction and Trade Businesses",
       publisher: { "@id": "https://construction-sites.co.uk/#organization" },
     },
     {
@@ -105,7 +107,7 @@ const jsonLd = {
       name: "Construction Sites",
       url: "https://construction-sites.co.uk",
       description:
-        "We build stunning websites for tradespeople and construction businesses. Custom design, SEO, Google Ads optimised, all included.",
+        "We build stunning websites for construction businesses and tradespeople. Custom design, SEO, Google Ads optimised, all included.",
       email: "hello@construction-sites.co.uk",
       telephone: "0800 123 4567",
       sameAs: [],
@@ -120,7 +122,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": "https://construction-sites.co.uk/#localbusiness",
       name: "Construction Sites",
-      description: "Web design agency specialising in websites for tradespeople and construction businesses.",
+      description: "Web design agency specialising in websites for construction and trade businesses.",
       url: "https://construction-sites.co.uk",
       telephone: "0800 123 4567",
       email: "hello@construction-sites.co.uk",

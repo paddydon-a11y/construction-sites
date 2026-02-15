@@ -33,8 +33,8 @@ export default function Footer() {
                 We Build Sites. You Build Everything Else.
               </p>
               <p className="mt-2 text-sm text-slate-light/70">
-                Professional websites for tradespeople who want their phone to
-                ring. No faff, no jargon. Just results.
+                Professional websites for construction and trade businesses who
+                want their phone to ring. No faff, no jargon. Just results.
               </p>
             </div>
 

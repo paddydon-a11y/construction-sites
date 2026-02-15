@@ -13,9 +13,9 @@ export default function HomePage() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-subheading)] text-2xl tracking-wide text-slate-light sm:text-3xl md:text-4xl">
-          We build stunning websites for tradespeople and construction
-          businesses. No templates. No nonsense. Just sites that get your phone
-          ringing.
+          We build stunning websites for construction businesses and
+          tradespeople. No templates. No nonsense. Just sites that get your
+          phone ringing.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
@@ -219,7 +219,7 @@ export default function HomePage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-dark/80 sm:text-xl">
-            Know a tradesman who needs a website? Send them to us. When they
+            Know a business that needs a website? Send them to us. When they
             sign up, you get £200 cash. No cap, no catch, no small print.
           </p>
 
