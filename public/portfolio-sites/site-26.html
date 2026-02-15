@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willowbrook Gardens | Garden Maintenance in Cambridge</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            background: #faf8f5;
+            line-height: 1.7;
+        }
+
+        :root {
+            --teal: #0f766e;
+            --teal-light: #14b8a6;
+            --teal-pale: #f0fdfa;
+            --cream: #faf8f5;
+            --cream-dark: #ede8e0;
+            --charcoal: #1c1917;
+            --charcoal-light: #44403c;
+            --text: #44403c;
+            --text-light: #78716c;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--cream);
+            height: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--teal);
+        }
+        .logo span {
+            font-weight: 300;
+            color: var(--charcoal-light);
+        }
+        .nav-items {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .nav-items a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-items a:hover { color: var(--teal); }
+
+        /* Hero - Side by Side */
+        .hero {
+            margin-top: 66px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 70px 60px;
+            background: var(--cream);
+        }
+        .hero-tag {
+            display: inline-block;
+            color: var(--teal);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .hero-text h1 {
+            font-size: 2.6rem;
+            color: var(--charcoal);
+            line-height: 1.2;
+            margin-bottom: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .hero-text p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 28px;
+            max-width: 420px;
+            line-height: 1.8;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+        }
+        .btn-fill {
+            padding: 12px 30px;
+            background: var(--teal);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-fill:hover { background: var(--teal-light); }
+        .btn-ghost {
+            padding: 12px 30px;
+            border: 1px solid var(--cream-dark);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: border-color 0.3s;
+        }
+        .btn-ghost:hover { border-color: var(--teal); }
+        .hero-img {
+            background: url('../portfolio-images/landscaper-06.jpg') center center / cover no-repeat;
+            min-height: 500px;
+        }
+
+        /* Intro */
+        .intro {
+            padding: 80px 50px;
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .intro h2 {
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .intro p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        /* Services 3-col */
+        .services {
+            padding: 60px 50px 90px;
+            background: var(--teal-pale);
+        }
+        .services-head {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .services-head h2 {
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .services-head p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+        .svc {
+            background: #fff;
+            padding: 36px 28px;
+            border-radius: 6px;
+            border: 1px solid var(--cream-dark);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .svc:hover {
+            box-shadow: 0 8px 30px rgba(15,118,110,0.08);
+            transform: translateY(-3px);
+        }
+        .svc-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--teal);
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+        .svc h3 {
+            font-size: 1rem;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .svc p {
+            color: var(--text-light);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* Seasonal Plans */
+        .plans {
+            padding: 80px 50px;
+            background: var(--cream);
+        }
+        .plans h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+        .plans > p {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 44px;
+            font-size: 0.95rem;
+        }
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .plan {
+            text-align: center;
+            padding: 36px 24px;
+            border: 2px solid var(--cream-dark);
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        .plan:hover { border-color: var(--teal); }
+        .plan-name {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .plan h3 {
+            font-size: 1.4rem;
+            color: var(--charcoal);
+            margin-bottom: 14px;
+        }
+        .plan ul {
+            list-style: none;
+            text-align: left;
+            font-size: 0.88rem;
+            color: var(--text-light);
+        }
+        .plan ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+        .plan ul li:last-child { border: none; }
+        .plan ul li::before {
+            content: '&#10003; ';
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        /* Testimonial - Single Large Quote */
+        .testimonial {
+            padding: 100px 50px;
+            background: var(--teal);
+            text-align: center;
+        }
+        .quote-mark {
+            font-size: 5rem;
+            color: rgba(255,255,255,0.2);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .testimonial blockquote {
+            font-size: 1.5rem;
+            color: #fff;
+            font-style: italic;
+            max-width: 750px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        .testimonial cite {
+            font-style: normal;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+        .testimonial .stars {
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* More Reviews */
+        .more-reviews {
+            padding: 80px 50px;
+            background: var(--cream);
+        }
+        .more-reviews h2 {
+            text-align: center;
+            font-size: 1.6rem;
+            color: var(--charcoal);
+            margin-bottom: 40px;
+        }
+        .review-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .review-card {
+            background: var(--teal-pale);
+            padding: 28px;
+            border-radius: 6px;
+        }
+        .review-card .stars {
+            color: var(--teal);
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+        .review-card p {
+            font-size: 0.9rem;
+            color: var(--text);
+            font-style: italic;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        .review-card cite {
+            font-style: normal;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.7);
+            padding: 50px;
+        }
+        .ft-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+        .ft-about h3 {
+            color: #fff;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+        .ft-about p {
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+        .ft-col h4 {
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--teal-light);
+            margin-bottom: 12px;
+        }
+        .ft-col p, .ft-col a {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.55);
+            text-decoration: none;
+            display: block;
+            line-height: 2;
+        }
+        .ft-col a:hover { color: var(--teal-light); }
+        .ft-bottom {
+            max-width: 1060px;
+            margin: 24px auto 0;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.78rem;
+            opacity: 0.45;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-text { padding: 50px 30px; }
+            .hero-text h1 { font-size: 2rem; }
+            .svc-grid, .plan-grid { grid-template-columns: 1fr; }
+            .review-row { grid-template-columns: 1fr; }
+            .ft-grid { grid-template-columns: 1fr; }
+            .testimonial blockquote { font-size: 1.2rem; }
+            nav { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Willowbrook <span>Gardens</span></div>
+        <ul class="nav-items">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#plans">Maintenance Plans</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <div class="hero-tag">Cambridge &amp; Surrounding Villages</div>
+            <h1>Your Garden, Beautifully Maintained</h1>
+            <p>Regular garden care and maintenance from a trusted local team. We keep your outdoor space looking its best, all year round.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-fill">Get a Quote</a>
+                <a href="#services" class="btn-ghost">Our Services</a>
+            </div>
+        </div>
+        <div class="hero-img" role="img" aria-label="Garden maintained by Willowbrook Gardens"></div>
+    </section>
+
+    <section class="intro">
+        <h2>Caring For Cambridge's Gardens Since 2014</h2>
+        <p>Willowbrook Gardens provides reliable, high-quality garden maintenance for private homes, rental properties and small commercial premises across Cambridge and the surrounding villages. Whether you need regular upkeep or a one-off tidy, our friendly team takes genuine pride in every garden we look after.</p>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-head">
+            <h2>What We Do</h2>
+            <p>Comprehensive garden maintenance and care services</p>
+        </div>
+        <div class="svc-grid">
+            <div class="svc">
+                <div class="svc-icon">&#127807;</div>
+                <h3>Regular Maintenance</h3>
+                <p>Weekly, fortnightly or monthly garden visits including mowing, edging, weeding, pruning and general tidying to keep your garden in top shape.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#127795;</div>
+                <h3>Hedge Trimming</h3>
+                <p>Professional hedge cutting and shaping for all species and sizes. We keep your boundaries neat and your hedges healthy throughout the growing season.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#127810;</div>
+                <h3>Lawn Care</h3>
+                <p>Mowing, feeding, scarifying, aerating and overseeding. Seasonal lawn treatment programmes tailored to your grass type and conditions.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#9998;</div>
+                <h3>Planting &amp; Borders</h3>
+                <p>Seasonal planting, border redesign, mulching and plant care advice to add colour, structure and interest to your garden beds.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#127809;</div>
+                <h3>Autumn &amp; Winter Tidy</h3>
+                <p>Leaf clearance, cutting back perennials, protecting tender plants, and preparing your garden for the colder months ahead.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#128296;</div>
+                <h3>One-Off Garden Clearance</h3>
+                <p>Overgrown garden rescue, green waste removal, stump grinding and site clearance. We'll bring any garden back from the brink.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="plans" id="plans">
+        <h2>Maintenance Plans</h2>
+        <p>Choose a plan that suits your garden and your budget</p>
+        <div class="plan-grid">
+            <div class="plan">
+                <div class="plan-name">Essential</div>
+                <h3>Monthly Visit</h3>
+                <ul>
+                    <li>Lawn mowing &amp; edging</li>
+                    <li>Border weeding</li>
+                    <li>Path sweeping</li>
+                    <li>General tidy</li>
+                </ul>
+            </div>
+            <div class="plan">
+                <div class="plan-name">Standard</div>
+                <h3>Fortnightly Visit</h3>
+                <ul>
+                    <li>Everything in Essential</li>
+                    <li>Hedge trimming</li>
+                    <li>Seasonal planting</li>
+                    <li>Lawn feeding</li>
+                </ul>
+            </div>
+            <div class="plan">
+                <div class="plan-name">Premium</div>
+                <h3>Weekly Visit</h3>
+                <ul>
+                    <li>Everything in Standard</li>
+                    <li>Full lawn programme</li>
+                    <li>Deadheading &amp; pruning</li>
+                    <li>Priority booking</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial" id="reviews">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Willowbrook have been looking after our garden for nearly four years now. They're utterly dependable &mdash; they turn up like clockwork, the garden always looks immaculate, and they genuinely care about doing a good job. We wouldn't dream of using anyone else.</blockquote>
+        <cite>Eleanor &amp; Hugh Fairfax, Newnham, Cambridge</cite>
+    </section>
+
+    <section class="more-reviews">
+        <h2>More From Our Clients</h2>
+        <div class="review-row">
+            <div class="review-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"I manage several rental properties in Cambridge and Willowbrook keep all the gardens looking smart. Reliable, reasonably priced and always flexible with access."</p>
+                <cite>Simon Draper, Lettings Manager</cite>
+            </div>
+            <div class="review-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"Our garden was completely overgrown after we moved in. The team cleared it in two days and set us up on a fortnightly plan. It's like a different garden now."</p>
+                <cite>Priya &amp; Anil Sharma, Cherry Hinton</cite>
+            </div>
+            <div class="review-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"Friendly, knowledgeable and always happy to advise on what to plant and when. My borders have never looked so good. Thoroughly recommended."</p>
+                <cite>Dorothy Hawkins, Trumpington</cite>
+            </div>
+            <div class="review-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"We're elderly and can't manage the garden ourselves anymore. Willowbrook are wonderful &mdash; courteous, careful and always leave everything just so."</p>
+                <cite>Kenneth &amp; Pamela Woods, Histon</cite>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="ft-grid">
+            <div class="ft-about">
+                <h3>Willowbrook Gardens</h3>
+                <p>Reliable garden maintenance across Cambridge, Ely, Newmarket and surrounding villages. Established 2014. Fully insured. Waste carrier licensed. We take pride in every garden we care for.</p>
+            </div>
+            <div class="ft-col">
+                <h4>Contact</h4>
+                <p>01223 794 562</p>
+                <a href="mailto:hello@willowbrookgardens.co.uk">hello@willowbrookgardens.co.uk</a>
+                <p>Mon &ndash; Fri: 8am &ndash; 5pm</p>
+                <p>Sat: 8am &ndash; 12pm</p>
+            </div>
+            <div class="ft-col">
+                <h4>Address</h4>
+                <p>Willowbrook Gardens</p>
+                <p>17 Mill Road</p>
+                <p>Cambridge</p>
+                <p>CB1 2AD</p>
+            </div>
+        </div>
+        <div class="ft-bottom">
+            &copy; 2026 Willowbrook Gardens. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

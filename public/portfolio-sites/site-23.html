@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meadow Lane Landscapes | Garden Design in Worcester</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            color: #3b3830;
+            background: #faf7f2;
+            line-height: 1.7;
+        }
+
+        :root {
+            --olive: #5a6340;
+            --olive-light: #7a8360;
+            --olive-dark: #3d4430;
+            --sand: #d4c5a9;
+            --sand-light: #e8ddc8;
+            --sand-pale: #faf7f2;
+            --brown: #6b5a42;
+            --brown-dark: #4a3d2d;
+            --text: #3b3830;
+            --text-light: #736b5e;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(250,247,242,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--sand);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        .logo {
+            font-size: 1.2rem;
+            color: var(--olive-dark);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            font-weight: 400;
+            color: var(--brown);
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--olive); }
+
+        /* Hero with bottom text overlay */
+        .hero {
+            margin-top: 64px;
+            position: relative;
+            height: 80vh;
+            min-height: 480px;
+            background: url('../portfolio-images/landscaper-03.jpg') center center / cover no-repeat;
+        }
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(59,56,48,0.92) 0%, rgba(59,56,48,0.6) 60%, transparent 100%);
+            padding: 80px 50px 50px;
+        }
+        .hero-overlay h1 {
+            color: var(--sand-light);
+            font-size: 2.8rem;
+            font-weight: 400;
+            line-height: 1.25;
+            max-width: 650px;
+            margin-bottom: 14px;
+        }
+        .hero-overlay p {
+            color: rgba(228,221,200,0.8);
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        .hero-overlay a {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--olive);
+            color: var(--sand-light);
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+        .hero-overlay a:hover { background: var(--olive-light); }
+
+        /* Intro */
+        .intro {
+            padding: 90px 50px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .intro-text { max-width: 500px; }
+        .intro-text h2 {
+            font-size: 1.9rem;
+            color: var(--olive-dark);
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+        .intro-text p {
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.9;
+        }
+        .intro-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .stat {
+            text-align: center;
+            padding: 24px;
+            background: var(--sand-light);
+            border-radius: 4px;
+        }
+        .stat-num {
+            font-size: 2rem;
+            color: var(--olive);
+            font-weight: 700;
+        }
+        .stat-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services - 2x3 */
+        .services {
+            padding: 80px 50px;
+            background: var(--olive-dark);
+        }
+        .services h2 {
+            text-align: center;
+            color: var(--sand-light);
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .services-sub {
+            text-align: center;
+            color: var(--sand);
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 50px;
+            opacity: 0.7;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 24px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+        .svc {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(212,197,169,0.15);
+            padding: 36px 28px;
+            transition: background 0.3s;
+        }
+        .svc:hover { background: rgba(255,255,255,0.1); }
+        .svc-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--olive);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+        }
+        .svc h3 {
+            color: var(--sand-light);
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .svc p {
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--sand);
+            font-size: 0.88rem;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        /* Approach */
+        .approach {
+            padding: 90px 50px;
+            background: var(--sand-light);
+        }
+        .approach h2 {
+            text-align: center;
+            font-size: 1.9rem;
+            color: var(--olive-dark);
+            font-weight: 400;
+            margin-bottom: 50px;
+        }
+        .approach-steps {
+            display: flex;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        .a-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        .a-step::after {
+            content: '&#8594;';
+            position: absolute;
+            right: -24px;
+            top: 30px;
+            font-size: 1.5rem;
+            color: var(--sand);
+        }
+        .a-step:last-child::after { display: none; }
+        .a-num {
+            width: 50px;
+            height: 50px;
+            background: var(--olive);
+            color: var(--sand-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin: 0 auto 14px;
+        }
+        .a-step h3 {
+            font-size: 0.95rem;
+            color: var(--brown-dark);
+            margin-bottom: 8px;
+        }
+        .a-step p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 90px 50px;
+            background: var(--sand-pale);
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 1.9rem;
+            color: var(--olive-dark);
+            font-weight: 400;
+            margin-bottom: 50px;
+        }
+        .test-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .test-item {
+            background: #fff;
+            padding: 36px;
+            border-bottom: 3px solid var(--olive);
+        }
+        .test-item .stars {
+            color: var(--olive);
+            margin-bottom: 10px;
+        }
+        .test-item blockquote {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        .test-item cite {
+            font-family: 'Segoe UI', sans-serif;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--brown);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--brown-dark);
+            color: var(--sand-light);
+            padding: 50px;
+        }
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+        .f-brand h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .f-brand p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.88rem;
+            opacity: 0.65;
+            line-height: 1.8;
+        }
+        .f-col h4 {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sand);
+            margin-bottom: 14px;
+        }
+        .f-col p, .f-col a {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.88rem;
+            color: rgba(232,221,200,0.7);
+            text-decoration: none;
+            display: block;
+            line-height: 2;
+        }
+        .f-col a:hover { color: var(--sand-light); }
+        .f-copy {
+            max-width: 1050px;
+            margin: 24px auto 0;
+            padding-top: 16px;
+            border-top: 1px solid rgba(212,197,169,0.15);
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.78rem;
+            opacity: 0.45;
+        }
+
+        @media (max-width: 768px) {
+            .hero-overlay h1 { font-size: 2rem; }
+            .intro { flex-direction: column; padding: 60px 30px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .approach-steps { flex-direction: column; }
+            .a-step::after { display: none; }
+            .test-row { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Meadow Lane <span>Landscapes</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#approach">Our Approach</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>Where Gardens Come Naturally</h1>
+            <p>Thoughtful garden design and landscaping rooted in the Worcestershire countryside. Creating outdoor spaces that feel as though they've always been there.</p>
+            <a href="#contact">Arrange a Visit</a>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="intro-text">
+            <h2>Rooted in the Landscape</h2>
+            <p>Meadow Lane Landscapes is a family-run garden design practice based just outside Worcester. We specialise in creating naturalistic gardens that work with the local landscape, soil and climate rather than against them. Our approach is simple: we listen, we design, and we build gardens that bring genuine joy to the people who use them. From cottage gardens to contemporary outdoor living spaces, every project begins with understanding what matters most to you.</p>
+        </div>
+        <div class="intro-stats">
+            <div class="stat">
+                <div class="stat-num">18</div>
+                <div class="stat-label">Years Trading</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">320+</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">5.0</div>
+                <div class="stat-label">Google Rating</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Recommend Us</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>What We Do</h2>
+        <p class="services-sub">Complete garden design and landscaping services</p>
+        <div class="services-grid">
+            <div class="svc">
+                <div class="svc-icon">&#127807;</div>
+                <h3>Garden Design</h3>
+                <p>Bespoke planting plans and layout designs that suit your garden's aspect, soil type and the way you live outdoors.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#9632;</div>
+                <h3>Patios &amp; Terracing</h3>
+                <p>Natural stone and porcelain patios, raised terraces and step features for sloping gardens throughout Worcestershire.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#128167;</div>
+                <h3>Ponds &amp; Water Features</h3>
+                <p>Wildlife ponds, formal water features and rill channels to add movement and tranquillity to your garden.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#127795;</div>
+                <h3>Planting Schemes</h3>
+                <p>Expertly chosen plants for seasonal interest, low maintenance and wildlife value. Native and ornamental species blended beautifully.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#128296;</div>
+                <h3>Garden Structures</h3>
+                <p>Pergolas, arbours, raised beds and bespoke timber structures designed to complement your garden's character.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon">&#127793;</div>
+                <h3>Lawn &amp; Turf</h3>
+                <p>Full lawn renovation, turf laying, and wildflower meadow creation for a natural, relaxed feel.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="approach" id="approach">
+        <h2>How We Work</h2>
+        <div class="approach-steps">
+            <div class="a-step">
+                <div class="a-num">1</div>
+                <h3>Site Visit</h3>
+                <p>We visit your garden, discuss your ideas, and take note of aspect, soil and existing features.</p>
+            </div>
+            <div class="a-step">
+                <div class="a-num">2</div>
+                <h3>Design Concept</h3>
+                <p>We prepare sketches, planting ideas and a detailed quote for your consideration.</p>
+            </div>
+            <div class="a-step">
+                <div class="a-num">3</div>
+                <h3>Build &amp; Plant</h3>
+                <p>Our team brings the design to life with care, skill and attention to every detail.</p>
+            </div>
+            <div class="a-step">
+                <div class="a-num">4</div>
+                <h3>Aftercare</h3>
+                <p>We provide seasonal care advice and optional maintenance to keep your garden thriving.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="reviews">
+        <h2>What People Say</h2>
+        <div class="test-row">
+            <div class="test-item">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Meadow Lane created the most wonderful cottage garden for us. It feels like it's been here for decades, not months. The planting is exquisite and the stone work flawless."</blockquote>
+                <cite>Janet &amp; Peter Hartwell, Malvern</cite>
+            </div>
+            <div class="test-item">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"We had a steep, unusable slope at the back of our house. The team designed a terraced garden with retaining walls and steps that's transformed how we use the space."</blockquote>
+                <cite>Graham Ellis, Droitwich Spa</cite>
+            </div>
+            <div class="test-item">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"The wildlife pond they built is just magical. We've already had dragonflies, frogs and all sorts visiting. It's brought the garden completely alive."</blockquote>
+                <cite>Catherine Brookes, Pershore</cite>
+            </div>
+            <div class="test-item">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Professional, friendly and incredibly talented. They really understood what we wanted &mdash; a low-maintenance garden that still looks beautiful. Couldn't be happier."</blockquote>
+                <cite>Andrew &amp; Sue Mitchell, Worcester</cite>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-inner">
+            <div class="f-brand">
+                <h3>Meadow Lane Landscapes</h3>
+                <p>Garden design and landscaping rooted in the Worcestershire countryside. Creating beautiful, naturalistic outdoor spaces since 2008. Fully insured and APL accredited.</p>
+            </div>
+            <div class="f-col">
+                <h4>Contact Us</h4>
+                <p>01905 427 381</p>
+                <a href="mailto:hello@meadowlanelandscapes.co.uk">hello@meadowlanelandscapes.co.uk</a>
+                <p>Mon &ndash; Fri: 8:30am &ndash; 5pm</p>
+                <p>Sat: By appointment</p>
+            </div>
+            <div class="f-col">
+                <h4>Our Address</h4>
+                <p>The Old Barn</p>
+                <p>Meadow Lane</p>
+                <p>Kempsey, Worcester</p>
+                <p>WR5 3ND</p>
+            </div>
+        </div>
+        <div class="f-copy">
+            &copy; 2026 Meadow Lane Landscapes. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

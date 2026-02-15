@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Branch Gardens | Landscaping in Canterbury</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+            color: #2a2a2a;
+            background: #fdf9f5;
+            line-height: 1.7;
+        }
+
+        :root {
+            --pink: #c4848a;
+            --pink-light: #e4b5b9;
+            --pink-pale: #f5e6e8;
+            --dark-green: #1a3c34;
+            --green-mid: #2d5c4f;
+            --cream: #fdf9f5;
+            --cream-dark: #f0e8dd;
+            --text: #1a3c34;
+            --text-light: #5a6b65;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--dark-green);
+            padding: 0 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 68px;
+        }
+        .nav-brand {
+            font-size: 1.3rem;
+            color: var(--cream);
+            font-weight: 700;
+        }
+        .nav-brand span {
+            color: var(--pink-light);
+            font-weight: 400;
+        }
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+        .nav-menu a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.88rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover { color: var(--pink-light); }
+
+        /* Hero - Full Width */
+        .hero {
+            margin-top: 68px;
+            position: relative;
+            height: 85vh;
+            min-height: 500px;
+            background: url('../portfolio-images/landscaper-02.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(26,60,52,0.3), rgba(26,60,52,0.6));
+        }
+        .hero-inner {
+            position: relative;
+            text-align: center;
+            color: var(--cream);
+            max-width: 700px;
+            padding: 0 30px;
+        }
+        .hero-inner h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+        .hero-inner p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 38px;
+            background: var(--pink);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .hero-btn:hover {
+            background: var(--pink-light);
+            transform: translateY(-2px);
+        }
+
+        /* Organic Shape Divider */
+        .wave-divider {
+            height: 80px;
+            background: var(--cream);
+            position: relative;
+            margin-top: -80px;
+        }
+        .wave-divider::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: var(--cream);
+            border-radius: 50% 50% 0 0;
+        }
+
+        /* About */
+        .about {
+            padding: 80px 50px;
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .about h2 {
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 16px;
+        }
+        .about p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        /* Services */
+        .services {
+            padding: 60px 50px 100px;
+            background: var(--cream);
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 50px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+        .svc-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--cream-dark);
+        }
+        .svc-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(26,60,52,0.08);
+        }
+        .svc-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--pink-pale);
+            color: var(--pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 20px;
+        }
+        .svc-card h3 {
+            color: var(--dark-green);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .svc-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 50px;
+            background: var(--dark-green);
+            color: var(--cream);
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+        .test-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 36px 28px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .test-stars {
+            color: var(--pink-light);
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+        .test-card blockquote {
+            font-size: 0.95rem;
+            font-style: italic;
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+        .test-card cite {
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--pink-light);
+        }
+
+        /* Why Choose */
+        .why-us {
+            padding: 80px 50px;
+            text-align: center;
+        }
+        .why-us h2 {
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 40px;
+        }
+        .why-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .why-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        .why-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--pink);
+            margin-bottom: 6px;
+        }
+        .why-item h3 {
+            font-size: 0.95rem;
+            color: var(--dark-green);
+            margin-bottom: 6px;
+        }
+        .why-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 80px 50px;
+            background: var(--pink-pale);
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+        }
+        .cta h2 {
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 12px;
+        }
+        .cta p {
+            color: var(--text-light);
+            margin-bottom: 28px;
+            font-size: 1.05rem;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 14px 40px;
+            background: var(--dark-green);
+            color: var(--cream);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+        .cta a:hover { background: var(--green-mid); }
+
+        /* Footer */
+        footer {
+            background: var(--dark-green);
+            color: var(--cream);
+            padding: 50px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+        .footer-about h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+        .footer-about h3 span { color: var(--pink-light); }
+        .footer-about p {
+            font-size: 0.9rem;
+            opacity: 0.75;
+            line-height: 1.8;
+        }
+        .footer-col h4 {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pink-light);
+            margin-bottom: 14px;
+        }
+        .footer-col p,
+        .footer-col a {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            line-height: 2;
+        }
+        .footer-col a:hover { color: var(--pink-light); }
+        .footer-bar {
+            max-width: 1050px;
+            margin: 28px auto 0;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .hero-inner h1 { font-size: 2.2rem; }
+            .services-grid, .test-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            nav { padding: 0 20px; }
+            .nav-menu { gap: 14px; }
+            .nav-menu a { font-size: 0.78rem; }
+            .why-grid { flex-direction: column; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">Bloom <span>&amp; Branch</span></div>
+        <ul class="nav-menu">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>Gardens That Grow With You</h1>
+            <p>Award-winning landscaping services across Canterbury and Kent. We create outdoor spaces that inspire, relax and bring people together.</p>
+            <a href="#contact" class="hero-btn">Request a Free Quote</a>
+        </div>
+    </section>
+    <div class="wave-divider"></div>
+
+    <section class="about">
+        <div class="about-icon">&#127793;</div>
+        <h2>Nature-Led Design</h2>
+        <p>At Bloom &amp; Branch Gardens, we believe every outdoor space has potential. Whether you're dreaming of a cottage garden, a modern entertaining area or a complete landscape transformation, our team brings creativity, horticultural knowledge and years of hands-on experience to every project. Based in the heart of Canterbury, we've been bringing gardens to life across Kent since 2012.</p>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="svc-card">
+                <div class="svc-icon">&#127795;</div>
+                <h3>Garden Landscaping</h3>
+                <p>Complete garden transformations including layout design, hard landscaping, planting schemes and water features.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#127807;</div>
+                <h3>Planting &amp; Borders</h3>
+                <p>Expert plant selection and border design for year-round colour, texture and interest in your garden.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#9632;</div>
+                <h3>Patios &amp; Paving</h3>
+                <p>Natural stone, porcelain and block paving laid to the highest standard with proper drainage and edging.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#127810;</div>
+                <h3>Lawn Care &amp; Turf</h3>
+                <p>New lawn installation, turf laying, and seasonal lawn care programmes to keep your grass pristine.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#128296;</div>
+                <h3>Fencing &amp; Decking</h3>
+                <p>Quality timber fencing, garden gates and composite or hardwood decking for entertaining areas.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#128167;</div>
+                <h3>Drainage Solutions</h3>
+                <p>French drains, soakaways and grading work to resolve waterlogging and protect your garden investment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2>Kind Words From Our Clients</h2>
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Bloom &amp; Branch completely transformed our tired back garden into a beautiful space. The curved borders and the little seating area they created are just perfect."</blockquote>
+                <cite>Helen &amp; Robert Ashworth, Whitstable</cite>
+            </div>
+            <div class="test-card">
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"The team were wonderful from start to finish. They listened to what we wanted and delivered something even better. Our new patio has become our favourite room!"</blockquote>
+                <cite>Angela Kemp, Herne Bay</cite>
+            </div>
+            <div class="test-card">
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Really professional outfit. Turned up when they said they would, kept the site tidy, and the quality of the work is outstanding. Already recommended them to neighbours."</blockquote>
+                <cite>Martin Foley, Canterbury</cite>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <h2>Why Bloom &amp; Branch?</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-number">14</div>
+                <h3>Years of Experience</h3>
+                <p>Landscaping across Kent since 2012</p>
+            </div>
+            <div class="why-item">
+                <div class="why-number">450+</div>
+                <h3>Gardens Transformed</h3>
+                <p>From courtyard to country estate</p>
+            </div>
+            <div class="why-item">
+                <div class="why-number">100%</div>
+                <h3>Satisfaction Guarantee</h3>
+                <p>We're not done until you're delighted</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Let's Create Something Beautiful</h2>
+        <p>Get in touch for a free, no-obligation garden consultation.</p>
+        <a href="#contact">Book Your Visit</a>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3>Bloom <span>&amp; Branch</span> Gardens</h3>
+                <p>Beautiful landscaping and garden design across Canterbury, Whitstable, Herne Bay and the wider Kent area. Fully insured, passionate about plants, dedicated to quality.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+                <p>01227 364 718</p>
+                <a href="mailto:info@bloomandbranchgardens.co.uk">info@bloomandbranchgardens.co.uk</a>
+                <p>Mon &ndash; Fri: 8am &ndash; 5pm</p>
+                <p>Sat: 9am &ndash; 1pm</p>
+            </div>
+            <div class="footer-col">
+                <h4>Find Us</h4>
+                <p>23 Station Road West</p>
+                <p>Canterbury</p>
+                <p>Kent</p>
+                <p>CT2 8AN</p>
+            </div>
+        </div>
+        <div class="footer-bar">
+            &copy; 2026 Bloom &amp; Branch Gardens Ltd. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

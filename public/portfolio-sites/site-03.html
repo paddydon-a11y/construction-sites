@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NorthPoint Roofing — Roofers in Newcastle</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --charcoal: #1a1a1a;
+    --charcoal-light: #242424;
+    --charcoal-mid: #2a2a2a;
+    --red: #dc2626;
+    --red-dark: #b91c1c;
+    --white: #ffffff;
+    --gray-light: #cccccc;
+    --gray-mid: #999999;
+    --dark-footer: #111111;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--white);
+    background: var(--charcoal);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { display: block; max-width: 100%; height: auto; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+
+  /* ========== NAV ========== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s;
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+  .nav-logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+  .nav-logo span { color: var(--red); }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-light);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--red) !important;
+    color: var(--white) !important;
+    padding: 12px 28px;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; }
+
+  /* ========== HERO ========== */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    background: url('../portfolio-images/roofer-01.jpg') center/cover no-repeat;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.72);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+  }
+  .hero h1 .line2 { color: var(--red); }
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--gray-light);
+    max-width: 560px;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+  .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 16px 36px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.25s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-red { background: var(--red); color: var(--white); }
+  .btn-red:hover { background: var(--red-dark); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+  .btn-outline:hover {
+    border-color: var(--white);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ========== RED DIVIDER ========== */
+  .red-divider {
+    width: 100%;
+    height: 8px;
+    background: var(--red);
+  }
+
+  /* ========== SECTIONS ========== */
+  .section {
+    padding: 100px 40px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .section-dark { background: var(--charcoal-light); }
+  .section-full { max-width: 100%; padding-left: 0; padding-right: 0; }
+  .section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .section-heading {
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  .section-heading span { color: var(--red); }
+  .section-sub {
+    color: var(--gray-mid);
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+    max-width: 560px;
+  }
+
+  /* ========== SERVICES ========== */
+  .services-wrap {
+    background: var(--charcoal-light);
+    padding: 100px 0;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--charcoal);
+    border-bottom: 4px solid var(--red);
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .service-card:hover { transform: translateY(-6px); }
+  .service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .service-card-body { padding: 28px 24px; }
+  .service-card h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .service-card p {
+    color: var(--gray-mid);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ========== ABOUT ========== */
+  .about-wrap { padding: 100px 0; background: var(--charcoal); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .about-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+  }
+  .about-content h2 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+  .about-content h2 span { color: var(--red); }
+  .about-content p {
+    color: var(--gray-light);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .about-list {
+    margin-bottom: 36px;
+  }
+  .about-list li {
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-light);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .about-list li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+
+  /* ========== GALLERY ========== */
+  .gallery-wrap {
+    background: var(--charcoal-light);
+    padding: 100px 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .gallery-item:hover img { transform: scale(1.08); }
+  .gallery-item::after {
+    content: 'VIEW PROJECT';
+    position: absolute;
+    inset: 0;
+    background: rgba(220, 38, 38, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+  .gallery-item:hover::after { opacity: 1; }
+
+  /* ========== TESTIMONIALS ========== */
+  .testimonials-wrap {
+    background: var(--charcoal);
+    padding: 100px 0;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .testimonial-card {
+    background: var(--charcoal-light);
+    padding: 44px 40px;
+    border-left: 4px solid var(--red);
+  }
+  .testimonial-stars {
+    color: var(--red);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+  }
+  .testimonial-card blockquote {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray-light);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .testimonial-role {
+    color: var(--gray-mid);
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+
+  /* ========== CTA BANNER ========== */
+  .cta-banner {
+    background: var(--red);
+    padding: 80px 40px;
+    text-align: center;
+  }
+  .cta-banner h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.1;
+  }
+  .cta-banner .phone {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    display: block;
+  }
+  .btn-white {
+    background: var(--white);
+    color: var(--charcoal);
+    padding: 16px 40px;
+  }
+  .btn-white:hover {
+    background: var(--gray-light);
+    transform: translateY(-2px);
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    background: var(--dark-footer);
+    padding: 80px 0 0 0;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px 60px 40px;
+  }
+  .footer-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .footer-logo span { color: var(--red); }
+  .footer-about {
+    color: var(--gray-mid);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 320px;
+  }
+  .footer h4 {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+    color: var(--white);
+  }
+  .footer ul li {
+    margin-bottom: 12px;
+  }
+  .footer ul a {
+    color: var(--gray-mid);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .footer ul a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray-mid);
+    font-size: 0.8rem;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img { height: 380px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 2.8rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .section-heading { font-size: 2rem; }
+    .cta-banner h2 { font-size: 2rem; }
+    .cta-banner .phone { font-size: 1.6rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">NorthPoint<span>.</span> Roofing</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Projects</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact" class="nav-cta btn">Free Survey</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      Roofing Done Right<br>
+      <span class="line2">The First Time</span>
+    </h1>
+    <p>Newcastle's #1 rated roofing contractor. Domestic &amp; commercial projects delivered on time, on budget, and built to last.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-red">Get A Free Quote</a>
+      <a href="#services" class="btn btn-outline">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- RED DIVIDER -->
+<div class="red-divider"></div>
+
+<!-- SERVICES -->
+<section class="services-wrap" id="services">
+  <div class="section-inner">
+    <div class="section-heading">What We <span>Do</span></div>
+    <p class="section-sub">From emergency leak repairs to full commercial re-roofing, we have the skills and experience to handle any project.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1669348072792-f4d2924ef216?w=600&h=440&fit=crop&auto=format" alt="Flat Roofing">
+        <div class="service-card-body">
+          <h3>Flat Roofing</h3>
+          <p>Expert flat roof installations using the latest EPDM and GRP fibreglass systems. 20 year guarantees on all work.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1674816925645-c839554fb445?w=600&h=440&fit=crop&auto=format" alt="Pitched Roofing">
+        <div class="service-card-body">
+          <h3>Pitched Roofing</h3>
+          <p>Traditional slate and tile pitched roofing. New builds, re-roofs, and restoration work across the North East.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1669348072787-5e7c67b801fd?w=600&h=440&fit=crop&auto=format" alt="Guttering & Fascias">
+        <div class="service-card-body">
+          <h3>Guttering &amp; Fascias</h3>
+          <p>Complete fascia, soffit, and guttering replacement. uPVC and aluminium systems fitted to the highest standard.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1669348072813-aada3fdc3fec?w=600&h=440&fit=crop&auto=format" alt="Roof Repairs">
+        <div class="service-card-body">
+          <h3>Roof Repairs</h3>
+          <p>Fast, reliable roof repairs and emergency call-outs. We fix leaks, replace missing tiles, and repair storm damage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-wrap" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <img class="about-img" src="https://images.unsplash.com/photo-1673645652590-9d21295bf4ac?w=800&h=600&fit=crop&auto=format" alt="NorthPoint Roofing team at work">
+      <div class="about-content">
+        <h2>25 Years on the <span>Rooftops</span></h2>
+        <p>Since 1999, NorthPoint Roofing has been Newcastle's most trusted name in roofing. Founded by brothers David and Mark Patterson, we've grown from a two-man team to a 30-strong workforce — but our commitment to quality craftsmanship has never wavered.</p>
+        <p>Every project is managed personally by our directors. We don't use subcontractors, and we never cut corners. That's why 80% of our work comes from repeat customers and referrals.</p>
+        <ul class="about-list">
+          <li>NFRC Member (National Federation of Roofing Contractors)</li>
+          <li>Fully Insured &mdash; &pound;5M Public Liability</li>
+          <li>TrustMark Government Endorsed</li>
+          <li>All Work Guaranteed Up to 20 Years</li>
+          <li>Free No-Obligation Surveys &amp; Quotes</li>
+        </ul>
+        <a href="#about" class="btn btn-red">About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-wrap" id="gallery">
+  <div class="section-inner">
+    <div class="section-heading">Recent <span>Projects</span></div>
+    <p class="section-sub">A selection of our latest roofing projects across Newcastle and the wider North East region.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1727777266423-6a33048e4894?w=600&h=400&fit=crop&auto=format" alt="Roofing project 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1673645652800-1abf606a2772?w=600&h=400&fit=crop&auto=format" alt="Roofing project 2">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1673645652864-9c285c1eed29?w=600&h=400&fit=crop&auto=format" alt="Roofing project 3">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1673645652350-6a4c31c1c78f?w=600&h=400&fit=crop&auto=format" alt="Roofing project 4">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1744044155829-610dded4cead?w=600&h=400&fit=crop&auto=format" alt="Roofing project 5">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1744975748338-d226c7535d49?w=600&h=400&fit=crop&auto=format" alt="Roofing project 6">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-wrap" id="testimonials">
+  <div class="section-inner">
+    <div class="section-heading">What Our <span>Clients</span> Say</div>
+    <p class="section-sub">Don't take our word for it. Here's what real customers have to say about working with NorthPoint.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"We had a serious leak in our commercial warehouse and NorthPoint were there within two hours of our call. The team worked through the evening to make sure the building was watertight before morning. Professional, efficient, and fairly priced. Absolutely first class."</blockquote>
+        <div class="testimonial-author">James Henderson</div>
+        <div class="testimonial-role">Warehouse Manager, Henderson Logistics, Gateshead</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"We used NorthPoint for a full re-roof on our Victorian terrace. David came out, explained everything clearly, and the quote was competitive. The lads were brilliant &mdash; tidy, respectful, and the finished work is outstanding. Wouldn't hesitate to recommend."</blockquote>
+        <div class="testimonial-author">Sarah &amp; Colin Mitchell</div>
+        <div class="testimonial-role">Homeowners, Jesmond, Newcastle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <h2>Roof Leaking? We Can Be There Today.</h2>
+  <span class="phone">0191 432 7890</span>
+  <a href="tel:01914327890" class="btn btn-white">Call Now</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">NorthPoint<span>.</span> Roofing</div>
+      <p class="footer-about">Newcastle's most trusted roofing contractor. Over 25 years of experience in domestic and commercial roofing across the North East. NFRC members. Fully insured.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Flat Roofing</a></li>
+        <li><a href="#services">Pitched Roofing</a></li>
+        <li><a href="#services">Guttering &amp; Fascias</a></li>
+        <li><a href="#services">Roof Repairs</a></li>
+        <li><a href="#services">Commercial Roofing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#gallery">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:01914327890">0191 432 7890</a></li>
+        <li><a href="mailto:info@northpointroofing.co.uk">info@northpointroofing.co.uk</a></li>
+        <li><a href="#">Unit 14, Byker Industrial Estate</a></li>
+        <li><a href="#">Newcastle upon Tyne, NE6 2AB</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 NorthPoint Roofing Ltd. All rights reserved.</span>
+    <span>Registered in England &amp; Wales. Company No. 04829173</span>
+  </div>
+</footer>
+
+</body>
+</html>

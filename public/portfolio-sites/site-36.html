@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral Scaffolding | Professional Scaffolding in Salisbury</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-blue: #172554;
+            --silver: #94a3b8;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --light-silver: #cbd5e1;
+            --faint-blue: #e8edf4;
+            --text: #475569;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--deep-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--silver);
+            font-weight: 400;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--light-silver);
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--white);
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--white);
+            padding: 0.5rem 1.3rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            margin-top: 70px;
+            position: relative;
+            height: 88vh;
+            min-height: 550px;
+            background: url('../portfolio-images/scaffolder-05.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(23,37,84,0.9) 0%, rgba(23,37,84,0.5) 60%, rgba(23,37,84,0.3) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 620px;
+            padding: 0 4rem;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            color: var(--light-silver);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-tag .dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            color: var(--white);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-content p {
+            color: var(--light-silver);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--deep-blue);
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        .btn-white:hover {
+            opacity: 0.9;
+        }
+
+        .btn-border {
+            border: 2px solid var(--silver);
+            color: var(--white);
+            padding: 0.85rem 2.2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+        }
+
+        .btn-border:hover {
+            border-color: var(--white);
+        }
+
+        /* ===================== TRUST BADGES ===================== */
+        .trust-badges {
+            background: var(--off-white);
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 2.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .badge-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--deep-blue);
+            color: var(--white);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .badge-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--deep-blue);
+        }
+
+        .badge-text span {
+            display: block;
+            font-weight: 400;
+            color: var(--silver);
+            font-size: 0.78rem;
+        }
+
+        /* ===================== SERVICES ===================== */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .sec-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .sec-header h2 {
+            font-size: 2.2rem;
+            color: var(--deep-blue);
+            font-weight: 800;
+        }
+
+        .sec-header .underline {
+            width: 50px;
+            height: 3px;
+            background: var(--silver);
+            margin: 0.8rem auto;
+        }
+
+        .sec-header p {
+            color: var(--text);
+            max-width: 530px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--off-white);
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(23,37,84,0.08);
+        }
+
+        .svc-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: var(--deep-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.7rem;
+        }
+
+        .service-card p {
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== ABOUT ===================== */
+        .about-section {
+            padding: 4rem 2rem;
+            background: var(--deep-blue);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            color: var(--light-silver);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--faint-blue);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .test-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .test-card .quote-mark {
+            font-size: 3rem;
+            color: var(--deep-blue);
+            line-height: 1;
+            font-family: Georgia, serif;
+            opacity: 0.3;
+        }
+
+        .test-card blockquote {
+            color: var(--text);
+            font-style: italic;
+            font-size: 0.93rem;
+            line-height: 1.7;
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .test-card .stars {
+            color: #f59e0b;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .test-name {
+            font-weight: 700;
+            color: var(--deep-blue);
+            font-size: 0.9rem;
+        }
+
+        .test-loc {
+            color: var(--silver);
+            font-size: 0.8rem;
+        }
+
+        /* ===================== CTA ===================== */
+        .cta-section {
+            background: var(--off-white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-section p {
+            color: var(--text);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .cta-main-btn {
+            display: inline-block;
+            background: var(--deep-blue);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+        }
+
+        .cta-main-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--deep-blue);
+            color: var(--light-silver);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1050px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            color: var(--light-silver);
+        }
+
+        .footer-base {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--silver);
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content { padding: 0 2rem; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-actions { flex-direction: column; }
+            .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .trust-badges { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Cathedral <span>Scaffolding</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="nav-btn">Get a Quote</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="dot"></span>
+                Fully Insured &amp; CISRS Accredited
+            </div>
+            <h1>Professional Scaffolding Services in Salisbury</h1>
+            <p>Cathedral Scaffolding provides safe, reliable access solutions for domestic and commercial clients across Wiltshire. Over 20 years of trusted service.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-white">Request a Free Quote</a>
+                <a href="#services" class="btn-border">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <div class="trust-badges">
+        <div class="badge">
+            <div class="badge-icon">&#9733;</div>
+            <div class="badge-text">CISRS Accredited<span>All operatives certified</span></div>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">&#128737;</div>
+            <div class="badge-text">&pound;10M Insured<span>Public liability cover</span></div>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">&#128336;</div>
+            <div class="badge-text">20+ Years<span>Established in 2004</span></div>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">&#9745;</div>
+            <div class="badge-text">SSIP Approved<span>Safety Schemes in Procurement</span></div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="sec-header">
+            <h2>Our Services</h2>
+            <div class="underline"></div>
+            <p>From residential projects to heritage sites, we deliver scaffolding solutions tailored to your needs.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="svc-icon">&#9633;</div>
+                <h3>Domestic Scaffolding</h3>
+                <p>Safe, efficient scaffolding for home improvements including loft conversions, re-roofing, chimney repairs, and external decorating.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9635;</div>
+                <h3>Commercial Scaffolding</h3>
+                <p>Large-scale scaffolding for commercial builds, office refurbishments, and retail fit-outs. Full project management available.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#10047;</div>
+                <h3>Heritage &amp; Conservation</h3>
+                <p>Specialist scaffolding for listed buildings, churches, and heritage properties. Sensitive approach with minimal impact to the structure.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9651;</div>
+                <h3>Temporary Roofs</h3>
+                <p>Complete weatherproof enclosures for major renovation projects, allowing work to continue regardless of weather conditions.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#8862;</div>
+                <h3>Access Towers</h3>
+                <p>Quick-erect aluminium towers for both internal and external access. Ideal for maintenance, painting, and inspection work.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9670;</div>
+                <h3>Event Structures</h3>
+                <p>Bespoke scaffolding structures for events, festivals, and temporary installations. Custom platforms, stages, and viewing areas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <h2>About Cathedral Scaffolding</h2>
+        <p>Founded in 2004 and based in the heart of Salisbury, Cathedral Scaffolding has grown from a two-man operation into one of Wiltshire's most respected access companies. We combine traditional values of hard work and integrity with modern safety standards and equipment. Our team of CISRS-qualified operatives takes pride in delivering clean, safe scaffolding on every project, from a single chimney stack to a full cathedral encapsulation.</p>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="sec-header">
+            <h2>Client Testimonials</h2>
+            <div class="underline"></div>
+            <p>What our clients say about working with Cathedral Scaffolding.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="test-card">
+                <div class="quote-mark">&ldquo;</div>
+                <blockquote>Cathedral Scaffolding provided an excellent service for our church roof restoration. They were mindful of the listed building requirements and incredibly careful with the stonework. Highly professional.</blockquote>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="test-name">Canon Richard Fowler</div>
+                <div class="test-loc">St Thomas's Church, Salisbury</div>
+            </div>
+            <div class="test-card">
+                <div class="quote-mark">&ldquo;</div>
+                <blockquote>We've used Cathedral on multiple housing developments across Wiltshire. They're always on time, their scaffolding is immaculate, and their health and safety documentation is faultless. A pleasure to work with.</blockquote>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="test-name">Jonathan Hartwell</div>
+                <div class="test-loc">Hartwell Developments, Wilton</div>
+            </div>
+            <div class="test-card">
+                <div class="quote-mark">&ldquo;</div>
+                <blockquote>Had our house re-roofed and needed scaffolding put up at fairly short notice. Cathedral came within two days, the lads were friendly and efficient, and the price was very fair. Would use again.</blockquote>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="test-name">Laura &amp; Tim Prescott</div>
+                <div class="test-loc">Amesbury, Wiltshire</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Need Scaffolding in Salisbury?</h2>
+        <p>Contact Cathedral Scaffolding today for a free, no-obligation quote on any project.</p>
+        <a href="#contact" class="cta-main-btn">Get in Touch</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Cathedral Scaffolding Ltd<br>
+                Unit 4, Churchfields Industrial Estate<br>
+                Churchfields Road, Salisbury SP2 7NH</p>
+                <p style="margin-top: 1rem;">
+                    Tel: 01722 503 218<br>
+                    Mob: 07856 329 174<br>
+                    Email: info@cathedralscaffolding.co.uk
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li>Domestic Scaffolding</li>
+                    <li>Commercial Scaffolding</li>
+                    <li>Heritage &amp; Conservation</li>
+                    <li>Temporary Roofs</li>
+                    <li>Access Towers</li>
+                    <li>Event Structures</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Areas We Serve</h3>
+                <ul>
+                    <li>Salisbury</li>
+                    <li>Amesbury</li>
+                    <li>Wilton</li>
+                    <li>Warminster</li>
+                    <li>Andover</li>
+                    <li>Shaftesbury</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-base">
+            &copy; 2026 Cathedral Scaffolding Ltd. All rights reserved. Company Reg. No. 06128345. CISRS &amp; SSIP Accredited. VAT Reg. No. 245 6712 89.
+        </div>
+    </footer>
+
+</body>
+</html>

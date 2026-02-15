@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volt Electrical Services | Electricians in Glasgow</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+            line-height: 1.6;
+            background: #1a1028;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(45, 27, 78, 0.95);
+            padding: 0 3rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #3b82f6;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #a78bfa;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3b82f6;
+        }
+
+        /* Hero - Angled */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background: url('../portfolio-images/electrician-02.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(45, 27, 78, 0.95) 0%,
+                rgba(45, 27, 78, 0.8) 40%,
+                rgba(45, 27, 78, 0.4) 100%
+            );
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: #1a1028;
+            clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 4rem;
+            max-width: 650px;
+        }
+
+        .hero-content .flash {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #3b82f6;
+            padding: 8px 18px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, #3b82f6, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #b8a8d4;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .btn-blue {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-blue:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        /* About */
+        .about {
+            padding: 5rem 2rem;
+            background: #1a1028;
+        }
+
+        .about-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-inner h2 span {
+            color: #3b82f6;
+        }
+
+        .about-inner p {
+            color: #9a8bb8;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .blue-line {
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #3b82f6, #a78bfa);
+            margin: 1.5rem auto;
+        }
+
+        /* Services - 4 Col Grid */
+        .services {
+            padding: 5rem 2rem;
+            background: #211538;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .services-header h2 {
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        .services-header p {
+            color: #8a7ba6;
+            margin-top: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(167,139,250,0.2));
+            color: #3b82f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 1.25rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.05rem;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.88rem;
+            color: #8a7ba6;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #1a1028;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        .testimonials-header p {
+            color: #8a7ba6;
+        }
+
+        .testimonials-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .test-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(167, 139, 250, 0.15);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .test-card .stars {
+            color: #3b82f6;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .test-card .quote {
+            font-style: italic;
+            color: #b8a8d4;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .test-card .author {
+            font-weight: 700;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        .test-card .location {
+            font-size: 0.82rem;
+            color: #a78bfa;
+        }
+
+        /* Footer */
+        footer {
+            background: #120c1e;
+            color: #8a7ba6;
+            padding: 4rem 2rem 1.5rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: #3b82f6;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #7a6b96;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #3b82f6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+            color: #5a4d72;
+        }
+
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content { padding: 0 2rem; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">VOLT <span>Electrical</span></div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="flash">&#9889; 24/7 Emergency Callout</div>
+            <h1>Glasgow's Trusted <span>Electrical</span> Experts</h1>
+            <p>From full rewires to smart home installations, Volt Electrical Services delivers safe, certified electrical work across Glasgow and Central Scotland.</p>
+            <a href="#contact" class="btn-blue">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2>Powering Glasgow <span>Since 2008</span></h2>
+            <div class="blue-line"></div>
+            <p>Volt Electrical Services was founded by Craig Morrison, a time-served electrician with a passion for delivering safe, high-quality electrical work. Based in Glasgow, we serve domestic and commercial clients across the Central Belt.</p>
+            <p>We're SELECT approved, fully insured, and registered with NICEIC. Every job we complete comes with full certification and a satisfaction guarantee. Our team of ten qualified electricians handles everything from a single socket to a complete commercial installation.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p>Complete electrical solutions for homes and businesses</p>
+            <div class="blue-line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#9889;</div>
+                <h3>Full Rewires</h3>
+                <p>Complete house and flat rewires to current regulations. We minimise disruption and leave your property clean and tidy.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f4a1;</div>
+                <h3>Lighting Design</h3>
+                <p>Bespoke lighting schemes for kitchens, bathrooms, and living spaces. LED, dimming, and smart lighting solutions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f50c;</div>
+                <h3>Consumer Units</h3>
+                <p>Fuse board upgrades and replacements to meet the latest safety standards. All work certified to BS 7671.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f3e2;</div>
+                <h3>Commercial Installs</h3>
+                <p>Office fit-outs, retail installations, and industrial electrical work. Reliable service with minimal business disruption.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f50b;</div>
+                <h3>EV Charger Install</h3>
+                <p>Home and workplace electric vehicle charging points. OZEV approved installers for government grant applications.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f6e1;</div>
+                <h3>Testing &amp; Inspection</h3>
+                <p>EICR testing for landlords and homeowners. Periodic inspection and testing to ensure your electrics are safe.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f3e0;</div>
+                <h3>Smart Home Setup</h3>
+                <p>Smart switches, automated lighting, home cinema wiring, and network cabling for the connected home.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f6a8;</div>
+                <h3>Emergency Callout</h3>
+                <p>24/7 emergency electrician service across Glasgow. Fast response times for power outages, faults, and safety issues.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>What Clients Say</h2>
+            <p>Trusted by homeowners and businesses across Glasgow</p>
+            <div class="blue-line"></div>
+        </div>
+        <div class="testimonials-row">
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Craig and his team rewired our three-bedroom flat in the West End and did a brilliant job. They were neat, efficient, and explained everything clearly. The new lighting in the kitchen is fantastic."</div>
+                <div class="author">Fiona McAllister</div>
+                <div class="location">Hillhead, Glasgow</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Called Volt for an emergency callout when we lost power on a Sunday evening. They were at our door within 45 minutes and had the problem sorted quickly. Can't fault the service at all."</div>
+                <div class="author">Derek Campbell</div>
+                <div class="location">Shawlands, Glasgow</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"We've used Volt for all the electrical work across our rental properties. They're always professional, competitively priced, and the EICR reports are done promptly. Highly recommended for landlords."</div>
+                <div class="author">Alan and Beth Henderson</div>
+                <div class="location">Partick, Glasgow</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Volt Electrical Services</h3>
+                <p>Glasgow's trusted electrical contractors since 2008. SELECT approved, NICEIC registered, fully insured. Domestic and commercial electrical services across the Central Belt.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Unit 12, Tradeston Industrial Centre<br>Glasgow, G5 8BB</p>
+                <p>Tel: 0141 374 2856</p>
+                <p>info@voltelectrical.co.uk</p>
+                <p style="margin-top: 0.5rem; color: #3b82f6; font-weight: 600;">24/7 Emergency: 07891 234 567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Volt Electrical Services Ltd. Registered in Scotland. SC498217
+        </div>
+    </footer>
+
+</body>
+</html>

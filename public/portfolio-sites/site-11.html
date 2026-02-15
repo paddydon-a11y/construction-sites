@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redfern Bricklaying | Professional Bricklayers in Sheffield</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1e3a5f;
+            padding: 0 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav .logo span {
+            color: #7fb3e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #c8ddf0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            background: url('../portfolio-images/bricklayer-02.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 58, 95, 0.75);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 span {
+            color: #7fb3e0;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #c8ddf0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: #7fb3e0;
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Section Shared */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title .underline {
+            width: 60px;
+            height: 4px;
+            background: #7fb3e0;
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: #f4f8fc;
+        }
+
+        .about-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e3a5f;
+        }
+
+        .stat .label {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: #fff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #f4f8fc;
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0eaf4;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(30,58,95,0.12);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #1e3a5f;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: #1e3a5f;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #1e3a5f;
+            color: #fff;
+        }
+
+        .testimonials .section-title h2 {
+            color: #fff;
+        }
+
+        .testimonials .section-title p {
+            color: #a8c8e8;
+        }
+
+        .testimonials .section-title .underline {
+            background: #7fb3e0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .testimonial-card .stars {
+            color: #7fb3e0;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            color: #c8ddf0;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .testimonial-card .location {
+            font-size: 0.85rem;
+            color: #7fb3e0;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f2235;
+            color: #c8ddf0;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 0.95rem;
+            color: #8ab4d8;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #8ab4d8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #5a8ab5;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .services-grid,
+            .testimonials-grid,
+            .footer-grid { grid-template-columns: 1fr; }
+            .stats-row { flex-direction: column; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Redfern <span>Bricklaying</span></div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Quality <span>Bricklaying</span> You Can Trust</h1>
+            <p>Serving Sheffield and South Yorkshire with over 25 years of professional bricklaying experience. From garden walls to full builds, we deliver quality that lasts.</p>
+            <a href="#contact" class="hero-btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-title">
+            <h2>About Redfern Bricklaying</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="about-inner">
+            <p>Founded in 1998, Redfern Bricklaying has built a solid reputation across Sheffield and the surrounding areas. We're a family-run business that takes genuine pride in every course of bricks we lay.</p>
+            <p>Whether you need a new garden wall, an extension, or a complete new build, our experienced team delivers craftsmanship that stands the test of time. We're fully insured, NHBC registered, and committed to exceeding your expectations.</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="number">25+</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="number">1,200+</div>
+                    <div class="label">Projects Completed</div>
+                </div>
+                <div class="stat">
+                    <div class="number">100%</div>
+                    <div class="label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Professional bricklaying services tailored to your needs</p>
+            <div class="underline"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#x1f9f1;</div>
+                <h3>House Extensions</h3>
+                <p>Single and double storey extensions built to the highest standards. We work closely with architects and project managers to deliver seamless results.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f3e0;</div>
+                <h3>New Builds</h3>
+                <p>Complete brickwork packages for new residential and commercial builds. We handle everything from foundations to the ridge line.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f9f1;</div>
+                <h3>Garden Walls</h3>
+                <p>Boundary walls, retaining walls, and decorative garden features. Built to complement your outdoor space and built to last.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f527;</div>
+                <h3>Repointing</h3>
+                <p>Expert repointing of tired mortar joints to restore the appearance and weatherproofing of your brickwork. All joint profiles matched.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f3d7;</div>
+                <h3>Commercial Work</h3>
+                <p>Industrial and commercial brickwork projects of all scales. Reliable timekeeping and professional site management guaranteed.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f3db;</div>
+                <h3>Restoration Work</h3>
+                <p>Sympathetic restoration of period brickwork using traditional techniques and lime mortars. Heritage projects a speciality.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+            <p>Don't just take our word for it</p>
+            <div class="underline"></div>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Redfern built our rear extension and the brickwork was absolutely flawless. They matched our existing bricks perfectly and the finish is outstanding. Couldn't recommend them more highly."</div>
+                <div class="author">James Hartley</div>
+                <div class="location">Ecclesall, Sheffield</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Used Redfern for a garden wall and patio area. The lads were punctual, tidy, and the workmanship was top quality. Very fair price too. Will definitely use them again."</div>
+                <div class="author">Sarah Wainwright</div>
+                <div class="location">Dore, Sheffield</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Fantastic repointing job on our Victorian terrace. They took real care with the lime mortar and the finish looks as good as new. Professional from start to finish."</div>
+                <div class="author">David and Karen Booth</div>
+                <div class="location">Nether Edge, Sheffield</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Redfern Bricklaying</h3>
+                <p>Professional bricklaying services across Sheffield and South Yorkshire. Fully insured and NHBC registered.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Unit 4, Neepsend Lane<br>Sheffield, S3 8AT</p>
+                <p>Tel: 0114 275 8834</p>
+                <p>Email: info@redfernbricklaying.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Redfern Bricklaying. All rights reserved. Company Reg. No. 08451293
+        </div>
+    </footer>
+
+</body>
+</html>

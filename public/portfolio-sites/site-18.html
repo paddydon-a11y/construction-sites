@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakwood Kitchens | Bespoke Kitchen Design &amp; Fitting in Cheltenham</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #444;
+            line-height: 1.6;
+            background: #faf8f4;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 0 3rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+        }
+
+        nav .logo {
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span {
+            color: #8b6914;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav ul li a {
+            color: #777;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #8b6914;
+        }
+
+        /* Hero - Full Width with Bottom Gradient Fade */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            min-height: 550px;
+            background: url('../portfolio-images/kitchen-fitter-02.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            margin-top: 72px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(
+                to top,
+                #faf8f4 0%,
+                rgba(250, 248, 244, 0.8) 30%,
+                transparent 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 4rem 4rem;
+            max-width: 700px;
+        }
+
+        .hero-content .eyebrow {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #8b6914;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            color: #333;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 em {
+            font-style: italic;
+            color: #8b6914;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .btn-wood {
+            display: inline-block;
+            padding: 14px 40px;
+            background: #8b6914;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 3px;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .btn-wood:hover {
+            background: #7a5c10;
+        }
+
+        /* About */
+        .about {
+            padding: 5rem 2rem;
+            background: #faf8f4;
+        }
+
+        .about-inner {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner h2 {
+            font-size: 2.2rem;
+            color: #333;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .about-inner h2 em {
+            color: #8b6914;
+        }
+
+        .wood-divider {
+            width: 50px;
+            height: 2px;
+            background: #8b6914;
+            margin: 1.5rem auto;
+        }
+
+        .about-inner p {
+            font-family: 'Segoe UI', sans-serif;
+            color: #777;
+            font-size: 1.02rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Services - Elegant Grid */
+        .services {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .services-header h2 {
+            font-size: 2.2rem;
+            color: #333;
+            font-weight: 400;
+        }
+
+        .services-header p {
+            color: #999;
+            font-family: 'Segoe UI', sans-serif;
+            margin-top: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #faf8f4;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-radius: 4px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-bottom-color: #8b6914;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #f0ebe0;
+            color: #8b6914;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 1.25rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            color: #333;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .service-card p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #333;
+            color: #fff;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .testimonials-header p {
+            color: #999;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .testimonials-list {
+            max-width: 850px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .t-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 4px;
+            border-left: 3px solid #8b6914;
+        }
+
+        .t-card .stars {
+            color: #8b6914;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .t-card .quote {
+            font-family: Georgia, serif;
+            font-style: italic;
+            color: #bbb;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .t-card .author {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .t-card .location {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.8rem;
+            color: #8b6914;
+        }
+
+        /* Footer */
+        footer {
+            background: #2a2a2a;
+            color: #999;
+            padding: 3.5rem 2rem 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            font-family: Georgia, serif;
+            color: #8b6914;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .footer-col p {
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.88rem;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #8b6914;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.78rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content { padding: 0 2rem 3rem; }
+            .hero-content h1 { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-list { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><span>Oakwood</span> Kitchens</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">Cheltenham &amp; the Cotswolds</div>
+            <h1>Kitchens Crafted with <em>Care &amp; Precision</em></h1>
+            <p>Oakwood Kitchens designs, supplies, and installs beautiful bespoke kitchens. From contemporary handleless designs to classic Shaker styles, we create kitchens you'll love.</p>
+            <a href="#contact" class="btn-wood">Book a Design Visit</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2>The <em>Oakwood</em> Difference</h2>
+            <div class="wood-divider"></div>
+            <p>Oakwood Kitchens was founded in 2009 by husband-and-wife team Daniel and Sophie Clarke. Daniel brings over 20 years of joinery experience, while Sophie handles the design side, creating stunning kitchen layouts that are both beautiful and practical.</p>
+            <p>Based in Cheltenham, we serve clients across the Cotswolds and Gloucestershire. Every kitchen we create is designed around your lifestyle, fitted by our own skilled team, and backed by our personal guarantee of quality.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>What We Offer</h2>
+            <p>A complete kitchen service from design to installation</p>
+            <div class="wood-divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#x1f4d0;</div>
+                <h3>Kitchen Design</h3>
+                <p>Free home design visits with 3D visualisation. We work with you to create the perfect layout, choose materials, and plan every detail before work begins.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f6e0;</div>
+                <h3>Full Installation</h3>
+                <p>Complete kitchen fitting by our own experienced team. Carpentry, plumbing, electrics, tiling, and decorating all managed under one roof.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1fa9c;</div>
+                <h3>Bespoke Joinery</h3>
+                <p>Custom-made cabinetry, islands, and storage solutions crafted in our workshop. Solid timber, hand-painted, and built to last a lifetime.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x2b1c;</div>
+                <h3>Worktops &amp; Surfaces</h3>
+                <p>Supply and fitting of granite, quartz, solid timber, and composite worktops. We template, fabricate, and install to a perfect finish.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f4a1;</div>
+                <h3>Kitchen Lighting</h3>
+                <p>Integrated LED under-cabinet lighting, pendant installations, and ambient schemes. We design lighting that enhances the look and function of your kitchen.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f527;</div>
+                <h3>Appliance Supply</h3>
+                <p>We source and install premium kitchen appliances from leading brands including Bosch, Neff, and Siemens. Trade pricing passed directly to you.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>What Our Clients Say</h2>
+            <p>Kitchens that delight, from people who care</p>
+        </div>
+        <div class="testimonials-list">
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Our new kitchen is absolutely stunning. Sophie's design was spot on and Daniel's team fitted everything beautifully. The level of craftsmanship in the bespoke island unit is remarkable. We couldn't be happier."</div>
+                <div class="author">Rachel and James Whitmore</div>
+                <div class="location">Charlton Kings, Cheltenham</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"From the first design meeting to the final snag, Oakwood were a pleasure to work with. The kitchen looks even better than the 3D renders. The quality of the units and the attention to detail is outstanding."</div>
+                <div class="author">Philippa Osborne</div>
+                <div class="location">Prestbury, Cheltenham</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Third kitchen I've had done over the years and by far the best experience. The fitters were tidy and skilled, the project ran to schedule, and the finished kitchen is gorgeous. Worth every penny."</div>
+                <div class="author">David Marchetti</div>
+                <div class="location">Leckhampton, Cheltenham</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"We had a very tricky L-shaped kitchen and Oakwood made the absolute most of the space. The handmade cabinets are beautiful and the quartz worktops are perfect. Everyone who visits comments on how lovely it is."</div>
+                <div class="author">Fiona and Robert Greenaway</div>
+                <div class="location">Bourton-on-the-Water</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Oakwood Kitchens</h3>
+                <p>Bespoke kitchen design and installation in Cheltenham and the Cotswolds since 2009. Family-run, quality-focused, and passionate about creating beautiful kitchens.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Get in Touch</h3>
+                <p>The Workshop, Swindon Road<br>Cheltenham, GL51 9EX</p>
+                <p>Tel: 01242 584 731</p>
+                <p>hello@oakwoodkitchens.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Oakwood Kitchens Ltd. Registered in England &amp; Wales. No. 07142583
+        </div>
+    </footer>
+
+</body>
+</html>

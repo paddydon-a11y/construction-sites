@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hampshire Kitchen Design | Bespoke Kitchens in Southampton</title>
+    <style>
+        /* Reset & Base */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #3a3a3a;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* Colour Palette */
+        :root {
+            --sage: #6b8f71;
+            --sage-light: #8aab90;
+            --sage-dark: #4a6e50;
+            --white: #ffffff;
+            --warm-gray: #9e9589;
+            --warm-gray-light: #f5f3f0;
+            --warm-gray-mid: #d6d1cb;
+            --text-dark: #2c2c2c;
+            --text-body: #555;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid var(--warm-gray-mid);
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+            backdrop-filter: blur(8px);
+        }
+        .nav-logo {
+            font-family: 'Georgia', serif;
+            font-size: 1.35rem;
+            color: var(--sage-dark);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .nav-logo span {
+            color: var(--warm-gray);
+            font-weight: 400;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-body);
+            font-size: 0.9rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--sage); }
+
+        /* Hero - Split Layout */
+        .hero {
+            margin-top: 72px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: calc(100vh - 72px);
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px;
+            background: var(--warm-gray-light);
+        }
+        .hero-content h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .hero-content h1 em {
+            color: var(--sage);
+            font-style: italic;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            margin-bottom: 32px;
+            max-width: 440px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+        }
+        .hero-cta {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--sage);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+        .hero-cta:hover { background: var(--sage-dark); }
+        .hero-image {
+            background: url('../portfolio-images/kitchen-fitter-05.jpg') center center / cover no-repeat;
+            min-height: 500px;
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 100px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .intro .divider {
+            width: 60px;
+            height: 2px;
+            background: var(--sage);
+            margin: 0 auto 30px;
+        }
+        .intro h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+        .intro p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-body);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 60px 100px;
+            background: var(--white);
+        }
+        .services-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .services-header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .services-header p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--warm-gray);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .service-card {
+            text-align: center;
+            padding: 40px 30px;
+            border: 1px solid var(--warm-gray-mid);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .service-card:hover {
+            border-color: var(--sage);
+            transform: translateY(-4px);
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--warm-gray-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 1.6rem;
+        }
+        .service-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 80px 60px;
+            background: var(--sage);
+            color: var(--white);
+        }
+        .process h2 {
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 50px;
+        }
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .step {
+            text-align: center;
+            flex: 1;
+        }
+        .step-number {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            opacity: 0.4;
+            margin-bottom: 12px;
+        }
+        .step h3 {
+            font-size: 1rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .step p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.85;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 60px;
+            background: var(--warm-gray-light);
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 60px;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .testimonial {
+            background: var(--white);
+            padding: 40px;
+            border-left: 3px solid var(--sage);
+        }
+        .testimonial blockquote {
+            font-family: 'Georgia', serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--text-body);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .testimonial cite {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--sage-dark);
+            letter-spacing: 0.5px;
+        }
+        .testimonial .stars {
+            color: var(--sage);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            padding: 80px 60px;
+            background: var(--text-dark);
+            text-align: center;
+        }
+        .cta-banner h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            color: var(--white);
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+        .cta-banner p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--warm-gray);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        .cta-banner a {
+            display: inline-block;
+            padding: 14px 40px;
+            border: 1px solid var(--sage-light);
+            color: var(--sage-light);
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .cta-banner a:hover {
+            background: var(--sage);
+            border-color: var(--sage);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--warm-gray-light);
+            padding: 60px;
+            border-top: 1px solid var(--warm-gray-mid);
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .footer-brand h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            color: var(--sage-dark);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        .footer-brand p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        .footer-col h4 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 16px;
+        }
+        .footer-col p,
+        .footer-col a {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-body);
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+        }
+        .footer-col a:hover { color: var(--sage); }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid var(--warm-gray-mid);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8rem;
+            color: var(--warm-gray);
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-content { padding: 60px 30px; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; gap: 30px; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            nav { padding: 0 20px; }
+            .nav-links { gap: 16px; }
+            .nav-links a { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">Hampshire Kitchen <span>Design</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Beautifully Crafted Kitchens for <em>Everyday Living</em></h1>
+            <p>We design and install bespoke kitchens across Southampton and Hampshire, blending timeless craftsmanship with contemporary style. Every detail, considered.</p>
+            <a href="#contact" class="hero-cta">Book a Consultation</a>
+        </div>
+        <div class="hero-image" role="img" aria-label="Hampshire Kitchen Design project showcase"></div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="divider"></div>
+        <h2>Designed Around You</h2>
+        <p>For over fifteen years, Hampshire Kitchen Design has been transforming homes across the south of England. From initial concept through to final installation, we work closely with each client to create kitchens that are as functional as they are beautiful. Our team of skilled designers and fitters take pride in every project, no matter the size.</p>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>What We Offer</h2>
+            <p>Comprehensive kitchen services from design to completion</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#9998;</div>
+                <h3>Bespoke Kitchen Design</h3>
+                <p>Full 3D kitchen design service tailored to your space, lifestyle and budget. We visit your home to take precise measurements and discuss your vision.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9878;</div>
+                <h3>Supply & Installation</h3>
+                <p>Complete supply and fit service including cabinetry, worktops, splashbacks, and appliance fitting. All work carried out by our own experienced team.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9733;</div>
+                <h3>Premium Worktops</h3>
+                <p>Choose from quartz, granite, solid wood and laminate worktops. Templated and fitted to perfection with seamless joints and integrated drainer grooves.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9632;</div>
+                <h3>Wall &amp; Floor Tiling</h3>
+                <p>Professional tiling to complement your new kitchen. From classic metro tiles to large-format porcelain, fitted with precision and care.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9788;</div>
+                <h3>Kitchen Lighting</h3>
+                <p>Thoughtfully planned lighting schemes including under-cabinet LEDs, pendant fixtures and integrated spotlights to set the perfect ambience.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#8635;</div>
+                <h3>Kitchen Refurbishment</h3>
+                <p>Not ready for a full refit? We offer door replacements, worktop upgrades and layout improvements to refresh your existing kitchen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+        <h2>Our Process</h2>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Consultation</h3>
+                <p>We visit your home to discuss ideas, measure your space and understand how you use your kitchen day to day.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>Design</h3>
+                <p>Our designers create detailed 3D renders so you can visualise your new kitchen before a single cabinet is ordered.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Installation</h3>
+                <p>Our fitters work methodically and tidily, keeping disruption to a minimum. Most kitchens are completed within two weeks.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Aftercare</h3>
+                <p>We return to check everything is perfect and provide a full aftercare package for your peace of mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"From the very first meeting, the team at Hampshire Kitchen Design made us feel completely at ease. The finished kitchen exceeded every expectation &mdash; it's become the heart of our home."</blockquote>
+                <cite>Sarah &amp; James Whitfield, Chandler's Ford</cite>
+            </div>
+            <div class="testimonial">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Exceptional quality and attention to detail. The design process was thorough and the installation was completed on time with minimal fuss. Couldn't recommend them more highly."</blockquote>
+                <cite>Margaret Holloway, Eastleigh</cite>
+            </div>
+            <div class="testimonial">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"We had a rather awkward L-shaped space and the team designed something truly clever. The soft-close drawers, the pantry unit &mdash; every inch has been thought through beautifully."</blockquote>
+                <cite>David &amp; Claire Naylor, Romsey</cite>
+            </div>
+            <div class="testimonial">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Second kitchen we've had fitted by Hampshire Kitchen Design. The first was twelve years ago and still looks wonderful. That says everything about the quality of their work."</blockquote>
+                <cite>Richard Pemberton, Southampton</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <h2>Ready to Transform Your Kitchen?</h2>
+        <p>Book your free home consultation today and let's start designing your dream kitchen.</p>
+        <a href="#contact">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Hampshire Kitchen Design</h3>
+                <p>Creating beautiful, functional kitchens across Southampton and Hampshire since 2009. Every kitchen we design is a reflection of the people who live in it.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>023 8071 4523</p>
+                <a href="mailto:hello@hampshirekitchendesign.co.uk">hello@hampshirekitchendesign.co.uk</a>
+                <p>Mon &ndash; Fri: 9am &ndash; 5:30pm</p>
+                <p>Sat: 10am &ndash; 3pm</p>
+            </div>
+            <div class="footer-col">
+                <h4>Visit Us</h4>
+                <p>Unit 7, Meridian Business Park</p>
+                <p>Ocean Way</p>
+                <p>Southampton</p>
+                <p>SO14 3TJ</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Hampshire Kitchen Design. All rights reserved. Registered in England &amp; Wales.
+        </div>
+    </footer>
+
+</body>
+</html>

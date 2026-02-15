@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascade Plumbing Services | Plumbers in Swansea</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #1e293b;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        :root {
+            --blue: #1e40af;
+            --blue-light: #3b82f6;
+            --blue-dark: #1e3a8a;
+            --cyan: #06b6d4;
+            --cyan-light: #22d3ee;
+            --cyan-dark: #0891b2;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --text: #1e293b;
+            --text-light: #64748b;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--blue-dark);
+            height: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+        .nav-logo span { color: var(--cyan-light); }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--cyan-light); }
+        .nav-cta-btn {
+            padding: 8px 20px;
+            background: var(--cyan);
+            color: var(--white) !important;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            transition: background 0.3s !important;
+        }
+        .nav-cta-btn:hover { background: var(--cyan-dark) !important; }
+
+        /* Hero - Full Width */
+        .hero {
+            margin-top: 66px;
+            position: relative;
+            height: 85vh;
+            min-height: 520px;
+            background: url('../portfolio-images/plumber-03.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(30,64,175,0.8) 0%, rgba(6,182,212,0.5) 100%);
+        }
+        .hero-inner {
+            position: relative;
+            max-width: 680px;
+            padding: 0 30px;
+        }
+        .hero-inner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .hero-inner p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+        .btn-white {
+            padding: 13px 32px;
+            background: var(--white);
+            color: var(--blue);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .btn-white:hover { background: var(--gray-100); }
+        .btn-outline-w {
+            padding: 13px 32px;
+            border: 2px solid rgba(255,255,255,0.4);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+        }
+        .btn-outline-w:hover { border-color: var(--white); }
+
+        /* Wave Divider */
+        .wave-top {
+            position: relative;
+            height: 70px;
+            overflow: hidden;
+            background: var(--white);
+        }
+        .wave-top svg {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 70px;
+        }
+
+        /* Emergency Banner */
+        .emergency {
+            background: var(--cyan);
+            color: var(--white);
+            text-align: center;
+            padding: 18px 30px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .emergency span {
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+
+        /* Services - 4 Column */
+        .services {
+            padding: 80px 50px;
+            background: var(--white);
+        }
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-heading .tag {
+            display: inline-block;
+            padding: 4px 14px;
+            background: var(--gray-100);
+            color: var(--blue);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+        .section-heading h2 {
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .section-heading p {
+            color: var(--text-light);
+            font-size: 1rem;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        .svc-card {
+            background: var(--gray-50);
+            padding: 32px 24px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .svc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), var(--cyan));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .svc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(30,64,175,0.08);
+        }
+        .svc-card:hover::before { opacity: 1; }
+        .svc-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--blue), var(--cyan));
+            color: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin: 0 auto 16px;
+        }
+        .svc-card h3 {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .svc-card p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* Why Choose */
+        .why-section {
+            padding: 70px 50px;
+            background: var(--blue-dark);
+            position: relative;
+        }
+        .why-wave-top {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .why-wave-top svg { width: 100%; height: 50px; }
+        .why-section h2 {
+            text-align: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            padding-top: 30px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .why-item {
+            text-align: center;
+        }
+        .why-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--cyan-light);
+            margin-bottom: 4px;
+        }
+        .why-item h3 {
+            color: var(--white);
+            font-size: 0.88rem;
+            margin-bottom: 4px;
+        }
+        .why-item p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.82rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 90px 50px;
+            background: var(--gray-50);
+            position: relative;
+        }
+        .test-wave-top {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .test-wave-top svg { width: 100%; height: 50px; }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 50px;
+            padding-top: 20px;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+        .test-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 10px;
+            border: 1px solid var(--gray-200);
+        }
+        .test-card .stars {
+            color: var(--cyan);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        .test-card blockquote {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            font-style: normal;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .test-author {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.88rem;
+        }
+        .test-loc {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 80px 50px;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--cyan-dark) 100%);
+            text-align: center;
+            position: relative;
+        }
+        .cta-wave {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .cta-wave svg { width: 100%; height: 50px; }
+        .cta h2 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 12px;
+            padding-top: 20px;
+        }
+        .cta p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+        }
+        .cta .phone {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 24px;
+            display: block;
+        }
+        .cta a.cta-btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--white);
+            color: var(--blue);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .cta a.cta-btn:hover { background: var(--gray-100); }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: rgba(255,255,255,0.6);
+            padding: 50px;
+        }
+        .ft-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 36px;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        .ft-brand h3 {
+            color: var(--white);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+        .ft-brand h3 span { color: var(--cyan-light); }
+        .ft-brand p {
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+        .ft-col h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--cyan-light);
+            margin-bottom: 12px;
+        }
+        .ft-col p, .ft-col a {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            display: block;
+            line-height: 2;
+        }
+        .ft-col a:hover { color: var(--cyan-light); }
+        .ft-bar {
+            max-width: 1120px;
+            margin: 24px auto 0;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.78rem;
+            opacity: 0.4;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-inner h1 { font-size: 2.2rem; }
+            .svc-grid { grid-template-columns: 1fr 1fr; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .test-grid { grid-template-columns: 1fr; }
+            .ft-grid { grid-template-columns: 1fr; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            nav { padding: 0 20px; }
+        }
+        @media (max-width: 480px) {
+            .svc-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">Cascade <span>Plumbing</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact" class="nav-cta-btn">Call Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>Swansea's Trusted Local Plumbers</h1>
+            <p>From dripping taps to full bathroom installations, Cascade Plumbing Services provides fast, reliable plumbing you can count on. Available for emergencies 24/7.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-white">Get a Free Quote</a>
+                <a href="#services" class="btn-outline-w">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="emergency">
+        <span>&#9888;</span> Emergency Plumbing? Call us now on <strong>01792 463 817</strong> &mdash; available 24 hours a day, 7 days a week.
+    </div>
+
+    <div class="wave-top">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none" fill="#f8fafc">
+            <path d="M0,40 C240,70 480,0 720,35 C960,70 1200,10 1440,40 L1440,0 L0,0 Z"></path>
+        </svg>
+    </div>
+
+    <section class="services" id="services">
+        <div class="section-heading">
+            <div class="tag">Our Services</div>
+            <h2>Plumbing You Can Rely On</h2>
+            <p>Comprehensive plumbing services for homes and businesses across Swansea and South Wales.</p>
+        </div>
+        <div class="svc-grid">
+            <div class="svc-card">
+                <div class="svc-icon">&#128167;</div>
+                <h3>General Plumbing</h3>
+                <p>Tap repairs, toilet fixes, pipe work, radiator valves and all everyday plumbing jobs. No call-out charge.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#9888;</div>
+                <h3>Emergency Callouts</h3>
+                <p>Burst pipes, leaks and flooding? Our emergency plumber is available 24/7, 365 days a year across Swansea.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#128704;</div>
+                <h3>Bathroom Installation</h3>
+                <p>Complete bathroom design and fitting including plumbing, tiling, electrics and all finishing touches.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#9832;</div>
+                <h3>Boiler Servicing</h3>
+                <p>Annual boiler servicing, repairs and new boiler installations. Gas Safe registered engineers.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#127777;</div>
+                <h3>Central Heating</h3>
+                <p>Radiator installs, powerflush treatments, thermostatic valve upgrades and full heating system design.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#128296;</div>
+                <h3>Unblocking Drains</h3>
+                <p>Blocked sinks, toilets, baths and external drains cleared quickly with professional equipment.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#127968;</div>
+                <h3>Kitchen Plumbing</h3>
+                <p>Sink fitting, dishwasher and washing machine installation, waste disposal units and kitchen tap upgrades.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#9733;</div>
+                <h3>Landlord Services</h3>
+                <p>Gas safety certificates, CP12 inspections, planned maintenance and priority emergency cover for landlords.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section" id="why-us">
+        <div class="why-wave-top">
+            <svg viewBox="0 0 1440 50" preserveAspectRatio="none" fill="#ffffff">
+                <path d="M0,20 C360,50 720,0 1080,30 C1260,45 1350,10 1440,20 L1440,0 L0,0 Z"></path>
+            </svg>
+        </div>
+        <h2>Why Choose Cascade?</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-num">16</div>
+                <h3>Years of Service</h3>
+                <p>Serving Swansea since 2010</p>
+            </div>
+            <div class="why-item">
+                <div class="why-num">24/7</div>
+                <h3>Emergency Cover</h3>
+                <p>Day or night, we're on call</p>
+            </div>
+            <div class="why-item">
+                <div class="why-num">4.9</div>
+                <h3>Google Rating</h3>
+                <p>From 280+ verified reviews</p>
+            </div>
+            <div class="why-item">
+                <div class="why-num">&#163;0</div>
+                <h3>Call-Out Fee</h3>
+                <p>No charge for coming to you</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="reviews">
+        <div class="test-wave-top">
+            <svg viewBox="0 0 1440 50" preserveAspectRatio="none" fill="#1e3a8a">
+                <path d="M0,30 C360,0 720,50 1080,20 C1260,5 1350,40 1440,25 L1440,0 L0,0 Z"></path>
+            </svg>
+        </div>
+        <h2>What Our Customers Say</h2>
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Had a burst pipe at 2am on a Sunday morning. Cascade were here within 40 minutes, fixed the issue and even helped mop up. Absolute lifesavers. Cannot thank them enough."</blockquote>
+                <div class="test-author">Gareth &amp; Rhian Morgan</div>
+                <div class="test-loc">Sketty, Swansea</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Cascade fitted our entire new bathroom from start to finish. The plumbing, tiling, everything. Fantastic quality, very fair price, and completed ahead of schedule."</blockquote>
+                <div class="test-author">Julie Evans</div>
+                <div class="test-loc">Mumbles, Swansea</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Reliable, honest and very skilled. They've done our annual boiler service for five years running and recently fitted a new combi boiler. Always competitive on price."</blockquote>
+                <div class="test-author">David &amp; Carol Pritchard</div>
+                <div class="test-loc">Uplands, Swansea</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-wave">
+            <svg viewBox="0 0 1440 50" preserveAspectRatio="none" fill="#f8fafc">
+                <path d="M0,25 C360,50 720,0 1080,35 C1260,48 1350,15 1440,30 L1440,0 L0,0 Z"></path>
+            </svg>
+        </div>
+        <h2>Need a Plumber?</h2>
+        <p>Call us now for a free quote or emergency callout.</p>
+        <span class="phone">01792 463 817</span>
+        <a href="#contact" class="cta-btn">Request a Callback</a>
+    </section>
+
+    <footer id="contact">
+        <div class="ft-grid">
+            <div class="ft-brand">
+                <h3>Cascade <span>Plumbing Services</span></h3>
+                <p>Reliable plumbing across Swansea, Neath, Port Talbot and South Wales. Gas Safe registered. Fully insured. No call-out charge. 24/7 emergency cover. Established 2010.</p>
+            </div>
+            <div class="ft-col">
+                <h4>Contact</h4>
+                <p>01792 463 817</p>
+                <a href="mailto:info@cascadeplumbing.co.uk">info@cascadeplumbing.co.uk</a>
+                <p>Mon &ndash; Fri: 8am &ndash; 6pm</p>
+                <p>Emergency: 24/7</p>
+            </div>
+            <div class="ft-col">
+                <h4>Address</h4>
+                <p>Cascade Plumbing Services</p>
+                <p>Unit 5, Enterprise Way</p>
+                <p>Swansea</p>
+                <p>SA1 8QY</p>
+            </div>
+            <div class="ft-col">
+                <h4>Accreditations</h4>
+                <p>Gas Safe: 548217</p>
+                <p>CIPHE Member</p>
+                <p>WaterSafe Approved</p>
+                <p>Checkatrade Verified</p>
+            </div>
+        </div>
+        <div class="ft-bar">
+            &copy; 2026 Cascade Plumbing Services Ltd. All rights reserved. Gas Safe Registered No. 548217.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridgeline Roofing | Professional Roofers in Coventry</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #1f1f1f;
+            --crimson: #dc2626;
+            --white: #ffffff;
+            --light-gray: #f3f3f3;
+            --mid-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--charcoal);
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        nav .logo span {
+            color: var(--crimson);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--crimson);
+        }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../portfolio-images/roofer-02.jpg') center/cover no-repeat;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 100%;
+            background: var(--charcoal);
+            z-index: 2;
+            clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 0 4rem;
+            max-width: 650px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-content h1 span {
+            color: var(--crimson);
+        }
+
+        .hero-content p {
+            color: #ccc;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--crimson);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: background 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #b91c1c;
+        }
+
+        .hero-accent-line {
+            width: 80px;
+            height: 4px;
+            background: var(--crimson);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===================== SERVICES ===================== */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .accent-line {
+            width: 60px;
+            height: 4px;
+            background: var(--crimson);
+            margin: 1rem auto;
+        }
+
+        .section-header p {
+            color: var(--mid-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid transparent;
+            transition: border-color 0.3s, transform 0.3s;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .service-card:hover {
+            border-bottom-color: var(--crimson);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: var(--charcoal);
+            color: var(--crimson);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+        }
+
+        .service-card p {
+            color: var(--mid-gray);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== ABOUT STRIP ===================== */
+        .about-strip {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .about-stat {
+            text-align: center;
+        }
+
+        .about-stat .number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--crimson);
+        }
+
+        .about-stat .label {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #aaa;
+            margin-top: 0.25rem;
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--crimson);
+            position: absolute;
+            top: 0.5rem;
+            left: 1rem;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--mid-gray);
+            margin-bottom: 1.5rem;
+            padding-top: 2rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .testimonial-location {
+            color: var(--mid-gray);
+            font-size: 0.8rem;
+        }
+
+        .testimonial-stars {
+            color: var(--crimson);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ===================== CTA SECTION ===================== */
+        .cta-section {
+            background: var(--crimson);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--crimson);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--charcoal);
+            color: #ccc;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-col p,
+        .footer-col li {
+            font-size: 0.9rem;
+            line-height: 2;
+            color: #999;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li::before {
+            content: '\25A0';
+            color: var(--crimson);
+            margin-right: 0.5rem;
+            font-size: 0.6rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-overlay { width: 100%; clip-path: none; opacity: 0.85; }
+            .hero-content { padding: 0 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .about-strip { gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Ridgeline <span>Roofing</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-accent-line"></div>
+            <h1>Expert <span>Roofing</span> Solutions in Coventry</h1>
+            <p>From full re-roofs to emergency leak repairs, Ridgeline Roofing delivers quality craftsmanship you can rely on. Trusted across the West Midlands for over 20 years.</p>
+            <a href="#contact" class="hero-btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <div class="accent-line"></div>
+            <p>Comprehensive roofing services for residential and commercial properties throughout Coventry and the surrounding areas.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#9650;</div>
+                <h3>New Roofs</h3>
+                <p>Complete new roof installations using the highest quality materials, from slate and tile to flat roofing systems for new builds and extensions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9684;</div>
+                <h3>Roof Repairs</h3>
+                <p>Fast and reliable roof repairs including storm damage, missing tiles, ridge work, and valley repairs. Emergency call-outs available.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9677;</div>
+                <h3>Flat Roofing</h3>
+                <p>Expert flat roof installations and repairs using EPDM, GRP fibreglass, and felt systems with guaranteed watertight results.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9670;</div>
+                <h3>Guttering & Fascias</h3>
+                <p>Full replacement and repair of guttering, fascia boards, and soffits in uPVC, cast iron, or aluminium to protect your property.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / STATS -->
+    <section class="about-strip" id="about">
+        <div class="about-stat">
+            <div class="number">20+</div>
+            <div class="label">Years Experience</div>
+        </div>
+        <div class="about-stat">
+            <div class="number">3,500+</div>
+            <div class="label">Roofs Completed</div>
+        </div>
+        <div class="about-stat">
+            <div class="number">100%</div>
+            <div class="label">Fully Insured</div>
+        </div>
+        <div class="about-stat">
+            <div class="number">24/7</div>
+            <div class="label">Emergency Cover</div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <div class="accent-line"></div>
+            <p>Don't just take our word for it. Here's what some of our satisfied customers have to say about Ridgeline Roofing.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>Ridgeline replaced our entire roof after the storms last winter. Brilliant job from start to finish. The team were punctual, tidy, and the quality of work is outstanding.</p>
+                <div class="testimonial-author">Mark Thompson</div>
+                <div class="testimonial-location">Earlsdon, Coventry</div>
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="testimonial-card">
+                <p>We had a persistent leak that two other companies couldn't fix. Ridgeline sorted it within a day. Very professional and reasonably priced. Highly recommended.</p>
+                <div class="testimonial-author">Sarah Jennings</div>
+                <div class="testimonial-location">Kenilworth, Warwickshire</div>
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="testimonial-card">
+                <p>Used Ridgeline for the flat roof on our extension. Excellent communication throughout, fair price, and a really clean finish. Would use again without hesitation.</p>
+                <div class="testimonial-author">David & Claire Barton</div>
+                <div class="testimonial-location">Tile Hill, Coventry</div>
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Need a Roofer in Coventry?</h2>
+        <p>Contact us today for a free, no-obligation quote on any roofing project.</p>
+        <a href="#contact" class="cta-btn">Call Us Now</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Ridgeline Roofing Ltd<br>
+                Unit 7, Herald Business Park<br>
+                Binley Road, Coventry CV3 1JN</p>
+                <p style="margin-top: 1rem;">
+                    Tel: 024 7698 4312<br>
+                    Mobile: 07841 629 453<br>
+                    Email: info@ridgelineroofing.co.uk
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li>New Roof Installations</li>
+                    <li>Roof Repairs</li>
+                    <li>Flat Roofing (GRP &amp; EPDM)</li>
+                    <li>Guttering &amp; Fascias</li>
+                    <li>Lead Work</li>
+                    <li>Chimney Repairs</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Areas Covered</h3>
+                <ul>
+                    <li>Coventry</li>
+                    <li>Kenilworth</li>
+                    <li>Warwick</li>
+                    <li>Leamington Spa</li>
+                    <li>Nuneaton</li>
+                    <li>Rugby</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Ridgeline Roofing Ltd. All rights reserved. Company Reg. No. 08451237. VAT Reg. No. 198 4523 67.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilecraft Bathrooms | Tiling &amp; Bathroom Specialists in Sunderland</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #ffffff;
+            --turquoise: #0891b2;
+            --turquoise-dark: #0e7490;
+            --dark-slate: #1e293b;
+            --text: #475569;
+            --light-gray: #f8fafc;
+            --border: #e2e8f0;
+            --soft-teal: #ecfeff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark-slate);
+        }
+
+        .logo span {
+            color: var(--turquoise);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--turquoise);
+        }
+
+        .nav-call {
+            background: var(--turquoise);
+            color: var(--white);
+            padding: 0.55rem 1.3rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .nav-call:hover {
+            background: var(--turquoise-dark);
+        }
+
+        /* ===================== HERO (OVERLAPPING IMAGE) ===================== */
+        .hero {
+            margin-top: 70px;
+            padding: 5rem 3rem 3rem;
+            background: var(--light-gray);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 70px;
+        }
+
+        .hero-text {
+            padding-right: 2rem;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: var(--soft-teal);
+            color: var(--turquoise);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            color: var(--dark-slate);
+            line-height: 1.15;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-text h1 span {
+            color: var(--turquoise);
+        }
+
+        .hero-text p {
+            color: var(--text);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            max-width: 430px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-teal {
+            background: var(--turquoise);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-teal:hover {
+            background: var(--turquoise-dark);
+        }
+
+        .btn-outline-slate {
+            border: 2px solid var(--dark-slate);
+            color: var(--dark-slate);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-outline-slate:hover {
+            background: var(--dark-slate);
+            color: var(--white);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .hero-image-wrapper .float-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--turquoise);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(8,145,178,0.3);
+        }
+
+        .float-badge .num {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .float-badge .txt {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===================== SERVICES ===================== */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .sec-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .sec-header h2 {
+            font-size: 2.2rem;
+            color: var(--dark-slate);
+            font-weight: 800;
+        }
+
+        .sec-header .bar {
+            width: 50px;
+            height: 3px;
+            background: var(--turquoise);
+            margin: 0.8rem auto;
+        }
+
+        .sec-header p {
+            color: var(--text);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .svc-icon {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 1.2rem;
+            background: var(--turquoise);
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.05rem;
+            color: var(--dark-slate);
+            margin-bottom: 0.6rem;
+        }
+
+        .service-card p {
+            color: var(--text);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== PROCESS ===================== */
+        .process {
+            padding: 4rem 2rem;
+            background: var(--dark-slate);
+            color: var(--white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 2rem auto 0;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .step-num {
+            width: 50px;
+            height: 50px;
+            background: var(--turquoise);
+            color: var(--white);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .step h4 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .step p {
+            color: var(--text);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.65);
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--soft-teal);
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .test-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .test-card .stars {
+            color: var(--turquoise);
+            margin-bottom: 1rem;
+        }
+
+        .test-card blockquote {
+            color: var(--text);
+            font-style: italic;
+            font-size: 0.93rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .test-name {
+            font-weight: 700;
+            color: var(--dark-slate);
+            font-size: 0.9rem;
+        }
+
+        .test-loc {
+            color: var(--text);
+            font-size: 0.8rem;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--dark-slate);
+            color: rgba(255,255,255,0.75);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1050px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-col ul li::before {
+            content: '\2022';
+            color: var(--turquoise);
+            margin-right: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero { grid-template-columns: 1fr; padding: 3rem 2rem; }
+            .hero-text { padding-right: 0; }
+            .hero-text h1 { font-size: 2rem; }
+            .hero-image-wrapper img { height: 300px; }
+            .hero-image-wrapper .float-badge { bottom: -15px; left: 10px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .test-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Tile<span>craft</span> Bathrooms</div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="tel:01915827493" class="nav-call">0191 582 7493</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <div class="badge">Sunderland's Tiling Specialists</div>
+            <h1>Beautiful <span>Bathrooms</span> &amp; Expert Tiling</h1>
+            <p>From full bathroom installations to precision tiling, Tilecraft Bathrooms delivers stunning results across Sunderland and the North East.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-teal">Free Consultation</a>
+                <a href="#services" class="btn-outline-slate">Our Services</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="../portfolio-images/tiler-02.jpg" alt="Professional tiling work by Tilecraft Bathrooms">
+            <div class="float-badge">
+                <div class="num">12+</div>
+                <div class="txt">Years Experience</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="sec-header">
+            <h2>Our Services</h2>
+            <div class="bar"></div>
+            <p>Complete bathroom and tiling services, from design to installation. Every project finished to the highest standard.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="svc-icon">&#9632;</div>
+                <h3>Wall &amp; Floor Tiling</h3>
+                <p>Expert installation of ceramic, porcelain, natural stone, and mosaic tiles. Precision cuts and flawless grout lines guaranteed.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9675;</div>
+                <h3>Bathroom Design</h3>
+                <p>Full bathroom design service helping you choose fixtures, tiles, and layouts that make the most of your space and budget.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9670;</div>
+                <h3>Full Bathroom Fitting</h3>
+                <p>Complete bathroom installations including plumbing, electrics, tiling, and all fixtures. One team, one point of contact.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9651;</div>
+                <h3>Wet Room Installation</h3>
+                <p>Fully tanked wet room installations with linear drainage, underfloor heating, and large-format tiling for a modern finish.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process">
+        <div class="sec-header">
+            <h2 style="color:#fff;">How We Work</h2>
+            <div class="bar"></div>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>Consultation</h4>
+                <p>We visit your home to discuss your vision, take measurements, and provide a detailed written quotation.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>Design</h4>
+                <p>We help you choose tiles, fixtures, and finishes, ensuring everything works together beautifully.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>Installation</h4>
+                <p>Our skilled team carries out the full installation with minimal disruption, leaving everything spotless.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h4>Completion</h4>
+                <p>Final inspection, walkthrough, and handover. We don't leave until you're completely satisfied.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="sec-header">
+            <h2>What Our Customers Say</h2>
+            <div class="bar"></div>
+        </div>
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Tilecraft transformed our tired bathroom into something we'd see in a magazine. The tiling is absolutely flawless and the attention to detail is remarkable. Couldn't be happier with the result.</blockquote>
+                <div class="test-name">Karen Douglas</div>
+                <div class="test-loc">Roker, Sunderland</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Had a wet room installed downstairs for my mum. The team were considerate, tidy, and did a brilliant job. They made the whole process so easy. Highly recommended to anyone in Sunderland.</blockquote>
+                <div class="test-name">Michael Robson</div>
+                <div class="test-loc">Washington, Tyne and Wear</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>We've had our kitchen and two bathrooms tiled by Tilecraft now. The quality is always outstanding and the lads are friendly and professional. They're the only tilers I'd use.</blockquote>
+                <div class="test-name">Emma &amp; Chris Thornton</div>
+                <div class="test-loc">Seaburn, Sunderland</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact Tilecraft Bathrooms</h3>
+                <p>Tilecraft Bathrooms Ltd<br>
+                23 Borough Road<br>
+                Sunderland SR1 1PB</p>
+                <p style="margin-top: 1rem;">
+                    Tel: 0191 582 7493<br>
+                    Mob: 07932 614 285<br>
+                    Email: info@tilecraftbathrooms.co.uk
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li>Wall &amp; Floor Tiling</li>
+                    <li>Bathroom Design</li>
+                    <li>Full Bathroom Fitting</li>
+                    <li>Wet Room Installation</li>
+                    <li>Kitchen Splashbacks</li>
+                    <li>Underfloor Heating</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Areas Covered</h3>
+                <ul>
+                    <li>Sunderland</li>
+                    <li>Washington</li>
+                    <li>South Shields</li>
+                    <li>Durham</li>
+                    <li>Gateshead</li>
+                    <li>Newcastle upon Tyne</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Tilecraft Bathrooms Ltd. All rights reserved. Company Reg. No. 11234567. Fully Insured.
+        </div>
+    </footer>
+
+</body>
+</html>

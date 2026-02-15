@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Plastering & Rendering | Edinburgh Specialist Plasterers</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --white: #fefefe;
+    --cream: #f5f3f0;
+    --taupe: #8b7d6b;
+    --taupe-light: #a89a88;
+    --charcoal: #333333;
+    --text-light: #777777;
+    --border: #eeeeee;
+    --border-light: #e5e2de;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--white);
+    color: var(--charcoal);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 60px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    text-decoration: none;
+    color: var(--charcoal);
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+  }
+
+  .nav-logo strong {
+    font-weight: 500;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--taupe);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: var(--taupe);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 160px 60px 100px;
+    background: var(--cream);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-text {
+    max-width: 480px;
+  }
+
+  .hero-heading {
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+
+  .hero-heading-bold {
+    font-weight: 500;
+    display: block;
+  }
+
+  .hero-line {
+    width: 40px;
+    height: 2px;
+    background: var(--taupe);
+    margin: 28px 0;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-light);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+  }
+
+  .hero-image {
+    position: relative;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-image-border {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    bottom: 16px;
+    left: 16px;
+    border: 1px solid var(--border-light);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* ── PORTFOLIO ── */
+  .portfolio {
+    padding: 120px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--taupe);
+    margin-bottom: 60px;
+  }
+
+  .portfolio-item {
+    margin-bottom: 100px;
+  }
+
+  .portfolio-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .portfolio-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .portfolio-item:hover .portfolio-image img {
+    transform: scale(1.03);
+  }
+
+  .portfolio-details {
+    display: flex;
+    gap: 40px;
+    align-items: baseline;
+  }
+
+  .portfolio-name {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .portfolio-meta {
+    font-size: 13px;
+    color: var(--text-light);
+    letter-spacing: 0.03em;
+  }
+
+  .portfolio-meta span {
+    margin-right: 24px;
+  }
+
+  .portfolio-meta span::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 1px;
+    background: var(--taupe);
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    background: var(--cream);
+    padding: 120px 60px;
+  }
+
+  .services-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  .service-card {
+    padding: 0 0 0 24px;
+    border-left: 2px solid var(--taupe);
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .service-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.9;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 0;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 60px;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+    color: var(--charcoal);
+  }
+
+  .about-content p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+
+  .about-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── PROCESS ── */
+  .process {
+    background: var(--cream);
+    padding: 100px 60px;
+  }
+
+  .process-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 60px;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 1px;
+    background: var(--border-light);
+  }
+
+  .process-step {
+    text-align: center;
+    position: relative;
+  }
+
+  .process-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--taupe);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .process-label {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+
+  .process-desc {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: 120px 60px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contact h2 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    margin-bottom: 48px;
+    color: var(--charcoal);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .contact-item {
+    margin-bottom: 32px;
+  }
+
+  .contact-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--taupe);
+    margin-bottom: 8px;
+  }
+
+  .contact-value {
+    font-size: 16px;
+    color: var(--charcoal);
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  .contact-value a {
+    color: var(--charcoal);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-light);
+    transition: border-color 0.3s;
+  }
+
+  .contact-value a:hover {
+    border-color: var(--taupe);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 60px;
+    text-align: center;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer p {
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-social a {
+    font-size: 12px;
+    color: var(--text-light);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .footer-social a:hover {
+    color: var(--taupe);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-heading { font-size: 44px; }
+    .hero-image-border { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-steps::before { display: none; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 120px 24px 60px; min-height: auto; }
+    .hero-heading { font-size: 36px; }
+    .portfolio { padding: 80px 24px; }
+    .portfolio-details { flex-direction: column; gap: 8px; }
+    .services { padding: 80px 24px; }
+    .about-content { padding: 60px 24px; }
+    .about-image { height: 280px; }
+    .process { padding: 80px 24px; }
+    .process-steps { grid-template-columns: 1fr; gap: 40px; }
+    .contact { padding: 80px 24px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer { padding: 30px 24px; }
+    .footer-inner { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo"><strong>Precision</strong> Plastering &amp; Rendering</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 class="hero-heading">
+        Plastering &amp; Rendering
+        <span class="hero-heading-bold">Craftsmanship</span>
+      </h1>
+      <div class="hero-line"></div>
+      <p class="hero-sub">Edinburgh's specialist plastering contractors. We combine traditional skills with modern techniques to deliver flawless finishes on every project, from period restorations to contemporary new builds.</p>
+    </div>
+    <div class="hero-image">
+      <img src="../portfolio-images/tiler-01.jpg" alt="Precision plastering craftsmanship">
+      <div class="hero-image-border"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work" class="portfolio">
+  <div class="section-heading">Selected Work</div>
+
+  <article class="portfolio-item">
+    <div class="portfolio-image">
+      <img src="https://images.unsplash.com/photo-1693594559531-e057f85f5ff0?w=1200&h=675&fit=crop&auto=format" alt="Charlotte Square Georgian Restoration" loading="lazy">
+    </div>
+    <div class="portfolio-details">
+      <h3 class="portfolio-name">Charlotte Square Georgian Restoration</h3>
+      <div class="portfolio-meta">
+        <span>Heritage Plasterwork</span>
+        <span>Edinburgh New Town</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="portfolio-item">
+    <div class="portfolio-image">
+      <img src="https://images.unsplash.com/photo-1695886517962-cafc014947de?w=1200&h=675&fit=crop&auto=format" alt="Quartermile Penthouse" loading="lazy">
+    </div>
+    <div class="portfolio-details">
+      <h3 class="portfolio-name">Quartermile Penthouse</h3>
+      <div class="portfolio-meta">
+        <span>Internal Plastering</span>
+        <span>Lauriston, Edinburgh</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="portfolio-item">
+    <div class="portfolio-image">
+      <img src="https://images.unsplash.com/photo-1710381608043-9cdc0197e409?w=1200&h=675&fit=crop&auto=format" alt="Stockbridge Boutique Hotel" loading="lazy">
+    </div>
+    <div class="portfolio-details">
+      <h3 class="portfolio-name">Stockbridge Boutique Hotel</h3>
+      <div class="portfolio-meta">
+        <span>External Rendering</span>
+        <span>Stockbridge, Edinburgh</span>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="services-inner">
+    <div class="section-heading">Services</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Internal Plastering</h3>
+        <p>Complete internal plastering services including skim coats, bonding, multi-finish and specialist Venetian plaster. We work across both new-build and renovation projects, ensuring a smooth and durable finish to walls and ceilings throughout.</p>
+      </div>
+      <div class="service-card">
+        <h3>External Rendering</h3>
+        <p>Silicone, monocouche and traditional sand-and-cement rendering for residential and commercial exteriors. Our renders provide lasting weather protection whilst enhancing your property's appearance with a clean, contemporary or textured finish.</p>
+      </div>
+      <div class="service-card">
+        <h3>Decorative Coving</h3>
+        <p>Installation of fibrous plaster coving, cornicing and ceiling roses. We carry an extensive range of period and contemporary profiles, and can produce bespoke moulds to match existing detailing in listed and heritage buildings.</p>
+      </div>
+      <div class="service-card">
+        <h3>Dry Lining</h3>
+        <p>Plasterboard fixing and dry lining for partitions, wall linings, and ceiling systems. Fast-track solutions for commercial fit-outs and residential developments, with expert taping and jointing for a seamless ready-to-decorate surface.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-image">
+    <img src="https://images.unsplash.com/photo-1738502602922-ffa5c16bba79?w=1200&h=500&fit=crop&auto=format" alt="About Precision Plastering" loading="lazy">
+  </div>
+  <div class="about-content">
+    <h2>About the Practice</h2>
+    <p>Precision Plastering &amp; Rendering was founded in Edinburgh in 2009 by master plasterer Ewan MacAllister. With over two decades of experience across Scotland's finest properties, we have built a reputation for meticulous attention to detail and an uncompromising commitment to quality.</p>
+    <p>Our small, dedicated team of time-served plasterers specialises in both traditional lime plasterwork and modern finishing techniques. Whether restoring ornate Georgian cornicing in the New Town or delivering seamless skim finishes in a contemporary apartment, we bring the same care and precision to every surface we touch.</p>
+    <p>We believe plastering is as much about craft as it is about construction. The quality of a plastered wall or ceiling defines the character of a room, and that responsibility is something we take seriously on every single project.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-inner">
+    <div class="section-heading">Our Process</div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-number">1</div>
+        <div class="process-label">Survey</div>
+        <p class="process-desc">We visit your property to assess the scope of work and discuss your requirements in detail.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-number">2</div>
+        <div class="process-label">Quote</div>
+        <p class="process-desc">You receive a clear, itemised quotation within 48 hours, with no hidden costs or surprises.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-number">3</div>
+        <div class="process-label">Work</div>
+        <p class="process-desc">Our team carries out the work to an exacting standard, keeping the site clean and tidy throughout.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-number">4</div>
+        <div class="process-label">Handover</div>
+        <p class="process-desc">A final walkthrough ensures every surface meets our standards before we consider the job complete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Get in Touch</h2>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-item">
+        <div class="contact-label">Telephone</div>
+        <div class="contact-value"><a href="tel:01312029456">0131 202 9456</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:hello@precisionplastering.co.uk">hello@precisionplastering.co.uk</a></div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-item">
+        <div class="contact-label">Address</div>
+        <div class="contact-value">
+          14 Newhaven Road<br>
+          Edinburgh<br>
+          EH6 5PY
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Hours</div>
+        <div class="contact-value">
+          Monday &ndash; Friday: 7:30am &ndash; 5:00pm<br>
+          Saturday: By arrangement
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 Precision Plastering &amp; Rendering Ltd. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Houzz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

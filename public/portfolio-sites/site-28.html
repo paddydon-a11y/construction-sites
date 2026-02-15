@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour & Co Decorating | Painting & Decorating in Durham</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+            color: #333;
+            background: #fafafa;
+            line-height: 1.7;
+        }
+
+        :root {
+            --white: #fafafa;
+            --white-pure: #ffffff;
+            --blue: #6b8cae;
+            --blue-light: #8dabc4;
+            --blue-dark: #4a6f8f;
+            --blue-pale: #eef3f8;
+            --charcoal: #2d3436;
+            --charcoal-light: #636e72;
+            --gray-light: #f0f0f0;
+            --gray-border: #e0e0e0;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(250,250,250,0.97);
+            border-bottom: 1px solid var(--gray-border);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            backdrop-filter: blur(10px);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--charcoal);
+            letter-spacing: 1px;
+        }
+        .logo strong {
+            font-weight: 700;
+            color: var(--blue);
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--blue); }
+
+        /* Hero with paint-stroke accent */
+        .hero {
+            margin-top: 64px;
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            background: url('../portfolio-images/painter-01.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(250,250,250,0.92) 0%, rgba(250,250,250,0.7) 45%, transparent 65%);
+        }
+        .hero-text {
+            position: relative;
+            padding: 0 60px;
+            max-width: 560px;
+        }
+        /* Paint stroke accent */
+        .paint-stroke {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .paint-stroke::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: -6px;
+            right: -6px;
+            height: 14px;
+            background: var(--blue-pale);
+            border-radius: 50% 30% 50% 30%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: var(--charcoal);
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+        .hero-text h1 strong {
+            font-weight: 700;
+            color: var(--blue-dark);
+        }
+        .hero-text p {
+            color: var(--charcoal-light);
+            font-size: 1.05rem;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--blue);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .hero-btn:hover { background: var(--blue-dark); }
+
+        /* About */
+        .about {
+            padding: 90px 50px;
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about h2 {
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+        .about h2 strong { font-weight: 600; color: var(--blue-dark); }
+        .about p {
+            color: var(--charcoal-light);
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        /* Services - Pastel Cards */
+        .services {
+            padding: 60px 50px 100px;
+            background: var(--white);
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+        .services h2 strong { font-weight: 600; }
+        .services-sub {
+            text-align: center;
+            color: var(--charcoal-light);
+            font-size: 0.9rem;
+            margin-bottom: 50px;
+        }
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+        .svc-card {
+            padding: 36px 28px;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .svc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+        .svc-card:nth-child(1) { background: #eef3f8; }
+        .svc-card:nth-child(2) { background: #f3eef8; }
+        .svc-card:nth-child(3) { background: #eef8f0; }
+        .svc-card:nth-child(4) { background: #f8f3ee; }
+        .svc-card:nth-child(5) { background: #f8eef3; }
+        .svc-card:nth-child(6) { background: #eef8f7; }
+        .svc-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+        }
+        .svc-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+        .svc-card p {
+            color: var(--charcoal-light);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* Why Us */
+        .why-us {
+            padding: 80px 50px;
+            background: var(--blue-pale);
+        }
+        .why-us h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--charcoal);
+            margin-bottom: 40px;
+        }
+        .why-us h2 strong { font-weight: 600; }
+        .why-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .why-item {
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+        }
+        .why-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--blue);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin: 0 auto 14px;
+        }
+        .why-item h3 {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            margin-bottom: 6px;
+        }
+        .why-item p {
+            font-size: 0.85rem;
+            color: var(--charcoal-light);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 90px 50px;
+            background: var(--white);
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--charcoal);
+            margin-bottom: 50px;
+        }
+        .testimonials h2 strong { font-weight: 600; }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+        .test-card {
+            background: var(--white-pure);
+            border: 1px solid var(--gray-border);
+            border-radius: 12px;
+            padding: 32px;
+        }
+        .test-card .stars {
+            color: var(--blue);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        .test-card blockquote {
+            font-size: 0.92rem;
+            color: var(--charcoal-light);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .test-author {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        .test-loc {
+            font-size: 0.8rem;
+            color: var(--charcoal-light);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 80px 50px;
+            background: var(--blue);
+            text-align: center;
+        }
+        .cta h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 14px;
+        }
+        .cta h2 strong { font-weight: 600; }
+        .cta p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 28px;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 12px 36px;
+            background: #fff;
+            color: var(--blue-dark);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .cta a:hover { background: var(--blue-pale); }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.7);
+            padding: 50px;
+        }
+        .ft-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+        .ft-brand h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .ft-brand h3 strong { font-weight: 700; color: var(--blue-light); }
+        .ft-brand p {
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+        .ft-col h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--blue-light);
+            margin-bottom: 12px;
+        }
+        .ft-col p, .ft-col a {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.55);
+            text-decoration: none;
+            display: block;
+            line-height: 2;
+        }
+        .ft-col a:hover { color: var(--blue-light); }
+        .ft-bar {
+            max-width: 1060px;
+            margin: 24px auto 0;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.78rem;
+            opacity: 0.45;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text { padding: 0 30px; }
+            .hero-text h1 { font-size: 2rem; }
+            .hero::before { background: linear-gradient(to right, rgba(250,250,250,0.95) 0%, rgba(250,250,250,0.8) 100%); }
+            .svc-grid, .test-grid { grid-template-columns: 1fr; }
+            .ft-grid { grid-template-columns: 1fr; }
+            .why-grid { flex-direction: column; gap: 24px; }
+            nav { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><strong>Colour &amp; Co</strong> Decorating</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <div class="paint-stroke">
+                <span style="font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:#6b8cae;">Durham &amp; the North East</span>
+            </div>
+            <h1>A <strong>Fresh Finish</strong> for Every Room</h1>
+            <p>Professional painting and decorating services across Durham and the North East. Neat, reliable and beautifully finished &mdash; every time.</p>
+            <a href="#contact" class="hero-btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>Decorating with <strong>Care &amp; Precision</strong></h2>
+        <p>Colour &amp; Co Decorating is a husband-and-wife team based in Durham. We specialise in interior and exterior painting, wallpapering and decorating for homeowners and landlords across the North East. With over a decade of experience, we bring a meticulous eye for detail to every project &mdash; from a single feature wall to a full house redecoration. We protect your furnishings, prepare surfaces properly and leave every room looking its absolute best.</p>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our <strong>Services</strong></h2>
+        <p class="services-sub">Everything you need for a beautifully decorated home</p>
+        <div class="svc-grid">
+            <div class="svc-card">
+                <div class="svc-icon">&#127912;</div>
+                <h3>Interior Painting</h3>
+                <p>Walls, ceilings, woodwork and radiators. Careful preparation, quality paints and a flawless finish throughout your home.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#127968;</div>
+                <h3>Exterior Painting</h3>
+                <p>Front doors, window frames, fascias, rendering and garden walls. Weather-resistant finishes that protect and transform.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#9998;</div>
+                <h3>Wallpapering</h3>
+                <p>Expert wallpaper hanging including feature walls, designer papers and tricky patterns. Seamless joins and pattern matching guaranteed.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#128296;</div>
+                <h3>Surface Preparation</h3>
+                <p>Plaster repairs, filling cracks, sanding, priming and sealing. Proper preparation is the foundation of every great paint job.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#9733;</div>
+                <h3>Colour Consultancy</h3>
+                <p>Not sure on colours? We offer free advice on colour schemes, finishes and paint brands to help you choose with confidence.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">&#9632;</div>
+                <h3>Landlord &amp; Tenancy</h3>
+                <p>Quick turnaround redecorations between tenancies. Clean, neutral finishes delivered on time and within budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us" id="why-us">
+        <h2>Why Choose <strong>Colour &amp; Co?</strong></h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">&#10003;</div>
+                <h3>Fully Insured</h3>
+                <p>Public liability cover for your peace of mind</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">&#128197;</div>
+                <h3>On Time, On Budget</h3>
+                <p>We stick to the schedule and the quoted price</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">&#128588;</div>
+                <h3>Clean &amp; Tidy</h3>
+                <p>Furniture protected, dust sheets always down</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">&#127912;</div>
+                <h3>Premium Paints</h3>
+                <p>Farrow & Ball, Dulux Trade, Little Greene</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2>What Our <strong>Clients Say</strong></h2>
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Colour &amp; Co decorated our entire downstairs &mdash; living room, hallway, kitchen and cloakroom. The finish is absolutely immaculate. They were tidy, punctual and a pleasure to have in the house."</blockquote>
+                <div class="test-author">Rebecca &amp; Tom Harrison</div>
+                <div class="test-loc">Gilesgate, Durham</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"We had some quite tricky wallpaper to hang in our bedroom &mdash; a bold geometric pattern. The result is perfect. Not a single misaligned seam. Really impressed."</blockquote>
+                <div class="test-author">Laura Metcalfe</div>
+                <div class="test-loc">Framwellgate Moor</div>
+            </div>
+            <div class="test-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"I manage six rental properties and Colour &amp; Co handle all my redecorations. Always quick, always clean, and the tenants are always happy with the results. Couldn't ask for more."</blockquote>
+                <div class="test-author">Brian Gallagher</div>
+                <div class="test-loc">Lettings Manager, Durham</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready for a <strong>Fresh Look?</strong></h2>
+        <p>Get in touch for a free, no-obligation quote. We'd love to help transform your space.</p>
+        <a href="#contact">Contact Us Today</a>
+    </section>
+
+    <footer id="contact">
+        <div class="ft-grid">
+            <div class="ft-brand">
+                <h3><strong>Colour &amp; Co</strong> Decorating</h3>
+                <p>Painting and decorating services across Durham, Chester-le-Street, Bishop Auckland and the wider North East. Husband-and-wife team providing quality decorating with care and attention since 2013.</p>
+            </div>
+            <div class="ft-col">
+                <h4>Contact</h4>
+                <p>0191 384 7219</p>
+                <a href="mailto:hello@colourandco.co.uk">hello@colourandco.co.uk</a>
+                <p>Mon &ndash; Fri: 8am &ndash; 5pm</p>
+                <p>Sat: 9am &ndash; 1pm</p>
+            </div>
+            <div class="ft-col">
+                <h4>Address</h4>
+                <p>Colour &amp; Co Decorating</p>
+                <p>34 Hawthorn Terrace</p>
+                <p>Durham</p>
+                <p>DH1 4EL</p>
+            </div>
+        </div>
+        <div class="ft-bar">
+            &copy; 2026 Colour &amp; Co Decorating. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

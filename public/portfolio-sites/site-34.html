@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Scaffolding Services | Scaffolders in Leicester</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-gray: #1a1a1a;
+            --darker: #111111;
+            --lime: #84cc16;
+            --lime-dark: #65a30d;
+            --white: #ffffff;
+            --text-light: #b0b0b0;
+            --card-bg: #222222;
+            --border: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-gray);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(17,17,17,0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            height: 65px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--lime);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--lime);
+        }
+
+        /* ===================== HERO (CENTERED) ===================== */
+        .hero {
+            margin-top: 65px;
+            position: relative;
+            height: 92vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('../portfolio-images/scaffolder-03.jpg') center/cover no-repeat;
+            opacity: 0.3;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(132,204,22,0.15), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 0 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid var(--lime);
+            color: var(--lime);
+            font-size: 0.75rem;
+            padding: 0.4rem 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-content h1 .accent {
+            color: var(--lime);
+            position: relative;
+        }
+
+        .hero-content p {
+            color: var(--text-light);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-lime {
+            background: var(--lime);
+            color: var(--dark-gray);
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .btn-lime:hover {
+            background: var(--lime-dark);
+        }
+
+        .btn-ghost {
+            border: 1px solid var(--border);
+            color: var(--white);
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--lime);
+        }
+
+        /* ===================== NEON DIVIDER ===================== */
+        .neon-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--lime), transparent);
+            margin: 0;
+        }
+
+        /* ===================== SERVICES ===================== */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--darker);
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-head h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-head h2 span {
+            color: var(--lime);
+        }
+
+        .section-head p {
+            color: var(--text-light);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--lime);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--lime);
+            transform: translateY(-3px);
+        }
+
+        .svc-icon {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 1.2rem;
+            border: 2px solid var(--lime);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--lime);
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--dark-gray);
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .testimonial .rating {
+            color: var(--lime);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .testimonial blockquote {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .testimonial .author {
+            font-weight: 700;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .testimonial .location {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* ===================== CTA ===================== */
+        .cta {
+            background: var(--lime);
+            color: var(--dark-gray);
+            text-align: center;
+            padding: 3.5rem 2rem;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.85;
+        }
+
+        .cta-btn-dark {
+            display: inline-block;
+            background: var(--dark-gray);
+            color: var(--lime);
+            padding: 0.9rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+        }
+
+        .cta-btn-dark:hover {
+            opacity: 0.85;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--darker);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--lime);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-col ul li::before {
+            content: '\2022';
+            color: var(--lime);
+            margin-right: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.78rem;
+            color: #555;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-container { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Tower <span>Scaffolding</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <div class="hero-badge">CISRS Accredited &middot; Fully Insured</div>
+            <h1>Professional <span class="accent">Scaffolding</span> in Leicester</h1>
+            <p>Tower Scaffolding Services delivers safe, efficient access solutions for commercial and domestic clients across Leicestershire.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-lime">Get a Quote</a>
+                <a href="#services" class="btn-ghost">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-head">
+            <h2>What We <span>Offer</span></h2>
+            <p>Comprehensive scaffolding solutions for every project, from garden extensions to multi-storey developments.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="svc-icon">&#9633;</div>
+                <h3>Residential Scaffolding</h3>
+                <p>Safe, tidy scaffold erection for home renovations, re-roofing, and extensions. Weekend and evening erection available.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9635;</div>
+                <h3>Commercial Projects</h3>
+                <p>Full-scale scaffolding for new builds, office blocks, and industrial sites. Design packages and method statements provided.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9651;</div>
+                <h3>Temporary Roofing</h3>
+                <p>Weatherproof temporary roofs for ongoing construction work. Keeps projects running regardless of the elements.</p>
+            </div>
+            <div class="service-card">
+                <div class="svc-icon">&#9670;</div>
+                <h3>System Scaffolding</h3>
+                <p>Modern system scaffolding for complex structures. Faster erection times and enhanced safety for specialised access requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-head">
+            <h2>Client <span>Reviews</span></h2>
+            <p>Don't take our word for it. See what builders and homeowners say about Tower Scaffolding Services.</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>We've used Tower Scaffolding on several building sites across Leicester and they never let us down. Always on time, competitive pricing, and their lads are proper professionals.</blockquote>
+                <div class="author">Gary Whitmore</div>
+                <div class="location">Whitmore Construction Ltd, Leicester</div>
+            </div>
+            <div class="testimonial">
+                <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Needed scaffolding for a chimney rebuild on our terrace. Tower came next day, set it up quickly and cleanly, and the price was very reasonable. Great service.</blockquote>
+                <div class="author">Priya Sharma</div>
+                <div class="location">Oadby, Leicester</div>
+            </div>
+            <div class="testimonial">
+                <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>Tower provided a temporary roof over our warehouse during renovation. Kept everything dry and allowed the build to continue through some awful weather. Brilliant job.</blockquote>
+                <div class="author">Neil Patterson</div>
+                <div class="location">Syston, Leicestershire</div>
+            </div>
+            <div class="testimonial">
+                <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>These lads know their stuff. Scaffolding up and down within the agreed timeframe, no messing about. Very safety-conscious too, which makes a nice change. Highly recommend.</blockquote>
+                <div class="author">Kevin &amp; Janet Brooks</div>
+                <div class="location">Wigston, Leicester</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Ready to Start Your Project?</h2>
+        <p>Contact Tower Scaffolding Services for a free, no-obligation quotation.</p>
+        <a href="#contact" class="cta-btn-dark">Call 0116 482 7163</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Tower Scaffolding Services Ltd<br>
+                Unit 3, Fairchild Industrial Park<br>
+                Aylestone Road, Leicester LE2 7QH</p>
+                <p style="margin-top: 1rem;">
+                    Tel: 0116 482 7163<br>
+                    Mob: 07894 215 673<br>
+                    Email: info@towerscaffolding.co.uk
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li>Residential Scaffolding</li>
+                    <li>Commercial Scaffolding</li>
+                    <li>Temporary Roofing</li>
+                    <li>System Scaffolding</li>
+                    <li>Scaffold Hire</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Coverage</h3>
+                <ul>
+                    <li>Leicester</li>
+                    <li>Loughborough</li>
+                    <li>Hinckley</li>
+                    <li>Market Harborough</li>
+                    <li>Melton Mowbray</li>
+                    <li>Coalville</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Tower Scaffolding Services Ltd. All rights reserved. Company Reg. No. 10762534. CISRS Accredited.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metro Kitchen Fitters — Bespoke Kitchens Designed & Installed in London</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --white: #ffffff;
+    --black: #111111;
+    --gold: #b8960c;
+    --gold-light: rgba(184, 150, 12, 0.15);
+    --gray-bg: #f5f5f5;
+    --gray-text: #666666;
+    --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-main);
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===================== NAV ===================== */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .nav.scrolled {
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+
+  .nav-logo {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--gold);
+    font-size: 10px;
+    vertical-align: super;
+    margin-left: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    font-size: 10px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+  }
+
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--white) !important;
+  }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: url('../portfolio-images/kitchen-fitter-01.jpg') center/cover no-repeat;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 200;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .hero h2 {
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  .hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 28px;
+  }
+
+  .hero-tagline {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    margin-bottom: 44px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .btn-gold {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--gold);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border: 1px solid var(--gold);
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold:hover {
+    background: transparent;
+    color: var(--gold);
+  }
+
+  .btn-gold-outline {
+    display: inline-block;
+    padding: 16px 40px;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border: 1px solid var(--gold);
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold-outline:hover {
+    background: var(--gold);
+    color: var(--white);
+  }
+
+  /* ===================== ABOUT ===================== */
+  .about-strip {
+    padding: 100px 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .about-strip p {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--black);
+    letter-spacing: 0.3px;
+  }
+
+  .about-strip .gold-rule {
+    width: 50px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 40px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  /* ===================== SHOWCASE ===================== */
+  .showcase {
+    padding: 0 40px 100px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .showcase-heading {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .showcase-heading h2 {
+    font-size: 36px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .showcase-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .showcase-item p {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    text-align: center;
+    padding: 20px 0;
+    color: var(--black);
+  }
+
+  /* ===================== PROCESS ===================== */
+  .process {
+    background: var(--gray-bg);
+    padding: 100px 40px;
+  }
+
+  .process-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .process-inner h2 {
+    font-size: 36px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .process-subtitle {
+    font-size: 14px;
+    color: var(--gray-text);
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  .process-step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    letter-spacing: 0;
+  }
+
+  .process-step h3 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .process-step p {
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.7;
+  }
+
+  /* ===================== FEATURES ===================== */
+  .features {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .features-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .features-content h2 {
+    font-size: 36px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .features-content .subtitle {
+    font-size: 14px;
+    color: var(--gray-text);
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .feature-check {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 18px;
+    margin-top: 2px;
+  }
+
+  .feature-item h4 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .feature-item p {
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  /* ===================== TESTIMONIAL ===================== */
+  .testimonial {
+    padding: 100px 40px;
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .testimonial-quote-mark {
+    font-size: 120px;
+    color: var(--gold);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 0.6;
+    opacity: 0.4;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .testimonial blockquote {
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--black);
+    margin-bottom: 30px;
+    letter-spacing: 0.3px;
+  }
+
+  .testimonial-author {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .testimonial-location {
+    font-size: 12px;
+    color: var(--gray-text);
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+
+  /* ===================== GALLERY ===================== */
+  .gallery {
+    padding: 100px 40px;
+    background: var(--gray-bg);
+  }
+
+  .gallery-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .gallery-inner h2 {
+    font-size: 36px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .gallery-subtitle {
+    font-size: 14px;
+    color: var(--gray-text);
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4/3;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.08);
+  }
+
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    transition: background 0.3s ease;
+    pointer-events: none;
+  }
+
+  .gallery-item:hover::after {
+    background: rgba(0,0,0,0.1);
+  }
+
+  /* ===================== CTA ===================== */
+  .cta {
+    background: var(--black);
+    padding: 100px 40px;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta h2 {
+    font-size: 34px;
+    font-weight: 200;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .cta p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+
+  /* ===================== FOOTER ===================== */
+  .footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 70px 40px 40px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+  }
+
+  .footer-brand .nav-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--white);
+    font-size: 18px;
+  }
+
+  .footer-brand p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer h4 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .footer ul {
+    list-style: none;
+  }
+
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer ul a {
+    text-decoration: none;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    transition: color 0.3s;
+  }
+
+  .footer ul a:hover {
+    color: var(--gold);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-social a {
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+
+  .footer-social a:hover { color: var(--gold); }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1024px) {
+    .showcase-grid { grid-template-columns: repeat(2, 1fr); }
+    .showcase-grid .showcase-item:nth-child(3) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .nav-inner { padding: 0 20px; }
+    .nav-links { gap: 16px; }
+    .nav-links li:nth-child(-n+3) { display: none; }
+    .hero h1 { letter-spacing: 3px; }
+    .showcase-grid { grid-template-columns: 1fr; }
+    .showcase-grid .showcase-item:nth-child(3) { max-width: 100%; }
+    .features-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer-bottom { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Metro Kitchen Fitters<span>&bull;</span></a>
+    <ul class="nav-links">
+      <li><a href="#showcase">Kitchens</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#features">About</a></li>
+      <li><a href="#cta">Contact</a></li>
+      <li><a href="#cta" class="nav-cta">Book Consultation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Bespoke Kitchens</h1>
+    <h2>Designed &amp; Installed</h2>
+    <div class="hero-rule"></div>
+    <p class="hero-tagline">London's Premier Kitchen Specialists</p>
+    <a href="#showcase" class="btn-gold">View Our Work</a>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <span class="section-label">Est. 2009</span>
+  <div class="gold-rule"></div>
+  <p>With over 15 years of experience, Metro Kitchen Fitters designs and installs bespoke kitchens across London. From initial concept to final installation, we bring precision craftsmanship and an unwavering commitment to quality to every project we undertake.</p>
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase" id="showcase">
+  <div class="showcase-heading">
+    <span class="section-label">Our Collections</span>
+    <h2>Kitchen Styles</h2>
+  </div>
+  <div class="showcase-grid">
+    <div class="showcase-item">
+      <img src="https://images.unsplash.com/photo-1749704647283-3ad79f4acc6a?w=600&h=400&fit=crop&auto=format" alt="Modern Handleless Kitchen" loading="lazy">
+      <p>Modern Handleless</p>
+    </div>
+    <div class="showcase-item">
+      <img src="https://images.unsplash.com/photo-1769763828411-eb09bb05d97f?w=600&h=400&fit=crop&auto=format" alt="Shaker Style Kitchen" loading="lazy">
+      <p>Shaker Style</p>
+    </div>
+    <div class="showcase-item">
+      <img src="https://images.unsplash.com/photo-1749704647512-3f556575a241?w=600&h=400&fit=crop&auto=format" alt="Contemporary Gloss Kitchen" loading="lazy">
+      <p>Contemporary Gloss</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-inner">
+    <span class="section-label">How We Work</span>
+    <h2>Our Process</h2>
+    <p class="process-subtitle">From concept to completion, a seamless experience</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h3>Design Consultation</h3>
+        <p>We visit your home, discuss your vision, take measurements and explore styles, materials and layouts that suit your space and lifestyle.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h3>3D Planning</h3>
+        <p>Using state-of-the-art CAD software, we create detailed 3D renders so you can visualise your new kitchen before a single cabinet is built.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h3>Installation</h3>
+        <p>Our experienced fitters install your kitchen with meticulous care. We manage plumbing, electrics, tiling and every finishing detail.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h3>Aftercare</h3>
+        <p>We don't disappear after installation. Our aftercare service ensures everything is perfect, with a comprehensive guarantee for your peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="features-grid">
+    <div class="features-image">
+      <img src="https://images.unsplash.com/photo-1758565810980-5d7949fb3cbf?w=800&h=600&fit=crop&auto=format" alt="Metro Kitchen Fitters at work" loading="lazy">
+    </div>
+    <div class="features-content">
+      <span class="section-label">The Metro Difference</span>
+      <h2>Why Metro?</h2>
+      <p class="subtitle">What sets us apart from the rest</p>
+
+      <div class="feature-item">
+        <div class="feature-check">&#10003;</div>
+        <div>
+          <h4>Bespoke Design</h4>
+          <p>Every kitchen is designed from scratch around your space, lifestyle and personal taste. No off-the-shelf solutions.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-check">&#10003;</div>
+        <div>
+          <h4>Premium Materials</h4>
+          <p>We source only the finest cabinetry, worktops, fixtures and appliances from trusted European suppliers.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-check">&#10003;</div>
+        <div>
+          <h4>Expert Installation</h4>
+          <p>Our team of skilled fitters have an average of 12 years' experience. Every joint, every edge, every detail is perfect.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-check">&#10003;</div>
+        <div>
+          <h4>10-Year Guarantee</h4>
+          <p>We stand behind our workmanship with a comprehensive 10-year guarantee on all installations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <span class="testimonial-quote-mark">&ldquo;</span>
+  <blockquote>Metro Kitchen Fitters transformed our dated galley kitchen into the most beautiful room in our house. From the first consultation to the final handover, the attention to detail was extraordinary. James and his team were professional, tidy and genuinely passionate about getting every detail right. We couldn't be happier.</blockquote>
+  <div class="testimonial-author">Sarah &amp; David Thompson</div>
+  <div class="testimonial-location">Islington, London N1</div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <span class="section-label">Portfolio</span>
+    <h2>Our Kitchens</h2>
+    <p class="gallery-subtitle">A selection of recently completed projects across London</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1760072513457-651955c7074d?w=600&h=450&fit=crop&auto=format" alt="Kitchen project 1" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1768578927267-d589f8a294b8?w=600&h=450&fit=crop&auto=format" alt="Kitchen project 2" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1634672050277-16639332c727?w=600&h=450&fit=crop&auto=format" alt="Kitchen project 3" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1759238136854-913e5e383308?w=600&h=450&fit=crop&auto=format" alt="Kitchen project 4" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1764118811041-712974fea74c?w=600&h=450&fit=crop&auto=format" alt="Kitchen project 5" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1769557240776-4e9eb5a40e3b?w=600&h=450&fit=crop&auto=format" alt="Kitchen project 6" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="cta-inner">
+    <span class="section-label" style="color: var(--gold);">Get Started</span>
+    <h2>Ready to Design Your Dream Kitchen?</h2>
+    <p>Book a free, no-obligation consultation at your home or visit our London showroom</p>
+    <a href="#" class="btn-gold">Book Your Free Consultation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">Metro Kitchen Fitters<span>&bull;</span></a>
+        <p>London's premier bespoke kitchen design and installation company. Creating beautiful, functional kitchens since 2009.</p>
+      </div>
+      <div>
+        <h4>Kitchens</h4>
+        <ul>
+          <li><a href="#">Modern Handleless</a></li>
+          <li><a href="#">Shaker Style</a></li>
+          <li><a href="#">Contemporary Gloss</a></li>
+          <li><a href="#">Classic Traditional</a></li>
+          <li><a href="#">Bespoke Pantries</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Process</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">020 7946 0321</a></li>
+          <li><a href="#">hello@metrokitchens.co.uk</a></li>
+          <li><a href="#">14 Clerkenwell Road</a></li>
+          <li><a href="#">London EC1M 5PQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Metro Kitchen Fitters. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Houzz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>

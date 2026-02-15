@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone &amp; Oak Kitchens | Luxury Kitchen Design in Reading</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ccc;
+            line-height: 1.6;
+            background: #1a1a1a;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(26, 26, 26, 0.95);
+            padding: 0 3rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 74px;
+            border-bottom: 1px solid rgba(184, 150, 12, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        nav .logo {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #b8960c;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        nav .logo span {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav ul li a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #b8960c;
+        }
+
+        /* Hero - Full Screen Dark Luxury */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('../portfolio-images/kitchen-fitter-04.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(26, 26, 26, 0.6) 0%,
+                rgba(26, 26, 26, 0.5) 50%,
+                rgba(26, 26, 26, 0.9) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            padding: 0 2rem;
+        }
+
+        .hero-content .gold-diamond {
+            color: #b8960c;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 span {
+            color: #b8960c;
+            font-weight: 600;
+        }
+
+        .hero-content .subtitle {
+            width: 80px;
+            height: 1px;
+            background: #b8960c;
+            margin: 1.5rem auto;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #999;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 15px 45px;
+            border: 1px solid #b8960c;
+            color: #b8960c;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .btn-gold:hover {
+            background: #b8960c;
+            color: #1a1a1a;
+        }
+
+        /* About */
+        .about {
+            padding: 5rem 2rem;
+            background: #1a1a1a;
+        }
+
+        .about-inner {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-inner h2 {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-inner h2 span {
+            color: #b8960c;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 1px;
+            background: #b8960c;
+            margin: 1.5rem auto;
+        }
+
+        .about-inner p {
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Services - Gold Border Cards */
+        .services {
+            padding: 5rem 2rem;
+            background: #141414;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .services-header h2 {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .services-header p {
+            color: #666;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(184, 150, 12, 0.25);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #b8960c;
+            background: rgba(184, 150, 12, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border: 1px solid rgba(184, 150, 12, 0.4);
+            color: #b8960c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .service-card p {
+            font-size: 0.88rem;
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #1a1a1a;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .testimonials-header p {
+            color: #666;
+        }
+
+        .testimonials-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .t-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(184, 150, 12, 0.15);
+            padding: 2.5rem;
+        }
+
+        .t-card .stars {
+            color: #b8960c;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .t-card .quote {
+            font-style: italic;
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .t-card .author {
+            font-weight: 600;
+            color: #fff;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .t-card .location {
+            font-size: 0.78rem;
+            color: #b8960c;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #666;
+            padding: 4rem 2rem 1.5rem;
+            border-top: 1px solid rgba(184, 150, 12, 0.15);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            color: #b8960c;
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-col p {
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.88rem;
+            line-height: 2.2;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #b8960c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.75rem;
+            color: #444;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h1 { font-size: 2rem; letter-spacing: 1px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Stone <span>&amp;</span> Oak</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="gold-diamond">&#9670; &#9670; &#9670;</div>
+            <h1>Luxury <span>Kitchen</span> Design</h1>
+            <div class="subtitle"></div>
+            <p>Stone & Oak Kitchens creates exceptional bespoke kitchens for discerning homeowners across Reading and the Thames Valley. Exquisite design. Impeccable craftsmanship.</p>
+            <a href="#contact" class="btn-gold">Book a Consultation</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2>The Art of <span>Kitchen Design</span></h2>
+            <div class="gold-line"></div>
+            <p>Stone & Oak Kitchens was established in 2014 by interior designer Alexandra Mortimer and master craftsman William Stone. Together, they bring a unique combination of design sophistication and traditional woodworking excellence to every project.</p>
+            <p>Based in Reading, we work with homeowners across Berkshire, Oxfordshire, and the wider Thames Valley. Every kitchen we create is entirely bespoke, designed around your space, your lifestyle, and your aesthetic. We use only the finest materials - solid hardwoods, natural stone, and premium hardware - to create kitchens of enduring beauty.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p>A bespoke approach to luxury kitchen design</p>
+            <div class="gold-line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#x1f4d0;</div>
+                <h3>Bespoke Design</h3>
+                <p>Comprehensive design service including home consultation, mood boarding, material selection, 3D rendering, and detailed technical drawings.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1fa9c;</div>
+                <h3>Handmade Cabinetry</h3>
+                <p>Custom cabinetry crafted in our Reading workshop from solid hardwoods. Dovetail joints, hand-painted finishes, and meticulous quality control.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x2b1c;</div>
+                <h3>Natural Stone Worktops</h3>
+                <p>Marble, granite, and quartzite worktops sourced from the finest quarries. Templated and fabricated to our exacting standards.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f6e0;</div>
+                <h3>Full Installation</h3>
+                <p>Expert installation by our own skilled fitters. Plumbing, electrics, tiling, and final finishing all managed in-house for seamless results.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f4a1;</div>
+                <h3>Lighting Design</h3>
+                <p>Architectural lighting schemes that enhance the beauty and functionality of your kitchen. Integrated, ambient, and task lighting perfectly balanced.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1f527;</div>
+                <h3>Premium Appliances</h3>
+                <p>Supply and integration of luxury appliances from Gaggenau, Miele, Sub-Zero, and Wolf. Expert specification and installation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>Client Testimonials</h2>
+            <p>Words from those who've experienced the Stone & Oak difference</p>
+            <div class="gold-line"></div>
+        </div>
+        <div class="testimonials-row">
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Alexandra understood our vision immediately and created a design that exceeded every expectation. The handmade cabinetry is a work of art, and the Calacatta marble island is truly breathtaking. Stone & Oak delivered a kitchen beyond our dreams."</div>
+                <div class="author">Edward and Caroline Ashby</div>
+                <div class="location">Sonning, Berkshire</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"From the initial design meeting to the final installation, the entire process was a pleasure. The attention to detail is extraordinary - every joint, every finish, every handle is perfection. This is craftsmanship at its finest."</div>
+                <div class="author">Dr Sarah Beaumont</div>
+                <div class="location">Caversham, Reading</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"We renovated our entire ground floor and Stone & Oak created the most stunning open-plan kitchen. The design is both beautiful and incredibly practical. The quality of the painted cabinetry and the stone worktops is simply outstanding."</div>
+                <div class="author">Nicholas and Emma Hartwell</div>
+                <div class="location">Henley-on-Thames</div>
+            </div>
+            <div class="t-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="quote">"Having seen several kitchen showrooms, Stone & Oak stood out for their design expertise and the quality of their craftsmanship. The finished kitchen is a masterpiece and the centrepiece of our home. Worth every penny."</div>
+                <div class="author">Isabelle Grant</div>
+                <div class="location">Pangbourne, Berkshire</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Stone &amp; Oak Kitchens</h3>
+                <p>Luxury bespoke kitchen design and installation in Reading and the Thames Valley since 2014. Handmade cabinetry. Natural stone. Uncompromising quality.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>The Design Studio<br>14 Kings Road<br>Reading, RG1 3AA</p>
+                <p>Tel: 0118 957 4628</p>
+                <p>studio@stoneandoakkitchens.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Stone &amp; Oak Kitchens Ltd &middot; Registered in England &amp; Wales &middot; No. 09174352
+        </div>
+    </footer>
+
+</body>
+</html>
