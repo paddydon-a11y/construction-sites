@@ -110,7 +110,7 @@ export default function HomePage() {
                 1. The Site Survey
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                We jump on a call, learn about your trade, and plan your site.
+                We jump on a call, learn about your business, and plan your site.
                 No jargon, no waffle. Just a proper chat about what you need.
               </p>
             </article>
