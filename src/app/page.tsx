@@ -138,8 +138,8 @@ export default function HomePage() {
                 3. Handover
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                Your site goes live. We set up your Google Ads, sort your SEO,
-                and hand you the keys. Your phone starts ringing.
+                Your site goes live, fully optimised for Google Ads and SEO.
+                We hand you the keys. Your phone starts ringing.
               </p>
             </article>
           </div>
@@ -196,7 +196,7 @@ export default function HomePage() {
           </div>
 
           <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-slate-light sm:text-xl">
-            Custom website. Hosting. SEO. Google Ads launch. Monthly edits.
+            Custom website. Hosting. SEO. Google Ads ready. Monthly edits.
             Everything included.
           </p>
 

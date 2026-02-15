@@ -169,7 +169,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="mt-2 leading-relaxed text-slate-light">
                   Happy with it? We press the big red button. Your site goes
-                  live, Google Ads start running, and your phone starts ringing.
+                  live, optimised for Google Ads, and your phone starts ringing.
                 </p>
               </div>
             </div>

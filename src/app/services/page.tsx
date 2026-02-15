@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Services",
   description:
-    "Custom website design, SEO, Google Ads, monthly maintenance and more. Everything your trade business needs to get found online.",
+    "Custom website design, SEO, Google Ads optimisation, monthly maintenance and more. Everything your trade business needs to get found online.",
 };
 
 const services = [
@@ -24,11 +24,11 @@ const services = [
   },
   {
     icon: "\uD83C\uDFAF",
-    title: "Google Ads Launch",
+    title: "Google Ads Ready",
     tagline:
-      "\u00A3100 of Google Ads in your first week. Your phone rings before the paint\u2019s dry.",
+      "Built to convert from day one. Your site launches ready to run ads the moment you are.",
     description:
-      "We set up and manage your first Google Ads campaign. Targeted to your area, your trade, your ideal customers. Instant visibility while your organic rankings build up.",
+      "Every site is optimised for Google Ads with proper landing pages, conversion tracking, and call-to-action placement. Targeted to your area, your trade, your ideal customers. Ready to deploy whenever you want.",
   },
   {
     icon: "\uD83D\uDD27",

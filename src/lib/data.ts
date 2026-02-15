@@ -124,8 +124,8 @@ export const faqs: FAQ[] = [
     answer: "Yes, 100%. Your domain is registered in your name. We'll sort out the purchase and setup, but it's yours. If you ever leave, you take it with you.",
   },
   {
-    question: "What about the Google Ads?",
-    answer: "We set up your first Google Ads campaign and put £100 of ad spend behind it in your first week. It's designed to get your phone ringing straight away while the SEO builds up over time.",
+    question: "What about Google Ads?",
+    answer: "Every site we build is optimised for Google Ads from the ground up. Proper landing pages, conversion tracking, the lot. When you're ready to run ads, your site is already built to convert.",
   },
   {
     question: "I already have a website. Can you rebuild it?",

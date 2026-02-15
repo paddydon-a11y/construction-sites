@@ -4,13 +4,13 @@ import { faqs } from "@/lib/data";
 export const metadata = {
   title: "Pricing | Construction Sites",
   description:
-    "Custom websites for tradespeople at just £100/month. No hidden fees, no contracts. Everything included: hosting, SEO, Google Ads, and monthly edits.",
+    "Custom websites for tradespeople at just £100/month. No hidden fees, no contracts. Everything included: hosting, SEO, Google Ads optimisation, and monthly edits.",
 };
 
 const strikethroughPrices = [
   { service: "Custom Website Build", price: "£6,000" },
   { service: "Monthly SEO & Hosting", price: "£150/month" },
-  { service: "Google Ads Launch", price: "£500" },
+  { service: "Google Ads Optimisation", price: "£500" },
   { service: "Monthly Edits", price: "£50/hour" },
 ];
 
@@ -19,7 +19,7 @@ const comparisonRows = [
   { feature: "Monthly Hosting", typical: "£30 - £50/month", us: "Included" },
   { feature: "SSL Certificate", typical: "£50 - £100/year", us: "Included" },
   { feature: "SEO Setup", typical: "£500 - £1,500", us: "Included" },
-  { feature: "Google Ads Launch", typical: "£300 - £500", us: "Included" },
+  { feature: "Google Ads Optimised", typical: "£300 - £500", us: "Included" },
   { feature: "Monthly Edits (1hr)", typical: "£50 - £100/hour", us: "FREE" },
   {
     feature: "Google Business Setup",
