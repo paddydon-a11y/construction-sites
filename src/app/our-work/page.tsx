@@ -74,12 +74,9 @@ export default function OurWorkPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {sites.map((site) => (
-            <a
+            <div
               key={site.file}
-              href={`/portfolio-sites/${site.file}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-xl border border-white/5 bg-charcoal p-3 transition-all duration-300 hover:border-hivis/40 hover:shadow-[0_0_25px_rgba(245,158,11,0.15)]"
+              className="group rounded-xl border border-white/5 bg-charcoal p-3 transition-all duration-300 hover:border-hivis/40 hover:shadow-[0_0_25px_rgba(245,158,11,0.15)]"
             >
               <div
                 className="relative aspect-[4/3] overflow-hidden rounded-lg"
@@ -88,7 +85,7 @@ export default function OurWorkPage() {
                 <iframe
                   src={`/portfolio-sites/${site.file}`}
                   title={site.name}
-                  className="pointer-events-none absolute left-0 top-0 border-none"
+                  className="pointer-events-none absolute left-0 top-0 border-none select-none"
                   width={1440}
                   height={1080}
                   style={{
@@ -107,7 +104,7 @@ export default function OurWorkPage() {
                 <p className="text-xs text-hivis mt-0.5">{site.trade}</p>
                 <p className="text-xs text-slate-light">{site.location}</p>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </section>
