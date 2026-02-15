@@ -7,15 +7,13 @@ export default function HomePage() {
       {/* ─── 1. HERO SECTION ─── */}
       <section className="blueprint-grid relative flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
         <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          Laying the{" "}
-          <span className="text-hivis">Foundations</span> for Your
-          Online&nbsp;Presence
+          Get <span className="text-hivis">Better Work.</span> Win{" "}
+          <span className="text-hivis">Bigger Contracts.</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-subheading)] text-2xl tracking-wide text-slate-light sm:text-3xl md:text-4xl">
-          We build stunning websites for construction businesses and
-          tradespeople. No templates. No nonsense. Just sites that get your
-          phone ringing.
+          Lay the groundwork with a stunning custom-built website that actually
+          generates enquiries.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
