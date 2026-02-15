@@ -212,20 +212,20 @@ export default function HomePage() {
       </section>
 
       {/* ─── 6. FINAL CTA ─── */}
-      <section className="blueprint-grid py-20 px-6">
+      <section className="bg-hivis py-20 px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-dark sm:text-4xl md:text-5xl">
             Ready to Break Ground?
           </h2>
 
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-light sm:text-xl">
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-dark/80 sm:text-xl">
             Your competitors already have websites. Time to level up.
           </p>
 
           <div className="mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-hivis px-8 py-4 text-lg font-semibold text-dark transition-colors hover:bg-hivis-bright focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hivis"
+              className="inline-flex items-center justify-center rounded-md bg-dark px-8 py-4 text-lg font-semibold text-hivis transition-colors hover:bg-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
             >
               Get Started Today
             </Link>
