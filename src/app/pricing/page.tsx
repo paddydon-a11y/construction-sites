@@ -104,7 +104,6 @@ export default function PricingPage() {
             "No contract. Cancel anytime.",
             "No setup fee. No hidden costs.",
             "Site comes down if you stop paying. No penalties, no fuss.",
-            "First 12 months upfront (£1,200). Direct debit from month 13.",
             "Less than a tank of diesel for a website that pays for itself.",
           ].map((point) => (
             <p
