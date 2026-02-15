@@ -12,13 +12,13 @@ export default function AboutPage() {
       {/* ─── 1. HEADER ─── */}
       <section className="bg-dark px-6 pt-32 pb-0 text-center">
         <h1 className="mx-auto max-w-4xl text-5xl font-extrabold leading-tight tracking-tight">
-          What a <span className="text-hivis">Better Website</span> Actually
-          Gets You
+          Get <span className="text-hivis">Better Work.</span> Win{" "}
+          <span className="text-hivis">Bigger Contracts.</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-slate-light">
-          It&apos;s not about having a website. It&apos;s about what the right
-          website does for your business.
+          Lay the groundwork with a stunning custom-built website that actually
+          generates enquiries.
         </p>
 
         <div className="construction-tape mt-12" aria-hidden="true" />
