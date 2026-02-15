@@ -26,7 +26,7 @@ export default function Header() {
               <span className="text-2xl" aria-hidden="true">
                 🏗️
               </span>
-              <span className="text-lg font-bold tracking-tight text-white">
+              <span className="font-[family-name:var(--font-display)] text-2xl tracking-wider text-white uppercase">
                 Construction Sites
               </span>
             </Link>
@@ -37,7 +37,7 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="px-3 py-2 text-sm font-medium text-slate-light rounded-md transition-colors hover:text-hivis focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hivis"
+                    className="font-[family-name:var(--font-display)] px-3 py-2 text-lg tracking-wider text-slate-light rounded-md transition-colors hover:text-hivis focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hivis"
                   >
                     {link.label}
                   </Link>
@@ -50,7 +50,7 @@ export default function Header() {
               {/* CTA button — hidden on mobile */}
               <Link
                 href="/contact"
-                className="hidden md:inline-flex items-center justify-center rounded-md bg-hivis px-4 py-2 text-sm font-semibold text-dark transition-colors hover:bg-hivis-bright focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hivis"
+                className="hidden md:inline-flex items-center justify-center rounded-md bg-hivis px-5 py-2 font-[family-name:var(--font-display)] text-lg tracking-wider text-dark transition-colors hover:bg-hivis-bright focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hivis"
               >
                 Get Started
               </Link>
@@ -113,7 +113,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-slate-light transition-colors hover:bg-white/5 hover:text-hivis"
+                  className="block rounded-md px-3 py-2 font-[family-name:var(--font-display)] text-xl tracking-wider text-slate-light transition-colors hover:bg-white/5 hover:text-hivis"
                 >
                   {link.label}
                 </Link>
@@ -123,7 +123,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 block rounded-md bg-hivis px-3 py-2 text-center text-base font-semibold text-dark transition-colors hover:bg-hivis-bright"
+                className="mt-2 block rounded-md bg-hivis px-3 py-2 text-center font-[family-name:var(--font-display)] text-xl tracking-wider text-dark transition-colors hover:bg-hivis-bright"
               >
                 Get Started
               </Link>

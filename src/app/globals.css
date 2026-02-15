@@ -11,6 +11,7 @@
   --color-white: #ffffff;
   --font-heading: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: var(--font-display), 'Bebas Neue', system-ui, sans-serif;
 }
 
 /* ── Base ── */
