@@ -8,7 +8,7 @@ export const metadata = {
 
 const sites = [
   { file: "site-01.html", name: "Spark Brothers Electrical", trade: "Electricians", location: "Manchester", bg: "#0b1929" },
-  { file: "site-02.html", name: "AquaFlow Plumbing & Heating", trade: "Plumbers", location: "Leeds", bg: "#f8f9fa" },
+  { file: "site-40.html", name: "Waterline Bathrooms & Tiling", trade: "Bathroom Fitters", location: "Bournemouth", bg: "#ffffff" },
   { file: "site-39.html", name: "Mosaic Bathrooms", trade: "Bathroom Fitters", location: "Aberdeen", bg: "#111111" },
   { file: "site-31.html", name: "Ridgeline Roofing", trade: "Roofers", location: "Coventry", bg: "#1f1f1f" },
   { file: "site-35.html", name: "Atlas Access Solutions", trade: "Scaffolders", location: "Derby", bg: "#0c1b33" },
@@ -19,7 +19,9 @@ const sites = [
   { file: "site-12.html", name: "Cornerstone Brickwork", trade: "Bricklayers", location: "Nottingham", bg: "#4a4a4a" },
   { file: "site-08.html", name: "Precision Plastering & Rendering", trade: "Plasterers", location: "Edinburgh", bg: "#fefefe" },
   { file: "site-09.html", name: "Metro Kitchen Fitters", trade: "Kitchen Fitters", location: "London", bg: "#111111" },
+  { file: "site-37.html", name: "Cotswold Stonework", trade: "Stone Masons", location: "Cirencester", bg: "#f8f5ef" },
   { file: "site-11.html", name: "Redfern Bricklaying", trade: "Bricklayers", location: "Sheffield", bg: "#1e3a5f" },
+  { file: "site-02.html", name: "AquaFlow Plumbing & Heating", trade: "Plumbers", location: "Leeds", bg: "#f8f9fa" },
   { file: "site-13.html", name: "Heritage Brickwork", trade: "Bricklayers", location: "Oxford", bg: "#2d4a3e" },
   { file: "site-14.html", name: "Whitfield Construction", trade: "Builders", location: "York", bg: "#2c2c2c" },
   { file: "site-15.html", name: "Bridgewater Builders", trade: "Builders", location: "Bath", bg: "#0f2942" },
@@ -44,9 +46,7 @@ const sites = [
   { file: "site-17.html", name: "ClearView Windows & Doors", trade: "Window Installers", location: "Cardiff", bg: "#ffffff" },
   { file: "site-06.html", name: "Hargreaves Heating & Gas", trade: "Heating Engineers", location: "Liverpool", bg: "#faf7f2" },
   { file: "site-36.html", name: "Cathedral Scaffolding", trade: "Scaffolders", location: "Salisbury", bg: "#172554" },
-  { file: "site-37.html", name: "Cotswold Stonework", trade: "Stone Masons", location: "Cirencester", bg: "#f8f5ef" },
   { file: "site-38.html", name: "Tilecraft Bathrooms", trade: "Bathroom Fitters", location: "Sunderland", bg: "#ffffff" },
-  { file: "site-40.html", name: "Waterline Bathrooms & Tiling", trade: "Bathroom Fitters", location: "Bournemouth", bg: "#ffffff" },
 ];
 
 export default function OurWorkPage() {
