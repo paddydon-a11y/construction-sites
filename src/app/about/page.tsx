@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "About Us",
   description:
-    "We're a web design agency that works exclusively with construction and trade businesses. No suits, no jargon, no agency prices.",
+    "A better website means better work, better leads, and better people wanting to work for you. See what a professional online presence does for construction businesses.",
 };
 
 export default function AboutPage() {
@@ -12,202 +12,180 @@ export default function AboutPage() {
       {/* ─── 1. HEADER ─── */}
       <section className="bg-dark px-6 pt-32 pb-0 text-center">
         <h1 className="mx-auto max-w-4xl text-5xl font-extrabold leading-tight tracking-tight">
-          About <span className="text-hivis">Construction Sites</span>
+          What a <span className="text-hivis">Better Website</span> Actually
+          Gets You
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-slate-light">
-          We&rsquo;re not your average web agency.
+          It&apos;s not about having a website. It&apos;s about what the right
+          website does for your business.
         </p>
 
-        <div
-          className="construction-tape mt-12"
-          aria-hidden="true"
-        />
+        <div className="construction-tape mt-12" aria-hidden="true" />
       </section>
 
-      {/* ─── 2. INTRO SECTION ─── */}
+      {/* ─── 2. THE PROBLEM ─── */}
       <section className="bg-dark px-6 py-20">
         <div className="mx-auto max-w-3xl">
           <p className="text-2xl font-bold leading-snug tracking-tight sm:text-3xl">
-            We don&rsquo;t wear suits, we don&rsquo;t do jargon, and we
-            definitely don&rsquo;t charge agency prices.
+            Most construction businesses are leaving money on the table every
+            single day.
           </p>
 
           <p className="mt-8 text-lg leading-relaxed text-slate-light">
-            We&rsquo;re a team of web designers and developers who work
-            exclusively with construction and trade businesses.
-            That&rsquo;s it. That&rsquo;s all we do. We don&rsquo;t build sites
-            for restaurants, salons, or accountants. Just trades.
+            You&apos;re great at what you do. But when someone searches for your
+            trade in your area, they&apos;re finding your competitors first.
+            The ones with proper websites are getting the best jobs, the best
+            rates, and the best people asking to work for them.
           </p>
 
           <p className="mt-6 text-lg leading-relaxed text-slate-light">
-            Why? Because we know the industry. We know what your customers are
-            searching for. We know what makes them pick up the phone. And we know
-            how to build websites that make that happen.
+            That should be you. And it can be.
           </p>
         </div>
       </section>
 
-      {/* ─── 3. WHY TRADESPEOPLE ─── */}
+      {/* ─── 3. WHAT YOU GET ─── */}
       <section className="bg-charcoal px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
-            Why We Only Work With Trades
+            What <span className="text-hivis">Changes</span> When You Look
+            Professional Online
           </h2>
 
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
-            {/* Card 1 */}
-            <article className="rounded-xl bg-charcoal border border-white/10 p-8">
+          <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <article className="rounded-xl border border-white/10 bg-charcoal p-8">
               <span className="text-4xl" aria-hidden="true">
-                🎯
+                📞
               </span>
               <h3 className="mt-4 text-xl font-bold sm:text-2xl">
-                We Know Your Customers
+                More Leads, Better Jobs
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                Every potential customer does the same thing: they
-                Google the trade they need + their location. &lsquo;Plumber
-                Leeds&rsquo;. &lsquo;Electrician Manchester&rsquo;. We build
-                sites that show up for exactly those searches.
+                Your phone rings more. And not with tyre-kickers. A proper
+                website attracts customers who are ready to spend and happy to
+                pay what the job is worth.
               </p>
             </article>
 
-            {/* Card 2 */}
-            <article className="rounded-xl bg-charcoal border border-white/10 p-8">
-              <span className="text-4xl" aria-hidden="true">
-                💬
-              </span>
-              <h3 className="mt-4 text-xl font-bold sm:text-2xl">
-                We Speak Your Language
-              </h3>
-              <p className="mt-3 leading-relaxed text-slate-light">
-                No tech waffle. No buzzwords. We explain everything in plain
-                English. If you can understand a quote for a bathroom refit, you
-                can understand how we work.
-              </p>
-            </article>
-
-            {/* Card 3 */}
-            <article className="rounded-xl bg-charcoal border border-white/10 p-8">
+            <article className="rounded-xl border border-white/10 bg-charcoal p-8">
               <span className="text-4xl" aria-hidden="true">
                 💷
               </span>
               <h3 className="mt-4 text-xl font-bold sm:text-2xl">
-                We Know Your Budget
+                Charge What You&apos;re Worth
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                Most construction businesses don&rsquo;t want to drop &pound;5k on a
-                website. We get it. That&rsquo;s why we built a model that gets
-                you a premium site for less than your monthly diesel bill.
+                When you look professional, customers don&apos;t haggle. They
+                see a serious business and they pay serious rates. No more
+                racing to the bottom on price.
+              </p>
+            </article>
+
+            <article className="rounded-xl border border-white/10 bg-charcoal p-8">
+              <span className="text-4xl" aria-hidden="true">
+                🤝
+              </span>
+              <h3 className="mt-4 text-xl font-bold sm:text-2xl">
+                Better Payment Terms
+              </h3>
+              <p className="mt-3 leading-relaxed text-slate-light">
+                Customers trust a business that looks established. That means
+                fewer arguments about deposits, stage payments on time, and less
+                chasing invoices.
+              </p>
+            </article>
+
+            <article className="rounded-xl border border-white/10 bg-charcoal p-8">
+              <span className="text-4xl" aria-hidden="true">
+                👷
+              </span>
+              <h3 className="mt-4 text-xl font-bold sm:text-2xl">
+                Better People Want to Work for You
+              </h3>
+              <p className="mt-3 leading-relaxed text-slate-light">
+                Good tradespeople want to work for good firms. A strong online
+                presence makes you look like the outfit to be at. You start
+                getting messages from lads who can actually graft.
+              </p>
+            </article>
+
+            <article className="rounded-xl border border-white/10 bg-charcoal p-8">
+              <span className="text-4xl" aria-hidden="true">
+                🏆
+              </span>
+              <h3 className="mt-4 text-xl font-bold sm:text-2xl">
+                Win the Work Before You Quote
+              </h3>
+              <p className="mt-3 leading-relaxed text-slate-light">
+                Customers check you out online before they even call. A site
+                full of completed projects and testimonials means you&apos;ve
+                already half-won the job before you turn up.
+              </p>
+            </article>
+
+            <article className="rounded-xl border border-white/10 bg-charcoal p-8">
+              <span className="text-4xl" aria-hidden="true">
+                📈
+              </span>
+              <h3 className="mt-4 text-xl font-bold sm:text-2xl">
+                Pick and Choose Your Work
+              </h3>
+              <p className="mt-3 leading-relaxed text-slate-light">
+                When you&apos;ve got enough enquiries coming in, you stop
+                saying yes to everything. You take the jobs you want, at the
+                price you want, for customers you actually want to work with.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      {/* ─── 4. OUR PROCESS ─── */}
+      {/* ─── 4. WHY US ─── */}
       <section className="bg-dark px-6 py-20">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-3xl">
           <h2 className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
-            How It Works. Dead Simple.
+            Why <span className="text-hivis">Us</span>
           </h2>
 
-          <div className="mt-14 space-y-0">
-            {/* Step 1 */}
-            <div className="relative flex gap-6">
-              {/* Timeline line + dot */}
-              <div className="flex flex-col items-center">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-hivis text-lg font-extrabold text-dark">
-                  1
-                </div>
-                <div className="w-0.5 grow bg-hivis/30" />
-              </div>
-              {/* Content */}
-              <div className="pb-12">
-                <h3 className="text-xl font-bold sm:text-2xl">
-                  You Get In Touch
-                </h3>
-                <p className="mt-2 leading-relaxed text-slate-light">
-                  Fill in the form, give us a bell, send a carrier pigeon.
-                  Whatever works. We&rsquo;ll have a quick chat about your
-                  trade, your area, and what you need.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="relative flex gap-6">
-              <div className="flex flex-col items-center">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-hivis text-lg font-extrabold text-dark">
-                  2
-                </div>
-                <div className="w-0.5 grow bg-hivis/30" />
-              </div>
-              <div className="pb-12">
-                <h3 className="text-xl font-bold sm:text-2xl">
-                  We Get to Work
-                </h3>
-                <p className="mt-2 leading-relaxed text-slate-light">
-                  Our team designs and builds your site. We&rsquo;ll send you a
-                  preview link so you can check it over. Usually ready within a
-                  week.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 3 */}
-            <div className="relative flex gap-6">
-              <div className="flex flex-col items-center">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-hivis text-lg font-extrabold text-dark">
-                  3
-                </div>
-                <div className="w-0.5 grow bg-hivis/30" />
-              </div>
-              <div className="pb-12">
-                <h3 className="text-xl font-bold sm:text-2xl">
-                  You Go Live
-                </h3>
-                <p className="mt-2 leading-relaxed text-slate-light">
-                  Happy with it? We press the big red button. Your site goes
-                  live, optimised for Google Ads, and your phone starts ringing.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 4 */}
-            <div className="relative flex gap-6">
-              <div className="flex flex-col items-center">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-hivis text-lg font-extrabold text-dark">
-                  4
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold sm:text-2xl">
-                  We Keep It Running
-                </h3>
-                <p className="mt-2 leading-relaxed text-slate-light">
-                  Hosting, security, updates, edits. We handle the lot. You
-                  focus on the tools, we&rsquo;ll focus on the tech.
-                </p>
-              </div>
-            </div>
+          <div className="mt-12 space-y-6">
+            <p className="text-lg leading-relaxed text-slate-light">
+              We only build websites for construction businesses. That&apos;s
+              it. We don&apos;t do restaurants, salons, or accountants. Just
+              your industry.
+            </p>
+            <p className="text-lg leading-relaxed text-slate-light">
+              That means we already know what your customers are searching for,
+              what makes them pick up the phone, and what a site in your trade
+              needs to say. We&apos;ve built over 2,000 of them.
+            </p>
+            <p className="text-lg leading-relaxed text-slate-light">
+              No jargon. No waffle. No &pound;5k invoices. Just a site that
+              looks the business, ranks on Google, and gets you more work than
+              you can handle.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ─── 5. FUN SIGN-OFF ─── */}
-      <section className="blueprint-grid px-6 py-20">
+      {/* ─── 5. CTA ─── */}
+      <section className="bg-hivis px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xl font-semibold leading-relaxed sm:text-2xl">
-            Still reading? You should probably just get in touch.
+          <h2 className="text-3xl font-extrabold tracking-tight text-dark sm:text-4xl md:text-5xl">
+            Ready to Start Getting Better Work?
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-dark/80 sm:text-xl">
+            Your competitors already have websites. The good ones are cleaning
+            up. Time to level the playing field.
           </p>
 
           <div className="mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-hivis px-8 py-4 text-lg font-bold text-dark transition-colors hover:bg-hivis-bright focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hivis"
+              className="inline-flex items-center justify-center rounded-lg bg-dark px-8 py-4 text-lg font-bold text-hivis transition-colors hover:bg-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
             >
-              Get Started
+              Get Started Today
             </Link>
           </div>
         </div>
