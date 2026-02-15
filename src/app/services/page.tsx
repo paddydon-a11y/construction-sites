@@ -21,67 +21,60 @@ export const metadata = {
 
 const services = [
   {
-    icon: "\uD83C\uDFA8",
+    icon: "🎨",
     title: "Custom Website Design",
-    tagline: "No templates. No prefabs. Built from the ground up.",
+    tagline: "Look like the biggest outfit in your area.",
     description:
-      "Every site is designed bespoke for your business. We look at your trade, your area, and your competition \u2014 then build something that blows them out of the water. Your site won\u2019t look like anyone else\u2019s.",
+      "No templates. Every site is built from scratch around your business. We study your competitors and build something that makes you look like the firm to hire. Customers see your site and think: these lot know what they\u2019re doing.",
   },
   {
-    icon: "\uD83D\uDCC8",
-    title: "SEO & Google Ranking",
-    tagline:
-      "Get found when customers search for your trade. We put you on the map.",
+    icon: "📞",
+    title: "More Enquiries, Better Jobs",
+    tagline: "Your phone rings. And not with tyre-kickers.",
     description:
-      "We bake SEO into every page from day one. Local keywords, meta tags, schema markup, Google Business \u2014 the works. When someone searches \u2018plumber near me\u2019, you\u2019ll be right there.",
+      "We build your site so that when someone searches for your trade in your area, they find you first. More calls, more emails, more people ready to pay what the job is actually worth.",
   },
   {
-    icon: "\uD83C\uDFAF",
+    icon: "🎯",
     title: "Google Ads Ready",
-    tagline:
-      "Built to convert from day one. Your site launches ready to run ads the moment you are.",
+    tagline: "Start running ads the moment you want to. Everything is already set up.",
     description:
-      "Every site is optimised for Google Ads with proper landing pages, conversion tracking, and call-to-action placement. Targeted to your area, your trade, your ideal customers. Ready to deploy whenever you want.",
+      "Your site launches ready to take paid traffic. Targeted to your area, your trade, your ideal customers. When you\u2019re ready to turn the tap on, everything is already in place.",
   },
   {
-    icon: "\uD83D\uDD27",
-    title: "Monthly Maintenance",
-    tagline:
-      "1 hour of edits per month included. Need more? We\u2019re only \u00A350/hour.",
+    icon: "🔧",
+    title: "We Keep It Updated",
+    tagline: "New photos? Updated prices? Just send us a message.",
     description:
-      "Need to update your prices? Add a new service? Swap out some photos? Just send us a message and we\u2019ll sort it. No ticketing systems, no waiting around.",
+      "You get an hour of edits every month, included. Need to add a new service, swap some photos, or update your number? Just ping us and it\u2019s done. No waiting around, no extra charges.",
   },
   {
-    icon: "\uD83D\uDCF1",
-    title: "Mobile Optimised",
-    tagline:
-      "70% of your customers are on their phones. Your site will look mint on all of them.",
+    icon: "📱",
+    title: "Looks Great on Every Phone",
+    tagline: "70% of your customers are searching on their phones. Your site will look mint.",
     description:
-      "Every site we build is mobile-first. Fast loading, easy to navigate, thumb-friendly buttons. Because nobody\u2019s hiring a contractor from a desktop anymore.",
+      "Every site works perfectly on mobiles, tablets, and desktops. Fast loading, easy to use, tap-to-call buttons. Because nobody\u2019s hiring a contractor from a clunky website.",
   },
   {
-    icon: "\uD83D\uDCE9",
-    title: "Lead Capture Forms",
-    tagline:
-      "Enquiry forms that ping straight to your phone. Never miss a job again.",
+    icon: "💷",
+    title: "Charge What You\u2019re Worth",
+    tagline: "Customers pay more when you look professional.",
     description:
-      "Custom contact forms that send enquiries directly to your email and phone. Name, number, job description \u2014 everything you need to quote on the spot.",
+      "A proper website changes the conversation. You stop being \u2018the cheap option\u2019 and start being the professional choice. Better rates, better payment terms, less haggling.",
   },
   {
-    icon: "\uD83D\uDCCD",
-    title: "Google Business Profile",
-    tagline:
-      "We\u2019ll get you on Google Maps so customers can find you round the corner.",
+    icon: "👷",
+    title: "Attract Better People",
+    tagline: "Good tradespeople want to work for good firms.",
     description:
-      "We\u2019ll set up or optimise your Google Business Profile. Photos, reviews, opening hours, service area \u2014 everything dialled in so you show up in the map pack.",
+      "A strong online presence doesn\u2019t just attract customers. It attracts better staff too. You\u2019ll start getting messages from experienced people who want to be part of your team.",
   },
   {
-    icon: "\uD83D\uDD12",
-    title: "SSL & Security",
-    tagline:
-      "Padlock in the browser. Keeps your customers\u2019 data safe and Google happy.",
+    icon: "📍",
+    title: "Found on Google Maps",
+    tagline: "Show up when customers search nearby.",
     description:
-      "Every site comes with a free SSL certificate. That little padlock in the browser bar? It builds trust and helps your Google ranking. Win-win.",
+      "We get your business on Google Maps with photos, reviews, and your service area all set up properly. When someone searches your trade near them, you\u2019re right there.",
   },
 ] as const;
 
@@ -98,8 +91,8 @@ export default function ServicesPage() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-light sm:text-xl">
-            Everything you need to get found online. No faff. No jargon. Just
-            results.
+            More customers. Better rates. Your phone actually ringing. Here&apos;s
+            how we make it happen.
           </p>
         </div>
 
