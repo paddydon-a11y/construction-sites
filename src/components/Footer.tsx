@@ -79,10 +79,12 @@ export default function Footer() {
                     />
                   </svg>
                   <a
-                    href="tel:08001234567"
+                    href="https://wa.me/447572698923"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-slate-light transition-colors hover:text-hivis"
                   >
-                    0800 123 4567
+                    WhatsApp: 07572 698923
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
@@ -101,10 +103,10 @@ export default function Footer() {
                     />
                   </svg>
                   <a
-                    href="mailto:hello@construction-sites.co.uk"
+                    href="mailto:patrick@construction-sites.co.uk"
                     className="text-sm text-slate-light transition-colors hover:text-hivis"
                   >
-                    hello@construction-sites.co.uk
+                    patrick@construction-sites.co.uk
                   </a>
                 </li>
               </ul>

@@ -108,12 +108,12 @@ const jsonLd = {
       url: "https://construction-sites.co.uk",
       description:
         "We build stunning websites for construction businesses and tradespeople. Custom design, SEO, Google Ads optimised, all included.",
-      email: "hello@construction-sites.co.uk",
-      telephone: "0800 123 4567",
+      email: "patrick@construction-sites.co.uk",
+      telephone: "07572 698923",
       sameAs: [],
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "0800 123 4567",
+        telephone: "07572 698923",
         contactType: "sales",
         availableLanguage: "English",
       },
@@ -124,8 +124,8 @@ const jsonLd = {
       name: "Construction Sites",
       description: "Web design agency specialising in websites for construction and trade businesses.",
       url: "https://construction-sites.co.uk",
-      telephone: "0800 123 4567",
-      email: "hello@construction-sites.co.uk",
+      telephone: "07572 698923",
+      email: "patrick@construction-sites.co.uk",
       priceRange: "££",
       openingHours: "Mo-Fr 08:00-18:00",
       areaServed: {

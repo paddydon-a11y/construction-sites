@@ -190,12 +190,19 @@ export default function ContactPage() {
 
         {/* RIGHT — CONTACT INFO */}
         <div className="lg:col-span-2 space-y-8">
-          {/* Give Us a Bell */}
+          {/* WhatsApp */}
           <div>
             <h3 className="text-lg font-semibold mb-1 flex items-center gap-2">
-              <span role="img" aria-label="phone">📞</span> Give Us a Bell
+              <span role="img" aria-label="whatsapp">💬</span> WhatsApp Us
             </h3>
-            <p className="text-xl font-bold text-hivis">0800 123 4567</p>
+            <a
+              href="https://wa.me/447572698923"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl font-bold text-hivis hover:text-hivis-bright transition-colors"
+            >
+              07572 698923
+            </a>
           </div>
 
           {/* Drop Us an Email */}
@@ -203,7 +210,12 @@ export default function ContactPage() {
             <h3 className="text-lg font-semibold mb-1 flex items-center gap-2">
               <span role="img" aria-label="email">📧</span> Drop Us an Email
             </h3>
-            <p className="text-hivis">hello@construction-sites.co.uk</p>
+            <a
+              href="mailto:patrick@construction-sites.co.uk"
+              className="text-hivis hover:text-hivis-bright transition-colors"
+            >
+              patrick@construction-sites.co.uk
+            </a>
           </div>
 
           {/* Office Hours */}
@@ -222,8 +234,7 @@ export default function ContactPage() {
               <span role="img" aria-label="construction">🏗️</span> Response Time
             </h3>
             <p className="text-slate-light">
-              We get back to every enquiry within 24 hours. Usually much faster.
-              We&apos;re keen like that.
+              We get back to every enquiry same day. Usually within the hour.
             </p>
           </div>
         </div>
