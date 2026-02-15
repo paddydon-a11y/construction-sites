@@ -1,14 +1,28 @@
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://construction-sites.co.uk" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://construction-sites.co.uk/about" },
+  ],
+};
 
 export const metadata = {
-  title: "About Us",
+  title: "About Us | Construction Sites",
   description:
     "A better website means better work, better leads, and better people wanting to work for you. See what a professional online presence does for construction businesses.",
+  alternates: {
+    canonical: "https://construction-sites.co.uk/about",
+  },
 };
 
 export default function AboutPage() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd} />
       {/* ─── 1. HEADER ─── */}
       <section className="bg-dark px-6 pt-32 pb-0 text-center">
         <h1 className="mx-auto max-w-4xl text-5xl font-extrabold leading-tight tracking-tight">
@@ -180,12 +194,18 @@ export default function AboutPage() {
             up. Time to level the playing field.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-lg bg-dark px-8 py-4 text-lg font-bold text-hivis transition-colors hover:bg-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
             >
               Get Started Today
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-dark px-8 py-4 text-lg font-bold text-dark transition-colors hover:bg-dark hover:text-hivis focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
+            >
+              See Pricing
             </Link>
           </div>
         </div>

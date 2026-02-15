@@ -1,9 +1,73 @@
 import Link from "next/link";
 import { testimonials } from "@/lib/data";
+import JsonLd from "@/components/JsonLd";
+
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://construction-sites.co.uk" },
+      ],
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://construction-sites.co.uk/#localbusiness",
+      name: "Construction Sites",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "6",
+        bestRating: "5",
+        worstRating: "5",
+      },
+      review: [
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Mark, Spark Brothers Electrical" },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: "Enquiries doubled in the first month and we're now turning work away. Didn't expect that from a website.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Pete, AquaFlow Plumbing" },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: "We paid a guy four grand for our last website a few years back and it was nowhere near this level. Proper professionals.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Sarah, Apex Roofing" },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: "The site looks so professional that clients trust us before we even turn up. We've landed three commercial contracts since launch.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Kev, K&S Bricklaying" },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: "Went from zero online presence to page one of Google in our area. Getting 3-4 new enquiries a week now.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "James, Thompson Landscapes" },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: "The website paid for itself in the first month. Landed a £12k garden project from someone who found us on Google.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Rob, J&R Plastering" },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: "Clean, professional, does exactly what it needs to. We've seen a real uplift in the quality of enquiries coming through.",
+        },
+      ],
+    },
+  ],
+};
 
 export default function HomePage() {
   return (
     <main>
+      <JsonLd data={homeJsonLd} />
       {/* ─── 1. HERO SECTION ─── */}
       <section className="blueprint-grid relative flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
         <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">

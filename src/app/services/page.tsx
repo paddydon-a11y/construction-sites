@@ -1,9 +1,22 @@
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://construction-sites.co.uk" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://construction-sites.co.uk/services" },
+  ],
+};
 
 export const metadata = {
-  title: "Services",
+  title: "What We Do | Web Design for Construction Businesses",
   description:
     "Custom website design, SEO, Google Ads optimisation, monthly maintenance and more. Everything your construction or trade business needs to get found online.",
+  alternates: {
+    canonical: "https://construction-sites.co.uk/services",
+  },
 };
 
 const services = [
@@ -75,6 +88,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd} />
       {/* ─── 1. HEADER ─── */}
       <section className="blueprint-grid relative px-6 pb-16 pt-24 text-center sm:pt-32">
         <div className="mx-auto max-w-3xl">
@@ -137,12 +151,18 @@ export default function ServicesPage() {
             extras. No surprises.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-md bg-hivis px-8 py-4 text-lg font-bold text-dark transition-colors hover:bg-hivis-bright focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hivis"
             >
               See Pricing
+            </Link>
+            <Link
+              href="/our-work"
+              className="inline-flex items-center justify-center rounded-md border-2 border-hivis px-8 py-4 text-lg font-bold text-hivis transition-colors hover:bg-hivis hover:text-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hivis"
+            >
+              See Our Work
             </Link>
           </div>
         </div>

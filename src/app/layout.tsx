@@ -28,8 +28,8 @@ const barlowSemiCondensed = Barlow_Semi_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL("https://construction-sites.co.uk"),
   title: {
-    default: "Construction Sites | Web Design for Construction & Trade Businesses",
-    template: "%s | Construction Sites",
+    default: "Websites for Construction Businesses | Construction Sites",
+    template: "%s",
   },
   description:
     "We build stunning websites for construction businesses and tradespeople. Custom design, SEO, Google Ads optimised, all included for just £100/month. No templates. No nonsense.",
@@ -100,34 +100,49 @@ const jsonLd = {
       name: "Construction Sites",
       description: "Web Design Agency for Construction and Trade Businesses",
       publisher: { "@id": "https://construction-sites.co.uk/#organization" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://construction-sites.co.uk/?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
     },
     {
       "@type": "Organization",
       "@id": "https://construction-sites.co.uk/#organization",
       name: "Construction Sites",
       url: "https://construction-sites.co.uk",
+      logo: "https://construction-sites.co.uk/og-image.png",
       description:
         "We build stunning websites for construction businesses and tradespeople. Custom design, SEO, Google Ads optimised, all included.",
       email: "patrick@construction-sites.co.uk",
-      telephone: "07572 698923",
+      telephone: "+447572698923",
       sameAs: [],
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "07572 698923",
+        telephone: "+447572698923",
         contactType: "sales",
         availableLanguage: "English",
+        areaServed: { "@type": "Country", name: "United Kingdom" },
       },
     },
     {
       "@type": "LocalBusiness",
       "@id": "https://construction-sites.co.uk/#localbusiness",
       name: "Construction Sites",
-      description: "Web design agency specialising in websites for construction and trade businesses.",
+      description: "Web design agency specialising in websites for construction and trade businesses across the UK.",
       url: "https://construction-sites.co.uk",
-      telephone: "07572 698923",
+      telephone: "+447572698923",
       email: "patrick@construction-sites.co.uk",
+      image: "https://construction-sites.co.uk/og-image.png",
       priceRange: "££",
-      openingHours: "Mo-Fr 08:00-18:00",
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "08:00",
+          closes: "18:00",
+        },
+      ],
       areaServed: {
         "@type": "Country",
         name: "United Kingdom",
@@ -143,7 +158,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${barlow.className} ${barlow.variable} ${barlowCondensed.variable} ${barlowSemiCondensed.variable}`}>
+    <html lang="en-GB" className={`${barlow.className} ${barlow.variable} ${barlowCondensed.variable} ${barlowSemiCondensed.variable}`}>
       <head>
         <script
           type="application/ld+json"

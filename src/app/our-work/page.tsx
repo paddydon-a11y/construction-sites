@@ -129,12 +129,20 @@ export default function OurWorkPage() {
             two are the same.
           </p>
 
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-lg bg-hivis px-8 py-4 text-lg font-bold text-dark transition-all duration-200 hover:bg-hivis-bright hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] active:scale-95"
-          >
-            Start Your Build
-          </Link>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link
+              href="/contact"
+              className="inline-block rounded-lg bg-hivis px-8 py-4 text-lg font-bold text-dark transition-all duration-200 hover:bg-hivis-bright hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] active:scale-95"
+            >
+              Start Your Build
+            </Link>
+            <Link
+              href="/services"
+              className="inline-block rounded-lg border-2 border-hivis px-8 py-4 text-lg font-bold text-hivis transition-all duration-200 hover:bg-hivis hover:text-dark active:scale-95"
+            >
+              See What We Do
+            </Link>
+          </div>
         </div>
       </section>
     </main>

@@ -1,10 +1,72 @@
 import Link from "next/link";
 import { faqs } from "@/lib/data";
+import JsonLd from "@/components/JsonLd";
+
+const pricingJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://construction-sites.co.uk" },
+        { "@type": "ListItem", position: 2, name: "Pricing", item: "https://construction-sites.co.uk/pricing" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What if I don't renew after 12 months?",
+          acceptedAnswer: { "@type": "Answer", text: "No dramas. If you stop paying, we take the site down. No penalties, no exit fees, no hard feelings. We'll even give you your content if you want to go elsewhere." },
+        },
+        {
+          "@type": "Question",
+          name: "Can I make changes to my site?",
+          acceptedAnswer: { "@type": "Answer", text: "Absolutely. You get 1 hour of edits per month included in your plan. Need a new photo, updated prices, or a new service page? Just ping us. Need more than an hour? It's only £50/hour after that." },
+        },
+        {
+          "@type": "Question",
+          name: "How long does it take to build?",
+          acceptedAnswer: { "@type": "Answer", text: "Most sites are live within 5-7 working days. We've done same-week turnarounds for lads who needed it yesterday." },
+        },
+        {
+          "@type": "Question",
+          name: "Do I own my domain?",
+          acceptedAnswer: { "@type": "Answer", text: "Yes, 100%. Your domain is registered in your name. We'll sort out the purchase and setup, but it's yours. If you ever leave, you take it with you." },
+        },
+        {
+          "@type": "Question",
+          name: "What about Google Ads?",
+          acceptedAnswer: { "@type": "Answer", text: "Every site we build is optimised for Google Ads from the ground up. Proper landing pages, conversion tracking, the lot. When you're ready to run ads, your site is already built to convert." },
+        },
+        {
+          "@type": "Question",
+          name: "I already have a website. Can you rebuild it?",
+          acceptedAnswer: { "@type": "Answer", text: "Course we can. We'll rebuild it from scratch, move your domain over, and make sure you don't lose any Google rankings in the process." },
+        },
+        {
+          "@type": "Question",
+          name: "What if I need more than a basic website?",
+          acceptedAnswer: { "@type": "Answer", text: "We can add extras like booking systems, gallery pages, or multi-location setups. We'll quote anything extra upfront, no surprises." },
+        },
+        {
+          "@type": "Question",
+          name: "Do you do e-commerce / online shops?",
+          acceptedAnswer: { "@type": "Answer", text: "Nah, that's not our thing. We build websites for construction and trade businesses who want their phone to ring. If you want leads? We're your lot." },
+        },
+      ],
+    },
+  ],
+};
 
 export const metadata = {
-  title: "Pricing | Construction Sites",
+  title: "Pricing | Construction Business Websites from £100/month",
   description:
-    "Custom websites for construction and trade businesses at just £100/month. No hidden fees, no contracts. Everything included: hosting, SEO, Google Ads optimisation, and monthly edits.",
+    "Custom websites for construction and trade businesses from just £100/month. No hidden fees, no contracts. Everything included: hosting, SEO, Google Ads optimisation, and monthly edits.",
+  alternates: {
+    canonical: "https://construction-sites.co.uk/pricing",
+  },
 };
 
 const strikethroughPrices = [
@@ -31,6 +93,7 @@ const comparisonRows = [
 export default function PricingPage() {
   return (
     <main className="min-h-screen bg-dark">
+      <JsonLd data={pricingJsonLd} />
       {/* ─── 1. HEADER ─── */}
       <section className="relative overflow-hidden">
         <div className="blueprint-grid absolute inset-0 pointer-events-none" />
