@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sparks Electrical Services — Manchester's Trusted Electricians Since 2008</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════════
+   SPARKS ELECTRICAL SERVICES — PREMIUM DARK THEME
+   TikTok Ad "After" Showcase
+   ══════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0b1929;
+  --bg-alt: #0f2035;
+  --bg-card: rgba(15,32,53,0.7);
+  --bg-glass: rgba(6,14,25,0.55);
+  --accent: #00b4d8;
+  --accent-light: #48cae4;
+  --accent-pale: rgba(0,180,216,0.08);
+  --accent-glow: rgba(0,180,216,0.25);
+  --cta: #ffd60a;
+  --cta-hover: #ffe14d;
+  --cta-glow: rgba(255,214,10,0.3);
+  --dark: #060e19;
+  --white: #ffffff;
+  --text: #c8d6e5;
+  --text-muted: #7e8fa6;
+  --whatsapp: #25D366;
+  --whatsapp-hover: #2be06e;
+  --border: rgba(0,180,216,0.12);
+  --border-bright: rgba(0,180,216,0.25);
+  --glow: 0 0 30px rgba(0,180,216,0.15);
+  --glow-strong: 0 0 40px rgba(0,180,216,0.25), 0 0 80px rgba(0,180,216,0.08);
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.25), 0 8px 32px rgba(0,0,0,0.2);
+  --shadow-heavy: 0 4px 16px rgba(0,0,0,0.3), 0 12px 48px rgba(0,0,0,0.25);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  color: var(--white);
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── KEYFRAME ANIMATIONS ─────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255,214,10,0.2), 0 0 40px rgba(255,214,10,0.1); }
+  50% { box-shadow: 0 0 30px rgba(255,214,10,0.35), 0 0 60px rgba(255,214,10,0.15); }
+}
+
+@keyframes pulseGlowGreen {
+  0%, 100% { box-shadow: 0 0 20px rgba(37,211,102,0.2), 0 0 40px rgba(37,211,102,0.1); }
+  50% { box-shadow: 0 0 30px rgba(37,211,102,0.35), 0 0 60px rgba(37,211,102,0.15); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes boltFlicker {
+  0%, 90%, 100% { opacity: 1; }
+  92% { opacity: 0.7; }
+  94% { opacity: 1; }
+  96% { opacity: 0.6; }
+}
+
+@keyframes lineGlow {
+  0% { width: 0; opacity: 0; }
+  50% { opacity: 1; }
+  100% { width: 80px; opacity: 0.6; }
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* ── HEADER ──────────────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-glass);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+  animation: fadeInDown 0.5s ease-out;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent), #0090b0);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(0,180,216,0.2);
+  animation: boltFlicker 4s ease-in-out infinite;
+}
+
+.logo-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--white);
+  fill: none;
+  stroke-width: 2;
+}
+
+.logo span { color: var(--accent); }
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: rgba(200,214,229,0.55);
+  transition: color 0.25s, text-shadow 0.25s;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.nav a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(0,180,216,0.3);
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--cta);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.25s;
+  white-space: nowrap;
+  box-shadow: 0 0 15px rgba(255,214,10,0.15);
+}
+
+.header-cta:hover {
+  background: var(--cta-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 0 25px rgba(255,214,10,0.3);
+}
+
+.header-cta svg { width: 18px; height: 18px; }
+
+.mobile-phone-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  background: var(--cta);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(255,214,10,0.15);
+}
+
+.mobile-phone-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--bg);
+  fill: none;
+}
+
+/* ── HERO ────────────────────────────────────────────────────── */
+.hero {
+  padding: 6.5rem 0 7.5rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(175deg, #0b1929 0%, #0d2137 30%, #0a1825 60%, #0d2137 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease-in-out infinite;
+}
+
+/* Animated grid overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,180,216,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,180,216,0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  animation: gridPulse 6s ease-in-out infinite;
+}
+
+/* Large accent glow — top right */
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -8%;
+  top: -25%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0,180,216,0.1) 0%, rgba(0,180,216,0.03) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-glow-bottom {
+  position: absolute;
+  left: 5%;
+  bottom: -45%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,214,10,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-glow-center {
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,180,216,0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content {
+  animation: fadeInLeft 0.7s ease-out;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--accent-pale);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  backdrop-filter: blur(8px);
+}
+
+.hero-badge svg { width: 14px; height: 14px; }
+
+.hero h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.06;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.35rem;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+  display: block;
+}
+
+.hero-sub {
+  font-size: 1.12rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 2.25rem;
+}
+
+.hero-sub strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--cta);
+  color: var(--bg);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem 2.2rem;
+  border-radius: 12px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  animation: pulseGlow 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+
+.btn-primary:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-primary:hover {
+  background: var(--cta-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255,214,10,0.3);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--whatsapp);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem 2.2rem;
+  border-radius: 12px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  animation: pulseGlowGreen 3s ease-in-out infinite 1.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-whatsapp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+
+.btn-whatsapp:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-whatsapp:hover {
+  background: var(--whatsapp-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(37,211,102,0.3);
+}
+
+.btn-primary svg, .btn-whatsapp svg { width: 22px; height: 22px; }
+
+/* ── STATS CARD ──────────────────────────────────────────────── */
+.stats-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInRight 0.7s ease-out 0.2s both;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--cta), var(--accent));
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.stats-card::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  right: -30%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,180,216,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.stats-card-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stats-card-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.stat-item { text-align: center; }
+
+.stat-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.stat-number .accent { color: var(--accent); }
+.stat-number .cta-accent { color: var(--cta); }
+
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stat-divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.stats-bottom {
+  margin-top: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.1rem;
+  background: rgba(0,180,216,0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(0,180,216,0.08);
+}
+
+.stats-bottom svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent);
+  fill: none;
+  flex-shrink: 0;
+}
+
+.stats-bottom-text {
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── TRUST BAR ───────────────────────────────────────────────── */
+.trust-bar {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.65rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(0,180,216,0.03), transparent);
+  pointer-events: none;
+}
+
+.trust-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text);
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.trust-item:nth-child(1) { animation-delay: 0.1s; }
+.trust-item:nth-child(2) { animation-delay: 0.2s; }
+.trust-item:nth-child(3) { animation-delay: 0.3s; }
+.trust-item:nth-child(4) { animation-delay: 0.4s; }
+.trust-item:nth-child(5) { animation-delay: 0.5s; }
+
+.trust-item svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+.trust-item .stars {
+  display: flex;
+  gap: 2px;
+}
+
+.trust-item .stars svg {
+  width: 17px;
+  height: 17px;
+  fill: var(--cta);
+  stroke: var(--cta);
+}
+
+/* ── SECTIONS COMMON ─────────────────────────────────────────── */
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.85rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 3.25rem;
+  line-height: 1.7;
+}
+
+.section-center { text-align: center; }
+.section-center .section-sub { margin-left: auto; margin-right: auto; }
+.section-center .section-label::before { display: none; }
+
+/* ── SERVICES ────────────────────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.35rem;
+}
+
+.service-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.25rem 1.75rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: -60%;
+  right: -40%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0,180,216,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.service-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-6px);
+  box-shadow: var(--glow-strong);
+}
+
+.service-card:hover::before { opacity: 1; }
+.service-card:hover::after { opacity: 1; }
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--accent-pale);
+  border: 1px solid rgba(0,180,216,0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.35rem;
+  transition: all 0.4s;
+}
+
+.service-card:hover .service-icon {
+  background: rgba(0,180,216,0.15);
+  border-color: var(--accent-glow);
+  box-shadow: 0 0 25px rgba(0,180,216,0.15);
+  transform: scale(1.05);
+}
+
+.service-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+}
+
+.service-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── TESTIMONIALS ────────────────────────────────────────────── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.25rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.testimonial-card:nth-child(1) { animation-delay: 0.15s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.3s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.45s; }
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.testimonial-card:hover {
+  border-color: var(--border-bright);
+  box-shadow: var(--glow);
+  transform: translateY(-4px);
+}
+
+.testimonial-card:hover::before { opacity: 1; }
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.15rem;
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.testimonial-stars svg {
+  width: 17px;
+  height: 17px;
+  fill: var(--cta);
+  stroke: var(--cta);
+}
+
+.testimonial-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--accent-pale);
+  border: 1px solid rgba(0,180,216,0.1);
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+}
+
+.testimonial-verified svg {
+  width: 11px;
+  height: 11px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 1.65rem;
+  font-style: italic;
+  position: relative;
+}
+
+.testimonial-text::before {
+  content: '\201C';
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  color: rgba(0,180,216,0.15);
+  position: absolute;
+  top: -0.75rem;
+  left: -0.25rem;
+  line-height: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-pale), rgba(0,180,216,0.12));
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.testimonial-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.testimonial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--cta);
+  background: rgba(255,214,10,0.08);
+  border: 1px solid rgba(255,214,10,0.12);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── WHY CHOOSE US ───────────────────────────────────────────── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.35rem;
+}
+
+.why-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.why-card:nth-child(1) { animation-delay: 0.1s; }
+.why-card:nth-child(2) { animation-delay: 0.2s; }
+.why-card:nth-child(3) { animation-delay: 0.3s; }
+.why-card:nth-child(4) { animation-delay: 0.4s; }
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.why-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-6px);
+  box-shadow: var(--glow-strong);
+}
+
+.why-card:hover::before { opacity: 1; }
+
+.why-icon {
+  width: 68px;
+  height: 68px;
+  background: var(--accent-pale);
+  border: 1px solid rgba(0,180,216,0.1);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.35rem;
+  transition: all 0.4s;
+}
+
+.why-card:hover .why-icon {
+  background: rgba(0,180,216,0.15);
+  border-color: var(--accent-glow);
+  box-shadow: 0 0 30px rgba(0,180,216,0.2);
+  transform: scale(1.05);
+}
+
+.why-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.why-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.why-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── CONTACT SECTION ─────────────────────────────────────────── */
+.contact-section {
+  padding: 6rem 0;
+  background: linear-gradient(175deg, var(--bg-alt) 0%, var(--bg) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,180,216,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.contact-info h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.contact-info > p {
+  color: var(--text-muted);
+  margin-bottom: 2.25rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.contact-phone-primary {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s;
+}
+
+.contact-phone-primary:hover {
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(0,180,216,0.2);
+}
+
+.contact-phone-primary svg {
+  width: 34px;
+  height: 34px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.contact-phone-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.contact-email {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  transition: color 0.25s;
+}
+
+.contact-email:hover { color: var(--accent); }
+
+.contact-email svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.contact-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  line-height: 1.55;
+}
+
+.contact-address svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent);
+  fill: none;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ── CONTACT FORM ────────────────────────────────────────────── */
+.contact-form-wrap {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInRight 0.6s ease-out 0.2s both;
+}
+
+.contact-form-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--cta));
+}
+
+.contact-form-wrap h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.65rem;
+}
+
+.form-group { margin-bottom: 1.1rem; }
+
+.form-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.45rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem 1.1rem;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(0,180,216,0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 1rem;
+  background: var(--cta);
+  color: var(--bg);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 0.65rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+
+.form-submit:hover::before { transform: translateX(100%); }
+
+.form-submit:hover {
+  background: var(--cta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,214,10,0.25);
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.footer {
+  background: var(--dark);
+  border-top: 1px solid var(--border);
+  padding: 4.5rem 0 2.25rem;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.3;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 3.5rem;
+  margin-bottom: 3.25rem;
+}
+
+.footer-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.footer-brand svg {
+  flex-shrink: 0;
+}
+
+.footer-brand span { color: var(--accent); }
+
+.footer-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.footer-accreditations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.footer-accreditation-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-pale);
+  border: 1px solid rgba(0,180,216,0.1);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.footer h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 1.35rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.footer h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.footer-links { list-style: none; }
+
+.footer-links li { margin-bottom: 0.6rem; }
+
+.footer-links a {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  transition: color 0.25s, padding-left 0.25s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  padding-left: 4px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.footer-contact-item svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--accent);
+  fill: none;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.footer-accred-line {
+  font-size: 0.75rem;
+  color: rgba(126,143,166,0.5);
+}
+
+/* ── FLOATING MOBILE CTA ─────────────────────────────────────── */
+.floating-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(6,14,25,0.95);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-top: 1px solid var(--border);
+  padding: 0.8rem 1rem;
+}
+
+.floating-cta-inner {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.floating-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.85rem;
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+
+.floating-btn:active::before { transform: translateX(100%); }
+
+.floating-btn-call {
+  background: var(--cta);
+  color: var(--bg);
+  box-shadow: 0 0 15px rgba(255,214,10,0.15);
+}
+
+.floating-btn-call:hover { background: var(--cta-hover); }
+
+.floating-btn-wa {
+  background: var(--whatsapp);
+  color: var(--white);
+  box-shadow: 0 0 15px rgba(37,211,102,0.15);
+}
+
+.floating-btn-wa:hover { background: var(--whatsapp-hover); }
+
+.floating-btn svg { width: 18px; height: 18px; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero h1 { font-size: 3.2rem; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .stats-card { max-width: 480px; }
+}
+
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .header-cta { display: none; }
+  .mobile-phone-btn { display: flex; }
+  .hero { padding: 4.5rem 0 5rem; }
+  .hero h1 { font-size: 2.6rem; }
+  .hero-sub { font-size: 1rem; }
+  .section { padding: 4.5rem 0; }
+  .section-title { font-size: 2.1rem; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.75rem; }
+  .contact-phone-primary { font-size: 2.4rem; }
+  .contact-section { padding: 4.5rem 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .floating-cta { display: block; }
+  .footer { padding-bottom: 5.5rem; }
+  .trust-items { gap: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 3.25rem 0 3.75rem; }
+  .hero h1 { font-size: 2.1rem; }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  .services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .section { padding: 3.25rem 0; }
+  .section-title { font-size: 1.8rem; }
+  .contact-phone-primary { font-size: 1.9rem; }
+  .stats-grid { gap: 1.25rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .trust-items { gap: 1rem; }
+  .trust-item { font-size: 0.8rem; }
+  .contact-info h2 { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HEADER — Glassmorphism sticky nav
+     ═══════════════════════════════════════════════════════════════ -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      Sparks <span>Electrical</span>
+    </a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:01614960328" class="header-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      0161 496 0328
+    </a>
+    <a href="tel:01614960328" class="mobile-phone-btn" aria-label="Call Sparks Electrical">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO — Animated gradient bg with grid overlay + stats card
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-glow-bottom"></div>
+  <div class="hero-glow-center"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        NICEIC Approved &mdash; 18 Years Experience
+      </div>
+      <h1>Manchester's Trusted<br>Electricians<br><span class="highlight">Since 2008</span></h1>
+      <p class="hero-sub"><strong>NICEIC approved.</strong> 18 years of experience. <strong>Over 5,000 jobs completed.</strong> From full rewires to EV charger installations &mdash; Manchester trusts Sparks Electrical for fast, certified and affordable electrical work.</p>
+      <div class="hero-buttons">
+        <a href="tel:01614960328" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/4401614960328" class="btn-whatsapp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+    <div class="stats-card">
+      <div class="stats-card-label">Why Choose Sparks Electrical</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">18<span class="accent">+</span></div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5<span class="accent">.0</span></div>
+          <div class="stat-label">Star Rating</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">5000<span class="accent">+</span></div>
+          <div class="stat-label">Jobs Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100<span class="cta-accent">%</span></div>
+          <div class="stat-label">Guaranteed</div>
+        </div>
+      </div>
+      <div class="stats-bottom">
+        <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span class="stats-bottom-text">Serving Manchester &amp; Greater Manchester</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TRUST BAR — Stars + accreditations with SVG icons
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+        </div>
+        5-Star Rated
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        18+ Years Experience
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        NICEIC Approved
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20H6"/><path d="M8 20c0-8 1.6-14 6-14a4 4 0 014 4"/><path d="M6 14h8"/></svg>
+        No Call-Out Charge
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Free Quotes
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SERVICES — 6 premium cards with glow hover
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="services">
+  <div class="container section-center">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">From full house rewires to EV charger installations, our NICEIC approved team delivers expert electrical solutions for homes across Manchester and Greater Manchester.</p>
+  </div>
+  <div class="container">
+    <div class="services-grid">
+
+      <!-- 1. Full & Part Rewires -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Full &amp; Part Rewires</h3>
+        <p>Complete and partial house rewires carried out to the highest standards. We upgrade outdated wiring systems, ensuring your home meets current BS7671 regulations with minimal disruption.</p>
+      </div>
+
+      <!-- 2. Consumer Unit Upgrades -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="10" y1="3" x2="10" y2="9"/><line x1="6" y1="14" x2="6" y2="14.01"/><line x1="10" y1="14" x2="10" y2="14.01"/><line x1="14" y1="14" x2="14" y2="14.01"/><line x1="18" y1="14" x2="18" y2="14.01"/></svg>
+        </div>
+        <h3>Consumer Unit Upgrades</h3>
+        <p>Modern consumer unit (fuse board) upgrades with RCD protection. We replace outdated fuse boxes with the latest safety standards, fully tested and certified on completion.</p>
+      </div>
+
+      <!-- 3. Electrical Testing & EICRs -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <h3>Testing &amp; EICRs</h3>
+        <p>Electrical Installation Condition Reports for landlords, homeowners and businesses. Thorough inspection and testing with detailed findings, clear certificates and fast turnaround.</p>
+      </div>
+
+      <!-- 4. CCTV & Security Systems -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <h3>CCTV &amp; Security</h3>
+        <p>Professional CCTV and security system installations to protect your home or business. HD cameras, smart monitoring, motion sensors and complete security solutions with remote viewing.</p>
+      </div>
+
+      <!-- 5. Lighting Design & Installation -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/></svg>
+        </div>
+        <h3>Lighting Design</h3>
+        <p>Transform any space with expert lighting design and installation. From recessed downlights to feature lighting, outdoor illumination and smart lighting controls for the modern home.</p>
+      </div>
+
+      <!-- 6. EV Charger Installation -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>EV Charger Installation</h3>
+        <p>OZEV-approved electric vehicle charger installations. We supply and fit all major brands with fast, professional installation &mdash; typically within a few days of booking.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TESTIMONIALS — 3 premium review cards
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section" id="reviews">
+  <div class="container section-center">
+    <div class="section-label">Client Reviews</div>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-sub">We take immense pride in every job we complete. Here's what our Manchester clients have to say about working with Sparks Electrical.</p>
+  </div>
+  <div class="container">
+    <div class="testimonials-grid">
+
+      <!-- Review 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          </div>
+          <div class="testimonial-verified">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Verified
+          </div>
+        </div>
+        <p class="testimonial-text">Completely rewired our 3-bed semi. Incredible attention to detail, left the place spotless. Can't recommend highly enough.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SJ</div>
+          <div>
+            <div class="testimonial-name">Sarah &amp; James M.</div>
+            <div class="testimonial-role">Didsbury, Manchester</div>
+            <div class="testimonial-badge">Full Rewire</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          </div>
+          <div class="testimonial-verified">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Verified
+          </div>
+        </div>
+        <p class="testimonial-text">Had an EV charger installed &mdash; booked Tuesday, fitted Thursday. Professional, fast and great price.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">TR</div>
+          <div>
+            <div class="testimonial-name">Tom R.</div>
+            <div class="testimonial-role">Chorlton, Manchester</div>
+            <div class="testimonial-badge">EV Charger</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          </div>
+          <div class="testimonial-verified">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Verified
+          </div>
+        </div>
+        <p class="testimonial-text">Dave and his team upgraded our consumer unit and sorted dodgy wiring the last electrician left. Genuine experts.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PK</div>
+          <div>
+            <div class="testimonial-name">Priya K.</div>
+            <div class="testimonial-role">Fallowfield, Manchester</div>
+            <div class="testimonial-badge">Consumer Unit</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     WHY CHOOSE US — 4 premium value cards
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="why-us">
+  <div class="container section-center">
+    <div class="section-label">Why Sparks Electrical</div>
+    <h2 class="section-title">Why Choose Us</h2>
+    <p class="section-sub">A trusted Manchester electrician built on 18 years of quality workmanship, honest pricing and genuine customer care. Here's why Manchester chooses Sparks.</p>
+  </div>
+  <div class="container">
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>18 Years Experience</h3>
+        <p>Established in 2008, we bring nearly two decades of hands-on electrical experience to every project. From small repairs to complex rewires, we've seen and done it all.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>NICEIC Approved</h3>
+        <p>Fully registered with NICEIC, the UK's leading electrical certification body. Part P certified with City &amp; Guilds qualifications. All work insured, tested and guaranteed.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20H6"/><path d="M8 20c0-8 1.6-14 6-14a4 4 0 014 4"/><path d="M6 14h8"/></svg>
+        </div>
+        <h3>No Call-Out Charge</h3>
+        <p>We never charge a call-out fee. We'll visit your property, assess the job and provide an honest, transparent quote &mdash; completely free of charge with no obligation at all.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Free Quotes &amp; Guaranteed</h3>
+        <p>Detailed written quotes at no cost, with all work fully guaranteed. We explain everything in plain English so you know exactly what you're paying for &mdash; no hidden charges, ever.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CONTACT — Phone, buttons + enquiry form
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div class="section-label">Get In Touch</div>
+        <h2>Ready to Talk?</h2>
+        <p>Whether you need a full rewire, an EV charger fitted, or a consumer unit upgrade &mdash; Dave and the team are here to help. Call us now for free advice, or fill in the form and we'll get back to you promptly.</p>
+
+        <a href="tel:01614960328" class="contact-phone-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          0161 496 0328
+        </a>
+        <div class="contact-phone-label">Monday &ndash; Saturday, 7am &ndash; 7pm</div>
+
+        <a href="mailto:info@sparkselectrical.co.uk" class="contact-email">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@sparkselectrical.co.uk
+        </a>
+
+        <div class="contact-address">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Manchester &amp; Greater Manchester</span>
+        </div>
+
+        <div class="contact-buttons">
+          <a href="tel:01614960328" class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            Call Now
+          </a>
+          <a href="https://wa.me/4401614960328" class="btn-whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h3>Request a Free Quote</h3>
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="e.g. John Smith">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="e.g. 07700 900000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">What Do You Need?</label>
+            <textarea id="message" placeholder="Briefly describe what you need, e.g. full rewire, EV charger installation, consumer unit upgrade, EICR..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER — Full info, services, contact, accreditations
+     ═══════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Sparks <span>Electrical</span> Services
+        </div>
+        <p class="footer-desc">NICEIC approved and fully insured electrical contractors with 18 years of industry experience. Serving Manchester, Didsbury, Chorlton, Fallowfield, Withington, Levenshulme, Stockport and the wider Greater Manchester area.</p>
+        <div class="footer-accreditations">
+          <span class="footer-accreditation-tag">NICEIC Approved</span>
+          <span class="footer-accreditation-tag">Part P Certified</span>
+          <span class="footer-accreditation-tag">City &amp; Guilds</span>
+          <span class="footer-accreditation-tag">Fully Insured</span>
+        </div>
+      </div>
+
+      <div>
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Full &amp; Part Rewires</a></li>
+          <li><a href="#services">Consumer Unit Upgrades</a></li>
+          <li><a href="#services">Electrical Testing &amp; EICRs</a></li>
+          <li><a href="#services">CCTV &amp; Security Systems</a></li>
+          <li><a href="#services">Lighting Design &amp; Installation</a></li>
+          <li><a href="#services">EV Charger Installation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <div>
+            <a href="tel:01614960328" style="color:var(--white);font-weight:600;">0161 496 0328</a><br>
+            <span style="font-size:0.8rem;">Mon &ndash; Sat, 7am &ndash; 7pm</span>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@sparkselectrical.co.uk">info@sparkselectrical.co.uk</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Manchester, Greater Manchester</span>
+        </div>
+        <div class="footer-contact-item" style="margin-top:1rem;">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>NICEIC Approved<br>Part P Certified<br>City &amp; Guilds Qualified</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Sparks Electrical Services. All rights reserved.</span>
+      <span class="footer-accred-line">NICEIC Approved &bull; Part P Certified &bull; City &amp; Guilds &bull; Fully Insured</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FLOATING MOBILE CTA — Fixed bottom bar (mobile only)
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="floating-cta">
+  <div class="floating-cta-inner">
+    <a href="tel:01614960328" class="floating-btn floating-btn-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Now
+    </a>
+    <a href="https://wa.me/4401614960328" class="floating-btn floating-btn-wa" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
