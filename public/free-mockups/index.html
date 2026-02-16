@@ -511,7 +511,10 @@ document.getElementById('mockup-form').addEventListener('submit', function(e) {
   }).then(function(r) {
     if (r.ok) {
       card.classList.add('submitted');
-      if (window.ttq) { ttq.track('SubmitForm'); ttq.track('CompleteRegistration'); }
+      if (window.ttq) {
+        ttq.track('SubmitForm', { content_name: 'Free Mockups', content_type: 'lead' });
+        ttq.track('CompleteRegistration', { content_name: 'Free Mockups' });
+      }
     } else {
       btn.textContent = 'Something went wrong — try again';
       btn.disabled = false;
