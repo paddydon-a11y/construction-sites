@@ -451,12 +451,13 @@ body {
               <option value="Landscaper">Landscaper</option>
               <option value="Kitchen Fitter">Kitchen Fitter</option>
               <option value="Painter & Decorator">Painter &amp; Decorator</option>
+              <option value="Main Contractor">Main Contractor</option>
               <option value="Other">Other</option>
             </select>
           </div>
           <div class="field">
             <label for="website">Your current website <span style="font-weight:400;text-transform:none;letter-spacing:0;opacity:0.6;">(optional)</span></label>
-            <input type="url" id="website" name="website" placeholder="e.g. www.yoursite.co.uk">
+            <input type="text" id="website" name="website" placeholder="e.g. www.yoursite.co.uk">
             <div class="field-helper">Don't have one? No problem &mdash; leave this blank.</div>
           </div>
           <button type="submit" class="submit-btn">Get My Free Mockups</button>
@@ -510,7 +511,7 @@ document.getElementById('mockup-form').addEventListener('submit', function(e) {
   }).then(function(r) {
     if (r.ok) {
       card.classList.add('submitted');
-      if (window.ttq) ttq.track('SubmitForm');
+      if (window.ttq) { ttq.track('SubmitForm'); ttq.track('CompleteRegistration'); }
     } else {
       btn.textContent = 'Something went wrong — try again';
       btn.disabled = false;
