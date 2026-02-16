@@ -58,6 +58,20 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
+    name: "James, Thompson Landscapes",
+    trade: "Landscaping",
+    location: "Newcastle",
+    text: "The website paid for itself in the first month. Landed a £12k garden project from someone who found us on Google. Best investment we've made in the business.",
+    rating: 5,
+  },
+  {
+    name: "Kev, K&S Bricklaying",
+    trade: "Bricklaying Contractor",
+    location: "Birmingham",
+    text: "Went from zero online presence to page one of Google in our area. Getting 3-4 new enquiries a week now and the quality of work coming through has gone right up.",
+    rating: 5,
+  },
+  {
     name: "Mark, Spark Brothers Electrical",
     trade: "Electrical Contractor",
     location: "Manchester",
@@ -76,20 +90,6 @@ export const testimonials: Testimonial[] = [
     trade: "Roofing Contractor",
     location: "Bristol",
     text: "The site looks so professional that clients trust us before we even turn up. We've landed three commercial contracts since launch. Even had good lads getting in touch wanting to come and work for us.",
-    rating: 5,
-  },
-  {
-    name: "Kev, K&S Bricklaying",
-    trade: "Bricklaying Contractor",
-    location: "Birmingham",
-    text: "Went from zero online presence to page one of Google in our area. Getting 3-4 new enquiries a week now and the quality of work coming through has gone right up.",
-    rating: 5,
-  },
-  {
-    name: "James, Thompson Landscapes",
-    trade: "Landscaping",
-    location: "Newcastle",
-    text: "The website paid for itself in the first month. Landed a £12k garden project from someone who found us on Google. Best investment we've made in the business.",
     rating: 5,
   },
   {

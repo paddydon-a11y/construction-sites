@@ -25,6 +25,18 @@ const homeJsonLd = {
       review: [
         {
           "@type": "Review",
+          author: { "@type": "Person", name: "James, Thompson Landscapes" },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: "The website paid for itself in the first month. Landed a £12k garden project from someone who found us on Google.",
+        },
+        {
+          "@type": "Review",
+          author: { "@type": "Person", name: "Kev, K&S Bricklaying" },
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          reviewBody: "Went from zero online presence to page one of Google in our area. Getting 3-4 new enquiries a week now.",
+        },
+        {
+          "@type": "Review",
           author: { "@type": "Person", name: "Mark, Spark Brothers Electrical" },
           reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
           reviewBody: "Enquiries doubled in the first month and we're now turning work away. Didn't expect that from a website.",
@@ -40,18 +52,6 @@ const homeJsonLd = {
           author: { "@type": "Person", name: "Sarah, Apex Roofing" },
           reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
           reviewBody: "The site looks so professional that clients trust us before we even turn up. We've landed three commercial contracts since launch.",
-        },
-        {
-          "@type": "Review",
-          author: { "@type": "Person", name: "Kev, K&S Bricklaying" },
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-          reviewBody: "Went from zero online presence to page one of Google in our area. Getting 3-4 new enquiries a week now.",
-        },
-        {
-          "@type": "Review",
-          author: { "@type": "Person", name: "James, Thompson Landscapes" },
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-          reviewBody: "The website paid for itself in the first month. Landed a £12k garden project from someone who found us on Google.",
         },
         {
           "@type": "Review",
