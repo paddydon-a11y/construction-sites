@@ -392,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== 3. TRUST BAR ===== */
 .trust-bar {
-  background: var(--orange);
+  background: var(--dark);
   padding: 40px 0;
   position: relative;
   z-index: 2;
@@ -409,7 +409,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 6px;
   margin-bottom: 8px;
 }
-.trust-stars svg { width: 22px; height: 22px; color: var(--white); }
+.trust-stars svg { width: 22px; height: 22px; color: var(--orange); }
 .trust-rating {
   text-align: center;
   color: var(--white);
@@ -417,7 +417,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.95rem;
   margin-bottom: 28px;
 }
-.trust-rating span { color: var(--white); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+.trust-rating span { color: var(--orange); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
 .trust-logos {
   display: flex;
   align-items: center;
@@ -441,8 +441,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: var(--orange);
+  border: 1px solid rgba(255, 153, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -456,9 +456,10 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg);
 }
 .section-label {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: var(--orange);
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
