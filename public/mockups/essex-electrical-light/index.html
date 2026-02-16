@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essex Electrical Solutions | Expert Electrical Contractors in Basildon &amp; Essex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Barlow', sans-serif;
+  color: #1e293b;
+  background: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* ===== VARIABLES ===== */
+:root {
+  --bg: #ffffff;
+  --bg-light: #f8fafc;
+  --accent: #2563eb;
+  --accent-light: #dbeafe;
+  --cta: #f59e0b;
+  --cta-hover: #d97706;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --whatsapp: #25D366;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
+  --radius: 12px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 16px;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+
+/* ===== 1. STICKY HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--border);
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-brand svg {
+  width: 36px;
+  height: 36px;
+  color: var(--accent);
+}
+.header-brand span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.header-nav a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.header-nav a:hover { color: var(--accent); }
+.header-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.header-phone:hover { background: #1d4ed8; }
+.header-phone svg { width: 18px; height: 18px; }
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+.mobile-menu-btn svg { width: 28px; height: 28px; }
+
+/* ===== 2. HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #f0f7ff 0%, #f8fafc 50%, #eff6ff 100%);
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+.hero-badge svg { width: 16px; height: 16px; }
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+.hero h1 span { color: var(--accent); }
+.hero-desc {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  max-width: 500px;
+  line-height: 1.7;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cta);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--cta-hover); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(245,158,11,0.3); }
+.btn-primary svg { width: 18px; height: 18px; }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  color: var(--accent);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid var(--accent);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.btn-secondary:hover { background: var(--accent); color: #fff; }
+.btn-secondary svg { width: 18px; height: 18px; }
+
+/* Hero stats card */
+.hero-stats-card {
+  background: var(--bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 40px 36px;
+  position: relative;
+  z-index: 1;
+}
+.hero-stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--cta));
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ===== 3. TRUST BAR ===== */
+.trust-bar {
+  background: var(--bg-light);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+}
+.trust-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.trust-item svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+/* ===== 4. SERVICES ===== */
+.services {
+  padding: 80px 0;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.service-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  transition: all 0.3s;
+  box-shadow: var(--shadow-sm);
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--accent-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.service-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+}
+.service-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== 5. TESTIMONIALS ===== */
+.testimonials {
+  padding: 80px 0;
+  background: var(--bg-light);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.testimonial-card {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+.testimonial-stars svg {
+  width: 18px;
+  height: 18px;
+  color: var(--cta);
+}
+.testimonial-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  background: var(--accent-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+.testimonial-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.testimonial-location {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ===== 6. WHY CHOOSE US ===== */
+.why-us {
+  padding: 80px 0;
+}
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.why-card {
+  text-align: center;
+  padding: 36px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.why-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--accent-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.why-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+}
+.why-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.why-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ===== 7. CONTACT ===== */
+.contact {
+  padding: 80px 0;
+  background: var(--bg-light);
+}
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.contact-info .big-phone {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact-info .big-phone svg { width: 32px; height: 32px; }
+.contact-info .big-phone a { color: var(--accent); }
+.contact-tagline {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+.contact-detail svg {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.contact-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--whatsapp);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-whatsapp:hover { background: #1da851; transform: translateY(-1px); }
+.btn-whatsapp svg { width: 20px; height: 20px; }
+
+.contact-form {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+.contact-form h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: #1d4ed8; }
+
+/* ===== 8. FOOTER ===== */
+.footer {
+  background: #1e293b;
+  color: #cbd5e1;
+  padding: 60px 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+}
+.footer-brand span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  display: block;
+  margin-bottom: 12px;
+}
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #94a3b8;
+  max-width: 300px;
+}
+.footer h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.footer ul li {
+  margin-bottom: 8px;
+}
+.footer ul li a {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+.footer ul li a:hover { color: var(--accent); }
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+.footer-contact-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.footer-contact-item a { color: #94a3b8; transition: color 0.2s; }
+.footer-contact-item a:hover { color: var(--accent); }
+.footer-bottom {
+  border-top: 1px solid #334155;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* ===== 9. FLOATING MOBILE CTA ===== */
+.floating-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: var(--bg);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+}
+.floating-cta .container {
+  display: flex;
+  gap: 12px;
+}
+.floating-cta a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+.floating-call {
+  background: var(--accent);
+  color: #fff;
+}
+.floating-call:hover { background: #1d4ed8; }
+.floating-wa {
+  background: var(--whatsapp);
+  color: #fff;
+}
+.floating-wa:hover { background: #1da851; }
+.floating-cta svg { width: 18px; height: 18px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero h1 { font-size: 2.75rem; }
+  .hero-stats-card { max-width: 500px; }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-nav { display: none; }
+  .mobile-menu-btn { display: block; }
+  .hero { padding: 48px 0 64px; }
+  .hero h1 { font-size: 2.25rem; }
+  .hero-desc { font-size: 1rem; }
+  .section-title { font-size: 1.85rem; }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .trust-bar .container {
+    gap: 20px;
+  }
+  .trust-item { font-size: 0.8rem; }
+  .floating-cta { display: block; }
+  .footer { padding-bottom: 72px; }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .stats-grid { gap: 16px; }
+  .stat-number { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .hero h1 { font-size: 1.9rem; }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons a { text-align: center; justify-content: center; }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .contact-info .big-phone {
+    font-size: 1.8rem;
+  }
+  .contact-buttons { flex-direction: column; }
+  .contact-buttons a { text-align: center; justify-content: center; }
+  .trust-bar .container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .services, .testimonials, .why-us, .contact { padding: 56px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- 1. STICKY HEADER                                              -->
+<!-- ============================================================ -->
+<header class="header">
+  <div class="container">
+    <a href="#" class="header-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+      <span>Essex Electrical Solutions</span>
+    </a>
+    <nav class="header-nav">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:07923912036" class="header-phone">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      07923 912 036
+    </a>
+    <button class="mobile-menu-btn" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- 2. HERO                                                       -->
+<!-- ============================================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        NICEIC Approved &mdash; Available 24/7
+      </div>
+      <h1>Expert <span>Electrical Contractors</span> in Essex</h1>
+      <p class="hero-desc">Family-run and established since 2014, Essex Electrical Solutions delivers outstanding commercial and residential electrical services across Basildon, Southend, Chelmsford and the wider Essex area.</p>
+      <div class="hero-buttons">
+        <a href="tel:07923912036" class="btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          Get a Free Quote
+        </a>
+        <a href="#services" class="btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          Our Services
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats-card">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years Established</div>
+        </div>
+        <div>
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Emergency Service</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 3. TRUST BAR                                                  -->
+<!-- ============================================================ -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      NICEIC Regulated
+    </div>
+    <div class="trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--cta);">
+        <circle cx="12" cy="8" r="6"/>
+        <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+      </svg>
+      City &amp; Guilds
+    </div>
+    <div class="trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #16a34a;">
+        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+        <polyline points="22 4 12 14.01 9 11.01"/>
+      </svg>
+      Checkatrade
+    </div>
+    <div class="trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #7c3aed;">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      CHAS Accredited
+    </div>
+    <div class="trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);">
+        <path d="M18 20H6"/><path d="M8 20c0-8 1.6-14 6-14a4 4 0 014 4"/><path d="M6 14h8"/>
+      </svg>
+      &pound;5M Insured
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 4. SERVICES                                                   -->
+<!-- ============================================================ -->
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title">Our Electrical Services</h2>
+    <p class="section-subtitle">From design to installation, we provide comprehensive electrical solutions for homes and businesses across Essex.</p>
+    <div class="services-grid">
+
+      <!-- Design -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+          </svg>
+        </div>
+        <h3>Electrical Design</h3>
+        <p>Bespoke electrical design and planning for new builds, extensions and renovations. Full specification and compliance documentation.</p>
+      </div>
+
+      <!-- Commercial -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+            <path d="M9 22v-4h6v4"/>
+            <path d="M8 6h.01"/><path d="M16 6h.01"/>
+            <path d="M8 10h.01"/><path d="M16 10h.01"/>
+            <path d="M8 14h.01"/><path d="M16 14h.01"/>
+          </svg>
+        </div>
+        <h3>Commercial Electrical</h3>
+        <p>Full commercial electrical installations for offices, retail units, warehouses and industrial premises. NICEIC certified to the highest standards.</p>
+      </div>
+
+      <!-- Residential -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <h3>Residential Electrical</h3>
+        <p>Complete domestic rewires, consumer unit upgrades, additional sockets, lighting and all home electrical needs with minimal disruption.</p>
+      </div>
+
+      <!-- Solar Installation -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="M4.93 4.93l1.41 1.41"/>
+            <path d="M17.66 17.66l1.41 1.41"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="M6.34 17.66l-1.41 1.41"/>
+            <path d="M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </div>
+        <h3>Solar Installation</h3>
+        <p>Professional solar panel installations to reduce your energy bills. Full design, supply, installation and MCS certification included.</p>
+      </div>
+
+      <!-- EV Charging -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="6" width="15" height="14" rx="2"/>
+            <path d="M16 10h2a2 2 0 012 2v2a2 2 0 01-2 2h-2"/>
+            <path d="M23 13v-2"/>
+            <path d="M11 6V4a2 2 0 00-2-2H8a2 2 0 00-2 2v2"/>
+            <path d="M7 15v2"/>
+            <path d="M10 15v2"/>
+          </svg>
+        </div>
+        <h3>EV Charging</h3>
+        <p>Home and commercial EV charger installations. OZEV grant approved installers for all leading charger brands.</p>
+      </div>
+
+      <!-- Maintenance -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3>Maintenance</h3>
+        <p>Planned and reactive electrical maintenance for domestic and commercial properties. Fast response times and 24/7 emergency call-outs.</p>
+      </div>
+
+      <!-- Testing & Inspection -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+          </svg>
+        </div>
+        <h3>Testing &amp; Inspection</h3>
+        <p>EICR testing, periodic inspection reports, PAT testing and full electrical condition assessments for compliance and peace of mind.</p>
+      </div>
+
+      <!-- Landlord Safety Checks -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0110 0v4"/>
+          </svg>
+        </div>
+        <h3>Landlord Safety Checks</h3>
+        <p>Mandatory EICR certificates for landlords and letting agents. Fast turnaround to keep your properties legally compliant.</p>
+      </div>
+
+      <!-- LED Upgrades -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="9" y1="18" x2="15" y2="18"/>
+            <line x1="10" y1="22" x2="14" y2="22"/>
+            <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/>
+          </svg>
+        </div>
+        <h3>LED Upgrades</h3>
+        <p>Energy-efficient LED lighting upgrades for homes and businesses. Reduce energy costs by up to 80% with modern LED solutions.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 5. TESTIMONIALS                                               -->
+<!-- ============================================================ -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-subtitle">Don't just take our word for it. Here's what our clients across Essex have to say about our work.</p>
+    <div class="testimonials-grid">
+
+      <!-- Review 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-text">"After having Dan in my home for 4 days, I can honestly say a job I had been dreading turned out to be so well executed that I was left wondering what I had ever been anxious about. They worked with precision, speed and consideration. Very conscientious, very neat and tidy &mdash; just brilliant!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MB</div>
+          <div>
+            <div class="testimonial-name">Mrs Brooks</div>
+            <div class="testimonial-location">Essex</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-text">"I phoned Dan on Sunday as we hadn't electricity for 24 hours. Even though he was on holiday he came out within an hour. They were on time, very courteous and kept the pricing exactly to the quote. We would recommend them 100%."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MH</div>
+          <div>
+            <div class="testimonial-name">Mrs Hare</div>
+            <div class="testimonial-location">Essex</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-text">"We contracted Essex Electrical Solutions for a complete rewire of our office block in Chelmsford. Dan and his team were thoroughly professional from start to finish. All work was completed to full NICEIC standards with comprehensive certification. Minimal disruption to our operations &mdash; exactly what you need from a commercial contractor."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JT</div>
+          <div>
+            <div class="testimonial-name">James Turner, Facilities Manager</div>
+            <div class="testimonial-location">Chelmsford, Essex</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 6. WHY CHOOSE US                                              -->
+<!-- ============================================================ -->
+<section class="why-us" id="why-us">
+  <div class="container">
+    <h2 class="section-title">Why Choose Essex Electrical Solutions</h2>
+    <p class="section-subtitle">Over 25 years of industry expertise, fully accredited and committed to delivering exceptional service every time.</p>
+    <div class="why-us-grid">
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3>24/7 Available</h3>
+        <p>Round-the-clock emergency electrical service. We're here when you need us most, day or night, 365 days a year.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>NICEIC Platinum Promise</h3>
+        <p>Fully NICEIC regulated with the Platinum Promise guarantee. All work backed by a 12-month warranty for your peace of mind.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 20H6"/><path d="M8 20c0-8 1.6-14 6-14a4 4 0 014 4"/><path d="M6 14h8"/>
+          </svg>
+        </div>
+        <h3>No Call-Out Charge</h3>
+        <p>We never charge a call-out fee. Transparent, honest pricing with no hidden costs or surprise extras on your bill.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <h3>Free Quotes</h3>
+        <p>Detailed, no-obligation quotations provided free of charge. We price fairly and stick to our quotes &mdash; guaranteed.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 7. CONTACT                                                    -->
+<!-- ============================================================ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Ready to discuss your project? Call us now or fill in the form and we'll get back to you promptly.</p>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="big-phone">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <a href="tel:07923912036">07923 912 036</a>
+        </div>
+        <p class="contact-tagline">Available 24 hours a day, 7 days a week. Family-run since 2014.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <a href="mailto:admin@essexelectricalsolutions.co.uk" style="color: var(--text); transition: color 0.2s;">admin@essexelectricalsolutions.co.uk</a>
+          </div>
+          <div class="contact-detail">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>4 The Capricorn Centre, Cranes Farm Road, Basildon, Essex SS14 3JJ</span>
+          </div>
+          <div class="contact-detail">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>Open 24/7 &mdash; Emergency &amp; Scheduled Work</span>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          <a href="tel:07923912036" class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            Call Now
+          </a>
+          <a href="https://wa.me/447923912036" class="btn-whatsapp" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault();">
+        <h3>Request a Free Quote</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Your phone number">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Your email address">
+        </div>
+        <div class="form-group">
+          <label for="service">Service Required</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <option>Electrical Design</option>
+            <option>Commercial Electrical</option>
+            <option>Residential Electrical</option>
+            <option>Solar Installation</option>
+            <option>EV Charging</option>
+            <option>Maintenance</option>
+            <option>Testing &amp; Inspection</option>
+            <option>Landlord Safety Checks</option>
+            <option>LED Upgrades</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Project Details</label>
+          <textarea id="message" placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 8. FOOTER                                                     -->
+<!-- ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span>Essex Electrical Solutions</span>
+        <p>Family-run electrical contractors established in 2014. Led by Dan with over 25 years in the electrical sector, we deliver NICEIC-approved work across Basildon, Southend, Chelmsford and the wider Essex area.</p>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Electrical Design</a></li>
+          <li><a href="#services">Commercial Electrical</a></li>
+          <li><a href="#services">Residential Electrical</a></li>
+          <li><a href="#services">Solar Installation</a></li>
+          <li><a href="#services">EV Charging</a></li>
+          <li><a href="#services">Testing &amp; Inspection</a></li>
+          <li><a href="#services">Landlord Safety Checks</a></li>
+          <li><a href="#services">LED Upgrades</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <a href="tel:07923912036">07923 912 036</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <a href="mailto:admin@essexelectricalsolutions.co.uk">admin@essexelectricalsolutions.co.uk</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>4 The Capricorn Centre, Cranes Farm Road, Basildon, Essex SS14 3JJ</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>Open 24/7</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Essex Electrical Solutions Ltd. All rights reserved. | NICEIC Regulated | Company based in Basildon, Essex
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================ -->
+<!-- 9. FLOATING MOBILE CTA                                        -->
+<!-- ============================================================ -->
+<div class="floating-cta">
+  <div class="container">
+    <a href="tel:07923912036" class="floating-call">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      Call Now
+    </a>
+    <a href="https://wa.me/447923912036" class="floating-wa" target="_blank" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
