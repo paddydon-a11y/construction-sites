@@ -174,7 +174,7 @@ export default function HomePage() {
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
                 We learn your trade, your area, and what jobs you actually want.
-                No jargon, no waffle — just a proper chat about where your next
+                No jargon, no waffle. Just a proper chat about where your next
                 customers are coming from.
               </p>
             </article>
@@ -188,7 +188,7 @@ export default function HomePage() {
                 2. Breaking Ground
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                We build a site designed to convert — not just look pretty.
+                We build a site designed to convert, not just look pretty.
                 Click-to-call on every page, Google Ads ready from day one,
                 written by people who know how construction clients search. Most
                 sites live in under a week.
@@ -206,7 +206,7 @@ export default function HomePage() {
               <p className="mt-3 leading-relaxed text-slate-light">
                 Your site goes live and your phone starts ringing. Fully
                 optimised for the searches your customers are actually making. We
-                don&apos;t disappear — you get monthly updates and we track
+                don&apos;t disappear. You get monthly updates and we track
                 what&apos;s working.
               </p>
             </article>
