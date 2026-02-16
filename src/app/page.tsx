@@ -160,7 +160,7 @@ export default function HomePage() {
       <section className="bg-dark py-20 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
-            How We Build Your Site
+            How We Get Your Phone Ringing
           </h2>
 
           <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -173,8 +173,9 @@ export default function HomePage() {
                 1. The Site Survey
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                We jump on a call, learn about your business, and plan your site.
-                No jargon, no waffle. Just a proper chat about what you need.
+                We learn your trade, your area, and what jobs you actually want.
+                No jargon, no waffle — just a proper chat about where your next
+                customers are coming from.
               </p>
             </article>
 
@@ -187,8 +188,10 @@ export default function HomePage() {
                 2. Breaking Ground
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                Our team cracks on with your build. Custom design, mobile-ready,
-                SEO baked in from day one. Most sites done in under a week.
+                We build a site designed to convert — not just look pretty.
+                Click-to-call on every page, Google Ads ready from day one,
+                written by people who know how construction clients search. Most
+                sites live in under a week.
               </p>
             </article>
 
@@ -201,8 +204,10 @@ export default function HomePage() {
                 3. Handover
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                Your site goes live, fully optimised for Google Ads and SEO.
-                We hand you the keys. Your phone starts ringing.
+                Your site goes live and your phone starts ringing. Fully
+                optimised for the searches your customers are actually making. We
+                don&apos;t disappear — you get monthly updates and we track
+                what&apos;s working.
               </p>
             </article>
           </div>
