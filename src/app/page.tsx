@@ -27,7 +27,7 @@ const homeJsonLd = {
           "@type": "Review",
           author: { "@type": "Person", name: "James, Thompson Landscapes" },
           reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-          reviewBody: "The website paid for itself in the first month. Landed a £12k garden project from someone who found us on Google.",
+          reviewBody: "The website paid for itself ten fold in the first month. Landed a £12k garden project from someone who found us on Google.",
         },
         {
           "@type": "Review",

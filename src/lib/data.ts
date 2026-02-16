@@ -61,7 +61,7 @@ export const testimonials: Testimonial[] = [
     name: "James, Thompson Landscapes",
     trade: "Landscaping",
     location: "Newcastle",
-    text: "The website paid for itself in the first month. Landed a £12k garden project from someone who found us on Google. Best investment we've made in the business.",
+    text: "The website paid for itself ten fold in the first month. Landed a £12k garden project from someone who found us on Google. Best investment we've made in the business.",
     rating: 5,
   },
   {

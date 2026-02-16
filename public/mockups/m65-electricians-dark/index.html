@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M65 Electricians | Trusted Electrician in Blackburn &amp; Lancashire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0b1929;
+  --bg-light:#0f2137;
+  --bg-card:#112240;
+  --accent:#00b4d8;
+  --accent-glow:rgba(0,180,216,.25);
+  --cta:#ffd60a;
+  --cta-hover:#ffe04a;
+  --text:#e0e6ed;
+  --text-muted:#8899aa;
+  --white:#ffffff;
+  --border:rgba(255,255,255,.06);
+  --glass:rgba(11,25,41,.75);
+  --radius:12px;
+  --radius-lg:20px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5,h6{font-family:'Barlow Condensed',sans-serif;color:var(--white);line-height:1.2}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* ========== HEADER ========== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:var(--glass);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:background .3s
+}
+.header-inner{
+  max-width:1260px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px
+}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.55rem;color:var(--white);display:flex;align-items:center;gap:10px}
+.logo svg{flex-shrink:0}
+.logo span{color:var(--accent)}
+.nav{display:flex;gap:32px;align-items:center}
+.nav a{font-size:.95rem;font-weight:500;color:var(--text-muted);transition:color .2s;position:relative}
+.nav a:hover{color:var(--white)}
+.nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
+.nav a:hover::after{width:100%}
+.header-cta{
+  display:flex;align-items:center;gap:8px;
+  background:var(--cta);color:#0b1929;
+  padding:10px 22px;border-radius:50px;
+  font-weight:600;font-size:.95rem;
+  transition:all .2s;white-space:nowrap
+}
+.header-cta:hover{background:var(--cta-hover);transform:translateY(-1px);box-shadow:0 4px 20px rgba(255,214,10,.3)}
+.header-cta svg{flex-shrink:0}
+.menu-toggle{display:none;background:none;border:none;color:var(--white);cursor:pointer;padding:8px}
+
+/* ========== HERO ========== */
+.hero{
+  position:relative;padding:140px 24px 100px;overflow:hidden;
+  min-height:85vh;display:flex;align-items:center
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(0,180,216,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,180,216,.03) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none
+}
+.hero::after{
+  content:'';position:absolute;top:-200px;right:-200px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(0,180,216,.08) 0%,transparent 70%);
+  pointer-events:none
+}
+.hero-inner{
+  max-width:1260px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;
+  position:relative;z-index:1
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.25);
+  padding:8px 18px;border-radius:50px;font-size:.85rem;font-weight:600;
+  color:var(--accent);margin-bottom:24px;
+  text-transform:uppercase;letter-spacing:.5px
+}
+.hero-badge svg{flex-shrink:0}
+.hero h1{
+  font-size:3.8rem;font-weight:700;letter-spacing:-.5px;
+  margin-bottom:20px;line-height:1.08
+}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{
+  font-size:1.15rem;color:var(--text-muted);
+  max-width:520px;margin-bottom:36px;line-height:1.7
+}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--cta);color:#0b1929;
+  padding:16px 32px;border-radius:50px;
+  font-weight:700;font-size:1.05rem;
+  transition:all .25s;font-family:'Barlow',sans-serif;border:none;cursor:pointer
+}
+.btn-primary:hover{background:var(--cta-hover);transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,214,10,.25)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:transparent;color:var(--white);
+  padding:16px 32px;border-radius:50px;
+  font-weight:600;font-size:1.05rem;
+  border:2px solid rgba(255,255,255,.15);
+  transition:all .25s;font-family:'Barlow',sans-serif;cursor:pointer
+}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-whatsapp{border-color:rgba(37,211,102,.3);color:#25d366}
+.btn-whatsapp:hover{border-color:#25d366;background:rgba(37,211,102,.08);color:#25d366}
+
+/* Hero stat card */
+.hero-stat-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:48px 40px;
+  position:relative;overflow:hidden;
+  text-align:center
+}
+.hero-stat-card::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:120px;height:3px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent)
+}
+.hero-stat-card::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(0,180,216,.06) 0%,transparent 60%);
+  pointer-events:none
+}
+.stat-icon{
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(0,180,216,.1);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;position:relative;z-index:1
+}
+.stat-number{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:4.5rem;font-weight:700;color:var(--accent);
+  line-height:1;margin-bottom:8px;position:relative;z-index:1
+}
+.stat-label{
+  font-size:1.1rem;color:var(--text-muted);font-weight:500;
+  position:relative;z-index:1
+}
+.stat-sub{
+  font-size:.85rem;color:var(--text-muted);opacity:.7;
+  margin-top:4px;position:relative;z-index:1
+}
+
+/* ========== TRUST BAR ========== */
+.trust-bar{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:var(--bg-light);
+  padding:28px 24px
+}
+.trust-bar-inner{
+  max-width:1260px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:40px;flex-wrap:wrap
+}
+.trust-item{
+  display:flex;align-items:center;gap:10px;
+  font-size:.92rem;font-weight:500;color:var(--text-muted);
+  white-space:nowrap
+}
+.trust-item svg{flex-shrink:0;color:var(--accent)}
+.trust-stars{display:flex;gap:2px}
+.trust-stars svg{color:var(--cta)}
+.trust-divider{width:1px;height:28px;background:var(--border)}
+
+/* ========== SECTION COMMON ========== */
+.section{padding:100px 24px}
+.section-header{text-align:center;margin-bottom:64px}
+.section-label{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.8rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:1.5px;color:var(--accent);margin-bottom:16px
+}
+.section-title{font-size:2.8rem;font-weight:700;margin-bottom:16px}
+.section-subtitle{font-size:1.1rem;color:var(--text-muted);max-width:560px;margin:0 auto}
+
+/* ========== SERVICES ========== */
+.services{background:var(--bg)}
+.services-grid{
+  max-width:1260px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px
+}
+.services-grid .service-card:last-child{
+  grid-column:2/4
+}
+.service-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:36px 28px;
+  transition:all .35s;
+  position:relative;overflow:hidden
+}
+.service-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+  opacity:0;transition:opacity .35s
+}
+.service-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(0,180,216,.2);
+  box-shadow:0 20px 60px rgba(0,0,0,.3),0 0 40px var(--accent-glow)
+}
+.service-card:hover::before{opacity:1}
+.service-icon{
+  width:52px;height:52px;border-radius:var(--radius);
+  background:rgba(0,180,216,.08);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;color:var(--accent);
+  transition:all .35s
+}
+.service-card:hover .service-icon{
+  background:rgba(0,180,216,.15);
+  box-shadow:0 0 20px var(--accent-glow)
+}
+.service-card h3{font-size:1.25rem;font-weight:600;margin-bottom:10px}
+.service-card p{font-size:.92rem;color:var(--text-muted);line-height:1.6}
+
+/* ========== TESTIMONIALS ========== */
+.testimonials{background:var(--bg-light)}
+.testimonials-grid{
+  max-width:1260px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px
+}
+.testimonial-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:36px 32px;
+  position:relative;
+  transition:all .35s;
+  display:flex;flex-direction:column
+}
+.testimonial-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(0,180,216,.15);
+  box-shadow:0 16px 48px rgba(0,0,0,.25)
+}
+.testimonial-stars{display:flex;gap:3px;margin-bottom:20px}
+.testimonial-stars svg{color:var(--cta);width:18px;height:18px}
+.testimonial-quote{
+  font-size:.98rem;color:var(--text);line-height:1.75;
+  flex:1;margin-bottom:24px;font-style:italic;
+  position:relative;padding-left:0
+}
+.testimonial-quote::before{
+  content:'\201C';font-size:3.5rem;color:var(--accent);opacity:.3;
+  font-family:Georgia,serif;line-height:1;
+  position:absolute;top:-16px;left:-4px
+}
+.testimonial-author{
+  display:flex;align-items:center;gap:14px;
+  padding-top:20px;border-top:1px solid var(--border)
+}
+.testimonial-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),rgba(0,180,216,.4));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:1.1rem;color:var(--bg);
+  flex-shrink:0
+}
+.testimonial-name{font-weight:600;color:var(--white);font-size:.95rem}
+.testimonial-location{font-size:.82rem;color:var(--text-muted)}
+
+/* ========== WHY CHOOSE US ========== */
+.why-us{background:var(--bg)}
+.why-us-grid{
+  max-width:1060px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:28px
+}
+.why-card{
+  text-align:center;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:40px 24px;
+  transition:all .35s;position:relative;overflow:hidden
+}
+.why-card::after{
+  content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:60px;height:2px;background:var(--accent);opacity:0;transition:opacity .35s
+}
+.why-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(0,180,216,.2);
+  box-shadow:0 16px 48px rgba(0,0,0,.3),0 0 30px var(--accent-glow)
+}
+.why-card:hover::after{opacity:1}
+.why-icon{
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(0,180,216,.08);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;color:var(--accent);
+  transition:all .35s
+}
+.why-card:hover .why-icon{
+  background:rgba(0,180,216,.15);
+  box-shadow:0 0 25px var(--accent-glow)
+}
+.why-card h3{font-size:1.15rem;font-weight:600;margin-bottom:8px}
+.why-card p{font-size:.88rem;color:var(--text-muted);line-height:1.6}
+
+/* ========== CONTACT ========== */
+.contact{background:var(--bg-light)}
+.contact-inner{
+  max-width:1260px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start
+}
+.contact-info h2{font-size:2.6rem;margin-bottom:16px}
+.contact-info p{color:var(--text-muted);margin-bottom:32px;line-height:1.7}
+.contact-phone{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:2.8rem;font-weight:700;color:var(--white);
+  margin-bottom:28px;display:block
+}
+.contact-phone:hover{color:var(--accent)}
+.contact-buttons{display:flex;gap:14px;margin-bottom:36px;flex-wrap:wrap}
+.contact-email{
+  display:flex;align-items:center;gap:10px;
+  color:var(--text-muted);font-size:.95rem;margin-bottom:12px
+}
+.contact-email svg{color:var(--accent);flex-shrink:0}
+.contact-areas{margin-top:28px}
+.contact-areas h4{font-size:.85rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:10px;font-family:'Barlow Condensed',sans-serif}
+.contact-areas p{font-size:.9rem;color:var(--text-muted);line-height:1.8}
+
+.contact-form{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:40px
+}
+.contact-form h3{font-size:1.4rem;margin-bottom:24px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:.85rem;font-weight:500;color:var(--text-muted);margin-bottom:6px}
+.form-group input,.form-group textarea,.form-group select{
+  width:100%;padding:14px 16px;
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:8px;color:var(--white);
+  font-family:'Barlow',sans-serif;font-size:.95rem;
+  transition:border-color .2s;outline:none
+}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238899aa' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-group select option{background:var(--bg-card);color:var(--white)}
+.form-submit{
+  width:100%;padding:16px;
+  background:var(--cta);color:#0b1929;
+  border:none;border-radius:50px;
+  font-family:'Barlow',sans-serif;
+  font-weight:700;font-size:1.05rem;
+  cursor:pointer;transition:all .25s
+}
+.form-submit:hover{background:var(--cta-hover);transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,214,10,.25)}
+
+/* ========== FOOTER ========== */
+.footer{
+  background:var(--bg);
+  border-top:1px solid var(--border);
+  padding:72px 24px 32px
+}
+.footer-inner{
+  max-width:1260px;margin:0 auto;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;
+  margin-bottom:48px
+}
+.footer-brand p{color:var(--text-muted);font-size:.9rem;line-height:1.7;margin-top:16px;max-width:340px}
+.footer h4{
+  font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;
+  color:var(--accent);margin-bottom:20px;font-family:'Barlow Condensed',sans-serif
+}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links li a{color:var(--text-muted);font-size:.9rem;transition:color .2s}
+.footer-links li a:hover{color:var(--white)}
+.footer-contact-item{
+  display:flex;align-items:center;gap:10px;
+  color:var(--text-muted);font-size:.9rem;margin-bottom:12px
+}
+.footer-contact-item svg{color:var(--accent);flex-shrink:0}
+.footer-social{display:flex;gap:12px;margin-top:20px}
+.footer-social a{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-muted);transition:all .25s
+}
+.footer-social a:hover{
+  border-color:var(--accent);color:var(--accent);
+  background:rgba(0,180,216,.08)
+}
+.footer-bottom{
+  border-top:1px solid var(--border);
+  padding-top:28px;
+  text-align:center;font-size:.82rem;color:var(--text-muted)
+}
+
+/* ========== FLOATING CTA ========== */
+.floating-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:var(--glass);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-top:1px solid var(--border);
+  padding:12px 16px;
+  display:none;
+  gap:10px
+}
+.floating-cta a{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px;border-radius:50px;font-weight:700;font-size:.95rem;
+  transition:all .2s
+}
+.float-call{background:var(--cta);color:#0b1929}
+.float-call:hover{background:var(--cta-hover)}
+.float-whatsapp{background:#25d366;color:#fff}
+.float-whatsapp:hover{background:#20bd5a}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero h1{font-size:3rem}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-buttons{justify-content:center}
+  .hero-stat-card{max-width:340px;margin:0 auto}
+  .services-grid{grid-template-columns:repeat(3,1fr)}
+  .services-grid .service-card:last-child{grid-column:auto}
+  .why-us-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-inner{grid-template-columns:1fr}
+  .contact-info{text-align:center}
+  .contact-buttons{justify-content:center}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav{display:none}
+  .menu-toggle{display:flex}
+  .hero{padding:120px 24px 80px;min-height:auto}
+  .hero h1{font-size:2.4rem}
+  .hero-sub{font-size:1rem}
+  .section{padding:72px 24px}
+  .section-title{font-size:2.2rem}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .testimonials-grid{grid-template-columns:1fr}
+  .why-us-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-bar-inner{gap:20px}
+  .trust-divider{display:none}
+  .contact-phone{font-size:2.2rem}
+  .floating-cta{display:flex}
+  .footer-inner{grid-template-columns:1fr;text-align:center}
+  .footer-brand p{margin:16px auto 0}
+  .footer-social{justify-content:center}
+  body{padding-bottom:70px}
+}
+@media(max-width:480px){
+  .header-inner{padding:0 16px}
+  .header-cta span{display:none}
+  .header-cta{padding:10px 14px}
+  .hero{padding:110px 16px 64px}
+  .hero h1{font-size:1.95rem}
+  .hero-badge{font-size:.75rem;padding:6px 14px}
+  .section{padding:56px 16px}
+  .section-title{font-size:1.85rem}
+  .services-grid{grid-template-columns:1fr}
+  .why-us-grid{grid-template-columns:1fr}
+  .hero-buttons{flex-direction:column;width:100%}
+  .btn-primary,.btn-secondary{justify-content:center;width:100%}
+  .contact-form{padding:28px 20px}
+  .contact-phone{font-size:1.8rem}
+  .stat-number{font-size:3.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      M65 <span>Electricians</span>
+    </a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:07467469922" class="header-cta">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span>07467 469 922</span>
+    </a>
+    <button class="menu-toggle" aria-label="Menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Part P Certified Contractor
+      </div>
+      <h1>Trusted Electrician in <em>Blackburn &amp; Lancashire</em></h1>
+      <p class="hero-sub">Fast, reliable electrical services across Lancashire. From emergency callouts to full house rewiring, M65 Electricians deliver quality workmanship with no call-out charge. Covering Blackburn, Darwen, Accrington, Preston and surrounding areas.</p>
+      <div class="hero-buttons">
+        <a href="tel:07467469922" class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/447467469922" class="btn-secondary btn-whatsapp" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="stat-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="stat-number">192+</div>
+      <div class="stat-label">Emergency Callouts</div>
+      <div class="stat-sub">Completed in 2023</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRUST BAR ========== -->
+<section class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="trust-stars">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      Top Rated on Google
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Part P Certified
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Registered Electrician
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      Fully Insured
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      13+ Years Experience
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section services" id="services">
+  <div class="section-header">
+    <div class="section-label">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      What We Do
+    </div>
+    <h2 class="section-title">Our Electrical Services</h2>
+    <p class="section-subtitle">Professional electrical solutions for homes and businesses across Lancashire. All work fully certified and guaranteed.</p>
+  </div>
+  <div class="services-grid">
+    <!-- 1: Full House Rewiring -->
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>Full House Rewiring</h3>
+      <p>Complete rewiring for older properties. We ensure your home meets current safety standards with minimal disruption. 26 projects completed in 2023.</p>
+    </div>
+    <!-- 2: Consumer Unit Replacement -->
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h.01M14 12h.01M18 12h.01"/><path d="M6 10v4M10 10v4M14 10v4M18 10v4"/></svg>
+      </div>
+      <h3>Consumer Unit Replacement</h3>
+      <p>Upgrade your fuse board to a modern consumer unit with RCD protection. 91 upgrades completed in 2023, keeping Lancashire homes safe.</p>
+    </div>
+    <!-- 3: EICR Testing -->
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <h3>EICR Testing &amp; Reports</h3>
+      <p>Electrical Installation Condition Reports for landlords, homeowners, and businesses. Legally required for rental properties — fast turnaround.</p>
+    </div>
+    <!-- 4: Emergency Callouts -->
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h3>Emergency Callouts</h3>
+      <p>Power out? Burning smell? We respond fast to electrical emergencies across Lancashire. 192 emergency callouts handled in 2023 alone.</p>
+    </div>
+    <!-- 5: Security Lights -->
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </div>
+      <h3>Security Lights &amp; Outdoor Sockets</h3>
+      <p>Motion-activated security lighting and weatherproof outdoor sockets. Enhance your home's safety and functionality with professional installation.</p>
+    </div>
+    <!-- 6: Part P Certifications -->
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Part P Certifications</h3>
+      <p>Building regulations certification for all notifiable electrical work. Essential for home sales, insurance and compliance. Fully accredited service.</p>
+    </div>
+    <!-- 7: Fault Finding -->
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+      </div>
+      <h3>Tripping Fault Finding</h3>
+      <p>Expert diagnostics to trace the cause of tripping circuits, flickering lights and power issues. We find and fix the problem quickly, every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section testimonials" id="reviews">
+  <div class="section-header">
+    <div class="section-label">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Customer Reviews
+    </div>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-subtitle">Real reviews from real customers across Lancashire. We let our work speak for itself.</p>
+  </div>
+  <div class="testimonials-grid">
+    <!-- Review 1 -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testimonial-quote" style="padding-left:20px">
+        Electric power fitted in summerhouse. Absolutely first class work. Very professional. And also very helpful at an amazing price. I am absolutely delighted with the standard of their work. Many Thanks.
+      </div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">R</div>
+        <div>
+          <div class="testimonial-name">Richard</div>
+          <div class="testimonial-location">Blackburn</div>
+        </div>
+      </div>
+    </div>
+    <!-- Review 2 -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testimonial-quote" style="padding-left:20px">
+        Don't try elsewhere until you have contacted Baraa. Arrives on time, works hard and problem solves without fuss. Certainly knows what he is doing - can't recommend him highly enough! Great guy!
+      </div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">C</div>
+        <div>
+          <div class="testimonial-name">Colin</div>
+          <div class="testimonial-location">Lancashire</div>
+        </div>
+      </div>
+    </div>
+    <!-- Review 3 -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testimonial-quote" style="padding-left:20px">
+        We moved into our new home in March and wanted an electrician we could trust - happily, we found M65 Electricians. Communication was excellent, they were punctual, friendly and hardworking, no corners cut and unparalleled tidying up afterwards.
+      </div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">H</div>
+        <div>
+          <div class="testimonial-name">Happy Customer</div>
+          <div class="testimonial-location">Lancashire</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="section why-us" id="why-us">
+  <div class="section-header">
+    <div class="section-label">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Why Choose Us
+    </div>
+    <h2 class="section-title">The M65 Electricians Difference</h2>
+    <p class="section-subtitle">We go above and beyond to deliver the best electrical service in Lancashire.</p>
+  </div>
+  <div class="why-us-grid">
+    <!-- 1: Fast Response -->
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h3>Fast Response</h3>
+      <p>192+ emergency callouts handled in 2023. We respond quickly when you need us most.</p>
+    </div>
+    <!-- 2: Fully Qualified -->
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h3>Fully Qualified</h3>
+      <p>Part P certified and registered since 2010. Over 13 years of professional experience.</p>
+    </div>
+    <!-- 3: No Call-Out Charge -->
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20H6"/><path d="M8 20c0-8 1.6-14 6-14a4 4 0 014 4"/><path d="M6 14h8"/></svg>
+      </div>
+      <h3>No Call-Out Charge</h3>
+      <p>We never charge just to come and look. Honest, transparent pricing with no hidden fees.</p>
+    </div>
+    <!-- 4: Free Quotes -->
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h3>Free Quotes</h3>
+      <p>Get a no-obligation quote for any electrical work. We provide clear, upfront pricing every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section contact" id="contact">
+  <div class="section-header">
+    <div class="section-label">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Get In Touch
+    </div>
+    <h2 class="section-title">Contact M65 Electricians</h2>
+    <p class="section-subtitle">Ready to get started? Call us directly or fill out the form for a free, no-obligation quote.</p>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-info">
+      <h2>Let's Talk About Your Project</h2>
+      <p>Whether it's an emergency or a planned job, we're here to help. Call us directly for the fastest response, or drop us a message and we'll get back to you promptly.</p>
+      <a href="tel:07467469922" class="contact-phone">07467 469 922</a>
+      <div class="contact-buttons">
+        <a href="tel:07467469922" class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/447467469922" class="btn-secondary btn-whatsapp" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+      <div class="contact-email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@m65electricians.co.uk
+      </div>
+      <div class="contact-areas">
+        <h4>Areas We Cover</h4>
+        <p>Blackburn, Darwen, Accrington, Preston, Chorley, Burnley, Leyland, Bury, Salford, Rossendale</p>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Request a Free Quote</h3>
+      <form onsubmit="return false;">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Your phone number">
+        </div>
+        <div class="form-group">
+          <label for="service">Service Required</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <option>Full House Rewiring</option>
+            <option>Consumer Unit Replacement</option>
+            <option>EICR Testing &amp; Reports</option>
+            <option>Emergency Callout</option>
+            <option>Security Lights &amp; Outdoor Sockets</option>
+            <option>Part P Certification</option>
+            <option>Tripping Fault Finding</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Get My Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        M65 <span>Electricians</span>
+      </a>
+      <p>M65 Electricians is a local Lancashire electrical company. Our main electrician qualified in 2010 and ran several successful businesses. We carry out all of our work to the highest standards and only use the best quality materials.</p>
+    </div>
+    <div>
+      <h4>Our Services</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Full House Rewiring</a></li>
+        <li><a href="#services">Consumer Unit Replacement</a></li>
+        <li><a href="#services">EICR Testing &amp; Reports</a></li>
+        <li><a href="#services">Emergency Callouts</a></li>
+        <li><a href="#services">Security Lights &amp; Outdoor Sockets</a></li>
+        <li><a href="#services">Part P Certifications</a></li>
+        <li><a href="#services">Tripping Fault Finding</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:07467469922">07467 469 922</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:info@m65electricians.co.uk">info@m65electricians.co.uk</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Blackburn, Lancashire
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/m65electricians" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/M65electricians" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://wa.me/447467469922" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 M65 Electricians Ltd. All rights reserved.
+  </div>
+</footer>
+
+<!-- ========== FLOATING MOBILE CTA ========== -->
+<div class="floating-cta">
+  <a href="tel:07467469922" class="float-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+  <a href="https://wa.me/447467469922" class="float-whatsapp" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+</body>
+</html>
