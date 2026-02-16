@@ -121,7 +121,7 @@ export default function AgreementClient({ data }: { data: AgreementData }) {
     const signatureData = canvas.toDataURL("image/png");
 
     try {
-      const res = await fetch("https://formspree.io/f/xpwzgvbe", {
+      const res = await fetch("https://formspree.io/f/mjgewpwj", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
