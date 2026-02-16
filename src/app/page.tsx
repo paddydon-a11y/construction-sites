@@ -256,7 +256,7 @@ export default function HomePage() {
 
           <div className="mt-12">
             <p className="price-strike text-3xl font-bold text-slate-light sm:text-4xl">
-              £6,000
+              £8,000
             </p>
             <p className="hivis-glow mt-4 text-5xl font-extrabold text-hivis sm:text-6xl md:text-7xl">
               £100/month
