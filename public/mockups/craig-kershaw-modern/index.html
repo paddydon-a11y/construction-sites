@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craig Kershaw Ltd — Trusted Builders in Burnley Since 1991</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f9fafb;
+  --green: #2d6a4f;
+  --green-light: #40916c;
+  --green-pale: #e8f5ee;
+  --slate: #1e293b;
+  --text: #334155;
+  --text-muted: #64748b;
+  --white: #ffffff;
+  --whatsapp: #25D366;
+  --border: #e2e8f0;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-lg: 0 4px 20px rgba(0,0,0,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ── HEADER ───────────────────────────────────────── */
+.header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.logo {
+  font-weight: 800; font-size: 1.25rem;
+  color: var(--slate);
+  letter-spacing: -0.03em;
+}
+.logo span { color: var(--green); }
+.nav { display: flex; gap: 1.75rem; }
+.nav a {
+  font-weight: 500; font-size: 0.88rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.nav a:hover { color: var(--green); }
+.header-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--green); color: var(--white);
+  font-weight: 600; font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.header-cta:hover { background: var(--green-light); }
+.header-cta svg { width: 16px; height: 16px; }
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  padding: 5rem 0 5.5rem;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; right: -10%; top: -30%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(45,106,79,0.04) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: center;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  background: var(--green-pale);
+  color: var(--green);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25rem;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--slate);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+.hero h1 span { color: var(--green); }
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 480px;
+  line-height: 1.7;
+}
+.hero-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--green); color: var(--white);
+  font-weight: 700; font-size: 1rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(45,106,79,0.2);
+}
+.btn-primary:hover { background: var(--green-light); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(45,106,79,0.25); }
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--whatsapp); color: #fff;
+  font-weight: 700; font-size: 1rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.btn-whatsapp:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-primary svg, .btn-whatsapp svg { width: 18px; height: 18px; }
+.hero-features {
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.hero-feature {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+.hero-feature-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: var(--green-pale);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green);
+}
+.hero-feature-icon svg { width: 20px; height: 20px; }
+.hero-feature h4 { font-size: 0.9rem; font-weight: 700; color: var(--slate); margin-bottom: 0.15rem; }
+.hero-feature p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.45; }
+
+/* ── TRUST BAR ────────────────────────────────────── */
+.trust-bar {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.trust-bar-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  gap: 2.5rem; flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 0.45rem;
+  font-weight: 600; font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.trust-item svg { width: 18px; height: 18px; color: var(--green); flex-shrink: 0; }
+.trust-item .stars { display: flex; gap: 1px; }
+.trust-item .stars svg { width: 14px; height: 14px; fill: #eab308; color: #eab308; }
+
+/* ── SERVICES ─────────────────────────────────────── */
+.services { padding: 5rem 0; }
+.section-eyebrow {
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-size: 2rem; font-weight: 800;
+  color: var(--slate);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.section-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.service-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem;
+  transition: all 0.25s;
+}
+.service-card:hover {
+  border-color: var(--green);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.service-icon {
+  width: 42px; height: 42px;
+  background: var(--green-pale);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--green);
+}
+.service-icon svg { width: 22px; height: 22px; }
+.service-card h3 {
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--slate);
+  margin-bottom: 0.35rem;
+}
+.service-card p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ── ABOUT ────────────────────────────────────────── */
+.about {
+  padding: 5rem 0;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.about-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+.about-text h2 { margin-bottom: 1.25rem; }
+.about-text p { margin-bottom: 1rem; color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+.about-text p strong { color: var(--slate); }
+.about-metrics {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+}
+.metric {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.metric-num {
+  font-size: 2rem; font-weight: 800;
+  color: var(--green);
+  letter-spacing: -0.03em;
+}
+.metric-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; font-weight: 500; }
+
+/* ── TESTIMONIALS ─────────────────────────────────── */
+.testimonials { padding: 5rem 0; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.testimonial-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.testimonial-stars { display: flex; gap: 2px; margin-bottom: 0.75rem; }
+.testimonial-stars svg { width: 15px; height: 15px; fill: #eab308; color: #eab308; }
+.testimonial-quote {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.testimonial-author { font-weight: 700; font-size: 0.88rem; color: var(--slate); }
+.testimonial-job { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+/* ── WHY CHOOSE US ────────────────────────────────── */
+.why-us {
+  padding: 5rem 0;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+}
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.why-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+.why-card-icon {
+  width: 44px; height: 44px;
+  background: var(--green);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+.why-card-icon svg { width: 22px; height: 22px; }
+.why-card h3 {
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--slate);
+  margin-bottom: 0.35rem;
+}
+.why-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.5; }
+
+/* ── CONTACT ──────────────────────────────────────── */
+.contact {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.contact-inner {
+  max-width: 750px; margin: 0 auto; padding: 0 1.5rem;
+  text-align: center;
+}
+.contact-phone {
+  font-size: 2.25rem; font-weight: 800;
+  color: var(--slate);
+  margin: 1rem 0 0.2rem;
+  letter-spacing: -0.02em;
+}
+.contact-phone a { color: var(--slate); transition: color 0.2s; }
+.contact-phone a:hover { color: var(--green); }
+.contact-phone-secondary {
+  font-size: 1.05rem; color: var(--text-muted); margin-bottom: 1.5rem;
+}
+.contact-phone-secondary a { color: var(--text-muted); }
+.contact-phone-secondary a:hover { color: var(--green); }
+.contact-buttons {
+  display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.contact-form {
+  max-width: 440px; margin: 0 auto; text-align: left;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.contact-form label {
+  display: block; font-weight: 600;
+  font-size: 0.82rem; color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 0.85rem;
+  transition: border-color 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(45,106,79,0.08);
+}
+.contact-form textarea { min-height: 75px; resize: vertical; }
+.btn-submit {
+  width: 100%;
+  background: var(--green); color: var(--white);
+  font-weight: 700; font-size: 0.92rem;
+  padding: 0.75rem;
+  border: none; border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s;
+}
+.btn-submit:hover { background: var(--green-light); }
+
+/* ── AREAS ────────────────────────────────────────── */
+.areas {
+  padding: 2.5rem 0;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.areas h3 {
+  font-size: 0.95rem; color: var(--slate); margin-bottom: 0.5rem; font-weight: 700;
+}
+.areas p { color: var(--text-muted); font-size: 0.88rem; }
+
+/* ── FOOTER ───────────────────────────────────────── */
+.footer {
+  background: var(--slate);
+  padding: 3rem 0 1.5rem;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 2rem;
+}
+.footer-brand .logo { margin-bottom: 0.75rem; color: var(--white); }
+.footer-brand .logo span { color: var(--green-light); }
+.footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.85rem; line-height: 1.6; }
+.footer h4 {
+  font-weight: 700; color: var(--white); margin-bottom: 0.75rem; font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.35rem; }
+.footer-links a { color: rgba(255,255,255,0.5); font-size: 0.85rem; transition: color 0.2s; }
+.footer-links a:hover { color: var(--green-light); }
+.footer-links li:not(:has(a)) { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+.footer-bottom {
+  max-width: 1200px; margin: 2rem auto 0; padding: 1.25rem 1.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── FLOATING MOBILE CTA ──────────────────────────── */
+.floating-cta {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  z-index: 200;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+}
+.floating-cta-inner {
+  display: flex; gap: 0.6rem;
+  max-width: 480px; margin: 0 auto;
+}
+.floating-btn {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+  font-weight: 700; font-size: 0.88rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+}
+.floating-btn-call { background: var(--green); color: var(--white); }
+.floating-btn-wa { background: var(--whatsapp); color: #fff; }
+.floating-btn svg { width: 17px; height: 17px; }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-features { display: none; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-inner { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  .why-us-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .hero h1 { font-size: 2.2rem; }
+  .section-title { font-size: 1.7rem; }
+  .contact-phone { font-size: 1.85rem; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .why-us-grid { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .floating-cta { display: block; }
+  body { padding-bottom: 65px; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 3rem 0 3.5rem; }
+  .hero h1 { font-size: 1.85rem; }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons a { text-align: center; justify-content: center; }
+  .contact-phone { font-size: 1.6rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .why-us-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────── -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">Craig Kershaw <span>Ltd</span></a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:01282413851" class="header-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      01282 413 851
+    </a>
+  </div>
+</header>
+
+<!-- ── HERO ────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Established 1991 &bull; Family-Run &bull; Council Trusted</div>
+      <h1>Your Home Deserves a Builder <span>You Can Trust</span></h1>
+      <p class="hero-sub">Craig Kershaw Ltd has been building, extending, and renovating homes across Lancashire for 33 years. One contractor, one point of contact, from design to completion.</p>
+      <div class="hero-buttons">
+        <a href="tel:01282413851" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/447980113749" class="btn-whatsapp" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+    <div class="hero-features">
+      <div class="hero-feature">
+        <div class="hero-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>33 Years Experience</h4>
+          <p>Two generations of Kershaws, building trust since 1991</p>
+        </div>
+      </div>
+      <div class="hero-feature">
+        <div class="hero-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div>
+          <h4>Council Approved</h4>
+          <p>Trusted contractor for Burnley Council social housing works</p>
+        </div>
+      </div>
+      <div class="hero-feature">
+        <div class="hero-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div>
+          <h4>No Hidden Costs</h4>
+          <p>Transparent pricing — the quote is the price, no surprises</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ──────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      Highly Rated
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      33 Years Trading
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Burnley Council Trusted
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Fully Insured
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      No Hidden Costs
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICES ───────────────────────────────────── -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-eyebrow">Our Services</div>
+    <h2 class="section-title">Everything Under One Roof</h2>
+    <p class="section-desc">Full-service building from design through to completion. One team, one point of contact, every trade covered.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Extensions</h3>
+        <p>Single &amp; double storey to create the space your family needs.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg></div>
+        <h3>Windows &amp; Doors</h3>
+        <p>UPVC, aluminium, and composite — supplied and fitted.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 7v1a3 3 0 006 0V7"/><path d="M9 7v1a3 3 0 006 0V7"/><path d="M15 7v1a3 3 0 006 0V7"/><path d="M3 7l9-4 9 4"/></svg></div>
+        <h3>Roofing</h3>
+        <p>New roofs, flat roofing, repairs, and full roof replacements.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c-4.97 0-9-2.24-9-5v-4"/><path d="M12 14c-4.97 0-9-2.24-9-5s4.03-5 9-5 9 2.24 9 5"/><path d="M21 13v4c0 2.76-4.03 5-9 5"/><circle cx="17" cy="17" r="3"/></svg></div>
+        <h3>Landscaping</h3>
+        <p>Patios, driveways, fencing, and garden transformations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20"/><path d="M9 4v4"/><path d="M15 4v4"/></svg></div>
+        <h3>Joinery</h3>
+        <p>Bespoke joinery, staircases, and fitted furniture.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div>
+        <h3>Plastering</h3>
+        <p>Internal plastering, rendering, and K-Rend finishes.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Adaptations</h3>
+        <p>Disability access ramps, wet rooms, and social housing adaptations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ───────────────────────────────────────── -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <div class="section-eyebrow">About Us</div>
+      <h2 class="section-title">Built on Family Values</h2>
+      <p><strong>Craig Kershaw Ltd</strong> was founded in 1991 by Craig Kershaw, who built the company's reputation on quality work and honest pricing. Today, <strong>Brad Kershaw</strong> carries forward those same values — leading a skilled team across Lancashire and West Yorkshire.</p>
+      <p>From a kitchen extension to a full council housing contract, we bring the same care and attention to every project. That's why homeowners and Burnley Council keep coming back.</p>
+    </div>
+    <div class="about-metrics">
+      <div class="metric">
+        <div class="metric-num">33</div>
+        <div class="metric-label">Years in Business</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">1991</div>
+        <div class="metric-label">Established</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">2</div>
+        <div class="metric-label">Generations</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">7+</div>
+        <div class="metric-label">Core Services</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ───────────────────────────────── -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="section-eyebrow">Reviews</div>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-quote">"Craig and his team are highly skilled and have done some fantastic jobs around my home. Exceptional workmanship, always clean, and any issues were addressed straight away."</p>
+        <div class="testimonial-author">Margaret W.</div>
+        <div class="testimonial-job">Full Renovation, Burnley</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-quote">"Had a rear extension built and couldn't be happier. Brad kept us informed throughout, the team were tidy and professional, and the quote was spot-on with no surprises."</p>
+        <div class="testimonial-author">David &amp; Sarah T.</div>
+        <div class="testimonial-job">Extension, Nelson</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-quote">"Needed accessibility adaptations for my mother — ramps, a wet room, wider doorways. They handled it sensitively and to an excellent standard. Highly recommend."</p>
+        <div class="testimonial-author">Paul R.</div>
+        <div class="testimonial-job">Disability Adaptations, Colne</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY CHOOSE US ──────────────────────────────── -->
+<section class="why-us" id="why-us">
+  <div class="container">
+    <div class="section-eyebrow">Why Craig Kershaw</div>
+    <h2 class="section-title">Why Customers Choose Us</h2>
+    <div class="why-us-grid">
+      <div class="why-card">
+        <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3>One Contractor</h3>
+        <p>Every trade under one roof — no chasing subcontractors.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Transparent Quotes</h3>
+        <p>The price we quote is the price you pay. No hidden costs, ever.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>33 Years of Trust</h3>
+        <p>Two generations building our reputation, one happy customer at a time.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>Planning Handled</h3>
+        <p>We manage planning applications and building regs so you don't have to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-eyebrow">Contact Us</div>
+    <h2 class="section-title">Let's Discuss Your Project</h2>
+    <div class="contact-phone"><a href="tel:01282413851">01282 413 851</a></div>
+    <div class="contact-phone-secondary">or mobile: <a href="tel:07980113749">07980 113 749</a></div>
+    <div class="contact-buttons">
+      <a href="tel:01282413851" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Us Now
+      </a>
+      <a href="https://wa.me/447980113749" class="btn-whatsapp" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+    <form class="contact-form" onsubmit="return false;">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="e.g. John Smith">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. 07xxx xxx xxx">
+      <label for="message">What Do You Need?</label>
+      <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+      <button type="submit" class="btn-submit">Request a Free Quote</button>
+    </form>
+  </div>
+</section>
+
+<!-- ── AREAS ───────────────────────────────────────── -->
+<div class="areas">
+  <div class="areas-inner container">
+    <h3>Covering Lancashire &amp; West Yorkshire</h3>
+    <p>Burnley &bull; Colne &bull; Nelson &bull; Padiham &bull; Clitheroe &bull; Whalley &bull; Accrington &bull; Keighley &bull; and surrounding areas</p>
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Craig Kershaw <span>Ltd</span></div>
+      <p>Burnley's trusted building contractor since 1991. Quality workmanship, transparent pricing, and a reputation built on doing things right.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Extensions</a></li>
+        <li><a href="#services">Windows &amp; Doors</a></li>
+        <li><a href="#services">Roofing</a></li>
+        <li><a href="#services">Landscaping</a></li>
+        <li><a href="#services">Joinery</a></li>
+        <li><a href="#services">Plastering</a></li>
+        <li><a href="#services">Adaptations</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Areas</h4>
+      <ul class="footer-links">
+        <li>Burnley</li>
+        <li>Colne &amp; Nelson</li>
+        <li>Clitheroe &amp; Whalley</li>
+        <li>Accrington</li>
+        <li>Padiham</li>
+        <li>Keighley</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="tel:01282413851">01282 413 851</a></li>
+        <li><a href="tel:07980113749">07980 113 749</a></li>
+        <li><a href="mailto:enquiries@craigkershawltd.co.uk">enquiries@craigkershawltd.co.uk</a></li>
+        <li>27 Applecross Drive</li>
+        <li>Burnley, BB10 4JP</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Craig Kershaw Ltd. All rights reserved.
+  </div>
+</footer>
+
+<!-- ── FLOATING MOBILE CTA ────────────────────────── -->
+<div class="floating-cta">
+  <div class="floating-cta-inner">
+    <a href="tel:01282413851" class="floating-btn floating-btn-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Now
+    </a>
+    <a href="https://wa.me/447980113749" class="floating-btn floating-btn-wa" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
