@@ -1437,6 +1437,15 @@ img { max-width: 100%; display: block; }
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   border-top: 1px solid var(--border);
   padding: 0.8rem 1rem;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+.floating-cta.shown {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-cta-inner {
@@ -1597,7 +1606,7 @@ img { max-width: 100%; display: block; }
       </div>
       <h1>Manchester's Trusted<br>Electricians<br><span class="highlight">Since 2008</span></h1>
       <p class="hero-sub"><strong>NICEIC approved.</strong> 18 years of experience. <strong>Over 5,000 jobs completed.</strong> From full rewires to EV charger installations &mdash; Manchester trusts Sparks Electrical for fast, certified and affordable electrical work.</p>
-      <div class="hero-buttons">
+      <div class="hero-buttons" id="hero-cta">
         <a href="tel:01614960328" class="btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
           Call Now
@@ -1616,7 +1625,7 @@ img { max-width: 100%; display: block; }
           <div class="stat-label">Years Experience</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">5<span class="accent">.0</span></div>
+          <div class="stat-number">5.0</div>
           <div class="stat-label">Star Rating</div>
         </div>
         <div class="stat-divider"></div>
@@ -1625,7 +1634,7 @@ img { max-width: 100%; display: block; }
           <div class="stat-label">Jobs Completed</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">100<span class="cta-accent">%</span></div>
+          <div class="stat-number">100<span class="accent">%</span></div>
           <div class="stat-label">Guaranteed</div>
         </div>
       </div>
@@ -2031,5 +2040,22 @@ img { max-width: 100%; display: block; }
   </div>
 </div>
 
+<script>
+(function(){
+  var cta = document.getElementById('hero-cta');
+  var bar = document.querySelector('.floating-cta');
+  if (!cta || !bar) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        bar.classList.remove('shown');
+      } else {
+        bar.classList.add('shown');
+      }
+    });
+  }, { threshold: 0 });
+  observer.observe(cta);
+})();
+</script>
 </body>
 </html>
