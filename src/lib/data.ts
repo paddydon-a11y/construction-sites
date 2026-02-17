@@ -82,7 +82,7 @@ export const testimonials: Testimonial[] = [
     name: "Pete, AquaFlow Plumbing",
     trade: "Plumbing & Heating",
     location: "Leeds",
-    text: "We paid a guy four grand for our last website a few years back and it was nowhere near this level. Proper professionals. More enquiries than ever and the site actually looks like a real business now.",
+    text: "I was quoted £3k plus a yearly retainer for what looked like a template. Construction Sites are the only sensible people in the industry who understand us.",
     rating: 5,
   },
   {
