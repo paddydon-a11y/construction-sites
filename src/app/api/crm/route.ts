@@ -25,6 +25,7 @@ interface Lead {
   agreementSlug: string;
   gocardlessLink: string;
   monthlyFee: number;
+  source: string;
   statusHistory: { status: string; date: string }[];
 }
 
@@ -60,6 +61,7 @@ export async function POST(req: NextRequest) {
     mockupLinks: ["", "", ""],
     agreementSlug: "",
     gocardlessLink: "",
+    source: body.source || "",
     monthlyFee: 100,
     statusHistory: [{ status: "new", date: now }],
   };

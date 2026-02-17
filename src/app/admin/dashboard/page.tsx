@@ -19,6 +19,7 @@ interface Lead {
   agreementSlug: string;
   gocardlessLink: string;
   monthlyFee: number;
+  source: string;
   statusHistory: { status: string; date: string }[];
 }
 
@@ -167,11 +168,38 @@ function LeadCard({
       {lead.contactName && (
         <div className="text-xs text-[#94a3b8] mt-1">{lead.contactName}</div>
       )}
-      {lead.trade && (
-        <div className="inline-block text-xs bg-[#1a1a2e] text-[#f59e0b] px-2 py-0.5 rounded mt-1.5">
-          {lead.trade}
-        </div>
-      )}
+      <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+        {lead.trade && (
+          <span className="inline-block text-xs bg-[#1a1a2e] text-[#f59e0b] px-2 py-0.5 rounded">
+            {lead.trade}
+          </span>
+        )}
+        {lead.source && (
+          <span
+            className="inline-block text-xs px-2 py-0.5 rounded"
+            style={{
+              backgroundColor:
+                lead.source === "Google"
+                  ? "#1d4ed820"
+                  : lead.source === "TikTok"
+                  ? "#ec489920"
+                  : lead.source === "Referral"
+                  ? "#10b98120"
+                  : "#94a3b820",
+              color:
+                lead.source === "Google"
+                  ? "#60a5fa"
+                  : lead.source === "TikTok"
+                  ? "#f472b6"
+                  : lead.source === "Referral"
+                  ? "#34d399"
+                  : "#94a3b8",
+            }}
+          >
+            {lead.source}
+          </span>
+        )}
+      </div>
       <div className="flex items-center justify-between mt-2">
         {lead.phone && (
           <div className="text-xs text-[#94a3b8]">{lead.phone}</div>
@@ -264,6 +292,7 @@ function AddLeadModal({
     email: "",
     trade: "",
     website: "",
+    source: "Referral",
   });
 
   const set = (field: string, value: string) =>
@@ -308,6 +337,19 @@ function AddLeadModal({
               />
             </div>
           ))}
+          <div>
+            <label className="text-xs text-[#94a3b8] mb-1 block">Source</label>
+            <select
+              value={form.source}
+              onChange={(e) => set("source", e.target.value)}
+              className="w-full px-3 py-2 bg-[#0f0f1a] border border-[#2a2a4a] rounded text-white text-sm outline-none focus:border-[#f59e0b]"
+            >
+              <option value="Referral">Referral</option>
+              <option value="Google">Google</option>
+              <option value="TikTok">TikTok</option>
+              <option value="Website">Website</option>
+            </select>
+          </div>
         </div>
         <div className="flex gap-3 mt-5">
           <button
@@ -498,6 +540,10 @@ function LeadDetail({
                 <div className="text-white">
                   {new Date(lead.dateAdded).toLocaleDateString("en-GB")}
                 </div>
+              </div>
+              <div>
+                <div className="text-[#94a3b8] text-xs">Source</div>
+                <div className="text-white">{lead.source || "—"}</div>
               </div>
               <div>
                 <div className="text-[#94a3b8] text-xs">Monthly Fee</div>
