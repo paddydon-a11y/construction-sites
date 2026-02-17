@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Barlow, Barlow_Condensed, Barlow_Semi_Condensed } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -161,15 +162,16 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${barlow.className} ${barlow.variable} ${barlowCondensed.variable} ${barlowSemiCondensed.variable}`}>
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-17958918628');`,
-          }}
-        />
+  gtag('config', 'AW-17958918628');`}
+        </Script>
         <meta name="google-site-verification" content="XxT71Eqhp8-mMvRdME2D6yJS9Uw8YcND9GrlK2-M2Ps" />
         <script
           dangerouslySetInnerHTML={{
