@@ -33,6 +33,12 @@ export default function ContactPage() {
 
       if (res.ok) {
         setStatus("success");
+        // Send to CRM
+        fetch("/api/webhook", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, _source: "website-contact" }),
+        }).catch(() => {});
       } else {
         setStatus("error");
       }

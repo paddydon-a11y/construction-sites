@@ -32,27 +32,30 @@ interface Lead {
 function detectSource(formSource: string): string {
   if (formSource === "google-ads-get-started") return "Google";
   if (formSource === "tiktok-free-mockups") return "TikTok";
+  if (formSource === "website-contact") return "Website";
   return "Website";
 }
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
 
-  // Formspree sends form fields directly in the JSON body
   const source = detectSource(body._source || "");
   const now = new Date().toISOString();
+
+  // Contact form sends "project" field — save it as notes
+  const notes = body.project ? `Project details: ${body.project}` : "";
 
   const lead: Lead = {
     id: crypto.randomUUID(),
     businessName: body.business || "",
     contactName: body.name || "",
     phone: body.phone || "",
-    email: body.email || body._replyto || "",
+    email: body.email || "",
     trade: body.trade || "",
     website: body.website || "",
     status: "new",
     dateAdded: now,
-    notes: "",
+    notes,
     mockupLinks: ["", "", ""],
     agreementSlug: "",
     gocardlessLink: "",

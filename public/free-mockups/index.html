@@ -522,6 +522,12 @@ document.getElementById('mockup-form').addEventListener('submit', function(e) {
         ttq.track('SubmitForm', { content_name: 'Free Mockups', content_type: 'lead' });
         ttq.track('CompleteRegistration', { content_name: 'Free Mockups' });
       }
+      // Send to CRM
+      fetch('/api/webhook', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+      }).catch(function() {});
     } else {
       r.json().then(function(d) { console.error('Formspree error:', d); });
       btn.textContent = 'Something went wrong — try again';
