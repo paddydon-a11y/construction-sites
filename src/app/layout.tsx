@@ -161,6 +161,15 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${barlow.className} ${barlow.variable} ${barlowCondensed.variable} ${barlowSemiCondensed.variable}`}>
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');`,
+          }}
+        />
         <meta name="google-site-verification" content="XxT71Eqhp8-mMvRdME2D6yJS9Uw8YcND9GrlK2-M2Ps" />
         <script
           dangerouslySetInnerHTML={{
