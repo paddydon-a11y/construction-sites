@@ -397,6 +397,33 @@ function LeadDetail({
   const notesTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const [confirmDelete, setConfirmDelete] = useState(false);
 
+  // Auto-detect mockups on load
+  useEffect(() => {
+    const slug = lead.businessName
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+    if (!slug) return;
+
+    fetch(`/api/check-mockups?slug=${slug}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (!data.mockups?.length) return;
+        const current = lead.mockupLinks || ["", "", ""];
+        // Only fill empty slots
+        const hasManualLinks = current.some((l: string) => l !== "");
+        if (hasManualLinks) return;
+        // Pad to 3 slots
+        const filled = [...data.mockups.slice(0, 3)];
+        while (filled.length < 3) filled.push("");
+        setMockupLinks(filled);
+        onUpdate({ id: lead.id, mockupLinks: filled } as Partial<Lead>);
+      })
+      .catch(() => {});
+    // Only run on mount (lead open)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lead.id]);
+
   // Auto-save notes
   const saveNotes = useCallback(
     (val: string) => {
