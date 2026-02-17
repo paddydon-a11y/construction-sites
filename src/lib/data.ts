@@ -108,8 +108,8 @@ export interface FAQ {
 
 export const faqs: FAQ[] = [
   {
-    question: "What if I don't renew after 12 months?",
-    answer: "No dramas. If you stop paying, we take the site down. No penalties, no exit fees, no hard feelings. We'll even give you your content if you want to go elsewhere. But honestly? Nobody leaves.",
+    question: "How can it only be £100 a month?",
+    answer: "Yes, we know agencies charge thousands plus monthly fees for hosting and SSL. We play the long game so we're invested in your success.",
   },
   {
     question: "Can I make changes to my site?",
