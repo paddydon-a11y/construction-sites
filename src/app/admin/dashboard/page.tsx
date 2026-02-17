@@ -27,7 +27,7 @@ interface Lead {
 const COLUMNS = [
   { id: "new", label: "New Lead", color: "#3b82f6" },
   { id: "mockups-sent", label: "Mockups Sent", color: "#8b5cf6" },
-  { id: "interested", label: "Interested", color: "#f59e0b" },
+  { id: "interested", label: "Sales Called", color: "#f59e0b" },
   { id: "agreement-sent", label: "Agreement Sent", color: "#f97316" },
   { id: "signed", label: "Signed", color: "#10b981" },
   { id: "live", label: "Live", color: "#22c55e" },
