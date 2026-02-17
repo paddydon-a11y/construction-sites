@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3 Free Website Designs for Your Trade Business | Construction Sites</title>
+<title>Stop Losing Good Jobs to Cowboys with Better Websites | Construction Sites</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="We'll build you 3 custom website mockups for free. Send us your details and we'll have them ready within 24 hours. No catch.">
+<meta name="description" content="Tired of chasing payments and dealing with time-wasters? A proper website brings better clients, bigger jobs, and gets you paid on time. 3 free designs — no catch.">
 <link rel="icon" href="/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://construction-sites.co.uk/free-mockups/">
-<meta property="og:title" content="3 Free Website Designs for Your Trade Business">
-<meta property="og:description" content="Send us your details and we'll have 3 custom mockups ready within 24 hours. No catch.">
+<meta property="og:title" content="Stop Losing Good Jobs to Cowboys with Better Websites">
+<meta property="og:description" content="We'll build you 3 custom website designs for free. Better clients, bigger jobs, getting paid on time. No catch.">
 <meta property="og:image" content="https://construction-sites.co.uk/og-image.png">
 <meta property="og:locale" content="en_GB">
 <!-- TikTok Pixel Code Start -->
@@ -32,12 +32,14 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 :root {
   --bg: #0f0f1a;
   --card: #1a1a2e;
+  --navy: #16213e;
   --hivis: #f59e0b;
   --hivis-bright: #fbbf24;
   --white: #ffffff;
   --text: #94a3b8;
   --border: rgba(245,158,11,0.15);
   --radius: 12px;
+  --red: #ef4444;
 }
 
 html { scroll-behavior: smooth; }
@@ -99,7 +101,7 @@ body {
 .hero h1 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 800;
-  font-size: clamp(1.75rem, 6vw, 2.4rem);
+  font-size: clamp(1.65rem, 6vw, 2.3rem);
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1.15;
@@ -119,15 +121,63 @@ body {
   margin: 0 auto;
 }
 
-/* ── Trust points ── */
-.trust {
+/* ── Pain section ── */
+.pain {
+  padding: 0 0 2rem;
+}
+
+.pain-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--red);
+}
+
+.pain-block {
+  background: var(--card);
+  border-left: 3px solid var(--red);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ── Solution section ── */
+.solution {
+  padding: 0 0 2rem;
+}
+
+.solution-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--hivis);
+}
+
+.solution p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+}
+
+/* ── What you get ── */
+.benefits {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding: 1.25rem 0 2rem;
+  padding: 0 0 2rem;
 }
 
-.trust-item {
+.benefit-item {
   display: flex;
   align-items: center;
   gap: 0.85rem;
@@ -137,7 +187,7 @@ body {
   border: 1px solid var(--border);
 }
 
-.trust-icon {
+.benefit-icon {
   width: 40px;
   height: 40px;
   border-radius: 10px;
@@ -148,25 +198,51 @@ body {
   flex-shrink: 0;
 }
 
-.trust-icon svg {
+.benefit-icon svg {
   width: 20px;
   height: 20px;
   color: var(--hivis);
 }
 
-.trust-text {
+.benefit-text {
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--white);
   line-height: 1.35;
 }
 
-.trust-text span {
+.benefit-text span {
   display: block;
   font-weight: 400;
   font-size: 0.82rem;
   color: var(--text);
   margin-top: 0.1rem;
+}
+
+/* ── Offer section ── */
+.offer {
+  text-align: center;
+  padding: 0 0 1.25rem;
+}
+
+.offer h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.3rem, 5vw, 1.7rem);
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.offer h2 span {
+  color: var(--hivis);
+}
+
+.offer p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.55;
 }
 
 /* ── Form ── */
@@ -307,53 +383,19 @@ body {
   fill: var(--hivis);
 }
 
-.social-proof-text {
+/* ── Bottom line ── */
+.bottom-line {
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+
+.bottom-line p {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--white);
-}
-
-/* ── Confirmation state ── */
-.form-card.submitted .form-inner { display: none; }
-.form-card .confirmation { display: none; }
-.form-card.submitted .confirmation {
-  display: block;
-  text-align: center;
-  padding: 2rem 0;
-}
-
-.confirmation-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(245,158,11,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.25rem;
-}
-
-.confirmation-icon svg {
-  width: 32px;
-  height: 32px;
-  color: var(--hivis);
-}
-
-.confirmation h3 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 1.35rem;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
-
-.confirmation p {
-  font-size: 0.95rem;
   color: var(--text);
-  line-height: 1.5;
 }
 
 /* ── Bottom tape ── */
@@ -377,47 +419,91 @@ body {
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <h1>We'll Build You 3 Custom Website Designs<br><span>Free. No Catch.</span></h1>
-    <p>Send us your details and we'll have 3 custom website designs sent to you within 24 hours. If you like one, we'll build the real thing. If not, no worries.</p>
+    <h1>Tired of Chasing Payments and Dealing with <span>Time-Wasters?</span></h1>
+    <p>Most tradesmen put up with nightmare clients because they take whatever work comes their way. A proper online presence means better clients, bigger jobs, and getting paid on time.</p>
   </div>
 </section>
 
-<!-- Trust points -->
-<section class="trust">
+<!-- Pain section -->
+<section class="pain">
+  <div class="container">
+    <div class="pain-title">Sound Familiar?</div>
+    <div class="pain-block">
+      You quote a job, do the work, and then spend weeks chasing payment. The clients who haggle on price are the same ones who pay late.
+    </div>
+    <div class="pain-block">
+      You rely on word of mouth or Checkatrade and take whatever comes through the door. Half the leads are tyre-kickers who waste your time.
+    </div>
+    <div class="pain-block">
+      You know your work is quality but your online presence doesn't show it. Meanwhile the cowboy down the road with a flashy website is winning the good jobs.
+    </div>
+  </div>
+</section>
+
+<!-- Solution section -->
+<section class="solution">
+  <div class="container">
+    <div class="solution-title">What If the Right Clients Came to You?</div>
+    <p>A proper website changes who finds you. Homeowners doing their research, commercial clients, property managers &mdash; the ones who pay on time and don't mess you about.</p>
+    <p>Construction Sites builds websites for tradesmen that actually bring in work. Not a template. Not a DIY drag-and-drop disaster. A proper, professional site built for your trade.</p>
+  </div>
+</section>
+
+<!-- What you get -->
+<section class="benefits">
   <div class="container" style="display:flex;flex-direction:column;gap:0.75rem;">
-    <div class="trust-item">
-      <div class="trust-icon">
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+      </div>
+      <div class="benefit-text">
+        Custom-designed for your trade
+        <span>Not a template. Built around what you actually do.</span>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+      </div>
+      <div class="benefit-text">
+        Click-to-call and WhatsApp on every page
+        <span>One tap and they're hiring you.</span>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </div>
+      <div class="benefit-text">
+        Shows up on Google in your area
+        <span>When someone searches your trade near you, you're there.</span>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M18 20H6"/><path d="M8 20c0-8 1.6-14 6-14a4 4 0 014 4"/><path d="M6 14h8"/>
         </svg>
       </div>
-      <div class="trust-text">
-        &pound;0 upfront &mdash; we build your mockups for free
-        <span>See 3 real designs before you spend a penny</span>
+      <div class="benefit-text">
+        &pound;0 upfront. &pound;100/month. Cancel anytime.
+        <span>No contracts, no setup fees, no nonsense.</span>
       </div>
     </div>
-    <div class="trust-item">
-      <div class="trust-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
-        </svg>
-      </div>
-      <div class="trust-text">
-        &pound;100/month covers everything
-        <span>Build, hosting, edits, support, SEO &mdash; all included</span>
-      </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-        </svg>
-      </div>
-      <div class="trust-text">
-        Live within 7 days of saying yes
-        <span>Fast turnaround, no messing about</span>
-      </div>
-    </div>
+  </div>
+</section>
+
+<!-- Offer -->
+<section class="offer">
+  <div class="container">
+    <h2>We'll Build You 3 Free Website Designs &mdash; <span>No Catch</span></h2>
+    <p>Tell us your trade and your area. We'll send you 3 custom mockup designs within 24 hours. If you like one, we build the real thing. If not, no hard feelings.</p>
   </div>
 </section>
 
@@ -426,7 +512,7 @@ body {
   <div class="container">
     <div class="form-card" id="form-card">
       <div class="form-inner">
-        <div class="form-title">Get Your Free Mockups</div>
+        <div class="form-title">Send Me My Free Mockups</div>
         <form id="mockup-form" action="https://formspree.io/f/mjgewpwj" method="POST">
           <input type="hidden" name="_source" value="tiktok-free-mockups">
           <div class="field">
@@ -465,17 +551,8 @@ body {
             <input type="text" id="website" name="website" placeholder="e.g. www.yoursite.co.uk">
             <div class="field-helper">Don't have one? No problem &mdash; leave this blank.</div>
           </div>
-          <button type="submit" class="submit-btn">Get My Free Mockups</button>
+          <button type="submit" class="submit-btn">Send Me My Free Mockups</button>
         </form>
-      </div>
-      <div class="confirmation">
-        <div class="confirmation-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-        </div>
-        <h3>Nice one &mdash; your 3 mockups are on the way.</h3>
-        <p>We'll be in touch within 24 hours via WhatsApp or email with your custom designs.</p>
       </div>
     </div>
     <p class="disclaimer">We'll send your 3 designs via WhatsApp or email within 24 hours.<br>No spam, no sales calls unless you want us to.</p>
@@ -492,7 +569,14 @@ body {
       <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
     </div>
-    <div class="social-proof-label">Trusted by 2,000+ trade businesses across the UK</div>
+    <div class="social-proof-label">Trusted by trade businesses across the UK</div>
+  </div>
+</section>
+
+<!-- Bottom line -->
+<section class="bottom-line">
+  <div class="container">
+    <p>Built for tradesmen, by people who understand the trades.</p>
   </div>
 </section>
 
@@ -505,7 +589,6 @@ body {
 document.getElementById('mockup-form').addEventListener('submit', function(e) {
   e.preventDefault();
   var form = this;
-  var card = document.getElementById('form-card');
   var btn = form.querySelector('.submit-btn');
   btn.textContent = 'Sending...';
   btn.disabled = true;
@@ -517,7 +600,6 @@ document.getElementById('mockup-form').addEventListener('submit', function(e) {
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
   }).then(function(r) {
     if (r.ok) {
-      card.classList.add('submitted');
       if (window.ttq) {
         ttq.track('SubmitForm', { content_name: 'Free Mockups', content_type: 'lead' });
         ttq.track('CompleteRegistration', { content_name: 'Free Mockups' });
@@ -528,6 +610,7 @@ document.getElementById('mockup-form').addEventListener('submit', function(e) {
         body: JSON.stringify(data),
         headers: { 'Content-Type': 'application/json' }
       }).catch(function() {});
+      window.location.href = '/free-mockups/thank-you/';
     } else {
       r.json().then(function(d) { console.error('Formspree error:', d); });
       btn.textContent = 'Something went wrong — try again';
