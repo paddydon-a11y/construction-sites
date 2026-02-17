@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { Redis } from "@upstash/redis";
 
 export const dynamic = "force-dynamic";
 
-const DATA_PATH = path.join(process.cwd(), "data", "crm.json");
+const redis = new Redis({
+  url: process.env.KV_REST_API_URL!,
+  token: process.env.KV_REST_API_TOKEN!,
+});
+
+const LEADS_KEY = "crm:leads";
 
 interface Lead {
   id: string;
@@ -24,30 +28,23 @@ interface Lead {
   statusHistory: { status: string; date: string }[];
 }
 
-interface CRMData {
-  leads: Lead[];
+async function getLeads(): Promise<Lead[]> {
+  const data = await redis.get<Lead[]>(LEADS_KEY);
+  return data || [];
 }
 
-function readData(): CRMData {
-  try {
-    const raw = fs.readFileSync(DATA_PATH, "utf-8");
-    return JSON.parse(raw);
-  } catch {
-    return { leads: [] };
-  }
-}
-
-function writeData(data: CRMData) {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2));
+async function setLeads(leads: Lead[]) {
+  await redis.set(LEADS_KEY, leads);
 }
 
 export async function GET() {
-  return NextResponse.json(readData());
+  const leads = await getLeads();
+  return NextResponse.json({ leads });
 }
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const data = readData();
+  const leads = await getLeads();
   const now = new Date().toISOString();
   const lead: Lead = {
     id: crypto.randomUUID(),
@@ -66,20 +63,20 @@ export async function POST(req: NextRequest) {
     monthlyFee: 100,
     statusHistory: [{ status: "new", date: now }],
   };
-  data.leads.push(lead);
-  writeData(data);
+  leads.push(lead);
+  await setLeads(leads);
   return NextResponse.json(lead);
 }
 
 export async function PUT(req: NextRequest) {
   const body = await req.json();
-  const data = readData();
-  const index = data.leads.findIndex((l) => l.id === body.id);
+  const leads = await getLeads();
+  const index = leads.findIndex((l) => l.id === body.id);
   if (index === -1) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  const existing = data.leads[index];
+  const existing = leads[index];
 
   // Track status change
   if (body.status && body.status !== existing.status) {
@@ -90,15 +87,15 @@ export async function PUT(req: NextRequest) {
     });
   }
 
-  data.leads[index] = { ...existing, ...body };
-  writeData(data);
-  return NextResponse.json(data.leads[index]);
+  leads[index] = { ...existing, ...body };
+  await setLeads(leads);
+  return NextResponse.json(leads[index]);
 }
 
 export async function DELETE(req: NextRequest) {
   const { id } = await req.json();
-  const data = readData();
-  data.leads = data.leads.filter((l) => l.id !== id);
-  writeData(data);
+  const leads = await getLeads();
+  const filtered = leads.filter((l) => l.id !== id);
+  await setLeads(filtered);
   return NextResponse.json({ success: true });
 }
