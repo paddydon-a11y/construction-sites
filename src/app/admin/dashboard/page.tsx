@@ -377,11 +377,13 @@ function LeadDetail({
   lead,
   onUpdate,
   onClose,
+  onMarkCold,
   onDelete,
 }: {
   lead: Lead;
   onUpdate: (data: Partial<Lead>) => void;
   onClose: () => void;
+  onMarkCold: () => void;
   onDelete: () => void;
 }) {
   const [notes, setNotes] = useState(lead.notes || "");
@@ -438,10 +440,14 @@ function LeadDetail({
   };
 
   const statusLabel = (status: string) =>
-    COLUMNS.find((c) => c.id === status)?.label || status;
+    status === "cold"
+      ? "Cold Lead"
+      : COLUMNS.find((c) => c.id === status)?.label || status;
 
   const statusColor = (status: string) =>
-    COLUMNS.find((c) => c.id === status)?.color || "#94a3b8";
+    status === "cold"
+      ? "#64748b"
+      : COLUMNS.find((c) => c.id === status)?.color || "#94a3b8";
 
   return (
     <div
@@ -686,35 +692,154 @@ function LeadDetail({
             </div>
           </section>
 
-          {/* Delete */}
-          <section className="border-t border-[#2a2a4a] pt-4">
+          {/* Actions */}
+          <section className="border-t border-[#2a2a4a] pt-4 flex flex-col gap-3">
+            {lead.status === "cold" ? (
+              <button
+                onClick={() =>
+                  onUpdate({ id: lead.id, status: "new" } as Partial<Lead>)
+                }
+                className="w-full py-2.5 bg-[#3b82f6] text-white font-semibold rounded hover:bg-[#2563eb] transition-colors text-sm"
+              >
+                Reactivate Lead
+              </button>
+            ) : (
+              <button
+                onClick={onMarkCold}
+                className="w-full py-2.5 bg-[#334155] text-[#94a3b8] font-semibold rounded hover:bg-[#475569] hover:text-white transition-colors text-sm"
+              >
+                Mark as Cold
+              </button>
+            )}
             {!confirmDelete ? (
               <button
                 onClick={() => setConfirmDelete(true)}
-                className="text-sm text-red-400 hover:text-red-300"
+                className="w-full py-2.5 border border-red-500/30 text-red-400 rounded hover:bg-red-500/10 transition-colors text-sm"
               >
-                Delete lead...
+                Delete Lead
               </button>
             ) : (
-              <div className="flex items-center gap-3">
-                <span className="text-sm text-red-400">Are you sure?</span>
-                <button
-                  onClick={onDelete}
-                  className="text-sm px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
-                >
-                  Delete
-                </button>
-                <button
-                  onClick={() => setConfirmDelete(false)}
-                  className="text-sm text-[#94a3b8] hover:text-white"
-                >
-                  Cancel
-                </button>
+              <div className="bg-[#0f0f1a] border border-red-500/30 rounded p-3">
+                <p className="text-sm text-red-400 mb-3">
+                  Are you sure? This cannot be undone.
+                </p>
+                <div className="flex gap-2">
+                  <button
+                    onClick={onDelete}
+                    className="flex-1 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-600 transition-colors text-sm"
+                  >
+                    Delete Forever
+                  </button>
+                  <button
+                    onClick={() => setConfirmDelete(false)}
+                    className="flex-1 py-2 border border-[#2a2a4a] text-[#94a3b8] rounded hover:bg-[#2a2a4a] transition-colors text-sm"
+                  >
+                    Cancel
+                  </button>
+                </div>
               </div>
             )}
           </section>
         </div>
       </div>
+    </div>
+  );
+}
+
+// ─── Cold Leads Table ────────────────────────────────────────────────────────
+
+function ColdLeadsTable({
+  leads,
+  onReactivate,
+  onCardClick,
+}: {
+  leads: Lead[];
+  onReactivate: (id: string) => void;
+  onCardClick: (lead: Lead) => void;
+}) {
+  if (leads.length === 0) {
+    return (
+      <div className="flex items-center justify-center flex-1 text-[#94a3b8] py-20">
+        No cold leads
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex-1 overflow-auto p-4">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="text-left text-xs text-[#94a3b8] uppercase tracking-wider border-b border-[#2a2a4a]">
+            <th className="pb-3 pr-4 font-semibold">Business</th>
+            <th className="pb-3 pr-4 font-semibold">Contact</th>
+            <th className="pb-3 pr-4 font-semibold">Phone</th>
+            <th className="pb-3 pr-4 font-semibold">Trade</th>
+            <th className="pb-3 pr-4 font-semibold">Date Added</th>
+            <th className="pb-3 pr-4 font-semibold">Date Marked Cold</th>
+            <th className="pb-3 font-semibold"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {leads.map((lead) => {
+            const coldEntry = [...(lead.statusHistory || [])]
+              .reverse()
+              .find((h) => h.status === "cold");
+            return (
+              <tr
+                key={lead.id}
+                className="border-b border-[#2a2a4a]/50 hover:bg-[#1a1a2e]/50 cursor-pointer"
+                onClick={() => onCardClick(lead)}
+              >
+                <td className="py-3 pr-4 text-white font-medium">
+                  {lead.businessName || "Untitled"}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {lead.contactName || "—"}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {lead.phone || "—"}
+                </td>
+                <td className="py-3 pr-4">
+                  {lead.trade ? (
+                    <span className="text-xs bg-[#1a1a2e] text-[#f59e0b] px-2 py-0.5 rounded">
+                      {lead.trade}
+                    </span>
+                  ) : (
+                    <span className="text-[#94a3b8]">—</span>
+                  )}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {new Date(lead.dateAdded).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {coldEntry
+                    ? new Date(coldEntry.date).toLocaleDateString("en-GB", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })
+                    : "—"}
+                </td>
+                <td className="py-3">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onReactivate(lead.id);
+                    }}
+                    className="px-3 py-1.5 bg-[#3b82f6] text-white rounded hover:bg-[#2563eb] transition-colors text-xs font-semibold"
+                  >
+                    Reactivate
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
@@ -727,6 +852,7 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [view, setView] = useState<"pipeline" | "cold">("pipeline");
 
   // Check auth on mount
   useEffect(() => {
@@ -751,6 +877,10 @@ export default function DashboardPage() {
     if (authed) fetchLeads();
   }, [authed, fetchLeads]);
 
+  // Active leads (not cold) for pipeline & stats
+  const activeLeads = leads.filter((l) => l.status !== "cold");
+  const coldLeads = leads.filter((l) => l.status === "cold");
+
   // CRUD operations
   const addLead = async (data: Partial<Lead>) => {
     const lead = await api("POST", data);
@@ -761,7 +891,6 @@ export default function DashboardPage() {
   const updateLead = async (data: Partial<Lead>) => {
     const updated = await api("PUT", data);
     setLeads((prev) => prev.map((l) => (l.id === updated.id ? updated : l)));
-    // Update selected lead if open
     if (selectedLead?.id === updated.id) {
       setSelectedLead(updated);
     }
@@ -771,6 +900,15 @@ export default function DashboardPage() {
     await api("DELETE", { id });
     setLeads((prev) => prev.filter((l) => l.id !== id));
     setSelectedLead(null);
+  };
+
+  const markCold = async (id: string) => {
+    await updateLead({ id, status: "cold" } as Partial<Lead>);
+    setSelectedLead(null);
+  };
+
+  const reactivateLead = async (id: string) => {
+    await updateLead({ id, status: "new" } as Partial<Lead>);
   };
 
   const moveLead = (leadId: string, newStatus: string) => {
@@ -792,6 +930,29 @@ export default function DashboardPage() {
           <h1 className="text-lg font-bold text-white">
             <span className="text-[#f59e0b]">CS</span> CRM
           </h1>
+          {/* View toggle */}
+          <div className="flex items-center bg-[#0f0f1a] rounded overflow-hidden border border-[#2a2a4a] ml-2">
+            <button
+              onClick={() => setView("pipeline")}
+              className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                view === "pipeline"
+                  ? "bg-[#f59e0b] text-black"
+                  : "text-[#94a3b8] hover:text-white"
+              }`}
+            >
+              Pipeline
+            </button>
+            <button
+              onClick={() => setView("cold")}
+              className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                view === "cold"
+                  ? "bg-[#64748b] text-white"
+                  : "text-[#94a3b8] hover:text-white"
+              }`}
+            >
+              Cold Leads{coldLeads.length > 0 && ` (${coldLeads.length})`}
+            </button>
+          </div>
         </div>
         <div className="flex items-center gap-3">
           <button
@@ -812,28 +973,34 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Stats */}
-      <StatsBar leads={leads} />
+      {/* Stats (only for pipeline view, only active leads) */}
+      {view === "pipeline" && <StatsBar leads={activeLeads} />}
 
-      {/* Kanban board */}
+      {/* Main content */}
       {loading ? (
         <div className="flex items-center justify-center flex-1 text-[#94a3b8]">
           Loading...
         </div>
-      ) : (
+      ) : view === "pipeline" ? (
         <div className="flex-1 overflow-x-auto p-4">
           <div className="flex gap-3 h-full min-h-[calc(100vh-200px)]">
             {COLUMNS.map((col) => (
               <KanbanColumn
                 key={col.id}
                 column={col}
-                leads={leads.filter((l) => l.status === col.id)}
+                leads={activeLeads.filter((l) => l.status === col.id)}
                 onDrop={moveLead}
                 onCardClick={setSelectedLead}
               />
             ))}
           </div>
         </div>
+      ) : (
+        <ColdLeadsTable
+          leads={coldLeads}
+          onReactivate={reactivateLead}
+          onCardClick={setSelectedLead}
+        />
       )}
 
       {/* Lead detail panel */}
@@ -842,6 +1009,7 @@ export default function DashboardPage() {
           lead={selectedLead}
           onUpdate={updateLead}
           onClose={() => setSelectedLead(null)}
+          onMarkCold={() => markCold(selectedLead.id)}
           onDelete={() => deleteLead(selectedLead.id)}
         />
       )}
