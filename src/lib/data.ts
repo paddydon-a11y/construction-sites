@@ -112,6 +112,10 @@ export const faqs: FAQ[] = [
     answer: "Yes, we know agencies charge thousands plus monthly fees for hosting and SSL. We play the long game so we're invested in your success. We're so confident you'll win work and love it that you'll continue to pay for it. If you don't, simply stop.",
   },
   {
+    question: "Seriously, how does this work?",
+    answer: "We build you a fully custom website to win you work and stand out from your competitors. If you don't want to pay for it anymore, you just go back to your old website. No contract, £100/mo.",
+  },
+  {
     question: "Can I make changes to my site?",
     answer: "Absolutely. You get 1 hour of edits per month included in your plan. Need a new photo, updated prices, or a new service page? Just ping us. Need more than an hour? It's only £50/hour after that.",
   },
@@ -130,10 +134,6 @@ export const faqs: FAQ[] = [
   {
     question: "I already have a website. Can you rebuild it?",
     answer: "Course we can. We'll rebuild it from scratch, move your domain over, and make sure you don't lose any Google rankings in the process. Seamless handover, no downtime.",
-  },
-  {
-    question: "Seriously, how does this work?",
-    answer: "We build you a fully custom website to win you work and stand out from your competitors. If you don't want to pay for it anymore, you just go back to your old website. No contract, £100/mo.",
   },
   {
     question: "Do you do e-commerce / online shops?",

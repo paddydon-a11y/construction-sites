@@ -156,28 +156,22 @@ export default function PricingPage() {
             <p className="mt-4 text-dark/80 text-lg">
               Everything included. Seriously, everything.
             </p>
+            <p className="mt-2 text-dark/70 text-base font-bold uppercase tracking-wide">
+              No setup costs.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ─── 3. KEY SELLING POINTS ─── */}
+      {/* ─── 3. KEY SELLING POINT ─── */}
       <section className="bg-charcoal py-16 px-6">
-        <div className="mx-auto max-w-3xl space-y-5">
-          {[
-            "No contract. Cancel anytime.",
-            "No setup fee. No hidden costs.",
-            "Less than a tank of diesel for a website that pays for itself.",
-          ].map((point) => (
-            <p
-              key={point}
-              className="text-white text-lg sm:text-xl font-semibold"
-            >
-              <span className="text-hivis mr-2" aria-hidden="true">
-                &#x2705;
-              </span>
-              {point}
-            </p>
-          ))}
+        <div className="mx-auto max-w-3xl">
+          <p className="text-white text-lg sm:text-xl font-semibold">
+            <span className="text-hivis mr-2" aria-hidden="true">
+              &#x2705;
+            </span>
+            Less than a tank of diesel for a website that pays for itself.
+          </p>
         </div>
       </section>
 
