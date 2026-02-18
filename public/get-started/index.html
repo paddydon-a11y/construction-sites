@@ -257,6 +257,37 @@ body {
   opacity: 0.7;
 }
 
+.field textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--bg);
+  border: 1.5px solid rgba(148,163,184,0.2);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.field textarea::placeholder {
+  color: rgba(148,163,184,0.5);
+}
+
+.field textarea:focus {
+  border-color: var(--hivis);
+}
+
+.notes-field {
+  display: none;
+}
+
+.notes-field.visible {
+  display: block;
+}
+
 .submit-btn {
   width: 100%;
   padding: 1.05rem;
@@ -774,7 +805,12 @@ body {
           <div class="field">
             <label for="website">Your current website <span style="font-weight:400;text-transform:none;letter-spacing:0;opacity:0.6;">(optional)</span></label>
             <input type="text" id="website" name="website" placeholder="e.g. www.yoursite.co.uk">
-            <div class="field-helper">Don't have one? No problem &mdash; leave this blank.</div>
+            <div class="field-helper">Don't have one? No problem &mdash; fill in the notes below instead.</div>
+          </div>
+          <div class="field notes-field" id="notes-field">
+            <label for="notes">Tell us a bit about your business</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="e.g. We're a plumbing company based in Leeds. Prefer dark blue and white colours. Mostly do boiler installs and bathroom fits."></textarea>
+            <div class="field-helper">Colour scheme, location, services &mdash; anything that helps us nail your mockups.</div>
           </div>
           <input type="hidden" name="_source" value="google-ads-get-started">
           <button type="submit" class="submit-btn">Get My Free Mockups</button>
@@ -967,6 +1003,26 @@ body {
 
 <div class="tape"></div>
 <div class="bottom-space"></div>
+
+<!-- Notes field toggle -->
+<script>
+(function() {
+  var websiteInput = document.getElementById('website');
+  var notesField = document.getElementById('notes-field');
+  var notesInput = document.getElementById('notes');
+  function toggle() {
+    if (websiteInput.value.trim() === '') {
+      notesField.classList.add('visible');
+      notesInput.required = true;
+    } else {
+      notesField.classList.remove('visible');
+      notesInput.required = false;
+    }
+  }
+  websiteInput.addEventListener('input', toggle);
+  toggle();
+})();
+</script>
 
 <!-- Form submission handler -->
 <script>

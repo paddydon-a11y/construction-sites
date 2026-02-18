@@ -83,10 +83,10 @@ export default function HomePage() {
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Link
-            href="/contact"
+            href="/pricing"
             className="inline-flex items-center justify-center rounded-md bg-hivis px-8 py-4 text-lg font-semibold text-dark transition-colors hover:bg-hivis-bright focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hivis"
           >
-            Get a Free Quote
+            Pricing
           </Link>
           <Link
             href="/our-work"
