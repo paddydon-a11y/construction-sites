@@ -99,6 +99,15 @@ img { max-width: 100%; display: block; }
   padding: 4rem 2rem;
   display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center;
 }
+.hero-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800; font-size: 2.8rem;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.hero-brand span { color: var(--accent); }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: rgba(0,180,216,0.1);
@@ -462,6 +471,7 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 768px) {
   .nav { display: none; }
+  .hero-brand { font-size: 2.2rem; }
   .hero h1 { font-size: 2.5rem; }
   .hero-sub { font-size: 1.05rem; }
   .section-title { font-size: 2rem; }
@@ -478,6 +488,7 @@ img { max-width: 100%; display: block; }
   .logo { font-size: 1rem; line-height: 1.2; max-width: 55%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .header-cta { font-size: 0.8rem; padding: 0.5rem 0.8rem; white-space: nowrap; flex-shrink: 0; }
   .header-cta span { display: none; }
+  .hero-brand { font-size: 1.8rem; }
   .hero h1 { font-size: 2rem; }
   .hero-buttons { flex-direction: column; }
   .hero-buttons a { text-align: center; justify-content: center; font-size: 1rem; padding: 0.85rem 1.5rem; }
@@ -496,7 +507,7 @@ img { max-width: 100%; display: block; }
 <!-- ── HEADER ──────────────────────────────────────────── -->
 <header class="header">
   <div class="header-inner">
-    <a href="#" class="logo">Aligned Electrical Services</a>
+    <a href="#" class="logo">Aligned <span>Electrical</span></a>
     <nav class="nav">
       <a href="#services">Services</a>
       <a href="#reviews">Reviews</a>
@@ -514,6 +525,7 @@ img { max-width: 100%; display: block; }
 <section class="hero">
   <div class="hero-inner">
     <div>
+      <div class="hero-brand">Aligned <span>Electrical Services</span></div>
       <div class="hero-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         NICEIC Approved Contractor
@@ -764,7 +776,7 @@ img { max-width: 100%; display: block; }
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="logo">Aligned Electrical Services</div>
+      <div class="logo">Aligned <span>Electrical Services</span></div>
       <p>Professional electrical services across Nottingham and surrounding areas. NICEIC approved, fully insured, and committed to quality.</p>
     </div>
     <div>
