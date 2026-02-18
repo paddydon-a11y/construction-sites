@@ -109,7 +109,7 @@ export interface FAQ {
 export const faqs: FAQ[] = [
   {
     question: "How can it only be £100 a month?",
-    answer: "Yes, we know agencies charge thousands plus monthly fees for hosting and SSL. We play the long game so we're invested in your success.",
+    answer: "Yes, we know agencies charge thousands plus monthly fees for hosting and SSL. We play the long game so we're invested in your success. We're so confident you'll win work and love it that you'll continue to pay for it. If you don't, simply stop.",
   },
   {
     question: "Can I make changes to my site?",
@@ -132,8 +132,8 @@ export const faqs: FAQ[] = [
     answer: "Course we can. We'll rebuild it from scratch, move your domain over, and make sure you don't lose any Google rankings in the process. Seamless handover, no downtime.",
   },
   {
-    question: "What if I need more than a basic website?",
-    answer: "We can add extras like booking systems, gallery pages, or multi-location setups. We'll quote anything extra upfront, no surprises. But honestly, most businesses only need what's in the standard package.",
+    question: "Seriously, how does this work?",
+    answer: "We build you a fully custom website to win you work and stand out from your competitors. If you don't want to pay for it anymore, you just go back to your old website. No contract, £100/mo.",
   },
   {
     question: "Do you do e-commerce / online shops?",
