@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3 Free Website Designs for Your Trade Business | Construction Sites</title>
+<title>Websites That Get Tradesmen More Work | Construction Sites</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="We'll build you 3 custom website mockups for free. Send us your details and we'll have them ready within 24 hours. No catch.">
+<meta name="description" content="Custom websites for trade businesses that actually get you work. We'll build you 3 free mockup designs within 24 hours. No catch.">
 <link rel="icon" href="/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://construction-sites.co.uk/get-started/">
-<meta property="og:title" content="3 Free Website Designs for Your Trade Business">
-<meta property="og:description" content="Send us your details and we'll have 3 custom mockups ready within 24 hours. No catch.">
+<meta property="og:title" content="A Website That Makes Your Phone Ring">
+<meta property="og:description" content="We'll build you 3 custom mockup designs for free. No catch, no commitment.">
 <meta property="og:image" content="https://construction-sites.co.uk/og-image.png">
 <meta property="og:locale" content="en_GB">
 <!-- Google Ads Global Site Tag -->
@@ -60,7 +60,7 @@ body {
   min-height: 100vh;
 }
 
-/* ── Construction tape ── */
+/* -- Construction tape -- */
 .tape {
   background: repeating-linear-gradient(
     -45deg,
@@ -73,7 +73,7 @@ body {
   width: 100%;
 }
 
-/* ── Container ── */
+/* -- Container -- */
 .container {
   max-width: 540px;
   margin: 0 auto;
@@ -86,7 +86,7 @@ body {
   padding: 0 1.25rem;
 }
 
-/* ── Logo ── */
+/* -- Logo -- */
 .logo {
   text-align: center;
   padding: 2rem 0 0;
@@ -105,7 +105,7 @@ body {
   color: var(--hivis);
 }
 
-/* ── Hero ── */
+/* -- Hero -- */
 .hero {
   text-align: center;
   padding: 2rem 0 1.5rem;
@@ -119,11 +119,21 @@ body {
   letter-spacing: 0.01em;
   line-height: 1.15;
   color: var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero h1 span {
   color: var(--hivis);
+}
+
+.hero .subheadline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--hivis);
+  margin-bottom: 0.75rem;
 }
 
 .hero p {
@@ -134,7 +144,7 @@ body {
   margin: 0 auto;
 }
 
-/* ── Trust points ── */
+/* -- Trust points -- */
 .trust {
   display: flex;
   flex-direction: column;
@@ -184,7 +194,7 @@ body {
   margin-top: 0.1rem;
 }
 
-/* ── Form ── */
+/* -- Form -- */
 .form-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -250,44 +260,6 @@ body {
   border-color: var(--hivis);
 }
 
-.field-helper {
-  font-size: 0.78rem;
-  color: var(--text);
-  margin-top: 0.3rem;
-  opacity: 0.7;
-}
-
-.field textarea {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  font-family: 'Barlow', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--white);
-  background: var(--bg);
-  border: 1.5px solid rgba(148,163,184,0.2);
-  border-radius: 10px;
-  outline: none;
-  transition: border-color 0.2s;
-  resize: none;
-}
-
-.field textarea::placeholder {
-  color: rgba(148,163,184,0.5);
-}
-
-.field textarea:focus {
-  border-color: var(--hivis);
-}
-
-.notes-field {
-  display: none;
-}
-
-.notes-field.visible {
-  display: block;
-}
-
 .submit-btn {
   width: 100%;
   padding: 1.05rem;
@@ -313,7 +285,21 @@ body {
   transform: scale(0.98);
 }
 
-/* ── Disclaimer ── */
+/* -- Urgency -- */
+.urgency {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+.urgency strong {
+  color: var(--hivis);
+  font-weight: 600;
+}
+
+/* -- Disclaimer -- */
 .disclaimer {
   text-align: center;
   font-size: 0.8rem;
@@ -323,7 +309,151 @@ body {
   line-height: 1.5;
 }
 
-/* ── Social proof ── */
+/* -- Testimonial highlight -- */
+.testimonial-highlight {
+  padding: 2rem 0 0;
+}
+
+.testimonial-highlight .testimonial-card {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border-left: 3px solid var(--hivis);
+}
+
+/* -- Screenshot gallery -- */
+.gallery {
+  padding: 3rem 0 2.5rem;
+}
+
+.gallery-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 0.4rem;
+  color: var(--white);
+}
+
+.gallery-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+@media (min-width: 600px) {
+  .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.gallery-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-2px);
+}
+
+.gallery-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.45rem 0.65rem;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border);
+}
+
+.gallery-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.gallery-dot:nth-child(1) { background: #ff5f57; }
+.gallery-dot:nth-child(2) { background: #ffbd2e; }
+.gallery-dot:nth-child(3) { background: #28c840; }
+
+.gallery-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.gallery-label {
+  padding: 0.5rem 0.65rem;
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* -- Price anchor -- */
+.price-anchor {
+  padding: 2.5rem 0;
+}
+
+.price-anchor-box {
+  background: var(--card);
+  border: 2px solid var(--hivis);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-anchor-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--hivis);
+}
+
+.price-anchor-compare {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.price-anchor-ours {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.price-anchor-ours span {
+  color: var(--hivis);
+}
+
+.price-anchor-punchline {
+  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* -- Social proof -- */
 .social-proof {
   text-align: center;
   padding: 2.5rem 0 2rem;
@@ -362,7 +492,7 @@ body {
   color: var(--white);
 }
 
-/* ── Confirmation state ── */
+/* -- Confirmation state -- */
 .form-card.submitted .form-inner { display: none; }
 .form-card .confirmation { display: none; }
 .form-card.submitted .confirmation {
@@ -402,7 +532,7 @@ body {
   line-height: 1.5;
 }
 
-/* ── Section titles ── */
+/* -- Section titles -- */
 .section {
   padding: 3.5rem 0;
 }
@@ -421,7 +551,7 @@ body {
   color: var(--white);
 }
 
-/* ── Features grid ── */
+/* -- Features grid -- */
 .features-grid {
   display: grid;
   gap: 0.75rem;
@@ -464,7 +594,7 @@ body {
   line-height: 1.45;
 }
 
-/* ── Steps ── */
+/* -- Steps -- */
 .steps {
   display: grid;
   gap: 1.5rem;
@@ -510,14 +640,14 @@ body {
   margin: 0 auto;
 }
 
-/* ── Testimonials ── */
+/* -- Testimonials -- */
 .testimonials {
   display: grid;
   gap: 1rem;
 }
 
 @media (min-width: 600px) {
-  .testimonials { grid-template-columns: repeat(3, 1fr); }
+  .testimonials { grid-template-columns: repeat(2, 1fr); }
 }
 
 .testimonial-card {
@@ -558,55 +688,7 @@ body {
   color: var(--text);
 }
 
-/* ── Pricing box ── */
-.pricing-box {
-  background: var(--hivis);
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  max-width: 440px;
-  margin: 0 auto;
-  box-shadow: 0 0 30px rgba(245,158,11,0.15), 0 0 60px rgba(245,158,11,0.05);
-}
-
-.pricing-label {
-  font-weight: 700;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(15,15,26,0.6);
-  margin-bottom: 0.4rem;
-}
-
-.pricing-free {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 1.5rem;
-  color: var(--bg);
-  margin-bottom: 0.15rem;
-}
-
-.pricing-amount {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: clamp(2.2rem, 7vw, 3.5rem);
-  color: var(--bg);
-  line-height: 1.1;
-}
-
-.pricing-amount span {
-  font-size: 0.5em;
-  font-weight: 700;
-}
-
-.pricing-details {
-  margin-top: 0.75rem;
-  font-size: 0.95rem;
-  color: rgba(15,15,26,0.7);
-  line-height: 1.4;
-}
-
-/* ── WhatsApp CTA ── */
+/* -- WhatsApp CTA -- */
 .whatsapp-cta {
   background: #25D366;
   padding: 2.5rem 0;
@@ -648,7 +730,7 @@ body {
 
 .whatsapp-btn svg { width: 22px; height: 22px; }
 
-/* ── Footer ── */
+/* -- Footer -- */
 .site-footer {
   background: var(--bg);
   border-top: 1px solid rgba(255,255,255,0.05);
@@ -699,7 +781,7 @@ body {
 
 .footer-links a:hover { color: var(--hivis); }
 
-/* ── Bottom space ── */
+/* -- Bottom space -- */
 .bottom-space {
   height: 1.5rem;
 }
@@ -720,8 +802,9 @@ body {
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <h1>We'll Build You 3 Custom Website Designs<br><span>Free. No Catch.</span></h1>
-    <p>Send us your details and we'll have 3 custom website designs sent to you within 24 hours. If you like one, we'll build the real thing. If not, no worries.</p>
+    <h1>A Website That <span>Makes Your Phone Ring</span></h1>
+    <div class="subheadline">We'll build you 3 custom designs for free &mdash; no catch.</div>
+    <p>Send us your details and we'll have 3 website mockups in your inbox within 24 hours. Like one? We build the real thing. Don't? No worries, no cost.</p>
   </div>
 </section>
 
@@ -735,8 +818,8 @@ body {
         </svg>
       </div>
       <div class="trust-text">
-        &pound;0 upfront &mdash; we build your mockups for free
-        <span>See 3 real designs before you spend a penny</span>
+        &pound;0 upfront &mdash; see 3 real designs before you spend a penny
+        <span>No deposit, no commitment, no strings</span>
       </div>
     </div>
     <div class="trust-item">
@@ -746,8 +829,8 @@ body {
         </svg>
       </div>
       <div class="trust-text">
-        The UK's best websites for construction businesses
-        <span>Custom built for your trade. Not a template.</span>
+        Built to get you work, not just look pretty
+        <span>Designed by sales &amp; marketing experts for tradesmen</span>
       </div>
     </div>
     <div class="trust-item">
@@ -803,18 +886,13 @@ body {
             </select>
           </div>
           <div class="field">
-            <label for="website">Your current website <span style="font-weight:400;text-transform:none;letter-spacing:0;opacity:0.6;">(optional)</span></label>
+            <label for="website">Current website <span style="font-weight:400;text-transform:none;letter-spacing:0;opacity:0.6;">(if you have one)</span></label>
             <input type="text" id="website" name="website" placeholder="e.g. www.yoursite.co.uk">
-            <div class="field-helper">Don't have one? No problem &mdash; fill in the notes below instead.</div>
-          </div>
-          <div class="field notes-field" id="notes-field">
-            <label for="notes">Tell us a bit about your business</label>
-            <textarea id="notes" name="notes" rows="3" placeholder="e.g. We're a plumbing company based in Leeds. Prefer dark blue and white colours. Mostly do boiler installs and bathroom fits."></textarea>
-            <div class="field-helper">Colour scheme, location, services &mdash; anything that helps us nail your mockups.</div>
           </div>
           <input type="hidden" name="_source" value="google-ads-get-started">
           <button type="submit" class="submit-btn">Get My Free Mockups</button>
         </form>
+        <p class="urgency">We only take on <strong>10 new builds per week</strong> to keep quality high.</p>
       </div>
       <div class="confirmation">
         <div class="confirmation-icon">
@@ -830,23 +908,80 @@ body {
   </div>
 </section>
 
-<!-- Social proof -->
-<section class="social-proof">
+<!-- Testimonial highlight (one pulled up below form) -->
+<section class="testimonial-highlight">
   <div class="container">
-    <div class="social-proof-stars">
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testimonial-text">&ldquo;Enquiries doubled in the first month and we're now turning work away. Landed a full rewire on a six-bed house straight off the website. Didn't expect that from a website.&rdquo;</div>
+      <div class="testimonial-name">Mark, Carter Brothers Electrical</div>
+      <div class="testimonial-location">Manchester</div>
     </div>
-    <div class="social-proof-label">Trusted by 2,000+ trade businesses across the UK</div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════ -->
-<!-- ADDITIONAL SECTIONS BELOW THE TIKTOK LANDER -->
-<!-- ════════════════════════════════════════════ -->
+<!-- Screenshot gallery -->
+<section class="gallery">
+  <div class="container-wide">
+    <h2 class="gallery-title">Sites We've Built for Tradesmen Like You</h2>
+    <p class="gallery-subtitle">Every site custom-built. No templates.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="gallery-browser-bar">
+          <div class="gallery-dot"></div>
+          <div class="gallery-dot"></div>
+          <div class="gallery-dot"></div>
+        </div>
+        <img class="gallery-img" src="/thumbnails/site-01.jpg" alt="Electrician website built by Construction Sites" loading="lazy">
+        <div class="gallery-label">Electrician &mdash; Manchester</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-browser-bar">
+          <div class="gallery-dot"></div>
+          <div class="gallery-dot"></div>
+          <div class="gallery-dot"></div>
+        </div>
+        <img class="gallery-img" src="/thumbnails/site-02.jpg" alt="Plumber website built by Construction Sites" loading="lazy">
+        <div class="gallery-label">Plumber &mdash; Leeds</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-browser-bar">
+          <div class="gallery-dot"></div>
+          <div class="gallery-dot"></div>
+          <div class="gallery-dot"></div>
+        </div>
+        <img class="gallery-img" src="/thumbnails/site-03.jpg" alt="Roofer website built by Construction Sites" loading="lazy">
+        <div class="gallery-label">Roofer &mdash; Newcastle</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-browser-bar">
+          <div class="gallery-dot"></div>
+          <div class="gallery-dot"></div>
+          <div class="gallery-dot"></div>
+        </div>
+        <img class="gallery-img" src="/thumbnails/site-04.jpg" alt="Landscaper website built by Construction Sites" loading="lazy">
+        <div class="gallery-label">Landscaper &mdash; Bristol</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Price anchoring -->
+<section class="price-anchor">
+  <div class="container">
+    <div class="price-anchor-box">
+      <div class="price-anchor-compare">Most web agencies charge &pound;2,000&ndash;&pound;5,000 upfront for a site half this good.</div>
+      <div class="price-anchor-ours">Ours is <span>&pound;100/month</span><br>Everything included.</div>
+      <div class="price-anchor-punchline">That's less than one small job pays you.</div>
+    </div>
+  </div>
+</section>
 
 <div class="tape"></div>
 
@@ -932,19 +1067,16 @@ body {
 <section class="section section-dark">
   <div class="container-wide">
     <h2 class="section-title">Trusted by Trade Businesses Across the UK</h2>
-    <div class="testimonials">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <div class="testimonial-text">&ldquo;Enquiries doubled in the first month and we're now turning work away. Landed a full rewire on a six-bed house straight off the website. Didn't expect that from a website.&rdquo;</div>
-        <div class="testimonial-name">Mark, Carter Brothers Electrical</div>
-        <div class="testimonial-location">Manchester</div>
+    <div class="social-proof">
+      <div class="social-proof-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       </div>
+    </div>
+    <div class="testimonials">
       <div class="testimonial-card">
         <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -1003,26 +1135,6 @@ body {
 
 <div class="tape"></div>
 <div class="bottom-space"></div>
-
-<!-- Notes field toggle -->
-<script>
-(function() {
-  var websiteInput = document.getElementById('website');
-  var notesField = document.getElementById('notes-field');
-  var notesInput = document.getElementById('notes');
-  function toggle() {
-    if (websiteInput.value.trim() === '') {
-      notesField.classList.add('visible');
-      notesInput.required = true;
-    } else {
-      notesField.classList.remove('visible');
-      notesInput.required = false;
-    }
-  }
-  websiteInput.addEventListener('input', toggle);
-  toggle();
-})();
-</script>
 
 <!-- Form submission handler -->
 <script>
