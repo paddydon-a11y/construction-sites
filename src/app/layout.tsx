@@ -117,11 +117,11 @@ const jsonLd = {
       description:
         "We build stunning websites for construction businesses and tradespeople. Custom design, SEO, Google Ads optimised, all included.",
       email: "patrick@construction-sites.co.uk",
-      telephone: "+447572698923",
+      telephone: "+447564039216",
       sameAs: [],
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+447572698923",
+        telephone: "+447564039216",
         contactType: "sales",
         availableLanguage: "English",
         areaServed: { "@type": "Country", name: "United Kingdom" },
@@ -133,7 +133,7 @@ const jsonLd = {
       name: "Construction Sites",
       description: "Web design agency specialising in websites for construction and trade businesses across the UK.",
       url: "https://construction-sites.co.uk",
-      telephone: "+447572698923",
+      telephone: "+447564039216",
       email: "patrick@construction-sites.co.uk",
       image: "https://construction-sites.co.uk/og-image.png",
       priceRange: "££",
@@ -162,16 +162,6 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${barlow.className} ${barlow.variable} ${barlowCondensed.variable} ${barlowSemiCondensed.variable}`}>
       <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-17958918628');`}
-        </Script>
         <meta name="google-site-verification" content="XxT71Eqhp8-mMvRdME2D6yJS9Uw8YcND9GrlK2-M2Ps" />
         <script
           dangerouslySetInnerHTML={{
@@ -187,6 +177,18 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');`,
+          }}
         />
       </head>
       <body className="antialiased">
