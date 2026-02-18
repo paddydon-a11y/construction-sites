@@ -10,7 +10,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  { name: "Spark Brothers Electrical", trade: "Electricians", location: "Manchester", bg: "from-blue-900 to-blue-700", accent: "bg-yellow-400", textColor: "text-white", layout: "centered" },
+  { name: "Carter Brothers Electrical", trade: "Electricians", location: "Manchester", bg: "from-blue-900 to-blue-700", accent: "bg-yellow-400", textColor: "text-white", layout: "centered" },
   { name: "Dave Wilson Plumbing", trade: "Plumbers", location: "Leeds", bg: "from-sky-800 to-sky-600", accent: "bg-orange-400", textColor: "text-white", layout: "left" },
   { name: "NorthPoint Roofing", trade: "Roofers", location: "Newcastle", bg: "from-slate-900 to-slate-700", accent: "bg-red-500", textColor: "text-white", layout: "bold" },
   { name: "Greenway Landscapes", trade: "Landscapers", location: "Bristol", bg: "from-green-900 to-green-700", accent: "bg-lime-400", textColor: "text-white", layout: "split" },
@@ -72,7 +72,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    name: "Mark, Spark Brothers Electrical",
+    name: "Mark, Carter Brothers Electrical",
     trade: "Electrical Contractor",
     location: "Manchester",
     text: "Enquiries doubled in the first month and we're now turning work away. We've even had experienced sparks reaching out wanting to join us off the back of the site. Didn't expect that from a website.",

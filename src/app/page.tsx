@@ -37,7 +37,7 @@ const homeJsonLd = {
         },
         {
           "@type": "Review",
-          author: { "@type": "Person", name: "Mark, Spark Brothers Electrical" },
+          author: { "@type": "Person", name: "Mark, Carter Brothers Electrical" },
           reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
           reviewBody: "Enquiries doubled in the first month and we're now turning work away. Didn't expect that from a website.",
         },

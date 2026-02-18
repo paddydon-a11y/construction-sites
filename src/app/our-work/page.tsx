@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const sites = [
-  { file: "site-01", name: "Spark Brothers Electrical", trade: "Electricians", location: "Manchester" },
+  { file: "site-01", name: "Carter Brothers Electrical", trade: "Electricians", location: "Manchester" },
   { file: "site-40", name: "Waterline Bathrooms & Tiling", trade: "Bathroom Fitters", location: "Bournemouth" },
   { file: "site-39", name: "Mosaic Bathrooms", trade: "Bathroom Fitters", location: "Aberdeen" },
   { file: "site-31", name: "Ridgeline Roofing", trade: "Roofers", location: "Coventry" },
