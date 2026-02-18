@@ -163,19 +163,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ─── 3. KEY SELLING POINT ─── */}
-      <section className="bg-charcoal py-16 px-6">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-white text-lg sm:text-xl font-semibold">
-            <span className="text-hivis mr-2" aria-hidden="true">
-              &#x2705;
-            </span>
-            Less than a tank of diesel for a website that pays for itself.
-          </p>
-        </div>
-      </section>
-
-      {/* ─── 4. COMPARISON TABLE ─── */}
+      {/* ─── 3. COMPARISON TABLE ─── */}
       <section className="bg-dark py-20 px-6">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center text-3xl font-extrabold tracking-tight sm:text-4xl mb-12">
