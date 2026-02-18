@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
         source: "/get-started/thank-you",
         destination: "/get-started/thank-you/index.html",
       },
+      {
+        source: "/free-mockups",
+        destination: "/free-mockups/index.html",
+      },
+      {
+        source: "/free-mockups/thank-you",
+        destination: "/free-mockups/thank-you/index.html",
+      },
     ];
   },
 };

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stop Losing Good Jobs to Cowboys with Better Websites | Construction Sites</title>
+<title>Still Getting All Your Work From Word of Mouth? | Construction Sites</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Tired of chasing payments and dealing with time-wasters? A proper website brings better clients, bigger jobs, and gets you paid on time. 3 free designs — no catch.">
+<meta name="description" content="Your competitors are getting jobs from Google while you're waiting for the phone to ring. We'll build you 3 custom website designs for free in 24 hours. No catch.">
 <link rel="icon" href="/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://construction-sites.co.uk/free-mockups/">
-<meta property="og:title" content="Stop Losing Good Jobs to Cowboys with Better Websites">
-<meta property="og:description" content="We'll build you 3 custom website designs for free. Better clients, bigger jobs, getting paid on time. No catch.">
+<meta property="og:title" content="Still Getting All Your Work From Word of Mouth?">
+<meta property="og:description" content="We'll build you 3 custom website designs for free in 24 hours. Don't like them? Just walk away.">
 <meta property="og:image" content="https://construction-sites.co.uk/og-image.png">
 <meta property="og:locale" content="en_GB">
 <!-- TikTok Pixel Code Start -->
@@ -51,9 +51,10 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  padding-bottom: 72px;
 }
 
-/* ── Construction tape ── */
+/* -- Tape -- */
 .tape {
   background: repeating-linear-gradient(
     -45deg,
@@ -66,206 +67,264 @@ body {
   width: 100%;
 }
 
-/* ── Container ── */
+/* -- Container -- */
 .container {
   max-width: 540px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 
-/* ── Logo ── */
+/* -- Logo -- */
 .logo {
   text-align: center;
-  padding: 2rem 0 0;
+  padding: 1.5rem 0 0;
 }
 
 .logo-text {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--white);
 }
 
-.logo-text span {
-  color: var(--hivis);
-}
+.logo-text span { color: var(--hivis); }
 
-/* ── Hero ── */
+/* -- Hero -- */
 .hero {
   text-align: center;
-  padding: 2rem 0 1.5rem;
+  padding: 1.5rem 0 1.25rem;
 }
 
 .hero h1 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 800;
-  font-size: clamp(1.65rem, 6vw, 2.3rem);
+  font-size: clamp(1.6rem, 6.5vw, 2.3rem);
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1.15;
   color: var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.hero h1 span {
-  color: var(--hivis);
-}
+.hero h1 span { color: var(--hivis); }
 
-.hero p {
-  font-size: 1.05rem;
+.hero .sub {
+  font-size: 1rem;
   color: var(--text);
-  line-height: 1.55;
-  max-width: 460px;
+  line-height: 1.5;
+  max-width: 440px;
   margin: 0 auto;
 }
 
-/* ── Pain section ── */
-.pain {
+.hero .sub strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* -- Before / after -- */
+.compare {
   padding: 0 0 2rem;
 }
 
-.pain-title {
+.compare-label {
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 1.4rem;
+  font-weight: 700;
+  font-size: 1rem;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
   text-align: center;
+  color: var(--text);
   margin-bottom: 1rem;
+}
+
+.compare-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.compare-side {}
+
+.compare-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.compare-tag-bad {
+  background: rgba(239,68,68,0.15);
   color: var(--red);
 }
 
-.pain-block {
-  background: var(--card);
-  border-left: 3px solid var(--red);
-  border-radius: var(--radius);
-  padding: 1rem 1.15rem;
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.5;
-}
-
-/* ── Solution section ── */
-.solution {
-  padding: 0 0 2rem;
-}
-
-.solution-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 1rem;
+.compare-tag-good {
+  background: rgba(245,158,11,0.15);
   color: var(--hivis);
 }
 
-.solution p {
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.55;
-  margin-bottom: 0.75rem;
+.compare-arrow {
+  text-align: center;
+  margin: -0.5rem 0;
 }
 
-/* ── What you get ── */
-.benefits {
+.compare-arrow svg {
+  width: 28px;
+  height: 28px;
+  color: var(--hivis);
+}
+
+/* Browser frames */
+.browser-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(148,163,184,0.15);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(148,163,184,0.1);
+}
+
+.browser-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.browser-dot:nth-child(1) { background: #ff5f57; }
+.browser-dot:nth-child(2) { background: #ffbd2e; }
+.browser-dot:nth-child(3) { background: #28c840; }
+
+.browser-url {
+  margin-left: 0.5rem;
+  font-size: 0.6rem;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+/* Bad site mockup */
+.frame-bad {
+  border-color: rgba(239,68,68,0.3);
+}
+
+.bad-site {
+  background: #e5e7eb;
+  padding: 0.75rem;
+  aspect-ratio: 16/9;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 0 0 2rem;
 }
 
-.benefit-item {
+.bad-site-nav {
+  background: #3b5998;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  padding: 0.85rem 1rem;
-  background: var(--card);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
 }
 
-.benefit-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(245,158,11,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.bad-site-nav-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ccc;
   flex-shrink: 0;
 }
 
-.benefit-icon svg {
-  width: 20px;
-  height: 20px;
-  color: var(--hivis);
+.bad-site-nav-text {
+  font-size: 0.6rem;
+  color: #fff;
+  font-weight: 700;
 }
 
-.benefit-text {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--white);
-  line-height: 1.35;
+.bad-site-hero {
+  background: #6b7280;
+  border-radius: 4px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.benefit-text span {
-  display: block;
-  font-weight: 400;
-  font-size: 0.82rem;
-  color: var(--text);
-  margin-top: 0.1rem;
-}
-
-/* ── Offer section ── */
-.offer {
+.bad-site-hero-text {
+  font-family: 'Times New Roman', serif;
+  font-size: clamp(0.75rem, 3vw, 1.1rem);
+  color: #fff;
   text-align: center;
-  padding: 0 0 1.25rem;
-}
-
-.offer h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: clamp(1.3rem, 5vw, 1.7rem);
-  text-transform: uppercase;
+  padding: 0.5rem;
   line-height: 1.2;
-  color: var(--white);
-  margin-bottom: 0.75rem;
 }
 
-.offer h2 span {
-  color: var(--hivis);
+.bad-site-blocks {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
 }
 
-.offer p {
-  font-size: 0.95rem;
+.bad-site-block {
+  background: #d1d5db;
+  border-radius: 3px;
+  height: 12px;
+  flex: 1;
+}
+
+.bad-site-block:nth-child(2) { flex: 0.7; }
+
+/* Good site */
+.frame-good {
+  border-color: var(--hivis);
+}
+
+.frame-good img {
+  width: 100%;
+  display: block;
+}
+
+.compare-caption {
+  font-size: 0.78rem;
   color: var(--text);
-  line-height: 1.55;
+  margin-top: 0.4rem;
+  line-height: 1.3;
 }
 
-/* ── Form ── */
+/* -- Form -- */
+.form-section {
+  padding: 0 0 1.5rem;
+}
+
 .form-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 1.75rem 1.5rem 2rem;
+  padding: 1.5rem 1.25rem 1.75rem;
 }
 
 .form-title {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   color: var(--white);
 }
 
 .field {
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .field label {
@@ -273,13 +332,12 @@ body {
   font-weight: 600;
   font-size: 0.85rem;
   color: var(--text);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
-.field input,
-.field select {
+.field input {
   width: 100%;
   padding: 0.9rem 1rem;
   font-family: 'Barlow', sans-serif;
@@ -295,67 +353,21 @@ body {
   appearance: none;
 }
 
-.field select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  padding-right: 2.5rem;
-}
-
 .field input::placeholder {
   color: rgba(148,163,184,0.5);
 }
 
-.field input:focus,
-.field select:focus {
+.field input:focus {
   border-color: var(--hivis);
-}
-
-.field-helper {
-  font-size: 0.78rem;
-  color: var(--text);
-  margin-top: 0.3rem;
-  opacity: 0.7;
-}
-
-.field textarea {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  font-family: 'Barlow', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--white);
-  background: var(--bg);
-  border: 1.5px solid rgba(148,163,184,0.2);
-  border-radius: 10px;
-  outline: none;
-  transition: border-color 0.2s;
-  resize: none;
-}
-
-.field textarea::placeholder {
-  color: rgba(148,163,184,0.5);
-}
-
-.field textarea:focus {
-  border-color: var(--hivis);
-}
-
-.notes-field {
-  display: none;
-}
-
-.notes-field.visible {
-  display: block;
 }
 
 .submit-btn {
   width: 100%;
-  padding: 1.05rem;
-  margin-top: 0.5rem;
+  padding: 1.1rem;
+  margin-top: 0.25rem;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--bg);
@@ -366,37 +378,79 @@ body {
   transition: background 0.2s, transform 0.1s;
 }
 
-.submit-btn:hover {
-  background: var(--hivis-bright);
-}
+.submit-btn:hover { background: var(--hivis-bright); }
+.submit-btn:active { transform: scale(0.98); }
 
-.submit-btn:active {
-  transform: scale(0.98);
-}
-
-/* ── Disclaimer ── */
-.disclaimer {
+.urgency {
   text-align: center;
   font-size: 0.8rem;
   color: var(--text);
-  opacity: 0.6;
-  padding: 1.25rem 0 0;
-  line-height: 1.5;
+  margin-top: 0.85rem;
+  line-height: 1.4;
 }
 
-/* ── Social proof ── */
+.urgency strong {
+  color: var(--hivis);
+  font-weight: 600;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text);
+  opacity: 0.5;
+  padding: 0.85rem 0 0;
+  line-height: 1.4;
+}
+
+/* -- Testimonial -- */
+.testimonial {
+  padding: 2rem 0;
+}
+
+.testimonial-card {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 1.15rem;
+  border-left: 3px solid var(--hivis);
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-stars svg {
+  width: 15px;
+  height: 15px;
+  fill: var(--hivis);
+  color: var(--hivis);
+}
+
+.testimonial-text {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--white);
+}
+
+.testimonial-location {
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+/* -- Social proof -- */
 .social-proof {
   text-align: center;
-  padding: 2.5rem 0 2rem;
-}
-
-.social-proof-label {
-  font-weight: 600;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text);
-  margin-bottom: 0.6rem;
+  padding: 0 0 0.5rem;
 }
 
 .social-proof-stars {
@@ -404,40 +458,239 @@ body {
   align-items: center;
   justify-content: center;
   gap: 3px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .social-proof-stars svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: var(--hivis);
   fill: var(--hivis);
 }
 
-/* ── Bottom line ── */
-.bottom-line {
-  text-align: center;
-  padding: 1rem 0 2rem;
-}
-
-.bottom-line p {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
+.social-proof-label {
+  font-weight: 600;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--text);
 }
 
-/* ── Bottom tape ── */
-.bottom-space {
-  height: 1.5rem;
+/* -- Price anchor -- */
+.price-anchor {
+  padding: 0 0 2rem;
+}
+
+.price-anchor-box {
+  background: var(--card);
+  border: 2px solid var(--hivis);
+  border-radius: 16px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+.price-anchor-compare {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+.price-anchor-ours {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 5vw, 1.7rem);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.price-anchor-ours span {
+  color: var(--hivis);
+}
+
+.price-anchor-punchline {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* -- How it works -- */
+.how-it-works {
+  padding: 0 0 2rem;
+}
+
+.hiw-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.hiw-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.hiw-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  border-radius: var(--radius);
+}
+
+.hiw-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--hivis);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.hiw-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--white);
+  line-height: 1.35;
+}
+
+/* -- WhatsApp CTA -- */
+.whatsapp-cta {
+  background: #25D366;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.whatsapp-cta h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 5vw, 1.6rem);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.whatsapp-cta p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1rem;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  color: #25D366;
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s;
+}
+
+.whatsapp-btn:hover { opacity: 0.9; }
+.whatsapp-btn svg { width: 20px; height: 20px; }
+
+/* -- Sticky mobile CTA -- */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0.65rem 1rem;
+  background: var(--bg);
+  border-top: 2px solid var(--hivis);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+
+.sticky-cta a {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-decoration: none;
+  color: var(--bg);
+  background: var(--hivis);
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.sticky-cta a:hover { background: var(--hivis-bright); }
+
+/* Hide sticky when form is in view */
+.sticky-cta.hidden { transform: translateY(100%); transition: transform 0.3s; }
+.sticky-cta { transition: transform 0.3s; }
+
+/* -- Bottom space -- */
+.bottom-space { height: 1rem; }
+
+/* -- Confirmation state -- */
+.form-card.submitted .form-inner { display: none; }
+.form-card .confirmation { display: none; }
+.form-card.submitted .confirmation {
+  display: block;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.confirmation-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(245,158,11,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.confirmation-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--hivis);
+}
+
+.confirmation h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.confirmation p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
 }
 </style>
 </head>
 <body>
 
-<!-- Construction tape -->
+<!-- Tape -->
 <div class="tape"></div>
 
 <!-- Logo -->
@@ -450,196 +703,193 @@ body {
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <h1>We'll Build You <span>3 Free Website Designs.</span> No Catch.</h1>
-    <p>Tell us your trade and your area. We'll send you 3 custom mockups within 24 hours.</p>
+    <h1>Still Getting All Your Work <span>From Word of Mouth?</span></h1>
+    <p class="sub">Your competitors are getting jobs from Google while you're waiting for the phone to ring. <strong>We'll build you 3 custom website designs for free in 24 hours.</strong> Don't like them? Just walk away.</p>
+  </div>
+</section>
+
+<!-- Before / After -->
+<section class="compare">
+  <div class="container">
+    <div class="compare-label">This is the difference a proper website makes</div>
+    <div class="compare-stack">
+      <div class="compare-side">
+        <div class="compare-tag compare-tag-bad">What most tradesmen have</div>
+        <div class="browser-frame frame-bad">
+          <div class="browser-bar">
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <span class="browser-url">facebook.com/daves-plumbing</span>
+          </div>
+          <div class="bad-site">
+            <div class="bad-site-nav">
+              <div class="bad-site-nav-dot"></div>
+              <div class="bad-site-nav-text">Dave's Plumbing & Heating</div>
+            </div>
+            <div class="bad-site-hero">
+              <div class="bad-site-hero-text">Daves plumbing<br>& Heating<br><span style="font-size:0.55em;color:#d1d5db;">call for a free quote maybe</span></div>
+            </div>
+            <div class="bad-site-blocks">
+              <div class="bad-site-block"></div>
+              <div class="bad-site-block"></div>
+              <div class="bad-site-block"></div>
+            </div>
+          </div>
+        </div>
+        <div class="compare-caption">A Facebook page and a prayer</div>
+      </div>
+      <div class="compare-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>
+      </div>
+      <div class="compare-side">
+        <div class="compare-tag compare-tag-good">What we build for &pound;100/month</div>
+        <div class="browser-frame frame-good">
+          <div class="browser-bar">
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <span class="browser-url">aquaflow-plumbing.co.uk</span>
+          </div>
+          <img src="/thumbnails/site-02.jpg" alt="Professional trade website by Construction Sites" loading="eager">
+        </div>
+        <div class="compare-caption">Custom built. Gets you actual work.</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Form -->
-<section>
+<section class="form-section">
   <div class="container">
     <div class="form-card" id="form-card">
       <div class="form-inner">
-        <div class="form-title">Send Me My Free Mockups</div>
+        <div class="form-title">Get 3 Free Designs in 24 Hours</div>
         <form id="mockup-form" action="https://formspree.io/f/mjgewpwj" method="POST">
           <input type="hidden" name="_source" value="tiktok-free-mockups">
           <div class="field">
             <label for="name">Your name</label>
-            <input type="text" id="name" name="name" placeholder="e.g. Dave Smith" required>
+            <input type="text" id="name" name="name" placeholder="e.g. Dave" required>
           </div>
           <div class="field">
             <label for="phone">Phone number</label>
             <input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900123" required>
           </div>
-          <div class="field">
-            <label for="email">Email address</label>
-            <input type="email" id="email" name="email" placeholder="e.g. dave@gmail.com" required>
-          </div>
-          <div class="field">
-            <label for="trade">What trade are you?</label>
-            <select id="trade" name="trade" required>
-              <option value="" disabled selected>Choose your trade</option>
-              <option value="Electrician">Electrician</option>
-              <option value="Plumber">Plumber</option>
-              <option value="Builder">Builder</option>
-              <option value="Roofer">Roofer</option>
-              <option value="Landscaper">Landscaper</option>
-              <option value="Kitchen Fitter">Kitchen Fitter</option>
-              <option value="Painter & Decorator">Painter &amp; Decorator</option>
-              <option value="Bricklayer">Bricklayer</option>
-              <option value="Tiler">Tiler</option>
-              <option value="Windows & Doors">Windows &amp; Doors</option>
-              <option value="Groundworker">Groundworker</option>
-              <option value="Main Contractor">Main Contractor</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="website">Your current website <span style="font-weight:400;text-transform:none;letter-spacing:0;opacity:0.6;">(optional)</span></label>
-            <input type="text" id="website" name="website" placeholder="e.g. www.yoursite.co.uk">
-            <div class="field-helper">Don't have one? No problem &mdash; fill in the notes below instead.</div>
-          </div>
-          <div class="field notes-field" id="notes-field">
-            <label for="notes">Tell us a bit about your business</label>
-            <textarea id="notes" name="notes" rows="3" placeholder="e.g. We're a plumbing company based in Leeds. Prefer dark blue and white colours. Mostly do boiler installs and bathroom fits."></textarea>
-            <div class="field-helper">Colour scheme, location, services &mdash; anything that helps us nail your mockups.</div>
-          </div>
-          <button type="submit" class="submit-btn">Send Me My Free Mockups</button>
+          <button type="submit" class="submit-btn">Get My Free Mockups</button>
         </form>
+        <p class="urgency">We only take on <strong>10 new builds per week</strong> to keep quality high.</p>
+      </div>
+      <div class="confirmation">
+        <div class="confirmation-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3>Nice one &mdash; we'll WhatsApp you within 24 hours.</h3>
+        <p>Your 3 custom designs are on the way.</p>
       </div>
     </div>
-    <p class="disclaimer">We'll send your 3 designs via WhatsApp or email within 24 hours.<br>No spam, no sales calls unless you want us to.</p>
+    <p class="disclaimer">We'll WhatsApp you within 24 hours. No spam, ever.</p>
   </div>
 </section>
 
-<!-- Social proof -->
-<section class="social-proof">
+<!-- Social proof + first testimonial -->
+<section class="testimonial">
   <div class="container">
-    <div class="social-proof-stars">
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <div class="social-proof">
+      <div class="social-proof-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="social-proof-label">Trusted by trade businesses across the UK</div>
     </div>
-    <div class="social-proof-label">Trusted by trade businesses across the UK</div>
+    <div class="testimonial-card" style="margin-top:1rem;">
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testimonial-text">&ldquo;The site looks so professional that clients trust us before we even turn up. Won a &pound;40k extension project because the customer said our website made us look like the real deal.&rdquo;</div>
+      <div class="testimonial-name">Dan, Apex Building Solutions</div>
+      <div class="testimonial-location">Birmingham</div>
+    </div>
   </div>
 </section>
 
-<!-- Pain section -->
-<section class="pain">
+<!-- Price anchor -->
+<section class="price-anchor">
   <div class="container">
-    <div class="pain-title">Sound Familiar?</div>
-    <div class="pain-block">
-      You quote a job, do the work, and then spend weeks chasing payment. The clients who haggle on price are the same ones who pay late.
-    </div>
-    <div class="pain-block">
-      You rely on word of mouth or Checkatrade and take whatever comes through the door. Half the leads are tyre-kickers who waste your time.
-    </div>
-    <div class="pain-block">
-      You know your work is quality but your online presence doesn't show it. Meanwhile the cowboy down the road with a flashy website is winning the good jobs.
+    <div class="price-anchor-box">
+      <div class="price-anchor-compare">Web agencies charge &pound;3,000&ndash;&pound;5,000 upfront.</div>
+      <div class="price-anchor-ours">We charge <span>&pound;100/month</span><br>Everything included.</div>
+      <div class="price-anchor-punchline">That's one small job.</div>
     </div>
   </div>
 </section>
 
-<!-- Solution section -->
-<section class="solution">
+<!-- How it works -->
+<section class="how-it-works">
   <div class="container">
-    <div class="solution-title">What If the Right Clients Came to You?</div>
-    <p>A proper website changes who finds you. Homeowners doing their research, commercial clients, property managers &mdash; the ones who pay on time and don't mess you about.</p>
-    <p>Construction Sites builds websites for tradesmen that actually bring in work. Not a template. Not a DIY drag-and-drop disaster. A proper, professional site built for your trade.</p>
-  </div>
-</section>
-
-<!-- What you get -->
-<section class="benefits">
-  <div class="container" style="display:flex;flex-direction:column;gap:0.75rem;">
-    <div class="benefit-item">
-      <div class="benefit-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
-        </svg>
+    <div class="hiw-title">How It Works</div>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <div class="hiw-text">Send us your name and number</div>
       </div>
-      <div class="benefit-text">
-        Custom-designed for your trade
-        <span>Not a template. Built around what you actually do.</span>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <div class="hiw-text">We send you 3 free designs in 24 hours</div>
       </div>
-    </div>
-    <div class="benefit-item">
-      <div class="benefit-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-        </svg>
-      </div>
-      <div class="benefit-text">
-        Click-to-call and WhatsApp on every page
-        <span>One tap and they're hiring you.</span>
-      </div>
-    </div>
-    <div class="benefit-item">
-      <div class="benefit-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </div>
-      <div class="benefit-text">
-        Shows up on Google in your area
-        <span>When someone searches your trade near you, you're there.</span>
-      </div>
-    </div>
-    <div class="benefit-item">
-      <div class="benefit-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 20H6"/><path d="M8 20c0-8 1.6-14 6-14a4 4 0 014 4"/><path d="M6 14h8"/>
-        </svg>
-      </div>
-      <div class="benefit-text">
-        &pound;0 upfront &mdash; ever
-        <span>No setup fees, no hidden costs, no nonsense.</span>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <div class="hiw-text">Pick one and you're live in 7 days</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Second CTA — scroll back to form -->
-<section class="offer">
+<!-- Second testimonial -->
+<section class="testimonial" style="padding-top:0;">
   <div class="container">
-    <h2>Ready to See What <span>Your Site</span> Could Look Like?</h2>
-    <p>It takes 30 seconds. No commitment, no sales calls unless you want one.</p>
-    <a href="#form-card" class="submit-btn" style="display:block;text-align:center;text-decoration:none;margin-top:1rem;">Send Me My Free Mockups</a>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testimonial-text">&ldquo;Enquiries doubled in the first month and we're now turning work away. Landed a full rewire on a six-bed house straight off the website.&rdquo;</div>
+      <div class="testimonial-name">Mark, Carter Brothers Electrical</div>
+      <div class="testimonial-location">Manchester</div>
+    </div>
   </div>
 </section>
 
-<!-- Bottom line -->
-<section class="bottom-line">
+<!-- WhatsApp CTA -->
+<section class="whatsapp-cta">
   <div class="container">
-    <p>Built for tradesmen, by people who understand the trades.</p>
+    <h2>Rather Just Message Us?</h2>
+    <p>Drop us a WhatsApp. No sales pitch.</p>
+    <a href="https://wa.me/447564039216" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
   </div>
 </section>
 
-<!-- Bottom tape -->
 <div class="tape"></div>
 <div class="bottom-space"></div>
 
-<!-- Notes field toggle -->
-<script>
-(function() {
-  var websiteInput = document.getElementById('website');
-  var notesField = document.getElementById('notes-field');
-  var notesInput = document.getElementById('notes');
-  function toggle() {
-    if (websiteInput.value.trim() === '') {
-      notesField.classList.add('visible');
-      notesInput.required = true;
-    } else {
-      notesField.classList.remove('visible');
-      notesInput.required = false;
-    }
-  }
-  websiteInput.addEventListener('input', toggle);
-  toggle();
-})();
-</script>
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="#form-card">Get Your Free Mockups</a>
+</div>
 
 <!-- Form submission handler -->
 <script>
@@ -661,7 +911,6 @@ document.getElementById('mockup-form').addEventListener('submit', function(e) {
         ttq.track('SubmitForm', { content_name: 'Free Mockups', content_type: 'lead' });
         ttq.track('CompleteRegistration', { content_name: 'Free Mockups' });
       }
-      // Send to CRM
       fetch('/api/webhook', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -679,6 +928,23 @@ document.getElementById('mockup-form').addEventListener('submit', function(e) {
     btn.disabled = false;
   });
 });
+
+// Hide sticky CTA when form is visible
+(function() {
+  var sticky = document.getElementById('sticky-cta');
+  var form = document.getElementById('form-card');
+  if (!sticky || !form || !window.IntersectionObserver) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        sticky.classList.add('hidden');
+      } else {
+        sticky.classList.remove('hidden');
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(form);
+})();
 </script>
 
 <!-- Vercel Analytics -->
