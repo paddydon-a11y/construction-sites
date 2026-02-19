@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--card:#161616;--border:#222222;--amber:#f59e0b;--amber-dark:#d97706;--white:#ffffff;--gray-100:#f3f4f6;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--font-heading:'Plus Jakarta Sans',sans-serif;--font-body:'Inter',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--gray-300);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800;color:var(--white);line-height:1.15}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-heading);font-weight:800;font-size:1.25rem;color:var(--white)}
+.nav-logo span{color:var(--amber)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--gray-400);transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--amber);color:#000;font-weight:600;font-size:0.875rem;padding:10px 24px;border-radius:8px;transition:background 0.2s;cursor:pointer;border:none;font-family:var(--font-body)}
+.nav-cta:hover{background:var(--amber-dark)}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile-btn svg{stroke:var(--white)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 24px 80px;position:relative;overflow:hidden}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:100px;padding:8px 20px;font-size:0.875rem;color:var(--amber);font-weight:500;margin-bottom:24px}
+.hero-badge .pulse{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.5)}}
+.hero h1{font-size:3.5rem;margin-bottom:20px}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--amber),#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1.125rem;color:var(--gray-400);max-width:520px;margin-bottom:36px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--amber);color:#000;font-weight:600;font-size:1rem;padding:16px 32px;border-radius:10px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--amber-dark);transform:translateY(-1px)}
+.btn-secondary{border:1px solid var(--border);color:var(--white);font-weight:500;font-size:1rem;padding:16px 32px;border-radius:10px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{border-color:var(--gray-500);background:rgba(255,255,255,0.03)}
+.hero-image{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;max-height:560px}
+.hero-image img{width:100%;height:100%;object-fit:cover}
+.hero-image-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.1) 50%)}
+.hero-image-text{position:absolute;bottom:24px;left:24px;right:24px}
+.hero-image-text h3{font-size:1.5rem;margin-bottom:4px}
+.hero-image-text p{color:var(--amber);font-weight:500;font-size:0.9rem}
+
+/* Fade-up animations */
+.fade-up{opacity:0;transform:translateY(24px);animation:fadeUp 0.7s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.fade-up-1{animation-delay:0.1s}
+.fade-up-2{animation-delay:0.25s}
+.fade-up-3{animation-delay:0.4s}
+.fade-up-4{animation-delay:0.55s}
+.fade-up-5{animation-delay:0.7s}
+
+/* STATS */
+.stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card)}
+.stats-inner{max-width:1200px;margin:0 auto;padding:40px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat-num{font-family:var(--font-heading);font-weight:800;font-size:1.75rem;color:var(--white);margin-bottom:4px}
+.stat-label{font-size:0.875rem;color:var(--gray-500)}
+
+/* SECTIONS */
+.section{padding:96px 24px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+.section-title{font-size:2.5rem;margin-bottom:16px}
+.section-desc{color:var(--gray-400);max-width:600px;font-size:1.05rem;line-height:1.7}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px;position:relative;overflow:hidden;transition:border-color 0.3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);transform:scaleX(0);transition:transform 0.3s}
+.service-card:hover{border-color:#333}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:48px;height:48px;margin-bottom:20px}
+.service-card h3{font-size:1.125rem;margin-bottom:8px}
+.service-card p{font-size:0.9rem;color:var(--gray-500);line-height:1.6}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:48px}
+.why-items{display:flex;flex-direction:column;gap:24px}
+.why-item{display:flex;gap:16px;align-items:start}
+.why-check{width:24px;height:24px;flex-shrink:0;margin-top:2px}
+.why-item h4{font-size:1rem;margin-bottom:4px}
+.why-item p{font-size:0.9rem;color:var(--gray-500);line-height:1.6}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px}
+.review-stars{display:flex;gap:4px;margin-bottom:16px}
+.review-stars svg{width:18px;height:18px;fill:var(--amber)}
+.review-text{font-style:italic;color:var(--gray-400);line-height:1.7;margin-bottom:20px;font-size:0.95rem}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;color:var(--amber);font-size:1rem;flex-shrink:0}
+.review-name{font-weight:600;color:var(--white);font-size:0.9rem}
+.review-role{font-size:0.8rem;color:var(--gray-500)}
+
+/* AREAS */
+.areas{text-align:center}
+.areas-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
+.area-tag{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:12px 24px;font-size:0.9rem;color:var(--gray-300);font-weight:500;transition:border-color 0.2s}
+.area-tag:hover{border-color:var(--amber)}
+
+/* CTA */
+.cta-section{text-align:center;padding:96px 24px;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.cta-section h2{font-size:2.5rem;margin-bottom:12px}
+.cta-section p{color:var(--gray-400);margin-bottom:36px;font-size:1.05rem}
+.cta-phone{font-family:var(--font-heading);font-weight:800;font-size:1.5rem;color:var(--amber);margin-top:16px;display:block}
+
+/* FOOTER */
+.footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border)}
+.footer-logo{font-family:var(--font-heading);font-weight:800;font-size:1.125rem;color:var(--white);margin-bottom:8px}
+.footer-logo span{color:var(--amber)}
+.footer p{font-size:0.8rem;color:var(--gray-600)}
+
+/* BOTTOM BANNER */
+.bottom-banner{position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--amber);padding:14px 24px;display:flex;align-items:center;justify-content:center;gap:10px}
+.bottom-banner a{color:#000;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px}
+.bottom-banner svg{width:20px;height:20px;stroke:#000;fill:none}
+
+/* MOBILE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:2.75rem}
+  .hero-image{max-height:400px}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr;gap:40px}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:32px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile-btn{display:block}
+  .hero{min-height:auto;padding:100px 24px 60px}
+  .hero h1{font-size:2.25rem}
+  .section-title{font-size:2rem}
+  .services-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:20px}
+  .stat-num{font-size:1.5rem}
+  .hero-btns{flex-direction:column}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center}
+  body{padding-bottom:56px}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.85rem}
+  .section{padding:64px 16px}
+  .section-title{font-size:1.65rem}
+  .cta-section h2{font-size:1.85rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" id="nav-logo"></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" id="nav-cta-btn" href="#">Get a Free Quote</a>
+    </div>
+    <button class="nav-mobile-btn" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge fade-up fade-up-1"><span class="pulse"></span> <span id="hero-badge-text"></span></div>
+      <h1 class="fade-up fade-up-2" id="hero-h1"></h1>
+      <p class="hero-desc fade-up fade-up-3" id="hero-desc"></p>
+      <div class="hero-btns fade-up fade-up-4">
+        <a class="btn-primary" id="hero-quote-btn" href="#">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Get a Free Quote
+        </a>
+        <a class="btn-secondary" href="#services">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          Our Services
+        </a>
+      </div>
+    </div>
+    <div class="hero-image fade-up fade-up-5">
+      <img id="hero-img" src="" alt="Trade work">
+      <div class="hero-image-overlay"></div>
+      <div class="hero-image-text">
+        <h3 id="hero-img-name"></h3>
+        <p id="hero-img-trade"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-inner">
+    <div><div class="stat-num">15+</div><div class="stat-label">Years Experience</div></div>
+    <div><div class="stat-num">500+</div><div class="stat-label">Jobs Completed</div></div>
+    <div><div class="stat-num">4.9</div><div class="stat-label">Average Rating</div></div>
+    <div><div class="stat-num">100%</div><div class="stat-label">Fully Insured</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title" id="services-title"></h2>
+    <p class="section-desc" id="services-desc"></p>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section" id="about" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <div class="section-label">Why Us</div>
+    <div class="why-grid">
+      <div>
+        <h2 class="section-title" id="why-title"></h2>
+        <p class="section-desc" id="why-desc"></p>
+      </div>
+      <div class="why-items" id="why-items"></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="section-inner">
+    <div class="section-label">Reviews</div>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-desc">Don't just take our word for it. Here's what our customers have to say.</p>
+    <div class="reviews-grid" id="reviews-grid"></div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section areas" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <div class="section-label">Coverage</div>
+    <h2 class="section-title" id="areas-title"></h2>
+    <p class="section-desc" style="margin:0 auto" id="areas-desc"></p>
+    <div class="areas-tags" id="areas-tags"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready to Get Started?</h2>
+  <p id="cta-desc"></p>
+  <a class="btn-primary" id="cta-btn" href="#">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+  <a class="cta-phone" id="cta-phone" href="#"></a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo" id="footer-logo"></div>
+  <p id="footer-copy"></p>
+</footer>
+
+<!-- BOTTOM BANNER -->
+<div class="bottom-banner" id="bottom-banner">
+  <a id="bottom-banner-link" href="#">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <span id="bottom-banner-text">Call Now</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var name = params.get('name') || 'Trade Services';
+  var trade = params.get('trade') || 'Tradesperson';
+  var city = params.get('city') || 'Your Area';
+  var phone = params.get('phone') || '';
+
+  var tradeLower = trade.toLowerCase();
+
+  // Detect trade type
+  var tradeType = 'default';
+  if (/electri/.test(tradeLower)) tradeType = 'electrician';
+  else if (/plumb|heat|gas|boiler/.test(tradeLower)) tradeType = 'plumber';
+  else if (/build|construct|extension|renovation/.test(tradeLower)) tradeType = 'builder';
+  else if (/roof|gutter/.test(tradeLower)) tradeType = 'roofer';
+  else if (/paint|decorat/.test(tradeLower)) tradeType = 'painter';
+
+  var tradeData = {
+    electrician: {
+      image: 'https://images.pexels.com/photos/8005397/pexels-photo-8005397.jpeg?auto=compress&cs=tinysrgb&w=800',
+      services: [
+        { t: 'Rewiring', d: 'Complete house rewiring to the latest safety standards, ensuring your property is safe and compliant.' },
+        { t: 'Lighting Installation', d: 'From spotlights to chandeliers, we design and install lighting solutions for every room.' },
+        { t: 'Sockets & Switches', d: 'New sockets, switches, and USB outlets installed exactly where you need them.' },
+        { t: 'Consumer Units', d: 'Fuse board upgrades and replacements to meet current regulations and keep you protected.' },
+        { t: 'Testing & Inspection', d: 'Electrical Installation Condition Reports (EICRs) and PAT testing for homes and businesses.' },
+        { t: 'Fault Finding', d: 'Rapid diagnosis and repair of electrical faults, tripping circuits, and power outages.' }
+      ],
+      icons: [
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/><circle cx="12" cy="18" r="1"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
+      ],
+      reviews: [
+        { text: 'Absolutely brilliant work. Had the whole house rewired and they were clean, professional, and finished ahead of schedule. Cannot recommend highly enough.', name: 'Sarah T', role: 'Homeowner' },
+        { text: 'I manage several rental properties and use them for all electrical work. Reliable, fairly priced, and always available when I need them.', name: 'Mark D', role: 'Landlord' },
+        { text: 'Called about a tripping fuse board and they came out the same day. Found the fault quickly and had it sorted within the hour. Top service.', name: 'James P', role: 'Homeowner' }
+      ]
+    },
+    plumber: {
+      image: 'https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=800',
+      services: [
+        { t: 'Bathroom Installation', d: 'Full bathroom design, supply, and installation from start to finish.' },
+        { t: 'Boiler Installation', d: 'New boiler fitting, replacements, and upgrades with extended warranties.' },
+        { t: 'Leak Repairs', d: 'Fast response leak detection and repair for pipes, taps, and cisterns.' },
+        { t: 'Central Heating', d: 'Radiator installation, powerflush services, and heating system upgrades.' },
+        { t: 'General Plumbing', d: 'Tap replacements, toilet repairs, waste pipes, and all general plumbing needs.' },
+        { t: 'Emergency Callouts', d: 'Burst pipes, boiler breakdowns, and flooding — we respond fast when you need us most.' }
+      ],
+      icons: [
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a2 2 0 012-2h12a2 2 0 012 2v18l-4-2-4 2-4-2-4 2z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8m0 0l4-4m-4 4L8 6"/><rect x="3" y="14" width="18" height="8" rx="2"/><line x1="7" y1="18" x2="7" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="17" y1="18" x2="17" y2="18.01"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'
+      ],
+      reviews: [
+        { text: 'Had a new bathroom fitted and the result is stunning. They handled everything from plumbing to tiling. Really impressed with the attention to detail.', name: 'Lisa M', role: 'Homeowner' },
+        { text: 'Our boiler broke down in the middle of winter and they had a new one installed within 48 hours. Lifesavers. Fair price too.', name: 'David R', role: 'Homeowner' },
+        { text: 'I use them across all my rental properties for plumbing work. Always professional, always on time, and the tenants are always happy.', name: 'Chris H', role: 'Landlord' }
+      ]
+    },
+    builder: {
+      image: 'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=800',
+      services: [
+        { t: 'Extensions', d: 'Single and double storey extensions designed and built to transform your living space.' },
+        { t: 'Brickwork', d: 'Garden walls, boundary walls, and structural brickwork built to last.' },
+        { t: 'Renovations', d: 'Full property renovations from strip-out to handover, managed from start to finish.' },
+        { t: 'New Builds', d: 'Complete new build construction projects delivered on time and on budget.' },
+        { t: 'Loft Conversions', d: 'Add valuable living space with a professionally converted loft.' },
+        { t: 'Groundworks', d: 'Foundations, drainage, and site preparation for all types of construction projects.' }
+      ],
+      icons: [
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="22" height="4" rx="1"/><rect x="1" y="14" width="22" height="4" rx="1"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="18" y1="10" x2="18" y2="14"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 01-9 9"/></svg>'
+      ],
+      reviews: [
+        { text: 'Had a two-storey extension built and the quality is exceptional. They kept us informed at every stage and the project was delivered on time.', name: 'Tom B', role: 'Homeowner' },
+        { text: 'Complete renovation of our Victorian terrace. They understood the brief perfectly and the craftsmanship throughout has been outstanding.', name: 'Rachel K', role: 'Homeowner' },
+        { text: 'I\'ve used them for three property conversions now. Professional, reliable, and they always deliver a quality finish. Highly recommended.', name: 'Neil S', role: 'Property Investor' }
+      ]
+    },
+    roofer: {
+      image: 'https://images.pexels.com/photos/8961438/pexels-photo-8961438.jpeg?auto=compress&cs=tinysrgb&w=800',
+      services: [
+        { t: 'Roof Repairs', d: 'Leak repairs, missing tiles, storm damage — fast response to protect your property.' },
+        { t: 'New Roofs', d: 'Complete re-roofing with high-quality materials and manufacturer-backed guarantees.' },
+        { t: 'Flat Roofing', d: 'EPDM, GRP, and felt flat roofing systems installed and repaired.' },
+        { t: 'Guttering', d: 'Gutter cleaning, repairs, and full replacements in uPVC, cast iron, and aluminium.' },
+        { t: 'Chimney Work', d: 'Chimney repointing, rebuilds, lead flashing, and cowl fitting.' },
+        { t: 'Fascias & Soffits', d: 'Replacement fascias, soffits, and cladding to protect and refresh your roofline.' }
+      ],
+      icons: [
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>'
+      ],
+      reviews: [
+        { text: 'Had a full re-roof done after storm damage. They were out to inspect within hours and the work was completed to an excellent standard. Very professional.', name: 'Steve W', role: 'Homeowner' },
+        { text: 'Repaired a persistent leak that two other roofers couldn\'t fix. They found the problem straight away and it\'s been dry ever since. Brilliant.', name: 'Angela F', role: 'Homeowner' },
+        { text: 'New flat roof on our extension plus all new guttering. Clean, tidy, and reasonably priced. Would definitely use again.', name: 'Kevin L', role: 'Homeowner' }
+      ]
+    },
+    painter: {
+      image: 'https://images.pexels.com/photos/994164/pexels-photo-994164.jpeg?auto=compress&cs=tinysrgb&w=800',
+      services: [
+        { t: 'Interior Painting', d: 'Walls, ceilings, woodwork, and feature walls — flawless finishes throughout your home.' },
+        { t: 'Exterior Painting', d: 'Weather-resistant exterior painting to protect and refresh your property\'s kerb appeal.' },
+        { t: 'Wallpapering', d: 'Expert wallpaper hanging including feature walls, patterned papers, and murals.' },
+        { t: 'Wood Staining & Varnishing', d: 'Doors, floors, decking, and furniture restored and protected with quality finishes.' },
+        { t: 'Commercial Painting', d: 'Offices, shops, and commercial properties painted with minimal disruption to your business.' },
+        { t: 'Plastering & Prep', d: 'Surface preparation, plastering, and filling to ensure the perfect base for every finish.' }
+      ],
+      icons: [
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 3H5a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z"/><path d="M12 11v6"/><path d="M10 17h4"/><path d="M10 21h4"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>'
+      ],
+      reviews: [
+        { text: 'Painted our entire ground floor and hallway. The finish is absolutely immaculate — smooth, even, and not a drip in sight. Highly recommend.', name: 'Emma J', role: 'Homeowner' },
+        { text: 'Had the exterior of our house painted. They prepped everything properly and the result looks fantastic. Very tidy workers too.', name: 'Brian T', role: 'Homeowner' },
+        { text: 'Used them to repaint our office. They worked evenings to minimise disruption and the quality of work was outstanding. Will be using again.', name: 'Sam R', role: 'Business Owner' }
+      ]
+    },
+    default: {
+      image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800',
+      services: [
+        { t: 'Repairs & Maintenance', d: 'Fast, reliable repair services to keep your property in top condition.' },
+        { t: 'Installations', d: 'Professional installation services carried out to the highest standards.' },
+        { t: 'Inspections', d: 'Thorough inspections and assessments with detailed written reports.' },
+        { t: 'Full Projects', d: 'End-to-end project management from initial consultation to final handover.' },
+        { t: 'Emergency Callouts', d: 'Available for urgent callouts when you need help fast.' },
+        { t: 'Free Quotes', d: 'No-obligation quotes provided with transparent, upfront pricing.' }
+      ],
+      icons: [
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+        '<svg viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>'
+      ],
+      reviews: [
+        { text: 'Excellent service from start to finish. Professional, reliable, and the quality of work was outstanding. Would highly recommend.', name: 'Sarah T', role: 'Homeowner' },
+        { text: 'I use them across all my properties. Always on time, fairly priced, and the work is consistently excellent. Great communication too.', name: 'Mark D', role: 'Landlord' },
+        { text: 'Called them for an urgent job and they were there the same day. Problem solved quickly and professionally. Five stars.', name: 'James P', role: 'Homeowner' }
+      ]
+    }
+  };
+
+  var data = tradeData[tradeType];
+  var phoneHref = 'tel:' + phone.replace(/\s/g, '');
+  var phoneDisplay = phone || '0330 133 7901';
+
+  // Format display phone
+  var cleanPhone = phone.replace(/[^\d+]/g, '');
+  if (cleanPhone.startsWith('+44')) {
+    phoneDisplay = '0' + cleanPhone.slice(3).replace(/(\d{4})(\d{3})(\d{3,4})/, '$1 $2 $3');
+  } else if (cleanPhone.length >= 10) {
+    phoneDisplay = cleanPhone.replace(/(\d{5})(\d{3})(\d{3,4})/, '$1 $2 $3');
+  }
+
+  // Update page title
+  document.title = name + ' | Professional ' + trade + ' in ' + city;
+
+  // NAV
+  var nameParts = name.split(' ');
+  var logoFirst = nameParts[0];
+  var logoRest = nameParts.slice(1).join(' ');
+  document.getElementById('nav-logo').innerHTML = logoFirst + ' <span>' + logoRest + '</span>';
+  document.getElementById('nav-cta-btn').href = phoneHref;
+
+  // HERO
+  document.getElementById('hero-badge-text').textContent = 'Trusted ' + trade + ' in ' + city;
+  document.getElementById('hero-h1').innerHTML = 'Professional <span class="gradient">' + trade + '</span> Services in ' + city;
+  document.getElementById('hero-desc').textContent = 'Looking for a reliable ' + trade.toLowerCase() + ' in ' + city + '? ' + name + ' provides professional, high-quality ' + trade.toLowerCase() + ' services across ' + city + ' and the surrounding areas. Fully insured, competitively priced, and trusted by hundreds of local customers.';
+  document.getElementById('hero-quote-btn').href = phoneHref;
+  document.getElementById('hero-img').src = data.image;
+  document.getElementById('hero-img').alt = trade + ' services by ' + name;
+  document.getElementById('hero-img-name').textContent = name;
+  document.getElementById('hero-img-trade').textContent = 'Professional ' + trade + ' Services';
+
+  // SERVICES
+  document.getElementById('services-title').textContent = 'Our ' + trade + ' Services';
+  document.getElementById('services-desc').textContent = 'From small repairs to large projects, we provide a comprehensive range of ' + trade.toLowerCase() + ' services across ' + city + '.';
+  var grid = document.getElementById('services-grid');
+  data.services.forEach(function(s, i) {
+    grid.innerHTML += '<div class="service-card"><div class="service-icon">' + data.icons[i] + '</div><h3>' + s.t + '</h3><p>' + s.d + '</p></div>';
+  });
+
+  // WHY
+  document.getElementById('why-title').textContent = 'Why Choose ' + name + '?';
+  document.getElementById('why-desc').textContent = 'We\'re not just another ' + trade.toLowerCase() + '. We take pride in delivering quality work with honest pricing and real customer service.';
+  var whyItems = [
+    { t: 'Free No-Obligation Quotes', d: 'We\'ll assess the job and provide a clear, written quote with no hidden costs or pressure to commit.' },
+    { t: 'Fully Insured & Certified', d: 'All work is fully insured and carried out by qualified professionals you can trust.' },
+    { t: 'Clean, Tidy & Professional', d: 'We treat your property with respect. We leave every job spotless and tidy.' },
+    { t: 'Local & Trusted in ' + city, d: 'We\'re proud to serve ' + city + ' and the surrounding areas. Our reputation is everything to us.' }
+  ];
+  var checkSvg = '<svg class="why-check" viewBox="0 0 24 24" stroke="#f59e0b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+  var whyEl = document.getElementById('why-items');
+  whyItems.forEach(function(item) {
+    whyEl.innerHTML += '<div class="why-item">' + checkSvg + '<div><h4>' + item.t + '</h4><p>' + item.d + '</p></div></div>';
+  });
+
+  // REVIEWS
+  var starSvg = '<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+  var stars5 = '<div class="review-stars">' + starSvg + starSvg + starSvg + starSvg + starSvg + '</div>';
+  var revEl = document.getElementById('reviews-grid');
+  data.reviews.forEach(function(r) {
+    revEl.innerHTML += '<div class="review-card">' + stars5 + '<p class="review-text">"' + r.text + '"</p><div class="review-author"><div class="review-avatar">' + r.name.charAt(0) + '</div><div><div class="review-name">' + r.name + '</div><div class="review-role">' + r.role + '</div></div></div></div>';
+  });
+
+  // AREAS
+  document.getElementById('areas-title').textContent = 'Areas We Cover in ' + city;
+  document.getElementById('areas-desc').textContent = 'We provide ' + trade.toLowerCase() + ' services across ' + city + ' and the wider area.';
+  var areaTags = [city + ' City Centre', city + ' North', city + ' South', city + ' East', city + ' West', city + ' & Surrounding Villages', 'Nearby Towns', 'Local Suburbs', 'Wider County'];
+  var tagsEl = document.getElementById('areas-tags');
+  areaTags.forEach(function(a) {
+    tagsEl.innerHTML += '<span class="area-tag">' + a + '</span>';
+  });
+
+  // CTA
+  document.getElementById('cta-desc').textContent = 'Get in touch with ' + name + ' for a free, no-obligation quote on any ' + trade.toLowerCase() + ' work in ' + city + '.';
+  document.getElementById('cta-btn').href = phoneHref;
+  document.getElementById('cta-phone').href = phoneHref;
+  document.getElementById('cta-phone').textContent = phoneDisplay;
+
+  // FOOTER
+  document.getElementById('footer-logo').innerHTML = logoFirst + ' <span>' + logoRest + '</span>';
+  document.getElementById('footer-copy').textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + name + '. All rights reserved.';
+
+  // BOTTOM BANNER
+  document.getElementById('bottom-banner-link').href = phoneHref;
+  document.getElementById('bottom-banner-text').textContent = 'Call Now — ' + phoneDisplay;
+})();
+</script>
+</body>
+</html>
