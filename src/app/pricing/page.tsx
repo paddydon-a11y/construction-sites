@@ -53,7 +53,7 @@ const painPoints = [
   {
     icon: "🔍",
     headline: "The Job That Went Next Door",
-    text: "A homeowner Googled \"plumber near me\" last Tuesday. You were 3 miles away, sat in your van. But you didn't show up on Google. The bloke 10 miles away with a website did. He got the call. You didn't even know the job existed.",
+    text: "A homeowner with a big detached house Googled \"plumber near me\" last Tuesday. Full bathroom refit, paying upfront, no messing about. You were 3 miles away, sat in your van. But you didn't show up on Google. The bloke 10 miles away with a website did. He got the call. You didn't even know the job existed.",
   },
   {
     icon: "🏗️",
