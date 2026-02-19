@@ -218,7 +218,7 @@ export default function PricingPage() {
               {
                 label: "One new job per month from Google",
                 value: "5-20x return",
-                sub: "Most of our clients get their first enquiry within 2 weeks",
+                sub: "100% of our clients report vast turnover increases once they go live",
               },
               {
                 label: "Upfront cost",
