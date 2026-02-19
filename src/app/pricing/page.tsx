@@ -58,7 +58,7 @@ const painPoints = [
   {
     icon: "🏗️",
     headline: "The Contract You Never Heard About",
-    text: "A property manager had 6 flats that needed rewiring. He Googled, checked websites, picked someone who looked legit. You could have done it in your sleep. But he couldn't find you, so you were never in the running.",
+    text: "A property manager had 6 flats that needed rewiring. 50% upfront, the rest in cash. He Googled, checked websites, picked someone who looked legit. That bloke's got the cash in his glovebox laughing all the way home. You could have done it in your sleep. But he couldn't find you, so you were never in the running.",
   },
   {
     icon: "🤡",
