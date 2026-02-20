@@ -158,6 +158,23 @@ a{text-decoration:none;color:inherit}
 .footer p a{color:var(--gray-500)}
 .footer p a:hover{color:var(--red-light)}
 
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.gallery-item{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/5;cursor:pointer;border:1px solid var(--border)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,10,15,0.5) 0%,transparent 50%);pointer-events:none}
+.gallery-item:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.gallery-lightbox{position:fixed;inset:0;z-index:300;background:rgba(8,10,15,0.95);display:none;align-items:center;justify-content:center;padding:20px;cursor:pointer}
+.gallery-lightbox.open{display:flex}
+.gallery-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px}
+.gallery-lightbox .lb-close{position:absolute;top:20px;right:24px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.1);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.gallery-lightbox .lb-close svg{stroke:var(--white);width:20px;height:20px}
+@media(max-width:640px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-item:first-child{grid-column:span 2;grid-row:span 1;aspect-ratio:16/9}
+}
+
 /* FLOATING BUTTONS */
 .floating-btns{position:fixed;bottom:20px;right:20px;z-index:90;display:flex;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
 .floating-btns.visible{opacity:1;pointer-events:auto}
@@ -237,7 +254,7 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="hero-image">
         <div class="hero-logo">
-          <svg class="logo-svg" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="logo-svg" viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="dropRed" x1="50%" y1="0%" x2="50%" y2="60%">
                 <stop offset="0%" stop-color="#d42029"/>
@@ -258,10 +275,10 @@ a{text-decoration:none;color:inherit}
                 <stop offset="100%" stop-color="#155a96"/>
               </linearGradient>
               <clipPath id="dropClipTop">
-                <rect x="0" y="0" width="80" height="58"/>
+                <rect x="0" y="0" width="60" height="44"/>
               </clipPath>
               <clipPath id="dropClipBottom">
-                <rect x="0" y="58" width="80" height="40"/>
+                <rect x="0" y="44" width="60" height="30"/>
               </clipPath>
               <filter id="dropShadow">
                 <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#d42029" flood-opacity="0.2"/>
@@ -270,27 +287,25 @@ a{text-decoration:none;color:inherit}
                 <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#d42029" flood-opacity="0.15"/>
               </filter>
             </defs>
-            <!-- Water droplet - positioned left of KC -->
-            <g transform="translate(28, 30)" filter="url(#dropShadow)">
-              <!-- Top half (red) -->
-              <path d="M30 8 C30 8 8 42 8 58 C8 72 18 82 30 82" fill="url(#dropRed)" clip-path="url(#dropClipTop)"/>
-              <path d="M30 8 C30 8 52 42 52 58 C52 72 42 82 30 82" fill="url(#dropRed)" clip-path="url(#dropClipTop)"/>
-              <!-- Bottom half (blue) -->
-              <path d="M30 8 C30 8 8 42 8 58 C8 72 18 82 30 82" fill="url(#dropBlue)" clip-path="url(#dropClipBottom)"/>
-              <path d="M30 8 C30 8 52 42 52 58 C52 72 42 82 30 82" fill="url(#dropBlue)" clip-path="url(#dropClipBottom)"/>
-              <!-- Droplet highlight -->
-              <ellipse cx="22" cy="50" rx="6" ry="10" fill="white" opacity="0.12"/>
+            <!-- Water droplet -->
+            <g transform="translate(18, 22)" filter="url(#dropShadow)">
+              <path d="M23 6 C23 6 6 32 6 44 C6 55 14 63 23 63" fill="url(#dropRed)" clip-path="url(#dropClipTop)"/>
+              <path d="M23 6 C23 6 40 32 40 44 C40 55 32 63 23 63" fill="url(#dropRed)" clip-path="url(#dropClipTop)"/>
+              <path d="M23 6 C23 6 6 32 6 44 C6 55 14 63 23 63" fill="url(#dropBlue)" clip-path="url(#dropClipBottom)"/>
+              <path d="M23 6 C23 6 40 32 40 44 C40 55 32 63 23 63" fill="url(#dropBlue)" clip-path="url(#dropClipBottom)"/>
+              <ellipse cx="17" cy="38" rx="4" ry="8" fill="white" opacity="0.12"/>
             </g>
             <!-- KC text -->
-            <text x="100" y="112" font-family="'Plus Jakarta Sans',sans-serif" font-weight="900" font-size="100" fill="url(#kcRed)" letter-spacing="-3" filter="url(#textGlow)">KC</text>
-            <!-- Plumbing & Heating text -->
-            <text x="100" y="145" font-family="'Inter',sans-serif" font-weight="700" font-size="18" fill="url(#textBlue)">Plumbing</text>
-            <text x="100" y="168" font-family="'Inter',sans-serif" font-weight="700" font-size="18" fill="url(#textBlue)">&amp; Heating</text>
-            <text x="100" y="191" font-family="'Inter',sans-serif" font-weight="700" font-size="18" fill="url(#textBlue)">Supplies</text>
-            <!-- Subtle divider line -->
-            <line x1="40" y1="210" x2="260" y2="210" stroke="url(#textBlue)" stroke-width="1" opacity="0.25"/>
-            <!-- Gas Safe + Est. badges -->
-            <text x="150" y="230" font-family="'Inter',sans-serif" font-weight="600" font-size="11" fill="#6b7280" text-anchor="middle" letter-spacing="2">GAS SAFE REGISTERED  ·  EST. 2008  ·  VOKERA APPROVED</text>
+            <text x="72" y="88" font-family="'Plus Jakarta Sans',sans-serif" font-weight="900" font-size="86" fill="url(#kcRed)" letter-spacing="-2" filter="url(#textGlow)">KC</text>
+            <!-- Plumbing & Heating Supplies - single line layout beside KC -->
+            <text x="210" y="52" font-family="'Inter',sans-serif" font-weight="700" font-size="17" fill="url(#textBlue)">Plumbing</text>
+            <text x="210" y="73" font-family="'Inter',sans-serif" font-weight="700" font-size="17" fill="url(#textBlue)">&amp; Heating</text>
+            <text x="210" y="94" font-family="'Inter',sans-serif" font-weight="700" font-size="17" fill="url(#textBlue)">Supplies</text>
+            <!-- Subtle divider -->
+            <line x1="30" y1="115" x2="270" y2="115" stroke="url(#textBlue)" stroke-width="0.5" opacity="0.2"/>
+            <!-- Tagline -->
+            <text x="150" y="138" font-family="'Inter',sans-serif" font-weight="600" font-size="10.5" fill="#6b7280" text-anchor="middle" letter-spacing="3">GAS SAFE REGISTERED</text>
+            <text x="150" y="158" font-family="'Inter',sans-serif" font-weight="600" font-size="10.5" fill="#6b7280" text-anchor="middle" letter-spacing="3">SERVING DERBY SINCE 2008</text>
           </svg>
         </div>
         <div class="hero-image-badge">
@@ -382,6 +397,30 @@ a{text-decoration:none;color:inherit}
     </div>
   </div>
 </section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label blue">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+      <p class="section-desc">Boiler installations, pipework, and heating systems. Here's a look at some of our recent work across Derby.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-1.webp" alt="KC Plumbing engineer installing a boiler" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-2.webp" alt="Completed Vokera boiler installation with copper pipework" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-3.webp" alt="Engineer working on boiler pipework" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-4.webp" alt="New Glow-worm boiler installation" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="gallery-5.webp" alt="Engineer soldering copper pipes on Vokera boiler" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="gallery-lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
 <!-- TRADE SHOP -->
 <section class="section" id="shop">
@@ -652,6 +691,17 @@ document.querySelectorAll('.nav-links a').forEach(function(a){
     document.getElementById('nav-links').classList.remove('open');
   });
 });
+function openLightbox(el){
+  var src=el.querySelector('img').src;
+  document.getElementById('lightbox-img').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(e.target.tagName==='IMG') return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
 var heroBtns=document.querySelector('.hero-btns');
 var floatingBtns=document.querySelector('.floating-btns');
 function checkSticky(){
