@@ -27,8 +27,8 @@ a{text-decoration:none;color:inherit}
 .nav-links{display:flex;align-items:center;gap:24px}
 .nav-links a{font-size:0.8rem;font-weight:600;color:var(--gray-400);transition:color 0.2s}
 .nav-links a:hover{color:var(--gray-700)}
-.nav-cta{background:var(--blue);color:#fff;font-weight:700;font-size:0.8rem;padding:8px 18px;border-radius:8px;transition:background 0.2s}
-.nav-cta:hover{background:var(--blue-hover)}
+.nav-links a.nav-cta{background:var(--blue);color:#fff;font-weight:700;font-size:0.8rem;padding:8px 18px;border-radius:8px;transition:background 0.2s}
+.nav-links a.nav-cta:hover{background:var(--blue-hover);color:#fff}
 .nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .nav-mobile svg{stroke:var(--gray-700)}
 @media(max-width:768px){
@@ -60,8 +60,8 @@ a{text-decoration:none;color:inherit}
 
 /* HERO IMAGE / LOGO */
 .hero-image{position:relative;border-radius:16px;overflow:hidden;max-height:520px;border:1px solid var(--border);background:var(--white);display:flex;align-items:center;justify-content:center;min-height:400px;box-shadow:0 8px 40px rgba(0,0,0,0.06)}
-.hero-logo{text-align:center;padding:30px}
-.logo-svg{width:280px;height:auto;max-width:100%}
+.hero-logo{text-align:center;padding:20px}
+.logo-svg{width:100%;height:auto;max-width:100%}
 .hero-image-badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px}
 .hero-image-badge svg{width:18px;height:18px}
 .hero-image-badge span{font-size:0.75rem;font-weight:700;color:var(--gray-700)}
@@ -241,21 +241,21 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="hero-image">
         <div class="hero-logo">
-          <svg class="logo-svg" viewBox="0 0 480 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="logo-svg" viewBox="0 0 520 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Bullseye target -->
-            <g transform="translate(30, 10)">
-              <circle cx="55" cy="55" r="55" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="2"/>
-              <circle cx="55" cy="55" r="43" fill="#0099ff"/>
-              <circle cx="55" cy="55" r="30" fill="#e53935"/>
-              <circle cx="55" cy="55" r="16" fill="#fdd835"/>
+            <g transform="translate(20, 15)">
+              <circle cx="75" cy="75" r="75" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="2"/>
+              <circle cx="75" cy="75" r="58" fill="#0099ff"/>
+              <circle cx="75" cy="75" r="40" fill="#e53935"/>
+              <circle cx="75" cy="75" r="22" fill="#fdd835"/>
             </g>
             <!-- I Find Leaks text -->
-            <text x="155" y="62" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="46" fill="#1a1a1a" letter-spacing="1">I Find Leaks</text>
+            <text x="190" y="80" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="56" fill="#1a1a1a" letter-spacing="1">I Find Leaks</text>
             <!-- Tagline -->
-            <text x="157" y="92" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="18" fill="#6b7280">Experience the difference...</text>
-            <!-- Subtle bottom text -->
-            <line x1="30" y1="112" x2="450" y2="112" stroke="#e5e7eb" stroke-width="1"/>
-            <text x="240" y="132" font-family="'Inter',sans-serif" font-weight="600" font-size="10" fill="#9ca3af" text-anchor="middle" letter-spacing="3">LEAK DETECTION SPECIALISTS  ·  DERBY</text>
+            <text x="194" y="115" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="22" fill="#6b7280">Experience the difference...</text>
+            <!-- Subtle bottom line and text -->
+            <line x1="20" y1="155" x2="500" y2="155" stroke="#e5e7eb" stroke-width="1"/>
+            <text x="260" y="180" font-family="'Inter',sans-serif" font-weight="600" font-size="12" fill="#9ca3af" text-anchor="middle" letter-spacing="3">LEAK DETECTION SPECIALISTS  ·  DERBY</text>
           </svg>
         </div>
         <div class="hero-image-badge">
