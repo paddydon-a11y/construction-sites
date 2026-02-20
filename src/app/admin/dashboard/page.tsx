@@ -28,7 +28,6 @@ interface Lead {
 const COLUMNS = [
   { id: "new", label: "New Lead", color: "#3b82f6" },
   { id: "mockups-sent", label: "Mockups Sent", color: "#8b5cf6" },
-  { id: "interested", label: "Sales Called", color: "#f59e0b" },
   { id: "agreement-sent", label: "Agreement Sent", color: "#f97316" },
   { id: "signed", label: "Signed", color: "#10b981" },
   { id: "live", label: "Live", color: "#22c55e" },
@@ -185,6 +184,8 @@ function LeadCard({
                   ? "#ec489920"
                   : lead.source === "Referral"
                   ? "#10b98120"
+                  : lead.source === "Cold Call"
+                  ? "#f59e0b20"
                   : "#94a3b820",
               color:
                 lead.source === "Google"
@@ -193,6 +194,8 @@ function LeadCard({
                   ? "#f472b6"
                   : lead.source === "Referral"
                   ? "#34d399"
+                  : lead.source === "Cold Call"
+                  ? "#fbbf24"
                   : "#94a3b8",
             }}
           >
@@ -348,6 +351,7 @@ function AddLeadModal({
               <option value="Google">Google</option>
               <option value="TikTok">TikTok</option>
               <option value="Website">Website</option>
+              <option value="Cold Call">Cold Call</option>
             </select>
           </div>
         </div>
