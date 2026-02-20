@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leicester Plumbing Solutions | Plumber in Leicester | LPS</title>
+<meta name="description" content="5-star rated plumber in Leicester. Fast, professional plumbing services — shower repairs, leak detection, radiators, bathroom fitting. 45 five-star reviews. Call for a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0906;--card:#141210;--card-hover:#1c1914;--border:#221e18;--border-light:#2e2820;--copper:#c27830;--copper-hover:#a8652a;--copper-light:#d9975a;--copper-glow:rgba(194,120,48,0.12);--brass:#d4a04a;--brass-light:#e6c47a;--green:#22c55e;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--heading:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--bg);color:var(--gray-400);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:var(--white);line-height:1.15;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--heading);font-weight:900;font-size:1.15rem;color:var(--white);letter-spacing:-0.02em}
+.nav-logo span{color:var(--copper-light)}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:0.8rem;font-weight:600;color:var(--gray-400);transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--copper);color:#fff;font-weight:700;font-size:0.8rem;padding:8px 18px;border-radius:8px;transition:background 0.2s}
+.nav-cta:hover{background:var(--copper-hover)}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile svg{stroke:var(--white)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+  .nav-links.open{display:flex;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:200;overflow-y:auto}
+  .nav-links.open a{font-size:1.25rem}
+  .nav-links.open .nav-cta{font-size:1rem;padding:14px 32px}
+}
+
+/* HERO */
+.hero{position:relative;padding:140px 0 80px;overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--copper-glow),transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(194,120,48,0.08);border:1px solid rgba(194,120,48,0.2);border-radius:100px;padding:6px 16px;font-size:0.8rem;color:var(--copper-light);font-weight:600;margin-bottom:20px}
+.hero-badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+.hero h1{font-size:3rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:20px}
+.hero h1 .accent{background:linear-gradient(135deg,var(--copper),var(--brass-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.05rem;color:var(--gray-400);max-width:480px;line-height:1.75;margin-bottom:32px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:0.95rem;padding:14px 28px;border-radius:10px;transition:all 0.2s;border:none;cursor:pointer}
+.btn-copper{background:linear-gradient(135deg,var(--copper),var(--brass));color:#fff}
+.btn-copper:hover{background:linear-gradient(135deg,var(--copper-hover),var(--copper));transform:translateY(-1px);box-shadow:0 8px 30px rgba(194,120,48,0.25)}
+.btn-whatsapp{background:#25d366;color:#fff}
+.btn-whatsapp:hover{background:#1fb855;transform:translateY(-1px);box-shadow:0 8px 30px rgba(37,211,102,0.25)}
+.btn-outline{border:1.5px solid var(--border-light);color:var(--white);background:transparent}
+.btn-outline:hover{border-color:var(--copper);color:var(--copper-light)}
+.hero-image{position:relative;border-radius:16px;overflow:hidden;max-height:520px;border:1px solid var(--border);background:linear-gradient(160deg,#1a150e,#0d0b08);display:flex;align-items:center;justify-content:center;min-height:400px}
+.hero-logo{text-align:center;padding:40px}
+.hero-logo .pipe-icon{margin:0 auto 24px;width:100px;height:100px;position:relative}
+.pipe-icon svg{width:100%;height:100%}
+.hero-logo .logo-text{font-family:var(--heading);font-size:4.5rem;font-weight:900;letter-spacing:-0.06em;line-height:1}
+.hero-logo .logo-text span{background:linear-gradient(135deg,var(--copper),var(--brass-light),var(--copper));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-logo .logo-sub{font-size:0.85rem;font-weight:700;margin-top:8px;letter-spacing:0.15em;text-transform:uppercase;background:linear-gradient(90deg,var(--copper-light),var(--brass-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-image-badge{position:absolute;top:16px;right:16px;background:rgba(10,9,6,0.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px}
+.hero-image-badge svg{width:18px;height:18px}
+.hero-image-badge span{font-size:0.75rem;font-weight:700;color:var(--white)}
+
+/* TRUST BAR */
+.trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card);padding:20px 0}
+.trust-items{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 40px}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--gray-300)}
+.trust-item svg{width:18px;height:18px;stroke:var(--copper-light);fill:none;stroke-width:2;flex-shrink:0}
+
+/* SECTIONS */
+.section{padding:80px 0}
+.section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--copper-light);margin-bottom:10px}
+.section-title{font-size:2.25rem;letter-spacing:-0.02em;margin-bottom:12px}
+.section-desc{color:var(--gray-400);max-width:560px;font-size:0.95rem;line-height:1.7}
+.section-center{text-align:center}
+.section-center .section-desc{margin:0 auto}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;transition:border-color 0.3s,background 0.3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--copper),var(--brass-light));transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover{border-color:var(--border-light);background:var(--card-hover)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:40px;height:40px;margin-bottom:14px}
+.service-icon svg{width:100%;height:100%}
+.service-card h3{font-size:0.95rem;font-weight:700;margin-bottom:6px}
+.service-card p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:40px}
+.why-items{display:flex;flex-direction:column;gap:20px}
+.why-item{display:flex;gap:14px}
+.why-item-icon{width:36px;height:36px;border-radius:10px;background:var(--copper-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-item-icon svg{width:18px;height:18px;stroke:var(--copper-light);fill:none;stroke-width:2}
+.why-item h4{font-size:0.9rem;font-weight:700;margin-bottom:3px}
+.why-item p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.review-stars{display:flex;gap:2px;margin-bottom:12px}
+.review-stars svg{width:16px;height:16px;fill:#fbbf24}
+.review-text{font-size:0.88rem;color:var(--gray-300);line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:36px;height:36px;border-radius:50%;background:var(--copper-glow);display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:800;color:var(--copper-light);font-size:0.85rem;flex-shrink:0}
+.review-name{font-weight:700;color:var(--white);font-size:0.82rem}
+.review-role{font-size:0.75rem;color:var(--gray-500)}
+
+/* AREAS */
+.areas-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+.area-tag{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:10px 20px;font-size:0.82rem;color:var(--gray-300);font-weight:600;transition:border-color 0.2s}
+.area-tag:hover{border-color:var(--copper)}
+
+/* CTA BAND */
+.cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,var(--copper-glow),transparent 70%);pointer-events:none}
+.cta-band>*{position:relative}
+.cta-band h2{font-size:2rem;margin-bottom:8px}
+.cta-band p{color:var(--gray-400);margin-bottom:24px;font-size:0.95rem}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-block h4{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-block a,.contact-block p{font-size:1.1rem;color:var(--white);font-weight:600}
+.contact-block a:hover{color:var(--copper-light)}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px}
+.contact-form label{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--white);font-family:var(--body);font-size:0.9rem;outline:none;transition:border-color 0.2s;margin-bottom:16px;-webkit-appearance:none}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--copper)}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-form button{width:100%;padding:14px;border-radius:10px;font-size:0.95rem}
+
+/* FOOTER */
+.footer{padding:32px 0;text-align:center;border-top:1px solid var(--border)}
+.footer-logo{font-family:var(--heading);font-weight:900;font-size:1rem;color:var(--white);margin-bottom:6px}
+.footer-logo span{color:var(--copper-light)}
+.footer p{font-size:0.75rem;color:var(--gray-500)}
+.footer p a{color:var(--gray-500)}
+.footer p a:hover{color:var(--copper-light)}
+
+/* FLOATING BUTTONS */
+.floating-btns{position:fixed;bottom:20px;right:20px;z-index:90;display:flex;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.floating-btns.visible{opacity:1;pointer-events:auto}
+.floating-btns a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:transform 0.2s}
+.floating-btns a:hover{transform:scale(1.1)}
+.floating-btns .fab-call{background:var(--copper)}
+.floating-btns .fab-call svg{stroke:#fff;fill:none}
+.floating-btns .fab-wa{background:#25d366}
+.floating-btns svg{width:24px;height:24px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h1{font-size:2.5rem}
+  .hero-sub{margin:0 auto 28px}
+  .hero-btns{justify-content:center}
+  .hero-image{max-height:320px;max-width:360px;margin:0 auto;min-height:240px}
+  .hero-logo .logo-text{font-size:3.5rem}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .hero{padding:110px 0 60px;min-height:auto}
+  .hero h1{font-size:2rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.75rem}
+  .services-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;width:100%;max-width:340px;margin:0 auto}
+  .btn{width:100%}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns .btn{width:100%;max-width:320px}
+  .trust-items{gap:16px 24px}
+  .hero-logo .logo-text{font-size:2.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">LPS <span>Leicester Plumbing Solutions</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:07557965534">07557 965534</a>
+    </div>
+    <button class="nav-mobile" id="nav-toggle" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="dot"></span> 5.0 Stars &middot; 45 Reviews on Google</div>
+        <h1>Leicester's Trusted <span class="accent">Plumbing Solutions</span></h1>
+        <p class="hero-sub">Fast, professional plumbing you can rely on. From emergency leaks to full bathroom installations, Jay and the team deliver quality work at honest prices. Trusted by homeowners across Leicester.</p>
+        <div class="hero-btns">
+          <a class="btn btn-copper" href="tel:07557965534">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            07557 965534
+          </a>
+          <a class="btn btn-whatsapp" href="https://wa.me/447557965534">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Jay
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-logo">
+          <div class="pipe-icon">
+            <svg viewBox="0 0 100 100" fill="none">
+              <rect x="10" y="40" width="80" height="12" rx="2" fill="url(#copper1)"/>
+              <rect x="44" y="10" width="12" height="80" rx="2" fill="url(#copper2)"/>
+              <circle cx="50" cy="46" r="14" stroke="url(#copper3)" stroke-width="4" fill="none"/>
+              <rect x="24" y="36" width="12" height="20" rx="2" fill="url(#copper1)"/>
+              <rect x="64" y="36" width="12" height="20" rx="2" fill="url(#copper1)"/>
+              <defs>
+                <linearGradient id="copper1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c27830"/><stop offset="50%" stop-color="#e6c47a"/><stop offset="100%" stop-color="#c27830"/></linearGradient>
+                <linearGradient id="copper2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4a04a"/><stop offset="50%" stop-color="#c27830"/><stop offset="100%" stop-color="#d4a04a"/></linearGradient>
+                <linearGradient id="copper3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c27830"/><stop offset="100%" stop-color="#e6c47a"/></linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text"><span>LPS</span></div>
+          <div class="logo-sub">Leicester Plumbing Solutions</div>
+        </div>
+        <div class="hero-image-badge">
+          <svg viewBox="0 0 24 24" stroke="#d9975a" fill="none" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>5.0 &middot; 45 Reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        5-Star Rated
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Free Quotes
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Fast Response
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Transparent Pricing
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Professional Plumbing Services</h2>
+      <p class="section-desc">Whatever the plumbing job, big or small, Jay and the team deliver fast, reliable solutions at honest prices.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#d9975a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Emergency Plumbing</h3>
+        <p>Burst pipes, sudden leaks, plumbing emergencies. Jay responds fast and gets the problem sorted quickly and professionally.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#d9975a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Leak Detection &amp; Repair</h3>
+        <p>Hidden leaks found and fixed with minimal disruption. From dripping taps to concealed pipe leaks, we track it down.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#d9975a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Bathroom Installation</h3>
+        <p>Full bathroom fitting including plumbing, tiling, shower installation and all finishing touches. Design to completion.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#d9975a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="12" y2="18"/></svg></div>
+        <h3>Radiator Repairs &amp; Replacement</h3>
+        <p>Cold radiators, leaking valves, or full radiator upgrades. We get your heating working efficiently again.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#d9975a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 4-4 6-4 10a4 4 0 108 0c0-4-4-6-4-10z"/></svg></div>
+        <h3>Boiler Repairs &amp; Servicing</h3>
+        <p>Boiler breakdowns diagnosed and fixed. Annual servicing to keep your boiler running safely and efficiently.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#d9975a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Shower Repairs &amp; Installation</h3>
+        <p>Faulty showers, leaky enclosures, new shower installation. We fix and fit showers to the highest standard.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#d9975a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>Tiling</h3>
+        <p>Wall and floor tiling for bathrooms, kitchens, and wet rooms. Clean, precise tiling work as part of any installation.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#d9975a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 0a4 4 0 014 4v8H8v-8a4 4 0 014-4z"/><path d="M6 22h12"/></svg></div>
+        <h3>General Plumbing</h3>
+        <p>Tap repairs, toilet fixes, waste pipes, overflows, and all everyday plumbing jobs. No job too small for Jay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Need a Plumber in Leicester?</h2>
+    <p>Free quotes, transparent pricing, fast response. Get in touch with Jay today.</p>
+    <div class="cta-btns">
+      <a class="btn btn-copper" href="tel:07557965534">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        07557 965534
+      </a>
+      <a class="btn btn-whatsapp" href="https://wa.me/447557965534">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Jay
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="section" id="why" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <p class="section-label">Why Us</p>
+        <h2 class="section-title">Why Choose LPS?</h2>
+        <p class="section-desc">45 five-star reviews say it all. Jay delivers honest, professional plumbing every single time.</p>
+      </div>
+      <div class="why-items">
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div>
+            <h4>5.0 Stars on Google</h4>
+            <p>45 reviews, every single one five stars. That kind of consistency doesn't happen by accident.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div>
+            <h4>Fast Response</h4>
+            <p>Jay responds quickly and turns up when he says he will. Emergency or planned work, you won't be kept waiting.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+          <div>
+            <h4>Transparent Pricing</h4>
+            <p>Honest quotes with no hidden costs. You know exactly what you're paying before any work starts.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div>
+            <h4>Clean &amp; Professional</h4>
+            <p>Jay is known for being friendly, tidy, and respectful of your property. He explains what he's doing and why.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h4>Local Leicester Plumber</h4>
+            <p>Based in Leicester, covering the whole city and surrounding areas. Local means reliable and always nearby.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label">Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-desc">45 reviews, every one five stars. Here's what Leicester homeowners say about Jay.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;margin-bottom:8px">
+      <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.001-.001 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+      <span style="color:var(--white);font-weight:700;font-size:0.95rem">5.0</span>
+      <div style="display:flex;gap:2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <span style="color:var(--gray-400);font-size:0.85rem">45 reviews on Google</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"LPS are absolutely brilliant. They attended quickly and fixed a faulty shower at a time when we really needed it. Professional, efficient, and reassuring throughout. Couldn't fault the service — highly recommended!"</p>
+        <div class="review-author"><div class="review-avatar">B</div><div><div class="review-name">Bhavesh Pankhania</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"We had a sudden leak from our sink and Jay promptly came out in the evening and identified the problem within minutes, ordered the parts and fitted them the next day. Jay is very friendly and knowledgeable. Highly recommend LPS!"</p>
+        <div class="review-author"><div class="review-avatar">K</div><div><div class="review-name">Komal Desai</div><div class="review-role">Local Guide</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Jay was absolutely amazing. He replied very quick, he was on time, he was respectful of the property and he got the job done. Thank you Jay :)"</p>
+        <div class="review-author"><div class="review-avatar">A</div><div><div class="review-name">Anjali M</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Jay is a great plumber. I had an emergency that he swiftly dealt with at a great price too! I'll definitely be using him as my regular based on this service."</p>
+        <div class="review-author"><div class="review-avatar">K</div><div><div class="review-name">K L</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Recently used Leicester Plumbing Solutions after being recommended by a friend. They did a few jobs for us, replacing a radiator and removing and adding the shower unit with new tiles. Friendly and great service too."</p>
+        <div class="review-author"><div class="review-avatar">N</div><div><div class="review-name">Neemisha Champaneri</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"I first met Jay when he was sent to fix a leak. He was so friendly and even video called me to explain how to cut off the water. He's now my go-to plumber. His work is immaculate and very fairly priced."</p>
+        <div class="review-author"><div class="review-avatar">P</div><div><div class="review-name">Pascale Roussel</div><div class="review-role">Google Review</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section section-center" id="areas" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <p class="section-label">Coverage</p>
+    <h2 class="section-title">Areas We Cover</h2>
+    <p class="section-desc">Based in Leicester, covering the whole city and surrounding areas.</p>
+    <div class="areas-tags">
+      <span class="area-tag">Leicester City Centre</span>
+      <span class="area-tag">Oadby</span>
+      <span class="area-tag">Wigston</span>
+      <span class="area-tag">Knighton</span>
+      <span class="area-tag">Stoneygate</span>
+      <span class="area-tag">Clarendon Park</span>
+      <span class="area-tag">Evington</span>
+      <span class="area-tag">Aylestone</span>
+      <span class="area-tag">Braunstone</span>
+      <span class="area-tag">Beaumont Leys</span>
+      <span class="area-tag">Belgrave</span>
+      <span class="area-tag">Humberstone</span>
+      <span class="area-tag">Birstall</span>
+      <span class="area-tag">Glenfield</span>
+      <span class="area-tag">Narborough</span>
+      <span class="area-tag">Glen Parva</span>
+      <span class="area-tag">Blaby</span>
+      <span class="area-tag">Market Harborough</span>
+      <span class="area-tag">Hinckley</span>
+      <span class="area-tag">Loughborough</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Request a Free Quote</h2>
+    <p class="section-desc">Tell us what you need and Jay will get back to you fast.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-block">
+          <h4>Phone</h4>
+          <a href="tel:07557965534">07557 965534</a>
+        </div>
+        <div class="contact-block">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/447557965534">Message Jay on WhatsApp</a>
+        </div>
+        <div class="contact-block">
+          <h4>Hours</h4>
+          <p>Monday - Saturday: 7am - 8pm</p>
+          <p style="color:var(--gray-500);font-size:0.9rem;font-weight:400">Emergency callouts available</p>
+        </div>
+        <div class="contact-block">
+          <h4>Location</h4>
+          <p>Leicester, Leicestershire</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form onsubmit="event.preventDefault();this.innerHTML='<div style=&quot;text-align:center;padding:40px 20px&quot;><div style=&quot;font-size:2rem;margin-bottom:12px&quot;>&#9989;</div><h3 style=&quot;color:#fff;margin-bottom:8px&quot;>Thanks!</h3><p style=&quot;color:#9ca3af;font-size:0.9rem&quot;>Jay will be in touch shortly.</p></div>'">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>Emergency Plumbing</option>
+            <option>Leak Detection &amp; Repair</option>
+            <option>Bathroom Installation</option>
+            <option>Shower Repair / Installation</option>
+            <option>Radiator Repair / Replacement</option>
+            <option>Boiler Repair / Servicing</option>
+            <option>Tiling</option>
+            <option>General Plumbing</option>
+            <option>Other</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about the job..." rows="4"></textarea>
+          <button type="submit" class="btn btn-copper">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">LPS <span>Leicester Plumbing Solutions</span></div>
+    <p>&copy; 2026 Leicester Plumbing Solutions. All rights reserved.</p>
+    <p style="margin-top:4px">Professional Plumbing Services &middot; Leicester &amp; Leicestershire</p>
+    <p style="margin-top:4px">Site by <a href="https://construction-sites.co.uk">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING CALL & WHATSAPP -->
+<div class="floating-btns">
+  <a class="fab-call" href="tel:07557965534" aria-label="Call">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a class="fab-wa" href="https://wa.me/447557965534" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+document.getElementById('nav-toggle').addEventListener('click',function(){
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+var heroBtns=document.querySelector('.hero-btns');
+var floatingBtns=document.querySelector('.floating-btns');
+function checkSticky(){
+  var rect=heroBtns.getBoundingClientRect();
+  if(rect.bottom<0){floatingBtns.classList.add('visible')}
+  else{floatingBtns.classList.remove('visible')}
+}
+window.addEventListener('scroll',checkSticky);
+checkSticky();
+</script>
+</body>
+</html>
