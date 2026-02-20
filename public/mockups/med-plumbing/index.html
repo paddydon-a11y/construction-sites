@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.E.D Plumbing &amp; Heating | Plumber in Leicester, Glen Parva &amp; South Leicester</title>
+<meta name="description" content="5-star rated plumber in Leicester. Boiler repairs, central heating, bathroom installations, emergency callouts 24/7. Gas Safe registered. 134 Google reviews. Call 07541 063683.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070d1a;--card:#0c1628;--card-hover:#111e36;--border:#162038;--border-light:#1e2d4a;--fire:#e8601e;--fire-hover:#d4520f;--fire-glow:rgba(232,96,30,0.15);--water:#2d8fd4;--water-light:#5bb8f5;--water-glow:rgba(45,143,212,0.15);--green:#22c55e;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--heading:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--bg);color:var(--gray-400);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:var(--white);line-height:1.15;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--heading);font-weight:900;font-size:1.15rem;color:var(--white);letter-spacing:-0.02em;display:flex;align-items:center;gap:4px}
+.nav-logo .fire{color:var(--fire)}
+.nav-logo .water{color:var(--water-light)}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:0.8rem;font-weight:600;color:var(--gray-400);transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--fire);color:#fff;font-weight:700;font-size:0.8rem;padding:8px 18px;border-radius:8px;transition:background 0.2s}
+.nav-cta:hover{background:var(--fire-hover)}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile svg{stroke:var(--white)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+  .nav-links.open{display:flex;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:200;overflow-y:auto}
+  .nav-links.open a{font-size:1.25rem}
+  .nav-links.open .nav-cta{font-size:1rem;padding:14px 32px}
+}
+
+/* HERO */
+.hero{position:relative;padding:140px 0 80px;overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 30% 0%,var(--water-glow),transparent 60%),radial-gradient(ellipse 60% 50% at 70% 0%,var(--fire-glow),transparent 60%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,96,30,0.08);border:1px solid rgba(232,96,30,0.2);border-radius:100px;padding:6px 16px;font-size:0.8rem;color:var(--fire);font-weight:600;margin-bottom:20px}
+.hero-badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+.hero h1{font-size:3rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:20px}
+.hero h1 .fire{color:var(--fire)}
+.hero h1 .water{color:var(--water-light)}
+.hero-sub{font-size:1.05rem;color:var(--gray-400);max-width:480px;line-height:1.75;margin-bottom:32px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:0.95rem;padding:14px 28px;border-radius:10px;transition:all 0.2s;border:none;cursor:pointer}
+.btn-fire{background:var(--fire);color:#fff}
+.btn-fire:hover{background:var(--fire-hover);transform:translateY(-1px);box-shadow:0 8px 30px rgba(232,96,30,0.25)}
+.btn-whatsapp{background:#25d366;color:#fff}
+.btn-whatsapp:hover{background:#1fb855;transform:translateY(-1px);box-shadow:0 8px 30px rgba(37,211,102,0.25)}
+.btn-outline{border:1.5px solid var(--border-light);color:var(--white);background:transparent}
+.btn-outline:hover{border-color:var(--water);color:var(--water-light)}
+.hero-image{position:relative;border-radius:16px;overflow:hidden;max-height:520px;border:1px solid var(--border);background:linear-gradient(135deg,#0c2340,#0f3460);display:flex;align-items:center;justify-content:center;min-height:400px}
+.hero-logo{text-align:center;padding:40px}
+.hero-logo .yinyang{width:120px;height:120px;margin:0 auto 20px;position:relative}
+.yinyang-circle{width:120px;height:120px;border-radius:50%;background:linear-gradient(90deg,var(--water) 50%,var(--fire) 50%);position:relative;overflow:hidden}
+.yinyang-circle::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:60px;border-radius:50%;background:var(--water)}
+.yinyang-circle::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:60px;border-radius:50%;background:var(--fire)}
+.hero-logo .logo-text{font-family:var(--heading);font-size:3.5rem;font-weight:900;color:var(--white);letter-spacing:-0.04em;line-height:1}
+.hero-logo .logo-sub{color:rgba(255,255,255,0.6);font-size:0.9rem;font-weight:600;margin-top:8px;letter-spacing:0.08em;text-transform:uppercase}
+.hero-image-badge{position:absolute;top:16px;right:16px;background:rgba(7,13,26,0.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px}
+.hero-image-badge svg{width:18px;height:18px}
+.hero-image-badge span{font-size:0.75rem;font-weight:700;color:var(--white)}
+
+/* TRUST BAR */
+.trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card);padding:20px 0}
+.trust-items{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 40px}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--gray-300)}
+.trust-item svg{width:18px;height:18px;fill:none;stroke-width:2;flex-shrink:0}
+.trust-item .t-fire svg{stroke:var(--fire)}
+.trust-item .t-water svg{stroke:var(--water-light)}
+.trust-item svg{stroke:var(--water-light)}
+
+/* SECTIONS */
+.section{padding:80px 0}
+.section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--fire);margin-bottom:10px}
+.section-label.blue{color:var(--water-light)}
+.section-title{font-size:2.25rem;letter-spacing:-0.02em;margin-bottom:12px}
+.section-desc{color:var(--gray-400);max-width:560px;font-size:0.95rem;line-height:1.7}
+.section-center{text-align:center}
+.section-center .section-desc{margin:0 auto}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;transition:border-color 0.3s,background 0.3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card.plumbing::before{background:var(--water)}
+.service-card.heating::before{background:var(--fire)}
+.service-card.safety::before{background:linear-gradient(90deg,var(--water),var(--fire))}
+.service-card:hover{border-color:var(--border-light);background:var(--card-hover)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:40px;height:40px;margin-bottom:14px}
+.service-icon svg{width:100%;height:100%}
+.service-card h3{font-size:0.95rem;font-weight:700;margin-bottom:6px}
+.service-card p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+.service-cat{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:12px}
+.cat-plumbing{background:var(--water-glow);color:var(--water-light)}
+.cat-heating{background:var(--fire-glow);color:var(--fire)}
+.cat-safety{background:rgba(34,197,94,0.1);color:var(--green)}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:40px}
+.why-items{display:flex;flex-direction:column;gap:20px}
+.why-item{display:flex;gap:14px}
+.why-item-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-item-icon.fire-icon{background:var(--fire-glow)}
+.why-item-icon.fire-icon svg{stroke:var(--fire)}
+.why-item-icon.water-icon{background:var(--water-glow)}
+.why-item-icon.water-icon svg{stroke:var(--water-light)}
+.why-item-icon svg{width:18px;height:18px;fill:none;stroke-width:2}
+.why-item h4{font-size:0.9rem;font-weight:700;margin-bottom:3px}
+.why-item p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.review-stars{display:flex;gap:2px;margin-bottom:12px}
+.review-stars svg{width:16px;height:16px;fill:#fbbf24}
+.review-text{font-size:0.88rem;color:var(--gray-300);line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:800;font-size:0.85rem;flex-shrink:0}
+.review-avatar.av-fire{background:var(--fire-glow);color:var(--fire)}
+.review-avatar.av-water{background:var(--water-glow);color:var(--water-light)}
+.review-name{font-weight:700;color:var(--white);font-size:0.82rem}
+.review-role{font-size:0.75rem;color:var(--gray-500)}
+
+/* AREAS */
+.areas-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+.area-tag{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:10px 20px;font-size:0.82rem;color:var(--gray-300);font-weight:600;transition:border-color 0.2s}
+.area-tag:hover{border-color:var(--water)}
+
+/* CTA BAND */
+.cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 30% 50%,var(--water-glow),transparent 60%),radial-gradient(ellipse 50% 80% at 70% 50%,var(--fire-glow),transparent 60%);pointer-events:none}
+.cta-band>*{position:relative}
+.cta-band h2{font-size:2rem;margin-bottom:8px}
+.cta-band p{color:var(--gray-400);margin-bottom:24px;font-size:0.95rem}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-block h4{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-block a,.contact-block p{font-size:1.1rem;color:var(--white);font-weight:600}
+.contact-block a:hover{color:var(--water-light)}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px}
+.contact-form label{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--white);font-family:var(--body);font-size:0.9rem;outline:none;transition:border-color 0.2s;margin-bottom:16px;-webkit-appearance:none}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--water)}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-form button{width:100%;padding:14px;border-radius:10px;font-size:0.95rem}
+
+/* FOOTER */
+.footer{padding:32px 0;text-align:center;border-top:1px solid var(--border)}
+.footer-logo{font-family:var(--heading);font-weight:900;font-size:1rem;color:var(--white);margin-bottom:6px}
+.footer-logo .fire{color:var(--fire)}
+.footer-logo .water{color:var(--water-light)}
+.footer p{font-size:0.75rem;color:var(--gray-500)}
+.footer p a{color:var(--gray-500)}
+.footer p a:hover{color:var(--water-light)}
+
+/* FLOATING BUTTONS */
+.floating-btns{position:fixed;bottom:20px;right:20px;z-index:90;display:flex;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.floating-btns.visible{opacity:1;pointer-events:auto}
+.floating-btns a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:transform 0.2s}
+.floating-btns a:hover{transform:scale(1.1)}
+.floating-btns .fab-call{background:var(--fire)}
+.floating-btns .fab-call svg{stroke:#fff;fill:none}
+.floating-btns .fab-wa{background:#25d366}
+.floating-btns svg{width:24px;height:24px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h1{font-size:2.5rem}
+  .hero-sub{margin:0 auto 28px}
+  .hero-btns{justify-content:center}
+  .hero-image{max-height:320px;max-width:360px;margin:0 auto;min-height:240px}
+  .hero-logo .logo-text{font-size:2.8rem}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .hero{padding:110px 0 60px;min-height:auto}
+  .hero h1{font-size:2rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.75rem}
+  .services-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;width:100%;max-width:340px;margin:0 auto}
+  .btn{width:100%}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns .btn{width:100%;max-width:320px}
+  .trust-items{gap:16px 24px}
+  .hero-logo .logo-text{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">M.E.D <span class="water">Plumbing</span> &amp; <span class="fire">Heating</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:07541063683">Call Now</a>
+    </div>
+    <button class="nav-mobile" id="nav-toggle" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="dot"></span> Gas Safe Registered &middot; 134 Five-Star Reviews</div>
+        <h1>Leicester's Top-Rated <span class="water">Plumber</span> &amp; <span class="fire">Heating</span> Engineer</h1>
+        <p class="hero-sub">Boiler breakdowns, central heating, bathroom installations, and 24/7 emergency callouts. Gas Safe registered, fully insured, and trusted by over 130 homeowners across Leicester. Free quotes, no call-out charge.</p>
+        <div class="hero-btns">
+          <a class="btn btn-fire" href="tel:07541063683">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call 07541 063683
+          </a>
+          <a class="btn btn-whatsapp" href="https://wa.me/447541063683?text=Hi%20Matt%2C%20I%20found%20you%20online%20and%20need%20a%20plumber.%20Can%20you%20help%3F">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Matt
+          </a>
+          <a class="btn btn-outline" href="#services">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-logo">
+          <div class="yinyang"><div class="yinyang-circle"></div></div>
+          <div class="logo-text">M.E.D</div>
+          <div class="logo-sub">Plumbing &amp; Heating</div>
+        </div>
+        <div class="hero-image-badge">
+          <svg viewBox="0 0 24 24" stroke="#e8601e" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Gas Safe Registered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke="var(--fire)" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Gas Safe Registered
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Free Quotes
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke="var(--fire)" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        24/7 Emergency Callouts
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        5.0 Stars &middot; 134 Reviews
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Plumbing, Heating &amp; Gas Services</h2>
+      <p class="section-desc">From dripping taps to full boiler installations. Whatever you need, Matt and the team have got you covered.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card plumbing">
+        <span class="service-cat cat-plumbing">Plumbing</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#5bb8f5" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 0a4 4 0 014 4v8H8v-8a4 4 0 014-4z"/><path d="M6 22h12"/></svg></div>
+        <h3>All Plumbing &amp; Gas Work</h3>
+        <p>Tap repairs, pipe work, toilet fixes, radiator valves and all general plumbing. No job too small.</p>
+      </div>
+      <div class="service-card plumbing">
+        <span class="service-cat cat-plumbing">Plumbing</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#5bb8f5" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Leak Detection &amp; Repairs</h3>
+        <p>Hidden leaks found fast with minimal disruption. We locate and fix the problem properly, first time.</p>
+      </div>
+      <div class="service-card plumbing">
+        <span class="service-cat cat-plumbing">Plumbing</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#5bb8f5" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>24/7 Emergency Callouts</h3>
+        <p>Burst pipes, boiler breakdowns, major leaks. We're available around the clock with rapid response across Leicester.</p>
+      </div>
+      <div class="service-card heating">
+        <span class="service-cat cat-heating">Heating</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e8601e" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 4-4 6-4 10a4 4 0 108 0c0-4-4-6-4-10z"/></svg></div>
+        <h3>Boiler Repairs &amp; Installation</h3>
+        <p>Gas Safe registered for all boiler work. Breakdowns, servicing, and new boiler installations. All major brands covered.</p>
+      </div>
+      <div class="service-card heating">
+        <span class="service-cat cat-heating">Heating</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e8601e" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="12" y2="18"/></svg></div>
+        <h3>Radiator Repairs &amp; Replacements</h3>
+        <p>Cold radiators, noisy heating, thermostatic valve issues. We diagnose and fix heating problems fast.</p>
+      </div>
+      <div class="service-card heating">
+        <span class="service-cat cat-heating">Heating</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e8601e" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Bathroom Installations</h3>
+        <p>Complete bathroom fitting from design to finish. Plumbing, tiling, and all finishing touches to a high standard.</p>
+      </div>
+      <div class="service-card safety">
+        <span class="service-cat cat-safety">Gas &amp; Safety</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#22c55e" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>Landlord Gas Safety Certificates</h3>
+        <p>CP12 inspections and landlord gas safety certificates. Fast turnaround, competitive prices, all paperwork emailed.</p>
+      </div>
+      <div class="service-card safety">
+        <span class="service-cat cat-safety">Gas &amp; Safety</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#22c55e" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Gas Safety Inspections</h3>
+        <p>Comprehensive gas safety checks for homes and commercial properties. Keeping your family and tenants safe.</p>
+      </div>
+      <div class="service-card plumbing">
+        <span class="service-cat cat-plumbing">Plumbing</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#5bb8f5" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h3>Plumbing Maintenance</h3>
+        <p>Regular maintenance plans for homes and landlords. Prevent problems before they happen and keep everything running smoothly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Need a Plumber in Leicester?</h2>
+    <p>Free quotes, no call-out charge, 24/7 emergency cover. Give Matt a call or drop a WhatsApp.</p>
+    <div class="cta-btns">
+      <a class="btn btn-fire" href="tel:07541063683">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call 07541 063683
+      </a>
+      <a class="btn btn-whatsapp" href="https://wa.me/447541063683?text=Hi%20Matt%2C%20I%20found%20you%20online%20and%20need%20a%20plumber.%20Can%20you%20help%3F">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Matt
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="section" id="why" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <p class="section-label blue">Why Us</p>
+        <h2 class="section-title">Why Leicester Trusts M.E.D</h2>
+        <p class="section-desc">134 five-star reviews don't lie. Here's why homeowners across Leicester keep coming back to Matt.</p>
+      </div>
+      <div class="why-items">
+        <div class="why-item">
+          <div class="why-item-icon fire-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <h4>Gas Safe Registered</h4>
+            <p>Fully qualified and Gas Safe registered for all gas and heating work. Boilers, cookers, fires &mdash; you're in safe hands.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon water-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div>
+            <h4>Fully Insured</h4>
+            <p>Comprehensive public liability insurance on every job. Your property and our work are fully covered.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon fire-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div>
+            <h4>Rapid Response &amp; 24/7 Emergency</h4>
+            <p>Boiler down on a Sunday morning? No problem. Matt responds fast and gets the job done, even on weekends.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon water-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+          <div>
+            <h4>Honest Pricing, No Hidden Costs</h4>
+            <p>Fair, competitive prices every time. You'll know exactly what you're paying before any work starts. No surprises.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon fire-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h4>Local to Leicester</h4>
+            <p>Based in Glen Parva, covering all of Leicester and South Leicestershire. Local means fast response and reliability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label">Reviews</p>
+      <h2 class="section-title">What Leicester Says About Matt</h2>
+      <p class="section-desc">5.0 stars from 134 reviews. Here's a snapshot of what customers are saying.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;margin-bottom:8px">
+      <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.001-.001 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+      <span style="color:var(--white);font-weight:700;font-size:0.95rem">5.0</span>
+      <div style="display:flex;gap:2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <span style="color:var(--gray-400);font-size:0.85rem">134 reviews on Google</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Haven't had heating in this cold weather, had multiple plumbers come out and try to fix it but they didn't know how to. Matt came out and within half an hour, he had the central heating up and running again! Really friendly and very good prices!"</p>
+        <div class="review-author"><div class="review-avatar av-fire">A</div><div><div class="review-name">Adil</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Our boiler broke down early on a Sunday morning. Matt was really helpful and came around to look at the problem. He sourced the replacement part and by mid morning Monday he was all finished. All for a very reasonable price. Would highly recommend."</p>
+        <div class="review-author"><div class="review-avatar av-water">A</div><div><div class="review-name">Ali McMurray</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Matt was extremely efficient and professional. Diagnosed the issue with our boiler quickly and got the part ordered and fitted within a few days. Also very clean and tidy which is always appreciated. Will use for any future plumbing needs."</p>
+        <div class="review-author"><div class="review-avatar av-fire">A</div><div><div class="review-name">Amy Lunn</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Needed a plumber on a weekend to fix a leaky shower. Matt responded quickly and said he would be 45 mins, which he was. Problem was fixed quickly and professionally. Would highly recommend. I've booked him in for a few other issues too."</p>
+        <div class="review-author"><div class="review-avatar av-water">K</div><div><div class="review-name">Kelly Li</div><div class="review-role">Local Guide</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Absolutely brilliant! My boiler had broken down and had no heating or hot water for days. I called Matt Thursday night, and he came to take a look at 8am the very next morning. He identified the problem and fixed it all within hours."</p>
+        <div class="review-author"><div class="review-avatar av-fire">K</div><div><div class="review-name">Kim Edwards</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"I have no hesitation in recommending MHK Electrical for ALL your electrical needs. MHK have installed many NEST products and always carried out work to the highest standard. Very professional and always on time."</p>
+        <div class="review-author"><div class="review-avatar av-water">S</div><div><div class="review-name">Shaun</div><div class="review-role">Google Review</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section section-center" id="areas" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <p class="section-label blue">Coverage</p>
+    <h2 class="section-title">Areas We Cover</h2>
+    <p class="section-desc">Based in Glen Parva, serving all of Leicester and South Leicestershire.</p>
+    <div class="areas-tags">
+      <span class="area-tag">Glen Parva</span>
+      <span class="area-tag">Leicester City Centre</span>
+      <span class="area-tag">Blaby</span>
+      <span class="area-tag">Narborough</span>
+      <span class="area-tag">Enderby</span>
+      <span class="area-tag">Wigston</span>
+      <span class="area-tag">Oadby</span>
+      <span class="area-tag">Knighton</span>
+      <span class="area-tag">Stoneygate</span>
+      <span class="area-tag">Clarendon Park</span>
+      <span class="area-tag">Aylestone</span>
+      <span class="area-tag">Braunstone</span>
+      <span class="area-tag">Countesthorpe</span>
+      <span class="area-tag">South Wigston</span>
+      <span class="area-tag">Fleckney</span>
+      <span class="area-tag">Kilby</span>
+      <span class="area-tag">Whetstone</span>
+      <span class="area-tag">Cosby</span>
+      <span class="area-tag">Littlethorpe</span>
+      <span class="area-tag">Market Harborough</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Request a Free Quote</h2>
+    <p class="section-desc">Tell us what you need and Matt will get back to you fast. Or just give him a call.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-block">
+          <h4>Phone</h4>
+          <a href="tel:07541063683">07541 063 683</a>
+        </div>
+        <div class="contact-block">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/447541063683?text=Hi%20Matt%2C%20I%20found%20you%20online%20and%20need%20a%20plumber.%20Can%20you%20help%3F">Message Matt on WhatsApp</a>
+        </div>
+        <div class="contact-block">
+          <h4>Hours</h4>
+          <p>Monday - Saturday: 7am - 8pm</p>
+          <p style="color:var(--gray-500);font-size:0.9rem;font-weight:400">24/7 emergency callouts available</p>
+        </div>
+        <div class="contact-block">
+          <h4>Location</h4>
+          <p>Needham Ave, Glen Parva</p>
+          <p style="font-size:0.9rem">Leicester, LE2 9JL</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form onsubmit="event.preventDefault();this.innerHTML='<div style=&quot;text-align:center;padding:40px 20px&quot;><div style=&quot;font-size:2rem;margin-bottom:12px&quot;>&#9989;</div><h3 style=&quot;color:#fff;margin-bottom:8px&quot;>Thanks!</h3><p style=&quot;color:#9ca3af;font-size:0.9rem&quot;>Matt will be in touch shortly.</p></div>'">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>Boiler Repair or Breakdown</option>
+            <option>New Boiler Installation</option>
+            <option>Central Heating Issue</option>
+            <option>Radiator Repairs</option>
+            <option>Bathroom Installation</option>
+            <option>Leak Detection &amp; Repair</option>
+            <option>Emergency Plumbing</option>
+            <option>Gas Safety Certificate</option>
+            <option>General Plumbing</option>
+            <option>Other</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about the job..." rows="4"></textarea>
+          <button type="submit" class="btn btn-fire">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">M.E.D <span class="water">Plumbing</span> &amp; <span class="fire">Heating</span></div>
+    <p>&copy; 2026 M.E.D Plumbing &amp; Heating. All rights reserved. Gas Safe Registered.</p>
+    <p style="margin-top:4px">Needham Ave, Glen Parva, Leicester LE2 9JL</p>
+    <p style="margin-top:4px">Site by <a href="https://construction-sites.co.uk">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING CALL & WHATSAPP -->
+<div class="floating-btns">
+  <a class="fab-call" href="tel:07541063683" aria-label="Call">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a class="fab-wa" href="https://wa.me/447541063683?text=Hi%20Matt%2C%20I%20found%20you%20online%20and%20need%20a%20plumber.%20Can%20you%20help%3F" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+document.getElementById('nav-toggle').addEventListener('click',function(){
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+var heroBtns=document.querySelector('.hero-btns');
+var floatingBtns=document.querySelector('.floating-btns');
+function checkSticky(){
+  var rect=heroBtns.getBoundingClientRect();
+  if(rect.bottom<0){floatingBtns.classList.add('visible')}
+  else{floatingBtns.classList.remove('visible')}
+}
+window.addEventListener('scroll',checkSticky);
+checkSticky();
+</script>
+</body>
+</html>
