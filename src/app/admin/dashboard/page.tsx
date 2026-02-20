@@ -115,7 +115,15 @@ function StatsBar({ leads }: { leads: Lead[] }) {
 
   const newThisMonth = leads.filter((l) => thisMonth(l)).length;
   const mockupsSent = thisMonthByStatus("mockups-sent");
-  const signed = thisMonthByStatus("signed");
+  const signed = leads.filter((l) => {
+    if (l.status !== "signed" && l.status !== "live") return false;
+    const history = l.statusHistory || [];
+    return history.some((h) => {
+      if (h.status !== "signed") return false;
+      const d = new Date(h.date);
+      return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+    });
+  }).length;
   const liveClients = leads.filter((l) => l.status === "live").length;
   const mrr = liveClients * 100;
 
