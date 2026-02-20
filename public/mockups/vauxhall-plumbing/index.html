@@ -20,8 +20,7 @@ a{text-decoration:none;color:inherit}
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:8px}
-.nav-logo img{height:32px;width:auto}
+.nav-logo{display:flex;align-items:center;gap:4px;font-family:var(--heading);font-weight:900;font-size:1.05rem;color:var(--navy)}
 .nav-links{display:flex;align-items:center;gap:24px}
 .nav-links a{font-size:0.8rem;font-weight:600;color:var(--gray-400);transition:color 0.2s}
 .nav-links a:hover{color:var(--gray-700)}
@@ -202,7 +201,7 @@ a{text-decoration:none;color:inherit}
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo"><img src="/mockups/vauxhall-plumbing/logo.jpg" alt="Vauxhall Plumbing & Heating Ltd"></a>
+    <a href="#" class="nav-logo">Vauxhall <span style="color:var(--cyan)">Plumbing &amp; Heating</span></a>
     <div class="nav-links" id="nav-links">
       <a href="#services">Services</a>
       <a href="#gallery">Our Work</a>
