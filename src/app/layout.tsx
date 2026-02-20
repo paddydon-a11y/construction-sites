@@ -187,7 +187,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             __html: `window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-17958918628');`,
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');`,
           }}
         />
       </head>
