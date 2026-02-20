@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Find Leaks | Leak Detection &amp; Plumbing Specialists | Derby</title>
+<meta name="description" content="Derby's leak detection specialists. 15 years experience, thermal imaging, acoustic detection. 24/7 emergency callouts. Full repair services. Checkatrade verified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#ffffff;--bg-off:#f8f9fb;--card:#ffffff;--card-hover:#f3f6fa;--border:#e5e7eb;--border-light:#d1d5db;--blue:#1976d2;--blue-hover:#1565c0;--blue-light:#42a5f5;--blue-glow:rgba(25,118,210,0.08);--red:#e53935;--red-light:#ef5350;--yellow:#fdd835;--yellow-dark:#f9a825;--dark:#1a1a2e;--dark-card:#212140;--green:#16a34a;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#6b7280;--gray-500:#4b5563;--gray-600:#374151;--gray-700:#1f2937;--heading:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--bg);color:var(--gray-500);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:var(--gray-700);line-height:1.15;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--heading);font-weight:900;font-size:1.1rem;color:var(--gray-700);display:flex;align-items:center;gap:8px}
+.nav-logo .i{color:var(--blue)}
+.nav-logo .find{color:var(--red)}
+.nav-logo .leaks{color:var(--gray-700)}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:0.8rem;font-weight:600;color:var(--gray-400);transition:color 0.2s}
+.nav-links a:hover{color:var(--gray-700)}
+.nav-cta{background:var(--blue);color:#fff;font-weight:700;font-size:0.8rem;padding:8px 18px;border-radius:8px;transition:background 0.2s}
+.nav-cta:hover{background:var(--blue-hover)}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile svg{stroke:var(--gray-700)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+  .nav-links.open{display:flex;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:200;overflow-y:auto}
+  .nav-links.open a{font-size:1.25rem;color:var(--gray-600)}
+  .nav-links.open .nav-cta{font-size:1rem;padding:14px 32px}
+}
+
+/* HERO */
+.hero{position:relative;padding:140px 0 80px;overflow:hidden;min-height:90vh;display:flex;align-items:center;background:linear-gradient(170deg,#eef4fc 0%,#fff 40%,#fff 100%)}
+.hero::before{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;background:radial-gradient(circle,rgba(25,118,210,0.06),transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(229,57,53,0.04),transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-glow);border:1px solid rgba(25,118,210,0.15);border-radius:100px;padding:6px 16px;font-size:0.8rem;color:var(--blue);font-weight:600;margin-bottom:20px}
+.hero-badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(22,163,74,0.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(22,163,74,0)}}
+.hero h1{font-size:3rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:20px;color:var(--dark)}
+.hero h1 .accent-blue{color:var(--blue)}
+.hero h1 .accent-red{color:var(--red)}
+.hero-sub{font-size:1.05rem;color:var(--gray-500);max-width:480px;line-height:1.75;margin-bottom:32px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:0.95rem;padding:14px 28px;border-radius:10px;transition:all 0.2s;border:none;cursor:pointer}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-hover);transform:translateY(-1px);box-shadow:0 8px 30px rgba(25,118,210,0.2)}
+.btn-whatsapp{background:#25d366;color:#fff}
+.btn-whatsapp:hover{background:#1fb855;transform:translateY(-1px);box-shadow:0 8px 30px rgba(37,211,102,0.2)}
+
+/* HERO IMAGE / LOGO */
+.hero-image{position:relative;border-radius:16px;overflow:hidden;max-height:520px;border:1px solid var(--border);background:var(--white);display:flex;align-items:center;justify-content:center;min-height:400px;box-shadow:0 8px 40px rgba(0,0,0,0.06)}
+.hero-logo{text-align:center;padding:30px}
+.logo-svg{width:280px;height:auto;max-width:100%}
+.hero-image-badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px}
+.hero-image-badge svg{width:18px;height:18px}
+.hero-image-badge span{font-size:0.75rem;font-weight:700;color:var(--gray-700)}
+
+/* TRUST BAR */
+.trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-off);padding:20px 0}
+.trust-items{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 40px}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--gray-600)}
+.trust-item svg{width:18px;height:18px;fill:none;stroke-width:2;flex-shrink:0}
+.trust-item svg.blue{stroke:var(--blue)}
+.trust-item svg.red{stroke:var(--red)}
+
+/* SECTIONS */
+.section{padding:80px 0}
+.section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.section-label.red{color:var(--red)}
+.section-title{font-size:2.25rem;letter-spacing:-0.02em;margin-bottom:12px}
+.section-desc{color:var(--gray-500);max-width:560px;font-size:0.95rem;line-height:1.7}
+.section-center{text-align:center}
+.section-center .section-desc{margin:0 auto}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--red),var(--yellow));transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(25,118,210,0.08)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:40px;height:40px;margin-bottom:14px}
+.service-icon svg{width:100%;height:100%}
+.service-card h3{font-size:0.95rem;font-weight:700;margin-bottom:6px;color:var(--gray-700)}
+.service-card p{font-size:0.82rem;color:var(--gray-400);line-height:1.6}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.gallery-item{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/5;cursor:pointer;border:1px solid var(--border)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-lightbox{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:20px;cursor:pointer}
+.gallery-lightbox.open{display:flex}
+.gallery-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px}
+.gallery-lightbox .lb-close{position:absolute;top:20px;right:24px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.15);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.gallery-lightbox .lb-close svg{stroke:#fff;width:20px;height:20px}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:40px}
+.why-items{display:flex;flex-direction:column;gap:20px}
+.why-item{display:flex;gap:14px}
+.why-item-icon{width:36px;height:36px;border-radius:10px;background:var(--blue-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-item-icon svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:2}
+.why-item h4{font-size:0.9rem;font-weight:700;margin-bottom:3px;color:var(--gray-700)}
+.why-item p{font-size:0.82rem;color:var(--gray-400);line-height:1.6}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.review-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.03)}
+.review-stars{display:flex;gap:2px;margin-bottom:12px}
+.review-stars svg{width:16px;height:16px;fill:#fbbf24}
+.review-text{font-size:0.88rem;color:var(--gray-600);line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:36px;height:36px;border-radius:50%;background:var(--blue-glow);display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:800;color:var(--blue);font-size:0.85rem;flex-shrink:0}
+.review-name{font-weight:700;color:var(--gray-700);font-size:0.82rem}
+.review-role{font-size:0.75rem;color:var(--gray-400)}
+.review-score{display:inline-flex;align-items:center;gap:4px;background:var(--green);color:#fff;font-weight:700;font-size:0.7rem;padding:2px 8px;border-radius:4px;margin-bottom:10px}
+
+/* AREAS */
+.areas-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+.area-tag{background:var(--bg-off);border:1px solid var(--border);border-radius:100px;padding:10px 20px;font-size:0.82rem;color:var(--gray-600);font-weight:600;transition:border-color 0.2s}
+.area-tag:hover{border-color:var(--blue)}
+
+/* CTA BAND */
+.cta-band{background:var(--dark);padding:48px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(25,118,210,0.12),transparent 70%);pointer-events:none}
+.cta-band>*{position:relative}
+.cta-band h2{font-size:2rem;margin-bottom:8px;color:#fff}
+.cta-band p{color:rgba(255,255,255,0.6);margin-bottom:24px;font-size:0.95rem}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-block h4{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-400);margin-bottom:6px}
+.contact-block a,.contact-block p{font-size:1.1rem;color:var(--gray-700);font-weight:600}
+.contact-block a:hover{color:var(--blue)}
+.contact-form{background:var(--bg-off);border:1px solid var(--border);border-radius:14px;padding:28px}
+.contact-form label{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-400);margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--gray-700);font-family:var(--body);font-size:0.9rem;outline:none;transition:border-color 0.2s;margin-bottom:16px;-webkit-appearance:none}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--blue)}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-form button{width:100%;padding:14px;border-radius:10px;font-size:0.95rem}
+
+/* FOOTER */
+.footer{padding:32px 0;text-align:center;border-top:1px solid var(--border);background:var(--bg-off)}
+.footer-logo{font-family:var(--heading);font-weight:900;font-size:1rem;margin-bottom:6px;color:var(--gray-700)}
+.footer-logo .i{color:var(--blue)}
+.footer-logo .find{color:var(--red)}
+.footer p{font-size:0.75rem;color:var(--gray-400)}
+.footer p a{color:var(--gray-400)}
+.footer p a:hover{color:var(--blue)}
+
+/* FLOATING BUTTONS */
+.floating-btns{position:fixed;bottom:20px;right:20px;z-index:90;display:flex;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.floating-btns.visible{opacity:1;pointer-events:auto}
+.floating-btns a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.15);transition:transform 0.2s}
+.floating-btns a:hover{transform:scale(1.1)}
+.floating-btns .fab-call{background:var(--blue)}
+.floating-btns .fab-call svg{stroke:#fff;fill:none}
+.floating-btns .fab-wa{background:#25d366}
+.floating-btns svg{width:24px;height:24px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h1{font-size:2.5rem}
+  .hero-sub{margin:0 auto 28px}
+  .hero-btns{justify-content:center}
+  .hero-image{max-height:320px;max-width:360px;margin:0 auto;min-height:240px}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:640px){
+  .hero{padding:110px 0 60px;min-height:auto}
+  .hero h1{font-size:2rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.75rem}
+  .services-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;width:100%;max-width:340px;margin:0 auto}
+  .btn{width:100%}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns .btn{width:100%;max-width:320px}
+  .trust-items{gap:16px 24px}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><span class="i">I</span> <span class="find">Find</span> <span class="leaks">Leaks</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Our Work</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:07723485722">07723 485722</a>
+    </div>
+    <button class="nav-mobile" id="nav-toggle" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="dot"></span> 24/7 Emergency Callouts &middot; Checkatrade Verified</div>
+        <h1><span class="accent-blue">Leak Detection</span> &amp; <span class="accent-red">Plumbing</span> Specialists</h1>
+        <p class="hero-sub">Derby's trusted leak detection experts. Equipped with thermal imaging, acoustic detection, and hydrogen tracing technology. 15 years experience finding and fixing leaks others can't. Full repair service from start to finish.</p>
+        <div class="hero-btns">
+          <a class="btn btn-blue" href="tel:07723485722">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            07723 485722
+          </a>
+          <a class="btn btn-whatsapp" href="https://wa.me/447723485722" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Matt
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-logo">
+          <svg class="logo-svg" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="targetShadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#1976d2" flood-opacity="0.15"/></filter>
+            </defs>
+            <!-- Bullseye target -->
+            <g transform="translate(60, 20)" filter="url(#targetShadow)">
+              <circle cx="45" cy="45" r="44" fill="#2c2c3a"/>
+              <circle cx="45" cy="45" r="35" fill="#42a5f5"/>
+              <circle cx="45" cy="45" r="25" fill="#e53935"/>
+              <circle cx="45" cy="45" r="14" fill="#fdd835"/>
+              <circle cx="38" cy="35" r="6" fill="white" opacity="0.12"/>
+            </g>
+            <!-- I Find Leaks text -->
+            <text x="168" y="55" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="32" fill="#1a1a2e" letter-spacing="0.5">I Find Leaks</text>
+            <!-- Tagline -->
+            <text x="168" y="78" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="14" fill="#6b7280">Experience the difference...</text>
+            <!-- Subtle line -->
+            <line x1="40" y1="120" x2="260" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+            <!-- Bottom details -->
+            <text x="150" y="145" font-family="'Inter',sans-serif" font-weight="600" font-size="10" fill="#6b7280" text-anchor="middle" letter-spacing="3">LEAK DETECTION SPECIALISTS</text>
+            <text x="150" y="165" font-family="'Inter',sans-serif" font-weight="600" font-size="10" fill="#6b7280" text-anchor="middle" letter-spacing="3">15 YEARS EXPERIENCE  ·  DERBY</text>
+          </svg>
+        </div>
+        <div class="hero-image-badge">
+          <svg viewBox="0 0 24 24" stroke="#16a34a" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Checkatrade Verified</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg class="blue" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Leak Detection Specialists
+      </div>
+      <div class="trust-item">
+        <svg class="red" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        24/7 Emergency
+      </div>
+      <div class="trust-item">
+        <svg class="blue" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Checkatrade Verified
+      </div>
+      <div class="trust-item">
+        <svg class="red" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        15 Years Experience
+      </div>
+      <div class="trust-item">
+        <svg class="blue" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Full Repair Service
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Find It. Fix It. Finish It.</h2>
+      <p class="section-desc">From hidden leaks to full repairs. Matt and the team handle everything from detection through to completion, so you don't have to chase multiple trades.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#1976d2" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Leak Detection</h3>
+        <p>Specialist leak detection using thermal imaging cameras, ultra-sensitive acoustic machines, and hydrogen tracing. We find leaks others can't, with minimal disruption.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e53935" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Emergency Plumbing</h3>
+        <p>24-hour emergency callouts for burst pipes, major leaks, and water damage. Matt responds fast and gets the problem under control quickly.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#1976d2" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Full Repair Service</h3>
+        <p>Once we find the leak, we fix it. Flooring, ceilings, tiling — we handle the full repair so you get a complete job from start to finish.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e53935" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 4-4 6-4 10a4 4 0 108 0c0-4-4-6-4-10z"/></svg></div>
+        <h3>Blocked Drains &amp; Sinks</h3>
+        <p>Blocked sinks, drains, and toilets unblocked fast. Internal and external drainage issues diagnosed and cleared.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#1976d2" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>General Plumbing</h3>
+        <p>Tap repairs, toilet fixes, pipe work, radiator repairs, and all everyday plumbing jobs. No job too small for Matt.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e53935" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Commercial &amp; Industrial</h3>
+        <p>Leak detection for commercial and industrial properties. Equipped with the latest technology to locate leaks in complex plumbing systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery" style="background:var(--bg-off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label red">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+      <p class="section-desc">Bathroom installations, shower fitting, and plumbing work completed to the highest standard across Derbyshire.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/i-find-leaks/gallery-1.webp" alt="Completed shower installation with marble wall panels" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/i-find-leaks/gallery-2.webp" alt="Shower enclosure installation" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/i-find-leaks/gallery-3.webp" alt="Full bathroom renovation with walk-in shower" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="gallery-lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Got a Leak? Matt Can Find It.</h2>
+    <p>15 years experience, thermal imaging, 24/7 callouts. Get in touch today.</p>
+    <div class="cta-btns">
+      <a class="btn btn-blue" href="tel:07723485722">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        07723 485722
+      </a>
+      <a class="btn btn-whatsapp" href="https://wa.me/447723485722" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Matt
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <p class="section-label">Why Us</p>
+        <h2 class="section-title">Why Choose I Find Leaks?</h2>
+        <p class="section-desc">Matt delivers honest, professional plumbing with exceptional communication. Here's why customers keep recommending him.</p>
+      </div>
+      <div class="why-items">
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div>
+            <h4>Advanced Detection Equipment</h4>
+            <p>Thermal imaging, ultra-sensitive acoustic machines, and hydrogen tracing. We find leaks with pinpoint accuracy and minimal disruption.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div>
+            <h4>Start to Finish Service</h4>
+            <p>We don't just find the leak. We fix the plumbing, repair the flooring, patch the ceiling, and re-tile. One team, one job, done properly.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div>
+            <h4>24/7 Emergency Response</h4>
+            <p>Leaks don't wait for business hours. Matt is available around the clock for emergency callouts across Derbyshire.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div>
+            <h4>Exceptional Communication</h4>
+            <p>Customers consistently praise Matt's communication. He explains what's going on, keeps you updated, and is genuinely friendly throughout.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+          <div>
+            <h4>Transparent &amp; Reasonable Pricing</h4>
+            <p>Clear pricing structure with no surprises. Customers love that Matt is upfront about costs and won't upsell work you don't need.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews" style="background:var(--bg-off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label">Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-desc">Verified reviews from Checkatrade. Here's what Derbyshire homeowners say about Matt.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;margin-bottom:8px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <span style="color:var(--gray-700);font-weight:700;font-size:0.95rem">Checkatrade Verified</span>
+      <span style="color:var(--gray-400);font-size:0.85rem">&middot; All reviews independently verified</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-score">10/10</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Excellent communicator which is very unusual from trade workers. Likeable chap and very professional. This plumber knows what he's doing. He's going in my little black book."</p>
+        <div class="review-author"><div class="review-avatar">B</div><div><div class="review-name">Bridget M</div><div class="review-role">Blocked Sink</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-score">10/10</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Matt fixed a leak in our bath quickly and effectively. The response was very prompt, and communications with him and Samantha were excellent. I liked the transparent and reasonable charging structure. Would recommend any time."</p>
+        <div class="review-author"><div class="review-avatar">V</div><div><div class="review-name">Verified Customer</div><div class="review-role">Leaking Bath</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-score">9.67/10</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Matthew was so friendly and helpful, checked drain outside as well. He also said he was surprised we didn't have issues a year ago with how blocked it was. Matthew was a gentleman."</p>
+        <div class="review-author"><div class="review-avatar">D</div><div><div class="review-name">Diane M</div><div class="review-role">Blocked Kitchen Sink</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-score">10/10</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Matt was absolutely brilliant. He detected that the seal had gone on the side of the bath, so no pipe issues. He then sent me a video and all the parts so I could do this myself. Really genuine nice guy."</p>
+        <div class="review-author"><div class="review-avatar">V</div><div><div class="review-name">Verified Customer</div><div class="review-role">Bathroom Help</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-score">10/10</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Great job start to finish. Matt came out to unblock a toilet for my elderly mother. Couldn't have wished for a better service. Would highly recommend."</p>
+        <div class="review-author"><div class="review-avatar">V</div><div><div class="review-name">Verified Customer</div><div class="review-role">Unblocked Toilet</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-score">10/10</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Matt diagnosed the fault and made a temporary repair to the flooring in my toilet. He left the area tidy when work was complete and he was professional and courteous while he was here."</p>
+        <div class="review-author"><div class="review-avatar">V</div><div><div class="review-name">Verified Customer</div><div class="review-role">Water Leak</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section section-center" id="areas">
+  <div class="container">
+    <p class="section-label">Coverage</p>
+    <h2 class="section-title">Areas We Cover</h2>
+    <p class="section-desc">Based in Derby, covering all of Derbyshire and surrounding areas.</p>
+    <div class="areas-tags">
+      <span class="area-tag">Derby</span>
+      <span class="area-tag">Belper</span>
+      <span class="area-tag">Ashbourne</span>
+      <span class="area-tag">Uttoxeter</span>
+      <span class="area-tag">Burton upon Trent</span>
+      <span class="area-tag">Swadlincote</span>
+      <span class="area-tag">Matlock</span>
+      <span class="area-tag">Ripley</span>
+      <span class="area-tag">Heanor</span>
+      <span class="area-tag">Ilkeston</span>
+      <span class="area-tag">Long Eaton</span>
+      <span class="area-tag">Nottingham</span>
+      <span class="area-tag">Castle Donington</span>
+      <span class="area-tag">Melbourne</span>
+      <span class="area-tag">Coalville</span>
+      <span class="area-tag">Loughborough</span>
+      <span class="area-tag">Stoke-on-Trent</span>
+      <span class="area-tag">Alfreton</span>
+      <span class="area-tag">Lichfield</span>
+      <span class="area-tag">Tamworth</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact" style="background:var(--bg-off);border-top:1px solid var(--border)">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Request a Free Quote</h2>
+    <p class="section-desc">Tell us about your leak or plumbing issue and Matt will get back to you fast.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-block">
+          <h4>Phone</h4>
+          <a href="tel:07723485722">07723 485722</a>
+        </div>
+        <div class="contact-block">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/447723485722" target="_blank">Message Matt on WhatsApp</a>
+        </div>
+        <div class="contact-block">
+          <h4>Hours</h4>
+          <p>24/7 &mdash; Emergency callouts available</p>
+        </div>
+        <div class="contact-block">
+          <h4>Location</h4>
+          <p>Derby, Derbyshire</p>
+        </div>
+        <div class="contact-block">
+          <h4>Services</h4>
+          <p style="font-size:0.9rem;font-weight:400">Domestic &middot; Commercial &middot; Industrial</p>
+          <p style="font-size:0.9rem;font-weight:400">Cards Accepted &middot; Insurance Work</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form onsubmit="event.preventDefault();this.innerHTML='<div style=&quot;text-align:center;padding:40px 20px&quot;><div style=&quot;font-size:2rem;margin-bottom:12px&quot;>&#9989;</div><h3 style=&quot;color:#1f2937;margin-bottom:8px&quot;>Thanks!</h3><p style=&quot;color:#6b7280;font-size:0.9rem&quot;>Matt will be in touch shortly.</p></div>'">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>Leak Detection</option>
+            <option>Emergency Plumbing</option>
+            <option>Full Repair Service</option>
+            <option>Blocked Drain / Sink</option>
+            <option>General Plumbing</option>
+            <option>Commercial / Industrial</option>
+            <option>Other</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Describe the issue..." rows="4"></textarea>
+          <button type="submit" class="btn btn-blue">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo"><span class="i">I</span> <span class="find">Find</span> <span>Leaks</span></div>
+    <p>&copy; 2026 I Find Leaks Ltd. All rights reserved.</p>
+    <p style="margin-top:4px">Leak Detection &amp; Plumbing Specialists &middot; Derby &amp; Derbyshire</p>
+    <p style="margin-top:4px">Site by <a href="https://construction-sites.co.uk">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING CALL & WHATSAPP -->
+<div class="floating-btns">
+  <a class="fab-call" href="tel:07723485722" aria-label="Call">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a class="fab-wa" href="https://wa.me/447723485722" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+document.getElementById('nav-toggle').addEventListener('click',function(){
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+function openLightbox(el){
+  var src=el.querySelector('img').src;
+  document.getElementById('lightbox-img').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(e.target.tagName==='IMG') return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+var heroBtns=document.querySelector('.hero-btns');
+var floatingBtns=document.querySelector('.floating-btns');
+function checkSticky(){
+  var rect=heroBtns.getBoundingClientRect();
+  if(rect.bottom<0){floatingBtns.classList.add('visible')}
+  else{floatingBtns.classList.remove('visible')}
+}
+window.addEventListener('scroll',checkSticky);
+checkSticky();
+</script>
+</body>
+</html>
