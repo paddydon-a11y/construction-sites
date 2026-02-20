@@ -228,7 +228,7 @@ export default function ContactPage() {
               <span role="img" aria-label="whatsapp">💬</span> WhatsApp Us
             </h3>
             <a
-              href="https://wa.me/447564039216"
+              href="https://wa.me/447926535524"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl font-bold text-hivis hover:text-hivis-bright transition-colors"

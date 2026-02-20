@@ -168,7 +168,7 @@ export default function AgreementClient({ data }: { data: AgreementData }) {
             </p>
             <p className="text-sm text-slate-light/60">
               A copy of this agreement has been sent to our team. If you have any questions, call us on{" "}
-              <a href="tel:+447564039216" className="text-hivis hover:underline">07564 039 216</a>.
+              <a href="tel:+447926535524" className="text-hivis hover:underline">07926 535 524</a>.
             </p>
           </div>
         </div>
@@ -422,7 +422,7 @@ export default function AgreementClient({ data }: { data: AgreementData }) {
               {status === "error" && (
                 <p className="mt-4 text-sm text-red-400 text-center">
                   Something went wrong. Please try again or call us on{" "}
-                  <a href="tel:+447564039216" className="underline">07564 039 216</a>.
+                  <a href="tel:+447926535524" className="underline">07926 535 524</a>.
                 </p>
               )}
             </div>
