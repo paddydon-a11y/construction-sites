@@ -31,7 +31,6 @@ const COLUMNS = [
   { id: "agreement-sent", label: "Agreement Sent", color: "#f97316" },
   { id: "signed", label: "Signed", color: "#10b981" },
   { id: "live", label: "Live", color: "#22c55e" },
-  { id: "churned", label: "Churned", color: "#ef4444" },
 ] as const;
 
 const PASSWORD = "cs2026";
@@ -156,10 +155,12 @@ function LeadCard({
   lead,
   onClick,
   compact,
+  onChurn,
 }: {
   lead: Lead;
   onClick: () => void;
   compact: boolean;
+  onChurn?: (id: string) => void;
 }) {
   return (
     <div
@@ -171,8 +172,22 @@ function LeadCard({
       onClick={onClick}
       className={`bg-[#0f0f1a] border border-[#2a2a4a] rounded cursor-pointer hover:border-[#f59e0b]/50 transition-colors group ${compact ? "px-2 py-1.5" : "p-3"}`}
     >
-      <div className={`font-semibold text-white truncate group-hover:text-[#f59e0b] transition-colors ${compact ? "text-xs" : "text-sm"}`}>
-        {lead.businessName || "Untitled"}
+      <div className="flex items-center gap-1">
+        <div className={`font-semibold text-white truncate group-hover:text-[#f59e0b] transition-colors flex-1 ${compact ? "text-xs" : "text-sm"}`}>
+          {lead.businessName || "Untitled"}
+        </div>
+        {onChurn && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onChurn(lead.id);
+            }}
+            title="Mark as Churned"
+            className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-[#94a3b8] hover:text-red-400 text-xs p-0.5"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        )}
       </div>
       {!compact && (
         <>
@@ -239,11 +254,13 @@ function KanbanColumn({
   leads,
   onDrop,
   onCardClick,
+  onChurn,
 }: {
   column: (typeof COLUMNS)[number];
   leads: Lead[];
   onDrop: (leadId: string, newStatus: string) => void;
   onCardClick: (lead: Lead) => void;
+  onChurn?: (id: string) => void;
 }) {
   const [dragOver, setDragOver] = useState(false);
   const [compact, setCompact] = useState(false);
@@ -255,9 +272,7 @@ function KanbanColumn({
     if (!el) return;
 
     const check = () => {
-      // Available height for cards (viewport minus header/stats/padding ~200px, minus column header ~44px)
       const availableHeight = window.innerHeight - 244;
-      // Full card ~96px (padding + content + gap), compact ~32px
       const fullHeight = leads.length * 96;
       setCompact(fullHeight > availableHeight && leads.length > 4);
     };
@@ -269,7 +284,7 @@ function KanbanColumn({
 
   return (
     <div
-      className={`flex-shrink-0 w-[260px] flex flex-col rounded-lg transition-colors ${
+      className={`flex-1 min-w-0 flex flex-col rounded-lg transition-colors ${
         dragOver ? "bg-[#1a1a2e]/80" : "bg-[#1a1a2e]/40"
       }`}
       onDragOver={(e) => {
@@ -307,6 +322,7 @@ function KanbanColumn({
             lead={lead}
             onClick={() => onCardClick(lead)}
             compact={compact}
+            onChurn={onChurn}
           />
         ))}
       </div>
@@ -508,11 +524,15 @@ function LeadDetail({
   const statusLabel = (status: string) =>
     status === "cold"
       ? "Cold Lead"
+      : status === "churned"
+      ? "Churned"
       : COLUMNS.find((c) => c.id === status)?.label || status;
 
   const statusColor = (status: string) =>
     status === "cold"
       ? "#64748b"
+      : status === "churned"
+      ? "#ef4444"
       : COLUMNS.find((c) => c.id === status)?.color || "#94a3b8";
 
   return (
@@ -769,6 +789,15 @@ function LeadDetail({
               >
                 Reactivate Lead
               </button>
+            ) : lead.status === "churned" ? (
+              <button
+                onClick={() =>
+                  onUpdate({ id: lead.id, status: "live" } as Partial<Lead>)
+                }
+                className="w-full py-2.5 bg-[#22c55e] text-white font-semibold rounded hover:bg-[#16a34a] transition-colors text-sm"
+              >
+                Reactivate to Live
+              </button>
             ) : (
               <button
                 onClick={onMarkCold}
@@ -910,6 +939,104 @@ function ColdLeadsTable({
   );
 }
 
+// ─── Churned Leads Table ─────────────────────────────────────────────────────
+
+function ChurnedLeadsTable({
+  leads,
+  onReactivate,
+  onCardClick,
+}: {
+  leads: Lead[];
+  onReactivate: (id: string) => void;
+  onCardClick: (lead: Lead) => void;
+}) {
+  if (leads.length === 0) {
+    return (
+      <div className="flex items-center justify-center flex-1 text-[#94a3b8] py-20">
+        No churned clients
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex-1 overflow-auto p-4">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="text-left text-xs text-[#94a3b8] uppercase tracking-wider border-b border-[#2a2a4a]">
+            <th className="pb-3 pr-4 font-semibold">Business</th>
+            <th className="pb-3 pr-4 font-semibold">Contact</th>
+            <th className="pb-3 pr-4 font-semibold">Phone</th>
+            <th className="pb-3 pr-4 font-semibold">Trade</th>
+            <th className="pb-3 pr-4 font-semibold">Date Added</th>
+            <th className="pb-3 pr-4 font-semibold">Date Churned</th>
+            <th className="pb-3 font-semibold"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {leads.map((lead) => {
+            const churnedEntry = [...(lead.statusHistory || [])]
+              .reverse()
+              .find((h) => h.status === "churned");
+            return (
+              <tr
+                key={lead.id}
+                className="border-b border-[#2a2a4a]/50 hover:bg-[#1a1a2e]/50 cursor-pointer"
+                onClick={() => onCardClick(lead)}
+              >
+                <td className="py-3 pr-4 text-white font-medium">
+                  {lead.businessName || "Untitled"}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {lead.contactName || "—"}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {lead.phone || "—"}
+                </td>
+                <td className="py-3 pr-4">
+                  {lead.trade ? (
+                    <span className="text-xs bg-[#1a1a2e] text-[#f59e0b] px-2 py-0.5 rounded">
+                      {lead.trade}
+                    </span>
+                  ) : (
+                    <span className="text-[#94a3b8]">—</span>
+                  )}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {new Date(lead.dateAdded).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {churnedEntry
+                    ? new Date(churnedEntry.date).toLocaleDateString("en-GB", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })
+                    : "—"}
+                </td>
+                <td className="py-3">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onReactivate(lead.id);
+                    }}
+                    className="px-3 py-1.5 bg-[#22c55e] text-white rounded hover:bg-[#16a34a] transition-colors text-xs font-semibold"
+                  >
+                    Reactivate
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 // ─── Main Dashboard ──────────────────────────────────────────────────────────
 
 export default function DashboardPage() {
@@ -918,7 +1045,7 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
-  const [view, setView] = useState<"pipeline" | "cold">("pipeline");
+  const [view, setView] = useState<"pipeline" | "cold" | "churned">("pipeline");
 
   // Check auth on mount
   useEffect(() => {
@@ -943,9 +1070,10 @@ export default function DashboardPage() {
     if (authed) fetchLeads();
   }, [authed, fetchLeads]);
 
-  // Active leads (not cold) for pipeline & stats
-  const activeLeads = leads.filter((l) => l.status !== "cold");
+  // Active leads (not cold/churned) for pipeline & stats
+  const activeLeads = leads.filter((l) => l.status !== "cold" && l.status !== "churned");
   const coldLeads = leads.filter((l) => l.status === "cold");
+  const churnedLeads = leads.filter((l) => l.status === "churned");
 
   // CRUD operations
   const addLead = async (data: Partial<Lead>) => {
@@ -975,6 +1103,14 @@ export default function DashboardPage() {
 
   const reactivateLead = async (id: string) => {
     await updateLead({ id, status: "new" } as Partial<Lead>);
+  };
+
+  const churnLead = async (id: string) => {
+    await updateLead({ id, status: "churned" } as Partial<Lead>);
+  };
+
+  const reactivateChurned = async (id: string) => {
+    await updateLead({ id, status: "live" } as Partial<Lead>);
   };
 
   const moveLead = (leadId: string, newStatus: string) => {
@@ -1016,7 +1152,17 @@ export default function DashboardPage() {
                   : "text-[#94a3b8] hover:text-white"
               }`}
             >
-              Cold Leads{coldLeads.length > 0 && ` (${coldLeads.length})`}
+              Cold{coldLeads.length > 0 && ` (${coldLeads.length})`}
+            </button>
+            <button
+              onClick={() => setView("churned")}
+              className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                view === "churned"
+                  ? "bg-[#ef4444] text-white"
+                  : "text-[#94a3b8] hover:text-white"
+              }`}
+            >
+              Churned{churnedLeads.length > 0 && ` (${churnedLeads.length})`}
             </button>
           </div>
         </div>
@@ -1048,7 +1194,7 @@ export default function DashboardPage() {
           Loading...
         </div>
       ) : view === "pipeline" ? (
-        <div className="flex-1 overflow-x-auto p-4">
+        <div className="flex-1 p-4">
           <div className="flex gap-3 h-full min-h-[calc(100vh-200px)]">
             {COLUMNS.map((col) => (
               <KanbanColumn
@@ -1057,14 +1203,21 @@ export default function DashboardPage() {
                 leads={activeLeads.filter((l) => l.status === col.id)}
                 onDrop={moveLead}
                 onCardClick={setSelectedLead}
+                onChurn={col.id === "live" ? churnLead : undefined}
               />
             ))}
           </div>
         </div>
-      ) : (
+      ) : view === "cold" ? (
         <ColdLeadsTable
           leads={coldLeads}
           onReactivate={reactivateLead}
+          onCardClick={setSelectedLead}
+        />
+      ) : (
+        <ChurnedLeadsTable
+          leads={churnedLeads}
+          onReactivate={reactivateChurned}
           onCardClick={setSelectedLead}
         />
       )}
