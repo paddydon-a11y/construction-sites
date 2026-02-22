@@ -239,19 +239,37 @@ function KanbanColumn({
   leads,
   onDrop,
   onCardClick,
-  compact,
 }: {
   column: (typeof COLUMNS)[number];
   leads: Lead[];
   onDrop: (leadId: string, newStatus: string) => void;
   onCardClick: (lead: Lead) => void;
-  compact: boolean;
 }) {
   const [dragOver, setDragOver] = useState(false);
+  const [compact, setCompact] = useState(false);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  // Auto-compact when cards would overflow the column height
+  useEffect(() => {
+    const el = cardsRef.current;
+    if (!el) return;
+
+    const check = () => {
+      // Available height for cards (viewport minus header/stats/padding ~200px, minus column header ~44px)
+      const availableHeight = window.innerHeight - 244;
+      // Full card ~96px (padding + content + gap), compact ~32px
+      const fullHeight = leads.length * 96;
+      setCompact(fullHeight > availableHeight && leads.length > 4);
+    };
+
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [leads.length]);
 
   return (
     <div
-      className={`flex-1 min-w-0 flex flex-col rounded-lg transition-colors ${
+      className={`flex-shrink-0 w-[260px] flex flex-col rounded-lg transition-colors ${
         dragOver ? "bg-[#1a1a2e]/80" : "bg-[#1a1a2e]/40"
       }`}
       onDragOver={(e) => {
@@ -273,8 +291,8 @@ function KanbanColumn({
           className="w-2.5 h-2.5 rounded-full flex-shrink-0"
           style={{ backgroundColor: column.color }}
         />
-        <span className={`font-semibold text-white truncate ${compact ? "text-xs" : "text-sm"}`}>
-          {compact ? column.label.split(" ")[0] : column.label}
+        <span className="text-sm font-semibold text-white truncate">
+          {column.label}
         </span>
         <span className="ml-auto text-xs text-[#94a3b8] bg-[#0f0f1a] px-2 py-0.5 rounded-full">
           {leads.length}
@@ -282,7 +300,7 @@ function KanbanColumn({
       </div>
 
       {/* Cards */}
-      <div className={`flex flex-col p-2 overflow-y-auto flex-1 min-h-[100px] ${compact ? "gap-1" : "gap-2"}`}>
+      <div ref={cardsRef} className={`flex flex-col p-2 overflow-y-auto flex-1 min-h-[100px] ${compact ? "gap-1" : "gap-2"}`}>
         {leads.map((lead) => (
           <LeadCard
             key={lead.id}
@@ -901,8 +919,6 @@ export default function DashboardPage() {
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [view, setView] = useState<"pipeline" | "cold">("pipeline");
-  const [compact, setCompact] = useState(false);
-  const boardRef = useRef<HTMLDivElement>(null);
 
   // Check auth on mount
   useEffect(() => {
@@ -926,20 +942,6 @@ export default function DashboardPage() {
   useEffect(() => {
     if (authed) fetchLeads();
   }, [authed, fetchLeads]);
-
-  // Compact mode when columns can't fit at full width
-  useEffect(() => {
-    const el = boardRef.current;
-    if (!el) return;
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        const width = entry.contentRect.width;
-        setCompact(width / COLUMNS.length < 220);
-      }
-    });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [authed, view]);
 
   // Active leads (not cold) for pipeline & stats
   const activeLeads = leads.filter((l) => l.status !== "cold");
@@ -1046,7 +1048,7 @@ export default function DashboardPage() {
           Loading...
         </div>
       ) : view === "pipeline" ? (
-        <div className="flex-1 overflow-x-auto p-4" ref={boardRef}>
+        <div className="flex-1 overflow-x-auto p-4">
           <div className="flex gap-3 h-full min-h-[calc(100vh-200px)]">
             {COLUMNS.map((col) => (
               <KanbanColumn
@@ -1055,7 +1057,6 @@ export default function DashboardPage() {
                 leads={activeLeads.filter((l) => l.status === col.id)}
                 onDrop={moveLead}
                 onCardClick={setSelectedLead}
-                compact={compact}
               />
             ))}
           </div>
