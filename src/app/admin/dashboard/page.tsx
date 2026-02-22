@@ -364,13 +364,13 @@ function AddLeadModal({
     { key: "phone", label: "Phone", type: "tel" },
     { key: "email", label: "Email", type: "email" },
     { key: "trade", label: "Trade", type: "text" },
-    { key: "website", label: "Current Website", type: "url" },
+    { key: "website", label: "Current Website", type: "text" },
   ];
 
   return (
     <div
       className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
-      onClick={(e) => e.target === e.currentTarget && onClose()}
+      onMouseDown={(e) => e.target === e.currentTarget && onClose()}
     >
       <form
         onSubmit={submit}
@@ -538,7 +538,7 @@ function LeadDetail({
   return (
     <div
       className="fixed inset-0 bg-black/60 flex justify-end z-50"
-      onClick={(e) => e.target === e.currentTarget && onClose()}
+      onMouseDown={(e) => e.target === e.currentTarget && onClose()}
     >
       <div className="bg-[#1a1a2e] w-full max-w-lg h-full overflow-y-auto border-l border-[#2a2a4a]">
         {/* Header */}
@@ -677,7 +677,7 @@ function LeadDetail({
               {mockupLinks.map((link, i) => (
                 <div key={i} className="flex gap-2">
                   <input
-                    type="url"
+                    type="text"
                     value={link}
                     onChange={(e) => saveMockupLink(i, e.target.value)}
                     placeholder={`Mockup ${i + 1} URL`}
@@ -733,7 +733,7 @@ function LeadDetail({
               GoCardless Link
             </h3>
             <input
-              type="url"
+              type="text"
               value={gocardlessLink}
               onChange={(e) => saveGocardless(e.target.value)}
               placeholder="Paste GoCardless DD link..."
