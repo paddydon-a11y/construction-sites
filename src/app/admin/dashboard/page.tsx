@@ -155,9 +155,11 @@ function StatsBar({ leads }: { leads: Lead[] }) {
 function LeadCard({
   lead,
   onClick,
+  compact,
 }: {
   lead: Lead;
   onClick: () => void;
+  compact: boolean;
 }) {
   return (
     <div
@@ -167,61 +169,65 @@ function LeadCard({
         e.dataTransfer.effectAllowed = "move";
       }}
       onClick={onClick}
-      className="bg-[#0f0f1a] border border-[#2a2a4a] rounded p-3 cursor-pointer hover:border-[#f59e0b]/50 transition-colors group"
+      className={`bg-[#0f0f1a] border border-[#2a2a4a] rounded cursor-pointer hover:border-[#f59e0b]/50 transition-colors group ${compact ? "px-2 py-1.5" : "p-3"}`}
     >
-      <div className="font-semibold text-white text-sm truncate group-hover:text-[#f59e0b] transition-colors">
+      <div className={`font-semibold text-white truncate group-hover:text-[#f59e0b] transition-colors ${compact ? "text-xs" : "text-sm"}`}>
         {lead.businessName || "Untitled"}
       </div>
-      {lead.contactName && (
-        <div className="text-xs text-[#94a3b8] mt-1">{lead.contactName}</div>
+      {!compact && (
+        <>
+          {lead.contactName && (
+            <div className="text-xs text-[#94a3b8] mt-1">{lead.contactName}</div>
+          )}
+          <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+            {lead.trade && (
+              <span className="inline-block text-xs bg-[#1a1a2e] text-[#f59e0b] px-2 py-0.5 rounded">
+                {lead.trade}
+              </span>
+            )}
+            {lead.source && (
+              <span
+                className="inline-block text-xs px-2 py-0.5 rounded"
+                style={{
+                  backgroundColor:
+                    lead.source === "Google"
+                      ? "#1d4ed820"
+                      : lead.source === "TikTok"
+                      ? "#ec489920"
+                      : lead.source === "Referral"
+                      ? "#10b98120"
+                      : lead.source === "Cold Call"
+                      ? "#f59e0b20"
+                      : "#94a3b820",
+                  color:
+                    lead.source === "Google"
+                      ? "#60a5fa"
+                      : lead.source === "TikTok"
+                      ? "#f472b6"
+                      : lead.source === "Referral"
+                      ? "#34d399"
+                      : lead.source === "Cold Call"
+                      ? "#fbbf24"
+                      : "#94a3b8",
+                }}
+              >
+                {lead.source}
+              </span>
+            )}
+          </div>
+          <div className="flex items-center justify-between mt-2">
+            {lead.phone && (
+              <div className="text-xs text-[#94a3b8]">{lead.phone}</div>
+            )}
+            <div className="text-xs text-[#94a3b8]/50">
+              {new Date(lead.dateAdded).toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "short",
+              })}
+            </div>
+          </div>
+        </>
       )}
-      <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
-        {lead.trade && (
-          <span className="inline-block text-xs bg-[#1a1a2e] text-[#f59e0b] px-2 py-0.5 rounded">
-            {lead.trade}
-          </span>
-        )}
-        {lead.source && (
-          <span
-            className="inline-block text-xs px-2 py-0.5 rounded"
-            style={{
-              backgroundColor:
-                lead.source === "Google"
-                  ? "#1d4ed820"
-                  : lead.source === "TikTok"
-                  ? "#ec489920"
-                  : lead.source === "Referral"
-                  ? "#10b98120"
-                  : lead.source === "Cold Call"
-                  ? "#f59e0b20"
-                  : "#94a3b820",
-              color:
-                lead.source === "Google"
-                  ? "#60a5fa"
-                  : lead.source === "TikTok"
-                  ? "#f472b6"
-                  : lead.source === "Referral"
-                  ? "#34d399"
-                  : lead.source === "Cold Call"
-                  ? "#fbbf24"
-                  : "#94a3b8",
-            }}
-          >
-            {lead.source}
-          </span>
-        )}
-      </div>
-      <div className="flex items-center justify-between mt-2">
-        {lead.phone && (
-          <div className="text-xs text-[#94a3b8]">{lead.phone}</div>
-        )}
-        <div className="text-xs text-[#94a3b8]/50">
-          {new Date(lead.dateAdded).toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "short",
-          })}
-        </div>
-      </div>
     </div>
   );
 }
@@ -233,17 +239,19 @@ function KanbanColumn({
   leads,
   onDrop,
   onCardClick,
+  compact,
 }: {
   column: (typeof COLUMNS)[number];
   leads: Lead[];
   onDrop: (leadId: string, newStatus: string) => void;
   onCardClick: (lead: Lead) => void;
+  compact: boolean;
 }) {
   const [dragOver, setDragOver] = useState(false);
 
   return (
     <div
-      className={`flex-shrink-0 w-[260px] flex flex-col rounded-lg transition-colors ${
+      className={`flex-1 min-w-0 flex flex-col rounded-lg transition-colors ${
         dragOver ? "bg-[#1a1a2e]/80" : "bg-[#1a1a2e]/40"
       }`}
       onDragOver={(e) => {
@@ -265,8 +273,8 @@ function KanbanColumn({
           className="w-2.5 h-2.5 rounded-full flex-shrink-0"
           style={{ backgroundColor: column.color }}
         />
-        <span className="text-sm font-semibold text-white truncate">
-          {column.label}
+        <span className={`font-semibold text-white truncate ${compact ? "text-xs" : "text-sm"}`}>
+          {compact ? column.label.split(" ")[0] : column.label}
         </span>
         <span className="ml-auto text-xs text-[#94a3b8] bg-[#0f0f1a] px-2 py-0.5 rounded-full">
           {leads.length}
@@ -274,12 +282,13 @@ function KanbanColumn({
       </div>
 
       {/* Cards */}
-      <div className="flex flex-col gap-2 p-2 overflow-y-auto flex-1 min-h-[100px]">
+      <div className={`flex flex-col p-2 overflow-y-auto flex-1 min-h-[100px] ${compact ? "gap-1" : "gap-2"}`}>
         {leads.map((lead) => (
           <LeadCard
             key={lead.id}
             lead={lead}
             onClick={() => onCardClick(lead)}
+            compact={compact}
           />
         ))}
       </div>
@@ -892,6 +901,8 @@ export default function DashboardPage() {
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [view, setView] = useState<"pipeline" | "cold">("pipeline");
+  const [compact, setCompact] = useState(false);
+  const boardRef = useRef<HTMLDivElement>(null);
 
   // Check auth on mount
   useEffect(() => {
@@ -915,6 +926,20 @@ export default function DashboardPage() {
   useEffect(() => {
     if (authed) fetchLeads();
   }, [authed, fetchLeads]);
+
+  // Compact mode when columns can't fit at full width
+  useEffect(() => {
+    const el = boardRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const width = entry.contentRect.width;
+        setCompact(width / COLUMNS.length < 220);
+      }
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [authed, view]);
 
   // Active leads (not cold) for pipeline & stats
   const activeLeads = leads.filter((l) => l.status !== "cold");
@@ -1021,7 +1046,7 @@ export default function DashboardPage() {
           Loading...
         </div>
       ) : view === "pipeline" ? (
-        <div className="flex-1 overflow-x-auto p-4">
+        <div className="flex-1 overflow-x-auto p-4" ref={boardRef}>
           <div className="flex gap-3 h-full min-h-[calc(100vh-200px)]">
             {COLUMNS.map((col) => (
               <KanbanColumn
@@ -1030,6 +1055,7 @@ export default function DashboardPage() {
                 leads={activeLeads.filter((l) => l.status === col.id)}
                 onDrop={moveLead}
                 onCardClick={setSelectedLead}
+                compact={compact}
               />
             ))}
           </div>
