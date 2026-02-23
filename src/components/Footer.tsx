@@ -120,9 +120,14 @@ export default function Footer() {
             <p className="text-xs text-slate-light/60">
               &copy; 2026 Construction Sites. Built different.
             </p>
-            <p className="text-xs text-slate-light/40">
-              No hard hats required for browsing. 🏗️
-            </p>
+            <div className="flex gap-4 text-xs text-slate-light/40">
+              <Link href="/privacy-policy" className="hover:text-slate-light/70 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-slate-light/70 transition-colors">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>
