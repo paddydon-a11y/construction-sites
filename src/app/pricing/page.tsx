@@ -118,7 +118,7 @@ export default function PricingPage() {
             {painPoints.map((point, idx) => (
               <div
                 key={point.headline}
-                className={`rounded-xl bg-charcoal border border-white/5 p-7${idx >= 2 ? " hidden md:block" : ""}`}
+                className={`rounded-xl bg-charcoal border border-white/5 p-9${idx >= 2 ? " hidden md:block" : ""}`}
               >
                 <span className="text-3xl">{point.icon}</span>
                 <h3 className="mt-4 text-xl font-extrabold text-white">
