@@ -517,11 +517,29 @@ function LeadDetail({
     onUpdate({ id: lead.id, monthlyFee: val } as Partial<Lead>);
   };
 
-  const generateAgreementSlug = () => {
+  const generateAgreementSlug = async () => {
     const slug = lead.businessName
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/(^-|-$)/g, "");
+
+    try {
+      await fetch("/api/agreement", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          slug,
+          clientName: lead.contactName,
+          businessName: lead.businessName,
+          email: lead.email,
+          phone: lead.phone,
+          monthlyFee: String(lead.monthlyFee || 100),
+        }),
+      });
+    } catch {
+      // Agreement page will still load if Redis has the data
+    }
+
     onUpdate({ id: lead.id, agreementSlug: slug } as Partial<Lead>);
     window.open(`/agreement/${slug}`, "_blank");
   };

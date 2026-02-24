@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
-import fs from "fs";
-import path from "path";
+import { Redis } from "@upstash/redis";
 import AgreementClient from "./AgreementClient";
+
+export const dynamic = "force-dynamic";
 
 interface AgreementData {
   slug: string;
@@ -14,29 +15,19 @@ interface AgreementData {
   signed: boolean;
 }
 
-function getAgreement(slug: string): AgreementData | null {
-  const filePath = path.join(process.cwd(), "data", "agreements", `${slug}.json`);
-  try {
-    const raw = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(raw);
-  } catch {
-    return null;
-  }
-}
+const redis = new Redis({
+  url: process.env.KV_REST_API_URL!,
+  token: process.env.KV_REST_API_TOKEN!,
+});
 
-export async function generateStaticParams() {
-  const dir = path.join(process.cwd(), "data", "agreements");
-  try {
-    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
-    return files.map((f) => ({ slug: f.replace(".json", "") }));
-  } catch {
-    return [];
-  }
+async function getAgreement(slug: string): Promise<AgreementData | null> {
+  const data = await redis.get<AgreementData>(`agreement:${slug}`);
+  return data || null;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const data = getAgreement(slug);
+  const data = await getAgreement(slug);
   if (!data) return { title: "Agreement Not Found" };
   return {
     title: `Service Agreement — ${data.businessName}`,
@@ -46,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function AgreementPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const data = getAgreement(slug);
+  const data = await getAgreement(slug);
   if (!data) notFound();
 
   return <AgreementClient data={data} />;
