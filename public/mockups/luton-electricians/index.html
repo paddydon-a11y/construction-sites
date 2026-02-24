@@ -59,6 +59,8 @@ img{max-width:100%;display:block}
 /* Hero word reveal */
 .hero-word{display:inline-block;opacity:0;transform:translateY(30px);transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1)}
 .hero-word.revealed{opacity:1;transform:translateY(0)}
+/* Preserve gradient text on accent words wrapped by hero-word */
+.accent .hero-word{color:var(--accent-light);background:linear-gradient(135deg,#60a5fa,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* Reduced motion */
 @media(prefers-reduced-motion:reduce){
@@ -70,21 +72,29 @@ img{max-width:100%;display:block}
 /* =============================================
    NAV
    ============================================= */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);border-bottom:1px solid transparent;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:box-shadow 0.4s ease,border-color 0.4s ease,background 0.4s ease}
-.nav.scrolled{box-shadow:0 1px 20px rgba(15,23,42,0.06);border-bottom-color:var(--border);background:rgba(255,255,255,0.97)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;border-bottom:1px solid transparent;backdrop-filter:blur(0);-webkit-backdrop-filter:blur(0);transition:box-shadow 0.4s ease,border-color 0.4s ease,background 0.4s ease,backdrop-filter 0.4s ease}
+.nav.scrolled{box-shadow:0 1px 20px rgba(15,23,42,0.06);border-bottom-color:var(--border);background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .nav-inner{max-width:1140px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--heading);font-weight:900;font-size:1.15rem;color:var(--navy);letter-spacing:-0.02em}
-.nav-logo span.accent{color:var(--accent)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--heading);font-weight:900;font-size:1.15rem;color:#fff;letter-spacing:-0.02em;transition:color 0.4s ease}
+.nav-logo span.accent{color:var(--accent-light);transition:color 0.4s ease}
+.nav.scrolled .nav-logo{color:var(--navy)}
+.nav.scrolled .nav-logo span.accent{color:var(--accent)}
 .nav-links{display:flex;align-items:center;gap:32px}
-.nav-links a{font-size:0.82rem;font-weight:600;color:var(--gray-500);transition:color 0.25s ease;position:relative}
-.nav-links a:hover{color:var(--gray-800)}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);border-radius:2px;transition:width 0.3s ease}
+.nav-links a{font-size:0.82rem;font-weight:600;color:rgba(255,255,255,0.7);transition:color 0.25s ease;position:relative}
+.nav-links a:hover{color:#fff}
+.nav.scrolled .nav-links a{color:var(--gray-500)}
+.nav.scrolled .nav-links a:hover{color:var(--gray-800)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent-light);border-radius:2px;transition:width 0.3s ease}
 .nav-links a:hover::after{width:100%}
-.nav-links a.nav-cta{background:linear-gradient(135deg,var(--accent),var(--accent-hover));color:#fff;font-weight:700;font-size:0.82rem;padding:10px 22px;border-radius:10px;transition:all 0.3s ease;box-shadow:0 2px 12px rgba(37,99,235,0.25)}
+.nav.scrolled .nav-links a::after{background:var(--accent)}
+.nav-links a.nav-cta{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-weight:700;font-size:0.82rem;padding:10px 22px;border-radius:10px;transition:all 0.3s ease;box-shadow:none}
 .nav-links a.nav-cta::after{display:none}
-.nav-links a.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,99,235,0.35)}
+.nav-links a.nav-cta:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.nav.scrolled .nav-links a.nav-cta{background:linear-gradient(135deg,var(--accent),var(--accent-hover));color:#fff;border:none;box-shadow:0 2px 12px rgba(37,99,235,0.25)}
+.nav.scrolled .nav-links a.nav-cta:hover{box-shadow:0 6px 24px rgba(37,99,235,0.35)}
 .nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
-.nav-mobile svg{stroke:var(--gray-700)}
+.nav-mobile svg{stroke:#fff;transition:stroke 0.4s ease}
+.nav.scrolled .nav-mobile svg{stroke:var(--gray-700)}
 @media(max-width:768px){
   .nav-links{display:none}
   .nav-mobile{display:block}
@@ -203,13 +213,7 @@ img{max-width:100%;display:block}
 .gallery-item .gallery-view{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.8);opacity:0;z-index:2;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);pointer-events:none}
 .gallery-item:hover .gallery-view{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .gallery-view svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2}
-/* Clip-path reveal on scroll */
-.gallery-item.gallery-reveal{clip-path:inset(100% 0 0 0);transition:clip-path 0.7s cubic-bezier(0.16,1,0.3,1)}
-.gallery-item.gallery-revealed{clip-path:inset(0 0 0 0)}
-
-@media(prefers-reduced-motion:reduce){
-  .gallery-item.gallery-reveal{clip-path:none!important;transition:none!important}
-}
+/* Gallery item reveal — uses standard reveal-child pattern */
 
 .gallery-lightbox{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;padding:20px;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .gallery-lightbox.open{display:flex}
@@ -659,19 +663,19 @@ img{max-width:100%;display:block}
       <p class="section-desc reveal-child">Kitchen lighting, commercial boards, EV charger installations and more — completed to the highest standard across Luton.</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item gallery-reveal" onclick="openLightbox(this)">
+      <div class="gallery-item reveal-child" onclick="openLightbox(this)">
         <img src="/mockups/luton-electricians/gallery-1.webp" alt="Kitchen lighting installation" loading="lazy">
         <div class="gallery-view"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
       </div>
-      <div class="gallery-item gallery-reveal" onclick="openLightbox(this)">
+      <div class="gallery-item reveal-child" onclick="openLightbox(this)">
         <img src="/mockups/luton-electricians/gallery-2.webp" alt="Commercial electrical board" loading="lazy">
         <div class="gallery-view"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
       </div>
-      <div class="gallery-item gallery-reveal" onclick="openLightbox(this)">
+      <div class="gallery-item reveal-child" onclick="openLightbox(this)">
         <img src="/mockups/luton-electricians/gallery-3.webp" alt="Electrician working on distribution board" loading="lazy">
         <div class="gallery-view"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
       </div>
-      <div class="gallery-item gallery-reveal" onclick="openLightbox(this)">
+      <div class="gallery-item reveal-child" onclick="openLightbox(this)">
         <img src="/mockups/luton-electricians/logo.webp" alt="EV charger installation" loading="lazy">
         <div class="gallery-view"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
       </div>
@@ -900,30 +904,11 @@ img{max-width:100%;display:block}
       revealObserver.observe(revealElements[r]);
     }
 
-    // Gallery clip-path reveal
-    var galleryItems = document.querySelectorAll('.gallery-reveal');
-    var galleryObserver = new IntersectionObserver(function(entries){
-      for(var g = 0; g < entries.length; g++){
-        if(entries[g].isIntersecting){
-          (function(target, delay){
-            setTimeout(function(){
-              target.classList.add('gallery-revealed');
-            }, delay);
-          })(entries[g].target, Array.prototype.indexOf.call(galleryItems, entries[g].target) * 120);
-          galleryObserver.unobserve(entries[g].target);
-        }
-      }
-    }, {threshold: 0.1});
-
-    for(var gi = 0; gi < galleryItems.length; gi++){
-      galleryObserver.observe(galleryItems[gi]);
-    }
   } else {
     // If reduced motion or no IntersectionObserver, show everything
-    var allReveal = document.querySelectorAll('.reveal, .reveal-child, .gallery-reveal');
+    var allReveal = document.querySelectorAll('.reveal, .reveal-child');
     for(var ar = 0; ar < allReveal.length; ar++){
       allReveal[ar].classList.add('revealed');
-      allReveal[ar].classList.add('gallery-revealed');
     }
   }
 
