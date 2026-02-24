@@ -731,19 +731,17 @@ function LeadDetail({
                 <code className="text-sm text-[#f59e0b] bg-[#0f0f1a] px-2 py-1 rounded">
                   /agreement/{lead.agreementSlug}
                 </code>
-                <a
-                  href={`/agreement/${lead.agreementSlug}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm text-[#f59e0b] hover:underline"
+                <button
+                  onClick={generateAgreementSlug}
+                  className="text-sm text-[#f59e0b] hover:underline cursor-pointer bg-transparent border-none"
                 >
                   Open
-                </a>
+                </button>
               </div>
             ) : (
               <button
                 onClick={generateAgreementSlug}
-                className="px-4 py-2 bg-[#f59e0b] text-black font-semibold rounded hover:bg-[#fbbf24] transition-colors text-sm"
+                className="px-4 py-2 bg-[#f59e0b] text-black font-semibold rounded hover:bg-[#fbbf24] transition-colors text-sm cursor-pointer"
               >
                 Generate Agreement Link
               </button>
