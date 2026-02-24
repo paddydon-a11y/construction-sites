@@ -309,6 +309,7 @@ export default function AgreementClient({ data }: { data: AgreementData }) {
               <ul className="space-y-2">
                 <Li>The website design, code, and hosting infrastructure remain the sole property of Construction Sites for the duration of and following this agreement.</Li>
                 <Li>All content provided by the client — including photos, text, and logos — remains the property of the client and will be returned on request.</Li>
+                <Li>The domain name is owned by the client. Even if purchased by Construction Sites on the client&apos;s behalf, it remains the client&apos;s property and can be transferred to them at any point on request.</Li>
                 <Li>The website cannot be transferred to another provider or hosting platform.</Li>
               </ul>
             </Section>
