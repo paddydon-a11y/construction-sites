@@ -115,10 +115,10 @@ export default function PricingPage() {
       <section className="bg-dark py-20 px-6">
         <div className="mx-auto max-w-4xl">
           <div className="grid gap-6 md:grid-cols-2">
-            {painPoints.map((point) => (
+            {painPoints.map((point, idx) => (
               <div
                 key={point.headline}
-                className="rounded-xl bg-charcoal border border-white/5 p-7"
+                className={`rounded-xl bg-charcoal border border-white/5 p-7${idx >= 2 ? " hidden md:block" : ""}`}
               >
                 <span className="text-3xl">{point.icon}</span>
                 <h3 className="mt-4 text-xl font-extrabold text-white">
@@ -136,7 +136,7 @@ export default function PricingPage() {
               Every week without a proper website is jobs walking past your door.
             </p>
             <p className="mt-2 text-slate-light">
-              You can&rsquo;t win work people can&rsquo;t find you for.
+              You can&rsquo;t win work if people can&rsquo;t find you.
             </p>
           </div>
         </div>

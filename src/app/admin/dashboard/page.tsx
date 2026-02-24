@@ -213,6 +213,8 @@ function LeadCard({
                       ? "#10b98120"
                       : lead.source === "Cold Call"
                       ? "#f59e0b20"
+                      : lead.source === "Meta"
+                      ? "#1877f220"
                       : "#94a3b820",
                   color:
                     lead.source === "Google"
@@ -223,6 +225,8 @@ function LeadCard({
                       ? "#34d399"
                       : lead.source === "Cold Call"
                       ? "#fbbf24"
+                      : lead.source === "Meta"
+                      ? "#4599f7"
                       : "#94a3b8",
                 }}
               >
@@ -403,6 +407,7 @@ function AddLeadModal({
               <option value="TikTok">TikTok</option>
               <option value="Website">Website</option>
               <option value="Cold Call">Cold Call</option>
+              <option value="Meta">Meta</option>
             </select>
           </div>
         </div>
