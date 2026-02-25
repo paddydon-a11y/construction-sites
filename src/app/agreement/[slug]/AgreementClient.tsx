@@ -121,20 +121,12 @@ export default function AgreementClient({ data }: { data: AgreementData }) {
     const signatureData = canvas.toDataURL("image/png");
 
     try {
-      const res = await fetch("https://formspree.io/f/mjgewpwj", {
+      const res = await fetch("/api/agreement/sign", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          _subject: `Agreement Signed: ${data.businessName}`,
-          clientName: data.clientName,
-          businessName: data.businessName,
-          email: data.email,
-          phone: data.phone,
-          monthlyFee: `£${data.monthlyFee} + VAT`,
-          dateSigned: new Date().toISOString(),
-          agreementDate: data.date,
-          termsAccepted: true,
-          signature: signatureData,
+          slug: data.slug,
+          signatureData,
         }),
       });
 
@@ -164,7 +156,7 @@ export default function AgreementClient({ data }: { data: AgreementData }) {
               Agreement Signed
             </h1>
             <p className="text-lg text-slate-light mb-2">
-              Thank you, {data.clientName} — we&apos;ll be in touch within 24 hours to get started.
+              Thank you — your agreement has been signed. We&apos;ll be in touch shortly to get started.
             </p>
             <p className="text-sm text-slate-light/60">
               A copy of this agreement has been sent to our team. If you have any questions, call us on{" "}

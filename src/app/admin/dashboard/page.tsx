@@ -17,6 +17,8 @@ interface Lead {
   notes: string;
   mockupLinks: string[];
   agreementSlug: string;
+  agreementSentAt: string;
+  agreementStatus: "not-sent" | "sent" | "signed";
   gocardlessLink: string;
   monthlyFee: number;
   source: string;
@@ -456,6 +458,9 @@ function LeadDetail({
   const [monthlyFee, setMonthlyFee] = useState(lead.monthlyFee || 100);
   const notesTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [showSendModal, setShowSendModal] = useState(false);
+  const [sendingAgreement, setSendingAgreement] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
   const [editing, setEditing] = useState(false);
   const [editForm, setEditForm] = useState({
     businessName: lead.businessName || "",
@@ -557,6 +562,65 @@ function LeadDetail({
 
     onUpdate({ id: lead.id, agreementSlug: slug } as Partial<Lead>);
     window.open(`/agreement/${slug}`, "_blank");
+  };
+
+  const handleSendAgreement = async () => {
+    if (!lead.email) return;
+    setSendingAgreement(true);
+
+    // Ensure agreement exists in Redis first
+    const slug = lead.agreementSlug || lead.businessName
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+    try {
+      await fetch("/api/agreement", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          slug,
+          clientName: lead.contactName,
+          businessName: lead.businessName,
+          email: lead.email,
+          phone: lead.phone,
+          monthlyFee: String(lead.monthlyFee || 100),
+        }),
+      });
+    } catch {
+      // continue — agreement may already exist
+    }
+
+    try {
+      const firstName = (lead.contactName || "").split(" ")[0] || "";
+      const res = await fetch("/api/agreement/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          slug,
+          email: lead.email,
+          firstName,
+          businessName: lead.businessName,
+        }),
+      });
+
+      if (res.ok) {
+        const sentAt = new Date().toISOString();
+        onUpdate({
+          id: lead.id,
+          agreementSlug: slug,
+          agreementSentAt: sentAt,
+          agreementStatus: "sent",
+        } as Partial<Lead>);
+        setToast(`Agreement sent to ${lead.email}`);
+        setTimeout(() => setToast(null), 4000);
+      }
+    } catch {
+      // allow retry
+    } finally {
+      setSendingAgreement(false);
+      setShowSendModal(false);
+    }
   };
 
   const statusLabel = (status: string) =>
@@ -811,9 +875,16 @@ function LeadDetail({
           <section>
             <h3 className="text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-2">
               Agreement
+              {lead.agreementStatus === "signed" ? (
+                <span className="ml-2 text-[#22c55e] normal-case tracking-normal font-normal">Signed</span>
+              ) : lead.agreementStatus === "sent" ? (
+                <span className="ml-2 text-[#f97316] normal-case tracking-normal font-normal">Sent</span>
+              ) : null}
             </h3>
+
+            {/* Agreement link + open */}
             {lead.agreementSlug ? (
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center mb-3">
                 <code className="text-sm text-[#f59e0b] bg-[#0f0f1a] px-2 py-1 rounded">
                   /agreement/{lead.agreementSlug}
                 </code>
@@ -827,10 +898,34 @@ function LeadDetail({
             ) : (
               <button
                 onClick={generateAgreementSlug}
-                className="px-4 py-2 bg-[#f59e0b] text-black font-semibold rounded hover:bg-[#fbbf24] transition-colors text-sm cursor-pointer"
+                className="px-4 py-2 bg-[#f59e0b] text-black font-semibold rounded hover:bg-[#fbbf24] transition-colors text-sm cursor-pointer mb-3"
               >
                 Generate Agreement Link
               </button>
+            )}
+
+            {/* Send agreement button */}
+            {lead.agreementStatus !== "signed" && (
+              <button
+                onClick={() => {
+                  if (!lead.email) {
+                    setToast("No email address — add one first");
+                    setTimeout(() => setToast(null), 3000);
+                    return;
+                  }
+                  setShowSendModal(true);
+                }}
+                className="w-full py-2 bg-[#3b82f6] text-white font-semibold rounded hover:bg-[#2563eb] transition-colors text-sm cursor-pointer"
+              >
+                {lead.agreementSentAt ? "Resend Agreement" : "Send Agreement"}
+              </button>
+            )}
+
+            {/* Sent/signed info */}
+            {lead.agreementSentAt && (
+              <p className="text-xs text-[#94a3b8] mt-2">
+                Sent {new Date(lead.agreementSentAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}
+              </p>
             )}
           </section>
 
@@ -944,6 +1039,76 @@ function LeadDetail({
           </section>
         </div>
       </div>
+
+      {/* Toast notification */}
+      {toast && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] bg-[#22c55e] text-white px-6 py-3 rounded-lg shadow-lg text-sm font-semibold animate-[fadeIn_0.2s_ease-out]">
+          {toast}
+        </div>
+      )}
+
+      {/* Send Agreement Modal */}
+      {showSendModal && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-[60] p-4"
+          onMouseDown={(e) => e.target === e.currentTarget && setShowSendModal(false)}
+        >
+          <div className="bg-[#1a1a2e] border border-[#2a2a4a] rounded-lg w-full max-w-md p-6">
+            <h2 className="text-lg font-bold text-white mb-4">
+              {lead.agreementSentAt ? "Resend Agreement" : "Send Agreement"}
+            </h2>
+
+            {lead.agreementSentAt && (
+              <div className="bg-[#f97316]/10 border border-[#f97316]/30 rounded p-3 mb-4">
+                <p className="text-sm text-[#f97316]">
+                  This agreement was already sent on{" "}
+                  {new Date(lead.agreementSentAt).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}. Send again?
+                </p>
+              </div>
+            )}
+
+            <div className="bg-[#0f0f1a] border border-[#2a2a4a] rounded p-4 mb-4">
+              <p className="text-sm text-white mb-1">
+                Send to <strong>{lead.contactName || lead.businessName}</strong>
+              </p>
+              <p className="text-sm text-[#f59e0b]">{lead.email}</p>
+            </div>
+
+            <div className="bg-[#0f0f1a] border border-[#2a2a4a] rounded p-4 mb-5">
+              <p className="text-xs text-[#94a3b8] uppercase tracking-wider mb-2">Email Preview</p>
+              <p className="text-sm text-white mb-1">
+                Hi {(lead.contactName || "").split(" ")[0] || "there"},
+              </p>
+              <p className="text-sm text-[#94a3b8] mb-2">
+                Your website agreement is ready to review and sign. It only takes a minute.
+              </p>
+              <div className="bg-[#f59e0b] text-black text-center text-xs font-bold py-2 rounded">
+                Review &amp; Sign Agreement
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowSendModal(false)}
+                className="flex-1 py-2.5 border border-[#2a2a4a] text-[#94a3b8] rounded hover:bg-[#2a2a4a] transition-colors text-sm"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleSendAgreement}
+                disabled={sendingAgreement}
+                className="flex-1 py-2.5 bg-[#3b82f6] text-white font-semibold rounded hover:bg-[#2563eb] transition-colors text-sm disabled:opacity-50"
+              >
+                {sendingAgreement ? "Sending..." : "Confirm & Send"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
