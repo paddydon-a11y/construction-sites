@@ -53,8 +53,10 @@ export async function POST(req: NextRequest) {
   </div>
 </div>`;
 
+    console.log("[agreement/send] Sending to:", email, "slug:", slug, "API key present:", !!process.env.RESEND_API_KEY);
+
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error } = await resend.emails.send({
+    const { data: resendData, error } = await resend.emails.send({
       from: "Construction Sites <agreements@construction-sites.co.uk>",
       to: [email],
       subject: `${businessName || "Your"} Website Agreement — Ready to Sign`,
@@ -62,8 +64,11 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) {
-      return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+      console.error("[agreement/send] Resend error:", JSON.stringify(error, null, 2));
+      return NextResponse.json({ error: "Failed to send email", details: error.message }, { status: 500 });
     }
+
+    console.log("[agreement/send] Success, id:", resendData?.id);
 
     // Update the agreement record with sent timestamp
     const existing = await redis.get<Record<string, unknown>>(`agreement:${slug}`);
@@ -75,7 +80,8 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ success: true, sentAt: new Date().toISOString() });
-  } catch {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+  } catch (err) {
+    console.error("[agreement/send] Uncaught error:", err instanceof Error ? err.message : err, err instanceof Error ? err.stack : "");
+    return NextResponse.json({ error: "Server error", details: err instanceof Error ? err.message : String(err) }, { status: 500 });
   }
 }
