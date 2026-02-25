@@ -456,6 +456,21 @@ function LeadDetail({
   const [monthlyFee, setMonthlyFee] = useState(lead.monthlyFee || 100);
   const notesTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [editForm, setEditForm] = useState({
+    businessName: lead.businessName || "",
+    contactName: lead.contactName || "",
+    phone: lead.phone || "",
+    email: lead.email || "",
+    trade: lead.trade || "",
+    website: lead.website || "",
+    source: lead.source || "",
+  });
+
+  const saveEdit = () => {
+    onUpdate({ id: lead.id, ...editForm } as Partial<Lead>);
+    setEditing(false);
+  };
 
   // Auto-detect mockups on load
   useEffect(() => {
@@ -566,18 +581,37 @@ function LeadDetail({
       <div className="bg-[#1a1a2e] w-full max-w-lg h-full overflow-y-auto border-l border-[#2a2a4a]">
         {/* Header */}
         <div className="sticky top-0 bg-[#1a1a2e] border-b border-[#2a2a4a] px-6 py-4 flex items-center justify-between z-10">
-          <div>
-            <h2 className="text-lg font-bold text-white">
-              {lead.businessName || "Untitled"}
-            </h2>
-            <div
-              className="inline-block text-xs px-2 py-0.5 rounded mt-1"
-              style={{
-                backgroundColor: statusColor(lead.status) + "20",
-                color: statusColor(lead.status),
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => {
+                if (editing) {
+                  saveEdit();
+                } else {
+                  setEditing(true);
+                }
               }}
+              className={`p-1.5 rounded transition-colors ${editing ? "bg-[#22c55e]/20 text-[#22c55e] hover:bg-[#22c55e]/30" : "text-[#94a3b8] hover:text-[#f59e0b] hover:bg-[#2a2a4a]"}`}
+              title={editing ? "Save changes" : "Edit details"}
             >
-              {statusLabel(lead.status)}
+              {editing ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              )}
+            </button>
+            <div>
+              <h2 className="text-lg font-bold text-white">
+                {lead.businessName || "Untitled"}
+              </h2>
+              <div
+                className="inline-block text-xs px-2 py-0.5 rounded mt-1"
+                style={{
+                  backgroundColor: statusColor(lead.status) + "20",
+                  color: statusColor(lead.status),
+                }}
+              >
+                {statusLabel(lead.status)}
+              </div>
             </div>
           </div>
           <button
@@ -593,88 +627,140 @@ function LeadDetail({
           <section>
             <h3 className="text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-3">
               Contact Details
+              {editing && <span className="text-[#f59e0b] ml-2 normal-case tracking-normal font-normal">Editing</span>}
             </h3>
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              <div>
-                <div className="text-[#94a3b8] text-xs">Contact</div>
-                <div className="text-white">{lead.contactName || "—"}</div>
-              </div>
-              <div>
-                <div className="text-[#94a3b8] text-xs">Phone</div>
-                <div className="text-white">
-                  {lead.phone ? (
-                    <a
-                      href={`tel:${lead.phone}`}
-                      className="hover:text-[#f59e0b]"
-                    >
-                      {lead.phone}
-                    </a>
-                  ) : (
-                    "—"
-                  )}
+            {editing ? (
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                {[
+                  { key: "businessName", label: "Business Name", type: "text", span: 2 },
+                  { key: "contactName", label: "Contact", type: "text" },
+                  { key: "phone", label: "Phone", type: "tel" },
+                  { key: "email", label: "Email", type: "email" },
+                  { key: "trade", label: "Trade", type: "text" },
+                  { key: "website", label: "Current Website", type: "text", span: 2 },
+                ].map((f) => (
+                  <div key={f.key} className={f.span === 2 ? "col-span-2" : ""}>
+                    <div className="text-[#94a3b8] text-xs mb-1">{f.label}</div>
+                    <input
+                      type={f.type}
+                      value={editForm[f.key as keyof typeof editForm]}
+                      onChange={(e) => setEditForm((prev) => ({ ...prev, [f.key]: e.target.value }))}
+                      className="w-full px-3 py-2 bg-[#0f0f1a] border border-[#f59e0b]/30 rounded text-white text-sm placeholder-gray-500 outline-none focus:border-[#f59e0b]"
+                    />
+                  </div>
+                ))}
+                <div>
+                  <div className="text-[#94a3b8] text-xs mb-1">Source</div>
+                  <select
+                    value={editForm.source}
+                    onChange={(e) => setEditForm((prev) => ({ ...prev, source: e.target.value }))}
+                    className="w-full px-3 py-2 bg-[#0f0f1a] border border-[#f59e0b]/30 rounded text-white text-sm outline-none focus:border-[#f59e0b]"
+                  >
+                    <option value="">—</option>
+                    <option value="Referral">Referral</option>
+                    <option value="Google">Google</option>
+                    <option value="TikTok">TikTok</option>
+                    <option value="Website">Website</option>
+                    <option value="Cold Call">Cold Call</option>
+                    <option value="Meta">Meta</option>
+                  </select>
+                </div>
+                <div>
+                  <div className="text-[#94a3b8] text-xs mb-1">Monthly Fee</div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-[#94a3b8]">£</span>
+                    <input
+                      type="number"
+                      value={monthlyFee}
+                      onChange={(e) => saveMonthlyFee(parseInt(e.target.value) || 100)}
+                      className="w-20 bg-[#0f0f1a] border border-[#f59e0b]/30 rounded px-2 py-2 text-white text-sm outline-none focus:border-[#f59e0b]"
+                    />
+                  </div>
+                </div>
+                <div className="col-span-2 flex gap-2 mt-1">
+                  <button
+                    onClick={saveEdit}
+                    className="flex-1 py-2 bg-[#f59e0b] text-black font-semibold rounded hover:bg-[#fbbf24] transition-colors text-sm"
+                  >
+                    Save Changes
+                  </button>
+                  <button
+                    onClick={() => {
+                      setEditForm({
+                        businessName: lead.businessName || "",
+                        contactName: lead.contactName || "",
+                        phone: lead.phone || "",
+                        email: lead.email || "",
+                        trade: lead.trade || "",
+                        website: lead.website || "",
+                        source: lead.source || "",
+                      });
+                      setEditing(false);
+                    }}
+                    className="flex-1 py-2 border border-[#2a2a4a] text-[#94a3b8] rounded hover:bg-[#2a2a4a] transition-colors text-sm"
+                  >
+                    Cancel
+                  </button>
                 </div>
               </div>
-              <div>
-                <div className="text-[#94a3b8] text-xs">Email</div>
-                <div className="text-white truncate">
-                  {lead.email ? (
-                    <a
-                      href={`mailto:${lead.email}`}
-                      className="hover:text-[#f59e0b]"
-                    >
-                      {lead.email}
-                    </a>
-                  ) : (
-                    "—"
-                  )}
+            ) : (
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Contact</div>
+                  <div className="text-white">{lead.contactName || "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Phone</div>
+                  <div className="text-white">
+                    {lead.phone ? (
+                      <a href={`tel:${lead.phone}`} className="hover:text-[#f59e0b]">{lead.phone}</a>
+                    ) : "—"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Email</div>
+                  <div className="text-white truncate">
+                    {lead.email ? (
+                      <a href={`mailto:${lead.email}`} className="hover:text-[#f59e0b]">{lead.email}</a>
+                    ) : "—"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Trade</div>
+                  <div className="text-white">{lead.trade || "—"}</div>
+                </div>
+                <div className="col-span-2">
+                  <div className="text-[#94a3b8] text-xs">Current Website</div>
+                  <div className="text-white truncate">
+                    {lead.website ? (
+                      <a href={lead.website} target="_blank" rel="noreferrer" className="hover:text-[#f59e0b] underline">{lead.website}</a>
+                    ) : "—"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Date Added</div>
+                  <div className="text-white">
+                    {new Date(lead.dateAdded).toLocaleDateString("en-GB")}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Source</div>
+                  <div className="text-white">{lead.source || "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Monthly Fee</div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-[#94a3b8]">£</span>
+                    <input
+                      type="number"
+                      value={monthlyFee}
+                      onChange={(e) => saveMonthlyFee(parseInt(e.target.value) || 100)}
+                      className="w-20 bg-[#0f0f1a] border border-[#2a2a4a] rounded px-2 py-1 text-white text-sm outline-none focus:border-[#f59e0b]"
+                    />
+                  </div>
                 </div>
               </div>
-              <div>
-                <div className="text-[#94a3b8] text-xs">Trade</div>
-                <div className="text-white">{lead.trade || "—"}</div>
-              </div>
-              <div className="col-span-2">
-                <div className="text-[#94a3b8] text-xs">Current Website</div>
-                <div className="text-white truncate">
-                  {lead.website ? (
-                    <a
-                      href={lead.website}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="hover:text-[#f59e0b] underline"
-                    >
-                      {lead.website}
-                    </a>
-                  ) : (
-                    "—"
-                  )}
-                </div>
-              </div>
-              <div>
-                <div className="text-[#94a3b8] text-xs">Date Added</div>
-                <div className="text-white">
-                  {new Date(lead.dateAdded).toLocaleDateString("en-GB")}
-                </div>
-              </div>
-              <div>
-                <div className="text-[#94a3b8] text-xs">Source</div>
-                <div className="text-white">{lead.source || "—"}</div>
-              </div>
-              <div>
-                <div className="text-[#94a3b8] text-xs">Monthly Fee</div>
-                <div className="flex items-center gap-1">
-                  <span className="text-[#94a3b8]">£</span>
-                  <input
-                    type="number"
-                    value={monthlyFee}
-                    onChange={(e) =>
-                      saveMonthlyFee(parseInt(e.target.value) || 100)
-                    }
-                    className="w-20 bg-[#0f0f1a] border border-[#2a2a4a] rounded px-2 py-1 text-white text-sm outline-none focus:border-[#f59e0b]"
-                  />
-                </div>
-              </div>
-            </div>
+            )}
           </section>
 
           {/* Notes */}
