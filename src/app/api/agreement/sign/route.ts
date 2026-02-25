@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
       });
 
       await resend.emails.send({
-        from: "Construction Sites <agreements@4atrades.co.uk>",
+        from: "Construction Sites <agreements@construction-sites.co.uk>",
         to: ["patrick@construction-sites.co.uk"],
         subject: `${businessName} has signed their agreement`,
         html: `

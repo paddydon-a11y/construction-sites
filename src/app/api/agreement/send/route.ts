@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
-      from: "Construction Sites <agreements@4atrades.co.uk>",
+      from: "Construction Sites <agreements@construction-sites.co.uk>",
       to: [email],
       subject: `${businessName || "Your"} Website Agreement — Ready to Sign`,
       html,
