@@ -34,13 +34,16 @@ export async function POST(req: NextRequest) {
   try {
     formData = await req.formData();
   } catch {
-    return redirectTo(referer, "#error");
+    return redirectTo("", referer, "#error");
   }
+
+  // Explicit redirect URL from hidden field (reliable cross-origin)
+  const redirectUrl = formData.get("_redirect")?.toString() || "";
 
   // Honeypot check — if filled, silently redirect as if successful
   const honeypot = formData.get("_gotcha")?.toString() || "";
   if (honeypot) {
-    return redirectTo(referer, "#thank-you");
+    return redirectTo(redirectUrl, referer, "#thank-you");
   }
 
   // Identify client
@@ -49,7 +52,7 @@ export async function POST(req: NextRequest) {
 
   if (!client) {
     console.error(`[enquiry] Unknown site_id: "${siteId}"`);
-    return redirectTo(referer, "#error");
+    return redirectTo(redirectUrl, referer, "#error");
   }
 
   // Extract form fields
@@ -76,11 +79,11 @@ export async function POST(req: NextRequest) {
 
     if (error) {
       console.error(`[enquiry] Resend error for ${siteId}:`, error.message);
-      return redirectTo(referer, "#error");
+      return redirectTo(redirectUrl, referer, "#error");
     }
   } catch (err) {
     console.error(`[enquiry] Failed to send for ${siteId}:`, err);
-    return redirectTo(referer, "#error");
+    return redirectTo(redirectUrl, referer, "#error");
   }
 
   // Log to KV — no personal data, just metrics
@@ -95,15 +98,16 @@ export async function POST(req: NextRequest) {
     console.error("[enquiry] KV log error:", err);
   }
 
-  return redirectTo(referer, "#thank-you");
+  return redirectTo(redirectUrl, referer, "#thank-you");
 }
 
-function redirectTo(referer: string, hash: string) {
-  // Build redirect URL: use referer if available, otherwise fall back to main site
+function redirectTo(redirectUrl: string, referer: string, hash: string) {
+  // Use explicit redirect URL first (cross-origin safe), then referer, then fallback
   let url: string;
 
-  if (referer) {
-    // Strip any existing hash and append ours
+  if (redirectUrl) {
+    url = redirectUrl.split("#")[0] + hash;
+  } else if (referer) {
     url = referer.split("#")[0] + hash;
   } else {
     url = `https://construction-sites.co.uk/${hash}`;
