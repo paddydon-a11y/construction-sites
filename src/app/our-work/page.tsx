@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const sites = [
-  { file: "site-01", name: "Carter Brothers Electrical", trade: "Electricians", location: "Manchester" },
+const sites: { file: string; name: string; trade: string; location: string; url?: string }[] = [
+  { file: "site-01", name: "4A Trades", trade: "Labour Agency", location: "Lancashire", url: "https://4atrades.co.uk" },
   { file: "site-40", name: "Waterline Bathrooms & Tiling", trade: "Bathroom Fitters", location: "Bournemouth" },
   { file: "site-39", name: "Mosaic Bathrooms", trade: "Bathroom Fitters", location: "Aberdeen" },
   { file: "site-31", name: "Ridgeline Roofing", trade: "Roofers", location: "Coventry" },
@@ -76,29 +76,39 @@ export default function OurWorkPage() {
       {/* ── Portfolio Grid ── */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {shown.map((site) => (
-            <div
-              key={site.file}
-              className="group rounded-xl border border-white/5 bg-charcoal p-3 transition-all duration-300 hover:border-hivis/40 hover:shadow-[0_0_25px_rgba(245,158,11,0.15)]"
-            >
-              <div className="relative aspect-[16/9] overflow-hidden rounded-lg">
-                <img
-                  src={`/thumbnails/${site.file}.jpg`}
-                  alt={`${site.name} website preview`}
-                  className="absolute inset-0 h-full w-full object-cover object-top"
-                  loading="lazy"
-                />
-              </div>
+          {shown.map((site) => {
+            const card = (
+              <div
+                key={site.file}
+                className="group rounded-xl border border-white/5 bg-charcoal p-3 transition-all duration-300 hover:border-hivis/40 hover:shadow-[0_0_25px_rgba(245,158,11,0.15)]"
+              >
+                <div className="relative aspect-[16/9] overflow-hidden rounded-lg">
+                  <img
+                    src={`/thumbnails/${site.file}.jpg`}
+                    alt={`${site.name} website preview`}
+                    className="absolute inset-0 h-full w-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
 
-              <div className="mt-3 px-1">
-                <h3 className="truncate font-semibold text-white text-base">
-                  {site.name}
-                </h3>
-                <p className="text-sm text-hivis mt-0.5">{site.trade}</p>
-                <p className="text-sm text-slate-light">{site.location}</p>
+                <div className="mt-3 px-1">
+                  <h3 className="truncate font-semibold text-white text-base">
+                    {site.name}
+                  </h3>
+                  <p className="text-sm text-hivis mt-0.5">{site.trade}</p>
+                  <p className="text-sm text-slate-light">{site.location}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+
+            return site.url ? (
+              <a key={site.file} href={site.url} target="_blank" rel="noopener noreferrer">
+                {card}
+              </a>
+            ) : (
+              card
+            );
+          })}
         </div>
 
         {/* Load More */}
