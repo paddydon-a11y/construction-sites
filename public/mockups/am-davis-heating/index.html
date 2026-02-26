@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A M Davis Heating & Plumbing | Cheltenham, Gloucestershire</title>
+<meta name="description" content="Local heating and plumbing specialists in Cheltenham. Boiler installations, repairs & servicing, air source heat pumps, gas safety certificates, bathroom installations. 4.6 stars on Google. Free estimates.">
+<meta property="og:title" content="A M Davis Heating & Plumbing | Cheltenham, Gloucestershire">
+<meta property="og:description" content="Local heating and plumbing specialists in Cheltenham. Boiler installations, repairs & servicing, air source heat pumps, gas safety certificates. Free estimates.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--card:#141414;--card-hover:#1a1a1a;--border:#1e1e1e;--border-light:#2a2a2a;--accent:#3b7dd8;--accent-hover:#2d6abd;--accent-glow:rgba(59,125,216,0.15);--red:#e5332a;--red-glow:rgba(229,51,42,0.15);--green:#22c55e;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--heading:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--bg);color:var(--gray-400);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:var(--white);line-height:1.15;font-weight:800}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#0a0a0a;border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--heading);font-weight:900;font-size:1.15rem;color:var(--white);letter-spacing:-0.02em;display:flex;align-items:center}
+.nav-logo img{height:40px;width:auto}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:0.8rem;font-weight:600;color:var(--white);transition:color 0.2s;letter-spacing:0.01em}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--accent);color:#fff;font-weight:700;font-size:0.8rem;padding:8px 18px;border-radius:8px;transition:background 0.2s;letter-spacing:0.01em}
+.nav-cta:hover{background:var(--accent-hover)}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile svg{stroke:var(--white)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+  .nav-links.open{display:flex;position:fixed;top:64px;left:0;right:0;bottom:0;background:#0a0a0a;flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:200;overflow-y:auto}
+  .nav-links.open a{font-size:1.25rem}
+  .nav-links.open .nav-cta{font-size:1rem;padding:14px 32px}
+}
+
+/* HERO */
+.hero{position:relative;padding:140px 0 80px;overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--accent-glow),transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-logo{margin-bottom:24px}
+.hero-logo img{height:72px;width:auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,125,216,0.08);border:1px solid rgba(59,125,216,0.15);border-radius:100px;padding:6px 16px;font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:20px}
+.hero-badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+.hero h1{font-size:3rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:20px}
+.hero h1 .accent{background:linear-gradient(135deg,#3b7dd8,#5a9bef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .accent-red{background:linear-gradient(135deg,#e5332a,#f05a52);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.05rem;color:var(--gray-400);max-width:480px;line-height:1.75;margin-bottom:32px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:0.95rem;padding:14px 28px;border-radius:10px;transition:all 0.2s;border:none;cursor:pointer}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 8px 30px rgba(59,125,216,0.25)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#cc2a22;transform:translateY(-1px);box-shadow:0 8px 30px rgba(229,51,42,0.25)}
+.btn-outline{border:1.5px solid var(--accent);color:var(--accent);background:transparent}
+.btn-outline:hover{background:var(--accent);color:#fff}
+.hero-right{position:relative}
+.hero-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--red))}
+.hero-card h3{font-size:1.1rem;font-weight:800;margin-bottom:4px}
+.hero-card p{color:var(--gray-400);font-size:0.85rem;margin-bottom:20px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hero-stat{text-align:center;padding:16px;background:var(--bg);border-radius:10px;border:1px solid var(--border)}
+.hero-stat .num{font-family:var(--heading);font-size:1.5rem;font-weight:900;color:var(--white);display:block}
+.hero-stat .label{font-size:0.72rem;color:var(--gray-500);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
+
+/* TRUST BAR */
+.trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card);padding:20px 0}
+.trust-items{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 40px}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--gray-300)}
+.trust-item svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2;flex-shrink:0}
+
+/* SECTIONS */
+.section{padding:80px 0}
+.section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.section-title{font-size:2.25rem;letter-spacing:-0.02em;margin-bottom:12px}
+.section-desc{color:var(--gray-400);max-width:560px;font-size:0.95rem;line-height:1.7}
+.section-center{text-align:center}
+.section-center .section-desc{margin:0 auto}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;transition:border-color 0.3s,background 0.3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover{border-color:var(--border-light);background:var(--card-hover)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card.red::before{background:var(--red)}
+.service-icon{width:40px;height:40px;margin-bottom:14px}
+.service-icon svg{width:100%;height:100%}
+.service-card h3{font-size:0.95rem;font-weight:700;margin-bottom:6px}
+.service-card p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:40px}
+.why-items{display:flex;flex-direction:column;gap:20px}
+.why-item{display:flex;gap:14px}
+.why-item-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-item-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2}
+.why-item-icon.red{background:var(--red-glow)}
+.why-item-icon.red svg{stroke:var(--red)}
+.why-item h4{font-size:0.9rem;font-weight:700;margin-bottom:3px}
+.why-item p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.review-stars{display:flex;gap:2px;margin-bottom:12px}
+.review-stars svg{width:16px;height:16px;fill:#f59e0b}
+.review-text{font-size:0.88rem;color:var(--gray-300);line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:36px;height:36px;border-radius:50%;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:800;color:var(--accent);font-size:0.85rem;flex-shrink:0}
+.review-name{font-weight:700;color:var(--white);font-size:0.82rem}
+.review-role{font-size:0.75rem;color:var(--gray-500)}
+.review-source{display:inline-flex;align-items:center;gap:4px;font-size:0.7rem;color:var(--gray-500);margin-top:2px}
+
+/* AREAS */
+.areas-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+.area-tag{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:10px 20px;font-size:0.82rem;color:var(--gray-300);font-weight:600;transition:border-color 0.2s}
+.area-tag:hover{border-color:var(--accent)}
+
+/* CTA BAND */
+.cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;text-align:center}
+.cta-band h2{font-size:2rem;margin-bottom:8px}
+.cta-band p{color:var(--gray-400);margin-bottom:24px;font-size:0.95rem}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-block h4{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-block a,.contact-block p{font-size:1.1rem;color:var(--white);font-weight:600}
+.contact-block a:hover{color:var(--accent)}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px}
+.contact-form label{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--white);font-family:var(--body);font-size:0.9rem;outline:none;transition:border-color 0.2s;margin-bottom:16px}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--accent)}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-form button{width:100%;padding:14px;border-radius:10px;font-size:0.95rem}
+
+/* FOOTER */
+.footer{padding:32px 0;text-align:center;border-top:1px solid var(--border)}
+.footer-logo{font-family:var(--heading);font-weight:900;font-size:1rem;color:var(--white);margin-bottom:6px}
+.footer-logo span{color:var(--accent)}
+.footer p{font-size:0.75rem;color:var(--gray-500)}
+
+/* STICKY BOTTOM BAR */
+.floating-btns{position:fixed;bottom:20px;right:20px;z-index:90;display:flex;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.floating-btns.visible{opacity:1;pointer-events:auto}
+.floating-btns a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:transform 0.2s}
+.floating-btns a:hover{transform:scale(1.1)}
+.floating-btns .fab-call{background:var(--accent)}
+.floating-btns .fab-call svg{stroke:#fff;fill:none}
+.floating-btns svg{width:24px;height:24px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h1{font-size:2.5rem}
+  .hero-sub{margin:0 auto 28px}
+  .hero-btns{justify-content:center}
+  .hero-logo{display:flex;justify-content:center}
+  .hero-right{max-width:440px;margin:0 auto}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .hero{padding:110px 0 60px;min-height:auto}
+  .hero h1{font-size:2rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.75rem}
+  .services-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;width:100%;max-width:340px;margin:0 auto}
+  .btn{width:100%}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns .btn{width:100%;max-width:320px}
+  body{padding-bottom:52px}
+  .trust-items{gap:16px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><img src="/mockups/am-davis-heating/logo.webp" alt="A M Davis Heating & Plumbing" style="height:40px"></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Get a Free Quote</a>
+    </div>
+    <button class="nav-mobile" id="nav-toggle" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-logo"><img src="/mockups/am-davis-heating/logo.webp" alt="A M Davis Heating & Plumbing" style="height:72px"></div>
+        <div class="hero-badge"><span class="dot"></span> Checkatrade Verified &middot; 20 Reviews</div>
+        <h1>Your Local <span class="accent">Heating</span> &amp; <span class="accent-red">Plumbing</span> Experts</h1>
+        <p class="hero-sub">A M Davis Heating &amp; Plumbing &mdash; Cheltenham's trusted heating and plumbing specialists. Boiler installations, repairs, servicing, air source heat pumps, gas safety certificates, and emergency call-outs. 4.6 stars on Google. Free estimates on every job.</p>
+        <div class="hero-btns">
+          <a class="btn btn-accent" href="#contact">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Request a Quote
+          </a>
+          <a class="btn btn-outline" href="#services">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            View Services
+          </a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-card">
+          <h3>Cheltenham's Trusted Heating Engineers</h3>
+          <p>Serving homeowners across Gloucestershire since day one. Domestic &amp; commercial work.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><span class="num" style="color:var(--accent)">4.6&#9733;</span><span class="label">Google Rating</span></div>
+            <div class="hero-stat"><span class="num" style="color:var(--red)">20+</span><span class="label">Checkatrade Reviews</span></div>
+            <div class="hero-stat"><span class="num">24/7</span><span class="label">Emergency Call-Out</span></div>
+            <div class="hero-stat"><span class="num" style="color:var(--green)">Free</span><span class="label">Estimates</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Gas Safe Registered
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Checkatrade Verified
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        24/7 Emergency Call-Out
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Free Estimates
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Heating &amp; Plumbing Services</h2>
+      <p class="section-desc">From boiler installations to emergency repairs. Whatever the job, Anthony and the team have got you covered.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#3b7dd8" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/><circle cx="12" cy="18" r="1"/></svg></div>
+        <h3>Boiler Installation</h3>
+        <p>New boiler installations fitted to the highest standard. Transparent pricing, no hidden extras, and a clean, professional finish every time.</p>
+      </div>
+      <div class="service-card red">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e5332a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Boiler Repairs</h3>
+        <p>Fast, reliable boiler repairs when you need them most. We diagnose the fault quickly and get your heating back up and running.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#3b7dd8" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>Boiler Servicing</h3>
+        <p>Annual boiler servicing to keep your system running efficiently and safely. Maintain your warranty and prevent costly breakdowns.</p>
+      </div>
+      <div class="service-card red">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e5332a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Central Heating</h3>
+        <p>Full central heating installations, radiator replacements, and system upgrades. Keeping your home warm and energy efficient.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#3b7dd8" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg></div>
+        <h3>Air Source Heat Pumps</h3>
+        <p>ASHP installation for greener, more efficient home heating. Reduce your carbon footprint and lower your energy bills.</p>
+      </div>
+      <div class="service-card red">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e5332a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Gas Safety Certificates</h3>
+        <p>Landlord gas safety inspections and CP12 certificates. Fast turnaround, clear reports, competitive pricing for landlords and letting agents.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#3b7dd8" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Bathroom Installation</h3>
+        <p>Complete bathroom installations, from design to finish. Plumbing, tiling, and fitting &mdash; all handled by one team.</p>
+      </div>
+      <div class="service-card red">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="#e5332a" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Emergency Call-Outs</h3>
+        <p>24/7 emergency plumbing and heating repairs. Leaks, breakdowns, no hot water &mdash; we'll be there when you need us most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Need a Plumber in Cheltenham?</h2>
+    <p>4.6 stars on Google. Checkatrade verified. Free estimates, no obligation.</p>
+    <div class="cta-btns">
+      <a class="btn btn-accent" href="#contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Get a Free Quote
+      </a>
+      <a class="btn btn-red" href="#contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Emergency? Contact Us Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="section" id="why" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <p class="section-label">Why Us</p>
+        <h2 class="section-title">Why Choose A M Davis?</h2>
+        <p class="section-desc">We're a local, family-run business that takes pride in every job. Anthony and the team deliver honest, reliable workmanship across Cheltenham and Gloucestershire.</p>
+      </div>
+      <div class="why-items">
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div>
+            <h4>Gas Safe Registered</h4>
+            <p>Every gas job is carried out by fully qualified, Gas Safe registered engineers. Your safety is our top priority on every project.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon red"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <h4>Checkatrade Verified</h4>
+            <p>Vetted and reviewed on Checkatrade with 20 reviews. Real feedback from real customers you can trust.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+          <div>
+            <h4>Free Estimates, No Obligation</h4>
+            <p>Transparent pricing with no hidden extras. We quote a price and that's the price you pay &mdash; no surprises.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon red"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h4>Based in Cheltenham</h4>
+            <p>Based on Dorset Avenue, we serve Cheltenham and the surrounding areas. Local means we can respond fast, especially for emergencies.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <h4>24/7 Emergency Call-Out</h4>
+            <p>Heating emergencies don't keep office hours. Neither do we. Available around the clock when you need us most.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-label">Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-desc">Real reviews from real customers on Google and Checkatrade.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;margin-bottom:8px">
+      <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.001-.001 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+      <span style="color:var(--white);font-weight:700;font-size:0.95rem">4.6</span>
+      <div style="display:flex;gap:2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <span style="color:var(--gray-400);font-size:0.85rem">9 reviews on Google</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Anthony and the team did an excellent job installing our new air source heating system and hot water cylinder. Turned up on time, were polite and professional, and left the house clean afterwards. Definitely recommend."</p>
+        <div class="review-author"><div class="review-avatar">B</div><div><div class="review-name">Barney Westbrook</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Anthony, Scott, and Harvey have been excellent &mdash; they installed our new boiler quickly, to a high standard, and in line with the quote. Very impressed by their professionalism and patience with our many questions. Wouldn't hesitate to recommend."</p>
+        <div class="review-author"><div class="review-avatar">V</div><div><div class="review-name">Verified Reviewer</div><div class="review-role">Checkatrade &middot; GL51</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Absolutely fantastic company. They went above and beyond. Only came to fit a new boiler and also sorted 2 radiators that hadn't worked in over a year and a runny cistern. Very pleasant, keep a very tidy workspace. Highly recommended."</p>
+        <div class="review-author"><div class="review-avatar">A</div><div><div class="review-name">Anthony Brown</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Central heating boiler broke down on Sunday 27th December, with a bank holiday the next day and snow forecast. Anthony took my call on the bank holiday morning and arrived 90 minutes later. Returned first thing the next day with a new fan unit and fitted it. Very very impressed."</p>
+        <div class="review-author"><div class="review-avatar">V</div><div><div class="review-name">Verified Reviewer</div><div class="review-role">Checkatrade &middot; GL51</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Anthony was amazing, coming to the rescue when our heating broke in the lead up to Christmas. He came to us at the end of his working day and worked into the evening ensuring it was up and running. Prompt and thorough. Highly recommended."</p>
+        <div class="review-author"><div class="review-avatar">K</div><div><div class="review-name">Kallika Bruce</div><div class="review-role">Google Review</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"We accidentally nicked our radiator pipe doing some DIY &mdash; called AM Davis and he turned up within the hour, fixed the problem and didn't charge extortionate prices. Brilliant service, will definitely be using him again!"</p>
+        <div class="review-author"><div class="review-avatar">A</div><div><div class="review-name">Amy</div><div class="review-role">Google Review</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section section-center" id="areas" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <p class="section-label">Coverage</p>
+    <h2 class="section-title">Areas We Cover</h2>
+    <p class="section-desc">Based in Cheltenham, serving homes and businesses across Gloucestershire.</p>
+    <div class="areas-tags">
+      <span class="area-tag">Cheltenham</span>
+      <span class="area-tag">Charlton Kings</span>
+      <span class="area-tag">Leckhampton</span>
+      <span class="area-tag">Prestbury</span>
+      <span class="area-tag">Bishops Cleeve</span>
+      <span class="area-tag">Churchdown</span>
+      <span class="area-tag">Gloucester</span>
+      <span class="area-tag">Tewkesbury</span>
+      <span class="area-tag">Winchcombe</span>
+      <span class="area-tag">Bourton-on-the-Water</span>
+      <span class="area-tag">Stow-on-the-Wold</span>
+      <span class="area-tag">Cirencester</span>
+      <span class="area-tag">Stroud</span>
+      <span class="area-tag">Evesham</span>
+      <span class="area-tag">Gloucestershire</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Request a Free Estimate</h2>
+    <p class="section-desc">Tell us what you need and we'll get back to you fast. No obligation, no pressure.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-block">
+          <h4>Email</h4>
+          <a href="mailto:amdavisheating@gmail.com">amdavisheating@gmail.com</a>
+        </div>
+        <div class="contact-block">
+          <h4>Hours</h4>
+          <p>24/7 Emergency Call-Out</p>
+        </div>
+        <div class="contact-block">
+          <h4>Location</h4>
+          <p>48 Dorset Ave, Cheltenham GL51 8BE</p>
+        </div>
+        <div class="contact-block">
+          <h4>Accreditations</h4>
+          <p>Gas Safe Registered &middot; Checkatrade Verified</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email (optional)">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>Boiler Installation</option>
+            <option>Boiler Repair</option>
+            <option>Boiler Servicing</option>
+            <option>Central Heating</option>
+            <option>Air Source Heat Pump</option>
+            <option>Gas Safety Certificate</option>
+            <option>Bathroom Installation</option>
+            <option>Emergency Call-Out</option>
+            <option>Other</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about the job..." rows="4"></textarea>
+          <button type="submit" class="btn btn-accent">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">A M Davis Heating &amp; <span>Plumbing</span></div>
+    <p>&copy; 2025 A M Davis Heating &amp; Plumbing Ltd. All rights reserved.</p>
+    <p style="margin-top:4px">Designed by <a href="https://construction-sites.co.uk" style="color:var(--accent)">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING CALL -->
+<div class="floating-btns">
+  <a class="fab-call" href="#contact" aria-label="Get a Quote">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+</div>
+
+<script>
+document.getElementById('nav-toggle').addEventListener('click',function(){
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+var heroBtns=document.querySelector('.hero-btns');
+var floatingBtns=document.querySelector('.floating-btns');
+function checkSticky(){
+  var rect=heroBtns.getBoundingClientRect();
+  if(rect.bottom<0){floatingBtns.classList.add('visible')}
+  else{floatingBtns.classList.remove('visible')}
+}
+window.addEventListener('scroll',checkSticky);
+checkSticky();
+</script>
+</body>
+</html>
