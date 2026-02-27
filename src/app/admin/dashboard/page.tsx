@@ -23,6 +23,9 @@ interface Lead {
   monthlyFee: number;
   source: string;
   statusHistory: { status: string; date: string }[];
+  callbackDate?: string;
+  callbackNote?: string;
+  callbackCount?: number;
 }
 
 // ─── Constants ───────────────────────────────────────────────────────────────
@@ -96,7 +99,7 @@ function PasswordGate({ onAuth }: { onAuth: () => void }) {
 
 // ─── Stats Bar ───────────────────────────────────────────────────────────────
 
-function StatsBar({ leads }: { leads: Lead[] }) {
+function StatsBar({ leads, callbacksDueToday }: { leads: Lead[]; callbacksDueToday: number }) {
   const now = new Date();
   const thisMonth = (l: Lead) => {
     const d = new Date(l.dateAdded);
@@ -134,6 +137,7 @@ function StatsBar({ leads }: { leads: Lead[] }) {
     { label: "Signed This Month", value: signed },
     { label: "Live Clients", value: liveClients },
     { label: "MRR", value: `£${mrr.toLocaleString()}` },
+    { label: "Callbacks Due", value: callbacksDueToday, highlight: callbacksDueToday > 0 },
   ];
 
   return (
@@ -141,9 +145,15 @@ function StatsBar({ leads }: { leads: Lead[] }) {
       {stats.map((s) => (
         <div
           key={s.label}
-          className="flex-shrink-0 bg-[#1a1a2e] border border-[#2a2a4a] rounded-lg px-5 py-3 min-w-[140px]"
+          className={`flex-shrink-0 bg-[#1a1a2e] border rounded-lg px-5 py-3 min-w-[140px] ${
+            (s as { highlight?: boolean }).highlight
+              ? "border-[#f97316]/50"
+              : "border-[#2a2a4a]"
+          }`}
         >
-          <div className="text-2xl font-bold text-[#f59e0b]">{s.value}</div>
+          <div className={`text-2xl font-bold ${
+            (s as { highlight?: boolean }).highlight ? "text-[#f97316]" : "text-[#f59e0b]"
+          }`}>{s.value}</div>
           <div className="text-xs text-[#94a3b8] mt-1">{s.label}</div>
         </div>
       ))}
@@ -441,12 +451,16 @@ function LeadDetail({
   onClose,
   onMarkCold,
   onDelete,
+  onMoveToCallback,
+  onPushCallback,
 }: {
   lead: Lead;
   onUpdate: (data: Partial<Lead>) => void;
   onClose: () => void;
   onMarkCold: () => void;
   onDelete: () => void;
+  onMoveToCallback: (date: string, note: string) => void;
+  onPushCallback: (newDate: string) => void;
 }) {
   const [notes, setNotes] = useState(lead.notes || "");
   const [mockupLinks, setMockupLinks] = useState<string[]>(
@@ -462,6 +476,10 @@ function LeadDetail({
   const [sendingAgreement, setSendingAgreement] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [editing, setEditing] = useState(false);
+  const [showCallbackForm, setShowCallbackForm] = useState(false);
+  const [callbackDateInput, setCallbackDateInput] = useState("");
+  const [callbackNoteInput, setCallbackNoteInput] = useState("");
+  const [showPushMenu, setShowPushMenu] = useState(false);
   const [editForm, setEditForm] = useState({
     businessName: lead.businessName || "",
     contactName: lead.contactName || "",
@@ -628,6 +646,8 @@ function LeadDetail({
       ? "Cold Lead"
       : status === "churned"
       ? "Churned"
+      : status === "callback"
+      ? "Callback"
       : COLUMNS.find((c) => c.id === status)?.label || status;
 
   const statusColor = (status: string) =>
@@ -635,6 +655,8 @@ function LeadDetail({
       ? "#64748b"
       : status === "churned"
       ? "#ef4444"
+      : status === "callback"
+      ? "#f97316"
       : COLUMNS.find((c) => c.id === status)?.color || "#94a3b8";
 
   return (
@@ -980,17 +1002,122 @@ function LeadDetail({
             </div>
           </section>
 
+          {/* Callback Info (when status is callback) */}
+          {lead.status === "callback" && (
+            <section>
+              <h3 className="text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-3">
+                Callback Details
+              </h3>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Callback Date</div>
+                  <div className={`text-white font-medium ${
+                    lead.callbackDate && lead.callbackDate <= new Date().toISOString().split("T")[0]
+                      ? "text-red-400"
+                      : ""
+                  }`}>
+                    {lead.callbackDate
+                      ? new Date(lead.callbackDate + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
+                      : "—"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Times Pushed</div>
+                  <div className="text-white">{lead.callbackCount || 0}</div>
+                </div>
+                {lead.callbackNote && (
+                  <div className="col-span-2">
+                    <div className="text-[#94a3b8] text-xs">Note</div>
+                    <div className="text-white">{lead.callbackNote}</div>
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+
           {/* Actions */}
           <section className="border-t border-[#2a2a4a] pt-4 flex flex-col gap-3">
-            {lead.status === "cold" ? (
-              <button
-                onClick={() =>
-                  onUpdate({ id: lead.id, status: "new" } as Partial<Lead>)
-                }
-                className="w-full py-2.5 bg-[#3b82f6] text-white font-semibold rounded hover:bg-[#2563eb] transition-colors text-sm"
-              >
-                Reactivate Lead
-              </button>
+            {lead.status === "callback" ? (
+              <>
+                <button
+                  onClick={() => {
+                    onUpdate({ id: lead.id, status: "new", callbackDate: "", callbackNote: "", callbackCount: 0 } as Partial<Lead>);
+                    onClose();
+                  }}
+                  className="w-full py-2.5 bg-[#3b82f6] text-white font-semibold rounded hover:bg-[#2563eb] transition-colors text-sm"
+                >
+                  Move to Pipeline
+                </button>
+                <div className="relative">
+                  <button
+                    onClick={() => setShowPushMenu(!showPushMenu)}
+                    className="w-full py-2.5 bg-[#f97316] text-white font-semibold rounded hover:bg-[#ea580c] transition-colors text-sm"
+                  >
+                    Push Callback
+                  </button>
+                  {showPushMenu && (
+                    <div className="absolute top-full left-0 right-0 mt-1 bg-[#1a1a2e] border border-[#2a2a4a] rounded-lg overflow-hidden z-10 shadow-lg">
+                      {[
+                        { label: "1 Week", days: 7 },
+                        { label: "2 Weeks", days: 14 },
+                        { label: "1 Month", days: 30 },
+                        { label: "3 Months", days: 90 },
+                      ].map((opt) => (
+                        <button
+                          key={opt.label}
+                          onClick={() => {
+                            const d = new Date();
+                            d.setDate(d.getDate() + opt.days);
+                            onPushCallback(d.toISOString().split("T")[0]);
+                            setShowPushMenu(false);
+                          }}
+                          className="w-full px-4 py-2 text-left text-sm text-white hover:bg-[#2a2a4a] transition-colors"
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                      <div className="px-4 py-2 border-t border-[#2a2a4a]">
+                        <input
+                          type="date"
+                          onChange={(e) => {
+                            if (e.target.value) {
+                              onPushCallback(e.target.value);
+                              setShowPushMenu(false);
+                            }
+                          }}
+                          className="w-full px-2 py-1 bg-[#0f0f1a] border border-[#2a2a4a] rounded text-white text-sm outline-none focus:border-[#f59e0b]"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <button
+                  onClick={() => {
+                    onUpdate({ id: lead.id, status: "cold", callbackDate: "", callbackNote: "", callbackCount: 0 } as Partial<Lead>);
+                    onClose();
+                  }}
+                  className="w-full py-2.5 bg-[#334155] text-[#94a3b8] font-semibold rounded hover:bg-[#475569] hover:text-white transition-colors text-sm"
+                >
+                  Move to Cold
+                </button>
+              </>
+            ) : lead.status === "cold" ? (
+              <>
+                <button
+                  onClick={() =>
+                    onUpdate({ id: lead.id, status: "new" } as Partial<Lead>)
+                  }
+                  className="w-full py-2.5 bg-[#3b82f6] text-white font-semibold rounded hover:bg-[#2563eb] transition-colors text-sm"
+                >
+                  Reactivate Lead
+                </button>
+                <button
+                  onClick={() => setShowCallbackForm(true)}
+                  className="w-full py-2.5 bg-[#f97316] text-white font-semibold rounded hover:bg-[#ea580c] transition-colors text-sm"
+                >
+                  Move to Callback
+                </button>
+              </>
             ) : lead.status === "churned" ? (
               <button
                 onClick={() =>
@@ -1001,13 +1128,92 @@ function LeadDetail({
                 Reactivate to Live
               </button>
             ) : (
-              <button
-                onClick={onMarkCold}
-                className="w-full py-2.5 bg-[#334155] text-[#94a3b8] font-semibold rounded hover:bg-[#475569] hover:text-white transition-colors text-sm"
-              >
-                Mark as Cold
-              </button>
+              <>
+                <button
+                  onClick={onMarkCold}
+                  className="w-full py-2.5 bg-[#334155] text-[#94a3b8] font-semibold rounded hover:bg-[#475569] hover:text-white transition-colors text-sm"
+                >
+                  Mark as Cold
+                </button>
+                <button
+                  onClick={() => setShowCallbackForm(true)}
+                  className="w-full py-2.5 bg-[#f97316] text-white font-semibold rounded hover:bg-[#ea580c] transition-colors text-sm"
+                >
+                  Move to Callback
+                </button>
+              </>
             )}
+
+            {/* Move to Callback Form */}
+            {showCallbackForm && (
+              <div className="bg-[#0f0f1a] border border-[#f97316]/30 rounded-lg p-4">
+                <h4 className="text-sm font-semibold text-white mb-3">Schedule Callback</h4>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {[
+                    { label: "1 Week", days: 7 },
+                    { label: "2 Weeks", days: 14 },
+                    { label: "1 Month", days: 30 },
+                    { label: "3 Months", days: 90 },
+                  ].map((opt) => {
+                    const d = new Date();
+                    d.setDate(d.getDate() + opt.days);
+                    const val = d.toISOString().split("T")[0];
+                    return (
+                      <button
+                        key={opt.label}
+                        onClick={() => setCallbackDateInput(val)}
+                        className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors ${
+                          callbackDateInput === val
+                            ? "bg-[#f97316] text-white"
+                            : "bg-[#2a2a4a] text-[#94a3b8] hover:text-white"
+                        }`}
+                      >
+                        {opt.label}
+                      </button>
+                    );
+                  })}
+                </div>
+                <input
+                  type="date"
+                  value={callbackDateInput}
+                  onChange={(e) => setCallbackDateInput(e.target.value)}
+                  className="w-full px-3 py-2 bg-[#1a1a2e] border border-[#2a2a4a] rounded text-white text-sm outline-none focus:border-[#f59e0b] mb-2"
+                />
+                <input
+                  type="text"
+                  value={callbackNoteInput}
+                  onChange={(e) => setCallbackNoteInput(e.target.value)}
+                  placeholder="Note (e.g. Said call back in March)"
+                  className="w-full px-3 py-2 bg-[#1a1a2e] border border-[#2a2a4a] rounded text-white text-sm placeholder-gray-500 outline-none focus:border-[#f59e0b] mb-3"
+                />
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => {
+                      if (!callbackDateInput) return;
+                      onMoveToCallback(callbackDateInput, callbackNoteInput);
+                      setShowCallbackForm(false);
+                      setCallbackDateInput("");
+                      setCallbackNoteInput("");
+                    }}
+                    disabled={!callbackDateInput}
+                    className="flex-1 py-2 bg-[#f97316] text-white font-semibold rounded hover:bg-[#ea580c] transition-colors text-sm disabled:opacity-50"
+                  >
+                    Confirm
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowCallbackForm(false);
+                      setCallbackDateInput("");
+                      setCallbackNoteInput("");
+                    }}
+                    className="flex-1 py-2 border border-[#2a2a4a] text-[#94a3b8] rounded hover:bg-[#2a2a4a] transition-colors text-sm"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            )}
+
             {!confirmDelete ? (
               <button
                 onClick={() => setConfirmDelete(true)}
@@ -1119,10 +1325,12 @@ function ColdLeadsTable({
   leads,
   onReactivate,
   onCardClick,
+  onMoveToCallback,
 }: {
   leads: Lead[];
   onReactivate: (id: string) => void;
   onCardClick: (lead: Lead) => void;
+  onMoveToCallback: (id: string) => void;
 }) {
   if (leads.length === 0) {
     return (
@@ -1192,15 +1400,26 @@ function ColdLeadsTable({
                     : "—"}
                 </td>
                 <td className="py-3">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onReactivate(lead.id);
-                    }}
-                    className="px-3 py-1.5 bg-[#3b82f6] text-white rounded hover:bg-[#2563eb] transition-colors text-xs font-semibold"
-                  >
-                    Reactivate
-                  </button>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onReactivate(lead.id);
+                      }}
+                      className="px-3 py-1.5 bg-[#3b82f6] text-white rounded hover:bg-[#2563eb] transition-colors text-xs font-semibold"
+                    >
+                      Reactivate
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onMoveToCallback(lead.id);
+                      }}
+                      className="px-3 py-1.5 bg-[#f97316] text-white rounded hover:bg-[#ea580c] transition-colors text-xs font-semibold"
+                    >
+                      Callback
+                    </button>
+                  </div>
                 </td>
               </tr>
             );
@@ -1309,6 +1528,229 @@ function ChurnedLeadsTable({
   );
 }
 
+// ─── Callback Table ─────────────────────────────────────────────────────────
+
+function CallbackTable({
+  leads,
+  onCardClick,
+  onMoveToPipeline,
+  onPushCallback,
+  onMoveToCold,
+  onUpdateNote,
+}: {
+  leads: Lead[];
+  onCardClick: (lead: Lead) => void;
+  onMoveToPipeline: (id: string) => void;
+  onPushCallback: (id: string, newDate: string) => void;
+  onMoveToCold: (id: string) => void;
+  onUpdateNote: (id: string, note: string) => void;
+}) {
+  const [pushMenuOpen, setPushMenuOpen] = useState<string | null>(null);
+  const today = new Date().toISOString().split("T")[0];
+
+  const dueToday = leads.filter((l) => l.callbackDate && l.callbackDate <= today).length;
+
+  if (leads.length === 0) {
+    return (
+      <div className="flex items-center justify-center flex-1 text-[#94a3b8] py-20">
+        No scheduled callbacks
+      </div>
+    );
+  }
+
+  const getUrgency = (date?: string) => {
+    if (!date) return "default";
+    if (date <= today) return "overdue";
+    const threeDays = new Date();
+    threeDays.setDate(threeDays.getDate() + 3);
+    if (date <= threeDays.toISOString().split("T")[0]) return "soon";
+    return "default";
+  };
+
+  return (
+    <div className="flex-1 overflow-auto p-4">
+      {/* Due Today Banner */}
+      {dueToday > 0 && (
+        <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-5 py-3 mb-4 flex items-center gap-3">
+          <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
+          <span className="text-red-400 font-semibold text-sm">
+            {dueToday} callback{dueToday !== 1 ? "s" : ""} due today or overdue
+          </span>
+        </div>
+      )}
+
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="text-left text-xs text-[#94a3b8] uppercase tracking-wider border-b border-[#2a2a4a]">
+            <th className="pb-3 pr-4 font-semibold">Business</th>
+            <th className="pb-3 pr-4 font-semibold">Contact</th>
+            <th className="pb-3 pr-4 font-semibold">Phone</th>
+            <th className="pb-3 pr-4 font-semibold">Trade</th>
+            <th className="pb-3 pr-4 font-semibold">Date Moved</th>
+            <th className="pb-3 pr-4 font-semibold">Callback Date</th>
+            <th className="pb-3 pr-4 font-semibold">Note</th>
+            <th className="pb-3 pr-4 font-semibold">#</th>
+            <th className="pb-3 font-semibold">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {leads.map((lead) => {
+            const urgency = getUrgency(lead.callbackDate);
+            const callbackEntry = [...(lead.statusHistory || [])]
+              .reverse()
+              .find((h) => h.status === "callback");
+
+            return (
+              <tr
+                key={lead.id}
+                className={`border-b border-[#2a2a4a]/50 hover:bg-[#1a1a2e]/50 cursor-pointer ${
+                  urgency === "overdue"
+                    ? "border-l-4 border-l-red-500 bg-red-500/5"
+                    : urgency === "soon"
+                    ? "border-l-4 border-l-amber-500 bg-amber-500/5"
+                    : ""
+                }`}
+                onClick={() => onCardClick(lead)}
+              >
+                <td className="py-3 pr-4 text-white font-medium">
+                  {lead.businessName || "Untitled"}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {lead.contactName || "—"}
+                </td>
+                <td className="py-3 pr-4">
+                  {lead.phone ? (
+                    <a
+                      href={`tel:${lead.phone}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-[#f59e0b] hover:underline"
+                    >
+                      {lead.phone}
+                    </a>
+                  ) : (
+                    <span className="text-[#94a3b8]">—</span>
+                  )}
+                </td>
+                <td className="py-3 pr-4">
+                  {lead.trade ? (
+                    <span className="text-xs bg-[#1a1a2e] text-[#f59e0b] px-2 py-0.5 rounded">
+                      {lead.trade}
+                    </span>
+                  ) : (
+                    <span className="text-[#94a3b8]">—</span>
+                  )}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {callbackEntry
+                    ? new Date(callbackEntry.date).toLocaleDateString("en-GB", {
+                        day: "numeric",
+                        month: "short",
+                      })
+                    : "—"}
+                </td>
+                <td className={`py-3 pr-4 font-medium ${
+                  urgency === "overdue"
+                    ? "text-red-400"
+                    : urgency === "soon"
+                    ? "text-amber-400"
+                    : "text-white"
+                }`}>
+                  {lead.callbackDate
+                    ? new Date(lead.callbackDate + "T00:00:00").toLocaleDateString("en-GB", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })
+                    : "—"}
+                </td>
+                <td className="py-3 pr-4">
+                  <input
+                    type="text"
+                    value={lead.callbackNote || ""}
+                    onClick={(e) => e.stopPropagation()}
+                    onChange={(e) => onUpdateNote(lead.id, e.target.value)}
+                    placeholder="Add note..."
+                    className="w-full bg-transparent border-b border-[#2a2a4a] text-white text-xs outline-none focus:border-[#f59e0b] py-1 placeholder-gray-600 max-w-[200px]"
+                  />
+                </td>
+                <td className="py-3 pr-4">
+                  {(lead.callbackCount || 0) > 0 && (
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#f97316]/20 text-[#f97316] text-xs font-bold">
+                      {lead.callbackCount}
+                    </span>
+                  )}
+                </td>
+                <td className="py-3">
+                  <div className="flex gap-1.5 items-center" onClick={(e) => e.stopPropagation()}>
+                    <button
+                      onClick={() => onMoveToPipeline(lead.id)}
+                      title="Move to Pipeline"
+                      className="px-2 py-1.5 bg-[#3b82f6] text-white rounded hover:bg-[#2563eb] transition-colors text-xs font-semibold"
+                    >
+                      Pipeline
+                    </button>
+                    <div className="relative">
+                      <button
+                        onClick={() => setPushMenuOpen(pushMenuOpen === lead.id ? null : lead.id)}
+                        title="Push Callback"
+                        className="px-2 py-1.5 bg-[#f97316] text-white rounded hover:bg-[#ea580c] transition-colors text-xs font-semibold"
+                      >
+                        Push
+                      </button>
+                      {pushMenuOpen === lead.id && (
+                        <div className="absolute right-0 top-full mt-1 bg-[#1a1a2e] border border-[#2a2a4a] rounded-lg overflow-hidden z-20 shadow-lg min-w-[140px]">
+                          {[
+                            { label: "1 Week", days: 7 },
+                            { label: "2 Weeks", days: 14 },
+                            { label: "1 Month", days: 30 },
+                            { label: "3 Months", days: 90 },
+                          ].map((opt) => (
+                            <button
+                              key={opt.label}
+                              onClick={() => {
+                                const d = new Date();
+                                d.setDate(d.getDate() + opt.days);
+                                onPushCallback(lead.id, d.toISOString().split("T")[0]);
+                                setPushMenuOpen(null);
+                              }}
+                              className="w-full px-3 py-2 text-left text-xs text-white hover:bg-[#2a2a4a] transition-colors"
+                            >
+                              {opt.label}
+                            </button>
+                          ))}
+                          <div className="px-3 py-2 border-t border-[#2a2a4a]">
+                            <input
+                              type="date"
+                              onChange={(e) => {
+                                if (e.target.value) {
+                                  onPushCallback(lead.id, e.target.value);
+                                  setPushMenuOpen(null);
+                                }
+                              }}
+                              className="w-full px-2 py-1 bg-[#0f0f1a] border border-[#2a2a4a] rounded text-white text-xs outline-none focus:border-[#f59e0b]"
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <button
+                      onClick={() => onMoveToCold(lead.id)}
+                      title="Move to Cold"
+                      className="px-2 py-1.5 bg-[#334155] text-[#94a3b8] rounded hover:bg-[#475569] hover:text-white transition-colors text-xs font-semibold"
+                    >
+                      Cold
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 // ─── Main Dashboard ──────────────────────────────────────────────────────────
 
 export default function DashboardPage() {
@@ -1317,7 +1759,10 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
-  const [view, setView] = useState<"pipeline" | "cold" | "churned">("pipeline");
+  const [view, setView] = useState<"pipeline" | "cold" | "churned" | "callback">("pipeline");
+  const [callbackModal, setCallbackModal] = useState<{ leadId: string } | null>(null);
+  const [cbDateInput, setCbDateInput] = useState("");
+  const [cbNoteInput, setCbNoteInput] = useState("");
 
   // Check auth on mount
   useEffect(() => {
@@ -1342,10 +1787,15 @@ export default function DashboardPage() {
     if (authed) fetchLeads();
   }, [authed, fetchLeads]);
 
-  // Active leads (not cold/churned) for pipeline & stats
-  const activeLeads = leads.filter((l) => l.status !== "cold" && l.status !== "churned");
+  // Active leads (not cold/churned/callback) for pipeline & stats
+  const activeLeads = leads.filter((l) => l.status !== "cold" && l.status !== "churned" && l.status !== "callback");
   const coldLeads = leads.filter((l) => l.status === "cold");
   const churnedLeads = leads.filter((l) => l.status === "churned");
+  const callbackLeads = leads
+    .filter((l) => l.status === "callback")
+    .sort((a, b) => (a.callbackDate || "").localeCompare(b.callbackDate || ""));
+  const today = new Date().toISOString().split("T")[0];
+  const callbacksDueToday = callbackLeads.filter((l) => l.callbackDate && l.callbackDate <= today).length;
 
   // CRUD operations
   const addLead = async (data: Partial<Lead>) => {
@@ -1383,6 +1833,38 @@ export default function DashboardPage() {
 
   const reactivateChurned = async (id: string) => {
     await updateLead({ id, status: "live" } as Partial<Lead>);
+  };
+
+  const moveToCallback = async (leadId: string, date: string, note: string) => {
+    await updateLead({
+      id: leadId,
+      status: "callback",
+      callbackDate: date,
+      callbackNote: note,
+      callbackCount: 0,
+    } as Partial<Lead>);
+    setSelectedLead(null);
+  };
+
+  const pushCallback = async (leadId: string, newDate: string) => {
+    const lead = leads.find((l) => l.id === leadId);
+    await updateLead({
+      id: leadId,
+      callbackDate: newDate,
+      callbackCount: (lead?.callbackCount || 0) + 1,
+    } as Partial<Lead>);
+  };
+
+  const moveCallbackToPipeline = async (id: string) => {
+    await updateLead({ id, status: "new", callbackDate: "", callbackNote: "", callbackCount: 0 } as Partial<Lead>);
+  };
+
+  const moveCallbackToCold = async (id: string) => {
+    await updateLead({ id, status: "cold", callbackDate: "", callbackNote: "", callbackCount: 0 } as Partial<Lead>);
+  };
+
+  const updateCallbackNote = async (id: string, note: string) => {
+    await updateLead({ id, callbackNote: note } as Partial<Lead>);
   };
 
   const moveLead = (leadId: string, newStatus: string) => {
@@ -1436,6 +1918,16 @@ export default function DashboardPage() {
             >
               Churned{churnedLeads.length > 0 && ` (${churnedLeads.length})`}
             </button>
+            <button
+              onClick={() => setView("callback")}
+              className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                view === "callback"
+                  ? "bg-[#f97316] text-white"
+                  : "text-[#94a3b8] hover:text-white"
+              }`}
+            >
+              Callback{callbackLeads.length > 0 && ` (${callbackLeads.length})`}
+            </button>
           </div>
         </div>
         <div className="flex items-center gap-3">
@@ -1457,8 +1949,8 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Stats (only for pipeline view, only active leads) */}
-      {view === "pipeline" && <StatsBar leads={activeLeads} />}
+      {/* Stats bar */}
+      <StatsBar leads={activeLeads} callbacksDueToday={callbacksDueToday} />
 
       {/* Main content */}
       {loading ? (
@@ -1485,6 +1977,16 @@ export default function DashboardPage() {
           leads={coldLeads}
           onReactivate={reactivateLead}
           onCardClick={setSelectedLead}
+          onMoveToCallback={(id) => setCallbackModal({ leadId: id })}
+        />
+      ) : view === "callback" ? (
+        <CallbackTable
+          leads={callbackLeads}
+          onCardClick={setSelectedLead}
+          onMoveToPipeline={moveCallbackToPipeline}
+          onPushCallback={pushCallback}
+          onMoveToCold={moveCallbackToCold}
+          onUpdateNote={updateCallbackNote}
         />
       ) : (
         <ChurnedLeadsTable
@@ -1502,6 +2004,8 @@ export default function DashboardPage() {
           onClose={() => setSelectedLead(null)}
           onMarkCold={() => markCold(selectedLead.id)}
           onDelete={() => deleteLead(selectedLead.id)}
+          onMoveToCallback={(date, note) => moveToCallback(selectedLead.id, date, note)}
+          onPushCallback={(newDate) => pushCallback(selectedLead.id, newDate)}
         />
       )}
 
@@ -1511,6 +2015,81 @@ export default function DashboardPage() {
           onAdd={addLead}
           onClose={() => setShowAddModal(false)}
         />
+      )}
+
+      {/* Callback scheduling modal (from Cold tab) */}
+      {callbackModal && (
+        <div
+          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+          onMouseDown={(e) => e.target === e.currentTarget && setCallbackModal(null)}
+        >
+          <div className="bg-[#1a1a2e] border border-[#2a2a4a] rounded-lg w-full max-w-sm p-6">
+            <h2 className="text-lg font-bold text-white mb-4">Schedule Callback</h2>
+            <div className="flex flex-wrap gap-2 mb-3">
+              {[
+                { label: "1 Week", days: 7 },
+                { label: "2 Weeks", days: 14 },
+                { label: "1 Month", days: 30 },
+                { label: "3 Months", days: 90 },
+              ].map((opt) => {
+                const d = new Date();
+                d.setDate(d.getDate() + opt.days);
+                const val = d.toISOString().split("T")[0];
+                return (
+                  <button
+                    key={opt.label}
+                    onClick={() => setCbDateInput(val)}
+                    className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors ${
+                      cbDateInput === val
+                        ? "bg-[#f97316] text-white"
+                        : "bg-[#2a2a4a] text-[#94a3b8] hover:text-white"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                );
+              })}
+            </div>
+            <input
+              type="date"
+              value={cbDateInput}
+              onChange={(e) => setCbDateInput(e.target.value)}
+              className="w-full px-3 py-2 bg-[#0f0f1a] border border-[#2a2a4a] rounded text-white text-sm outline-none focus:border-[#f59e0b] mb-2"
+            />
+            <input
+              type="text"
+              value={cbNoteInput}
+              onChange={(e) => setCbNoteInput(e.target.value)}
+              placeholder="Note (e.g. Said call back in March)"
+              className="w-full px-3 py-2 bg-[#0f0f1a] border border-[#2a2a4a] rounded text-white text-sm placeholder-gray-500 outline-none focus:border-[#f59e0b] mb-4"
+            />
+            <div className="flex gap-3">
+              <button
+                onClick={() => {
+                  setCallbackModal(null);
+                  setCbDateInput("");
+                  setCbNoteInput("");
+                }}
+                className="flex-1 py-2 border border-[#2a2a4a] text-[#94a3b8] rounded hover:bg-[#2a2a4a] transition-colors text-sm"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  if (!cbDateInput) return;
+                  moveToCallback(callbackModal.leadId, cbDateInput, cbNoteInput);
+                  setCallbackModal(null);
+                  setCbDateInput("");
+                  setCbNoteInput("");
+                }}
+                disabled={!cbDateInput}
+                className="flex-1 py-2 bg-[#f97316] text-white font-semibold rounded hover:bg-[#ea580c] transition-colors text-sm disabled:opacity-50"
+              >
+                Schedule
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

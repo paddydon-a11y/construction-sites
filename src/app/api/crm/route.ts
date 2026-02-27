@@ -27,6 +27,9 @@ interface Lead {
   monthlyFee: number;
   source: string;
   statusHistory: { status: string; date: string }[];
+  callbackDate?: string;
+  callbackNote?: string;
+  callbackCount?: number;
 }
 
 async function getLeads(): Promise<Lead[]> {
