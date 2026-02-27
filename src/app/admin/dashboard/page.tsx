@@ -38,31 +38,51 @@ const COLUMNS = [
   { id: "live", label: "Live", color: "#22c55e" },
 ] as const;
 
-const PASSWORD = "cs2026";
+const USERS: Record<string, { id: string; label: string; role: "user" | "admin" }> = {
+  "cs2026":    { id: "zs1",     label: "ZS1",      role: "user" },
+  "sales1pw":  { id: "sales1",  label: "Sales 1",  role: "user" },
+  "sales2pw":  { id: "sales2",  label: "Sales 2",  role: "user" },
+  "sales3pw":  { id: "sales3",  label: "Sales 3",  role: "user" },
+  "sales4pw":  { id: "sales4",  label: "Sales 4",  role: "user" },
+  "sales5pw":  { id: "sales5",  label: "Sales 5",  role: "user" },
+  "sales6pw":  { id: "sales6",  label: "Sales 6",  role: "user" },
+  "sales7pw":  { id: "sales7",  label: "Sales 7",  role: "user" },
+  "sales8pw":  { id: "sales8",  label: "Sales 8",  role: "user" },
+  "sales9pw":  { id: "sales9",  label: "Sales 9",  role: "user" },
+  "sales10pw": { id: "sales10", label: "Sales 10", role: "user" },
+  "admin2026": { id: "admin",   label: "Admin",    role: "admin" },
+};
+
 const LS_KEY = "crm-auth";
+const LS_ROLE = "crm-role";
+const LS_LABEL = "crm-label";
 
 // ─── API helpers ─────────────────────────────────────────────────────────────
 
-async function api(method: string, body?: unknown) {
-  const res = await fetch("/api/crm", {
+async function api(method: string, userId: string, body?: Record<string, unknown>) {
+  const url = method === "GET" ? `/api/crm?user=${userId}` : "/api/crm";
+  const res = await fetch(url, {
     method,
     headers: { "Content-Type": "application/json" },
-    body: body ? JSON.stringify(body) : undefined,
+    body: method !== "GET" ? JSON.stringify({ ...body, user: userId }) : undefined,
   });
   return res.json();
 }
 
 // ─── Password Gate ───────────────────────────────────────────────────────────
 
-function PasswordGate({ onAuth }: { onAuth: () => void }) {
+function PasswordGate({ onAuth }: { onAuth: (userId: string, role: string, label: string) => void }) {
   const [pw, setPw] = useState("");
   const [error, setError] = useState(false);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (pw === PASSWORD) {
-      localStorage.setItem(LS_KEY, "1");
-      onAuth();
+    const user = USERS[pw];
+    if (user) {
+      localStorage.setItem(LS_KEY, user.id);
+      localStorage.setItem(LS_ROLE, user.role);
+      localStorage.setItem(LS_LABEL, user.label);
+      onAuth(user.id, user.role, user.label);
     } else {
       setError(true);
     }
@@ -1751,37 +1771,208 @@ function CallbackTable({
   );
 }
 
+// ─── Admin Overview ──────────────────────────────────────────────────────────
+
+interface AdminUserData {
+  leads: Lead[];
+  label: string;
+}
+
+function AdminOverview({
+  onViewUser,
+}: {
+  onViewUser: (userId: string, label: string) => void;
+}) {
+  const [adminData, setAdminData] = useState<Record<string, AdminUserData> | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch("/api/crm?user=admin&all=true");
+        const data = await res.json();
+        setAdminData(data.users || {});
+      } catch {
+        // silently fail
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center flex-1 text-[#94a3b8] py-20">
+        Loading admin data...
+      </div>
+    );
+  }
+
+  if (!adminData) {
+    return (
+      <div className="flex items-center justify-center flex-1 text-red-400 py-20">
+        Failed to load admin data
+      </div>
+    );
+  }
+
+  const allLeads = Object.values(adminData).flatMap((u) => u.leads);
+  const totalLeads = allLeads.length;
+  const totalLive = allLeads.filter((l) => l.status === "live").length;
+  const totalMrr = allLeads
+    .filter((l) => l.status === "live")
+    .reduce((sum, l) => sum + (l.monthlyFee || 100), 0);
+
+  const now = new Date();
+  const thisMonth = (l: Lead) => {
+    const d = new Date(l.dateAdded);
+    return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+  };
+
+  const statusCount = (leads: Lead[], status: string) =>
+    leads.filter((l) => l.status === status).length;
+
+  const userMrr = (leads: Lead[]) =>
+    leads
+      .filter((l) => l.status === "live")
+      .reduce((sum, l) => sum + (l.monthlyFee || 100), 0);
+
+  return (
+    <div className="flex-1 overflow-auto p-4">
+      {/* Aggregate stats */}
+      <div className="flex gap-4 mb-6">
+        {[
+          { label: "Total Leads", value: totalLeads },
+          { label: "Live Clients", value: totalLive },
+          { label: "Total MRR", value: `£${totalMrr.toLocaleString()}` },
+        ].map((s) => (
+          <div
+            key={s.label}
+            className="bg-[#1a1a2e] border border-[#2a2a4a] rounded-lg px-6 py-4 min-w-[160px]"
+          >
+            <div className="text-3xl font-bold text-[#a855f7]">{s.value}</div>
+            <div className="text-xs text-[#94a3b8] mt-1">{s.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Per-user cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        {Object.entries(adminData).map(([uid, userData]) => {
+          const { leads: uLeads, label } = userData;
+          return (
+            <div
+              key={uid}
+              className="bg-[#1a1a2e] border border-[#2a2a4a] rounded-lg p-5"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-white">{label}</h3>
+                <span className="text-xs text-[#94a3b8] bg-[#0f0f1a] px-2 py-1 rounded-full">
+                  {uLeads.length} leads
+                </span>
+              </div>
+
+              {/* Status breakdown */}
+              <div className="grid grid-cols-2 gap-2 text-xs mb-4">
+                {[
+                  { id: "new", label: "New", color: "#3b82f6" },
+                  { id: "mockups-sent", label: "Mockups", color: "#8b5cf6" },
+                  { id: "agreement-sent", label: "Agreement", color: "#f97316" },
+                  { id: "signed", label: "Signed", color: "#10b981" },
+                  { id: "live", label: "Live", color: "#22c55e" },
+                  { id: "cold", label: "Cold", color: "#64748b" },
+                  { id: "callback", label: "Callback", color: "#f97316" },
+                  { id: "churned", label: "Churned", color: "#ef4444" },
+                ].map((s) => (
+                  <div key={s.id} className="flex items-center justify-between">
+                    <span className="text-[#94a3b8]">{s.label}</span>
+                    <span style={{ color: s.color }} className="font-semibold">
+                      {statusCount(uLeads, s.id)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* MRR + this month */}
+              <div className="flex items-center justify-between text-sm mb-4 border-t border-[#2a2a4a] pt-3">
+                <div>
+                  <div className="text-[#94a3b8] text-xs">MRR</div>
+                  <div className="text-[#f59e0b] font-bold">
+                    £{userMrr(uLeads).toLocaleString()}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[#94a3b8] text-xs">Leads This Month</div>
+                  <div className="text-white font-bold">
+                    {uLeads.filter(thisMonth).length}
+                  </div>
+                </div>
+              </div>
+
+              <button
+                onClick={() => onViewUser(uid, label)}
+                className="w-full py-2 bg-[#a855f7] text-white font-semibold rounded hover:bg-[#9333ea] transition-colors text-sm"
+              >
+                View CRM
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Dashboard ──────────────────────────────────────────────────────────
 
 export default function DashboardPage() {
   const [authed, setAuthed] = useState(false);
+  const [userId, setUserId] = useState("");
+  const [userRole, setUserRole] = useState("");
+  const [userLabel, setUserLabel] = useState("");
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
-  const [view, setView] = useState<"pipeline" | "cold" | "churned" | "callback">("pipeline");
+  const [view, setView] = useState<"pipeline" | "cold" | "churned" | "callback" | "admin">("pipeline");
   const [callbackModal, setCallbackModal] = useState<{ leadId: string } | null>(null);
   const [cbDateInput, setCbDateInput] = useState("");
   const [cbNoteInput, setCbNoteInput] = useState("");
 
+  // Admin drill-down: when admin clicks "View CRM" on a user card
+  const [adminViewingUser, setAdminViewingUser] = useState<{ id: string; label: string } | null>(null);
+
+  // The effective userId for API calls (either the logged-in user, or the user being viewed by admin)
+  const effectiveUserId = adminViewingUser ? adminViewingUser.id : userId;
+
   // Check auth on mount
   useEffect(() => {
-    if (localStorage.getItem(LS_KEY) === "1") {
+    const storedId = localStorage.getItem(LS_KEY);
+    const storedRole = localStorage.getItem(LS_ROLE);
+    const storedLabel = localStorage.getItem(LS_LABEL);
+    if (storedId && storedRole && storedLabel) {
+      setUserId(storedId);
+      setUserRole(storedRole);
+      setUserLabel(storedLabel);
       setAuthed(true);
     }
   }, []);
 
   // Fetch leads
   const fetchLeads = useCallback(async () => {
+    if (!effectiveUserId || effectiveUserId === "admin") {
+      setLoading(false);
+      return;
+    }
     try {
-      const data = await api("GET");
+      const data = await api("GET", effectiveUserId);
       setLeads(data.leads || []);
     } catch {
       // silently fail
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [effectiveUserId]);
 
   useEffect(() => {
     if (authed) fetchLeads();
@@ -1797,15 +1988,15 @@ export default function DashboardPage() {
   const today = new Date().toISOString().split("T")[0];
   const callbacksDueToday = callbackLeads.filter((l) => l.callbackDate && l.callbackDate <= today).length;
 
-  // CRUD operations
+  // CRUD operations — all pass effectiveUserId
   const addLead = async (data: Partial<Lead>) => {
-    const lead = await api("POST", data);
+    const lead = await api("POST", effectiveUserId, data as Record<string, unknown>);
     setLeads((prev) => [...prev, lead]);
     setShowAddModal(false);
   };
 
   const updateLead = async (data: Partial<Lead>) => {
-    const updated = await api("PUT", data);
+    const updated = await api("PUT", effectiveUserId, data as Record<string, unknown>);
     setLeads((prev) => prev.map((l) => (l.id === updated.id ? updated : l)));
     if (selectedLead?.id === updated.id) {
       setSelectedLead(updated);
@@ -1813,7 +2004,7 @@ export default function DashboardPage() {
   };
 
   const deleteLead = async (id: string) => {
-    await api("DELETE", { id });
+    await api("DELETE", effectiveUserId, { id });
     setLeads((prev) => prev.filter((l) => l.id !== id));
     setSelectedLead(null);
   };
@@ -1875,8 +2066,25 @@ export default function DashboardPage() {
 
   // Password gate
   if (!authed) {
-    return <PasswordGate onAuth={() => setAuthed(true)} />;
+    return (
+      <PasswordGate
+        onAuth={(id, role, label) => {
+          setUserId(id);
+          setUserRole(role);
+          setUserLabel(label);
+          setAuthed(true);
+          if (role === "admin") {
+            setView("admin");
+          }
+        }}
+      />
+    );
   }
+
+  // Determine the display label for the top bar
+  const displayLabel = adminViewingUser
+    ? `Admin → ${adminViewingUser.label}`
+    : userLabel;
 
   return (
     <div className="min-h-screen bg-[#0f0f1a] flex flex-col">
@@ -1885,62 +2093,105 @@ export default function DashboardPage() {
         <div className="flex items-center gap-3">
           <h1 className="text-lg font-bold text-white">
             <span className="text-[#f59e0b]">CS</span> CRM
+            <span className="text-[#94a3b8] text-sm font-normal ml-2">
+              {displayLabel}
+            </span>
           </h1>
-          {/* View toggle */}
-          <div className="flex items-center bg-[#0f0f1a] rounded overflow-hidden border border-[#2a2a4a] ml-2">
+
+          {/* Back button when admin is viewing a user's CRM */}
+          {adminViewingUser && (
             <button
-              onClick={() => setView("pipeline")}
-              className={`px-3 py-1 text-xs font-semibold transition-colors ${
-                view === "pipeline"
-                  ? "bg-[#f59e0b] text-black"
-                  : "text-[#94a3b8] hover:text-white"
-              }`}
+              onClick={() => {
+                setAdminViewingUser(null);
+                setLeads([]);
+                setView("admin");
+              }}
+              className="px-3 py-1 text-xs font-semibold bg-[#a855f7] text-white rounded hover:bg-[#9333ea] transition-colors"
             >
-              Live Pipeline
+              ← Back to Overview
             </button>
+          )}
+
+          {/* View toggle — hide when on admin overview (no drill-down) */}
+          {view !== "admin" && (
+            <div className="flex items-center bg-[#0f0f1a] rounded overflow-hidden border border-[#2a2a4a] ml-2">
+              <button
+                onClick={() => setView("pipeline")}
+                className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                  view === "pipeline"
+                    ? "bg-[#f59e0b] text-black"
+                    : "text-[#94a3b8] hover:text-white"
+                }`}
+              >
+                Live Pipeline
+              </button>
+              <button
+                onClick={() => setView("callback")}
+                className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                  view === "callback"
+                    ? "bg-[#f97316] text-white"
+                    : "text-[#94a3b8] hover:text-white"
+                }`}
+              >
+                Callback{callbackLeads.length > 0 && ` (${callbackLeads.length})`}
+              </button>
+              <button
+                onClick={() => setView("cold")}
+                className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                  view === "cold"
+                    ? "bg-[#64748b] text-white"
+                    : "text-[#94a3b8] hover:text-white"
+                }`}
+              >
+                Cold{coldLeads.length > 0 && ` (${coldLeads.length})`}
+              </button>
+              <button
+                onClick={() => setView("churned")}
+                className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                  view === "churned"
+                    ? "bg-[#ef4444] text-white"
+                    : "text-[#94a3b8] hover:text-white"
+                }`}
+              >
+                Churned{churnedLeads.length > 0 && ` (${churnedLeads.length})`}
+              </button>
+            </div>
+          )}
+
+          {/* Admin overview tab — only visible for admin role */}
+          {userRole === "admin" && !adminViewingUser && view !== "admin" && (
             <button
-              onClick={() => setView("callback")}
-              className={`px-3 py-1 text-xs font-semibold transition-colors ${
-                view === "callback"
-                  ? "bg-[#f97316] text-white"
-                  : "text-[#94a3b8] hover:text-white"
-              }`}
+              onClick={() => {
+                setView("admin");
+                setAdminViewingUser(null);
+              }}
+              className="px-3 py-1 text-xs font-semibold bg-[#a855f7] text-white rounded hover:bg-[#9333ea] transition-colors ml-2"
             >
-              Callback{callbackLeads.length > 0 && ` (${callbackLeads.length})`}
+              Admin Overview
             </button>
-            <button
-              onClick={() => setView("cold")}
-              className={`px-3 py-1 text-xs font-semibold transition-colors ${
-                view === "cold"
-                  ? "bg-[#64748b] text-white"
-                  : "text-[#94a3b8] hover:text-white"
-              }`}
-            >
-              Cold{coldLeads.length > 0 && ` (${coldLeads.length})`}
-            </button>
-            <button
-              onClick={() => setView("churned")}
-              className={`px-3 py-1 text-xs font-semibold transition-colors ${
-                view === "churned"
-                  ? "bg-[#ef4444] text-white"
-                  : "text-[#94a3b8] hover:text-white"
-              }`}
-            >
-              Churned{churnedLeads.length > 0 && ` (${churnedLeads.length})`}
-            </button>
-          </div>
+          )}
         </div>
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setShowAddModal(true)}
-            className="px-4 py-1.5 bg-[#f59e0b] text-black font-semibold rounded hover:bg-[#fbbf24] transition-colors text-sm"
-          >
-            + Add Lead
-          </button>
+          {view !== "admin" && (
+            <button
+              onClick={() => setShowAddModal(true)}
+              className="px-4 py-1.5 bg-[#f59e0b] text-black font-semibold rounded hover:bg-[#fbbf24] transition-colors text-sm"
+            >
+              + Add Lead
+            </button>
+          )}
           <button
             onClick={() => {
               localStorage.removeItem(LS_KEY);
+              localStorage.removeItem(LS_ROLE);
+              localStorage.removeItem(LS_LABEL);
               setAuthed(false);
+              setUserId("");
+              setUserRole("");
+              setUserLabel("");
+              setAdminViewingUser(null);
+              setLeads([]);
+              setView("pipeline");
             }}
             className="text-xs text-[#94a3b8] hover:text-white"
           >
@@ -1949,11 +2200,21 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Stats bar */}
-      <StatsBar leads={activeLeads} callbacksDueToday={callbacksDueToday} />
+      {/* Stats bar — hide on admin overview */}
+      {view !== "admin" && (
+        <StatsBar leads={activeLeads} callbacksDueToday={callbacksDueToday} />
+      )}
 
       {/* Main content */}
-      {loading ? (
+      {view === "admin" ? (
+        <AdminOverview
+          onViewUser={(uid, label) => {
+            setAdminViewingUser({ id: uid, label });
+            setView("pipeline");
+            setLoading(true);
+          }}
+        />
+      ) : loading ? (
         <div className="flex items-center justify-center flex-1 text-[#94a3b8]">
           Loading...
         </div>
