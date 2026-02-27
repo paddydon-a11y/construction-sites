@@ -1896,7 +1896,17 @@ export default function DashboardPage() {
                   : "text-[#94a3b8] hover:text-white"
               }`}
             >
-              Pipeline
+              Live Pipeline
+            </button>
+            <button
+              onClick={() => setView("callback")}
+              className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                view === "callback"
+                  ? "bg-[#f97316] text-white"
+                  : "text-[#94a3b8] hover:text-white"
+              }`}
+            >
+              Callback{callbackLeads.length > 0 && ` (${callbackLeads.length})`}
             </button>
             <button
               onClick={() => setView("cold")}
@@ -1917,16 +1927,6 @@ export default function DashboardPage() {
               }`}
             >
               Churned{churnedLeads.length > 0 && ` (${churnedLeads.length})`}
-            </button>
-            <button
-              onClick={() => setView("callback")}
-              className={`px-3 py-1 text-xs font-semibold transition-colors ${
-                view === "callback"
-                  ? "bg-[#f97316] text-white"
-                  : "text-[#94a3b8] hover:text-white"
-              }`}
-            >
-              Callback{callbackLeads.length > 0 && ` (${callbackLeads.length})`}
             </button>
           </div>
         </div>
