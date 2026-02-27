@@ -67,7 +67,7 @@ img{max-width:100%;display:block}
 .nav.scrolled{box-shadow:0 1px 20px rgba(2,42,71,0.06);border-bottom-color:var(--border);background:rgba(247,248,250,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .nav-inner{max-width:1140px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--heading);font-weight:900;font-size:1.15rem;color:#fff;letter-spacing:-0.02em;transition:color 0.4s ease}
-.nav-logo img{height:40px;width:auto;transition:filter 0.4s ease;border-radius:6px;background:#fff;padding:4px 10px}
+.nav-logo img{height:32px;width:auto;transition:filter 0.4s ease}
 .nav-logo span.accent-text{color:var(--accent-light);transition:color 0.4s ease}
 .nav.scrolled .nav-logo{color:var(--navy)}
 .nav.scrolled .nav-logo span.accent-text{color:var(--accent)}
@@ -119,6 +119,7 @@ img{max-width:100%;display:block}
   .hero .hero-mesh .mesh-orb{animation:none!important}
 }
 
+.hero-logo{height:70px;width:auto;margin:0 auto 28px;display:block;border-radius:8px;background:#fff;padding:8px 20px}
 .hero-inner{max-width:720px;margin:0 auto;text-align:center;position:relative;z-index:1}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(63,166,204,0.12);border:1px solid rgba(63,166,204,0.25);border-radius:100px;padding:8px 18px 8px 14px;font-size:0.78rem;color:rgba(92,191,224,1);font-weight:700;margin-bottom:24px;letter-spacing:0.06em;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .hero-badge .dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite;box-shadow:0 0 8px rgba(22,163,74,0.4)}
@@ -330,7 +331,7 @@ img{max-width:100%;display:block}
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo"><img src="https://www.corlettelectrical.co.uk/themes/corlett/images/corlett-logo.png" alt="Corlett Electrical logo"> <span class="accent-text"></span></a>
+    <a href="#" class="nav-logo">Corlett <span class="accent-text">Electrical</span></a>
     <div class="nav-links" id="nav-links">
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
@@ -354,6 +355,7 @@ img{max-width:100%;display:block}
   </div>
   <div class="container">
     <div class="hero-inner">
+      <img src="https://www.corlettelectrical.co.uk/themes/corlett/images/corlett-logo.png" alt="Corlett Electrical logo" class="hero-logo">
       <div class="hero-badge"><span class="dot"></span> NICEIC Approved &middot; Est. 1892</div>
       <h1 id="hero-heading">Keeping Power <span class="accent">Flowing</span> Since 1892</h1>
       <p class="hero-sub">Over 130 years of commercial and industrial electrical excellence. Installation, maintenance, testing, fire alarms, CCTV, and EV charging &mdash; trusted by businesses across the North West.</p>
