@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construction Sites — Sales Flow</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0F0F0F;
+    color: #E8E8E8;
+    min-height: 100vh;
+    padding: 48px 24px;
+  }
+
+  .header {
+    max-width: 900px;
+    margin: 0 auto 56px;
+  }
+
+  .header-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #F97316;
+    margin-bottom: 10px;
+  }
+
+  .header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .header h1 span {
+    color: #F97316;
+  }
+
+  .header p {
+    font-size: 17px;
+    color: #888;
+    margin-top: 10px;
+  }
+
+  .flow-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Day blocks */
+  .day-block {
+    position: relative;
+  }
+
+  .day-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #F97316;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .day-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #222;
+  }
+
+  .action-card {
+    background: #1A1A1A;
+    border: 1px solid #252525;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 18px;
+  }
+
+  .action-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .action-card p {
+    font-size: 16px;
+    color: #999;
+    line-height: 1.6;
+  }
+
+  .action-card .script-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #F97316;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .action-card .whatsapp-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #25D366;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .action-card .call-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #3B82F6;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  /* Outcome branches */
+  .outcomes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .outcome {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    background: #111;
+    border: 1px solid #1F1F1F;
+  }
+
+  .outcome-icon {
+    font-size: 16px;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .outcome-icon.green {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22C55E;
+  }
+
+  .outcome-icon.amber {
+    background: rgba(249, 115, 22, 0.15);
+    color: #F97316;
+  }
+
+  .outcome-icon.red {
+    background: rgba(239, 68, 68, 0.15);
+    color: #EF4444;
+  }
+
+  .outcome-icon.blue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3B82F6;
+  }
+
+  .outcome-text {
+    flex: 1;
+  }
+
+  .outcome-text strong {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ddd;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .outcome-text p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+  }
+
+  .outcome-arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #555;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  /* Connector */
+  .connector {
+    display: flex;
+    justify-content: center;
+    padding: 14px 0;
+  }
+
+  .connector-line {
+    width: 2px;
+    height: 32px;
+    background: linear-gradient(to bottom, #333, #222);
+  }
+
+  /* Close card */
+  .close-card {
+    background: linear-gradient(135deg, #1a2e1a, #1A1A1A);
+    border: 1px solid #22C55E33;
+    border-radius: 12px;
+    padding: 24px 28px;
+    text-align: center;
+  }
+
+  .close-card h3 {
+    font-size: 19px;
+    color: #22C55E;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .close-card p {
+    font-size: 15px;
+    color: #888;
+  }
+
+  /* Nurture card */
+  .nurture-card {
+    background: linear-gradient(135deg, #1a1a2e, #1A1A1A);
+    border: 1px solid #3B82F633;
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+
+  .nurture-card h3 {
+    font-size: 19px;
+    color: #3B82F6;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .nurture-options {
+    display: flex;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .nurture-option {
+    flex: 1;
+    background: #111;
+    border: 1px solid #1F1F1F;
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .nurture-option .interval {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: #3B82F6;
+  }
+
+  .nurture-option .label {
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+  }
+
+  .dead-lead {
+    background: linear-gradient(135deg, #2e1a1a, #1A1A1A);
+    border: 1px solid #EF444433;
+    border-radius: 12px;
+    padding: 18px 28px;
+    margin-top: 18px;
+  }
+
+  .dead-lead h4 {
+    font-size: 16px;
+    color: #EF4444;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .dead-lead p {
+    font-size: 14px;
+    color: #777;
+  }
+
+  /* Voicenote callout */
+  .voicenote {
+    background: #111;
+    border-left: 3px solid #25D366;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin-top: 14px;
+    font-size: 15px;
+    color: #999;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .voicenote::before {
+    content: '🎤 ';
+  }
+
+  /* Rule callout */
+  .rule {
+    background: #111;
+    border-left: 3px solid #F97316;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin-top: 14px;
+    font-size: 15px;
+    color: #bbb;
+    line-height: 1.5;
+  }
+
+  .rule strong {
+    color: #F97316;
+  }
+
+  .divider {
+    height: 1px;
+    background: #1F1F1F;
+    margin: 36px 0;
+  }
+
+  /* No answer global rule */
+  .global-rule {
+    max-width: 900px;
+    margin: 36px auto 0;
+    background: #111;
+    border: 1px solid #252525;
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+
+  .global-rule h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 14px;
+  }
+
+  .global-rule-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .global-rule-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .global-rule-item .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .global-rule-item p {
+    font-size: 15px;
+    color: #999;
+    line-height: 1.5;
+  }
+
+  .global-rule-item p strong {
+    color: #ddd;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">Construction Sites</div>
+  <h1>Sales <span>Flow</span></h1>
+  <p>Call sequence for new leads. Follow this exactly.</p>
+</div>
+
+<div class="flow-container">
+
+  <!-- DAY 1 -->
+  <div class="day-block">
+    <div class="day-label">Day 1 — First Call</div>
+    <div class="action-card">
+      <span class="script-tag">Script 1</span>
+      <h3>Call the lead from Google Sheet</h3>
+      <p>Read Script 1. Goal: get them to agree to a mockup being sent.</p>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <div class="outcome-icon green">✓</div>
+          <div class="outcome-text">
+            <strong>Interested — agrees to mockup</strong>
+            <p>Send personalised mockup via WhatsApp as fast as possible. Ideally within the hour. Include a voice note.</p>
+          </div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-icon red">✗</div>
+          <div class="outcome-text">
+            <strong>Not interested</strong>
+            <p>Mark in Google Sheet dropdown. Don't argue. They go into callback list.</p>
+          </div>
+          <div class="outcome-arrow">→ Callback</div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-icon amber">—</div>
+          <div class="outcome-text">
+            <strong>No answer</strong>
+            <p>Mark "No Answer" in Google Sheet. Move on to next lead. Sales manager recycles.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="voicenote">"Good to chat earlier — here's a live version of your website so you can have a look. I'll give you a call tomorrow and see what you think."</div>
+
+      <div class="rule"><strong>Rule:</strong> Mockup must be sent within 1 hour of the call. The faster the better. Strike while they're still thinking about it.</div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- DAY 2 -->
+  <div class="day-block">
+    <div class="day-label">Day 2 — Follow-up Call</div>
+    <div class="action-card">
+      <span class="call-tag">Call</span>
+      <h3>"Have you had a chance to look at the website?"</h3>
+      <p>24 hours after sending mockup. This is your money call.</p>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <div class="outcome-icon green">✓</div>
+          <div class="outcome-text">
+            <strong>Seen it, likes it</strong>
+            <p>"Want us to get it live for you?" Handle any objections. Close the deal.</p>
+          </div>
+          <div class="outcome-arrow">→ Close</div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-icon amber">~</div>
+          <div class="outcome-text">
+            <strong>Seen it, not sure</strong>
+            <p>Answer questions. Handle objections. Don't push too hard — you've got Day 3 and 4 still. Move on.</p>
+          </div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-icon blue">👀</div>
+          <div class="outcome-text">
+            <strong>Not seen it yet</strong>
+            <p>"No worries — could you pull it up now just so I can check the link's still working for you?" Get them looking at it while you're on the phone. This is now a live demo.</p>
+          </div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-icon amber">—</div>
+          <div class="outcome-text">
+            <strong>No answer</strong>
+            <p>Mark "No Answer". Sales manager recycles.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rule"><strong>Rule:</strong> If they pull it up on the phone, don't go silent. Walk them through it. "That's your business name at the top... that's where your photos would go... see the call button?" Make it feel real.</div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- DAY 3 -->
+  <div class="day-block">
+    <div class="day-label">Day 3 — Value Drop (No Call)</div>
+    <div class="action-card">
+      <span class="whatsapp-tag">WhatsApp Only</span>
+      <h3>Send the £3/day value infographic</h3>
+      <p>No call today. Let the image do the work. Send it and leave it.</p>
+
+      <div class="voicenote">"Hi [name], just wanted to send this over — thought it might be useful 👍"</div>
+
+      <div class="rule"><strong>Rule:</strong> Do NOT follow up with a call the same day. Let it sit overnight. Give them time to look at it, think about it, show someone. The call comes tomorrow.</div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- DAY 4 -->
+  <div class="day-block">
+    <div class="day-label">Day 4 — Close or Callback</div>
+    <div class="action-card">
+      <span class="call-tag">Call</span>
+      <h3>"Did you see that breakdown I sent?"</h3>
+      <p>This is your last call in the sequence. Close or move to callback.</p>
+
+      <div class="outcomes">
+        <div class="outcome">
+          <div class="outcome-icon green">✓</div>
+          <div class="outcome-text">
+            <strong>Ready to go</strong>
+            <p>Close the deal. Pass to Zack for onboarding and site management.</p>
+          </div>
+          <div class="outcome-arrow">→ Close</div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-icon amber">~</div>
+          <div class="outcome-text">
+            <strong>Still thinking / not yet</strong>
+            <p>Don't push. Put into callback list at the right interval.</p>
+          </div>
+          <div class="outcome-arrow">→ Callback</div>
+        </div>
+        <div class="outcome">
+          <div class="outcome-icon amber">—</div>
+          <div class="outcome-text">
+            <strong>No answer</strong>
+            <p>Mark "No Answer". Sales manager recycles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- CLOSE -->
+  <div class="close-card">
+    <h3>DEAL CLOSED</h3>
+    <p>Pass to Zack for onboarding, site go-live, and account management.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CALLBACK / NURTURE -->
+  <div class="day-block">
+    <div class="day-label">After Sequence — Callback</div>
+    <div class="nurture-card">
+      <h3>Callback List</h3>
+      <p style="font-size: 15px; color: #999; line-height: 1.5;">You own this lead forever. Pick the right interval based on how warm they were. When you call back, it's a single check-in — not a restart of the full sequence.</p>
+
+      <div class="nurture-options">
+        <div class="nurture-option">
+          <div class="interval">3 days</div>
+          <div class="label">Warm — liked it,<br>just busy</div>
+        </div>
+        <div class="nurture-option">
+          <div class="interval">1 week</div>
+          <div class="label">Non-committal /<br>not answering</div>
+        </div>
+        <div class="nurture-option">
+          <div class="interval">1 month</div>
+          <div class="label">Said no — ring anyway.<br>Circumstances change.<br>Ask for referrals.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dead-lead">
+      <h4>Never Contact Again</h4>
+      <p>Only for leads who were aggressive or abusive. This is the only time a lead truly dies. Everything else gets a callback.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- GLOBAL RULES -->
+<div class="global-rule">
+  <h3>Rules — Always Apply</h3>
+  <div class="global-rule-item">
+    <div class="dot" style="background: #F97316;"></div>
+    <p><strong>Mockup within 1 hour.</strong> No exceptions. The faster the better.</p>
+  </div>
+  <div class="global-rule-item">
+    <div class="dot" style="background: #F97316;"></div>
+    <p><strong>You own the lead.</strong> From first call through every callback. Only passes to Zack once the deal is closed.</p>
+  </div>
+  <div class="global-rule-item">
+    <div class="dot" style="background: #F97316;"></div>
+    <p><strong>No answer = move on.</strong> Mark it in the sheet. Sales manager recycles. Don't waste time chasing.</p>
+  </div>
+  <div class="global-rule-item">
+    <div class="dot" style="background: #F97316;"></div>
+    <p><strong>"Pull it up now"</strong> — if they haven't looked at the mockup on Day 2, don't accept "I'll look later." Get them to open it on the phone.</p>
+  </div>
+  <div class="global-rule-item">
+    <div class="dot" style="background: #F97316;"></div>
+    <p><strong>Day 3 = no call.</strong> Send the value image. Let it breathe. Call comes Day 4.</p>
+  </div>
+  <div class="global-rule-item">
+    <div class="dot" style="background: #F97316;"></div>
+    <p><strong>Close at any point.</strong> If they're ready on Day 2, close it. Don't wait for Day 4 because the process says so.</p>
+  </div>
+</div>
+
+</body>
+</html>
