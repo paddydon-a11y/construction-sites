@@ -7,176 +7,109 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;width:390px;max-width:390px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.page{padding:32px 24px 28px}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;width:390px;max-width:390px;height:844px;max-height:844px;overflow:hidden;-webkit-font-smoothing:antialiased}
+.page{padding:28px 24px 24px;height:844px;display:flex;flex-direction:column}
 
-/* Header */
-.topline{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#F97316;margin-bottom:6px}
+.topline{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#F97316;margin-bottom:4px}
 h1{font-size:28px;font-weight:900;line-height:1.1;letter-spacing:-0.03em;color:#111}
 h1 span{color:#F97316}
-.subtitle{font-size:13px;color:#777;margin-top:8px;line-height:1.5;font-weight:400}
+.subtitle{font-size:12px;color:#999;margin-top:4px;font-weight:400}
 
-/* Divider */
-.divider{height:1px;background:#f0f0f0;margin:24px 0}
-.divider.sm{margin:18px 0}
+.divider{height:1px;background:#f0f0f0;margin:16px 0}
 
-/* Big number */
-.big-cost{text-align:center;padding:20px 0}
-.big-cost .amount{font-size:56px;font-weight:900;letter-spacing:-0.04em;color:#111}
-.big-cost .amount span{color:#F97316}
-.big-cost .per{font-size:16px;font-weight:600;color:#999;margin-top:-2px}
-.compare{display:flex;justify-content:center;gap:28px;margin-top:16px}
-.compare-item{text-align:center}
-.compare-item .emoji{font-size:24px;margin-bottom:4px}
-.compare-item .label{font-size:10px;color:#999;font-weight:600;letter-spacing:0.04em}
-.compare-item .price{font-size:13px;font-weight:700;color:#555}
+/* Big cost */
+.cost{text-align:center;padding:14px 0 10px}
+.cost .amount{font-size:52px;font-weight:900;letter-spacing:-0.04em;color:#111;line-height:1}
+.cost .amount span{color:#F97316}
+.cost .per{font-size:14px;font-weight:600;color:#999;margin-top:2px}
+.compare{display:flex;justify-content:center;gap:16px;margin-top:12px;font-size:11px;color:#888;font-weight:500}
+.compare span{display:flex;align-items:center;gap:4px}
+.compare .vs{color:#bbb;font-weight:400}
 
-/* Return calc */
-.calc-box{background:#FFFBF5;border:1.5px solid #FDE8D0;border-radius:12px;padding:18px 20px}
-.calc-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0}
-.calc-row .label{font-size:13px;color:#666;font-weight:500}
-.calc-row .val{font-size:13px;font-weight:700;color:#333}
-.calc-row.total{border-top:1.5px dashed #F9731640;margin-top:6px;padding-top:12px}
-.calc-row.total .label{font-weight:700;color:#111;font-size:14px}
-.calc-row.total .val{color:#F97316;font-size:16px;font-weight:800}
-.calc-note{text-align:center;margin-top:14px;font-size:12px;color:#888;line-height:1.55;font-weight:500}
-.calc-note strong{color:#333;font-weight:700}
+/* Return */
+.return{background:#FFFBF5;border:1.5px solid #FDE8D0;border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+.return-left{font-size:12px;color:#666;font-weight:500;line-height:1.5}
+.return-left strong{color:#111;font-weight:700}
+.return-vs{font-size:20px;color:#ddd;font-weight:300;margin:0 12px}
+.return-right{text-align:right}
+.return-right .big{font-size:24px;font-weight:900;color:#F97316;letter-spacing:-0.02em;line-height:1.1}
+.return-right .sub{font-size:10px;color:#888;font-weight:600;margin-top:2px;letter-spacing:0.02em}
+.return-note{text-align:center;margin-top:10px;font-size:11.5px;color:#888;font-weight:500}
+.return-note strong{color:#222;font-weight:700}
 
-/* Hire box */
-.hire-box{background:#111;border-radius:12px;padding:18px 20px;margin-top:18px;color:#fff}
-.hire-box p{font-size:13px;line-height:1.6;color:#ccc;font-weight:400}
-.hire-box p strong{color:#F97316;font-weight:700}
+.divider.sm{margin:14px 0}
 
-/* Section heading */
-.section-head{display:flex;align-items:center;gap:8px;margin-bottom:14px}
-.section-head .icon{font-size:18px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:#FFF3E8;border-radius:8px;flex-shrink:0}
-.section-head h2{font-size:15px;font-weight:800;letter-spacing:-0.02em;color:#111}
-
-/* Problem cards */
-.problem{background:#FAFAFA;border-radius:10px;padding:14px 16px;margin-bottom:10px}
-.problem .platform{font-size:12px;font-weight:800;color:#F97316;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:4px}
-.problem p{font-size:12.5px;color:#555;line-height:1.6;font-weight:400}
+/* Problems */
+.sh{font-size:13px;font-weight:800;letter-spacing:-0.02em;color:#111;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.sh .icon{font-size:14px}
+.problem{background:#FAFAFA;border-radius:8px;padding:10px 14px;margin-bottom:6px}
+.problem .platform{font-size:10px;font-weight:800;color:#F97316;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:2px}
+.problem p{font-size:11.5px;color:#555;line-height:1.5}
 .problem p strong{color:#222;font-weight:600}
-.own-it{background:#111;border-radius:10px;padding:14px 16px;margin-top:2px}
-.own-it p{font-size:12.5px;color:#ddd;line-height:1.6;font-weight:500}
+.own-it{background:#111;border-radius:8px;padding:10px 14px}
+.own-it p{font-size:11.5px;color:#ccc;line-height:1.5;font-weight:500}
 .own-it strong{color:#F97316}
 
-/* Includes list */
-.includes{list-style:none}
-.includes li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:12.5px;color:#444;line-height:1.5;font-weight:500}
-.includes li .check{color:#F97316;font-size:15px;flex-shrink:0;margin-top:1px;font-weight:700}
-
-/* Stat */
-.stat-bar{background:#FFFBF5;border-radius:10px;padding:14px 16px;text-align:center}
-.stat-bar .number{font-size:32px;font-weight:900;color:#F97316;letter-spacing:-0.03em}
-.stat-bar .stat-text{font-size:12px;color:#666;line-height:1.5;margin-top:4px;font-weight:500}
-.stat-bar .stat-text strong{color:#222}
-
 /* Bottom */
-.bottom{text-align:center;padding:20px 0 0}
-.bottom-terms{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.term{background:#F5F5F5;border-radius:100px;padding:6px 14px;font-size:11px;font-weight:700;color:#555;letter-spacing:0.01em}
-.bottom-copy{font-size:12.5px;color:#777;line-height:1.7;font-weight:500}
-.bottom-copy strong{color:#111;font-weight:700}
-.bottom-final{margin-top:14px;font-size:14px;font-weight:800;color:#111;letter-spacing:-0.01em;line-height:1.4}
-.bottom-final span{color:#F97316}
-
-/* Brand */
-.brand{text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid #f0f0f0}
-.brand p{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#ccc}
+.bottom{margin-top:auto;text-align:center;padding-top:14px;border-top:1px solid #f0f0f0}
+.terms{font-size:11px;color:#555;font-weight:500;line-height:1.7}
+.terms strong{font-weight:700;color:#333}
+.final{margin-top:10px;font-size:14px;font-weight:800;color:#111;line-height:1.4;letter-spacing:-0.01em}
+.final span{color:#F97316}
+.brand{margin-top:12px;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#ccc}
 </style>
 </head>
 <body>
 <div class="page">
 
-<!-- HEADER -->
 <p class="topline">construction-sites.co.uk</p>
 <h1>Let's Do <span>The Maths.</span></h1>
 <p class="subtitle">No pitch. No pressure. Just numbers.</p>
 
-<div class="divider"></div>
-
-<!-- THE COST -->
-<div class="big-cost">
+<div class="cost">
   <div class="amount">£<span>3</span></div>
   <div class="per">a day. That's it.</div>
   <div class="compare">
-    <div class="compare-item"><div class="emoji">&#9749;</div><div class="price">£3.50</div><div class="label">Coffee</div></div>
-    <div class="compare-item"><div class="emoji">&#127838;</div><div class="price">£3.99</div><div class="label">Meal deal</div></div>
-    <div class="compare-item"><div class="emoji">&#128296;</div><div class="price">£4.50</div><div class="label">Box of screws</div></div>
+    <span>&#9749; Coffee £3.50</span>
+    <span class="vs">|</span>
+    <span>&#127838; Meal deal £3.99</span>
+    <span class="vs">|</span>
+    <span>&#128296; Screws £4.50</span>
   </div>
 </div>
 
+<div class="return">
+  <div class="return-left">Your website<br>costs <strong>£3/day</strong></div>
+  <div class="return-vs">&#8594;</div>
+  <div class="return-right">
+    <div class="big">£2,000+</div>
+    <div class="sub">One job won</div>
+  </div>
+</div>
+<p class="return-note"><strong>One extra job</strong> pays for the whole year. The rest is profit.</p>
+
 <div class="divider sm"></div>
 
-<!-- THE RETURN -->
-<div class="section-head"><div class="icon">&#128200;</div><h2>The Return</h2></div>
-<div class="calc-box">
-  <div class="calc-row"><span class="label">Per day</span><span class="val">£3</span></div>
-  <div class="calc-row"><span class="label">Per month</span><span class="val">~£100</span></div>
-  <div class="calc-row"><span class="label">Per year</span><span class="val">~£1,200</span></div>
-  <div class="calc-row total"><span class="label">One average job</span><span class="val">£500 &#8211; £2,000+</span></div>
-</div>
-<p class="calc-note"><strong>One extra job a year</strong> and you've paid for the whole thing <strong>5&#8211;10x over.</strong> The rest is profit.</p>
-
-<div class="hire-box">
-  <p>Think of it as your <strong>cheapest employee.</strong> Works 24/7. Never calls in sick. Never takes a holiday. Never asks for a pay rise.</p>
-</div>
-
-<div class="divider"></div>
-
-<!-- THE PROBLEM -->
-<div class="section-head"><div class="icon">&#9888;&#65039;</div><h2>What You're Up Against</h2></div>
+<div class="sh"><span class="icon">&#9888;&#65039;</span> What You're Up Against</div>
 
 <div class="problem">
   <div class="platform">Facebook</div>
-  <p>Customers find you on Facebook and assume you're cheap. <strong>They haggle before they've even called.</strong> Same work, different price &#8212; a website says professional, Facebook says bargain.</p>
+  <p>Customers find you there and assume you're cheap. <strong>They haggle before they've even called.</strong> A website says professional. Facebook says bargain.</p>
 </div>
 
 <div class="problem">
-  <div class="platform">Checkatrade / MyBuilder / Bark</div>
-  <p>You pay to be listed. Then they put <strong>3&#8211;4 competitors right next to you.</strong> You're paying to share your customers. Your website means they find you &#8212; not a list of options.</p>
+  <div class="platform">Checkatrade / MyBuilder</div>
+  <p>You pay to be listed. They put <strong>3-4 competitors right next to you.</strong> You're paying to share your customers.</p>
 </div>
 
 <div class="own-it">
-  <p>You don't own Facebook. You don't own Checkatrade. They can change the rules tomorrow. <strong>Your website is yours.</strong></p>
+  <p>You don't own Facebook. You don't own Checkatrade. They change the rules tomorrow. <strong>Your website is yours.</strong></p>
 </div>
 
-<div class="divider"></div>
-
-<!-- WHAT YOU GET -->
-<div class="section-head"><div class="icon">&#128230;</div><h2>What £3/Day Gets You</h2></div>
-<ul class="includes">
-  <li><span class="check">&#10003;</span>Found on Google when locals search for your trade</li>
-  <li><span class="check">&#10003;</span>Professional gallery showing off your best work</li>
-  <li><span class="check">&#10003;</span>Customer reviews building trust automatically</li>
-  <li><span class="check">&#10003;</span>Mobile-friendly &#8212; click-to-call means instant enquiries</li>
-  <li><span class="check">&#10003;</span>Looks established, whether you're one man or a team of ten</li>
-</ul>
-
-<div class="divider sm"></div>
-
-<!-- STAT -->
-<div class="stat-bar">
-  <div class="number">84%</div>
-  <p class="stat-text">of people <strong>search online before hiring a tradesman.</strong><br>If they can't find you, they find your competitor.</p>
-</div>
-
-<div class="divider"></div>
-
-<!-- BOTTOM -->
 <div class="bottom">
-  <div class="bottom-terms">
-    <span class="term">No upfront cost</span>
-    <span class="term">No contract</span>
-    <span class="term">Cancel anytime</span>
-  </div>
-  <p class="bottom-copy">We build it. We host it. We maintain it.<br><strong>You just do what you do.</strong></p>
-  <p class="bottom-final">One extra job pays for the year.<br><span>The rest is profit.</span></p>
-</div>
-
-<div class="brand">
-  <p>construction-sites.co.uk</p>
+  <p class="terms"><strong>£3/day. No build cost. No contract. Cancel anytime.</strong><br>We build it. We host it. We maintain it.</p>
+  <p class="final">One extra job pays for the year.<br><span>The rest is profit.</span></p>
+  <p class="brand">construction-sites.co.uk</p>
 </div>
 
 </div>
