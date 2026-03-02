@@ -556,6 +556,14 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  background: #25d366;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
+  border: none;
+}
+
+.btn-whatsapp:hover {
+  background: #22c55e;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.35);
 }
 
 .btn-whatsapp svg {
@@ -1483,10 +1491,46 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-.floating-btns .floating-whatsapp {
+.floating-btns .floating-whatsapp,
+.floating-btns .floating-call {
   position: static;
   opacity: 1;
   visibility: visible;
+}
+
+.floating-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.floating-call {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(200, 164, 78, 0.3);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.floating-call:hover {
+  transform: scale(1.12);
+  box-shadow: 0 10px 36px rgba(200, 164, 78, 0.4);
+}
+
+.floating-call svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--white);
+  fill: none;
+  stroke-width: 2;
 }
 
 /* Pulse ring animation */
