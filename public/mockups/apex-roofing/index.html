@@ -14,7 +14,8 @@
 
         :root {
             --charcoal: #1f1f1f;
-            --crimson: #dc2626;
+            --crimson: #c8943c;
+            --crimson-hover: #b5842f;
             --white: #ffffff;
             --light-gray: #f3f3f3;
             --mid-gray: #6b6b6b;
@@ -150,7 +151,7 @@
         }
 
         .hero-btn:hover {
-            background: #b91c1c;
+            background: var(--crimson-hover);
         }
 
         .hero-btn-wa {
@@ -444,7 +445,7 @@
             display: inline-flex;
             align-items: center;
             background: var(--white);
-            color: var(--crimson);
+            color: var(--charcoal);
             padding: 1rem 2.5rem;
             text-decoration: none;
             text-transform: uppercase;
@@ -594,13 +595,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.35);
+            box-shadow: 0 4px 16px rgba(200, 148, 60, 0.4);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .floating-call:hover {
             transform: scale(1.08);
-            box-shadow: 0 8px 32px rgba(220, 38, 38, 0.45);
+            box-shadow: 0 8px 32px rgba(200, 148, 60, 0.55);
         }
 
         .floating-call svg {
@@ -642,7 +643,7 @@
 
     <!-- NAVIGATION -->
     <nav>
-        <div class="logo">Apex <span>Roofing</span></div>
+        <a href="#" class="logo"><img src="img/logo.jpg" alt="Apex Roofing Solutions" style="height:44px;border-radius:4px;"></a>
         <ul>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
@@ -787,7 +788,7 @@
     <footer id="contact">
         <div class="footer-grid">
             <div class="footer-col">
-                <h3>Contact Us</h3>
+                <img src="img/logo.jpg" alt="Apex Roofing Solutions" style="height:48px;border-radius:4px;display:block;margin-bottom:16px;">
                 <p>Apex Roofing Solutions 247 Ltd<br>
                 Unit 1, Block 13 Muirhead<br>
                 Kirkcaldy KY1 3PE</p>
