@@ -552,6 +552,16 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-1px);
 }
 
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-whatsapp svg {
+  flex-shrink: 0;
+}
+
 .btn-outline {
   background: transparent;
   color: var(--white);
@@ -1415,44 +1425,44 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================================================
    20. Floating Call Button
    ============================================================ */
-.floating-call {
+.floating-whatsapp {
   position: fixed;
   bottom: 28px;
   right: 28px;
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  background: #25d366;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 900;
   cursor: pointer;
-  box-shadow: 0 6px 24px rgba(200, 164, 78, 0.3);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35);
   transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
               box-shadow 0.3s ease,
               opacity 0.4s ease,
               visibility 0.4s ease;
   opacity: 0;
   visibility: hidden;
+  text-decoration: none;
 }
 
-.floating-call.visible {
+.floating-whatsapp.visible {
   opacity: 1;
   visibility: visible;
 }
 
-.floating-call:hover {
+.floating-whatsapp:hover {
   transform: scale(1.12);
-  box-shadow: 0 10px 36px rgba(200, 164, 78, 0.4);
+  background: #22c55e;
+  box-shadow: 0 10px 36px rgba(37, 211, 102, 0.5);
 }
 
-.floating-call svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--white);
-  fill: none;
-  stroke-width: 2;
+.floating-whatsapp svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
 }
 
 /* Floating buttons wrapper (main.js adds .visible on scroll) */
@@ -1473,24 +1483,24 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-.floating-btns .floating-call {
+.floating-btns .floating-whatsapp {
   position: static;
   opacity: 1;
   visibility: visible;
 }
 
 /* Pulse ring animation */
-.floating-call::before {
+.floating-whatsapp::before {
   content: '';
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  border: 2px solid var(--accent);
+  border: 2px solid #25d366;
   opacity: 0;
-  animation: callPulse 2.5s ease-out infinite;
+  animation: waPulse 2.5s ease-out infinite;
 }
 
-@keyframes callPulse {
+@keyframes waPulse {
   0% {
     transform: scale(1);
     opacity: 0.5;
@@ -2009,7 +2019,7 @@ h1, h2, h3, h4, h5, h6 {
     aspect-ratio: 16 / 10;
   }
 
-  .floating-call {
+  .floating-whatsapp {
     bottom: 20px;
     right: 20px;
     width: 52px;
