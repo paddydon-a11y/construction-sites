@@ -563,6 +563,16 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .floating-btns.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
 
         .floating-whatsapp {
@@ -575,11 +585,18 @@
             justify-content: center;
             box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
             transition: transform 0.2s, box-shadow 0.2s;
+            animation: pulse-wa 2s infinite;
         }
 
         .floating-whatsapp:hover {
             transform: scale(1.08);
             box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+            animation: none;
+        }
+
+        @keyframes pulse-wa {
+            0%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35); }
+            50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.6); }
         }
 
         .floating-whatsapp svg {
@@ -597,11 +614,18 @@
             justify-content: center;
             box-shadow: 0 4px 16px rgba(200, 148, 60, 0.4);
             transition: transform 0.2s, box-shadow 0.2s;
+            animation: pulse-call 2s infinite 0.5s;
         }
 
         .floating-call:hover {
             transform: scale(1.08);
             box-shadow: 0 8px 32px rgba(200, 148, 60, 0.55);
+            animation: none;
+        }
+
+        @keyframes pulse-call {
+            0%, 100% { box-shadow: 0 4px 16px rgba(200, 148, 60, 0.4); }
+            50% { box-shadow: 0 4px 24px rgba(200, 148, 60, 0.7); }
         }
 
         .floating-call svg {
@@ -834,6 +858,15 @@
             <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         </a>
     </div>
+
+    <script>
+        const hero = document.querySelector('.hero');
+        const floatingBtns = document.querySelector('.floating-btns');
+        const observer = new IntersectionObserver(([entry]) => {
+            floatingBtns.classList.toggle('visible', !entry.isIntersecting);
+        }, { threshold: 0 });
+        observer.observe(hero);
+    </script>
 
 </body>
 </html>
