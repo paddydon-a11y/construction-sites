@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Roofing Solutions 247 | Professional Roofers in Fife, Scotland</title>
+    <meta name="description" content="Apex Roofing Solutions 247 Ltd — professional roofing and property maintenance across Scotland. Tiled roofs, slate roofs, flat roofs, emergency repairs, cement work and joinery. Based in Kirkcaldy, Fife.">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #1f1f1f;
+            --crimson: #dc2626;
+            --white: #ffffff;
+            --light-gray: #f3f3f3;
+            --mid-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--charcoal);
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        nav .logo span {
+            color: var(--crimson);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--crimson);
+        }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../../portfolio-images/roofer-02.jpg') center/cover no-repeat;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 100%;
+            background: var(--charcoal);
+            z-index: 2;
+            clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 0 4rem;
+            max-width: 650px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-content h1 span {
+            color: var(--crimson);
+        }
+
+        .hero-content p {
+            color: #ccc;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--crimson);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: background 0.3s;
+            margin-right: 12px;
+            margin-bottom: 10px;
+        }
+
+        .hero-btn:hover {
+            background: #b91c1c;
+        }
+
+        .hero-btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            border: 2px solid var(--white);
+            transition: background 0.3s, color 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .hero-btn-outline:hover {
+            background: var(--white);
+            color: var(--charcoal);
+        }
+
+        .hero-accent-line {
+            width: 80px;
+            height: 4px;
+            background: var(--crimson);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===================== SERVICES ===================== */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .accent-line {
+            width: 60px;
+            height: 4px;
+            background: var(--crimson);
+            margin: 1rem auto;
+        }
+
+        .section-header p {
+            color: var(--mid-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid transparent;
+            transition: border-color 0.3s, transform 0.3s;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .service-card:hover {
+            border-bottom-color: var(--crimson);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: var(--charcoal);
+            color: var(--crimson);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+        }
+
+        .service-card p {
+            color: var(--mid-gray);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== ABOUT / SERVICES LIST ===================== */
+        .about-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-text h2 span {
+            color: var(--crimson);
+        }
+
+        .about-text p {
+            color: var(--mid-gray);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .services-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .services-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .services-list li::before {
+            content: '\2713';
+            color: var(--crimson);
+            font-weight: 900;
+            font-size: 1rem;
+        }
+
+        /* ===================== STATS STRIP ===================== */
+        .about-strip {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .about-stat {
+            text-align: center;
+        }
+
+        .about-stat .number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--crimson);
+        }
+
+        .about-stat .label {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #aaa;
+            margin-top: 0.25rem;
+        }
+
+        /* ===================== TESTIMONIALS ===================== */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--crimson);
+            position: absolute;
+            top: 0.5rem;
+            left: 1rem;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--mid-gray);
+            margin-bottom: 1.5rem;
+            padding-top: 2rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .testimonial-location {
+            color: var(--mid-gray);
+            font-size: 0.8rem;
+        }
+
+        .testimonial-stars {
+            color: var(--crimson);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ===================== CTA SECTION ===================== */
+        .cta-section {
+            background: var(--crimson);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--crimson);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: background 0.3s, color 0.3s;
+            margin: 0 6px 10px;
+        }
+
+        .cta-btn:hover {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .cta-btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25d366;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: background 0.3s;
+            margin: 0 6px 10px;
+        }
+
+        .cta-btn-wa:hover {
+            background: #22c55e;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--charcoal);
+            color: #ccc;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-col p,
+        .footer-col li {
+            font-size: 0.9rem;
+            line-height: 2;
+            color: #999;
+        }
+
+        .footer-col a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--crimson);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li::before {
+            content: '\25A0';
+            color: var(--crimson);
+            margin-right: 0.5rem;
+            font-size: 0.6rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom a {
+            color: var(--crimson);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===================== FLOATING BUTTONS ===================== */
+        .floating-btns {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .floating-whatsapp {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+        }
+
+        .floating-whatsapp svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .floating-call {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--crimson);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .floating-call:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 32px rgba(220, 38, 38, 0.45);
+        }
+
+        .floating-call svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--white);
+            fill: none;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-overlay { width: 100%; clip-path: none; opacity: 0.85; }
+            .hero-content { padding: 0 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { justify-content: center; text-align: center; }
+            .about-strip { gap: 2rem; }
+            .services-list { grid-template-columns: 1fr; }
+            .floating-btns { bottom: 18px; right: 18px; }
+            .floating-whatsapp, .floating-call { width: 52px; height: 52px; }
+            .floating-whatsapp svg { width: 26px; height: 26px; }
+            .floating-call svg { width: 22px; height: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Apex <span>Roofing</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-accent-line"></div>
+            <h1>Expert <span>Roofing</span> Solutions Across Scotland</h1>
+            <p>From full roof installations to 24-hour emergency repairs, Apex Roofing Solutions 247 delivers professional roofing services you can rely on. Based in Fife, covering all of Scotland.</p>
+            <a href="tel:07887834685" class="hero-btn">Call Us Now</a>
+            <a href="https://wa.me/447887834685" class="hero-btn-outline" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <div class="accent-line"></div>
+            <p>Comprehensive roofing and property maintenance services for commercial, industrial and residential properties throughout Scotland.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#9650;</div>
+                <h3>Tiled &amp; Slate Roofs</h3>
+                <p>Complete tiled and slate roof installations, replacements and repairs. New builds, re-roofs and storm damage restoration using quality materials.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9677;</div>
+                <h3>Flat Roofing</h3>
+                <p>Expert flat roof installations and repairs using modern systems. Guaranteed watertight results for extensions, garages and commercial properties.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9684;</div>
+                <h3>Roofline &amp; Cement Work</h3>
+                <p>Full roofline services including fascias, soffits and guttering. Professional cement work, re-pointing and chimney repairs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9888;</div>
+                <h3>24hr Emergency Repairs</h3>
+                <p>Round-the-clock emergency call-outs for urgent roof repairs. Storm damage, leaks and structural issues dealt with fast and professionally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / FULL SERVICES LIST -->
+    <section class="about-section" id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Roofing &amp; Property Maintenance <span>You Can Trust</span></h2>
+                <p>Apex Roofing Solutions 247 Ltd is an established roofing and property maintenance company based in Fife, Scotland. We provide commercial, industrial and residential roofing services throughout Scotland.</p>
+                <p>Our professional team will guide you from the early stages to find the best solution for your property and work with you throughout the project to completion. We cover all aspects of roofing, from minor repairs to full renovations and installations.</p>
+            </div>
+            <div>
+                <ul class="services-list">
+                    <li>Tiled Roofs</li>
+                    <li>Slate Roofs</li>
+                    <li>Flat Roofs</li>
+                    <li>Roofline</li>
+                    <li>Cement Work</li>
+                    <li>Joinery Work</li>
+                    <li>24hr Emergency Repairs</li>
+                    <li>Property Maintenance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="about-strip">
+        <div class="about-stat">
+            <div class="number">24/7</div>
+            <div class="label">Emergency Cover</div>
+        </div>
+        <div class="about-stat">
+            <div class="number">100%</div>
+            <div class="label">Fully Insured</div>
+        </div>
+        <div class="about-stat">
+            <div class="number">8+</div>
+            <div class="label">Core Services</div>
+        </div>
+        <div class="about-stat">
+            <div class="number">Fife</div>
+            <div class="label">Based in Scotland</div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <div class="accent-line"></div>
+            <p>Delivering professional roofing services with unparalleled customer service and attention to detail.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>Had our full roof replaced with slate after years of ongoing issues. The team were professional, punctual and the finish is outstanding. Very pleased with the result.</p>
+                <div class="testimonial-author">James Robertson</div>
+                <div class="testimonial-location">Kirkcaldy, Fife</div>
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="testimonial-card">
+                <p>Called about an emergency leak on a Sunday and they were out within hours. Fixed the problem quickly and at a fair price. Can't recommend them enough.</p>
+                <div class="testimonial-author">Karen McLeod</div>
+                <div class="testimonial-location">Dunfermline, Fife</div>
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="testimonial-card">
+                <p>Apex did a fantastic job on our flat roof extension. Great communication throughout, competitive pricing, and a really neat, tidy finish. Would definitely use again.</p>
+                <div class="testimonial-author">Stuart &amp; Michelle Henderson</div>
+                <div class="testimonial-location">Glenrothes, Fife</div>
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Need a Roofer in Scotland?</h2>
+        <p>Contact us today for a free, no-obligation quote on any roofing project.</p>
+        <a href="tel:07887834685" class="cta-btn">Call 07887 834685</a>
+        <a href="https://wa.me/447887834685" class="cta-btn-wa" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Apex Roofing Solutions 247 Ltd<br>
+                Unit 1, Block 13 Muirhead<br>
+                Kirkcaldy KY1 3PE</p>
+                <p style="margin-top: 1rem;">
+                    Tel: <a href="tel:07887834685">07887 834685</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li>Tiled Roofs</li>
+                    <li>Slate Roofs</li>
+                    <li>Flat Roofs</li>
+                    <li>Roofline &amp; Cement Work</li>
+                    <li>Joinery Work</li>
+                    <li>24hr Emergency Repairs</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Areas Covered</h3>
+                <ul>
+                    <li>Kirkcaldy</li>
+                    <li>Dunfermline</li>
+                    <li>Glenrothes</li>
+                    <li>Edinburgh</li>
+                    <li>Dundee</li>
+                    <li>Perth</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Apex Roofing Solutions 247 Ltd. All rights reserved.</div>
+            <div>Site by <a href="https://construction-sites.co.uk">construction-sites.co.uk</a></div>
+        </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="floating-btns">
+        <a class="floating-whatsapp" href="https://wa.me/447887834685" target="_blank" rel="noopener" aria-label="WhatsApp Apex Roofing">
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a class="floating-call" href="tel:07887834685" aria-label="Call Apex Roofing">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </a>
+    </div>
+
+</body>
+</html>
