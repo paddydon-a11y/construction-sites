@@ -416,10 +416,11 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   min-height: 85vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 140px 0 100px;
+  padding: 140px 0 0;
 }
 
 .hero::before {
@@ -573,12 +574,13 @@ h1, h2, h3, h4, h5, h6 {
 .trust-bar {
   position: relative;
   z-index: 2;
+  width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 18px 0;
-  margin-top: 60px;
+  margin-top: auto;
 }
 
 .trust-items {
@@ -1701,7 +1703,7 @@ h1, h2, h3, h4, h5, h6 {
    24. Page-Specific Hero Backgrounds
    ============================================================ */
 .hero-home .hero-bg {
-  background-image: url('img/hero-kitchen.jpg');
+  background-image: url('img/flooring-1.jpg');
 }
 
 .hero-residential .hero-bg {
