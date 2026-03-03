@@ -1,0 +1,84 @@
+{
+  "company": "GPI Electrical Services",
+  "slug": "gpi-electrical",
+  "trade": "electrical",
+  "location": "Telford, Shropshire",
+  "locationShort": "Telford",
+  "areas": ["Telford", "Overdale", "Madeley", "Dawley", "Wellington", "Oakengates", "Shifnal", "Newport", "Bridgnorth", "Ironbridge", "Broseley", "Much Wenlock", "Donnington", "Hadley", "Wrekin", "Stirchley", "Brookside", "Sutton Hill", "Lawley", "Lightmoor"],
+  "phone": "07984571670",
+  "phoneFormatted": "07984 571 670",
+  "whatsapp": "447984571670",
+  "email": "",
+  "postcode": "TF3",
+
+  "logo": true,
+  "logoFile": "logo.png",
+  "logoColours": [],
+
+  "heroImage": false,
+  "heroImageFile": "",
+
+  "photos": [],
+
+  "reviews": [
+    {
+      "name": "Samantha Grimes",
+      "initial": "S",
+      "text": "Gavin was great, on time, professional. I told him what we needed and he gave me options, explaining everything clearly. He came and installed a socket, cleared up wonderfully. Didn't even mind my dogs. Really nice guy, would highly recommend.",
+      "rating": 5,
+      "source": "Google Review",
+      "date": ""
+    },
+    {
+      "name": "Jo Morton",
+      "initial": "J",
+      "text": "Gavin installed 4 outdoor sockets at the top of my garden ready for a garden makeover. He arrived when stated and kept me informed with what he was doing throughout the installation. Highly recommend.",
+      "rating": 5,
+      "source": "Google Review",
+      "date": ""
+    },
+    {
+      "name": "Andy Barnes",
+      "initial": "A",
+      "text": "My elderly mother said she was getting a shock when touching taps. Gavin dropped everything, went around, and after many hours found the faulty socket and isolated it. Knowing she was alone he made a courtesy visit the next day to check on her.",
+      "rating": 5,
+      "source": "Google Review",
+      "date": ""
+    },
+    {
+      "name": "Phil Major",
+      "initial": "P",
+      "text": "Used GPI Electrical Services to upgrade switches, replace light fittings and install outdoor lighting at my home. The work was completed quickly and to the highest standard. No mess and no fuss.",
+      "rating": 5,
+      "source": "Google Review",
+      "date": ""
+    },
+    {
+      "name": "Sarah Jenkins",
+      "initial": "S",
+      "text": "Gavin wall mounted our 65\" TV and sound bar which wasn't as straightforward as expected. But he came up with solutions and spent extra time to get the job sorted and we are so pleased with the results. Gavin knows his stuff.",
+      "rating": 5,
+      "source": "Google Review",
+      "date": ""
+    },
+    {
+      "name": "Jack Powis",
+      "initial": "J",
+      "text": "Asked to have our 55\" TV mounted on the wall with all hidden sockets and wires. Fantastic job and no signs of any work done which is just what we wanted. Could not be happier with the work and even happier with the price.",
+      "rating": 5,
+      "source": "Google Review",
+      "date": ""
+    }
+  ],
+  "reviewSource": "google",
+  "googleRating": 5.0,
+  "googleReviewCount": 22,
+
+  "services": [],
+  "accreditations": [],
+  "aboutText": "",
+
+  "overrideTheme": "",
+  "overrideAccent": "",
+  "notes": "Owner's name is Gavin. 24 hour availability. Logo colours not yet identified - Claude Code should extract from logo.png. Add any photos from the folder to the photos array before generating."
+}
