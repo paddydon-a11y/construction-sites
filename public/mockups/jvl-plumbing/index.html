@@ -71,15 +71,11 @@ a{text-decoration:none;color:inherit}
 .btn-navy:hover{background:var(--navy-dark);transform:translateY(-1px);box-shadow:0 8px 30px rgba(30,58,95,0.25)}
 
 /* HERO STATS */
-.hero-stats{display:flex;flex-direction:column;gap:28px}
-.hero-stat-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px 24px;backdrop-filter:blur(8px);transition:border-color 0.3s,background 0.3s}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hero-stat-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px 20px;text-align:center;backdrop-filter:blur(8px);transition:border-color 0.3s,background 0.3s}
 .hero-stat-card:hover{border-color:rgba(249,115,22,0.25);background:rgba(255,255,255,0.06)}
-.hero-stat-number{font-family:var(--heading);font-size:2.5rem;font-weight:900;color:var(--accent);margin-bottom:4px;line-height:1}
-.hero-stat-label{font-size:0.85rem;color:rgba(255,255,255,0.5);font-weight:500}
-.hero-stat-row{display:flex;gap:16px}
-.hero-stat-sm{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px 18px;text-align:center;backdrop-filter:blur(8px)}
-.hero-stat-sm .hero-stat-number{font-size:1.8rem}
-.hero-stat-sm .hero-stat-label{font-size:0.75rem}
+.hero-stat-number{font-family:var(--heading);font-size:2rem;font-weight:900;color:var(--accent);margin-bottom:4px;line-height:1}
+.hero-stat-label{font-size:0.78rem;color:rgba(255,255,255,0.5);font-weight:500}
 
 /* TRUST BAR */
 .trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-off);padding:20px 0}
@@ -207,10 +203,7 @@ a{text-decoration:none;color:inherit}
   .hero h1{font-size:2.5rem}
   .hero-sub{margin:0 auto 28px}
   .hero-btns{justify-content:center}
-  .hero-stats{flex-direction:row;gap:16px;justify-content:center;flex-wrap:wrap}
-  .hero-stat-card{flex:1;min-width:200px;text-align:center}
-  .hero-stat-row{justify-content:center}
-  .hero-stat-sm{min-width:140px}
+  .hero-stats{grid-template-columns:repeat(2,1fr);max-width:400px;margin:0 auto}
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .team-grid{grid-template-columns:repeat(3,1fr)}
   .reviews-grid{grid-template-columns:1fr}
@@ -229,9 +222,8 @@ a{text-decoration:none;color:inherit}
   .cta-btns{flex-direction:column;align-items:center}
   .cta-btns .btn{width:100%;max-width:320px}
   .trust-items{gap:16px 24px}
-  .hero-stat-card{min-width:100%}
-  .hero-stat-row{flex-direction:column}
-  .hero-stat-sm{min-width:100%}
+  .hero-stats{grid-template-columns:1fr 1fr;max-width:100%}
+  .hero-stat-number{font-size:1.5rem}
   .accred-items{gap:24px 32px}
 }
 </style>
@@ -281,17 +273,19 @@ a{text-decoration:none;color:inherit}
       <div class="hero-stats">
         <div class="hero-stat-card">
           <div class="hero-stat-number" data-target="167" data-suffix="+">0</div>
-          <div class="hero-stat-label">5-Star Reviews on Google</div>
+          <div class="hero-stat-label">5-Star Reviews</div>
         </div>
-        <div class="hero-stat-row">
-          <div class="hero-stat-sm">
-            <div class="hero-stat-number" data-target="42" data-suffix="+">0</div>
-            <div class="hero-stat-label">Years Experience</div>
-          </div>
-          <div class="hero-stat-sm">
-            <div class="hero-stat-number" data-target="15" data-suffix=" mi">0</div>
-            <div class="hero-stat-label">Radius Covered</div>
-          </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-number" data-target="42" data-suffix="+">0</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-number" data-target="1000" data-suffix="s">0</div>
+          <div class="hero-stat-label">Completed Jobs</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-number" data-target="15" data-suffix=" mi">0</div>
+          <div class="hero-stat-label">Radius Covered</div>
         </div>
       </div>
     </div>
