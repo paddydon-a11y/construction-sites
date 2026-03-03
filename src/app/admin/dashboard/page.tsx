@@ -247,6 +247,8 @@ function LeadCard({
                       ? "#f59e0b20"
                       : lead.source === "Meta"
                       ? "#1877f220"
+                      : lead.source === "Text Canvas"
+                      ? "#8b5cf620"
                       : "#94a3b820",
                   color:
                     lead.source === "Google"
@@ -259,6 +261,8 @@ function LeadCard({
                       ? "#fbbf24"
                       : lead.source === "Meta"
                       ? "#4599f7"
+                      : lead.source === "Text Canvas"
+                      ? "#a78bfa"
                       : "#94a3b8",
                 }}
               >
@@ -440,6 +444,7 @@ function AddLeadModal({
               <option value="Website">Website</option>
               <option value="Cold Call">Cold Call</option>
               <option value="Meta">Meta</option>
+              <option value="Text Canvas">Text Canvas</option>
             </select>
           </div>
         </div>
@@ -769,6 +774,7 @@ function LeadDetail({
                     <option value="Website">Website</option>
                     <option value="Cold Call">Cold Call</option>
                     <option value="Meta">Meta</option>
+                    <option value="Text Canvas">Text Canvas</option>
                   </select>
                 </div>
                 <div>
