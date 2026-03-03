@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KDR Plumbing &amp; Heating | Plumbers Colchester &amp; Tiptree | Essex</title>
+<meta name="description" content="Colchester's trusted plumbing & heating specialists. Boiler installations, repairs, servicing, central heating & landlord certifications. Gas Safe registered. 4.6-star rated, 16 Google reviews. Covering Essex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#ffffff;--bg-off:#f8fafc;--card:#ffffff;--border:#e2e8f0;--border-light:#cbd5e1;--navy:#1e3a5f;--navy-dark:#152c49;--accent:#f97316;--accent-hover:#ea580c;--accent-light:#fb923c;--accent-glow:rgba(249,115,22,0.08);--dark:#0f172a;--dark-card:#1e293b;--green:#16a34a;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#6b7280;--gray-500:#4b5563;--gray-600:#374151;--gray-700:#1f2937;--heading:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--bg);color:var(--gray-500);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:var(--gray-700);line-height:1.15;font-weight:800}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-light));z-index:200;width:0%;transition:width 0.1s linear}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:4px;font-family:var(--heading);font-weight:900;font-size:1.1rem;color:var(--navy)}
+.nav-logo .accent{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:0.8rem;font-weight:600;color:var(--gray-400);transition:color 0.2s}
+.nav-links a:hover{color:var(--gray-700)}
+.nav-links a.nav-cta{background:var(--accent);color:#fff;font-weight:700;font-size:0.8rem;padding:8px 18px;border-radius:8px;transition:background 0.2s}
+.nav-links a.nav-cta:hover{background:var(--accent-hover);color:#fff}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile svg{stroke:var(--gray-700)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+  .nav-links.open{display:flex;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:9998;overflow-y:auto}
+  .nav-links.open a{font-size:1.25rem;color:var(--gray-600)}
+  .nav-links.open a.nav-cta{font-size:1rem;padding:14px 32px}
+}
+
+/* HERO — DARK */
+.hero{position:relative;padding:140px 0 100px;overflow:hidden;min-height:92vh;display:flex;align-items:center;background:var(--dark)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 70% 40%,rgba(249,115,22,0.10),transparent 70%),radial-gradient(ellipse 50% 50% at 20% 80%,rgba(30,58,95,0.25),transparent 60%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.2);border-radius:100px;padding:6px 16px;font-size:0.8rem;color:var(--accent-light);font-weight:600;margin-bottom:20px}
+.hero-badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(22,163,74,0.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(22,163,74,0)}}
+.hero h1{font-size:3.2rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:20px;color:#fff}
+.hero h1 .accent{color:var(--accent)}
+.hero h1 .light{color:rgba(255,255,255,0.5)}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.55);max-width:500px;line-height:1.75;margin-bottom:36px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:0.95rem;padding:14px 28px;border-radius:10px;transition:all 0.2s;border:none;cursor:pointer}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 8px 30px rgba(249,115,22,0.3)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.2)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05);transform:translateY(-1px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-dark);transform:translateY(-1px);box-shadow:0 8px 30px rgba(30,58,95,0.25)}
+
+/* HERO LOGO CARD */
+.hero-logo-card{background:rgba(255,255,255,0.95);border-radius:20px;padding:48px;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(0,0,0,0.2),0 0 80px rgba(249,115,22,0.08);max-width:400px;margin:0 auto;aspect-ratio:1/1}
+.hero-logo-card img{width:100%;height:100%;object-fit:contain}
+
+/* TRUST BAR */
+.trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-off);padding:20px 0}
+.trust-items{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 40px}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--gray-600)}
+.trust-item svg{width:18px;height:18px;fill:none;stroke-width:2;flex-shrink:0}
+.trust-item svg.accent{stroke:var(--accent)}
+.trust-item svg.navy{stroke:var(--navy)}
+
+/* SECTIONS */
+.section{padding:80px 0}
+.section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.section-label.navy{color:var(--navy)}
+.section-title{font-size:2.25rem;letter-spacing:-0.02em;margin-bottom:12px}
+.section-desc{color:var(--gray-500);max-width:560px;font-size:0.95rem;line-height:1.7}
+.section-center{text-align:center}
+.section-center .section-desc{margin:0 auto}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--navy));transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover{border-color:var(--accent);box-shadow:0 8px 30px rgba(249,115,22,0.08);transform:translateY(-2px)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:44px;height:44px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-icon svg{width:22px;height:22px}
+.service-card h3{font-size:0.95rem;font-weight:700;margin-bottom:6px;color:var(--gray-700)}
+.service-card p{font-size:0.82rem;color:var(--gray-400);line-height:1.65}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.why-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 24px;text-align:center;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
+.why-card:hover{border-color:var(--accent);box-shadow:0 8px 30px rgba(249,115,22,0.08);transform:translateY(-2px)}
+.why-icon{width:52px;height:52px;border-radius:14px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.why-icon svg{width:26px;height:26px}
+.why-card h3{font-size:0.95rem;font-weight:700;margin-bottom:6px;color:var(--gray-700)}
+.why-card p{font-size:0.82rem;color:var(--gray-400);line-height:1.65}
+
+/* ACCREDITATIONS */
+.accred-bar{background:var(--dark);padding:48px 0;text-align:center}
+.accred-items{display:flex;justify-content:center;flex-wrap:wrap;gap:32px 56px;margin-top:24px}
+.accred-item{display:flex;flex-direction:column;align-items:center;gap:10px}
+.accred-icon{width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center}
+.accred-icon svg{width:28px;height:28px}
+.accred-item span{font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.04em}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);padding:56px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(249,115,22,0.1),transparent 70%);pointer-events:none}
+.cta-band>*{position:relative}
+.cta-band h2{font-size:2rem;margin-bottom:8px;color:#fff}
+.cta-band p{color:rgba(255,255,255,0.55);margin-bottom:24px;font-size:0.95rem}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.review-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.03);transition:transform 0.3s,box-shadow 0.3s}
+.review-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+.review-stars{display:flex;gap:2px;margin-bottom:12px}
+.review-stars svg{width:16px;height:16px;fill:#fbbf24}
+.review-text{font-size:0.88rem;color:var(--gray-600);line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:36px;height:36px;border-radius:50%;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:800;color:var(--accent);font-size:0.85rem;flex-shrink:0}
+.review-name{font-weight:700;color:var(--gray-700);font-size:0.82rem}
+.review-role{font-size:0.75rem;color:var(--gray-400)}
+.star-count{display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:700;color:var(--gray-700)}
+.star-count svg{width:18px;height:18px;fill:#fbbf24}
+
+/* AREAS */
+.areas-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+.area-tag{background:var(--bg-off);border:1px solid var(--border);border-radius:100px;padding:10px 20px;font-size:0.82rem;color:var(--gray-600);font-weight:600;transition:border-color 0.2s,background 0.2s}
+.area-tag:hover{border-color:var(--accent);background:var(--accent-glow)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-block h4{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-400);margin-bottom:6px}
+.contact-block a,.contact-block p{font-size:1.1rem;color:var(--gray-700);font-weight:600}
+.contact-block a:hover{color:var(--accent)}
+.contact-form{background:var(--bg-off);border:1px solid var(--border);border-radius:14px;padding:28px}
+.contact-form label{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-400);margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--gray-700);font-family:var(--body);font-size:0.9rem;outline:none;transition:border-color 0.2s;margin-bottom:16px;-webkit-appearance:none}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--accent)}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-form button{width:100%;padding:14px;border-radius:10px;font-size:0.95rem}
+
+/* FOOTER */
+.footer{padding:40px 0;text-align:center;border-top:1px solid var(--border);background:var(--dark)}
+.footer p{font-size:0.75rem;color:rgba(255,255,255,0.4)}
+.footer p a{color:rgba(255,255,255,0.4)}
+.footer p a:hover{color:var(--accent)}
+.footer-logo{font-family:var(--heading);font-weight:900;font-size:1.1rem;color:#fff;margin-bottom:8px}
+.footer-logo .accent{color:var(--accent)}
+
+/* FLOATING BUTTONS */
+.floating-btns{position:fixed;bottom:20px;right:20px;z-index:90;display:flex;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.floating-btns.visible{opacity:1;pointer-events:auto}
+.floating-btns a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.15);transition:transform 0.2s}
+.floating-btns a:hover{transform:scale(1.1)}
+.floating-btns .fab-call{background:var(--accent)}
+.floating-btns .fab-call svg{stroke:#fff;fill:none}
+.floating-btns .fab-email{background:var(--navy)}
+.floating-btns .fab-email svg{stroke:#fff;fill:none}
+.floating-btns svg{width:24px;height:24px}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h1{font-size:2.5rem}
+  .hero-sub{margin:0 auto 28px}
+  .hero-btns{justify-content:center}
+  .hero-logo-card{max-width:280px;padding:36px}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .hero{padding:110px 0 60px;min-height:auto}
+  .hero h1{font-size:2rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.75rem}
+  .services-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;width:100%;max-width:340px;margin:0 auto}
+  .btn{width:100%}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns .btn{width:100%;max-width:320px}
+  .trust-items{gap:16px 24px}
+  .hero-logo-card{max-width:220px;padding:28px}
+  .accred-items{gap:24px 32px}
+}
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:12px;margin-top:40px}
+.gallery-item{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid var(--border)}
+.gallery-item:first-child{grid-column:1/3;grid-row:1/3}
+.gallery-item:not(:first-child){aspect-ratio:1}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(15,23,42,0.4));opacity:0;transition:opacity 0.3s}
+.gallery-item:hover::after{opacity:1}
+.gallery-lightbox{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;padding:20px;cursor:pointer}
+.gallery-lightbox.open{display:flex}
+.gallery-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px}
+.gallery-lightbox .lb-close{position:absolute;top:20px;right:24px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.gallery-lightbox .lb-close:hover{background:rgba(255,255,255,0.2)}
+.gallery-lightbox .lb-close svg{stroke:#fff;width:20px;height:20px}
+@media(max-width:1024px){.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-item:first-child{grid-column:1/3;grid-row:auto;aspect-ratio:16/9}}
+@media(max-width:640px){.gallery-grid{grid-template-columns:1fr 1fr}.gallery-item:first-child{grid-column:1/3}}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><img src="/mockups/kdr-plumbing/logo.png" alt="KDR Plumbing" style="height:36px;width:auto;border-radius:4px;margin-right:6px"></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Our Work</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:07887520035">07887 520035</a>
+    </div>
+    <button class="nav-mobile" id="nav-toggle" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="dot"></span> Gas Safe Registered &middot; 25+ Years Experience</div>
+        <h1>Colchester's Trusted <span class="accent">Plumbing</span> &amp; <span class="accent">Heating</span> <span class="light">Experts</span></h1>
+        <p class="hero-sub">With over 25 years' experience, KDR Plumbing &amp; Heating delivers reliable plumbing, boiler installations and emergency repairs across Essex. Free estimates, no call-out charges, and OAP discounts available.</p>
+        <div class="hero-btns">
+          <a class="btn btn-accent" href="tel:07887520035">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call 07887 520035
+          </a>
+          <a class="btn btn-outline" href="#contact">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Free Estimate
+          </a>
+        </div>
+      </div>
+      <div class="hero-logo-card">
+        <img src="/mockups/kdr-plumbing/logo.png" alt="KDR Plumbing &amp; Heating Ltd">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg class="navy" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        4.6&#9733; &middot; 16 Reviews
+      </div>
+      <div class="trust-item">
+        <svg class="accent" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Gas Safe Registered
+      </div>
+      <div class="trust-item">
+        <svg class="navy" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Checkatrade Verified
+      </div>
+      <div class="trust-item">
+        <svg class="accent" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        25+ Years Experience
+      </div>
+      <div class="trust-item">
+        <svg class="navy" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Free Estimates
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-center reveal">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Complete Plumbing &amp; Heating Solutions</h2>
+      <p class="section-desc">From emergency boiler repairs to full central heating installations. Our Gas Safe registered engineer covers every aspect of plumbing and heating across Essex.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
+        <h3>Boiler Installation</h3>
+        <p>New boiler installations and combi boiler conversions. All major brands fitted with full Gas Safe certification.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="var(--navy)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Boiler Servicing &amp; Repairs</h3>
+        <p>Annual servicing, emergency breakdowns, and diagnostics. 24-hour emergency call-out available.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div>
+        <h3>Central Heating</h3>
+        <p>Full central heating system installation, repairs, and upgrades. Radiators, pipework, and controls.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="var(--navy)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 4-4 6-4 10a4 4 0 108 0c0-4-4-6-4-10z"/></svg></div>
+        <h3>Plumbing Services</h3>
+        <p>Complete domestic plumbing from bathroom and kitchen installations to leak repairs and pipe work.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Landlord Certifications</h3>
+        <p>Gas safety certificates, landlord compliance checks, and certification for rental properties and insurance.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke="var(--navy)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+        <h3>Unvented Hot Water</h3>
+        <p>Unvented hot water cylinder installation and maintenance. Mains pressure hot water throughout your home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section" id="why" style="background:var(--bg-off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-center reveal">
+      <p class="section-label navy">Why Choose KDR</p>
+      <h2 class="section-title">Why Customers Trust Us</h2>
+      <p class="section-desc">Over 25 years of experience, honest pricing, and a genuine commitment to looking after our customers.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>25+ Years Experience</h3>
+        <p>Over a quarter century serving Essex homes. Tried and trusted by generations of customers.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24" stroke="var(--navy)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>24-Hour Emergency Service</h3>
+        <p>Boiler breakdowns don't wait. Call us any time for emergency plumbing and heating response.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3>Free Estimates &amp; Call-Outs</h3>
+        <p>No call-out charges, no obligation quotes. Transparent pricing with no hidden costs.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24" stroke="var(--navy)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4-4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>OAP Discounts</h3>
+        <p>We believe in looking after our community. Discounted rates for senior citizens.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24" stroke="var(--accent)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Gas Safe &amp; Fully Insured</h3>
+        <p>Registered Gas Safe engineer with &pound;5M public liability cover. Every job done safely and properly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATIONS -->
+<div class="accred-bar">
+  <div class="container">
+    <p class="section-label" style="color:var(--accent);margin-bottom:0">Accreditations &amp; Certifications</p>
+    <div class="accred-items">
+      <div class="accred-item">
+        <div class="accred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <span>Gas Safe Registered</span>
+      </div>
+      <div class="accred-item">
+        <div class="accred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <span>Institute of Plumbing</span>
+      </div>
+      <div class="accred-item">
+        <div class="accred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <span>Checkatrade Verified</span>
+      </div>
+      <div class="accred-item">
+        <div class="accred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <span>&pound;5M Public Liability</span>
+      </div>
+      <div class="accred-item">
+        <div class="accred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+        <span>NVQ Qualified</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="section" id="gallery" style="background:var(--bg-off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div style="text-align:center">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+      <p class="section-desc" style="margin:0 auto">Boiler installations, heating systems, and plumbing work completed across Colchester and Essex.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/kdr-plumbing/work-1.jpg" alt="KDR Plumbing work" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/kdr-plumbing/work-2.jpg" alt="KDR Plumbing work" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/kdr-plumbing/work-3.jpg" alt="KDR Plumbing work" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/kdr-plumbing/work-4.jpg" alt="KDR Plumbing work" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/kdr-plumbing/work-5.jpg" alt="KDR Plumbing work" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/kdr-plumbing/work-6.jpg" alt="KDR Plumbing work" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="/mockups/kdr-plumbing/work-7.jpg" alt="KDR Plumbing work" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="gallery-lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Need a Plumber in Colchester?</h2>
+    <p>Gas Safe registered, Checkatrade verified, and over 25 years' experience. Get in touch with Kirk today.</p>
+    <div class="cta-btns">
+      <a class="btn btn-accent" href="tel:07887520035">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call 07887 520035
+      </a>
+      <a class="btn btn-navy" href="mailto:kirkrutter41@gmail.com">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Us
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-center reveal">
+      <p class="section-label">Reviews</p>
+      <h2 class="section-title">What Essex Says About Us</h2>
+      <p class="section-desc">4.6 stars from 16 Google reviews. Here's what our customers have to say.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;margin-bottom:8px">
+      <div class="star-count">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" style="opacity:0.6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        4.6 on Google &middot; 16 Reviews
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"We are very happy with the new combi system, radiators and shower Kirk recommended."</p>
+        <div class="review-author"><div class="review-avatar">P</div><div><div class="review-name">Peter Findley</div><div class="review-role">Boiler Installation</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"His quote was considerably cheaper than British Gas and he started the following week."</p>
+        <div class="review-author"><div class="review-avatar">G</div><div><div class="review-name">Gavin White</div><div class="review-role">Tiptree</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"He is always helpful, responds quickly to calls and works cleanly and efficiently."</p>
+        <div class="review-author"><div class="review-avatar">K</div><div><div class="review-name">Kathryn</div><div class="review-role">Witham</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Kirk was over within half hour of calling him. Very professional, very friendly and polite."</p>
+        <div class="review-author"><div class="review-avatar">P</div><div><div class="review-name">Paul and Laura</div><div class="review-role">Witham</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"They worked at mega speed with total professionalism and fine attention to detail."</p>
+        <div class="review-author"><div class="review-avatar">D</div><div><div class="review-name">Denise and Chris</div><div class="review-role">Colchester</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"The next working day KDR had sourced a boiler and fitted it. It doesn't come any better."</p>
+        <div class="review-author"><div class="review-avatar">G</div><div><div class="review-name">George &amp; Joan</div><div class="review-role">Colchester</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Very polite and very professional. So happy with the new boiler thank you so much."</p>
+        <div class="review-author"><div class="review-avatar">J</div><div><div class="review-name">Jake and Sam</div><div class="review-role">Tiptree</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"We are extremely pleased with the results. Kirk and Mike also replaced our heating system."</p>
+        <div class="review-author"><div class="review-avatar">G</div><div><div class="review-name">Mr G Dalton</div><div class="review-role">Heating Replacement</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Every task has been completed efficiently and pleasantly, and when speed is required, extremely quickly."</p>
+        <div class="review-author"><div class="review-avatar">E</div><div><div class="review-name">Eileen Tye</div><div class="review-role">Regular Customer</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section section-center" id="areas" style="background:var(--bg-off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Coverage</p>
+      <h2 class="section-title">Areas We Cover</h2>
+      <p class="section-desc" style="margin:0 auto">Based in Tiptree, covering Colchester and surrounding areas across Essex.</p>
+    </div>
+    <div class="areas-tags reveal">
+      <span class="area-tag">Colchester</span>
+      <span class="area-tag">Tiptree</span>
+      <span class="area-tag">Witham</span>
+      <span class="area-tag">Chelmsford</span>
+      <span class="area-tag">Braintree</span>
+      <span class="area-tag">Maldon</span>
+      <span class="area-tag">Kelvedon</span>
+      <span class="area-tag">Coggeshall</span>
+      <span class="area-tag">West Mersea</span>
+      <span class="area-tag">Tollesbury</span>
+      <span class="area-tag">Marks Tey</span>
+      <span class="area-tag">Copford</span>
+      <span class="area-tag">Stanway</span>
+      <span class="area-tag">Wivenhoe</span>
+      <span class="area-tag">Hatfield Peverel</span>
+      <span class="area-tag">Danbury</span>
+      <span class="area-tag">Silver End</span>
+      <span class="area-tag">Feering</span>
+      <span class="area-tag">Great Totham</span>
+      <span class="area-tag">Essex</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Request a Free Estimate</h2>
+      <p class="section-desc">Tell us about your project and we'll get back to you fast.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-block">
+          <h4>Phone</h4>
+          <a href="tel:07887520035">07887 520035</a>
+        </div>
+        <div class="contact-block">
+          <h4>Email</h4>
+          <a href="mailto:kirkrutter41@gmail.com">kirkrutter41@gmail.com</a>
+        </div>
+        <div class="contact-block">
+          <h4>Address</h4>
+          <p>Tiptree, Colchester, Essex</p>
+        </div>
+        <div class="contact-block">
+          <h4>Checkatrade</h4>
+          <a href="https://www.checkatrade.com/trades/kdrplumbing" target="_blank">View on Checkatrade</a>
+        </div>
+        <div class="contact-block">
+          <h4>Services</h4>
+          <p style="font-size:0.9rem;font-weight:400">Boilers &middot; Central Heating &middot; Plumbing</p>
+          <p style="font-size:0.9rem;font-weight:400">Landlord Certs &middot; Unvented Hot Water</p>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <form onsubmit="event.preventDefault();this.innerHTML='<div style=&quot;text-align:center;padding:40px 20px&quot;><div style=&quot;font-size:2rem;margin-bottom:12px&quot;>&#9989;</div><h3 style=&quot;color:#1f2937;margin-bottom:8px&quot;>Thanks!</h3><p style=&quot;color:#6b7280;font-size:0.9rem&quot;>Kirk will be in touch shortly.</p></div>'">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>Boiler Installation</option>
+            <option>Boiler Servicing &amp; Repairs</option>
+            <option>Central Heating</option>
+            <option>Plumbing Services</option>
+            <option>Landlord Certifications</option>
+            <option>Unvented Hot Water</option>
+            <option>Other</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Describe your project..." rows="4"></textarea>
+          <button type="submit" class="btn btn-accent">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">KDR <span class="accent">Plumbing &amp; Heating</span> Ltd</div>
+    <p>Gas Safe &middot; Checkatrade &middot; Institute of Plumbing</p>
+    <p style="margin-top:4px">Plumbing, Heating &amp; Gas Specialists &middot; Tiptree, Colchester, Essex</p>
+    <p style="margin-top:4px">Site by <a href="https://construction-sites.co.uk">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING CALL & EMAIL -->
+<div class="floating-btns">
+  <a class="fab-call" href="tel:07887520035" aria-label="Call">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a class="fab-email" href="mailto:kirkrutter41@gmail.com" aria-label="Email">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </a>
+</div>
+
+<script>
+/* NAV TOGGLE */
+document.getElementById('nav-toggle').addEventListener('click',function(){
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+
+/* SCROLL PROGRESS */
+window.addEventListener('scroll',function(){
+  var h=document.documentElement;
+  var pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  document.getElementById('scroll-progress').style.width=pct+'%';
+});
+
+/* FLOATING BUTTONS */
+var heroBtns=document.querySelector('.hero-btns');
+var floatingBtns=document.querySelector('.floating-btns');
+function checkSticky(){
+  var rect=heroBtns.getBoundingClientRect();
+  if(rect.bottom<0){floatingBtns.classList.add('visible')}
+  else{floatingBtns.classList.remove('visible')}
+}
+window.addEventListener('scroll',checkSticky);
+checkSticky();
+
+/* SCROLL REVEAL */
+var reveals=document.querySelectorAll('.reveal');
+function checkReveal(){
+  reveals.forEach(function(el){
+    var rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight-60){
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll',checkReveal);
+checkReveal();
+
+// Lightbox
+function openLightbox(el){
+  var img=el.querySelector('img');
+  if(!img)return;
+  document.getElementById('lightbox-img').src=img.src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(e.target.closest('.lb-close')||e.target===document.getElementById('lightbox')){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+}
+</script>
+</body>
+</html>
