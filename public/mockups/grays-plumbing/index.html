@@ -66,7 +66,7 @@ img{max-width:100%;display:block}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;border-bottom:1px solid transparent;backdrop-filter:blur(0);-webkit-backdrop-filter:blur(0);transition:box-shadow 0.4s ease,border-color 0.4s ease,background 0.4s ease,backdrop-filter 0.4s ease}
 .nav.scrolled{box-shadow:0 1px 20px rgba(15,23,42,0.06);border-bottom-color:var(--border);background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .nav-inner{max-width:1140px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--heading);font-weight:900;font-size:1.15rem;color:#fff;letter-spacing:-0.02em;transition:color 0.4s ease}
+.nav-logo{display:flex;align-items:center;gap:4px;font-family:var(--heading);font-weight:900;font-size:1.15rem;color:#fff;letter-spacing:-0.02em;transition:color 0.4s ease}
 .nav-logo span.accent{color:var(--accent-light);transition:color 0.4s ease}
 .nav.scrolled .nav-logo{color:var(--navy)}
 .nav.scrolled .nav-logo span.accent{color:var(--accent)}
@@ -315,7 +315,7 @@ img{max-width:100%;display:block}
   .hero-split{grid-template-columns:1fr;gap:40px}
   .hero-content{text-align:center}
   .hero-btns{justify-content:center}
-  .hero-photos{height:400px;min-width:280px}
+  .hero-photos{height:400px;width:340px;margin:0 auto}
   .hero-photo:first-child{width:200px;height:300px}
   .hero-photo:last-child{width:200px;height:300px;left:120px;top:50px}
   .services-grid{grid-template-columns:repeat(2,1fr)}
@@ -328,9 +328,9 @@ img{max-width:100%;display:block}
 @media(max-width:640px){
   .hero{padding:120px 0 0}
   .hero h1{font-size:2.2rem}
-  .hero-photos{height:340px;min-width:auto;margin:0 auto;max-width:340px}
-  .hero-photo:first-child{width:180px;height:270px;left:0;top:0}
-  .hero-photo:last-child{width:180px;height:270px;left:100px;top:40px}
+  .hero-photos{height:320px;width:300px;margin:0 auto}
+  .hero-photo:first-child{width:170px;height:250px;left:0;top:0}
+  .hero-photo:last-child{width:170px;height:250px;left:90px;top:40px}
   .section{padding:64px 0}
   .section-title{font-size:1.85rem}
   .services-grid{grid-template-columns:1fr}
