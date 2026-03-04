@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Electrical Services | Trusted Electrician in Basingstoke &amp; Hampshire</title>
+<meta name="description" content="Basingstoke's trusted electricians. Domestic, commercial & industrial electrical services. NICEIC approved, fully insured. Free quotes. Call today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050a14;--bg-2:#0a1120;--bg-3:#0f1729;--bg-card:#111b2e;--bg-card-hover:#162034;
+  --border:rgba(59,130,246,0.08);--border-hover:rgba(59,130,246,0.18);--border-subtle:rgba(255,255,255,0.05);
+  --blue:#3b82f6;--blue-dark:#2563eb;--blue-light:#60a5fa;--blue-lighter:#93c5fd;--blue-glow:rgba(59,130,246,0.1);--blue-glow-strong:rgba(59,130,246,0.2);
+  --electric:#06b6d4;--electric-glow:rgba(6,182,212,0.08);
+  --white:#ffffff;--gray-400:rgba(255,255,255,0.45);--gray-500:rgba(255,255,255,0.6);--gray-600:rgba(255,255,255,0.78);
+  --green:#22c55e;
+  --heading:'Sora',sans-serif;--body:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--bg);color:var(--gray-500);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:var(--white);line-height:1.1;font-weight:700}
+a{text-decoration:none;color:inherit}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all 0.4s var(--ease)}
+.nav.scrolled{background:rgba(5,10,20,0.9);backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid var(--border-subtle)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--heading);font-weight:800;font-size:1.1rem;color:var(--white);letter-spacing:-0.03em}
+.nav-logo .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--blue),var(--electric));border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--bg);box-shadow:0 4px 20px rgba(59,130,246,0.25);position:relative;overflow:hidden}
+.nav-logo .logo-mark::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,0.15) 50%,transparent 60%);animation:logo-shine 4s ease-in-out infinite}
+@keyframes logo-shine{0%,100%{transform:translateX(-100%)}50%{transform:translateX(100%)}}
+.nav-logo span{color:var(--blue-light)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:0.8rem;font-weight:500;color:var(--gray-400);transition:color 0.3s;letter-spacing:0.01em}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--blue)!important;color:var(--white)!important;font-weight:700!important;font-size:0.78rem!important;padding:9px 20px;border-radius:9px;transition:all 0.3s var(--ease)!important;letter-spacing:0.01em}
+.nav-cta:hover{background:var(--blue-dark)!important;transform:translateY(-1px);box-shadow:0 8px 24px rgba(59,130,246,0.25)}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile svg{stroke:var(--white)}
+@media(max-width:768px){
+  .nav-links,.nav-cta-wrap{display:none}
+  .nav-mobile{display:block}
+  .nav-links.open{display:flex;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(5,10,20,0.98);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:200}
+  .nav-links.open a{font-size:1.2rem;color:var(--gray-500)}
+  .nav-links.open .nav-cta{font-size:1rem!important;padding:14px 32px}
+}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 65% 35%,rgba(59,130,246,0.07),transparent 65%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 15% 75%,rgba(6,182,212,0.04),transparent 60%)}
+.hero-lines{position:absolute;inset:0;overflow:hidden;opacity:0.35}
+.hero-line{position:absolute;width:1px;height:100%;background:linear-gradient(180deg,transparent,rgba(59,130,246,0.15),transparent);animation:line-drift 12s ease-in-out infinite}
+.hero-line:nth-child(1){left:15%;animation-delay:0s}
+.hero-line:nth-child(2){left:35%;animation-delay:-3s}
+.hero-line:nth-child(3){left:55%;animation-delay:-6s}
+.hero-line:nth-child(4){left:75%;animation-delay:-9s}
+.hero-line:nth-child(5){left:90%;animation-delay:-2s}
+@keyframes line-drift{0%,100%{opacity:0.3;transform:translateY(0)}50%{opacity:0.8;transform:translateY(-20px)}}
+
+.hero-content{position:relative;z-index:1;max-width:720px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 16px 7px 9px;border-radius:100px;background:var(--blue-glow);border:1px solid rgba(59,130,246,0.12);margin-bottom:32px;font-family:var(--mono);font-size:0.72rem;font-weight:600;color:var(--blue-light);letter-spacing:0.03em}
+.hero-eyebrow .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.5)}50%{box-shadow:0 0 0 7px rgba(34,197,94,0)}}
+.hero h1{font-size:4.5rem;font-weight:800;letter-spacing:-0.045em;margin-bottom:28px;line-height:1.05}
+.hero h1 .line{display:block}
+.hero h1 .blue{color:var(--blue-light)}
+.hero h1 .gradient{background:linear-gradient(90deg,var(--blue-light),var(--electric));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.1rem;color:var(--gray-500);line-height:1.85;margin-bottom:44px;max-width:580px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:700;font-size:0.95rem;padding:16px 32px;border-radius:14px;transition:all 0.3s var(--ease);border:none;cursor:pointer}
+.btn-blue{background:var(--blue);color:var(--white)}
+.btn-blue:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 14px 40px rgba(59,130,246,0.25)}
+.btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.1)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue-light);transform:translateY(-2px)}
+.btn-wa{background:#25d366;color:#fff}
+.btn-wa:hover{background:#1fb855;transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,211,102,0.2)}
+
+/* Hero metrics row */
+.hero-metrics{display:flex;gap:48px}
+.hero-metric{position:relative;padding-right:48px}
+.hero-metric::after{content:'';position:absolute;right:0;top:2px;bottom:2px;width:1px;background:var(--border-subtle)}
+.hero-metric:last-child{padding-right:0}
+.hero-metric:last-child::after{display:none}
+.hero-metric-val{font-family:var(--heading);font-size:2.4rem;font-weight:800;color:var(--white);letter-spacing:-0.03em;line-height:1}
+.hero-metric-val .accent{color:var(--blue-light)}
+.hero-metric-label{font-size:0.72rem;font-weight:500;color:var(--gray-400);margin-top:6px;letter-spacing:0.02em}
+
+@media(max-width:768px){
+  .hero{padding:100px 0 60px;min-height:auto}
+  .hero h1{font-size:2.5rem}
+  .hero-btns{flex-direction:column;max-width:340px}
+  .btn{width:100%}
+  .hero-metrics{gap:24px;flex-wrap:wrap}
+  .hero-metric{padding-right:24px}
+  .hero-metric-val{font-size:1.8rem}
+}
+
+/* ===== TRUST BAR ===== */
+.trust-bar{border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);padding:22px 0;background:rgba(255,255,255,0.01)}
+.trust-items{display:flex;justify-content:center;flex-wrap:wrap;gap:16px 44px}
+.trust-item{display:flex;align-items:center;gap:9px;font-size:0.78rem;font-weight:600;color:var(--gray-500)}
+.trust-item svg{width:18px;height:18px;flex-shrink:0;stroke-width:2;fill:none}
+.trust-item .ic-blue{stroke:var(--blue)}
+.trust-item .ic-cyan{stroke:var(--electric)}
+
+/* ===== SECTIONS ===== */
+.section{padding:100px 0;position:relative}
+.section-eyebrow{font-family:var(--mono);font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.section-title{font-size:2.6rem;letter-spacing:-0.03em;margin-bottom:14px}
+.section-desc{color:var(--gray-400);max-width:540px;font-size:0.95rem;line-height:1.8}
+.section-center{text-align:center}
+.section-center .section-desc{margin:0 auto}
+
+/* ===== SERVICES ===== */
+.services-section{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--border-subtle);border-radius:20px;overflow:hidden;border:1px solid var(--border-subtle)}
+.service-card{background:var(--bg-2);padding:36px 28px;position:relative;transition:all 0.4s var(--ease)}
+.service-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:2px;background:var(--blue);opacity:0;transition:all 0.4s var(--ease)}
+.service-card:hover{background:var(--bg-card)}
+.service-card:hover::before{opacity:1;width:100%;left:0;transform:none}
+.service-num{font-family:var(--mono);font-size:0.65rem;font-weight:700;color:rgba(59,130,246,0.3);margin-bottom:18px;letter-spacing:0.05em}
+.service-card h3{font-size:1rem;font-weight:700;margin-bottom:10px;letter-spacing:-0.01em}
+.service-card p{font-size:0.82rem;color:var(--gray-400);line-height:1.7}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr}}
+
+/* ===== ABOUT / SPLIT ===== */
+.about-section{background:var(--bg-2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-top:56px}
+.about-text p{color:var(--gray-500);font-size:0.95rem;line-height:1.85;margin-bottom:20px}
+.about-text p:last-child{margin-bottom:0}
+.about-highlights{display:flex;flex-direction:column;gap:16px}
+.about-highlight{display:flex;gap:16px;padding:24px;background:var(--bg-3);border:1px solid var(--border-subtle);border-radius:16px;transition:all 0.3s var(--ease)}
+.about-highlight:hover{border-color:var(--border-hover);background:var(--bg-card);transform:translateX(4px)}
+.about-highlight-icon{width:44px;height:44px;background:var(--blue-glow);border:1px solid rgba(59,130,246,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.about-highlight-icon svg{width:20px;height:20px;stroke:var(--blue-light);fill:none;stroke-width:2}
+.about-highlight h4{font-size:0.9rem;font-weight:700;margin-bottom:3px}
+.about-highlight p{font-size:0.8rem;color:var(--gray-400);line-height:1.6}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ===== PROCESS ===== */
+.process-section{background:var(--bg);position:relative;overflow:hidden}
+.process-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,var(--blue-glow),transparent 70%);pointer-events:none;opacity:0.3}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px;position:relative}
+.process-steps::before{content:'';position:absolute;top:40px;left:60px;right:60px;height:1px;background:linear-gradient(90deg,transparent,var(--border-hover),var(--border-hover),transparent)}
+.process-step{text-align:center;position:relative}
+.process-step-num{width:48px;height:48px;margin:0 auto 20px;background:var(--bg-card);border:1px solid var(--border-hover);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.8rem;font-weight:700;color:var(--blue-light);position:relative;z-index:1;transition:all 0.3s var(--ease)}
+.process-step:hover .process-step-num{background:var(--blue);color:var(--white);border-color:var(--blue);box-shadow:0 8px 30px rgba(59,130,246,0.25)}
+.process-step h4{font-size:0.92rem;font-weight:700;margin-bottom:6px}
+.process-step p{font-size:0.8rem;color:var(--gray-400);line-height:1.6;max-width:220px;margin:0 auto}
+@media(max-width:768px){.process-steps{grid-template-columns:1fr 1fr;gap:32px}.process-steps::before{display:none}}
+@media(max-width:480px){.process-steps{grid-template-columns:1fr}}
+
+/* ===== REVIEWS ===== */
+.reviews-section{background:var(--bg-2)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.review-card{background:var(--bg-3);border:1px solid var(--border-subtle);border-radius:18px;padding:28px;transition:all 0.3s var(--ease)}
+.review-card:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.15)}
+.review-stars{display:flex;gap:2px;margin-bottom:14px}
+.review-stars svg{width:16px;height:16px;fill:#fbbf24}
+.review-text{font-size:0.88rem;color:var(--gray-500);line-height:1.75;margin-bottom:20px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--border-subtle);padding-top:16px}
+.review-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue-glow);border:1px solid rgba(59,130,246,0.12);display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:700;color:var(--blue-light);font-size:0.85rem}
+.review-name{font-weight:700;color:var(--white);font-size:0.82rem}
+.review-source{font-size:0.7rem;color:var(--gray-400)}
+@media(max-width:900px){.reviews-grid{grid-template-columns:1fr}}
+
+/* ===== AREAS ===== */
+.areas-section{background:var(--bg)}
+.areas-wrap{display:grid;grid-template-columns:1.2fr 0.8fr;gap:56px;align-items:start;margin-top:48px}
+.areas-tags{display:flex;flex-wrap:wrap;gap:10px}
+.area-tag{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:10px;padding:12px 20px;font-size:0.82rem;color:var(--gray-500);font-weight:600;transition:all 0.3s var(--ease);cursor:default}
+.area-tag:hover{border-color:var(--blue);color:var(--blue-light);background:var(--blue-glow);transform:translateY(-2px)}
+.areas-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:20px;padding:36px;position:relative;overflow:hidden}
+.areas-card::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,var(--blue-glow),transparent 70%);pointer-events:none}
+.areas-card>*{position:relative}
+.areas-card h3{font-size:1.2rem;margin-bottom:10px}
+.areas-card p{font-size:0.88rem;color:var(--gray-400);line-height:1.75;margin-bottom:24px}
+@media(max-width:768px){.areas-wrap{grid-template-columns:1fr}}
+
+/* ===== CTA ===== */
+.cta-section{padding:80px 0}
+.cta-inner{position:relative;background:var(--bg-card);border:1px solid var(--border-hover);border-radius:28px;padding:72px 48px;text-align:center;overflow:hidden}
+.cta-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 30%,rgba(59,130,246,0.08),transparent 70%)}
+.cta-inner::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;opacity:0.5}
+.cta-inner>*{position:relative;z-index:1}
+.cta-section h2{font-size:2.6rem;margin-bottom:12px;letter-spacing:-0.03em}
+.cta-section h2 .gradient{background:linear-gradient(90deg,var(--blue-light),var(--electric));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-section p{color:var(--gray-400);margin-bottom:36px;font-size:1rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.75}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+@media(max-width:640px){.cta-inner{padding:48px 24px;border-radius:20px}.cta-section h2{font-size:2rem}.cta-btns{flex-direction:column;align-items:center}.cta-btns .btn{width:100%;max-width:320px}}
+
+/* ===== CONTACT ===== */
+.contact-section{background:var(--bg-2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;margin-top:48px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-block{padding:24px;background:var(--bg-3);border:1px solid var(--border-subtle);border-radius:14px;transition:border-color 0.3s}
+.contact-block:hover{border-color:var(--border-hover)}
+.contact-block h4{font-family:var(--mono);font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-400);margin-bottom:8px}
+.contact-block a,.contact-block p{font-size:1.05rem;color:var(--white);font-weight:600}
+.contact-block a:hover{color:var(--blue-light)}
+.contact-block .sub{font-size:0.8rem;color:var(--gray-400);font-weight:400;margin-top:4px}
+.contact-form{background:var(--bg-3);border:1px solid var(--border-subtle);border-radius:20px;padding:36px}
+.contact-form h3{font-size:1.15rem;margin-bottom:24px}
+.contact-form label{display:block;font-family:var(--mono);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-400);margin-bottom:7px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);border-radius:10px;padding:13px 15px;color:var(--white);font-family:var(--body);font-size:0.88rem;outline:none;transition:border-color 0.3s;margin-bottom:18px;-webkit-appearance:none}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--gray-400)}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--blue)}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-form select{color:var(--gray-400)}
+.contact-form select option{background:var(--bg-card);color:var(--white)}
+.contact-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-form button{width:100%;padding:15px;border-radius:12px}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}.contact-form .form-row{grid-template-columns:1fr}}
+
+/* ===== FOOTER ===== */
+.footer{padding:40px 0 28px;border-top:1px solid var(--border-subtle);background:var(--bg)}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.footer-brand .f-logo{font-family:var(--heading);font-size:1.05rem;font-weight:800;color:var(--white);display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.footer-brand .f-logo .logo-mark{width:28px;height:28px;background:linear-gradient(135deg,var(--blue),var(--electric));border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:0.75rem;color:var(--bg)}
+.footer-brand p{font-size:0.82rem;color:var(--gray-400);line-height:1.7;max-width:300px}
+.footer-col h5{font-family:var(--mono);font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-400);margin-bottom:14px}
+.footer-col a{display:block;font-size:0.82rem;color:var(--gray-400);padding:3px 0;transition:color 0.2s}
+.footer-col a:hover{color:var(--blue-light)}
+.footer-bottom{border-top:1px solid var(--border-subtle);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-size:0.72rem;color:rgba(255,255,255,0.25)}
+.footer-bottom a{color:var(--blue);font-weight:600}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr}}
+
+/* ===== FLOATING ===== */
+.floating-btns{position:fixed;bottom:24px;right:24px;z-index:90;display:flex;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity 0.4s var(--ease)}
+.floating-btns.visible{opacity:1;pointer-events:auto}
+.floating-btns a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 28px rgba(0,0,0,0.25);transition:all 0.3s var(--ease)}
+.floating-btns a:hover{transform:scale(1.1)}
+.floating-btns .fab-call{background:var(--blue)}
+.floating-btns .fab-wa{background:#25d366}
+.floating-btns svg{width:24px;height:24px}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:0.1s}.reveal-d2{transition-delay:0.2s}.reveal-d3{transition-delay:0.3s}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:7px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.15)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-mark">M</div>
+      Meta <span>Electrical</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Get a Quote</a>
+    </div>
+    <button class="nav-mobile" id="nav-toggle" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-lines">
+      <div class="hero-line"></div><div class="hero-line"></div><div class="hero-line"></div><div class="hero-line"></div><div class="hero-line"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="dot"></span> NICEIC APPROVED &middot; BASINGSTOKE &amp; HAMPSHIRE</div>
+      <h1>
+        <span class="line">Electrical Work</span>
+        <span class="line">Done <span class="gradient">Properly.</span></span>
+      </h1>
+      <p class="hero-sub">Certified electricians delivering domestic, commercial, and industrial electrical services across Basingstoke and the wider Hampshire area. Precision work, tested to the highest standards.</p>
+      <div class="hero-btns">
+        <a class="btn btn-blue" href="#contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Get a Free Quote
+        </a>
+        <a class="btn btn-outline" href="#services">
+          View Services
+        </a>
+      </div>
+      <div class="hero-metrics">
+        <div class="hero-metric">
+          <div class="hero-metric-val">100<span class="accent">%</span></div>
+          <div class="hero-metric-label">Tested &amp; Certified</div>
+        </div>
+        <div class="hero-metric">
+          <div class="hero-metric-val">NICEIC</div>
+          <div class="hero-metric-label">Approved Contractor</div>
+        </div>
+        <div class="hero-metric">
+          <div class="hero-metric-val">3<span class="accent">-in-1</span></div>
+          <div class="hero-metric-label">Domestic &middot; Commercial &middot; Industrial</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg class="ic-blue" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        NICEIC Approved
+      </div>
+      <div class="trust-item">
+        <svg class="ic-cyan" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Part P Registered
+      </div>
+      <div class="trust-item">
+        <svg class="ic-blue" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <svg class="ic-cyan" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Free Quotations
+      </div>
+      <div class="trust-item">
+        <svg class="ic-blue" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        5&#9733; Customer Rated
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-eyebrow reveal">Our Services</p>
+      <h2 class="section-title reveal">Domestic. Commercial. <span style="color:var(--blue-light)">Industrial.</span></h2>
+      <p class="section-desc reveal">From a single socket to a full industrial rewire &mdash; Meta Electrical Services deliver precision electrical work across every sector.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <h3>Full &amp; Partial Rewires</h3>
+        <p>Complete house rewiring or targeted upgrades to bring older properties up to current regulations. Minimal disruption, maximum safety.</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <div class="service-num">02</div>
+        <h3>Consumer Unit Upgrades</h3>
+        <p>Replace outdated fuse boxes with modern RCD-protected consumer units. Essential for safety and insurance compliance.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <div class="service-num">03</div>
+        <h3>EICR Testing</h3>
+        <p>Electrical Installation Condition Reports for homeowners, landlords, and commercial properties. Thorough testing with clear, honest reporting.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <h3>Lighting Design &amp; Install</h3>
+        <p>Interior and exterior lighting solutions from LED downlights to architectural feature lighting. Smart controls and dimming systems available.</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <div class="service-num">05</div>
+        <h3>EV Charger Installation</h3>
+        <p>Home and workplace electric vehicle charging points. OZEV grant-approved installers. All major brands fitted and commissioned.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <div class="service-num">06</div>
+        <h3>Commercial Fit-Outs</h3>
+        <p>Offices, retail units, and warehouses. Full electrical design, installation, and certification for commercial spaces of any scale.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">07</div>
+        <h3>Fault Finding</h3>
+        <p>Advanced diagnostic equipment to track down electrical faults quickly. Tripping circuits, flickering lights, dead sockets &mdash; we solve it.</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <div class="service-num">08</div>
+        <h3>Fire Alarm &amp; Emergency Lighting</h3>
+        <p>Design, installation, and maintenance of fire detection systems and emergency lighting to meet BS 5839 and BS 5266 standards.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <div class="service-num">09</div>
+        <h3>Industrial Electrical</h3>
+        <p>Three-phase installations, machinery wiring, containment systems, and industrial maintenance. Factory and warehouse specialists.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+  <div class="container">
+    <p class="section-eyebrow reveal">About Meta Electrical</p>
+    <h2 class="section-title reveal">Built on <span style="color:var(--blue-light)">Precision</span></h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>At Meta Electrical Services, we pride ourselves on being a proficient team of certified electricians serving Basingstoke and the wider Hampshire region. With extensive expertise across domestic, commercial, and industrial sectors, we specialise in delivering top-notch services with precision and excellence.</p>
+        <p>Our approach is centered around close collaboration with our clients, ensuring a tailor-made experience that meets your specific needs. Following every installation, we meticulously test every system to guarantee its safety and efficiency &mdash; giving you complete peace of mind.</p>
+        <p>Whether you need minor repairs or a major installation, Meta Electrical are ready to help.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="about-highlight reveal">
+          <div class="about-highlight-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <h4>Every Job Tested</h4>
+            <p>Every installation is rigorously tested and certified before sign-off. No exceptions.</p>
+          </div>
+        </div>
+        <div class="about-highlight reveal reveal-d1">
+          <div class="about-highlight-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <h4>Collaborative Approach</h4>
+            <p>We work closely with you from initial design through to final commissioning.</p>
+          </div>
+        </div>
+        <div class="about-highlight reveal reveal-d2">
+          <div class="about-highlight-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Fully Certified</h4>
+            <p>NICEIC approved, Part P registered, and fully insured for your peace of mind.</p>
+          </div>
+        </div>
+        <div class="about-highlight reveal reveal-d3">
+          <div class="about-highlight-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          </div>
+          <div>
+            <h4>All Sectors Covered</h4>
+            <p>Domestic homes, commercial offices, and industrial facilities &mdash; we handle every environment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="process">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-eyebrow reveal">How We Work</p>
+      <h2 class="section-title reveal">Simple. Transparent. <span style="color:var(--blue-light)">Professional.</span></h2>
+      <p class="section-desc reveal">Every project follows the same disciplined process &mdash; from first contact to final certification.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-step-num">01</div>
+        <h4>Consultation</h4>
+        <p>We discuss your requirements and arrange a convenient time to survey the work.</p>
+      </div>
+      <div class="process-step reveal reveal-d1">
+        <div class="process-step-num">02</div>
+        <h4>Quote</h4>
+        <p>Clear, itemised quote with no hidden costs. You know exactly what you're paying for.</p>
+      </div>
+      <div class="process-step reveal reveal-d2">
+        <div class="process-step-num">03</div>
+        <h4>Installation</h4>
+        <p>Professional installation by certified engineers. Clean, tidy, and on schedule.</p>
+      </div>
+      <div class="process-step reveal reveal-d3">
+        <div class="process-step-num">04</div>
+        <h4>Test &amp; Certify</h4>
+        <p>Every circuit tested to BS 7671 standards. Certificates issued and registered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-center">
+      <p class="section-eyebrow reveal">Reviews</p>
+      <h2 class="section-title reveal">What Our Clients <span style="color:var(--blue-light)">Say</span></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"When arriving to quote, they were polite and helpful. They provided quotes the same day and arrived on time to do the work. They did a fantastic job and cleaned up after themselves. Would recommend to family and friends."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Sarah T.</div>
+            <div class="review-source">Basingstoke</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-d1">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Excellent work on our full house rewire. The team were professional throughout, explained everything clearly, and the finish was immaculate. All certificates issued promptly. Couldn't ask for more."</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Mark &amp; Julie D.</div>
+            <div class="review-source">Tadley</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-d2">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Used Meta Electrical for our office fit-out. From initial consultation to final testing, the whole process was smooth and professional. On budget, on time, and zero snags. Will definitely use them again for our next unit."</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Richard P.</div>
+            <div class="review-source">Business Owner &middot; Hook</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section areas-section" id="areas">
+  <div class="container">
+    <p class="section-eyebrow reveal">Service Area</p>
+    <h2 class="section-title reveal">Basingstoke &amp; <span style="color:var(--blue-light)">Beyond</span></h2>
+    <p class="section-desc reveal">Based in Basingstoke, we cover the wider Hampshire area and surrounding counties.</p>
+    <div class="areas-wrap">
+      <div class="areas-tags reveal">
+        <span class="area-tag">Basingstoke</span>
+        <span class="area-tag">Tadley</span>
+        <span class="area-tag">Hook</span>
+        <span class="area-tag">Overton</span>
+        <span class="area-tag">Whitchurch</span>
+        <span class="area-tag">Andover</span>
+        <span class="area-tag">Winchester</span>
+        <span class="area-tag">Fleet</span>
+        <span class="area-tag">Farnborough</span>
+        <span class="area-tag">Aldershot</span>
+        <span class="area-tag">Newbury</span>
+        <span class="area-tag">Reading</span>
+        <span class="area-tag">Camberley</span>
+        <span class="area-tag">Alton</span>
+        <span class="area-tag">Kingsclere</span>
+        <span class="area-tag">Oakley</span>
+        <span class="area-tag">Old Basing</span>
+        <span class="area-tag">Bramley</span>
+        <span class="area-tag">Sherborne St John</span>
+        <span class="area-tag">Hartley Wintney</span>
+      </div>
+      <div class="areas-card reveal">
+        <h3>Need an Electrician <span style="color:var(--blue-light)">Near You?</span></h3>
+        <p>Don't see your area listed? We regularly travel across Hampshire, Berkshire, and Surrey for both small and large projects. Get in touch &mdash; we'll let you know if we can help.</p>
+        <a class="btn btn-blue" href="#contact" style="font-size:0.85rem;padding:12px 24px;border-radius:11px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <h2 class="reveal">Need an <span class="gradient">Electrician?</span></h2>
+      <p class="reveal">Whether it's a small repair, a full rewire, or a commercial fit-out &mdash; Meta Electrical Services are ready to help. Free quotes, no obligation.</p>
+      <div class="cta-btns reveal">
+        <a class="btn btn-blue" href="#contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Request a Free Quote
+        </a>
+        <a class="btn btn-wa" href="https://wa.me/44" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <p class="section-eyebrow reveal">Get in Touch</p>
+    <h2 class="section-title reveal">Let's <span style="color:var(--blue-light)">Talk</span></h2>
+    <p class="section-desc reveal">Drop us a message or give us a call. Free quotes on all work, no obligation.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-block reveal">
+          <h4>Phone</h4>
+          <a href="tel:01onal">Contact Us for Number</a>
+          <p class="sub">Available during working hours</p>
+        </div>
+        <div class="contact-block reveal reveal-d1">
+          <h4>Email</h4>
+          <a href="mailto:info@metaelectricalservices.co.uk">info@metaelectricalservices.co.uk</a>
+          <p class="sub">We aim to reply within a few hours</p>
+        </div>
+        <div class="contact-block reveal reveal-d2">
+          <h4>Location</h4>
+          <p>Basingstoke, Hampshire</p>
+          <p class="sub">Covering Hampshire, Berkshire &amp; Surrey</p>
+        </div>
+        <div class="contact-block reveal reveal-d3">
+          <h4>Accreditations</h4>
+          <p>NICEIC Approved &middot; Part P &middot; Fully Insured</p>
+          <p class="sub">All work tested &amp; certified to BS 7671</p>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <h3>Request a <span style="color:var(--blue-light)">Free Quote</span></h3>
+        <form onsubmit="return false">
+          <div class="form-row">
+            <div>
+              <label>Your Name</label>
+              <input type="text" placeholder="John Smith">
+            </div>
+            <div>
+              <label>Phone Number</label>
+              <input type="tel" placeholder="07xxx xxx xxx">
+            </div>
+          </div>
+          <label>Email Address</label>
+          <input type="email" placeholder="john@example.com">
+          <label>Type of Work</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Full or Partial Rewire</option>
+            <option>Consumer Unit Upgrade</option>
+            <option>EICR Testing / Inspection</option>
+            <option>Lighting Installation</option>
+            <option>EV Charger Installation</option>
+            <option>Commercial Fit-Out</option>
+            <option>Fault Finding</option>
+            <option>Fire Alarm / Emergency Lighting</option>
+            <option>Industrial Electrical</option>
+            <option>Other</option>
+          </select>
+          <label>Project Details</label>
+          <textarea placeholder="Tell us about your project..."></textarea>
+          <button class="btn btn-blue" type="submit">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="f-logo">
+          <div class="logo-mark">M</div>
+          Meta Electrical Services
+        </div>
+        <p>Certified electricians delivering domestic, commercial, and industrial electrical services across Basingstoke and Hampshire. NICEIC approved, fully insured, and committed to excellence.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">Rewiring</a>
+        <a href="#services">Consumer Units</a>
+        <a href="#services">EICR Testing</a>
+        <a href="#services">EV Chargers</a>
+        <a href="#services">Lighting</a>
+        <a href="#services">Commercial</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:info@metaelectricalservices.co.uk">Email Us</a>
+        <a href="#contact">Request a Quote</a>
+        <a href="#areas">Service Areas</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Meta Electrical Services Limited. All rights reserved.</p>
+      <p>Website by <a href="https://construction-sites.co.uk" target="_blank">Construction Sites</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BTNS -->
+<div class="floating-btns" id="floating-btns">
+  <a class="fab-call" href="#contact" aria-label="Contact us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a class="fab-wa" href="https://wa.me/44" target="_blank" aria-label="WhatsApp us">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('navbar'),fb=document.getElementById('floating-btns');
+window.addEventListener('scroll',()=>{const y=window.scrollY;y>50?nav.classList.add('scrolled'):nav.classList.remove('scrolled');y>400?fb.classList.add('visible'):fb.classList.remove('visible')},{passive:true});
+// Mobile nav
+const toggle=document.getElementById('nav-toggle'),links=document.getElementById('nav-links');
+toggle.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+// Reveal
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+reveals.forEach(el=>obs.observe(el));
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+</script>
+</body>
+</html>
