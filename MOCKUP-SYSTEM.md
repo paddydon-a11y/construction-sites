@@ -1003,6 +1003,10 @@ https://wa.me/{whatsapp}?text=Hi%2C%20I%20found%20you%20online%20and%20would%20l
 - **Mismatched theme colours** — if using light theme, don't leave dark-theme-only styles like `color: var(--white)` which would show as white text on white background
 - **Nav logo saying "SAB Electrical Electrical"** — the company name IS the logo. Don't append the trade unless it's part of their actual name
 - **Missing accent colour in SVG icons** — service card icons and trust bar icons must use the accent colour, not hardcoded amber
+- **Hero word-reveal JS breaks nested spans** — the word-reveal animation splits `innerHTML` by whitespace and wraps each word in `<span class="hero-word">`. This destroys any nested `<span>` tags (e.g. `<span class="accent">`), causing class names to render as visible text. **Never use word-reveal on h1 elements that contain nested spans.** Use a simple CSS `fadeUp` animation instead.
+- **Nav CTA text appears grey instead of black** — `.nav-links a` sets `color: var(--gray-400)` which has the same specificity as `.nav-cta`, so the grey wins. **Always use `.nav-links a.nav-cta`** for higher specificity with `color: #000 !important`, and set SVG `stroke="#000"` explicitly instead of `stroke="currentColor"`.
+- **Pick the best hero photos** — don't just grab the first two or last two photos. Actually look at the images and choose the most visually striking, professional ones for the hero. Branded signage, clean installations, dramatic lighting > random equipment on the ground or grey consumer units.
+- **Trust bar too close to hero / services too far away** — the trust bar needs `padding-top: 80px` to breathe from the hero. The first section after the hero (usually services) should have `padding-top: 20px` so the section label sits closer to the trust bar, not floating in empty space.
 
 ---
 
