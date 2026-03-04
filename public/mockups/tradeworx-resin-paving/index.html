@@ -1065,8 +1065,24 @@
             .hero-img-wrap img { height: 180px; }
 
             .trust-bar {
-                gap: 1rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
                 padding: 40px 1.5rem 20px;
+                justify-items: start;
+            }
+
+            .trust-icon { display: none; }
+
+            .trust-item {
+                font-size: 0.8rem;
+            }
+
+            .trust-item::before {
+                content: '\2713';
+                color: var(--accent);
+                font-weight: 700;
+                font-size: 0.85rem;
             }
 
             .services, .why-us, .gallery, .areas, .contact {
