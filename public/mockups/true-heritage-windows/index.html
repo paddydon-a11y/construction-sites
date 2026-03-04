@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>True Heritage Windows | Glasgow</title>
+<meta name="description" content="5-star rated sash and case window specialists in Glasgow. Restoration, draught proofing, double glazing upgrades, timber window repairs. Fully insured. Checkatrade approved. Free quotes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--card:#141414;--card-hover:#1a1a1a;--border:#1e1e1e;--border-light:#2a2a2a;--accent:#c9a050;--accent-hover:#b8903f;--accent-glow:rgba(201,160,80,0.15);--accent-light:#d4ad60;--green:#22c55e;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--heading:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--bg);color:var(--gray-400);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:52px}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:var(--white);line-height:1.15;font-weight:800;letter-spacing:-0.03em}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--heading);font-weight:900;font-size:1.15rem;color:var(--white)}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:0.8rem;font-weight:600;color:var(--gray-400);transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--accent);color:#000 !important;font-weight:700;font-size:0.8rem;padding:8px 18px;border-radius:8px;transition:all 0.2s}
+.nav-cta:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile svg{stroke:var(--white)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+  .nav-links.open{display:flex;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:200;overflow-y:auto}
+  .nav-links.open a{font-size:1.25rem}
+  .nav-links.open .nav-cta{font-size:1rem;padding:14px 32px}
+}
+
+/* HERO — NO IMAGE, LOGO RIGHT */
+.hero{position:relative;padding:140px 0 80px;overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--accent-glow),transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,160,80,0.08);border:1px solid rgba(201,160,80,0.18);border-radius:100px;padding:6px 16px;font-size:0.8rem;color:var(--accent-light);font-weight:600;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease forwards 0.3s}
+.hero-badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:dotPulse 2s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeScale{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+.hero h1{font-size:3.5rem;font-weight:900;letter-spacing:-0.04em;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease forwards 0.5s}
+.hero h1 .accent{background:linear-gradient(135deg,var(--accent),#e8c874);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.05rem;color:var(--gray-400);max-width:480px;line-height:1.75;margin-bottom:32px;opacity:0;animation:fadeUp 0.6s ease forwards 0.7s}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.6s ease forwards 0.9s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:0.95rem;padding:14px 28px;border-radius:10px;transition:all 0.2s;border:none;cursor:pointer}
+.btn-cta{background:var(--accent);color:#000}
+.btn-cta:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,160,80,0.25)}
+.btn-whatsapp{background:#25d366;color:#fff}
+.btn-whatsapp:hover{background:#1fb855;transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.25)}
+
+/* HERO LOGO DISPLAY */
+.hero-logo-wrap{display:flex;align-items:center;justify-content:center;opacity:0;animation:fadeScale 0.8s ease forwards 0.6s}
+.hero-logo-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-logo-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,var(--accent-glow),transparent 70%);pointer-events:none}
+.hero-logo-card img{max-width:280px;width:100%;height:auto;position:relative;z-index:1}
+.hero-logo-badge{position:absolute;bottom:16px;right:16px;background:rgba(10,10,10,0.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px;z-index:2}
+.hero-logo-badge svg{width:16px;height:16px;fill:#fbbf24}
+.hero-logo-badge span{font-size:0.75rem;font-weight:700;color:var(--white)}
+
+/* TRUST BAR */
+.trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card);padding:20px 0}
+.trust-items{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 40px}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--gray-300)}
+.trust-item svg{width:18px;height:18px;fill:none;stroke-width:2;flex-shrink:0;stroke:var(--accent)}
+
+/* SECTIONS */
+.section{padding:80px 0}
+.section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.section-title{font-size:2.25rem;letter-spacing:-0.02em;margin-bottom:12px}
+.section-desc{color:var(--gray-400);max-width:560px;font-size:0.95rem;line-height:1.7}
+.section-center{text-align:center}
+.section-center .section-desc{margin:0 auto}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;transition:border-color 0.3s,background 0.3s,box-shadow 0.3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover{border-color:var(--border-light);background:var(--card-hover);box-shadow:0 0 20px rgba(201,160,80,0.05)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:40px;height:40px;margin-bottom:14px}
+.service-icon svg{width:100%;height:100%}
+.service-card h3{font-size:0.95rem;font-weight:700;margin-bottom:6px}
+.service-card p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+
+/* CTA BAND */
+.cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,var(--accent-glow),transparent 70%);pointer-events:none}
+.cta-band>*{position:relative}
+.cta-band h2{font-size:2rem;margin-bottom:8px}
+.cta-band p{color:var(--gray-400);margin-bottom:24px;font-size:0.95rem}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:40px}
+.why-items{display:flex;flex-direction:column;gap:20px}
+.why-item{display:flex;gap:14px}
+.why-item-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-item-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2}
+.why-item h4{font-size:0.9rem;font-weight:700;margin-bottom:3px}
+.why-item p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+
+/* FEATURED REVIEW */
+.featured-review{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:720px;margin:40px auto 0;position:relative;overflow:hidden}
+.featured-review::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),#e8c874)}
+.featured-review .quote-mark{font-size:4rem;line-height:1;color:var(--accent);opacity:0.3;font-family:Georgia,serif;position:absolute;top:20px;left:28px}
+.featured-review-stars{display:flex;gap:2px;margin-bottom:16px}
+.featured-review-stars svg{width:20px;height:20px;fill:#fbbf24}
+.featured-review-text{font-size:1.05rem;color:var(--gray-300);line-height:1.8;font-style:italic;margin-bottom:20px;position:relative;z-index:1}
+.featured-review-author{display:flex;align-items:center;gap:12px}
+.featured-review-avatar{width:44px;height:44px;border-radius:50%;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:800;color:var(--accent);font-size:1rem;flex-shrink:0}
+.featured-review-name{font-weight:700;color:var(--white);font-size:0.9rem}
+.featured-review-role{font-size:0.8rem;color:var(--gray-500)}
+.google-badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:8px 16px;margin-top:8px}
+.google-badge svg{width:20px;height:20px}
+.google-badge .g-rating{font-weight:800;color:var(--white);font-size:0.95rem}
+.google-badge .g-stars{display:flex;gap:1px}
+.google-badge .g-stars svg{width:14px;height:14px;fill:#fbbf24}
+.google-badge .g-count{font-size:0.8rem;color:var(--gray-400)}
+
+/* AREAS */
+.areas-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+.area-tag{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:10px 20px;font-size:0.82rem;color:var(--gray-300);font-weight:600;transition:border-color 0.2s}
+.area-tag:hover{border-color:var(--accent)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-block h4{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-block a,.contact-block p{font-size:1.1rem;color:var(--white);font-weight:600}
+.contact-block a:hover{color:var(--accent)}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px}
+.contact-form label{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--white);font-family:var(--body);font-size:0.9rem;outline:none;transition:border-color 0.2s;margin-bottom:16px;-webkit-appearance:none}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--accent)}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-form select{cursor:pointer}
+.contact-form button{width:100%;padding:14px;border-radius:10px;font-size:0.95rem}
+
+/* FOOTER */
+.footer{padding:32px 0;text-align:center;border-top:1px solid var(--border)}
+.footer-logo{font-family:var(--heading);font-weight:900;font-size:1rem;color:var(--white);margin-bottom:6px}
+.footer-logo span{color:var(--accent)}
+.footer p{font-size:0.75rem;color:var(--gray-500)}
+.footer p a{color:var(--gray-500)}
+.footer p a:hover{color:var(--accent)}
+
+/* FLOATING BUTTONS */
+.floating-btns{position:fixed;bottom:20px;right:20px;z-index:90;display:flex;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.floating-btns.visible{opacity:1;pointer-events:auto}
+.floating-btns a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:transform 0.2s}
+.floating-btns a:hover{transform:scale(1.1);animation:none}
+.floating-btns .fab-call{background:var(--accent);animation:pulseCall 2s ease-in-out infinite}
+.floating-btns .fab-call svg{stroke:#000;fill:none}
+.floating-btns .fab-wa{background:#25d366;animation:pulseWa 2s ease-in-out infinite}
+.floating-btns svg{width:24px;height:24px}
+@keyframes pulseCall{0%{box-shadow:0 0 0 0 rgba(201,160,80,0.4)}70%{box-shadow:0 0 0 12px rgba(201,160,80,0)}100%{box-shadow:0 0 0 0 rgba(201,160,80,0)}}
+@keyframes pulseWa{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.revealed{opacity:1;transform:translateY(0)}
+.service-card:nth-child(1){transition-delay:0s}
+.service-card:nth-child(2){transition-delay:0.1s}
+.service-card:nth-child(3){transition-delay:0.2s}
+.service-card:nth-child(4){transition-delay:0.3s}
+.service-card:nth-child(5){transition-delay:0.4s}
+.service-card:nth-child(6){transition-delay:0.5s}
+.service-card:nth-child(7){transition-delay:0.6s}
+.service-card:nth-child(8){transition-delay:0.7s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h1{font-size:2.5rem}
+  .hero-sub{margin:0 auto 28px}
+  .hero-btns{justify-content:center}
+  .hero-logo-wrap{max-width:360px;margin:0 auto}
+  .why-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .hero{padding:120px 0 60px;min-height:auto}
+  .hero h1{font-size:2rem}
+  .services-grid{grid-template-columns:1fr}
+  .section{padding:60px 0}
+  .cta-band{padding:40px 0}
+  .cta-band h2{font-size:1.5rem}
+  .section-title{font-size:1.75rem}
+  .featured-review{padding:28px}
+  .featured-review-text{font-size:0.95rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">True Heritage <span>Windows</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:07507736781" class="nav-cta">Call Liam</a>
+    </div>
+    <button class="nav-mobile" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="dot"></span> Checkatrade Approved</div>
+        <h1>Glasgow's <span class="accent">Sash &amp; Case Window</span> Specialists</h1>
+        <p class="hero-sub">Expert restoration and repair of traditional wooden sash and case windows across Glasgow. Preserving the character of your property while improving warmth, security and performance.</p>
+        <div class="hero-btns">
+          <a href="tel:07507736781" class="btn btn-cta">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.66 2.35a2 2 0 0 1-.45 2.11L8.09 11.3a16 16 0 0 0 6.6 6.6l2.12-2.12a2 2 0 0 1 2.11-.45c.75.3 1.54.53 2.35.66A2 2 0 0 1 22 16.92Z"/></svg>
+            07507 736 781
+          </a>
+          <a href="https://wa.me/447507736781?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            WhatsApp Liam
+          </a>
+        </div>
+      </div>
+      <div class="hero-logo-wrap">
+        <div class="hero-logo-card">
+          <img src="/mockups/true-heritage-windows/logo.webp" alt="True Heritage Windows logo">
+          <div class="hero-logo-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>5.0 on Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        Checkatrade Approved
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        Free Quotes
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#fbbf24" stroke="#fbbf24"/></svg>
+        5-Star Rated
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Heritage Specialists
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Our Services</div>
+      <div class="section-title">Sash Window Specialists</div>
+      <div class="section-desc">Expert care for Glasgow's traditional windows. We restore, repair and upgrade sash and case windows to the highest standard — preserving heritage while improving performance.</div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg></div>
+        <h3>Sash &amp; Case Window Restoration</h3>
+        <p>Full restoration of traditional wooden sash and case windows. Returning your windows to their original glory while dramatically improving performance.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Draught Proofing</h3>
+        <p>Eliminate cold draughts with discreet brush-pile draught seals fitted into your existing sash windows. Dramatically warmer rooms without losing character.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 12h20"/></svg></div>
+        <h3>Double Glazing Upgrades</h3>
+        <p>Retrofit slim-profile double glazing into your original sash frames. All the energy efficiency benefits of modern glass without replacing your heritage windows.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Sash Window Repair</h3>
+        <p>Rotten timber, broken cords, stuck sashes, damaged glazing bars — we repair rather than replace wherever possible, saving you money and preserving originals.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3>Sash Cord &amp; Weight Replacement</h3>
+        <p>Broken sash cords and missing weights are the most common sash window problem. We replace cords and balance weights so your windows glide smoothly again.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M2 12h6l3-9 3 18 3-9h5"/></svg></div>
+        <h3>Window Painting &amp; Finishing</h3>
+        <p>Professional preparation, priming and painting of all timber windows. Quality paints that protect your windows from the Scottish weather for years to come.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h3>Timber Window Installation</h3>
+        <p>New bespoke timber sash and case windows crafted to match the original style of your property. Perfect for replacements where restoration isn't viable.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Emergency Window Repairs</h3>
+        <p>Broken glass, jammed windows, security concerns — we respond quickly to make your windows safe and secure. Fast, reliable emergency service across Glasgow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container reveal">
+    <h2>Need Your Sash Windows Restored?</h2>
+    <p>Call Liam for a free, no-obligation assessment. Expert advice on the best approach for your windows.</p>
+    <div class="cta-btns">
+      <a href="tel:07507736781" class="btn btn-cta">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.66 2.35a2 2 0 0 1-.45 2.11L8.09 11.3a16 16 0 0 0 6.6 6.6l2.12-2.12a2 2 0 0 1 2.11-.45c.75.3 1.54.53 2.35.66A2 2 0 0 1 22 16.92Z"/></svg>
+        07507 736 781
+      </a>
+      <a href="https://wa.me/447507736781?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        WhatsApp Liam
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Why Choose Us</div>
+      <div class="section-title">Why Glasgow Trusts Liam</div>
+    </div>
+    <div class="why-grid">
+      <div class="why-items">
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div>
+            <h4>Heritage Window Experts</h4>
+            <p>We specialise exclusively in traditional sash and case windows. This focused expertise means higher quality restorations than general joiners or window fitters can deliver.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div>
+          <div>
+            <h4>Restore, Don't Replace</h4>
+            <p>We always aim to repair and restore your original windows rather than replace them. It's better for your property's character, better for the environment, and better for your wallet.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <h4>Checkatrade Approved</h4>
+            <p>Vetted, reviewed and approved on Checkatrade. Fully insured with public liability coverage on every job. Your property is always protected.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div>
+            <h4>Friendly &amp; Attentive</h4>
+            <p>From initial contact to completion, Liam and the team are friendly, communicative and always attentive to your concerns. We take pride in every project.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-items">
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div>
+            <h4>Speedy Completion</h4>
+            <p>We understand the disruption window work can cause. That's why we work efficiently to complete every project as quickly as possible without compromising quality.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div>
+            <h4>Tenement Flat Specialists</h4>
+            <p>Glasgow's tenement buildings are what we know best. We understand the unique challenges of working on traditional tenement sash and case windows.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <div>
+            <h4>Highest Standards</h4>
+            <p>Every restoration is carried out to the highest standard with quality materials and traditional techniques. We aim for results that last decades, not just years.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-center reveal">
+      <div class="section-label">Customer Reviews</div>
+      <div class="section-title">What Our Customers Say</div>
+      <div class="google-badge">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span class="g-rating">5.0</span>
+        <span class="g-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </span>
+        <span class="g-count">on Google</span>
+      </div>
+    </div>
+    <div class="featured-review reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <div class="featured-review-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="featured-review-text">"True Heritage Windows did an amazing job at renovating the wooden sash and case windows on our southside tenement flat. From the initial point of contact to the speedy completion of the job, Liam and his team were friendly, attentive, and carried out the restoration to the highest standard. Would highly recommend."</p>
+      <div class="featured-review-author">
+        <div class="featured-review-avatar">C</div>
+        <div>
+          <div class="featured-review-name">Colin Hynd</div>
+          <div class="featured-review-role">Google Review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section" id="areas">
+  <div class="container">
+    <div class="section-center reveal">
+      <div class="section-label">Coverage Area</div>
+      <div class="section-title">Areas We Serve</div>
+      <div class="section-desc">Based in Glasgow, we cover the whole city and surrounding areas across central Scotland.</div>
+    </div>
+    <div class="areas-tags reveal">
+      <span class="area-tag">Glasgow Southside</span>
+      <span class="area-tag">Glasgow West End</span>
+      <span class="area-tag">Glasgow City Centre</span>
+      <span class="area-tag">Shawlands</span>
+      <span class="area-tag">Pollokshields</span>
+      <span class="area-tag">Langside</span>
+      <span class="area-tag">Cathcart</span>
+      <span class="area-tag">Mount Florida</span>
+      <span class="area-tag">King's Park</span>
+      <span class="area-tag">Giffnock</span>
+      <span class="area-tag">Newton Mearns</span>
+      <span class="area-tag">Bearsden</span>
+      <span class="area-tag">Partick</span>
+      <span class="area-tag">Hillhead</span>
+      <span class="area-tag">Hyndland</span>
+      <span class="area-tag">Dennistoun</span>
+      <span class="area-tag">Paisley</span>
+      <span class="area-tag">East Kilbride</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Get In Touch</div>
+      <div class="section-title">Request a Free Quote</div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-block">
+          <h4>Phone</h4>
+          <a href="tel:07507736781">07507 736 781</a>
+        </div>
+        <div class="contact-block">
+          <h4>Location</h4>
+          <p>Glasgow G53 7HN</p>
+        </div>
+        <div class="contact-block">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/447507736781?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" target="_blank" rel="noopener">Message Liam on WhatsApp</a>
+        </div>
+      </div>
+      <form class="contact-form reveal" action="" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email (optional)">
+        <label for="service">Service Needed</label>
+        <select id="service" name="service">
+          <option value="">Select a service...</option>
+          <option>Sash & Case Window Restoration</option>
+          <option>Draught Proofing</option>
+          <option>Double Glazing Upgrades</option>
+          <option>Sash Window Repair</option>
+          <option>Sash Cord & Weight Replacement</option>
+          <option>Window Painting & Finishing</option>
+          <option>Timber Window Installation</option>
+          <option>Emergency Window Repairs</option>
+          <option>Other</option>
+        </select>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your windows..."></textarea>
+        <button type="submit" class="btn btn-cta">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">True Heritage <span>Windows</span></div>
+    <p>&copy; 2025 True Heritage Windows Ltd. All rights reserved.</p>
+    <p style="margin-top:4px">Site by <a href="https://construction-sites.co.uk" target="_blank" rel="noopener">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-btns" id="floatingBtns">
+  <a href="tel:07507736781" class="fab-call" aria-label="Call Liam">
+    <svg fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.66 2.35a2 2 0 0 1-.45 2.11L8.09 11.3a16 16 0 0 0 6.6 6.6l2.12-2.12a2 2 0 0 1 2.11-.45c.75.3 1.54.53 2.35.66A2 2 0 0 1 22 16.92Z"/></svg>
+  </a>
+  <a href="https://wa.me/447507736781?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp Liam">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </a>
+</div>
+
+<script>
+// Floating buttons show on scroll
+window.addEventListener('scroll',function(){
+  var btns=document.getElementById('floatingBtns');
+  if(window.scrollY>300){btns.classList.add('visible')}else{btns.classList.remove('visible')}
+});
+
+// Scroll reveal
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){entry.target.classList.add('revealed');observer.unobserve(entry.target)}
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+
+// Mobile nav close on link click
+document.querySelectorAll('.nav-links a').forEach(function(link){
+  link.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open')});
+});
+</script>
+</body>
+</html>
