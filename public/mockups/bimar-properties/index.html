@@ -898,6 +898,7 @@
       }
     }
     heroHeading.innerHTML=result;
+    heroHeading.style.visibility='visible';
     setTimeout(function(){ var hw=heroHeading.querySelectorAll('.hero-word'); for(var h=0;h<hw.length;h++) hw[h].classList.add('revealed'); },200);
   }
 
