@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOAS Group Electrical | Canterbury</title>
+<meta name="description" content="5-star rated electrician serving Canterbury. EICR testing, rewiring, lighting installation, fault finding. NAPIT approved. Free quotes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #1a1508;
+  --card: #221c0e;
+  --card-hover: #2a2212;
+  --border: #332a16;
+  --border-light: #3d3220;
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-glow: rgba(245, 158, 11, 0.15);
+  --green: #22c55e;
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --heading: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Inter', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--gray-300);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 80px;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ── NAV ─────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(26, 21, 8, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  font-family: var(--heading);
+  font-weight: 800; font-size: 1.4rem;
+  color: var(--white);
+  letter-spacing: -0.03em;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-weight: 500; font-size: 0.95rem;
+  color: var(--gray-400);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a.nav-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent); color: #000 !important;
+  font-weight: 700; font-size: 0.95rem;
+  padding: 0.55rem 1.3rem;
+  border-radius: 50px;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-links a.nav-cta:hover { background: var(--accent-hover); transform: scale(1.03); }
+.nav-links a.nav-cta svg { width: 18px; height: 18px; }
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 140px 24px 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-glow), transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  position: relative; z-index: 2;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  opacity: 0; animation: fadeUp 0.6s ease forwards 0.3s;
+}
+.hero-badge .dot {
+  width: 8px; height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+.hero h1 {
+  font-family: var(--heading);
+  font-weight: 900; font-size: 3.5rem;
+  line-height: 1.08;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  opacity: 0; animation: fadeUp 0.6s ease forwards 0.5s;
+}
+.hero h1 .accent {
+  background: linear-gradient(135deg, var(--accent), #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--gray-400);
+  margin-bottom: 2rem;
+  max-width: 480px;
+  opacity: 0; animation: fadeUp 0.6s ease forwards 0.7s;
+}
+.hero-btns {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.6s ease forwards 0.9s;
+}
+.btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.05rem; padding: 14px 28px; border-radius: 50px; transition: all 0.2s; cursor: pointer; border: none; font-family: var(--body); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.btn-accent { background: var(--accent); color: #000; box-shadow: 0 0 30px rgba(245,158,11,0.2); }
+.btn-accent:hover { background: var(--accent-hover); box-shadow: 0 0 40px rgba(245,158,11,0.3); }
+.btn-wa { background: var(--green); color: #fff; }
+.btn-wa:hover { opacity: 0.9; }
+.btn svg { width: 20px; height: 20px; }
+.hero-images {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  opacity: 0; animation: fadeScale 0.8s ease forwards 0.6s;
+}
+.hero-img-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.hero-img-wrap img { width: 100%; height: 220px; object-fit: cover; }
+.hero-img-wrap:first-child { grid-row: span 2; }
+.hero-img-wrap:first-child img { height: 100%; }
+.hero-image-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(26, 21, 8, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 700; color: var(--white);
+}
+.hero-image-badge .stars { display: flex; gap: 2px; }
+.hero-image-badge .stars svg { width: 14px; height: 14px; color: #f59e0b; fill: #f59e0b; }
+
+/* ── TRUST BAR ───────────────────────────────────────── */
+.trust-bar {
+  width: 100%; max-width: 1200px;
+  padding: 80px 0 0;
+  position: relative; z-index: 2;
+}
+.trust-bar-inner {
+  display: flex; align-items: center; justify-content: center;
+  gap: 2.5rem; flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 8px;
+  font-weight: 600; font-size: 0.9rem;
+  color: var(--gray-400);
+}
+.trust-item svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
+.trust-item .stars { display: flex; gap: 2px; }
+.trust-item .stars svg { width: 16px; height: 16px; color: #f59e0b; fill: #f59e0b; }
+
+/* ── SECTIONS ────────────────────────────────────────── */
+.section-label {
+  display: block;
+  font-size: 0.7rem; font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--heading);
+  font-weight: 800; font-size: 2.4rem;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.section-desc {
+  color: var(--gray-400);
+  font-size: 1.05rem;
+  max-width: 550px;
+  margin-bottom: 40px;
+}
+
+/* ── SERVICES ────────────────────────────────────────── */
+.services { padding: 20px 24px 80px; }
+.services-inner { max-width: 1200px; margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.service-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover {
+  border-color: var(--border-light);
+  background: var(--card-hover);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.05);
+  transform: translateY(-4px);
+}
+.service-icon {
+  width: 44px; height: 44px;
+  background: rgba(245, 158, 11, 0.08);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+.service-icon svg { width: 22px; height: 22px; }
+.service-card h3 {
+  font-family: var(--heading);
+  font-weight: 700; font-size: 1.1rem;
+  color: var(--white);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.service-card p { color: var(--gray-400); font-size: 0.9rem; line-height: 1.6; }
+.service-card:nth-child(1) { transition-delay: 0s; }
+.service-card:nth-child(2) { transition-delay: 0.1s; }
+.service-card:nth-child(3) { transition-delay: 0.15s; }
+.service-card:nth-child(4) { transition-delay: 0.2s; }
+.service-card:nth-child(5) { transition-delay: 0.25s; }
+.service-card:nth-child(6) { transition-delay: 0.3s; }
+.service-card:nth-child(7) { transition-delay: 0.35s; }
+.service-card:nth-child(8) { transition-delay: 0.4s; }
+.service-card:nth-child(9) { transition-delay: 0.45s; }
+
+/* ── CTA BAND ────────────────────────────────────────── */
+.cta-band {
+  padding: 60px 24px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.cta-band-inner { max-width: 700px; margin: 0 auto; }
+.cta-band h2 {
+  font-family: var(--heading);
+  font-weight: 800; font-size: 2rem;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.cta-band p { color: var(--gray-400); font-size: 1.05rem; margin-bottom: 24px; }
+.cta-band-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ── WHY US ──────────────────────────────────────────── */
+.why-us { padding: 80px 24px; }
+.why-us-inner { max-width: 1200px; margin: 0 auto; }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+.why-card {
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+.why-card:hover { border-color: var(--border-light); transform: translateY(-4px); }
+.why-icon {
+  width: 56px; height: 56px;
+  margin: 0 auto 16px;
+  background: rgba(245, 158, 11, 0.08);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+}
+.why-icon svg { width: 24px; height: 24px; }
+.why-card h3 {
+  font-family: var(--heading);
+  font-weight: 700; font-size: 1.05rem;
+  color: var(--white);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.why-card p { font-size: 0.88rem; color: var(--gray-400); line-height: 1.6; }
+
+/* ── REVIEWS ─────────────────────────────────────────── */
+.reviews { padding: 80px 24px; background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.reviews-inner { max-width: 1200px; margin: 0 auto; }
+.reviews-header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+.google-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 8px 16px;
+  font-size: 0.9rem; font-weight: 600;
+  color: var(--gray-300);
+}
+.google-badge .rating { font-weight: 800; color: var(--white); font-size: 1rem; }
+.google-badge .stars { display: flex; gap: 2px; }
+.google-badge .stars svg { width: 16px; height: 16px; fill: #f59e0b; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.review-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s;
+}
+.review-card:hover { border-color: var(--border-light); transform: translateY(-2px); }
+.review-stars { display: flex; gap: 3px; margin-bottom: 12px; }
+.review-stars svg { width: 16px; height: 16px; fill: #f59e0b; }
+.review-quote { font-size: 0.95rem; color: var(--gray-300); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author-row { display: flex; align-items: center; gap: 10px; }
+.review-avatar {
+  width: 36px; height: 36px;
+  background: rgba(245, 158, 11, 0.12);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem; color: var(--accent);
+}
+.review-author { font-weight: 700; font-size: 0.9rem; color: var(--white); }
+.review-source { font-size: 0.8rem; color: var(--gray-500); }
+
+/* ── GALLERY ─────────────────────────────────────────── */
+.gallery { padding: 80px 24px; }
+.gallery-inner { max-width: 1200px; margin: 0 auto; }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.gallery-item:hover { transform: scale(1.03); }
+.gallery-item img { width: 100%; height: 200px; object-fit: cover; }
+
+/* ── AREAS ───────────────────────────────────────────── */
+.areas { padding: 80px 24px; background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.areas-inner { max-width: 1200px; margin: 0 auto; }
+.areas-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.area-tag {
+  padding: 8px 18px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.9rem; font-weight: 500;
+  color: var(--gray-300);
+  transition: all 0.2s;
+}
+.area-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── CONTACT ─────────────────────────────────────────── */
+.contact { padding: 80px 24px; }
+.contact-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+}
+.contact-info h2 {
+  font-family: var(--heading);
+  font-weight: 800; font-size: 2.2rem;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.contact-info p { color: var(--gray-400); font-size: 1.05rem; margin-bottom: 24px; max-width: 440px; }
+.contact-phone { font-family: var(--heading); font-weight: 800; font-size: 2.4rem; margin-bottom: 20px; }
+.contact-phone a { color: var(--white); transition: color 0.2s; }
+.contact-phone a:hover { color: var(--accent); }
+.contact-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+.contact-detail { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: var(--gray-400); margin-bottom: 10px; }
+.contact-detail svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; }
+.contact-detail a { color: var(--accent); transition: opacity 0.2s; }
+.contact-detail a:hover { opacity: 0.8; }
+.contact-logo { margin-top: 32px; width: 120px; border-radius: 12px; border: 1px solid var(--border); }
+.contact-form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+}
+.contact-form-card h3 {
+  font-family: var(--heading);
+  font-weight: 700; font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+.form-label {
+  display: block;
+  font-size: 0.7rem; font-weight: 600;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--gray-200);
+  font-family: var(--body);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--accent); }
+.form-select { cursor: pointer; }
+.form-textarea { min-height: 90px; resize: vertical; }
+.btn-submit {
+  width: 100%;
+  background: var(--accent); color: #000;
+  font-weight: 700; font-size: 1rem;
+  padding: 14px;
+  border: none; border-radius: 50px;
+  cursor: pointer;
+  font-family: var(--body);
+  transition: all 0.2s;
+}
+.btn-submit:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+.footer {
+  background: #120f06;
+  border-top: 1px solid var(--border);
+  padding: 40px 24px 20px;
+  text-align: center;
+}
+.footer-logo {
+  font-family: var(--heading);
+  font-weight: 800; font-size: 1.3rem;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.footer-logo span { color: var(--accent); }
+.footer p { font-size: 0.85rem; color: var(--gray-500); }
+.footer a { color: var(--accent); transition: opacity 0.2s; }
+.footer a:hover { opacity: 0.8; }
+.footer-copy { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+/* ── FLOATING FABS ───────────────────────────────────── */
+.fab-container {
+  position: fixed; bottom: 16px; right: 16px; z-index: 200;
+  display: flex; flex-direction: column; gap: 12px;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+.fab-container.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.fab {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+.fab:hover { transform: scale(1.1); animation: none; }
+.fab svg { width: 22px; height: 22px; }
+.fab-call { background: var(--accent); color: #000; animation: pulse-ring 2s ease-in-out infinite; }
+.fab-wa { background: var(--green); color: #fff; animation: pulse-ring-wa 2s ease-in-out infinite; }
+
+/* ── LIGHTBOX ────────────────────────────────────────── */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 300;
+  background: rgba(0,0,0,0.92);
+  align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 12px; object-fit: contain; }
+.lightbox-close {
+  position: absolute; top: 20px; right: 20px;
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.1);
+  border: none; border-radius: 50%;
+  color: #fff; font-size: 1.5rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── ANIMATIONS ──────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+@keyframes pulse-ring-wa {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-images { max-width: 500px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+  .hero { padding: 120px 24px 0; min-height: auto; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero-sub { font-size: 1rem; }
+  .hero-images { display: flex; gap: 12px; }
+  .hero-img-wrap { flex: 1; min-width: 0; }
+  .hero-img-wrap:first-child { grid-row: auto; }
+  .hero-img-wrap:first-child img { height: 200px; }
+  .hero-img-wrap:last-child img { height: 200px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .section-title { font-size: 2rem; }
+  .contact-phone { font-size: 1.8rem; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .cta-band h2 { font-size: 1.6rem; }
+}
+@media (max-width: 480px) {
+  .nav-inner { height: 64px; }
+  .nav-logo { font-size: 1.1rem; max-width: 55%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .nav-links a.nav-cta span { display: none; }
+  .nav-links a.nav-cta { padding: 0.5rem 0.7rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns a { text-align: center; justify-content: center; font-size: 1rem; padding: 12px 20px; }
+  .why-grid { grid-template-columns: 1fr; }
+  .trust-bar-inner { gap: 1.2rem; }
+  .trust-item { font-size: 0.8rem; }
+  .contact-btns { flex-direction: column; }
+  .contact-btns a { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">MOAS <span>Group</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+447384397487" class="nav-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>07384 397 487</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        NAPIT Approved Contractor
+      </div>
+      <h1>Trusted <span class="accent">Electrician</span> in Canterbury</h1>
+      <p class="hero-sub">Exceptional electrical and property maintenance services. Unwavering attention to detail and commitment to quality. Call Marcus for a free quote.</p>
+      <div class="hero-btns">
+        <a href="tel:+447384397487" class="btn btn-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Marcus
+        </a>
+        <a href="https://wa.me/447384397487?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Marcus
+        </a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-img-wrap">
+        <img src="/mockups/moas-electrical/photo-2.jpg" alt="MOAS Group branded van">
+        <div class="hero-image-badge">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          5.0
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="/mockups/moas-electrical/photo-5.jpg" alt="Downlights installation by MOAS Group">
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        5.0 on Google (33 Reviews)
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        NAPIT Approved
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Part P Certified
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        Free Quotes
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ───────────────────────────────────────── -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-label reveal">What We Do</div>
+    <h2 class="section-title reveal">Our Electrical Services</h2>
+    <p class="section-desc reveal">Professional electrical and property maintenance services for homes and businesses across Canterbury and Kent.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>EICR Testing &amp; Inspection</h3>
+        <p>Electrical safety certificates for homeowners, landlords, and businesses. Thorough inspections with prompt certification.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+        <h3>Lighting Design &amp; Installation</h3>
+        <p>Interior and exterior lighting, downlights, LED upgrades, ceiling fans, and smart lighting solutions.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Fault Finding &amp; Repairs</h3>
+        <p>Expert diagnosis and repair of electrical faults. Tripping fuses, flickering lights, and power issues resolved fast.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>CCTV &amp; Security Cameras</h3>
+        <p>Floodlight camera installations, security lighting, and outdoor camera systems for homes and businesses.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg></div>
+        <h3>Fuse Board Upgrades</h3>
+        <p>Modern consumer unit replacements for improved safety and compliance with current regulations.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Rewiring &amp; Upgrades</h3>
+        <p>Complete house rewiring, socket replacements, and additional circuits to the latest standards.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <h3>Appliance Installation</h3>
+        <p>Cooker, hob, and oven connections. Electric shower installations and appliance wiring.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <h3>Emergency Callouts</h3>
+        <p>Rapid response electrical emergencies. Available evenings and weekends when you need us most.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Property Maintenance</h3>
+        <p>General electrical maintenance for landlords and property managers. Scheduled and reactive callouts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ──────────────────────────────────────── -->
+<section class="cta-band reveal">
+  <div class="cta-band-inner">
+    <h2>Need an Electrician in Canterbury?</h2>
+    <p>NAPIT approved with 33 five-star Google reviews. Call Marcus for a free, no-obligation quote.</p>
+    <div class="cta-band-btns">
+      <a href="tel:+447384397487" class="btn btn-accent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Now
+      </a>
+      <a href="https://wa.me/447384397487?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Marcus
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ─────────────────────────────────────────── -->
+<section class="why-us" id="why-us">
+  <div class="why-us-inner">
+    <div class="section-label reveal">Why Choose Us</div>
+    <h2 class="section-title reveal">The MOAS Group Difference</h2>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Rapid Response</h3>
+        <p>Quick turnaround on quotes and same-day emergency service. Marcus arrived within 20 minutes for one customer.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>NAPIT Approved</h3>
+        <p>Fully certified and Part P compliant. Every job carried out to the highest safety standards.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Attention to Detail</h3>
+        <p>Every stage explained clearly. Professional, tidy work with thorough testing on completion.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Fair &amp; Transparent</h3>
+        <p>Honest, upfront pricing with no hidden fees. Reasonable rates that customers consistently praise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ────────────────────────────────────────── -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="section-label reveal">What Our Customers Say</div>
+    <div class="reviews-header reveal">
+      <h2 class="section-title" style="margin-bottom:0">Trusted Across Canterbury</h2>
+      <div class="google-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span class="rating">5.0</span>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        33 reviews
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="review-quote">"Marcus came to us to fit a new ceiling fan and was really friendly and knowledgeable about his work. I will definitely be booking him again for some other jobs I have that need doing. He did a fantastic job."</p>
+        <div class="review-author-row"><div class="review-avatar">S</div><div><div class="review-author">Saffy Skye</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="review-quote">"Marcus is very communicative, polite and professional. We had a few things that needed doing and he has done a perfect job which he managed to do very quickly for us. We will definitely be using him again!"</p>
+        <div class="review-author-row"><div class="review-avatar">C</div><div><div class="review-author">Chantel Napier</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="review-quote">"Marcus was prompt to order the necessary part, meaning I didn't have to wait long to have my oven/hob up and running. Great communication, punctual &amp; professional. Would highly recommend."</p>
+        <div class="review-author-row"><div class="review-avatar">L</div><div><div class="review-author">Louise Mouser</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="review-quote">"One of the fuse kept blowing. I called MOAS GROUP late evening, they arrived within 20 minutes and diagnosed the fault to a faulty socket very quickly which they changed."</p>
+        <div class="review-author-row"><div class="review-avatar">F</div><div><div class="review-author">France Dufour</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="review-quote">"Marcus arrived promptly, did an assessment of work, explained to me, got the parts and fitted them on time, all the time with professional attitude and courteous nature. Good job Marcus!"</p>
+        <div class="review-author-row"><div class="review-avatar">R</div><div><div class="review-author">Ramen Das</div><div class="review-source">Google Review</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="review-quote">"From first contact with MOAS to paying the bill, I found the quality of customer service/care and work done/completed was excellent. The gent I dealt with was respectful and polite."</p>
+        <div class="review-author-row"><div class="review-avatar">L</div><div><div class="review-author">Linda Ellen</div><div class="review-source">Google Review</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ────────────────────────────────────────── -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="section-label reveal">Our Work</div>
+    <h2 class="section-title reveal">Recent Projects</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/moas-electrical/photo-1.jpg')">
+        <img src="/mockups/moas-electrical/photo-1.jpg" alt="External lighting installation">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/moas-electrical/photo-6.jpg')">
+        <img src="/mockups/moas-electrical/photo-6.jpg" alt="Downlights in new room">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/moas-electrical/photo-4.jpg')">
+        <img src="/mockups/moas-electrical/photo-4.jpg" alt="External weatherproof socket">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/moas-electrical/photo-9.jpg')">
+        <img src="/mockups/moas-electrical/photo-9.jpg" alt="Outbuilding electrical installation">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/moas-electrical/photo-7.jpg')">
+        <img src="/mockups/moas-electrical/photo-7.jpg" alt="Floodlight installation">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/moas-electrical/photo-3.jpg')">
+        <img src="/mockups/moas-electrical/photo-3.jpg" alt="Exterior wall light">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/moas-electrical/photo-8.jpg')">
+        <img src="/mockups/moas-electrical/photo-8.jpg" alt="EV charger wiring">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AREAS ──────────────────────────────────────────── -->
+<section class="areas">
+  <div class="areas-inner">
+    <div class="section-label reveal">Areas We Cover</div>
+    <h2 class="section-title reveal">Serving Canterbury &amp; Across Kent</h2>
+    <div class="areas-tags reveal">
+      <span class="area-tag">Canterbury</span>
+      <span class="area-tag">Whitstable</span>
+      <span class="area-tag">Herne Bay</span>
+      <span class="area-tag">Faversham</span>
+      <span class="area-tag">Ashford</span>
+      <span class="area-tag">Folkestone</span>
+      <span class="area-tag">Dover</span>
+      <span class="area-tag">Deal</span>
+      <span class="area-tag">Margate</span>
+      <span class="area-tag">Ramsgate</span>
+      <span class="area-tag">Broadstairs</span>
+      <span class="area-tag">Sandwich</span>
+      <span class="area-tag">Sturry</span>
+      <span class="area-tag">Bridge</span>
+      <span class="area-tag">Chartham</span>
+      <span class="area-tag">Wingham</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <div class="section-label">Get In Touch</div>
+      <h2>Ready to Get Started?</h2>
+      <p>Call Marcus directly for a free, no-obligation quote. Fast response guaranteed.</p>
+      <div class="contact-phone"><a href="tel:+447384397487">07384 397 487</a></div>
+      <div class="contact-btns">
+        <a href="tel:+447384397487" class="btn btn-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Marcus
+        </a>
+        <a href="https://wa.me/447384397487?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Marcus
+        </a>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:Info@moasgroup.co.uk">Info@moasgroup.co.uk</a>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Canterbury, Kent CT1 1LD
+      </div>
+      <img src="/mockups/moas-electrical/logo.jpg" alt="MOAS Group Limited logo" class="contact-logo">
+    </div>
+    <div class="contact-form-card reveal">
+      <h3>Request a Free Quote</h3>
+      <form onsubmit="return false;">
+        <label class="form-label" for="name">Your Name</label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="Your full name" required>
+        <label class="form-label" for="phone">Phone Number</label>
+        <input class="form-input" type="tel" id="phone" name="phone" placeholder="07xxx xxx xxx" required>
+        <label class="form-label" for="email">Email (Optional)</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com">
+        <label class="form-label" for="service">Service Needed</label>
+        <select class="form-select" id="service" name="service">
+          <option value="">Select a service...</option>
+          <option>EICR Testing &amp; Inspection</option>
+          <option>Lighting Design &amp; Installation</option>
+          <option>Fault Finding &amp; Repairs</option>
+          <option>CCTV &amp; Security Cameras</option>
+          <option>Fuse Board Upgrade</option>
+          <option>Rewiring &amp; Upgrades</option>
+          <option>Appliance Installation</option>
+          <option>Emergency Callout</option>
+          <option>Property Maintenance</option>
+          <option>Other</option>
+        </select>
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Tell us briefly what you need..."></textarea>
+        <button type="submit" class="btn-submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-logo">MOAS <span>Group Electrical</span></div>
+  <p>NAPIT approved electrician serving Canterbury, Kent &amp; surrounding areas.</p>
+  <div class="footer-copy">
+    <p>&copy; 2026 MOAS Group Electrical. All rights reserved. Site by <a href="https://construction-sites.co.uk">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- ── FLOATING FABS ──────────────────────────────────── -->
+<div class="fab-container">
+  <a href="tel:+447384397487" class="fab fab-call" aria-label="Call MOAS Group">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/447384397487?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab fab-wa" target="_blank" aria-label="WhatsApp MOAS Group">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- ── LIGHTBOX ────────────────────────────────────────── -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="Full size photo">
+</div>
+
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+})();
+
+(function() {
+  var fabContainer = document.querySelector('.fab-container');
+  var heroButtons = document.querySelector('.hero-btns');
+  if (!fabContainer || !heroButtons) return;
+  window.addEventListener('scroll', function() {
+    if (heroButtons.getBoundingClientRect().bottom < 0) {
+      fabContainer.classList.add('visible');
+    } else {
+      fabContainer.classList.remove('visible');
+    }
+  }, { passive: true });
+})();
+
+function openLightbox(src) {
+  var lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  lb.classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+</script>
+</body>
+</html>
