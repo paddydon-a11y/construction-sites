@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redleaf Heating | Wigan</title>
+<meta name="description" content="5-star rated plumber & heating engineer serving Wigan. Boiler installation, repairs, heat pumps, central heating. Gas Safe registered. Free quotes.">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #ffffff;
+  --card: #f8fafc;
+  --card-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --border-light: #cbd5e1;
+  --accent: #c62828;
+  --accent-hover: #b71c1c;
+  --accent-glow: rgba(198, 40, 40, 0.10);
+  --accent-rgb: 198, 40, 40;
+  --green: #22c55e;
+  --white: #1e293b;
+  --gray-50: #1e293b;
+  --gray-100: #334155;
+  --gray-200: #475569;
+  --gray-300: #64748b;
+  --gray-400: #64748b;
+  --gray-500: #94a3b8;
+  --heading: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: #475569;
+  line-height: 1.7;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+}
+
+h1, h2, h3, h4, h5 { color: #1e293b; }
+
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; height: 64px;
+}
+.nav-logo {
+  font-family: var(--heading); font-size: 1.25rem; font-weight: 800;
+  color: #1e293b; text-decoration: none; letter-spacing: -0.03em;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.875rem; font-weight: 500; color: #64748b;
+  text-decoration: none; transition: color 0.2s ease;
+}
+.nav-links a:hover { color: #1e293b; }
+.nav-links a.nav-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: #fff !important;
+  font-weight: 700; font-size: 0.85rem; padding: 8px 18px;
+  border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.2s;
+}
+.nav-links a.nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+.hero {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 90vh; padding: 140px 24px 0; position: relative;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-glow), transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  width: 100%; max-width: 1200px; position: relative; z-index: 1;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 50px;
+  padding: 6px 16px 6px 12px; font-size: 0.75rem; font-weight: 600; color: #64748b;
+  letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px;
+  opacity: 0; animation: fadeUp 0.6s ease forwards 0.3s;
+}
+.hero-badge .dot {
+  width: 8px; height: 8px; background: var(--green); border-radius: 50%;
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+.hero h1 {
+  font-family: var(--heading); font-size: 3.5rem; font-weight: 900; color: #1e293b;
+  line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 18px;
+  opacity: 0; animation: fadeUp 0.6s ease forwards 0.5s;
+}
+.hero h1 .accent {
+  background: linear-gradient(135deg, var(--accent), #e53935);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub {
+  font-size: 1.1rem; color: #64748b; max-width: 480px; margin-bottom: 28px;
+  opacity: 0; animation: fadeUp 0.6s ease forwards 0.7s;
+}
+.hero-btns {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.6s ease forwards 0.9s;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+  border-radius: 10px; font-weight: 700; font-size: 0.95rem; text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-wa { background: var(--green); color: #fff; }
+.btn-wa:hover { background: #1db954; }
+
+.hero-images {
+  display: flex; gap: 16px;
+  opacity: 0; animation: fadeScale 0.8s ease forwards 0.6s;
+}
+.hero-img-wrap {
+  flex: 1; min-width: 0; position: relative; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.hero-img-wrap img { width: 100%; height: 320px; object-fit: cover; display: block; }
+.hero-image-badge {
+  position: absolute; top: 12px; right: 12px;
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
+  border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px;
+  display: flex; align-items: center; gap: 6px; z-index: 2;
+  font-size: 0.75rem; font-weight: 700; color: #1e293b;
+}
+
+.trust-bar {
+  width: 100%; max-width: 1200px; display: flex; justify-content: center;
+  gap: 32px; flex-wrap: wrap; padding: 60px 0 0; position: relative; z-index: 1;
+}
+.trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; color: #475569; }
+.trust-icon {
+  width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; background: rgba(var(--accent-rgb), 0.08);
+}
+
+.section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--heading); font-size: 2.2rem; font-weight: 800;
+  color: #1e293b; letter-spacing: -0.03em; margin-bottom: 40px;
+}
+.section-title .accent { color: var(--accent); }
+
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.service-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 28px 22px; position: relative; overflow: hidden;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--accent); transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover {
+  border-color: var(--border-light); background: var(--card-hover);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06); transform: translateY(-2px);
+}
+.service-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(var(--accent-rgb), 0.08);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.service-icon svg { width: 22px; height: 22px; color: var(--accent); }
+.service-card h3 {
+  font-family: var(--heading); font-size: 1rem; font-weight: 700;
+  color: #1e293b; margin-bottom: 8px; letter-spacing: -0.02em;
+}
+.service-card p { font-size: 0.85rem; color: #64748b; line-height: 1.6; }
+.service-card:nth-child(1) { transition-delay: 0s; }
+.service-card:nth-child(2) { transition-delay: 0.1s; }
+.service-card:nth-child(3) { transition-delay: 0.2s; }
+.service-card:nth-child(4) { transition-delay: 0.3s; }
+.service-card:nth-child(5) { transition-delay: 0.4s; }
+.service-card:nth-child(6) { transition-delay: 0.5s; }
+.service-card:nth-child(7) { transition-delay: 0.6s; }
+.service-card:nth-child(8) { transition-delay: 0.7s; }
+
+.cta-band { background: var(--accent); padding: 60px 24px; text-align: center; }
+.cta-band h2 { font-family: var(--heading); font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 10px; }
+.cta-band p { font-size: 1rem; color: rgba(255,255,255,0.85); margin-bottom: 24px; }
+.cta-band-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.cta-band .btn-light { background: #fff; color: var(--accent); }
+.cta-band .btn-light:hover { background: #f1f5f9; }
+
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.why-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 28px 22px; transition: border-color 0.3s, transform 0.3s;
+}
+.why-card:hover { border-color: var(--border-light); transform: translateY(-2px); }
+.why-card .num { font-family: var(--heading); font-size: 2rem; font-weight: 900; color: var(--accent); margin-bottom: 10px; line-height: 1; }
+.why-card h3 { font-family: var(--heading); font-size: 1.05rem; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+.why-card p { font-size: 0.85rem; color: #64748b; line-height: 1.6; }
+
+.reviews-header { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
+.google-badge {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px;
+}
+.google-badge .rating { font-family: var(--heading); font-size: 1.5rem; font-weight: 900; color: #1e293b; }
+.google-badge .stars { color: #f59e0b; font-size: 1rem; }
+.google-badge .count { font-size: 0.8rem; color: #64748b; }
+
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.review-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px; transition: border-color 0.3s, transform 0.3s;
+}
+.review-card:hover { border-color: var(--border-light); transform: translateY(-2px); }
+.review-stars { color: #f59e0b; font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 2px; }
+.review-text { font-size: 0.9rem; color: #475569; font-style: italic; line-height: 1.7; margin-bottom: 16px; }
+.review-author { display: flex; align-items: center; gap: 10px; }
+.review-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(var(--accent-rgb), 0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem; color: var(--accent);
+}
+.review-name { font-weight: 600; font-size: 0.85rem; color: #1e293b; }
+.review-source { font-size: 0.75rem; color: #94a3b8; }
+
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.gallery-item {
+  border-radius: 12px; overflow: hidden; cursor: pointer;
+  border: 1px solid var(--border); transition: transform 0.3s;
+}
+.gallery-item:hover { transform: scale(1.03); }
+.gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
+
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 40px;
+}
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 12px; object-fit: contain; }
+.lightbox-close {
+  position: absolute; top: 20px; right: 24px; background: none; border: none;
+  color: #fff; font-size: 2rem; cursor: pointer; width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.areas-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
+.area-tag {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 16px; font-size: 0.85rem; font-weight: 500; color: #475569;
+  transition: border-color 0.2s, color 0.2s;
+}
+.area-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact-info h3 { font-family: var(--heading); font-size: 1.3rem; font-weight: 800; color: #1e293b; margin-bottom: 16px; }
+.contact-info p { font-size: 0.95rem; color: #64748b; margin-bottom: 20px; line-height: 1.7; }
+.contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-size: 0.9rem; color: #475569; }
+.contact-detail svg { color: var(--accent); flex-shrink: 0; }
+.contact-detail a { color: #475569; text-decoration: none; transition: color 0.2s; }
+.contact-detail a:hover { color: var(--accent); }
+.contact-logo { margin-top: 28px; width: 120px; border-radius: 10px; border: 1px solid var(--border); }
+
+.contact-form-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 32px; }
+.form-label {
+  display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #64748b; margin-bottom: 6px;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%; background: #fff; border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px 14px; color: #1e293b; font-family: var(--body); font-size: 0.9rem;
+  margin-bottom: 16px; transition: border-color 0.2s; -webkit-appearance: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--accent); }
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-select { cursor: pointer; }
+.btn-submit {
+  width: 100%; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.95rem;
+  padding: 14px; border: none; border-radius: 10px; cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-submit:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+
+.footer { background: var(--card); border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; }
+.footer-name { font-family: var(--heading); font-size: 1.1rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+.footer p { font-size: 0.8rem; color: #94a3b8; }
+.footer a { color: var(--accent); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+.fab-container {
+  position: fixed; bottom: 16px; right: 16px; display: flex; flex-direction: column;
+  gap: 10px; z-index: 999; opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+.fab-container.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.fab {
+  width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+.fab:hover { transform: scale(1.1); animation: none; }
+.fab-call { background: var(--accent); animation: pulse-ring 2s ease-in-out infinite; }
+.fab-wa { background: var(--green); animation: pulse-ring-wa 2s ease-in-out infinite; }
+.fab svg { width: 22px; height: 22px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(198,40,40,0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(198,40,40,0); }
+  100% { box-shadow: 0 0 0 0 rgba(198,40,40,0); }
+}
+@keyframes pulse-ring-wa {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+.nav-toggle {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 44px; height: 44px; align-items: center; justify-content: center;
+}
+.nav-toggle span { display: block; width: 22px; height: 2px; background: #1e293b; position: relative; }
+.nav-toggle span::before, .nav-toggle span::after {
+  content: ''; position: absolute; left: 0; width: 100%; height: 2px; background: #1e293b; transition: transform 0.2s;
+}
+.nav-toggle span::before { top: -7px; }
+.nav-toggle span::after { top: 7px; }
+
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+    padding: 16px 24px; gap: 12px; border-bottom: 1px solid var(--border);
+  }
+  .hero { min-height: auto; padding: 120px 24px 40px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-btns { justify-content: center; }
+  .hero-images { flex-direction: row; }
+  .hero-img-wrap { flex: 1; min-width: 0; }
+  .hero-img-wrap img { height: 200px; }
+  .section { padding: 60px 24px; }
+  .section-title { font-size: 1.7rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .trust-bar { gap: 20px; padding-top: 40px; }
+  .cta-band h2 { font-size: 1.5rem; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .hero-img-wrap img { height: 160px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Redleaf <span>Heating</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#gallery">Our Work</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:07368616075" class="nav-cta"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call Luke</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> Gas Safe Registered</div>
+      <h1>Wigan's Trusted <span class="accent">Boiler & Heating</span> Specialists</h1>
+      <p class="hero-sub">Family-run business specialising in Worcester, Vaillant and Ideal boilers. Gas and heat pump installations. Free quotes from a Gas Safe engineer.</p>
+      <div class="hero-btns">
+        <a href="tel:07368616075" class="btn btn-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call Luke</a>
+        <a href="https://wa.me/447368616075?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-img-wrap">
+        <img src="/mockups/redleaf-heating/photo-2.jpg" alt="Modern bathroom installation by Redleaf Heating" loading="eager">
+        <div class="hero-image-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>5.0 &middot; 5 Reviews</span>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="/mockups/redleaf-heating/photo-4.jpg" alt="Worcester boiler installation by Redleaf Heating" loading="eager">
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-bar">
+    <div class="trust-item">
+      <div class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#c62828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      Gas Safe Registered
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#c62828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      Fully Insured
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      5-Star Rated
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#c62828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+      Free Quotes
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#c62828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      Family Run
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="padding-top: 40px;">
+  <div class="reveal">
+    <div class="section-label">Our Services</div>
+    <div class="section-title">Plumbing & Heating <span class="accent">Experts</span></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <h3>Boiler Installation</h3>
+      <p>Worcester, Vaillant and Ideal boiler specialists. New boiler supply, fitting and commissioning with manufacturer warranties.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <h3>Boiler Repairs & Servicing</h3>
+      <p>Fast fault diagnosis and repair on all makes and models. Annual servicing to keep your boiler running efficiently.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+      <h3>Heat Pump Installation</h3>
+      <p>Qualified to fit air source heat pumps alongside traditional gas systems. Future-proof your home heating.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+      <h3>Central Heating</h3>
+      <p>Full heating system installation and renewals. Radiators, pipework, controls and underfloor heating solutions.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <h3>Power Flushing</h3>
+      <p>Central heating power flush to remove sludge, rust and debris. Restore efficiency and extend your system's life.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Gas Safety Certificates</h3>
+      <p>Landlord gas safety checks and CP12 certificates. Fully Gas Safe registered and compliant.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h3>Unvented Cylinders</h3>
+      <p>Unvented hot water cylinder installation and servicing. High-pressure hot water throughout your home.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+      <h3>Bathroom Installation</h3>
+      <p>Full bathroom fitting including plumbing, tiling and fixtures. From design to completion.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2 class="reveal">Need a Heating Engineer in Wigan?</h2>
+  <p class="reveal">Call Luke for a free, no-obligation quote. Family-run, Gas Safe, hassle-free.</p>
+  <div class="cta-band-btns reveal">
+    <a href="tel:07368616075" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 07368 616 075</a>
+    <a href="https://wa.me/447368616075?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg> WhatsApp Luke</a>
+  </div>
+</div>
+
+<section class="section" id="why-us">
+  <div class="reveal">
+    <div class="section-label">Why Choose Us</div>
+    <div class="section-title">The Redleaf <span class="accent">Difference</span></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="num">01</div>
+      <h3>Boiler Specialists</h3>
+      <p>We specialise in Worcester, Vaillant and Ideal boilers. Expert knowledge means faster diagnosis and better installations.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="num">02</div>
+      <h3>Family-Run Business</h3>
+      <p>We take quality extremely seriously. Every job is treated as if it were our own home. No shortcuts, no compromises.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="num">03</div>
+      <h3>Gas & Heat Pump Certified</h3>
+      <p>Qualified to install both traditional gas boilers and modern heat pump systems. Ready for the future of home heating.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="num">04</div>
+      <h3>Fast Emergency Response</h3>
+      <p>Boiler down in freezing weather? We respond fast — often within 24 hours for emergency repairs.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="num">05</div>
+      <h3>Free Quotes by Gas Safe Engineers</h3>
+      <p>Every quote is carried out by a Gas Safe technician who can properly assess your system. No pressure, no obligation.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="num">06</div>
+      <h3>Friendly, Hassle-Free Service</h3>
+      <p>We explain everything, answer all your questions, and leave your home tidy. That's what our customers love about us.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="reveal">
+    <div class="section-label">Reviews</div>
+    <div class="section-title">What Our <span class="accent">Clients</span> Say</div>
+  </div>
+  <div class="reviews-header reveal">
+    <div class="google-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      <div>
+        <div class="rating">5.0</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      </div>
+      <div class="count">5 reviews on Google</div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="review-text">"Quick service at short notice to repair a leaking boiler in freezing weather. Great job done efficiently and effectively, would highly recommend."</div>
+      <div class="review-author">
+        <div class="review-avatar">A</div>
+        <div><div class="review-name">Alyson Rimmer</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="review-text">"Engineer was on time, all aspects of the boiler service completed. Left everything tidy. Had some questions about the thermostat and he was happy to spend time answering them all. Would definitely recommend."</div>
+      <div class="review-author">
+        <div class="review-avatar">K</div>
+        <div><div class="review-name">Karen Fearnley</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="review-text">"Our boiler went down and an engineer was sent out within 24 hours. Luke spent plenty of time fixing our boiler and getting our heating back on. He explained everything to us."</div>
+      <div class="review-author">
+        <div class="review-avatar">D</div>
+        <div><div class="review-name">David Alder</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="review-text">"We had Red Leaf complete an annual boiler check. Easy to book, no issues."</div>
+      <div class="review-author">
+        <div class="review-avatar">A</div>
+        <div><div class="review-name">Andy Simmons</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="review-text">"Great service, very professional, definitely recommend."</div>
+      <div class="review-author">
+        <div class="review-avatar">A</div>
+        <div><div class="review-name">Andy West</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="reveal">
+    <div class="section-label">Our Work</div>
+    <div class="section-title">Recent <span class="accent">Projects</span></div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="/mockups/redleaf-heating/photo-1.jpg" alt="Hot water cylinder installation" loading="lazy">
+    </div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="/mockups/redleaf-heating/photo-3.jpg" alt="Vaillant boiler and heating system" loading="lazy">
+    </div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="/mockups/redleaf-heating/photo-5.jpg" alt="Worcester boiler in cupboard installation" loading="lazy">
+    </div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="/mockups/redleaf-heating/photo-6.jpg" alt="Megaflo cylinder and Worcester boiler system" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="areas">
+  <div class="reveal">
+    <div class="section-label">Coverage</div>
+    <div class="section-title">Areas We <span class="accent">Serve</span></div>
+  </div>
+  <div class="areas-wrap reveal">
+    <span class="area-tag">Wigan</span>
+    <span class="area-tag">Aspull</span>
+    <span class="area-tag">Standish</span>
+    <span class="area-tag">Hindley</span>
+    <span class="area-tag">Ince</span>
+    <span class="area-tag">Westhoughton</span>
+    <span class="area-tag">Bolton</span>
+    <span class="area-tag">Leigh</span>
+    <span class="area-tag">Atherton</span>
+    <span class="area-tag">Tyldesley</span>
+    <span class="area-tag">Horwich</span>
+    <span class="area-tag">Adlington</span>
+    <span class="area-tag">Chorley</span>
+    <span class="area-tag">Blackrod</span>
+    <span class="area-tag">Haigh</span>
+    <span class="area-tag">Orrell</span>
+    <span class="area-tag">Pemberton</span>
+    <span class="area-tag">Shevington</span>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="reveal">
+    <div class="section-label">Get In Touch</div>
+    <div class="section-title">Request a Free <span class="accent">Quote</span></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3>Red Leaf Plumbing & Heating</h3>
+      <p>Wigan-based, family-run plumbing and heating specialists. Get in touch with Luke for a free, no-obligation quote on any boiler, heating or plumbing work.</p>
+      <div class="contact-detail">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:07368616075">07368 616 075</a>
+      </div>
+      <div class="contact-detail">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        38a Bolton Rd, Aspull, Wigan WN2 1XF
+      </div>
+      <img src="/mockups/redleaf-heating/logo.png" alt="Redleaf Heating logo" class="contact-logo">
+    </div>
+    <div class="contact-form-card reveal">
+      <form action="">
+        <label class="form-label" for="name">Name</label>
+        <input type="text" id="name" name="name" class="form-input" required placeholder="Your name">
+        <label class="form-label" for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" class="form-input" required placeholder="Your phone number">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-input" placeholder="Your email (optional)">
+        <label class="form-label" for="service">Service Needed</label>
+        <select id="service" name="service" class="form-select">
+          <option value="">Select a service...</option>
+          <option>Boiler Installation</option>
+          <option>Boiler Repairs & Servicing</option>
+          <option>Heat Pump Installation</option>
+          <option>Central Heating</option>
+          <option>Power Flushing</option>
+          <option>Gas Safety Certificates</option>
+          <option>Unvented Cylinders</option>
+          <option>Bathroom Installation</option>
+          <option>Other</option>
+        </select>
+        <label class="form-label" for="message">Message</label>
+        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project..."></textarea>
+        <button type="submit" class="btn-submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-name">Red Leaf Plumbing & Heating</div>
+  <p>&copy; 2026 Red Leaf Plumbing & Heating. All rights reserved.</p>
+  <p style="margin-top:6px;">Site by <a href="https://construction-sites.co.uk" target="_blank">construction-sites.co.uk</a></p>
+</footer>
+
+<div class="fab-container" id="fabContainer">
+  <a href="tel:07368616075" class="fab fab-call" aria-label="Call us">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/447368616075?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab fab-wa" target="_blank" aria-label="WhatsApp us">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img src="" alt="Gallery image" id="lightboxImg">
+</div>
+
+<script>
+var navToggle = document.getElementById('navToggle');
+var navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', function() { navLinks.classList.toggle('open'); });
+navLinks.querySelectorAll('a').forEach(function(link) {
+  link.addEventListener('click', function() { navLinks.classList.remove('open'); });
+});
+
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+var fabContainer = document.getElementById('fabContainer');
+var heroButtons = document.querySelector('.hero-btns');
+window.addEventListener('scroll', function() {
+  if (fabContainer && heroButtons) {
+    if (heroButtons.getBoundingClientRect().bottom < 0) { fabContainer.classList.add('visible'); }
+    else { fabContainer.classList.remove('visible'); }
+  }
+});
+
+function openLightbox(el) {
+  var img = el.querySelector('img');
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>
