@@ -86,8 +86,9 @@ img{max-width:100%;display:block}
   .hero h1{font-size:2.2rem}
   .hero-sub{margin-left:auto;margin-right:auto}
   .hero-btns{justify-content:center}
-  .hero-images{flex-direction:row}
-  .hero-img-wrapper img{height:200px}
+  .hero-images{flex-direction:row;gap:12px}
+  .hero-img-wrapper{flex:1;min-width:0}
+  .hero-img-wrapper img{height:220px;width:100%;object-fit:cover}
 }
 
 /* TRUST BAR */
@@ -227,8 +228,7 @@ img{max-width:100%;display:block}
 .fab-call{background:var(--accent);animation:pulse-ring 2s ease-in-out infinite}
 .fab-wa{background:#25d366;animation:pulse-ring-wa 2s ease-in-out infinite}
 @media(max-width:768px){
-  .fab-container{bottom:0;right:0;left:0;flex-direction:row;gap:0;border-radius:0}
-  .fab{flex:1;border-radius:0;height:52px;width:auto}
+  .fab-container{bottom:16px;right:16px}
 }
 
 /* ANIMATIONS */
