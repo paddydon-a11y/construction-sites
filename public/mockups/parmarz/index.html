@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar.Z Ltd | Slough</title>
+<meta name="description" content="Professional general builder serving Slough and Berkshire. Building work, bathroom renovations, painting &amp; decorating, tiling and general repairs. Fully insured. Free quotes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--card:#141414;--card-hover:#1a1a1a;--border:#1e1e1e;--border-light:#2a2a2a;--accent:#f97316;--accent-hover:#ea580c;--accent-glow:rgba(249,115,22,0.15);--accent-light:#fb923c;--green:#22c55e;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--heading:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--bg);color:var(--gray-400);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:52px}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:var(--white);line-height:1.15;font-weight:800;letter-spacing:-0.03em}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--heading);font-weight:900;font-size:1.15rem;color:var(--white)}
+.nav-logo span{color:var(--accent-light)}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:0.8rem;font-weight:600;color:var(--gray-400);transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--accent);color:#000 !important;font-weight:700;font-size:0.8rem;padding:8px 18px;border-radius:8px;transition:all 0.2s}
+.nav-cta:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile svg{stroke:var(--white)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+  .nav-links.open{display:flex;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:200;overflow-y:auto}
+  .nav-links.open a{font-size:1.25rem}
+  .nav-links.open .nav-cta{font-size:1rem;padding:14px 32px}
+}
+
+/* HERO */
+.hero{position:relative;padding:140px 0 80px;overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--accent-glow),transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.18);border-radius:100px;padding:6px 16px;font-size:0.8rem;color:var(--accent-light);font-weight:600;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease forwards 0.3s}
+.hero-badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:dotPulse 2s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeScale{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+.hero h1{font-size:3.5rem;font-weight:900;letter-spacing:-0.04em;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease forwards 0.5s}
+.hero h1 .accent{background:linear-gradient(135deg,var(--accent),#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.05rem;color:var(--gray-400);max-width:480px;line-height:1.75;margin-bottom:32px;opacity:0;animation:fadeUp 0.6s ease forwards 0.7s}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.6s ease forwards 0.9s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:0.95rem;padding:14px 28px;border-radius:10px;transition:all 0.2s;border:none;cursor:pointer}
+.btn-cta{background:var(--accent);color:#000}
+.btn-cta:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 30px rgba(249,115,22,0.25)}
+.btn-whatsapp{background:#25d366;color:#fff}
+.btn-whatsapp:hover{background:#1fb855;transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.25)}
+
+/* HERO IMAGES */
+.hero-images{display:grid;grid-template-columns:1fr 1fr;gap:12px;opacity:0;animation:fadeScale 0.8s ease forwards 0.6s}
+.hero-img-wrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img-wrap:first-child{grid-row:span 2;min-height:400px}
+.hero-img-wrap:last-child{min-height:192px}
+.hero-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.3) 0%,transparent 40%);pointer-events:none}
+.hero-image-badge{position:absolute;top:16px;right:16px;background:rgba(10,10,10,0.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px;z-index:2}
+.hero-image-badge span{font-size:0.75rem;font-weight:700;color:var(--white)}
+
+/* TRUST BAR */
+.trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card);padding:20px 0}
+.trust-items{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 40px}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--gray-300)}
+.trust-item svg{width:18px;height:18px;fill:none;stroke-width:2;flex-shrink:0;stroke:var(--accent-light)}
+
+/* SECTIONS */
+.section{padding:80px 0}
+.section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-light);margin-bottom:10px}
+.section-title{font-size:2.25rem;letter-spacing:-0.02em;margin-bottom:12px}
+.section-desc{color:var(--gray-400);max-width:560px;font-size:0.95rem;line-height:1.7}
+.section-center{text-align:center}
+.section-center .section-desc{margin:0 auto}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;transition:border-color 0.3s,background 0.3s,box-shadow 0.3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover{border-color:var(--border-light);background:var(--card-hover);box-shadow:0 0 20px rgba(249,115,22,0.05)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:40px;height:40px;margin-bottom:14px}
+.service-icon svg{width:100%;height:100%}
+.service-card h3{font-size:0.95rem;font-weight:700;margin-bottom:6px}
+.service-card p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+
+/* CTA BAND */
+.cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,var(--accent-glow),transparent 70%);pointer-events:none}
+.cta-band>*{position:relative}
+.cta-band h2{font-size:2rem;margin-bottom:8px}
+.cta-band p{color:var(--gray-400);margin-bottom:24px;font-size:0.95rem}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:40px}
+.why-items{display:flex;flex-direction:column;gap:20px}
+.why-item{display:flex;gap:14px}
+.why-item-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-item-icon svg{width:18px;height:18px;stroke:var(--accent-light);fill:none;stroke-width:2}
+.why-item h4{font-size:0.9rem;font-weight:700;margin-bottom:3px}
+.why-item p{font-size:0.82rem;color:var(--gray-500);line-height:1.6}
+.why-logo{display:flex;align-items:center;justify-content:center}
+.why-logo img{max-width:320px;width:100%;border-radius:16px;border:1px solid var(--border)}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.review-stars{display:flex;gap:2px;margin-bottom:12px}
+.review-stars svg{width:16px;height:16px;fill:#fbbf24}
+.review-text{font-size:0.88rem;color:var(--gray-300);line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:36px;height:36px;border-radius:50%;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:800;color:var(--accent-light);font-size:0.85rem;flex-shrink:0}
+.review-name{font-weight:700;color:var(--white);font-size:0.82rem}
+.review-role{font-size:0.75rem;color:var(--gray-500)}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:40px}
+.gallery-item{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/5;cursor:pointer;border:1px solid var(--border)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+.gallery-item:hover img{transform:scale(1.03)}
+.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.4) 0%,transparent 50%);pointer-events:none}
+.gallery-item:first-child{grid-column:span 2;aspect-ratio:16/9}
+.gallery-lightbox{position:fixed;inset:0;z-index:300;background:rgba(10,10,10,0.95);display:none;align-items:center;justify-content:center;padding:20px;cursor:pointer}
+.gallery-lightbox.open{display:flex}
+.gallery-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px}
+.gallery-lightbox .lb-close{position:absolute;top:20px;right:24px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.1);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.gallery-lightbox .lb-close svg{stroke:var(--white);width:20px;height:20px}
+
+/* AREAS */
+.areas-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+.area-tag{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:10px 20px;font-size:0.82rem;color:var(--gray-300);font-weight:600;transition:border-color 0.2s}
+.area-tag:hover{border-color:var(--accent)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-block h4{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-block a,.contact-block p{font-size:1.1rem;color:var(--white);font-weight:600}
+.contact-block a:hover{color:var(--accent-light)}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px}
+.contact-form label{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--white);font-family:var(--body);font-size:0.9rem;outline:none;transition:border-color 0.2s;margin-bottom:16px;-webkit-appearance:none}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--accent)}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-form select{cursor:pointer}
+.contact-form button{width:100%;padding:14px;border-radius:10px;font-size:0.95rem}
+
+/* FOOTER */
+.footer{padding:32px 0;text-align:center;border-top:1px solid var(--border)}
+.footer-logo{font-family:var(--heading);font-weight:900;font-size:1rem;color:var(--white);margin-bottom:6px}
+.footer-logo span{color:var(--accent-light)}
+.footer p{font-size:0.75rem;color:var(--gray-500)}
+.footer p a{color:var(--gray-500)}
+.footer p a:hover{color:var(--accent-light)}
+
+/* FLOATING BUTTONS */
+.floating-btns{position:fixed;bottom:20px;right:20px;z-index:90;display:flex;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.floating-btns.visible{opacity:1;pointer-events:auto}
+.floating-btns a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:transform 0.2s}
+.floating-btns a:hover{transform:scale(1.1);animation:none}
+.floating-btns .fab-call{background:var(--accent);animation:pulseCall 2s ease-in-out infinite}
+.floating-btns .fab-call svg{stroke:#000;fill:none}
+.floating-btns .fab-wa{background:#25d366;animation:pulseWa 2s ease-in-out infinite}
+.floating-btns svg{width:24px;height:24px}
+@keyframes pulseCall{0%{box-shadow:0 0 0 0 rgba(249,115,22,0.4)}70%{box-shadow:0 0 0 12px rgba(249,115,22,0)}100%{box-shadow:0 0 0 0 rgba(249,115,22,0)}}
+@keyframes pulseWa{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.revealed{opacity:1;transform:translateY(0)}
+.service-card:nth-child(1){transition-delay:0s}
+.service-card:nth-child(2){transition-delay:0.1s}
+.service-card:nth-child(3){transition-delay:0.2s}
+.service-card:nth-child(4){transition-delay:0.3s}
+.service-card:nth-child(5){transition-delay:0.4s}
+.service-card:nth-child(6){transition-delay:0.5s}
+.service-card:nth-child(7){transition-delay:0.6s}
+.service-card:nth-child(8){transition-delay:0.7s}
+.review-card:nth-child(1){transition-delay:0s}
+.review-card:nth-child(2){transition-delay:0.1s}
+.review-card:nth-child(3){transition-delay:0.15s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h1{font-size:2.5rem}
+  .hero-sub{margin:0 auto 28px}
+  .hero-btns{justify-content:center}
+  .hero-images{max-width:500px;margin:0 auto}
+  .why-grid{grid-template-columns:1fr;gap:32px}
+  .why-logo{order:-1}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .hero{padding:120px 0 60px;min-height:auto}
+  .hero h1{font-size:2rem}
+  .services-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .hero-img-wrap:first-child{min-height:260px}
+  .section{padding:60px 0}
+  .cta-band{padding:40px 0}
+  .cta-band h2{font-size:1.5rem}
+  .section-title{font-size:1.75rem}
+}
+@media(max-width:640px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-item:first-child{grid-column:span 2;aspect-ratio:16/9}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Parmar<span>.Z</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:07886101668" class="nav-cta">Call Us</a>
+    </div>
+    <button class="nav-mobile" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="dot"></span> Fully Insured</div>
+        <h1>Quality <span class="accent">Building &amp; Renovation</span> in Slough</h1>
+        <p class="hero-sub">From bathroom renovations to full property refurbishments — Parmar.Z Ltd delivers professional building work with meticulous attention to detail across Slough and Berkshire.</p>
+        <div class="hero-btns">
+          <a href="tel:07886101668" class="btn btn-cta">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.66 2.35a2 2 0 0 1-.45 2.11L8.09 11.3a16 16 0 0 0 6.6 6.6l2.12-2.12a2 2 0 0 1 2.11-.45c.75.3 1.54.53 2.35.66A2 2 0 0 1 22 16.92Z"/></svg>
+            07886 101 668
+          </a>
+          <a href="https://wa.me/447886101668?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+      <div class="hero-images">
+        <div class="hero-img-wrap">
+          <img src="/mockups/parmarz/photo-1.webp" alt="Bay window installation by Parmar.Z Ltd" loading="eager">
+          <div class="hero-image-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Fully Insured</span>
+          </div>
+        </div>
+        <div class="hero-img-wrap">
+          <img src="/mockups/parmarz/photo-4.webp" alt="Marble tiled bathroom by Parmar.Z in Slough" loading="eager">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        Free Quotes
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Reliable &amp; Punctual
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Attention to Detail
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Residential &amp; Commercial
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Our Services</div>
+      <div class="section-title">Building &amp; Property Solutions</div>
+      <div class="section-desc">Professional building work and property services tailored to your needs. From small repairs to full renovations, we deliver effective and practical solutions.</div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Building Work</h3>
+        <p>General building and structural work for residential and commercial properties. Extensions, conversions, structural repairs and new builds handled professionally.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+        <h3>Bathroom Renovations</h3>
+        <p>Complete bathroom refits from design to finish. Tiling, plumbing, shower installations, vanity units and all fixtures — beautifully fitted every time.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3>Painting &amp; Decorating</h3>
+        <p>Interior and exterior painting with a professional finish. Meticulous preparation, clean lines and durable results that transform your space.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
+        <h3>Tiling &amp; Flooring</h3>
+        <p>Wall and floor tiling for kitchens, bathrooms and living areas. Precision cuts, level finishes and quality materials for a flawless result.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>General Repairs</h3>
+        <p>No job too small. From fixing doors and windows to patching walls and repairing structural damage — reliable repairs done right first time.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg></div>
+        <h3>Renovations &amp; Refurbishments</h3>
+        <p>Full property renovations managed from start to finish. We coordinate every trade and ensure quality at every stage of your project.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.5"><path d="M2 12h6l3-9 3 18 3-9h5"/></svg></div>
+        <h3>Plastering &amp; Rendering</h3>
+        <p>Smooth plastering, re-skimming and external rendering. Clean, level walls ready for decoration — the foundation of a quality finish.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <h3>Kitchen Fitting</h3>
+        <p>Kitchen installation and refurbishment. Units, worktops, splashbacks and tiling — everything fitted to a high standard with minimal disruption.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container reveal">
+    <h2>Need a Builder in Slough?</h2>
+    <p>Get a free, no-obligation quote from Mr. Parmar. Professional work, honest pricing, delivered on time.</p>
+    <div class="cta-btns">
+      <a href="tel:07886101668" class="btn btn-cta">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.66 2.35a2 2 0 0 1-.45 2.11L8.09 11.3a16 16 0 0 0 6.6 6.6l2.12-2.12a2 2 0 0 1 2.11-.45c.75.3 1.54.53 2.35.66A2 2 0 0 1 22 16.92Z"/></svg>
+        07886 101 668
+      </a>
+      <a href="https://wa.me/447886101668?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Why Choose Us</div>
+      <div class="section-title">Why Slough Trusts Parmar.Z</div>
+    </div>
+    <div class="why-grid">
+      <div class="why-items">
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div>
+          <div>
+            <h4>Professional &amp; On Time</h4>
+            <p>Mr. Parmar delivers every project on time and on budget. Clear communication throughout, no surprises, and consistent quality you can count on.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <h4>Fully Insured</h4>
+            <p>Complete peace of mind on every job. All work is carried out to the highest safety standards with full public liability insurance.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div>
+            <h4>Attention to Detail</h4>
+            <p>Precision and quality in every aspect — from tiling cuts to paint lines. Bespoke solutions tailored to your vision with a meticulous finish.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <h4>Stress-Free Process</h4>
+            <p>Easy to communicate with, answers all your questions, and makes the whole process seamless. A crew that takes pride in their work.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-logo reveal">
+        <img src="/mockups/parmarz/logo.webp" alt="Parmar.Z Ltd logo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Customer Reviews</div>
+      <div class="section-title">What Our Customers Say</div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="review-text">"These guys were awesome! The crew showed up on time, worked hard every day, and did a fantastic job on our project. They were easy to communicate with, answered all our questions, and made the whole process stress-free. You can tell they take pride in their work. Would absolutely hire them again."</p>
+        <div class="review-author">
+          <div class="review-avatar">K</div>
+          <div><div class="review-name">Karam Dhillon</div><div class="review-role">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="review-text">"Mr. Parmar is very professional and delivers work on time. He did a great job, and I highly recommend him for any future projects."</p>
+        <div class="review-author">
+          <div class="review-avatar">G</div>
+          <div><div class="review-name">Gagandeep Singh Gagan</div><div class="review-role">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="review-text">"Had a great experience and very happy with the service. Job done very professionally."</p>
+        <div class="review-author">
+          <div class="review-avatar">J</div>
+          <div><div class="review-name">Jagroop Batth</div><div class="review-role">Google Review</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-center reveal">
+      <div class="section-label">Our Work</div>
+      <div class="section-title">Recent Projects</div>
+      <div class="section-desc">A selection of recent building and renovation work across Slough and Berkshire.</div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/parmarz/photo-1.webp')">
+        <img src="/mockups/parmarz/photo-1.webp" alt="Bay window installation by Parmar.Z" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/parmarz/photo-2.webp')">
+        <img src="/mockups/parmarz/photo-2.webp" alt="Shower room renovation in Slough" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/parmarz/photo-3.webp')">
+        <img src="/mockups/parmarz/photo-3.webp" alt="Bathroom installation with towel rail" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('/mockups/parmarz/photo-4.webp')">
+        <img src="/mockups/parmarz/photo-4.webp" alt="Marble tiled bathroom by Parmar.Z" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="gallery-lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" aria-label="Close"><svg fill="none" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button>
+  <img src="" alt="Gallery image" id="lightboxImg">
+</div>
+
+<!-- AREAS -->
+<section class="section" id="areas">
+  <div class="container">
+    <div class="section-center reveal">
+      <div class="section-label">Coverage Area</div>
+      <div class="section-title">Areas We Serve</div>
+      <div class="section-desc">Based in Langley, Slough — we cover the whole of Berkshire and surrounding areas.</div>
+    </div>
+    <div class="areas-tags reveal">
+      <span class="area-tag">Slough</span>
+      <span class="area-tag">Langley</span>
+      <span class="area-tag">Windsor</span>
+      <span class="area-tag">Eton</span>
+      <span class="area-tag">Burnham</span>
+      <span class="area-tag">Farnham Common</span>
+      <span class="area-tag">Stoke Poges</span>
+      <span class="area-tag">Cippenham</span>
+      <span class="area-tag">Colnbrook</span>
+      <span class="area-tag">Datchet</span>
+      <span class="area-tag">Iver</span>
+      <span class="area-tag">Gerrards Cross</span>
+      <span class="area-tag">Maidenhead</span>
+      <span class="area-tag">Taplow</span>
+      <span class="area-tag">Wexham</span>
+      <span class="area-tag">Richings Park</span>
+      <span class="area-tag">Beaconsfield</span>
+      <span class="area-tag">Uxbridge</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Get In Touch</div>
+      <div class="section-title">Request a Free Quote</div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-block">
+          <h4>Phone</h4>
+          <a href="tel:07886101668">07886 101 668</a>
+        </div>
+        <div class="contact-block">
+          <h4>Email</h4>
+          <a href="mailto:info@parmar.at">info@parmar.at</a>
+        </div>
+        <div class="contact-block">
+          <h4>Address</h4>
+          <p>Langley, Slough SL3 8EA</p>
+        </div>
+        <div class="contact-block">
+          <h4>Hours</h4>
+          <p>Mon-Fri: 8am-6pm<br>Sat: 9am-1pm &middot; Sun: 10am-1pm</p>
+        </div>
+        <div class="contact-block">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/447886101668?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" target="_blank" rel="noopener">Message Us on WhatsApp</a>
+        </div>
+      </div>
+      <form class="contact-form reveal" action="" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email (optional)">
+        <label for="service">Service Needed</label>
+        <select id="service" name="service">
+          <option value="">Select a service...</option>
+          <option>Building Work</option>
+          <option>Bathroom Renovations</option>
+          <option>Painting & Decorating</option>
+          <option>Tiling & Flooring</option>
+          <option>General Repairs</option>
+          <option>Renovations & Refurbishments</option>
+          <option>Plastering & Rendering</option>
+          <option>Kitchen Fitting</option>
+          <option>Other</option>
+        </select>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about the job..."></textarea>
+        <button type="submit" class="btn btn-cta">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">Parmar<span>.Z</span> Ltd</div>
+    <p>&copy; 2025 Parmar.Z Ltd. All rights reserved.</p>
+    <p style="margin-top:4px">Site by <a href="https://construction-sites.co.uk" target="_blank" rel="noopener">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-btns" id="floatingBtns">
+  <a href="tel:07886101668" class="fab-call" aria-label="Call Parmar.Z">
+    <svg fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.66 2.35a2 2 0 0 1-.45 2.11L8.09 11.3a16 16 0 0 0 6.6 6.6l2.12-2.12a2 2 0 0 1 2.11-.45c.75.3 1.54.53 2.35.66A2 2 0 0 1 22 16.92Z"/></svg>
+  </a>
+  <a href="https://wa.me/447886101668?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp Parmar.Z">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </a>
+</div>
+
+<script>
+// Floating buttons show on scroll
+window.addEventListener('scroll',function(){
+  var btns=document.getElementById('floatingBtns');
+  if(window.scrollY>300){btns.classList.add('visible')}else{btns.classList.remove('visible')}
+});
+
+// Scroll reveal
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){entry.target.classList.add('revealed');observer.unobserve(entry.target)}
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+
+// Lightbox
+function openLightbox(src){
+  document.getElementById('lightboxImg').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+
+// Mobile nav close on link click
+document.querySelectorAll('.nav-links a').forEach(function(link){
+  link.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open')});
+});
+</script>
+</body>
+</html>
