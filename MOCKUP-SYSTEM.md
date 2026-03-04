@@ -876,12 +876,13 @@ With the accent colour on one word for visual interest (e.g. "Redbrook <span>Ele
 ### Mobile Must Feel Native
 
 The responsive design should feel like a dedicated mobile site, not a squeezed desktop:
-- **Floating CTA bar:** Both call and WhatsApp buttons visible at all times on mobile
+- **Floating CTAs must stay as circles:** The floating call and WhatsApp buttons must remain as 52px pulsing circles on mobile — NEVER stretch them into a full-width bottom bar. Keep the same `bottom: 16px; right: 16px` positioning on all screen sizes. Do NOT override `.fab` to `border-radius: 0; flex: 1; width: auto` on mobile.
 - **Hero text:** Centred on mobile, minimum 2rem h1
 - **Single column everything** below 768px
 - **Touch-friendly:** All buttons minimum 44px tap target
 - **Gallery:** 2-column grid on mobile, not single column
-- **Bottom padding on body** to account for floating CTA bar (52px+)
+- **Bottom padding on body** to account for floating CTA buttons (80px+)
+- **Hero images on mobile (dual-image):** When two hero images sit side-by-side on mobile, each wrapper MUST have `flex: 1; min-width: 0` so they share the row equally. Without `min-width: 0`, flexbox children won't shrink below their content size and will overflow the viewport.
 
 ---
 
