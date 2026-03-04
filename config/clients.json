@@ -8,5 +8,10 @@
     "name": "Oleco",
     "email": "info@oleco.co.uk",
     "domain": "oleco-two.vercel.app"
+  },
+  "szarics-electrical": {
+    "name": "Szarics Electrical",
+    "email": "jfkiely96@gmail.com",
+    "domain": "szarics-electrical.vercel.app"
   }
 }
