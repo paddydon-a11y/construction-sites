@@ -618,6 +618,16 @@ All hero elements should animate in on load with staggered timing using CSS keyf
 .hero-image { opacity: 0; animation: fadeScale 0.8s ease forwards 0.6s; }
 ```
 
+### Hero Word-Reveal Animation (JS)
+
+If using the staggered word-reveal effect on the h1 (splitting into `<span class="hero-word">` elements via JS), the h1 starts with `visibility: hidden` in CSS. The JS **MUST** set `heroHeading.style.visibility = 'visible'` immediately after replacing the innerHTML — before the setTimeout that adds the `revealed` class. Without this, the entire heading stays invisible.
+
+```javascript
+heroHeading.innerHTML = result;
+heroHeading.style.visibility = 'visible';  // REQUIRED — without this, title is invisible
+setTimeout(function(){ /* add .revealed to each .hero-word */ }, 200);
+```
+
 ### Scroll Reveal Animations
 
 All sections below the fold should animate in when they scroll into view using IntersectionObserver:
