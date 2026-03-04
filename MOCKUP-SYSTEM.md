@@ -662,7 +662,34 @@ Stagger service cards and review cards:
 
 ### Pulsing Floating CTA Buttons
 
-The floating call and WhatsApp buttons must have a subtle pulse animation to draw attention:
+The floating call and WhatsApp buttons MUST start hidden and only appear once the hero buttons have scrolled off screen. This avoids duplicating CTAs when the hero is visible.
+
+**CSS — start hidden:**
+```css
+.fab-container {
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+.fab-container.visible {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+```
+
+**JS — show when hero buttons leave viewport:**
+```javascript
+var fabContainer = document.querySelector('.fab-container');
+var heroButtons = document.querySelector('.hero-btns');
+// inside scroll handler:
+if (fabContainer && heroButtons) {
+  if (heroButtons.getBoundingClientRect().bottom < 0) {
+    fabContainer.classList.add('visible');
+  } else {
+    fabContainer.classList.remove('visible');
+  }
+}
+```
+
+The buttons must also have a subtle pulse animation to draw attention:
 
 ```css
 @keyframes pulse-ring {
