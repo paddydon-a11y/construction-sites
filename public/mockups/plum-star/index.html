@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plum-Star Ltd | Boiler & Heating Specialist in Doncaster</title>
+<meta name="description" content="Plum-Star Ltd — Gas Safe registered boiler & heating specialists in Doncaster. Boiler installations with 12-year warranty, underfloor heating, repairs & servicing. Call today.">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17958918628');gtag('config','G-WG747WXNB6');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1a1508;
+  --bg-light: #231e0f;
+  --card: rgba(255,230,0,0.04);
+  --card-border: rgba(255,230,0,0.10);
+  --accent: #ffe600;
+  --accent-glow: rgba(255,230,0,0.25);
+  --text: #ffffff;
+  --text-muted: #b8b09a;
+  --radius: 16px;
+  --nav-height: 72px;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { color: var(--accent); text-decoration: none; }
+
+/* NAV */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index:1000;
+  height: var(--nav-height);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(1rem,4vw,3rem);
+  background: rgba(26,21,8,0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--card-border);
+  transition: background 0.3s;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-weight: 700; font-size: 1.15rem;
+  white-space: nowrap;
+}
+.nav-logo img { height: 42px; width: auto; border-radius: 6px; }
+.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links a { color: var(--text-muted); font-size:0.95rem; font-weight:500; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+.mobile-toggle { display:none; background:none; border:none; color:var(--text); cursor:pointer; }
+.mobile-menu {
+  display:none; position:fixed; top:var(--nav-height); left:0; right:0;
+  background:rgba(26,21,8,0.97); backdrop-filter:blur(16px);
+  padding:1.5rem; border-bottom:1px solid var(--card-border);
+}
+.mobile-menu.active { display:block; }
+.mobile-menu a { display:block; padding:0.75rem 0; color:var(--text-muted); font-weight:500; font-size:1.05rem; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: calc(var(--nav-height) + 2rem) clamp(1rem,4vw,3rem) 4rem;
+  position: relative;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.hero-badge .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.hero h1 .grad {
+  background: linear-gradient(135deg, var(--accent), #ffd000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+.hero-btns {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent);
+  color: #1a1508;
+  font-weight: 700;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 20px var(--accent-glow);
+  animation: ctaPulse 3s infinite;
+}
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 35px var(--accent-glow), 0 0 60px rgba(255,230,0,0.1); }
+}
+.btn-primary:hover { transform: translateY(-2px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s, transform 0.2s;
+}
+.btn-secondary:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.hero-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.hero-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+.hero-img img {
+  width: 100%; height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+.hero-img:hover img { transform: scale(1.05); }
+
+/* TRUST BAR */
+.trust-bar {
+  display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+  padding: 2.5rem clamp(1rem,4vw,3rem);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  background: var(--card);
+}
+.trust-item {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.95rem; font-weight: 600;
+  color: var(--text-muted);
+}
+.trust-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-glow);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.trust-icon svg { width:18px; height:18px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+/* SECTIONS */
+.section {
+  padding: 5rem clamp(1rem,4vw,3rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+/* SERVICES */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.service-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.service-icon {
+  width: 48px; height: 48px;
+  background: var(--accent-glow);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.service-icon svg { width:24px; height:24px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.service-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; }
+.service-card p { color:var(--text-muted); font-size:0.95rem; line-height:1.6; }
+
+/* WHY US */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.why-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.why-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.why-icon {
+  width: 56px; height: 56px;
+  background: var(--accent-glow);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+.why-icon svg { width:26px; height:26px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.why-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:0.5rem; }
+.why-card p { color:var(--text-muted); font-size:0.9rem; }
+
+/* REVIEWS */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: border-color 0.3s;
+}
+.review-card:hover { border-color: var(--accent); }
+.review-stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.75rem; }
+.review-text { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; font-style: italic; }
+.review-author { font-weight: 600; font-size: 0.9rem; }
+.review-date { color: var(--text-muted); font-size: 0.8rem; }
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  aspect-ratio: 4/3;
+}
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* AREAS */
+.areas-list {
+  display: flex; flex-wrap: wrap; gap: 0.75rem;
+}
+.area-tag {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: border-color 0.3s, color 0.3s;
+}
+.area-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  padding: 5rem clamp(1rem,4vw,3rem);
+  background: linear-gradient(180deg, transparent, rgba(255,230,0,0.03), transparent);
+}
+.cta-section h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.cta-section p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--card-border);
+  padding: 3rem clamp(1rem,4vw,3rem);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.footer a { color: var(--accent); }
+
+/* FAB */
+.fab {
+  position: fixed; bottom: 1.5rem; right: 1.5rem;
+  z-index: 999;
+  display: flex; gap: 0.75rem;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.4s, transform 0.4s;
+  pointer-events: none;
+}
+.fab.visible { opacity:1; transform:translateY(0); pointer-events:all; }
+.fab a {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+}
+.fab a:hover { transform: scale(1.05); }
+.fab-call { background: var(--accent); color: #1a1508; }
+.fab-email { background: var(--bg-light); color: var(--text); border: 1px solid var(--card-border); }
+.fab svg { width:18px; height:18px; }
+
+/* SCROLL REVEAL */
+.reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns:1fr; text-align:left; }
+  .hero-images { grid-template-columns:1fr 1fr; }
+  .hero-img img { height: 200px; }
+  .nav-links { display:none; }
+  .mobile-toggle { display:block; }
+  .trust-bar { gap:1.5rem; }
+  .reviews-grid { grid-template-columns:1fr; }
+  .gallery-grid { grid-template-columns:1fr 1fr; }
+  .fab { flex-direction:column; align-items:flex-end; }
+}
+@media (max-width: 480px) {
+  .hero-images { grid-template-columns:1fr; }
+  .hero-img img { height: 220px; }
+  .gallery-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <img src="/mockups/plum-star/logo.jpg" alt="Plum-Star Ltd">
+    Plum-Star Ltd
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#gallery">Our Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="mobile-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <a href="#services" onclick="this.parentElement.classList.remove('active')">Services</a>
+  <a href="#reviews" onclick="this.parentElement.classList.remove('active')">Reviews</a>
+  <a href="#gallery" onclick="this.parentElement.classList.remove('active')">Our Work</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        Gas Safe Registered
+      </div>
+      <h1><span class="grad">Boiler & Heating</span> Specialists in Doncaster</h1>
+      <p>Plum-Star Ltd delivers expert boiler installations with up to 12-year warranties, underfloor heating, repairs and servicing across Doncaster. Gas Safe registered and fully insured.</p>
+      <div class="hero-btns" id="heroBtns">
+        <a href="tel:07944377727" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Filip
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Get a Quote
+        </a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-img">
+        <img src="/mockups/plum-star/photo-2.jpg" alt="Professional boiler installation by Plum-Star Ltd">
+      </div>
+      <div class="hero-img">
+        <img src="/mockups/plum-star/photo-5.webp" alt="Underfloor heating manifold installation">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar reveal">
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    Gas Safe Registered
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    </div>
+    4.7 Stars on Google
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    Fully Insured
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    12-Year Warranty
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="reveal">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">From boiler installations to underfloor heating, Filip and the team deliver quality heating solutions across Doncaster.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      </div>
+      <h3>Boiler Installation</h3>
+      <p>New boiler installations and replacements with up to 12-year manufacturer warranty. Expert fitting of all major brands including Ideal.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <h3>Boiler Repairs</h3>
+      <p>Fast, reliable boiler repairs to get your heating back up and running. Experienced with all makes and models.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>Annual Boiler Service</h3>
+      <p>Keep your boiler running safely and efficiently with a comprehensive annual service and safety check.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>Central Heating</h3>
+      <p>Full central heating system installation, upgrades and maintenance. Radiator fitting and powerflush services.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+      </div>
+      <h3>Underfloor Heating</h3>
+      <p>Professional underfloor heating installation for new builds and renovations. Efficient, even heat distribution throughout your home.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Gas Safety Certificates</h3>
+      <p>Landlord gas safety inspections and CP12 certificates. Fully Gas Safe registered for your peace of mind.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h3>Gas Cooker Installation</h3>
+      <p>Safe, certified gas cooker installation and disconnection. Ensuring all gas appliances meet current regulations.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <h3>General Plumbing</h3>
+      <p>Bathroom fitting, leak repairs, tap replacements and all general plumbing work across Doncaster.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-label">Why Plum-Star</div>
+    <h2 class="section-title">Why Choose Filip & the Team</h2>
+    <p class="section-subtitle">Trusted by homeowners across Doncaster for reliable, quality heating work.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Gas Safe Registered</h3>
+      <p>Fully certified and registered to work safely on all gas appliances and installations.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <h3>4.7-Star Reviews</h3>
+      <p>12 five-star Google reviews from happy customers across Doncaster and surrounding areas.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>12-Year Warranty</h3>
+      <p>New boiler installations come with up to 12-year manufacturer warranty for total peace of mind.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <h3>Fully Insured</h3>
+      <p>Complete public liability insurance so you can have confidence in every job we carry out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="reveal">
+    <div class="section-label">What Our Customers Say</div>
+    <h2 class="section-title">12 Reviews, 4.7 Stars</h2>
+    <p class="section-subtitle">Real feedback from real customers across Doncaster.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Professional job with a quality finish. Turned up at the time he said and completed the job within the time frame. Would recommend 100%"</p>
+      <div class="review-author">SLT Media</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Would definitely recommend using Plum Star. Filip came to look at the job and gave a fair price. Great job fitting new bathroom, very tidy worker."</p>
+      <div class="review-author">mo p</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Plum Star fitted our new boiler — really tidy installation, everything explained clearly. The 12-year warranty gives proper peace of mind. Highly recommend."</p>
+      <div class="review-author">Google Reviewer</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Excellent work on our underfloor heating. Very knowledgeable and professional throughout. Would happily use again for any future heating work."</p>
+      <div class="review-author">Google Reviewer</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Called for an emergency boiler repair and got a same-day response. Fixed quickly and at a fair price. Really reliable service."</p>
+      <div class="review-author">Google Reviewer</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Had a full gas safety check done — quick, thorough and very professional. Certificate issued on the spot. Great value for money."</p>
+      <div class="review-author">Google Reviewer</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="reveal">
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">Recent Projects</h2>
+    <p class="section-subtitle">See the quality of work Plum-Star delivers across Doncaster.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal">
+      <img src="/mockups/plum-star/photo-1.jpg" alt="Boiler pipework installation" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/plum-star/photo-2.jpg" alt="Ideal boiler installation" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/plum-star/photo-3.webp" alt="Boiler service with gas analyzer" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/plum-star/photo-4.webp" alt="Underfloor heating manifold" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/plum-star/photo-5.webp" alt="Underfloor heating close-up" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-label">Areas We Cover</div>
+    <h2 class="section-title">Serving Doncaster & Surrounding Areas</h2>
+    <p class="section-subtitle">Plum-Star Ltd provides boiler and heating services across Doncaster and nearby towns.</p>
+  </div>
+  <div class="areas-list reveal">
+    <span class="area-tag">Doncaster</span>
+    <span class="area-tag">Balby</span>
+    <span class="area-tag">Bessacarr</span>
+    <span class="area-tag">Cantley</span>
+    <span class="area-tag">Intake</span>
+    <span class="area-tag">Wheatley</span>
+    <span class="area-tag">Armthorpe</span>
+    <span class="area-tag">Sprotbrough</span>
+    <span class="area-tag">Bentley</span>
+    <span class="area-tag">Conisbrough</span>
+    <span class="area-tag">Mexborough</span>
+    <span class="area-tag">Thorne</span>
+    <span class="area-tag">Hatfield</span>
+    <span class="area-tag">Rossington</span>
+    <span class="area-tag">Edenthorpe</span>
+    <span class="area-tag">Warmsworth</span>
+    <span class="area-tag">Tickhill</span>
+    <span class="area-tag">Bawtry</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="reveal">
+    <h2>Ready to Get Your Heating Sorted?</h2>
+    <p>Get in touch with Filip today for a free, no-obligation quote on any boiler or heating work.</p>
+    <div class="cta-btns">
+      <a href="tel:07944377727" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call 07944 377727
+      </a>
+      <a href="mailto:plumstarltd@gmail.com" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2025 Plum-Star Ltd. All rights reserved. | Gas Safe Registered | Doncaster, South Yorkshire</p>
+  <p style="margin-top:0.5rem;">
+    <a href="tel:07944377727">07944 377727</a> &middot;
+    <a href="mailto:plumstarltd@gmail.com">plumstarltd@gmail.com</a>
+  </p>
+</footer>
+
+<!-- FAB -->
+<div class="fab" id="fab">
+  <a href="tel:07944377727" class="fab-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Filip
+  </a>
+  <a href="mailto:plumstarltd@gmail.com" class="fab-email">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Email
+  </a>
+</div>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// FAB visibility
+const heroBtns = document.getElementById('heroBtns');
+const fab = document.getElementById('fab');
+const fabObs = new IntersectionObserver(([e]) => {
+  fab.classList.toggle('visible', !e.isIntersecting);
+}, { threshold: 0 });
+fabObs.observe(heroBtns);
+
+// Nav scroll effect
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.style.background = window.scrollY > 50 ? 'rgba(26,21,8,0.95)' : 'rgba(26,21,8,0.75)';
+});
+</script>
+</body>
+</html>
