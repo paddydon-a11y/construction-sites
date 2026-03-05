@@ -188,7 +188,7 @@ export default function HomePage() {
                 2. Breaking Ground
               </h3>
               <p className="mt-3 leading-relaxed text-slate-light">
-                We build a site designed to convert, not just look pretty.
+                We build a website designed to convert, not just look pretty.
                 Click-to-call on every page, Google Ads ready from day one,
                 written by people who know how construction clients search. Most
                 sites live in under a week.
