@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nela Plumbing & Gas Services | Reading</title>
+<meta name="description" content="4.8-star rated plumber serving Reading. 24/7 emergency plumbing, boiler installation, gas safety certificates. Gas Safe registered. Free quotes.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --card: #f8fafc;
+  --card-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --border-light: #cbd5e1;
+  --accent: #2da84e;
+  --accent-hover: #268f42;
+  --accent-glow: rgba(45, 168, 78, 0.1);
+  --accent-rgb: 45, 168, 78;
+  --green: #22c55e;
+  --white: #1e293b;
+  --gray-50: #1e293b;
+  --gray-100: #334155;
+  --gray-200: #475569;
+  --gray-300: #64748b;
+  --gray-400: #64748b;
+  --gray-500: #94a3b8;
+  --heading: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Inter', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); background: var(--bg); color: #475569; line-height: 1.7; padding-bottom: 80px; }
+h1, h2, h3, h4, h5 { font-family: var(--heading); color: #1e293b; letter-spacing: -0.03em; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+.section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
+.section-sub { color: var(--gray-300); font-size: 1.05rem; max-width: 600px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 12px; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; font-family: var(--body); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-wa { background: #25d366; color: #fff; }
+.btn-wa:hover { background: #20bd5a; }
+.btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.btn-outline:hover { background: var(--accent); color: #fff; }
+
+/* Nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.nav-logo { font-family: var(--heading); font-weight: 800; font-size: 1.15rem; color: #1e293b; white-space: nowrap; }
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-300); transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; padding: 140px 0 0; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-glow), transparent 70%); pointer-events: none; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; max-width: 1200px; padding: 0 24px; position: relative; z-index: 1; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 8px 16px; font-size: 0.8rem; font-weight: 600; color: var(--gray-200); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.3s; }
+.hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: dot-pulse 2s ease-in-out infinite; }
+.hero h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.5s; }
+.hero h1 .accent { background: linear-gradient(135deg, var(--accent), #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: 1.1rem; color: var(--gray-300); margin-bottom: 32px; max-width: 480px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.7s; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.6s ease forwards 0.9s; }
+.hero-images { display: flex; gap: 16px; opacity: 0; animation: fadeScale 0.8s ease forwards 0.6s; }
+.hero-img-wrap { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); flex: 1; min-width: 0; }
+.hero-img-wrap img { width: 100%; height: 320px; object-fit: cover; }
+.hero-image-badge { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: #1e293b; }
+.hero-image-badge svg { flex-shrink: 0; }
+
+/* Trust Bar */
+.trust-bar { width: 100%; max-width: 1200px; padding: 80px 24px 20px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; position: relative; z-index: 1; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; color: var(--gray-200); }
+.trust-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; }
+.trust-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Services */
+.services { padding: 20px 0 80px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 40px; }
+.service-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; position: relative; overflow: hidden; transition: background 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { border-color: var(--border-light); background: var(--card-hover); }
+.service-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.service-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.service-card p { font-size: 0.88rem; color: var(--gray-300); line-height: 1.6; }
+
+/* CTA Band */
+.cta-band { background: var(--accent); padding: 60px 0; text-align: center; }
+.cta-band h2 { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.05rem; margin-bottom: 28px; }
+.cta-band .btn-accent { background: #fff; color: var(--accent); }
+.cta-band .btn-accent:hover { background: #f0f0f0; }
+.cta-band .btn-wa { background: #25d366; color: #fff; }
+.cta-band-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* Why Us */
+.why-us { padding: 80px 0; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 40px; }
+.why-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: border-color 0.3s, background 0.3s; }
+.why-card:hover { border-color: var(--border-light); background: var(--card-hover); }
+.why-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.why-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.why-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.why-card p { font-size: 0.88rem; color: var(--gray-300); line-height: 1.6; }
+
+/* Reviews */
+.reviews-section { padding: 80px 0; }
+.reviews-header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+.google-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 8px 16px; }
+.google-badge .stars { color: #f59e0b; font-size: 0.95rem; }
+.google-badge .rating-text { font-size: 0.85rem; font-weight: 600; color: var(--gray-200); }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 40px; }
+.review-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: border-color 0.3s; }
+.review-card:hover { border-color: var(--border-light); }
+.review-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 12px; }
+.review-text { font-size: 0.92rem; color: var(--gray-200); font-style: italic; line-height: 1.7; margin-bottom: 16px; }
+.review-author { display: flex; align-items: center; gap: 12px; }
+.review-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.95rem; color: var(--accent); }
+.review-name { font-weight: 600; font-size: 0.88rem; color: #1e293b; }
+.review-source { font-size: 0.75rem; color: var(--gray-400); }
+
+/* Gallery */
+.gallery { padding: 80px 0; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 40px; }
+.gallery-item { border-radius: 16px; overflow: hidden; cursor: pointer; border: 1px solid var(--border); }
+.gallery-item img { width: 100%; height: 260px; object-fit: cover; transition: transform 0.4s; }
+.gallery-item:hover img { transform: scale(1.03); }
+
+/* Lightbox */
+.lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 24px; }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 12px; object-fit: contain; }
+.lightbox-close { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; background: rgba(255,255,255,0.15); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.lightbox-close svg { stroke: #fff; width: 24px; height: 24px; }
+
+/* Areas */
+.areas { padding: 80px 0; }
+.areas-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+.area-tag { background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 10px 20px; font-size: 0.85rem; font-weight: 500; color: var(--gray-200); transition: border-color 0.2s, color 0.2s; }
+.area-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Contact */
+.contact { padding: 80px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+.contact-info h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; }
+.contact-info p { color: var(--gray-300); margin-bottom: 24px; }
+.contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.contact-detail-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-detail-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; }
+.contact-detail-text { font-size: 0.9rem; color: var(--gray-200); }
+.contact-detail-text strong { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-400); margin-bottom: 2px; font-weight: 600; }
+.contact-form { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--gray-300); margin-bottom: 6px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; font-family: var(--body); font-size: 0.9rem; background: var(--bg); color: #1e293b; transition: border-color 0.2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit { width: 100%; padding: 14px; background: var(--accent); color: #fff; border: none; border-radius: 12px; font-family: var(--body); font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
+.form-submit:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+
+/* Footer */
+.footer { background: var(--card); border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
+.footer-logo { font-family: var(--heading); font-weight: 800; font-size: 1.2rem; color: #1e293b; margin-bottom: 8px; }
+.footer-logo span { color: var(--accent); }
+.footer p { font-size: 0.8rem; color: var(--gray-400); }
+.footer a { color: var(--accent); }
+
+/* FABs */
+.fab-container { position: fixed; bottom: 16px; right: 16px; display: flex; flex-direction: column; gap: 12px; z-index: 999; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s; }
+.fab-container.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.fab { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15); transition: transform 0.2s; }
+.fab:hover { transform: scale(1.1); }
+.fab svg { width: 24px; height: 24px; }
+.fab-call { background: var(--accent); animation: pulse-ring 2s ease-in-out infinite; }
+.fab-call:hover { animation: none; }
+.fab-call svg { stroke: #fff; fill: none; stroke-width: 2; }
+.fab-wa { background: #25d366; animation: pulse-ring-wa 2s ease-in-out infinite; }
+.fab-wa:hover { animation: none; }
+.fab-wa svg { fill: #fff; }
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes dot-pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(34,197,94,0); } }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(45,168,78,0.4); } 70% { box-shadow: 0 0 0 12px rgba(45,168,78,0); } 100% { box-shadow: 0 0 0 0 rgba(45,168,78,0); } }
+@keyframes pulse-ring-wa { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); } 70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.service-card:nth-child(1) { transition-delay: 0s; }
+.service-card:nth-child(2) { transition-delay: 0.1s; }
+.service-card:nth-child(3) { transition-delay: 0.1s; }
+.service-card:nth-child(4) { transition-delay: 0.2s; }
+.service-card:nth-child(5) { transition-delay: 0.2s; }
+.service-card:nth-child(6) { transition-delay: 0.3s; }
+.service-card:nth-child(7) { transition-delay: 0.3s; }
+.service-card:nth-child(8) { transition-delay: 0.4s; }
+.review-card:nth-child(1) { transition-delay: 0s; }
+.review-card:nth-child(2) { transition-delay: 0.1s; }
+.review-card:nth-child(3) { transition-delay: 0.2s; }
+.review-card:nth-child(4) { transition-delay: 0s; }
+.review-card:nth-child(5) { transition-delay: 0.1s; }
+.review-card:nth-child(6) { transition-delay: 0.2s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { min-height: auto; padding: 120px 0 0; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-btns { justify-content: center; }
+  .hero-images { flex-direction: row; }
+  .hero-img-wrap { flex: 1; min-width: 0; }
+  .hero-img-wrap img { height: 220px; }
+  .trust-bar { gap: 16px; padding-top: 40px; }
+  .trust-item { font-size: 0.78rem; }
+  .section-title { font-size: 1.7rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .why-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Nela <span>Plumbing</span> & Gas</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> Gas Safe Registered &middot; 24/7 Emergency</div>
+      <h1>Reading's <span class="accent">Emergency Plumber</span> You Can Trust</h1>
+      <p class="hero-sub">Fast, reliable plumbing and gas services with over 10 years' experience. 105 five-star reviews. Call Fatri for a free quote today.</p>
+      <div class="hero-btns">
+        <a href="tel:07878531920" class="btn btn-accent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          07878 531 920
+        </a>
+        <a href="https://wa.me/447878531920?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Fatri
+        </a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-img-wrap">
+        <img src="/mockups/nela-gas/photo-1.webp" alt="Boiler installation by Nela Plumbing" loading="eager">
+        <div class="hero-image-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          4.8 &middot; 105 Reviews
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="/mockups/nela-gas/photo-6.webp" alt="Full heating system installation" loading="eager">
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      Gas Safe Registered
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      4.8-Star Rated
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      24/7 Emergency
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+      Fully Insured
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      Free Quotes
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Plumbing & Gas Solutions</h2>
+      <p class="section-sub">From emergency call-outs to full installations, we cover all your plumbing and gas needs across Reading.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>24/7 Emergency Plumbing</h3>
+        <p>Burst pipes, leaks, and plumbing emergencies. We respond fast — day or night, weekends and bank holidays included.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Boiler Installation</h3>
+        <p>New boiler installations from leading brands including Vaillant, Baxi, and Worcester. Gas Safe certified work with warranty.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Boiler Servicing & Repairs</h3>
+        <p>Annual boiler servicing to keep your heating running efficiently. Fast fault diagnosis and reliable repairs.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Gas Safety Certificates</h3>
+        <p>CP12 landlord gas safety checks and certificates. Compliance inspections for rental properties across Reading.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Leak Detection & Repairs</h3>
+        <p>Expert leak detection for hidden and visible leaks. Fast, non-invasive tracing and permanent repairs.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <h3>Central Heating Installation</h3>
+        <p>Complete central heating systems, radiator installation, and upgrades. Energy-efficient solutions for your home.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3>Blocked Drains & Drainage</h3>
+        <p>Drain unblocking, jetting, and drainage repairs. Fast response for blocked sinks, toilets, and external drains.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <h3>Bathroom & Kitchen Fitting</h3>
+        <p>Full bathroom installations and kitchen plumbing. From design to completion, professional fitting you can rely on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Need a Plumber in Reading?</h2>
+    <p>24/7 emergency response. Gas Safe registered. Over 105 five-star reviews.</p>
+    <div class="cta-band-btns">
+      <a href="tel:07878531920" class="btn btn-accent">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call 07878 531 920
+      </a>
+      <a href="https://wa.me/447878531920?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Fatri
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="why-us">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">Why Reading Trusts Nela</h2>
+      <p class="section-sub">Over 10 years' experience delivering reliable plumbing and gas services across Reading and Berkshire.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>24/7 Emergency Response</h3>
+        <p>Plumbing emergencies don't wait — neither do we. Call any time, day or night, and Fatri will be there fast.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Gas Safe Registered</h3>
+        <p>Fully certified Gas Safe engineers. Every gas job is completed to the highest safety standards with proper documentation.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Transparent Pricing</h3>
+        <p>No hidden fees, no surprises. You'll know the cost upfront before any work begins. Fair, honest pricing every time.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <h3>105 Five-Star Reviews</h3>
+        <p>Rated 4.8 out of 5 on Google. Our customers love our speed, professionalism, and quality workmanship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="reviews-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Customer Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="reviews-header">
+        <div class="google-badge">
+          <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="rating-text">4.8/5 &middot; 105 reviews</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Fatri came out on Boxing Day when we had a burst pipe flooding the kitchen. He was here within 20 minutes and had it sorted in no time. Absolute lifesaver — can't thank him enough."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div><div class="review-name">Sarah Mitchell</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Called Fatri late on a Friday night with a gas leak. He arrived promptly, made everything safe and explained exactly what needed doing. Professional, calm and reassuring. Highly recommend."</p>
+        <div class="review-author">
+          <div class="review-avatar">J</div>
+          <div><div class="review-name">James Walker</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Had a new Vaillant boiler installed by Fatri. Brilliant job — neat pipework, everything explained clearly, and the price was very fair. Our heating has never been better."</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div><div class="review-name">Rebecca Hughes</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Fatri was amazing — arrived within 15 minutes of my call for an emergency leak. He was polite, efficient and left no mess at all. Wouldn't use anyone else in Reading."</p>
+        <div class="review-author">
+          <div class="review-avatar">D</div>
+          <div><div class="review-name">David Patel</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Used Nela for our landlord gas safety certificates across three properties. Always on time, thorough inspections, certificates sent same day. Excellent service year after year."</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div><div class="review-name">Mark Thompson</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Fatri came out straight away when our boiler broke down in January. He diagnosed the problem quickly and had it running again the same evening. Great communication throughout. Top class."</p>
+        <div class="review-author">
+          <div class="review-avatar">L</div>
+          <div><div class="review-name">Louise Carter</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+      <p class="section-sub">Professional installations and repairs across Reading. Quality workmanship guaranteed.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="/mockups/nela-gas/photo-2.webp" alt="Vaillant boiler installation" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="/mockups/nela-gas/photo-5.webp" alt="Boiler gas safety testing" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="/mockups/nela-gas/photo-7.webp" alt="Vaillant ecoFIT boiler installation" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="/mockups/nela-gas/photo-3.webp" alt="Hot water cylinder repair" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Areas -->
+<section class="areas">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Areas We Cover</p>
+      <h2 class="section-title">Serving Reading & Berkshire</h2>
+      <p class="section-sub">Fast response across Reading and surrounding areas. 24/7 emergency call-outs available.</p>
+    </div>
+    <div class="areas-grid reveal">
+      <span class="area-tag">Reading</span>
+      <span class="area-tag">Caversham</span>
+      <span class="area-tag">Tilehurst</span>
+      <span class="area-tag">Woodley</span>
+      <span class="area-tag">Earley</span>
+      <span class="area-tag">Lower Earley</span>
+      <span class="area-tag">Wokingham</span>
+      <span class="area-tag">Calcot</span>
+      <span class="area-tag">Purley on Thames</span>
+      <span class="area-tag">Theale</span>
+      <span class="area-tag">Pangbourne</span>
+      <span class="area-tag">Shinfield</span>
+      <span class="area-tag">Winnersh</span>
+      <span class="area-tag">Twyford</span>
+      <span class="area-tag">Sonning</span>
+      <span class="area-tag">Whitley</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Request a Free Quote</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Nela Plumbing & Gas Services</h3>
+        <p>Available 24/7 for emergencies. Gas Safe registered and fully insured. Over 10 years' experience serving Reading and Berkshire.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="contact-detail-text"><strong>Phone</strong>07878 531 920</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="contact-detail-text"><strong>Email</strong>nelaplumbingandgasservices@gmail.com</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-detail-text"><strong>Location</strong>Reading, Berkshire, RG30</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="contact-detail-text"><strong>Hours</strong>24/7 — Emergency call-outs available</div>
+        </div>
+        <div style="margin-top: 20px;">
+          <img src="/mockups/nela-gas/logo.jpg" alt="Nela Plumbing & Gas Services logo" style="max-width: 200px; border-radius: 12px; border: 1px solid var(--border); padding: 12px; background: #fff;">
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <form action="">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" required placeholder="John Smith">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" required placeholder="07xxx xxx xxx">
+          </div>
+          <div class="form-group">
+            <label>Email (Optional)</label>
+            <input type="email" name="email" placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select name="service">
+              <option value="">Select a service...</option>
+              <option>24/7 Emergency Plumbing</option>
+              <option>Boiler Installation</option>
+              <option>Boiler Servicing & Repairs</option>
+              <option>Gas Safety Certificates</option>
+              <option>Leak Detection & Repairs</option>
+              <option>Central Heating Installation</option>
+              <option>Blocked Drains & Drainage</option>
+              <option>Bathroom & Kitchen Fitting</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell us about your job..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">Nela <span>Plumbing</span> & Gas Services</div>
+    <p>&copy; 2026 Nela Plumbing & Gas Services. All rights reserved.</p>
+    <p style="margin-top: 4px;">Site by <a href="https://construction-sites.co.uk">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- FABs -->
+<div class="fab-container">
+  <a href="tel:07878531920" class="fab fab-call" aria-label="Call Nela Plumbing">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/447878531920?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab fab-wa" aria-label="WhatsApp Nela Plumbing">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img id="lightbox-img" src="" alt="Gallery image">
+</div>
+
+<script>
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// FAB visibility
+var fabContainer = document.querySelector('.fab-container');
+var heroButtons = document.querySelector('.hero-btns');
+window.addEventListener('scroll', function() {
+  if (fabContainer && heroButtons) {
+    if (heroButtons.getBoundingClientRect().bottom < 0) {
+      fabContainer.classList.add('visible');
+    } else {
+      fabContainer.classList.remove('visible');
+    }
+  }
+});
+
+// Lightbox
+function openLightbox(el) {
+  var img = el.querySelector('img');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>
