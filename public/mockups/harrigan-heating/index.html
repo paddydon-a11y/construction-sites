@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harrigan Plumbing &amp; Heating | Brighton</title>
+<meta name="description" content="5-star rated plumber in Brighton. Bathroom renovations, boiler repairs, radiator fitting, emergency plumbing. Gas Safe registered. 56 Google reviews. Call Jordan today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+<style>
+:root {
+  --bg: #0a0a0a;
+  --card: #111111;
+  --card-hover: #181818;
+  --border: #1f1f1f;
+  --border-light: #2a2a2a;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-glow: rgba(37,99,235,0.15);
+  --accent-rgb: 37,99,235;
+  --green: #22c55e;
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --heading: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Inter', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--body); background: var(--bg); color: var(--gray-300); line-height: 1.7; padding-bottom: 80px; }
+h1, h2, h3, h4, h5 { font-family: var(--heading); color: var(--white); letter-spacing: -0.03em; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* Nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--heading); font-weight: 800; font-size: 1.15rem; color: var(--white); white-space: nowrap; }
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--gray-400); transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-300); margin: 5px 0; transition: 0.3s; }
+
+/* Hero */
+.hero { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; padding: 140px 24px 0; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-glow), transparent 70%); pointer-events: none; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; max-width: 1200px; position: relative; z-index: 1; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 8px 16px; font-size: 0.75rem; font-weight: 600; color: var(--gray-300); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.3s; }
+.hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: dot-pulse 2s ease-in-out infinite; }
+.hero h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.08; margin-bottom: 18px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.5s; }
+.hero h1 .accent { background: linear-gradient(135deg, var(--accent), #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: 1.1rem; color: var(--gray-400); margin-bottom: 28px; max-width: 500px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.7s; }
+.hero-btns { display: flex; gap: 12px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.9s; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; font-family: var(--body); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-wa { background: var(--green); color: #000; }
+.hero-images { display: flex; gap: 16px; opacity: 0; animation: fadeScale 0.8s ease forwards 0.6s; }
+.hero-img-wrap { flex: 1; min-width: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); position: relative; }
+.hero-img-wrap img { width: 100%; height: 320px; object-fit: cover; }
+.hero-image-badge { position: absolute; top: 16px; right: 16px; background: rgba(10,10,10,0.85); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 700; color: var(--white); }
+
+/* Trust Bar */
+.trust-bar { width: 100%; max-width: 1200px; padding: 80px 0 0; position: relative; z-index: 1; }
+.trust-bar-inner { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; color: var(--gray-300); }
+.trust-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.trust-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Section Labels */
+.section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 10px; }
+.section-title { font-size: 2rem; font-weight: 800; margin-bottom: 16px; }
+.section-desc { color: var(--gray-400); max-width: 600px; }
+
+/* Services */
+.services { padding: 20px 24px 80px; }
+.services-header { text-align: center; margin-bottom: 40px; }
+.services-header .section-desc { margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; max-width: 1200px; margin: 0 auto; }
+.service-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; position: relative; overflow: hidden; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { border-color: var(--border-light); background: var(--card-hover); box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.05); }
+.service-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.service-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.service-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+.service-card p { font-size: 0.82rem; color: var(--gray-400); line-height: 1.6; }
+
+/* CTA Band */
+.cta-band { padding: 60px 24px; background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
+.cta-band h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; }
+.cta-band p { color: var(--gray-400); margin-bottom: 24px; }
+.cta-band-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+/* Why Us */
+.why-us { padding: 80px 24px; }
+.why-us-header { text-align: center; margin-bottom: 40px; }
+.why-us-header .section-desc { margin: 0 auto; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; max-width: 1200px; margin: 0 auto; }
+.why-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; transition: border-color 0.3s, background 0.3s; }
+.why-card:hover { border-color: var(--border-light); background: var(--card-hover); }
+.why-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.why-card h3 span { font-size: 1.2rem; }
+.why-card p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.6; }
+
+/* Reviews */
+.reviews-section { padding: 80px 24px; }
+.reviews-header { text-align: center; margin-bottom: 16px; }
+.reviews-header .section-desc { margin: 0 auto; }
+.review-ratings { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+.rating-badge { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; }
+.rating-badge svg { flex-shrink: 0; }
+.rating-badge-text { font-size: 0.85rem; color: var(--gray-400); }
+.rating-badge-text strong { color: var(--white); font-size: 1.1rem; display: block; }
+.google-stars { display: flex; gap: 2px; }
+.google-stars svg { width: 16px; height: 16px; fill: #f59e0b; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; max-width: 1200px; margin: 0 auto; }
+.review-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: border-color 0.3s, background 0.3s; }
+.review-card:hover { border-color: var(--border-light); background: var(--card-hover); }
+.review-stars { display: flex; gap: 2px; margin-bottom: 12px; }
+.review-stars svg { width: 16px; height: 16px; fill: #f59e0b; }
+.review-text { font-size: 0.88rem; font-style: italic; color: var(--gray-300); margin-bottom: 16px; line-height: 1.6; }
+.review-author { display: flex; align-items: center; gap: 10px; }
+.review-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; color: var(--accent); flex-shrink: 0; }
+.review-name { font-weight: 600; font-size: 0.85rem; color: var(--white); }
+.review-source { font-size: 0.72rem; color: var(--gray-500); }
+
+/* Gallery */
+.gallery { padding: 80px 24px; }
+.gallery-header { text-align: center; margin-bottom: 40px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; max-width: 1200px; margin: 0 auto; }
+.gallery-item { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); cursor: pointer; aspect-ratio: 16/10; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.gallery-item:hover img { transform: scale(1.03); }
+.gallery-item.tall { aspect-ratio: 3/4; }
+
+/* Lightbox */
+.lightbox { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 20px; }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90%; max-height: 90vh; border-radius: 12px; }
+.lightbox-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+
+/* Areas */
+.areas-section { padding: 80px 24px; }
+.areas-header { text-align: center; margin-bottom: 40px; }
+.areas-header .section-desc { margin: 0 auto; }
+.areas-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 1000px; margin: 0 auto; }
+.area-tag { background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 10px 20px; font-size: 0.82rem; font-weight: 500; color: var(--gray-300); transition: border-color 0.3s, color 0.3s; }
+.area-tag:hover { border-color: var(--accent); color: var(--white); }
+
+/* Contact */
+.contact { padding: 80px 24px; }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+.contact-info h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+.contact-info > p { color: var(--gray-400); margin-bottom: 28px; }
+.contact-detail { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.contact-detail-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-detail-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.contact-detail-text { font-size: 0.9rem; }
+.contact-detail-text strong { color: var(--white); display: block; font-size: 0.95rem; }
+.contact-logo { width: 160px; margin-bottom: 24px; border-radius: 10px; }
+.contact-form-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+.form-group { margin-bottom: 16px; }
+.form-label { display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-400); margin-bottom: 6px; }
+.form-input, .form-select, .form-textarea { width: 100%; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font-family: var(--body); font-size: 0.88rem; transition: border-color 0.3s; outline: none; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent); }
+.form-textarea { min-height: 100px; resize: vertical; }
+.form-select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.form-select option { background: var(--card); color: var(--white); }
+.btn-submit { width: 100%; padding: 14px; border: none; border-radius: 10px; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.95rem; font-family: var(--body); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+/* Footer */
+.footer { border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; }
+.footer-logo { font-family: var(--heading); font-weight: 800; font-size: 1.1rem; color: var(--white); margin-bottom: 8px; }
+.footer-logo span { color: var(--accent); }
+.footer p { font-size: 0.78rem; color: var(--gray-500); }
+.footer a { color: var(--accent); }
+
+/* FABs */
+.fab-container { position: fixed; bottom: 16px; right: 16px; z-index: 90; display: flex; flex-direction: column; gap: 10px; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s; }
+.fab-container.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.fab { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: transform 0.2s; }
+.fab:hover { transform: scale(1.1); animation: none; }
+.fab svg { width: 22px; height: 22px; }
+.fab-call { background: var(--accent); color: #fff; animation: pulse-ring 2s ease-in-out infinite; }
+.fab-call svg { stroke: #fff; }
+.fab-wa { background: var(--green); color: #000; animation: pulse-ring-wa 2s ease-in-out infinite; }
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes dot-pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(34,197,94,0); } }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(37,99,235,0.4); } 70% { box-shadow: 0 0 0 12px rgba(37,99,235,0); } 100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); } }
+@keyframes pulse-ring-wa { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); } 70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.service-card:nth-child(1) { transition-delay: 0s; }
+.service-card:nth-child(2) { transition-delay: 0.1s; }
+.service-card:nth-child(3) { transition-delay: 0.1s; }
+.service-card:nth-child(4) { transition-delay: 0.2s; }
+.service-card:nth-child(5) { transition-delay: 0.2s; }
+.service-card:nth-child(6) { transition-delay: 0.3s; }
+.service-card:nth-child(7) { transition-delay: 0.3s; }
+.service-card:nth-child(8) { transition-delay: 0.4s; }
+.service-card:nth-child(9) { transition-delay: 0.4s; }
+.service-card:nth-child(10) { transition-delay: 0.5s; }
+.review-card:nth-child(1) { transition-delay: 0s; }
+.review-card:nth-child(2) { transition-delay: 0.1s; }
+.review-card:nth-child(3) { transition-delay: 0.2s; }
+.review-card:nth-child(4) { transition-delay: 0.3s; }
+.review-card:nth-child(5) { transition-delay: 0.4s; }
+.review-card:nth-child(6) { transition-delay: 0.5s; }
+
+/* Mobile Nav */
+.mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; padding: 24px; flex-direction: column; gap: 8px; }
+.mobile-menu.active { display: flex; }
+.mobile-menu a { display: block; padding: 14px 16px; font-size: 1rem; font-weight: 500; color: var(--gray-300); border-radius: 10px; transition: background 0.2s; }
+.mobile-menu a:hover { background: var(--card); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: block; }
+  .hero { min-height: auto; padding: 120px 20px 40px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-sub { margin: 0 auto 24px; }
+  .hero-btns { justify-content: center; flex-wrap: wrap; }
+  .hero-images { flex-direction: row; }
+  .hero-img-wrap { flex: 1; min-width: 0; }
+  .hero-img-wrap img { height: 200px; }
+  .trust-bar { padding: 40px 0 0; }
+  .trust-bar-inner { gap: 16px; }
+  .trust-item { font-size: 0.78rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item.tall { aspect-ratio: 16/10; }
+  .contact-inner { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .cta-band h2 { font-size: 1.4rem; }
+  .review-ratings { gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="#" class="nav-logo">Harrigan <span>Plumbing</span></a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#gallery">Our Work</a>
+    <a href="#areas">Areas</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#gallery" onclick="closeMenu()">Our Work</a>
+  <a href="#areas" onclick="closeMenu()">Areas</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Gas Safe Registered &middot; 5.0 Stars</div>
+      <h1>Brighton's <span class="accent">5-Star Plumber</span> You Can Trust</h1>
+      <p class="hero-sub">56 five-star Google reviews. Jordan and the team deliver bathroom renovations, boiler repairs, and emergency plumbing across Brighton &amp; Hove.</p>
+      <div class="hero-btns">
+        <a href="tel:07949245276" class="btn btn-accent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Jordan
+        </a>
+        <a href="https://wa.me/447949245276?text=Hi%20Jordan%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Jordan
+        </a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-img-wrap">
+        <img src="/mockups/harrigan-heating/photo-3.webp" alt="Stylish bathroom renovation by Harrigan Plumbing in Brighton" loading="eager">
+        <div class="hero-image-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          5.0 &middot; 56 Reviews
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="/mockups/harrigan-heating/photo-4.webp" alt="Luxury claw-foot bath installation with gold fixtures by Harrigan Plumbing" loading="eager">
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        Gas Safe Registered
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        Checkatrade Verified
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        5.0 Stars on Google
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        Free Quotes
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="services-header reveal">
+    <p class="section-label">Our Services</p>
+    <h2 class="section-title">Plumbing &amp; Heating in Brighton</h2>
+    <p class="section-desc">From emergency call-outs to full bathroom renovations, Jordan delivers professional plumbing and heating services across Brighton, Hove, and East Sussex.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h3>Bathroom Renovation</h3>
+      <p>Complete bathroom design, fitting, and tiling. From luxury suites to practical en-suites, Jordan handles everything from plumbing to the finishing touches.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <h3>Boiler Repair &amp; Servicing</h3>
+      <p>Boiler breakdowns, annual servicing, and diagnostics. Gas Safe registered for safe, certified boiler work every time.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+      <h3>Radiator Installation</h3>
+      <p>New radiator fitting, replacements, and system balancing. Efficient heating throughout your home with expert installation.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
+      <h3>Tap Replacement</h3>
+      <p>Kitchen and bathroom tap replacements, upgrades, and repairs. From chrome mixer taps to brass fixtures, fitted professionally.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <h3>Emergency Plumbing</h3>
+      <p>Burst pipes, floods, and leaks dealt with fast. Jordan has been on site within 10 minutes for emergencies &mdash; when it matters most.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <h3>Leak Detection &amp; Repair</h3>
+      <p>Fast diagnosis and repair of leaks, dripping taps, and faulty pipework. Minimising damage and getting things fixed right.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
+      <h3>Washing Machine Installation</h3>
+      <p>Professional installation of washing machines and dishwashers. Proper connections, leak-proof fittings, and tidy pipework.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h3>Toilet Repairs</h3>
+      <p>Flush mechanisms, cistern repairs, leaking toilets, and full replacements. Quick fixes and lasting solutions.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Kitchen Plumbing</h3>
+      <p>Kitchen tap fitting, waste disposal, sink installation, and pipework. Domestic and commercial kitchen plumbing handled.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/></svg></div>
+      <h3>General Plumbing</h3>
+      <p>All general plumbing work for homes and businesses. Pipework, waste, fittings, and maintenance &mdash; no job too small.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <h2 class="reveal">Need a Plumber in Brighton?</h2>
+  <p class="reveal">56 five-star reviews. Gas Safe registered. Call Jordan today for a free, no-obligation quote.</p>
+  <div class="cta-band-btns reveal">
+    <a href="tel:07949245276" class="btn btn-accent">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call 07949 245 276
+    </a>
+    <a href="https://wa.me/447949245276?text=Hi%20Jordan%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Jordan
+    </a>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="why-us">
+  <div class="why-us-header reveal">
+    <p class="section-label">Why Choose Jordan</p>
+    <h2 class="section-title">Why Brighton Trusts Harrigan Plumbing</h2>
+    <p class="section-desc">Perfect 5.0-star rating across 56 Google reviews. Here's what makes Jordan different from the rest.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <h3><span>&#11088;</span> Perfect 5.0 Stars</h3>
+      <p>56 Google reviews and every single one is 5 stars. Not 4.9, not 4.8 &mdash; a perfect score. That kind of consistency speaks for itself.</p>
+    </div>
+    <div class="why-card reveal">
+      <h3><span>&#9889;</span> Rapid Response</h3>
+      <p>When a customer's house flooded, Jordan was on site within 10 minutes. Emergency or routine, he responds fast and gets straight to work.</p>
+    </div>
+    <div class="why-card reveal">
+      <h3><span>&#128176;</span> Fair, Honest Pricing</h3>
+      <p>Customers consistently praise Jordan's competitive pricing. No hidden costs, no surprises &mdash; just honest quotes and quality work at a fair price.</p>
+    </div>
+    <div class="why-card reveal">
+      <h3><span>&#128736;</span> Quality Craftsmanship</h3>
+      <p>From stunning bathroom renovations to precision tap replacements, Jordan takes genuine pride in every job. His work photos prove it.</p>
+    </div>
+    <div class="why-card reveal">
+      <h3><span>&#129309;</span> Friendly &amp; Professional</h3>
+      <p>Every review mentions how friendly, polite, and easy to work with Jordan is. He communicates clearly and respects your home.</p>
+    </div>
+    <div class="why-card reveal">
+      <h3><span>&#128188;</span> Domestic &amp; Commercial</h3>
+      <p>From single tap replacements in homes to ongoing plumbing for property businesses, Jordan handles jobs of all sizes reliably.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-header reveal">
+    <p class="section-label">Reviews</p>
+    <h2 class="section-title">What Our Customers Say</h2>
+  </div>
+  <div class="review-ratings reveal">
+    <div class="rating-badge">
+      <svg width="24" height="24" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      <div class="rating-badge-text">
+        <strong>5.0</strong>
+        <div class="google-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        56 reviews on Google
+      </div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"Jordan was amazing when I needed a plumber to install my new washing machine. He went to get the parts needed for me and even went out of his way to install some copper pipe to stop any potential leaks. Very happy, I would definitely recommend to anyone looking for a friendly and professional plumber."</p>
+      <div class="review-author">
+        <div class="review-avatar">M</div>
+        <div><div class="review-name">Mahla Bess</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"We hired Jordan after our original plumber cancelled, and it turned out to be the best decision we could have made! He fitted all our new radiators and did a fantastic job. Jordan is friendly, attentive, and genuinely takes pride in his work. His prices are very competitive, and we wouldn't hesitate to recommend him."</p>
+      <div class="review-author">
+        <div class="review-avatar">A</div>
+        <div><div class="review-name">Anna Coley</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"Jordan was an absolute star when my house flooded. He was round in 10 minutes and so on it. Helped us so much not just with sorting the plumbing issue but everything else on a day that would have been a lot worse if I didn't already have his number."</p>
+      <div class="review-author">
+        <div class="review-avatar">A</div>
+        <div><div class="review-name">Ashley Oldershaw</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"Jordan did my bathroom renovation and I'm really happy with it. He's really friendly, helpful and informative, and will absolutely not rip you off &mdash; will recommend to everyone!"</p>
+      <div class="review-author">
+        <div class="review-avatar">T</div>
+        <div><div class="review-name">Tia Norden</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"11 out 10 would recommend. Really fast, reasonably priced, excellent quality work and a nice bloke too. He has a customer for life."</p>
+      <div class="review-author">
+        <div class="review-avatar">G</div>
+        <div><div class="review-name">Guy Goodwin</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"Jordan did the most amazing job of my bathroom! He was so great at communication from start to finish and his patience was incredible. Would highly recommend Harrigan Plumbing to anyone."</p>
+      <div class="review-author">
+        <div class="review-avatar">I</div>
+        <div><div class="review-name">Isabel Winter</div><div class="review-source">Google Review</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header reveal">
+    <p class="section-label">Our Work</p>
+    <h2 class="section-title">Recent Projects</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item tall reveal" onclick="openLightbox(this)"><img src="/mockups/harrigan-heating/photo-3.webp" alt="Stylish dark green bathroom with patterned floor tiles" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/harrigan-heating/photo-4.webp" alt="Luxury claw-foot bath with gold fixtures and black subway tiles" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/harrigan-heating/photo-2.webp" alt="Green tiled bathroom with bath and shower" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/harrigan-heating/photo-1.webp" alt="Jordan installing a radiator" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/harrigan-heating/photo-5.webp" alt="Chrome tap installation" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/harrigan-heating/photo-6.webp" alt="Brass kitchen tap fitting" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- Areas -->
+<section class="areas-section" id="areas">
+  <div class="areas-header reveal">
+    <p class="section-label">Areas We Cover</p>
+    <h2 class="section-title">Plumbers Across Brighton &amp; Hove</h2>
+    <p class="section-desc">Jordan covers Brighton, Hove, and the surrounding areas across East Sussex. Give him a call &mdash; he's probably already nearby.</p>
+  </div>
+  <div class="areas-grid reveal">
+    <span class="area-tag">Brighton</span>
+    <span class="area-tag">Hove</span>
+    <span class="area-tag">Portslade</span>
+    <span class="area-tag">Shoreham-by-Sea</span>
+    <span class="area-tag">Southwick</span>
+    <span class="area-tag">Saltdean</span>
+    <span class="area-tag">Rottingdean</span>
+    <span class="area-tag">Peacehaven</span>
+    <span class="area-tag">Lewes</span>
+    <span class="area-tag">Newhaven</span>
+    <span class="area-tag">Woodingdean</span>
+    <span class="area-tag">Patcham</span>
+    <span class="area-tag">Hangleton</span>
+    <span class="area-tag">Preston Park</span>
+    <span class="area-tag">Kemptown</span>
+    <span class="area-tag">Haywards Heath</span>
+    <span class="area-tag">Burgess Hill</span>
+    <span class="area-tag">Hassocks</span>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <img src="/mockups/harrigan-heating/logo.jpg" alt="Harrigan Plumbing and Heating logo" class="contact-logo">
+      <p class="section-label">Get In Touch</p>
+      <h2>Ready to Get Started?</h2>
+      <p>Whether it's an emergency leak, a bathroom renovation, or a simple tap replacement, Jordan is here to help. Call or fill in the form for a free quote.</p>
+      <div style="margin-top: 28px;">
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="contact-detail-text"><strong><a href="tel:07949245276">07949 245 276</a></strong>Mon&ndash;Sat, emergencies anytime</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-detail-text"><strong>Brighton &amp; Hove, East Sussex</strong>BN1 3RB</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></div>
+          <div class="contact-detail-text"><strong><a href="https://wa.me/447949245276?text=Hi%20Jordan%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please">WhatsApp Jordan</a></strong>Quick quotes via message</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-card reveal">
+      <h3 style="font-size: 1.2rem; margin-bottom: 20px;">Request a Free Quote</h3>
+      <form action="" method="POST">
+        <div class="form-group">
+          <label class="form-label">Name *</label>
+          <input type="text" name="name" class="form-input" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone *</label>
+          <input type="tel" name="phone" class="form-input" required placeholder="Your phone number">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-input" placeholder="Your email (optional)">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Needed</label>
+          <select name="service" class="form-select">
+            <option value="">Select a service...</option>
+            <option value="Bathroom Renovation">Bathroom Renovation</option>
+            <option value="Boiler Repair & Servicing">Boiler Repair &amp; Servicing</option>
+            <option value="Radiator Installation">Radiator Installation</option>
+            <option value="Tap Replacement">Tap Replacement</option>
+            <option value="Emergency Plumbing">Emergency Plumbing</option>
+            <option value="Leak Detection & Repair">Leak Detection &amp; Repair</option>
+            <option value="Washing Machine Installation">Washing Machine Installation</option>
+            <option value="Toilet Repairs">Toilet Repairs</option>
+            <option value="Kitchen Plumbing">Kitchen Plumbing</option>
+            <option value="General Plumbing">General Plumbing</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea name="message" class="form-textarea" placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-logo">Harrigan <span>Plumbing</span> &amp; Heating</div>
+  <p>&copy; 2026 Harrigan Plumbing and Heating. All rights reserved.</p>
+  <p style="margin-top: 6px;">Site by <a href="https://construction-sites.co.uk">construction-sites.co.uk</a></p>
+</footer>
+
+<!-- FABs -->
+<div class="fab-container" id="fabContainer">
+  <a href="tel:07949245276" class="fab fab-call" aria-label="Call Jordan">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/447949245276?text=Hi%20Jordan%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab fab-wa" aria-label="WhatsApp Jordan">
+    <svg viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('active');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('active');
+}
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// FAB visibility
+var fabContainer = document.querySelector('.fab-container');
+var heroButtons = document.querySelector('.hero-btns');
+window.addEventListener('scroll', function() {
+  if (fabContainer && heroButtons) {
+    if (heroButtons.getBoundingClientRect().bottom < 0) {
+      fabContainer.classList.add('visible');
+    } else {
+      fabContainer.classList.remove('visible');
+    }
+  }
+});
+
+// Lightbox
+function openLightbox(el) {
+  var img = el.querySelector('img');
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>
