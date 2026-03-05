@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CH Electrical Contractors Ltd | Electrician & Renewable Energy in Southampton</title>
+<meta name="description" content="CH Electrical Contractors Ltd — NAPIT & MCS-approved electrician and renewable energy specialists in Southampton. Solar panels, EV chargers, battery storage, rewiring. 10+ years experience. As seen on DIY SOS.">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-17958918628');gtag('config','G-WG747WXNB6');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #081a0b;
+  --bg-light: #0e2412;
+  --card: rgba(122,201,67,0.05);
+  --card-border: rgba(122,201,67,0.12);
+  --accent: #7ac943;
+  --accent-glow: rgba(122,201,67,0.22);
+  --text: #ffffff;
+  --text-muted: #9ab89e;
+  --radius: 16px;
+  --nav-height: 72px;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { color: var(--accent); text-decoration: none; }
+
+/* NAV */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index:1000;
+  height: var(--nav-height);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(1rem,4vw,3rem);
+  background: rgba(8,26,11,0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--card-border);
+  transition: background 0.3s;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-weight: 700; font-size: 1.1rem;
+  white-space: nowrap;
+  color: var(--text);
+}
+.nav-logo img { height: 38px; width: auto; border-radius: 6px; }
+.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links a { color: var(--text-muted); font-size:0.95rem; font-weight:500; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+.mobile-toggle { display:none; background:none; border:none; color:var(--text); cursor:pointer; }
+.mobile-menu {
+  display:none; position:fixed; top:var(--nav-height); left:0; right:0;
+  background:rgba(8,26,11,0.97); backdrop-filter:blur(16px);
+  padding:1.5rem; border-bottom:1px solid var(--card-border);
+}
+.mobile-menu.active { display:block; }
+.mobile-menu a { display:block; padding:0.75rem 0; color:var(--text-muted); font-weight:500; font-size:1.05rem; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: calc(var(--nav-height) + 2rem) clamp(1rem,4vw,3rem) 4rem;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.hero-badge .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.hero h1 .grad {
+  background: linear-gradient(135deg, var(--accent), #a3e635);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent);
+  color: #081a0b;
+  font-weight: 700;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 20px var(--accent-glow);
+  animation: ctaPulse 3s infinite;
+}
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 35px var(--accent-glow), 0 0 60px rgba(122,201,67,0.1); }
+}
+.btn-primary:hover { transform: translateY(-2px); color: #081a0b; }
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(37,211,102,0.25);
+}
+.btn-whatsapp:hover { transform: translateY(-2px); color: #fff; box-shadow: 0 0 30px rgba(37,211,102,0.35); }
+
+.hero-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.hero-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+.hero-img img {
+  width: 100%; height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+.hero-img:hover img { transform: scale(1.05); }
+
+/* TRUST BAR */
+.trust-bar {
+  display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+  padding: 2.5rem clamp(1rem,4vw,3rem);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  background: var(--card);
+}
+.trust-item {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.95rem; font-weight: 600;
+  color: var(--text-muted);
+}
+.trust-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-glow);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.trust-icon svg { width:18px; height:18px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+/* SECTIONS */
+.section {
+  padding: 5rem clamp(1rem,4vw,3rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+/* SERVICES */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.service-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.service-icon {
+  width: 48px; height: 48px;
+  background: var(--accent-glow);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.service-icon svg { width:24px; height:24px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.service-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; }
+.service-card p { color:var(--text-muted); font-size:0.95rem; line-height:1.6; }
+
+/* WHY US */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.why-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.why-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.why-icon {
+  width: 56px; height: 56px;
+  background: var(--accent-glow);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+.why-icon svg { width:26px; height:26px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.why-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:0.5rem; }
+.why-card p { color:var(--text-muted); font-size:0.9rem; }
+
+/* REVIEWS */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: border-color 0.3s;
+}
+.review-card:hover { border-color: var(--accent); }
+.review-stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.75rem; }
+.review-text { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; font-style: italic; }
+.review-author { font-weight: 600; font-size: 0.9rem; }
+.review-source { color: var(--text-muted); font-size: 0.8rem; margin-top: 0.15rem; }
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  aspect-ratio: 4/3;
+}
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* AREAS */
+.areas-list {
+  display: flex; flex-wrap: wrap; gap: 0.75rem;
+}
+.area-tag {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: border-color 0.3s, color 0.3s;
+}
+.area-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  padding: 5rem clamp(1rem,4vw,3rem);
+  background: linear-gradient(180deg, transparent, rgba(122,201,67,0.04), transparent);
+}
+.cta-section h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.cta-section p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--card-border);
+  padding: 3rem clamp(1rem,4vw,3rem);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.footer a { color: var(--accent); }
+
+/* FAB */
+.fab {
+  position: fixed; bottom: 1.5rem; right: 1.5rem;
+  z-index: 999;
+  display: flex; flex-direction: column; gap: 0.75rem;
+  align-items: center;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.4s, transform 0.4s;
+  pointer-events: none;
+}
+.fab.visible { opacity:1; transform:translateY(0); pointer-events:all; }
+.fab a {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+  position: relative;
+}
+.fab a::before {
+  content: '';
+  position: absolute; inset: -4px;
+  border-radius: 50%;
+}
+.fab a:hover { transform: scale(1.1); }
+.fab-call { background: var(--accent); color: #081a0b; }
+.fab-call::before { animation: fabPulseAccent 2s infinite; }
+@keyframes fabPulseAccent {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  50% { box-shadow: 0 0 0 10px rgba(122,201,67,0); }
+}
+.fab-wa { background: #25d366; color: #fff; }
+.fab-wa::before { animation: fabPulseWa 2s infinite; }
+@keyframes fabPulseWa {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+}
+.fab svg { width:22px; height:22px; }
+
+/* SCROLL REVEAL */
+.reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns:1fr; }
+  .hero-images { grid-template-columns:1fr 1fr; }
+  .hero-img img { height: 200px; }
+  .nav-links { display:none; }
+  .mobile-toggle { display:block; }
+  .trust-bar { gap:1.5rem; }
+  .reviews-grid { grid-template-columns:1fr; }
+  .gallery-grid { grid-template-columns:1fr 1fr; }
+  .fab a { width: 50px; height: 50px; }
+}
+@media (max-width: 480px) {
+  .hero-images { grid-template-columns:1fr; }
+  .hero-img img { height: 220px; }
+  .gallery-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <img src="/mockups/ch-contractors/logo.jpg" alt="CH Electrical Contractors Ltd">
+    CH Electrical
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#gallery">Our Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="mobile-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <a href="#services" onclick="this.parentElement.classList.remove('active')">Services</a>
+  <a href="#reviews" onclick="this.parentElement.classList.remove('active')">Reviews</a>
+  <a href="#gallery" onclick="this.parentElement.classList.remove('active')">Our Work</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        As Seen on BBC DIY SOS
+      </div>
+      <h1><span class="grad">Electrical & Renewable Energy</span> Specialists in Southampton</h1>
+      <p>CH Electrical Contractors delivers expert solar installations, EV chargers, battery storage and all electrical work across Southampton. NAPIT and MCS approved with 10+ years' experience. Available 24/7.</p>
+      <div class="hero-btns" id="heroBtns">
+        <a href="tel:07399806174" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Chris
+        </a>
+        <a href="https://wa.me/447399806174" target="_blank" class="btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-img">
+        <img src="/mockups/ch-contractors/photo-4.jpg" alt="Solar panel installation by CH Electrical">
+      </div>
+      <div class="hero-img">
+        <img src="/mockups/ch-contractors/photo-3.jpg" alt="Bathroom lighting installation with LED downlights">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar reveal">
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    </div>
+    5-Star Google Rated
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    NAPIT & MCS Approved
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    TrustMark Registered
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    </div>
+    24/7 Emergency Service
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    10+ Years Experience
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="reveal">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Electrical & Renewable Energy Services</h2>
+    <p class="section-subtitle">From solar panels and battery storage to full rewires and EV chargers — Chris and the team deliver it all.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </div>
+      <h3>Solar Panel Installation</h3>
+      <p>MCS-certified solar PV installations for homes and businesses. Reduce your energy bills and carbon footprint with a 10-year workmanship guarantee.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="1" y="6" width="22" height="12" rx="2"/><line x1="7" y1="12" x2="7.01" y2="12"/><line x1="17" y1="12" x2="17.01" y2="12"/></svg>
+      </div>
+      <h3>Battery Storage</h3>
+      <p>Store excess solar energy with home battery systems from leading manufacturers like SigEnergy and GivEnergy. Maximise your energy independence.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h3>EV Charger Installation</h3>
+      <p>Home and workplace EV charger installations including Zappi and Tesla Wall Connector. Fully certified to current regulations.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>House Rewiring</h3>
+      <p>Full and partial rewires to bring your home up to the latest safety standards. 3-year workmanship guarantee on all electrical work.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <h3>EICR & Testing</h3>
+      <p>Electrical Installation Condition Reports for landlords, homeowners and commercial premises. Full compliance certificates issued.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2v8l4-2"/><circle cx="12" cy="14" r="8"/></svg>
+      </div>
+      <h3>Air Conditioning</h3>
+      <p>Commercial and domestic air conditioning installation and maintenance. Multi-split systems for offices, shops and residential properties.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+      </div>
+      <h3>Fuse Board Upgrades</h3>
+      <p>Consumer unit replacements and upgrades to modern RCD-protected fuse boards. Essential for home safety.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <h3>Emergency Electrical</h3>
+      <p>24/7 emergency call-outs for power failures, tripped circuits and urgent electrical faults across Southampton.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-label">Why CH Electrical</div>
+    <h2 class="section-title">Why Choose Chris & the Team</h2>
+    <p class="section-subtitle">Southampton FC sponsors and BBC DIY SOS featured — trusted by thousands across Hampshire.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <h3>As Seen on DIY SOS</h3>
+      <p>Featured on BBC's DIY SOS — a mark of trusted, quality workmanship recognised nationally.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>MCS & NAPIT Certified</h3>
+      <p>Fully accredited for renewable energy installations. MCS certification means you can access government grants.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>10-Year Solar Guarantee</h3>
+      <p>All solar installations backed by a 10-year workmanship guarantee. 3-year guarantee on all other electrical work.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>Available 24/7</h3>
+      <p>Emergency electrical service around the clock. Day or night, Chris and the team are just one call away.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="reveal">
+    <div class="section-label">What Our Customers Say</div>
+    <h2 class="section-title">5-Star Rated</h2>
+    <p class="section-subtitle">Real feedback from customers across Southampton.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Very happy with service received. Prompt response and took time to look at the job properly. Work was completed to a high standard with great attention to detail."</p>
+      <div class="review-author">Joanne</div>
+      <div class="review-source">Google Review</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Fantastic job on our solar panel installation. Chris and his team were professional from start to finish, explained everything clearly and left the site spotless. Already seeing the savings on our bills."</p>
+      <div class="review-author">Verified Customer</div>
+      <div class="review-source">Google Review</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Had a full rewire done by CH Electrical. The work was completed on time, to a very high standard, and the team were polite and tidy throughout. Would highly recommend."</p>
+      <div class="review-author">Verified Customer</div>
+      <div class="review-source">Google Review</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Excellent service installing our EV charger. Professional approach, clean and tidy work, and everything was explained. Really impressed with the quality and would use them again in a heartbeat."</p>
+      <div class="review-author">Verified Customer</div>
+      <div class="review-source">Google Review</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="reveal">
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">Recent Projects</h2>
+    <p class="section-subtitle">Solar installations, EV chargers, battery storage and more across Southampton.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal">
+      <img src="/mockups/ch-contractors/photo-4.jpg" alt="Solar panel installation on roof" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/ch-contractors/photo-7.webp" alt="Solar inverter and battery storage installation" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/ch-contractors/photo-8.webp" alt="SigEnergy battery storage system" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/ch-contractors/photo-5.jpg" alt="Solar panels installed on slate roof" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/ch-contractors/photo-1.jpg" alt="Zappi EV charger installation" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/ch-contractors/photo-6.jpg" alt="Tesla Wall Connector installation" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/ch-contractors/photo-3.jpg" alt="Bathroom lighting with LED downlights" loading="lazy">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="/mockups/ch-contractors/photo-2.jpg" alt="Commercial air conditioning units" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-label">Areas We Cover</div>
+    <h2 class="section-title">Serving Southampton & Hampshire</h2>
+    <p class="section-subtitle">CH Electrical Contractors covers Southampton and surrounding areas across Hampshire.</p>
+  </div>
+  <div class="areas-list reveal">
+    <span class="area-tag">Southampton</span>
+    <span class="area-tag">Chandlers Ford</span>
+    <span class="area-tag">Chilworth</span>
+    <span class="area-tag">Hedge End</span>
+    <span class="area-tag">Netley</span>
+    <span class="area-tag">Winchester</span>
+    <span class="area-tag">Eastleigh</span>
+    <span class="area-tag">Romsey</span>
+    <span class="area-tag">Totton</span>
+    <span class="area-tag">Bitterne</span>
+    <span class="area-tag">Shirley</span>
+    <span class="area-tag">Woolston</span>
+    <span class="area-tag">Bassett</span>
+    <span class="area-tag">Portswood</span>
+    <span class="area-tag">Fair Oak</span>
+    <span class="area-tag">Hamble</span>
+    <span class="area-tag">Botley</span>
+    <span class="area-tag">Lyndhurst</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="reveal">
+    <h2>Ready to Go Green or Need an Electrician?</h2>
+    <p>Get in touch with Chris today for a free quote on solar, EV chargers, battery storage or any electrical work.</p>
+    <div class="cta-btns">
+      <a href="tel:07399806174" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call 07399 806 174
+      </a>
+      <a href="https://wa.me/447399806174" target="_blank" class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Chris
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2025 CH Electrical Contractors Ltd. All rights reserved. | NAPIT &bull; MCS &bull; TrustMark | Southampton, SO18 1EG</p>
+  <p style="margin-top:0.5rem;">
+    <a href="tel:07399806174">07399 806 174</a> &middot;
+    <a href="mailto:chris@chelectricalcontractor.com">chris@chelectricalcontractor.com</a> &middot;
+    <a href="https://wa.me/447399806174" target="_blank">WhatsApp</a>
+  </p>
+</footer>
+
+<!-- FAB -->
+<div class="fab" id="fab">
+  <a href="tel:07399806174" class="fab-call" aria-label="Call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/447399806174" target="_blank" class="fab-wa" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// FAB visibility
+const heroBtns = document.getElementById('heroBtns');
+const fab = document.getElementById('fab');
+const fabObs = new IntersectionObserver(([e]) => {
+  fab.classList.toggle('visible', !e.isIntersecting);
+}, { threshold: 0 });
+fabObs.observe(heroBtns);
+
+// Nav scroll effect
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.style.background = window.scrollY > 50 ? 'rgba(8,26,11,0.95)' : 'rgba(8,26,11,0.75)';
+});
+</script>
+</body>
+</html>
