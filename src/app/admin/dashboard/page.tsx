@@ -2090,6 +2090,10 @@ export default function DashboardPage() {
     if (authed) fetchLeads();
   }, [authed, fetchLeads]);
 
+  useEffect(() => {
+    if (authed) document.title = "CS CRM";
+  }, [authed]);
+
   // Active leads (not cold/churned/callback) for pipeline & stats
   const activeLeads = leads.filter((l) => l.status !== "cold" && l.status !== "churned" && l.status !== "callback");
   const coldLeads = leads.filter((l) => l.status === "cold");

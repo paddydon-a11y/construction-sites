@@ -310,7 +310,10 @@ export default function MockupCreatorPage() {
   useEffect(() => {
     const id = localStorage.getItem(LS_KEY);
     const role = localStorage.getItem(LS_ROLE);
-    if (id && role === "admin") setAuthed(true);
+    if (id && role === "admin") {
+      setAuthed(true);
+      document.title = "CS Mockup Creator";
+    }
   }, []);
 
   // Restore draft on mount
@@ -496,7 +499,10 @@ export default function MockupCreatorPage() {
     return (
       <PasswordGate
         onAuth={(_, role) => {
-          if (role === "admin") setAuthed(true);
+          if (role === "admin") {
+            setAuthed(true);
+            document.title = "CS Mockup Creator";
+          }
         }}
       />
     );
