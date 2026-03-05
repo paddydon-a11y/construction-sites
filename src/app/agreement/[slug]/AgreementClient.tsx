@@ -238,9 +238,12 @@ export default function AgreementClient({ data }: { data: AgreementData }) {
           <div className="space-y-10 print-text">
 
             <Section title="Overview">
-              <p>
+              <p className="mb-4">
                 Construction Sites designs, builds, hosts, and maintains websites for trade and construction businesses.
                 This is an ongoing service agreement that remains in effect for as long as the client continues to use the service.
+              </p>
+              <p>
+                There is no minimum contract term. You can cancel at any time by simply messaging your client manager, and the website will be taken down at the end of the final paid month.
               </p>
             </Section>
 
@@ -265,7 +268,7 @@ export default function AgreementClient({ data }: { data: AgreementData }) {
               <ul className="space-y-2">
                 <Li>There is no upfront cost. The website is built at no charge.</Li>
                 <Li>The monthly fee is <strong className="text-white print-text">£{data.monthlyFee} + VAT</strong>, payable by Direct Debit.</Li>
-                <Li>The first payment is due on the day the website goes live.</Li>
+                <Li>The first payment is due on signing of this agreement.</Li>
                 <Li>There are no setup fees, hidden charges, or additional costs.</Li>
                 <Li>This agreement is ongoing and continues for as long as the client remains active.</Li>
               </ul>
@@ -273,7 +276,8 @@ export default function AgreementClient({ data }: { data: AgreementData }) {
 
             <Section title="Timeline">
               <ul className="space-y-2">
-                <Li>The website will be live within 7 working days of receiving content and business details.</Li>
+                <Li>If we are purchasing the domain on your behalf, the website will be live within 48 hours — guaranteed.</Li>
+                <Li>If you are providing your own domain, we will use best endeavours to go live as quickly as possible, however there may be delays outside our control at the client&apos;s end.</Li>
                 <Li>Monthly edit requests are completed within 3 working days.</Li>
                 <Li>Support queries are responded to within 24 hours on working days.</Li>
               </ul>
