@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SL Electrical Services | Doncaster</title>
+<meta name="description" content="4.8-star rated electrician serving Doncaster. Rewires, fuse board upgrades, fault finding, testing &amp; inspection. NAPIT approved, Part P certified. Free quotes.">
+<meta property="og:title" content="SL Electrical Services | Electrician in Doncaster">
+<meta property="og:description" content="4.8-star rated electrician serving Doncaster. NAPIT approved, Part P certified. Rewires, fuse boards, testing &amp; inspection.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://construction-sites.co.uk/mockups/sl-electrical/">
+<meta property="og:locale" content="en_GB">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--bg-off:#0e0e0e;--card:#141414;--card-hover:#1a1a1a;
+  --border:#1f1f1f;--border-light:#2a2a2a;
+  --accent:#f59e0b;--accent-hover:#d97706;--accent-light:#fbbf24;--accent-glow:rgba(245,158,11,0.15);
+  --accent-rgb:245,158,11;
+  --green:#22c55e;--white:#ffffff;
+  --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;
+  --gray-400:#9ca3af;--gray-500:#6b7280;
+  --heading:'Plus Jakarta Sans',sans-serif;
+  --body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--gray-300);line-height:1.7;padding-bottom:80px}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:var(--white);letter-spacing:-0.03em;font-weight:800}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:600;margin-bottom:10px}
+.section-title{font-size:2.2rem;margin-bottom:16px}
+.section-sub{color:var(--gray-400);max-width:600px;font-size:1rem}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:center}
+.nav-inner{max-width:1200px;width:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--heading);font-size:1.2rem;font-weight:800;color:var(--white);white-space:nowrap}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{color:var(--gray-400);font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+
+/* HERO */
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:90vh;padding:140px 24px 0;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--accent-glow),transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%;max-width:1200px;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:8px 16px;font-size:0.75rem;font-weight:500;color:var(--gray-300);margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease forwards 0.3s}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;animation:dot-pulse 2s ease-in-out infinite}
+.hero h1{font-size:3.5rem;line-height:1.1;letter-spacing:-0.04em;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease forwards 0.5s}
+.hero h1 .accent{background:linear-gradient(135deg,var(--accent),var(--accent-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{color:var(--gray-400);font-size:1.1rem;margin-bottom:32px;max-width:480px;opacity:0;animation:fadeUp 0.6s ease forwards 0.7s}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.6s ease forwards 0.9s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-weight:600;font-size:0.95rem;border:none;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;font-family:var(--body)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+.btn-accent{background:var(--accent);color:#000}
+.btn-accent:hover{background:var(--accent-hover)}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:#1eae53}
+.hero-images{display:flex;gap:16px;opacity:0;animation:fadeScale 0.8s ease forwards 0.6s}
+.hero-img-wrap{flex:1;min-width:0;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.hero-img-wrap img{width:100%;height:320px;object-fit:cover}
+.hero-image-badge{position:absolute;top:16px;right:16px;background:rgba(10,10,10,0.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:600;color:var(--white)}
+.hero-image-badge svg{flex-shrink:0}
+
+/* TRUST BAR */
+.trust-bar{padding:80px 0 20px;position:relative;z-index:1;width:100%;max-width:1200px}
+.trust-items{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:500;color:var(--gray-300)}
+.trust-item svg{flex-shrink:0;color:var(--accent)}
+
+/* SECTIONS */
+section{padding:80px 0}
+.services-section{padding-top:20px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:40px}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:border-color 0.3s,background 0.3s,box-shadow 0.3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{border-color:var(--border-light);background:var(--card-hover);box-shadow:0 0 20px rgba(var(--accent-rgb),0.05)}
+.service-icon{width:40px;height:40px;border-radius:10px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-icon svg{color:var(--accent)}
+.service-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.service-card p{font-size:0.85rem;color:var(--gray-400);line-height:1.6}
+
+/* CTA BAND */
+.cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:60px 24px}
+.cta-band h2{font-size:2rem;margin-bottom:12px}
+.cta-band p{color:var(--gray-400);margin-bottom:28px;font-size:1.05rem}
+.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:40px}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:border-color 0.3s,background 0.3s}
+.why-card:hover{border-color:var(--border-light);background:var(--card-hover)}
+.why-icon{width:44px;height:44px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.why-icon svg{color:var(--accent)}
+.why-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.why-card p{font-size:0.85rem;color:var(--gray-400);line-height:1.6}
+
+/* REVIEWS */
+.reviews-header{display:flex;align-items:center;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+.google-rating{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px}
+.google-rating .g-logo{width:20px;height:20px;flex-shrink:0}
+.google-rating .stars{display:flex;gap:2px}
+.google-rating .stars svg{width:16px;height:16px;fill:#f59e0b}
+.google-rating .rating-text{font-size:0.85rem;font-weight:600;color:var(--white)}
+.google-rating .review-count{font-size:0.75rem;color:var(--gray-400)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:32px}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:border-color 0.3s}
+.review-card:hover{border-color:var(--border-light)}
+.review-stars{display:flex;gap:2px;margin-bottom:12px}
+.review-stars svg{width:14px;height:14px;fill:#f59e0b}
+.review-text{font-style:italic;font-size:0.9rem;color:var(--gray-300);margin-bottom:16px;line-height:1.7}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:36px;height:36px;border-radius:50%;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;color:var(--accent)}
+.review-name{font-weight:600;font-size:0.85rem;color:var(--white)}
+.review-source{font-size:0.7rem;color:var(--gray-500)}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:32px}
+.gallery-item{border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid var(--border);aspect-ratio:1;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.gallery-item:hover img{transform:scale(1.03)}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:24px}
+.lightbox.active{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;border-radius:12px;object-fit:contain}
+.lightbox-close{position:absolute;top:20px;right:24px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox-close svg{stroke:var(--white)}
+
+/* AREAS */
+.areas-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.area-tag{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:0.8rem;font-weight:500;color:var(--gray-300);transition:border-color 0.2s,color 0.2s}
+.area-tag:hover{border-color:var(--accent);color:var(--white)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+.contact-info h3{font-size:1.3rem;margin-bottom:16px}
+.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:var(--gray-300);font-size:0.9rem}
+.contact-detail svg{flex-shrink:0;color:var(--accent)}
+.contact-detail a{color:var(--accent);font-weight:600}
+.contact-form-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;color:var(--gray-400);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--white);font-family:var(--body);font-size:0.9rem;transition:border-color 0.2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent)}
+.form-group textarea{min-height:100px;resize:vertical}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-group select option{background:var(--bg);color:var(--white)}
+.btn-submit{width:100%;justify-content:center;font-size:1rem;padding:14px 28px}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);text-align:center;padding:40px 24px}
+.footer-name{font-family:var(--heading);font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:8px}
+.footer p{font-size:0.75rem;color:var(--gray-500)}
+.footer a{color:var(--accent);font-weight:500}
+
+/* FLOATING CTAS */
+.fab-container{position:fixed;bottom:16px;right:16px;display:flex;flex-direction:column;gap:10px;z-index:1500;opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity 0.3s,visibility 0.3s,transform 0.3s}
+.fab-container.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.fab{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.fab-call{background:var(--accent);animation:pulse-ring 2s ease-in-out infinite}
+.fab-call:hover{animation:none}
+.fab-call svg{stroke:#000}
+.fab-wa{background:#25d366;animation:pulse-ring-wa 2s ease-in-out infinite}
+.fab-wa:hover{animation:none}
+.fab-wa svg{fill:#fff}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeScale{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+@keyframes dot-pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{opacity:0.7;box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(245,158,11,0.4)}70%{box-shadow:0 0 0 12px rgba(245,158,11,0)}100%{box-shadow:0 0 0 0 rgba(245,158,11,0)}}
+@keyframes pulse-ring-wa{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.revealed{opacity:1;transform:translateY(0)}
+.service-card:nth-child(1){transition-delay:0s}
+.service-card:nth-child(2){transition-delay:0.1s}
+.service-card:nth-child(3){transition-delay:0.15s}
+.service-card:nth-child(4){transition-delay:0.2s}
+.service-card:nth-child(5){transition-delay:0.25s}
+.service-card:nth-child(6){transition-delay:0.3s}
+.service-card:nth-child(7){transition-delay:0.35s}
+.service-card:nth-child(8){transition-delay:0.4s}
+.review-card:nth-child(1){transition-delay:0s}
+.review-card:nth-child(2){transition-delay:0.1s}
+.review-card:nth-child(3){transition-delay:0.15s}
+.review-card:nth-child(4){transition-delay:0.2s}
+.review-card:nth-child(5){transition-delay:0.25s}
+.review-card:nth-child(6){transition-delay:0.3s}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links .nav-link-text{display:none}
+  .hero{min-height:auto;padding:120px 24px 40px}
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h1{font-size:2.2rem}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-btns{justify-content:center}
+  .hero-images{justify-content:center}
+  .hero-img-wrap{flex:1;min-width:0}
+  .hero-img-wrap img{height:220px}
+  .trust-items{gap:16px}
+  .trust-item{font-size:0.72rem}
+  .section-title{font-size:1.7rem}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .cta-band h2{font-size:1.5rem}
+}
+@media(max-width:480px){
+  .services-grid{grid-template-columns:1fr}
+  .hero-img-wrap img{height:180px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">SL <span>Electrical</span> Services</a>
+    <ul class="nav-links">
+      <li><a href="#services" class="nav-link-text">Services</a></li>
+      <li><a href="#reviews" class="nav-link-text">Reviews</a></li>
+      <li><a href="#contact" class="nav-link-text">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> NAPIT Approved &middot; Part P Certified</div>
+      <h1>Your Local <span class="accent">Electricians</span> in Doncaster</h1>
+      <p class="hero-sub">Steve and Josh deliver reliable, high-quality electrical work across Doncaster. NAPIT approved, 18th Edition qualified, and rated 4.8 stars on Google.</p>
+      <div class="hero-btns">
+        <a href="tel:07901526123" class="btn btn-accent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> 07901 526 123</a>
+        <a href="https://wa.me/447901526123?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Steve</a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-img-wrap">
+        <img src="/mockups/sl-electrical/photo-1.webp" alt="Consumer unit installation by SL Electrical Services" loading="eager">
+        <div class="hero-image-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          NAPIT Approved
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="/mockups/sl-electrical/photo-5.webp" alt="Full electrical installation in Doncaster" loading="eager">
+        <div class="hero-image-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          4.8 on Google
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        NAPIT Approved
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        18th Edition
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        4.8-Star Rated
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+        Checkatrade
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Electrical Services in Doncaster</h2>
+      <p class="section-sub">From full rewires to emergency repairs, Steve and Josh handle all domestic and commercial electrical work to the highest standard.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Domestic Rewiring</h3>
+        <p>Full and partial rewires to bring your home up to current regulations, safely and efficiently.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Fuse Board Upgrades</h3>
+        <p>Modern consumer unit replacements with full certification and compliance.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Fault Finding &amp; Repairs</h3>
+        <p>Fast diagnosis and repair of electrical faults, tripping circuits, and power outages.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>EICR Testing &amp; Inspection</h3>
+        <p>Electrical Installation Condition Reports for landlords, homeowners, and businesses.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+        <h3>Lighting Installation</h3>
+        <p>Indoor and outdoor lighting, downlights, LED upgrades, and dimmer installations.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Smoke &amp; Fire Alarms</h3>
+        <p>Supply, installation, and replacement of smoke detectors and fire alarm systems.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <h3>Commercial Electrical</h3>
+        <p>Electrical services for commercial premises including offices, shops, and industrial units.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h2a2 2 0 012 2v8"/><circle cx="8.5" cy="20.5" r="1.5"/><circle cx="18.5" cy="20.5" r="1.5"/></svg></div>
+        <h3>EV Charger Installation</h3>
+        <p>Electric vehicle charging point installation for your home or business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band reveal">
+  <h2>Need an Electrician in Doncaster?</h2>
+  <p>Call Steve and Josh for a free, no-obligation quote</p>
+  <div class="cta-band-btns">
+    <a href="tel:07901526123" class="btn btn-accent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> 07901 526 123</a>
+    <a href="https://wa.me/447901526123?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Steve</a>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">Why Doncaster Trusts SL Electrical</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Fast Response</h3>
+        <p>Steve turned up within the hour to an emergency call. When you need an electrician fast, SL Electrical are there for you.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3>NAPIT Approved</h3>
+        <p>Fully qualified with Part P certification, 18th Edition, and NAPIT approval. Every job is completed to the highest standards and fully certified.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Honest &amp; Reliable</h3>
+        <p>"It's difficult to get good honest tradesmen these days &mdash; Steve and Josh are both." Great value for money with no hidden charges.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3>Clean &amp; Professional</h3>
+        <p>Every customer mentions how clean and tidy Steve and Josh leave things. Professional service from start to finish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Customer Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="reviews-header">
+        <div class="google-rating">
+          <svg class="g-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <span class="rating-text">4.8</span>
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <span class="review-count">13 reviews on Google</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Turned up within the hour to an emergency call. Made a quick repair while clearly explaining what the cause of the issue was. Also made time to change out a damaged socket. Friendly, honest and well mannered. Would 100% recommend."</p>
+        <div class="review-author">
+          <div class="review-avatar">J</div>
+          <div><div class="review-name">Joe Colclough</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"It's difficult to get good honest tradesmen these days, Steve and Josh are both and I would have no problem in recommending these guys to anyone."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div><div class="review-name">Scott Wilcock</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Great professional service for the rewire of my house. They were efficient, reasonably priced and completed the work to a high standard. Would fully recommend S.L Electrical Services!"</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div><div class="review-name">Abby Underwood</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Just had Steve make a visit to my home at very short notice to solve my smoke detector problem. Both detectors were replaced within no time. Excellent service."</p>
+        <div class="review-author">
+          <div class="review-avatar">C</div>
+          <div><div class="review-name">Cyril Jackson</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Came on time, great lads too. Excellent standard of work and cleaned up after. Great value for money. A big thumbs up from me!"</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div><div class="review-name">Ryan Leach</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Excellent electrician. Very professional, friendly and cleaned up after he'd finished. Would highly recommend S.L. Electrical Services."</p>
+        <div class="review-author">
+          <div class="review-avatar">W</div>
+          <div><div class="review-name">Wendy Konstandelos</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/sl-electrical/photo-2.webp" alt="Consumer unit with testing schedule" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/sl-electrical/photo-3.webp" alt="MK consumer unit installation" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/sl-electrical/photo-4.webp" alt="LED dimmer modules" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/sl-electrical/photo-6.webp" alt="Metrel multifunction tester" loading="lazy"></div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="/mockups/sl-electrical/photo-7.webp" alt="Earth testing with Fluke tester" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- AREAS -->
+<section id="areas">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Areas We Cover</p>
+      <h2 class="section-title">Electricians Covering Doncaster &amp; Surrounding Areas</h2>
+    </div>
+    <div class="areas-grid reveal">
+      <span class="area-tag">Doncaster</span>
+      <span class="area-tag">Bentley</span>
+      <span class="area-tag">Bessacarr</span>
+      <span class="area-tag">Cantley</span>
+      <span class="area-tag">Sprotbrough</span>
+      <span class="area-tag">Conisbrough</span>
+      <span class="area-tag">Mexborough</span>
+      <span class="area-tag">Thorne</span>
+      <span class="area-tag">Armthorpe</span>
+      <span class="area-tag">Hatfield</span>
+      <span class="area-tag">Edenthorpe</span>
+      <span class="area-tag">Balby</span>
+      <span class="area-tag">Warmsworth</span>
+      <span class="area-tag">Adwick le Street</span>
+      <span class="area-tag">Askern</span>
+      <span class="area-tag">Tickhill</span>
+      <span class="area-tag">Bawtry</span>
+      <span class="area-tag">Rossington</span>
+      <span class="area-tag">Barnby Dun</span>
+      <span class="area-tag">Scawthorpe</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Request a Free Quote</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Contact Steve &amp; Josh</h3>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:07901526123">07901 526 123</a>
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Doncaster, DN5 7RP
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <a href="https://wa.me/447901526123?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" target="_blank" rel="noopener">WhatsApp Steve</a>
+        </div>
+      </div>
+      <div class="contact-form-card reveal">
+        <form action="" method="POST">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="e.g. John Smith">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="e.g. 07700 900 000">
+          </div>
+          <div class="form-group">
+            <label for="email">Email (Optional)</label>
+            <input type="email" id="email" name="email" placeholder="e.g. john@example.com">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>Domestic Rewiring</option>
+              <option>Fuse Board Upgrade</option>
+              <option>Fault Finding &amp; Repairs</option>
+              <option>EICR Testing &amp; Inspection</option>
+              <option>Lighting Installation</option>
+              <option>Smoke &amp; Fire Alarms</option>
+              <option>Commercial Electrical</option>
+              <option>EV Charger Installation</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent btn-submit">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-name">SL Electrical Services</div>
+  <p>&copy; 2026 SL Electrical Services. All rights reserved.</p>
+  <p>Site by <a href="https://construction-sites.co.uk" target="_blank" rel="noopener">construction-sites.co.uk</a></p>
+</footer>
+
+<!-- FLOATING CTAS -->
+<div class="fab-container" id="fab-container">
+  <a href="tel:07901526123" class="fab fab-call" aria-label="Call Steve"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></a>
+  <a href="https://wa.me/447901526123?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp Steve"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+</div>
+
+<script>
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Floating CTA visibility
+var fabContainer = document.getElementById('fab-container');
+var heroButtons = document.querySelector('.hero-btns');
+window.addEventListener('scroll', function() {
+  if (fabContainer && heroButtons) {
+    if (heroButtons.getBoundingClientRect().bottom < 0) {
+      fabContainer.classList.add('visible');
+    } else {
+      fabContainer.classList.remove('visible');
+    }
+  }
+});
+
+// Lightbox
+function openLightbox(el) {
+  var img = el.querySelector('img');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>
