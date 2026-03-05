@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambridge Electrical & Electronics Ltd | Cambridge</title>
+<meta name="description" content="4.9-star rated electrician serving Cambridge. Emergency call-outs, heat pump installation, solar PV, fuse board replacements. NICEIC approved. Free quotes.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --card: #f8fafc;
+  --card-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --border-light: #cbd5e1;
+  --accent: #c42028;
+  --accent-hover: #a91b22;
+  --accent-glow: rgba(196, 32, 40, 0.1);
+  --accent-rgb: 196, 32, 40;
+  --green: #22c55e;
+  --white: #1e293b;
+  --gray-50: #1e293b;
+  --gray-100: #334155;
+  --gray-200: #475569;
+  --gray-300: #64748b;
+  --gray-400: #64748b;
+  --gray-500: #94a3b8;
+  --heading: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Inter', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); background: var(--bg); color: #475569; line-height: 1.7; padding-bottom: 80px; }
+h1, h2, h3, h4, h5 { font-family: var(--heading); color: #1e293b; letter-spacing: -0.03em; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+.section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
+.section-sub { color: var(--gray-300); font-size: 1.05rem; max-width: 600px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 12px; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; font-family: var(--body); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-wa { background: #25d366; color: #fff; }
+.btn-wa:hover { background: #20bd5a; }
+
+/* Nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.nav-logo { font-family: var(--heading); font-weight: 800; font-size: 1.15rem; color: #1e293b; white-space: nowrap; }
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-300); transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; padding: 140px 0 0; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-glow), transparent 70%); pointer-events: none; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; max-width: 1200px; padding: 0 24px; position: relative; z-index: 1; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 8px 16px; font-size: 0.8rem; font-weight: 600; color: var(--gray-200); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.3s; }
+.hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: dot-pulse 2s ease-in-out infinite; }
+.hero h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.5s; }
+.hero h1 .accent { background: linear-gradient(135deg, var(--accent), #e85d63); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: 1.1rem; color: var(--gray-300); margin-bottom: 32px; max-width: 480px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.7s; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.6s ease forwards 0.9s; }
+.hero-logo-wrap { position: relative; opacity: 0; animation: fadeScale 0.8s ease forwards 0.6s; display: flex; align-items: center; justify-content: center; }
+.hero-logo-wrap img { max-width: 380px; width: 100%; border-radius: 16px; border: 1px solid var(--border); padding: 32px; background: #fff; box-shadow: 0 8px 40px rgba(0,0,0,0.06); }
+.hero-image-badge { position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: 10px; padding: 10px 18px; display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: #1e293b; white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.hero-image-badge svg { flex-shrink: 0; }
+
+/* Trust Bar */
+.trust-bar { width: 100%; max-width: 1200px; padding: 80px 24px 20px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; position: relative; z-index: 1; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; color: var(--gray-200); }
+.trust-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; }
+.trust-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Services */
+.services { padding: 20px 0 80px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 40px; }
+.service-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; position: relative; overflow: hidden; transition: background 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { border-color: var(--border-light); background: var(--card-hover); }
+.service-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.service-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.service-card p { font-size: 0.88rem; color: var(--gray-300); line-height: 1.6; }
+
+/* CTA Band */
+.cta-band { background: var(--accent); padding: 60px 0; text-align: center; }
+.cta-band h2 { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.cta-band p { color: rgba(255,255,255,0.85); font-size: 1.05rem; margin-bottom: 28px; }
+.cta-band .btn-accent { background: #fff; color: var(--accent); }
+.cta-band .btn-accent:hover { background: #f0f0f0; }
+.cta-band .btn-wa { background: #25d366; color: #fff; }
+.cta-band-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* Why Us */
+.why-us { padding: 80px 0; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 40px; }
+.why-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: border-color 0.3s, background 0.3s; }
+.why-card:hover { border-color: var(--border-light); background: var(--card-hover); }
+.why-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.why-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.why-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.why-card p { font-size: 0.88rem; color: var(--gray-300); line-height: 1.6; }
+
+/* Reviews */
+.reviews-section { padding: 80px 0; }
+.reviews-header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+.google-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 8px 16px; }
+.google-badge .stars { color: #f59e0b; font-size: 0.95rem; }
+.google-badge .rating-text { font-size: 0.85rem; font-weight: 600; color: var(--gray-200); }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 40px; }
+.review-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: border-color 0.3s; }
+.review-card:hover { border-color: var(--border-light); }
+.review-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 12px; }
+.review-text { font-size: 0.92rem; color: var(--gray-200); font-style: italic; line-height: 1.7; margin-bottom: 16px; }
+.review-author { display: flex; align-items: center; gap: 12px; }
+.review-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.95rem; color: var(--accent); }
+.review-name { font-weight: 600; font-size: 0.88rem; color: #1e293b; }
+.review-source { font-size: 0.75rem; color: var(--gray-400); }
+
+/* Areas */
+.areas { padding: 80px 0; }
+.areas-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+.area-tag { background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 10px 20px; font-size: 0.85rem; font-weight: 500; color: var(--gray-200); transition: border-color 0.2s, color 0.2s; }
+.area-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Contact */
+.contact { padding: 80px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+.contact-info h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; }
+.contact-info p { color: var(--gray-300); margin-bottom: 24px; }
+.contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.contact-detail-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-detail-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; }
+.contact-detail-text { font-size: 0.9rem; color: var(--gray-200); }
+.contact-detail-text strong { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-400); margin-bottom: 2px; font-weight: 600; }
+.contact-form { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--gray-300); margin-bottom: 6px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; font-family: var(--body); font-size: 0.9rem; background: var(--bg); color: #1e293b; transition: border-color 0.2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit { width: 100%; padding: 14px; background: var(--accent); color: #fff; border: none; border-radius: 12px; font-family: var(--body); font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
+.form-submit:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+
+/* Footer */
+.footer { background: var(--card); border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
+.footer-logo { font-family: var(--heading); font-weight: 800; font-size: 1.2rem; color: #1e293b; margin-bottom: 8px; }
+.footer-logo span { color: var(--accent); }
+.footer p { font-size: 0.8rem; color: var(--gray-400); }
+.footer a { color: var(--accent); }
+
+/* FABs */
+.fab-container { position: fixed; bottom: 16px; right: 16px; display: flex; flex-direction: column; gap: 12px; z-index: 999; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s; }
+.fab-container.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.fab { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15); transition: transform 0.2s; }
+.fab:hover { transform: scale(1.1); }
+.fab svg { width: 24px; height: 24px; }
+.fab-call { background: var(--accent); animation: pulse-ring 2s ease-in-out infinite; }
+.fab-call:hover { animation: none; }
+.fab-call svg { stroke: #fff; fill: none; stroke-width: 2; }
+.fab-wa { background: #25d366; animation: pulse-ring-wa 2s ease-in-out infinite; }
+.fab-wa:hover { animation: none; }
+.fab-wa svg { fill: #fff; }
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes dot-pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(34,197,94,0); } }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(196,32,40,0.4); } 70% { box-shadow: 0 0 0 12px rgba(196,32,40,0); } 100% { box-shadow: 0 0 0 0 rgba(196,32,40,0); } }
+@keyframes pulse-ring-wa { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); } 70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.service-card:nth-child(1) { transition-delay: 0s; }
+.service-card:nth-child(2) { transition-delay: 0.1s; }
+.service-card:nth-child(3) { transition-delay: 0.1s; }
+.service-card:nth-child(4) { transition-delay: 0.2s; }
+.service-card:nth-child(5) { transition-delay: 0.2s; }
+.service-card:nth-child(6) { transition-delay: 0.3s; }
+.service-card:nth-child(7) { transition-delay: 0.3s; }
+.service-card:nth-child(8) { transition-delay: 0.4s; }
+.review-card:nth-child(1) { transition-delay: 0s; }
+.review-card:nth-child(2) { transition-delay: 0.1s; }
+.review-card:nth-child(3) { transition-delay: 0.2s; }
+.review-card:nth-child(4) { transition-delay: 0s; }
+.review-card:nth-child(5) { transition-delay: 0.1s; }
+.review-card:nth-child(6) { transition-delay: 0.2s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { min-height: auto; padding: 120px 0 0; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-btns { justify-content: center; }
+  .hero-logo-wrap img { max-width: 260px; padding: 24px; }
+  .trust-bar { gap: 16px; padding-top: 40px; }
+  .trust-item { font-size: 0.78rem; }
+  .section-title { font-size: 1.7rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .why-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Cambridge <span>Electrical</span> &amp; Electronics</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> NICEIC Approved &middot; TrustMark</div>
+      <h1>Cambridge's Trusted <span class="accent">Electricians</span></h1>
+      <p class="hero-sub">NICEIC approved electrical contractors covering all aspects of electrical work, heat pump installations, and solar PV across Cambridge. 4.9-star rated on Google.</p>
+      <div class="hero-btns">
+        <a href="tel:07450347154" class="btn btn-accent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          07450 347 154
+        </a>
+        <a href="https://wa.me/447450347154?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Jude
+        </a>
+      </div>
+    </div>
+    <div class="hero-logo-wrap">
+      <img src="/mockups/cambridge-electronics/logo.png" alt="Cambridge Electrical & Electronics Ltd logo" loading="eager">
+      <div class="hero-image-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        4.9 &middot; Google
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      NICEIC Approved
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      4.9-Star Rated
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      Part P Certified
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+      Fully Insured
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      18th Edition
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Electrical Services</h2>
+      <p class="section-sub">From emergency call-outs to renewable energy installations, CEE covers all aspects of electrical work across Cambridge.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Emergency Call-Outs</h3>
+        <p>Power failures, tripped fuses, and electrical emergencies. Rapid response — Jude has been known to arrive within 20 minutes, even on weekends.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Fuse Board Replacements</h3>
+        <p>Consumer unit upgrades and replacements to modern standards. Full testing and certification included with every installation.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Heat Pump Installation</h3>
+        <p>Air source heat pump installations for efficient, low-carbon home heating. Professional design, installation, and commissioning.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+        <h3>Solar PV Installation</h3>
+        <p>Solar panel systems designed and installed for your home or business. Reduce your energy bills and carbon footprint with renewable energy.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>EICR Testing &amp; Inspection</h3>
+        <p>Electrical Installation Condition Reports for homeowners, landlords, and commercial properties. Full certification on completion.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Rewiring &amp; Upgrades</h3>
+        <p>Full and partial rewires for older properties. Electrical upgrades to meet current regulations with minimal disruption.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><svg viewBox="0 0 24 24" style="margin-left:-22px"><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Lighting Design &amp; Installation</h3>
+        <p>Interior and exterior lighting solutions. From LED upgrades to bespoke lighting design for homes and commercial spaces.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <h3>EV Charger Installation</h3>
+        <p>Electric vehicle charging point installation for your home or workplace. OZEV grant approved installers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Need an Electrician in Cambridge?</h2>
+    <p>NICEIC approved. Part P certified. 4.9-star rated on Google.</p>
+    <div class="cta-band-btns">
+      <a href="tel:07450347154" class="btn btn-accent">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call 07450 347 154
+      </a>
+      <a href="https://wa.me/447450347154?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Jude
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="why-us">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">Why Cambridge Trusts CEE</h2>
+      <p class="section-sub">Innovation meets reliability. We stay ahead of the curve to provide up-to-date electrical solutions for your home and business.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3>NICEIC &amp; TrustMark</h3>
+        <p>Proud members of the NICEIC trade body and TrustMark registered. All engineers trained to the highest industry standards.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Rapid Emergency Response</h3>
+        <p>Power failure at 9pm on a Sunday? Jude and the team respond fast — often within 20-30 minutes, weekends and evenings included.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div>
+        <h3>Renewable Energy Specialists</h3>
+        <p>Heat pumps, solar PV, and EV chargers. We help Cambridge homeowners embrace clean energy with professional installations.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Guaranteed Workmanship</h3>
+        <p>Full certification on completion of every job. We cover our workmanship with a guarantee for your complete peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="reviews-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Customer Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="reviews-header">
+        <div class="google-badge">
+          <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="rating-text">4.9/5 on Google</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Our fuse box blew up at 9pm on a Sunday night and we were quite stressed! Jude was fantastic — he arrived in less than 30 mins, was friendly and knowledgeable and had us back up and running in no time."</p>
+        <div class="review-author">
+          <div class="review-avatar">C</div>
+          <div><div class="review-name">Claire Martin</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"We experienced a complete power failure but despite it being Saturday evening, Jude was here within 20 mins. He quickly diagnosed the fault, reported it to UK Power Networks and followed up with them and us on the status of the repair."</p>
+        <div class="review-author">
+          <div class="review-avatar">D</div>
+          <div><div class="review-name">Diane Amps</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I am delighted with my recent heat pump installation by Cambridge Electricals. They are such a professional outfit. The heat pump works perfectly and is heating my previously cold house nicely and very efficiently."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div><div class="review-name">Simone Teufel</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Jude and Michael did a stellar job replacing the damaged main power cord in my flat. They were punctual, kind, and professional. They left the site tidy and offered a reasonable quote for the fix."</p>
+        <div class="review-author">
+          <div class="review-avatar">D</div>
+          <div><div class="review-name">Dominik Krzemi&#324;ski</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Michael and Jude came to fit our Solar PV installation — they were incredibly polite, hard-working, thorough and considerate. They even came at 6pm on the hottest day of the year to commission the system."</p>
+        <div class="review-author">
+          <div class="review-avatar">E</div>
+          <div><div class="review-name">Ed Graham</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Can't thank Jude enough. He was quick to respond to my call out. I had no electricity at all. He assessed and kept me informed through the whole process. Knowledgeable, friendly and respectful. Very reasonable pricing."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div><div class="review-name">Sonia Hyvonen</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Areas -->
+<section class="areas">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Areas We Cover</p>
+      <h2 class="section-title">Serving Cambridge &amp; Cambridgeshire</h2>
+      <p class="section-sub">Professional electrical services across Cambridge and the surrounding area.</p>
+    </div>
+    <div class="areas-grid reveal">
+      <span class="area-tag">Cambridge</span>
+      <span class="area-tag">Cherry Hinton</span>
+      <span class="area-tag">Trumpington</span>
+      <span class="area-tag">Girton</span>
+      <span class="area-tag">Histon</span>
+      <span class="area-tag">Impington</span>
+      <span class="area-tag">Milton</span>
+      <span class="area-tag">Waterbeach</span>
+      <span class="area-tag">Cottenham</span>
+      <span class="area-tag">Bar Hill</span>
+      <span class="area-tag">Fulbourn</span>
+      <span class="area-tag">Great Shelford</span>
+      <span class="area-tag">Sawston</span>
+      <span class="area-tag">Ely</span>
+      <span class="area-tag">Newmarket</span>
+      <span class="area-tag">Huntingdon</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Request a Free Quote</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Cambridge Electrical &amp; Electronics Ltd</h3>
+        <p>NICEIC approved, Part P certified, and fully insured. All work guaranteed with full certification on completion.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="contact-detail-text"><strong>Phone</strong>07450 347 154</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-detail-text"><strong>Location</strong>Cambridge, CB3</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="contact-detail-text"><strong>Accreditations</strong>NICEIC &middot; Part P &middot; TrustMark &middot; NAPIT</div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <form action="">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" required placeholder="John Smith">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" required placeholder="07xxx xxx xxx">
+          </div>
+          <div class="form-group">
+            <label>Email (Optional)</label>
+            <input type="email" name="email" placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select name="service">
+              <option value="">Select a service...</option>
+              <option>Emergency Call-Out</option>
+              <option>Fuse Board Replacement</option>
+              <option>Heat Pump Installation</option>
+              <option>Solar PV Installation</option>
+              <option>EICR Testing &amp; Inspection</option>
+              <option>Rewiring &amp; Upgrades</option>
+              <option>Lighting Design &amp; Installation</option>
+              <option>EV Charger Installation</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">Cambridge <span>Electrical</span> &amp; Electronics</div>
+    <p>&copy; 2026 Cambridge Electrical &amp; Electronics Ltd. All rights reserved.</p>
+    <p style="margin-top: 4px;">Site by <a href="https://construction-sites.co.uk">construction-sites.co.uk</a></p>
+  </div>
+</footer>
+
+<!-- FABs -->
+<div class="fab-container">
+  <a href="tel:07450347154" class="fab fab-call" aria-label="Call Cambridge Electrical">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/447450347154?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab fab-wa" aria-label="WhatsApp Cambridge Electrical">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// FAB visibility
+var fabContainer = document.querySelector('.fab-container');
+var heroButtons = document.querySelector('.hero-btns');
+window.addEventListener('scroll', function() {
+  if (fabContainer && heroButtons) {
+    if (heroButtons.getBoundingClientRect().bottom < 0) {
+      fabContainer.classList.add('visible');
+    } else {
+      fabContainer.classList.remove('visible');
+    }
+  }
+});
+</script>
+</body>
+</html>
