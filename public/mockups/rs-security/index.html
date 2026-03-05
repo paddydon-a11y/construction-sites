@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RS Electrical & Security | Wolverhampton</title>
+<meta name="description" content="5-star rated electrician serving Wolverhampton & the West Midlands. Electrical installations, rewiring, alarms & CCTV, consumer upgrades. NICEIC approved. Free quotes.">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #1a0808;
+  --card: #221010;
+  --card-hover: #2a1616;
+  --border: #301c1c;
+  --border-light: #3a2424;
+  --accent: #cc0000;
+  --accent-hover: #b30000;
+  --accent-glow: rgba(204, 0, 0, 0.15);
+  --accent-rgb: 204, 0, 0;
+  --green: #22c55e;
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --heading: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--gray-300);
+  line-height: 1.7;
+  padding-bottom: 80px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--heading);
+  color: var(--white);
+  letter-spacing: -0.03em;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Nav */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 8, 8, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0 24px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.nav-logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--gray-400);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+.nav-links a.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.nav-links a.nav-cta:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.nav-links a.nav-cta svg { stroke: #fff; }
+
+.nav-mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-mobile-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 140px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-glow), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content { max-width: 560px; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-200);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.3s;
+}
+
+.hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.5s;
+}
+
+.hero h1 .accent {
+  background: linear-gradient(135deg, var(--accent), #ff4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--gray-400);
+  margin-bottom: 32px;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.7s;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.9s;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  border: none;
+  font-family: var(--body);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover { background: var(--accent-hover); }
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.btn-whatsapp:hover { background: #1fb855; }
+
+.hero-images {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  opacity: 0;
+  animation: fadeScale 0.8s ease forwards 0.6s;
+}
+
+.hero-image-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-image-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(26, 8, 8, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.hero-image-badge svg { flex-shrink: 0; }
+
+/* Trust Bar */
+.trust-bar {
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 24px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.trust-bar-inner {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-200);
+}
+
+.trust-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Sections */
+.section {
+  padding: 80px 0;
+}
+
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+/* Services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-card:hover {
+  border-color: var(--border-light);
+  background: var(--card-hover);
+  box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.05);
+  transform: translateY(-2px);
+}
+
+.service-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--accent-glow);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.service-icon svg { width: 22px; height: 22px; stroke: var(--accent); }
+
+.service-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  line-height: 1.6;
+}
+
+.service-card:nth-child(1) { transition-delay: 0s; }
+.service-card:nth-child(2) { transition-delay: 0.1s; }
+.service-card:nth-child(3) { transition-delay: 0.1s; }
+.service-card:nth-child(4) { transition-delay: 0.2s; }
+.service-card:nth-child(5) { transition-delay: 0.2s; }
+.service-card:nth-child(6) { transition-delay: 0.3s; }
+.service-card:nth-child(7) { transition-delay: 0.3s; }
+.service-card:nth-child(8) { transition-delay: 0.4s; }
+.service-card:nth-child(9) { transition-delay: 0.4s; }
+.service-card:nth-child(10) { transition-delay: 0.5s; }
+
+/* CTA Band */
+.cta-band {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.cta-band h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.cta-band p {
+  color: var(--gray-400);
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+}
+
+.cta-band-btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Why Us */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.why-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.why-card:hover {
+  border-color: var(--border-light);
+  background: var(--card-hover);
+}
+
+.why-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--accent-glow);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.why-icon svg { width: 22px; height: 22px; stroke: var(--accent); }
+
+.why-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  line-height: 1.6;
+}
+
+/* Reviews */
+.reviews-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.google-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 20px;
+}
+
+.google-rating .g-logo { width: 24px; height: 24px; flex-shrink: 0; }
+
+.google-rating .rating-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  font-family: var(--heading);
+}
+
+.google-rating .stars { display: flex; gap: 2px; }
+
+.google-rating .star { width: 18px; height: 18px; fill: #f59e0b; }
+
+.google-rating .rating-text {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.review-card:hover {
+  border-color: var(--border-light);
+  background: var(--card-hover);
+}
+
+.review-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.review-stars svg { width: 16px; height: 16px; fill: #f59e0b; }
+
+.review-text {
+  font-style: italic;
+  color: var(--gray-200);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.review-name {
+  font-weight: 600;
+  color: var(--white);
+  font-size: 0.85rem;
+}
+
+.review-source {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover { transform: scale(1.03); }
+
+.gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0,0,0,0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.lightbox.active { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+/* Areas */
+.areas-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.area-tag {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-300);
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.area-tag:hover {
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.contact-detail svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-detail span {
+  color: var(--gray-300);
+  font-size: 0.9rem;
+}
+
+.contact-detail a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.contact-logo {
+  margin-top: 24px;
+}
+
+.contact-logo img {
+  height: 60px;
+  opacity: 0.9;
+}
+
+.contact-form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gray-400);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--white);
+  font-family: var(--body);
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-group textarea { height: 100px; resize: vertical; }
+
+.form-group select { cursor: pointer; }
+
+.form-group select option { background: var(--bg); }
+
+.btn-submit {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.footer-company {
+  font-family: var(--heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.footer p {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+.footer a { color: var(--accent); }
+
+/* Floating CTAs */
+.fab-container {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+.fab-container.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fab {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.fab:hover { transform: scale(1.1); }
+.fab:hover { animation: none; }
+
+.fab-call {
+  background: var(--accent);
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+.fab-wa {
+  background: #25d366;
+  animation: pulse-ring-wa 2s ease-in-out infinite;
+}
+
+.fab svg { width: 22px; height: 22px; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(204, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0); }
+}
+
+@keyframes pulse-ring-wa {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-mobile-btn { display: block; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(26, 8, 8, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 20px 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero { min-height: auto; padding: 120px 0 40px; }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .hero-content { max-width: 100%; }
+
+  .hero h1 { font-size: 2.2rem; }
+
+  .hero-btns { justify-content: center; }
+
+  .hero-images {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .hero-image-wrap { flex: 1; min-width: 0; }
+  .hero-image-wrap img { height: 180px; }
+
+  .trust-bar { padding-top: 40px; }
+  .trust-bar-inner { gap: 16px; justify-content: center; }
+  .trust-item { font-size: 0.78rem; }
+
+  .section { padding: 60px 0; }
+  .section-title { font-size: 1.7rem; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item img { height: 160px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .btn { padding: 12px 20px; font-size: 0.9rem; }
+  .hero-image-wrap img { height: 140px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">RS <span>Electrical</span> & Security</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:07980045536" class="nav-cta"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>07980 045 536</a></li>
+    </ul>
+    <button class="nav-mobile-btn" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> NICEIC Approved Contractor</div>
+      <h1>Trusted <span class="accent">Electrician</span> in Wolverhampton</h1>
+      <p class="hero-sub">Domestic, commercial and industrial electrical services & security solutions across the West Midlands. NICEIC approved, Part P certified, and rated 5/5 on Google.</p>
+      <div class="hero-btns">
+        <a href="tel:07980045536" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Raj
+        </a>
+        <a href="https://wa.me/447980045536?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-whatsapp" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Raj
+        </a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-image-wrap">
+        <img src="/mockups/rs-security/photo-2.webp" alt="Commercial lighting installation by RS Electrical & Security" loading="eager">
+        <div class="hero-image-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          5.0 · 131 Reviews
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="/mockups/rs-security/photo-6.webp" alt="Commercial electrical and CCTV installation" loading="eager">
+        <div class="hero-image-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          NICEIC Approved
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        NICEIC Approved
+      </div>
+      <div class="trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Part P Certified
+      </div>
+      <div class="trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        TrustMark Registered
+      </div>
+      <div class="trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        5-Star Rated
+      </div>
+      <div class="trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
+        Fully Insured
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Electrical & Security Solutions</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>Electrical Installations</h3>
+        <p>Full domestic, commercial and industrial electrical installations to the highest standards, certified and compliant.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Rewiring & Upgrades</h3>
+        <p>Complete property rewires and electrical system upgrades for older homes and commercial premises.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Consumer Unit Upgrades</h3>
+        <p>RCD consumer unit replacements and fuse board upgrades to bring your property up to current safety regulations.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <h3>Alarms & CCTV</h3>
+        <p>Complete security solutions including alarm system installation, CCTV camera setup and monitoring for homes and businesses.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </div>
+        <h3>Lighting Installation</h3>
+        <p>Interior and exterior lighting design and installation, including LED upgrades, garden lighting, and emergency lighting systems.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Periodic Inspection Reports</h3>
+        <p>EICR testing and electrical installation condition reports for homeowners, landlords and commercial properties.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Landlord Certificates</h3>
+        <p>Landlord electrical safety certificates and compliance inspections to meet legal requirements for rental properties.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Fault Finding & Repairs</h3>
+        <p>Expert electrical fault diagnosis and rapid repair service. From tripping circuits to complete breakdowns, we'll find and fix it.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Earthing & Bonding</h3>
+        <p>Essential earthing and bonding work to keep your electrical system safe, preventing electric shock hazards.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="22" height="12" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <h3>Extra Sockets & Points</h3>
+        <p>Additional sockets, USB charging points, cooker points, electric shower installations and electrical towel rail connections.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<div class="cta-band">
+  <div class="container reveal">
+    <h2>Need an Electrician in Wolverhampton?</h2>
+    <p>Call Raj today for a free, no-obligation quote. Available for domestic, commercial and emergency work.</p>
+    <div class="cta-band-btns">
+      <a href="tel:07980045536" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        07980 045 536
+      </a>
+      <a href="https://wa.me/447980045536?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-whatsapp" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Raj
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Why Choose Us -->
+<section class="section" id="why-us">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">Why Wolverhampton Trusts Raj</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>NICEIC Approved</h3>
+        <p>Fully approved NICEIC contractor with Part P certification, 18th Edition qualified and JIB registered for your complete peace of mind.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>5-Star Google Rating</h3>
+        <p>Rated 5.0 out of 5 across 131 Google reviews. Customers consistently praise Raj's professionalism, punctuality and quality of work.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+        </div>
+        <h3>TrustMark Registered</h3>
+        <p>Government-endorsed TrustMark registration means all work meets required standards and is backed by quality assurance.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Reliable & Professional</h3>
+        <p>Raj is known for turning up on time, providing accurate quotes, and completing work to the highest standard with minimal disruption.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
+        </div>
+        <h3>Competitive Pricing</h3>
+        <p>Fair, transparent pricing with no hidden extras. Free quotes on all work — domestic, commercial and industrial projects.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>Electrical & Security</h3>
+        <p>One contractor for both your electrical and security needs. From rewires to CCTV, alarms to lighting — all under one roof.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Customer Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+    </div>
+    <div class="reviews-header reveal">
+      <div class="google-rating">
+        <svg class="g-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="rating-num">5.0</span>
+            <div class="stars">
+              <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+          <span class="rating-text">131 reviews on Google</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Fantastic service, called out to replace a faulty socket. Due to the high level of workmanship and the competitive price, he has been back to complete further jobs. Great to find a reliable and trustworthy electrician."</p>
+        <div class="review-author">
+          <div class="review-avatar">W</div>
+          <div>
+            <div class="review-name">Wendy James</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Raj was brilliant from start to finish. His time management was excellent, he arrived on time and completed the job to a very high standard. He was polite, professional, and extremely helpful throughout. I would highly recommend him."</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Rajvinder Mann</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Exceptionally happy with the service, speed, professionalism and kindness provided. We urgently needed an electrician due to a power cut which caused our boilers to stop working on a Sunday morning during sub-zero temperatures."</p>
+        <div class="review-author">
+          <div class="review-avatar">U</div>
+          <div>
+            <div class="review-name">Usha Kanchan</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Very happy with the full electrical install for my Garden Building to include multiple sockets, consumer unit, interior and exterior lighting, exterior double sockets and cat5. A very professional job and a great service all round."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Simon</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Just had works completed by Raj. I felt very confident after our chat about the work. He assessed the situation, told me exactly what needed to be done and completed the job promptly. Very trustworthy and professional gentleman."</p>
+        <div class="review-author">
+          <div class="review-avatar">H</div>
+          <div>
+            <div class="review-name">Harjinder Singh</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Reliable and highly professional. This is the second Electrical & Compliance certification job undertaken for us by Raj. He also fixed a few other electrical jobs at a reasonable rate. On time. Definitely worthy of a five star rating."</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Andrew Wilson</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" onclick="openLightbox(0)">
+        <img src="/mockups/rs-security/photo-1.webp" alt="Garden building electrical installation" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(1)">
+        <img src="/mockups/rs-security/photo-3.webp" alt="Consumer unit installation" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(2)">
+        <img src="/mockups/rs-security/photo-4.webp" alt="Commercial electrical panel" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(3)">
+        <img src="/mockups/rs-security/photo-5.webp" alt="CCTV monitoring system" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(4)">
+        <img src="/mockups/rs-security/photo-2.webp" alt="Commercial lighting installation" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(5)">
+        <img src="/mockups/rs-security/photo-6.webp" alt="Commercial electrical and lighting installation" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="changeLightbox(-1)">&#8249;</button>
+  <img id="lightboxImg" src="" alt="Gallery image">
+  <button class="lightbox-nav lightbox-next" onclick="changeLightbox(1)">&#8250;</button>
+</div>
+
+<!-- Areas -->
+<section class="section" id="areas">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Areas We Cover</p>
+      <h2 class="section-title">Serving the West Midlands</h2>
+    </div>
+    <div class="areas-list reveal">
+      <span class="area-tag">Wolverhampton</span>
+      <span class="area-tag">Bilston</span>
+      <span class="area-tag">Willenhall</span>
+      <span class="area-tag">Wednesfield</span>
+      <span class="area-tag">Tettenhall</span>
+      <span class="area-tag">Penn</span>
+      <span class="area-tag">Dudley</span>
+      <span class="area-tag">Walsall</span>
+      <span class="area-tag">West Bromwich</span>
+      <span class="area-tag">Cannock</span>
+      <span class="area-tag">Sedgley</span>
+      <span class="area-tag">Coseley</span>
+      <span class="area-tag">Tipton</span>
+      <span class="area-tag">Bloxwich</span>
+      <span class="area-tag">Darlaston</span>
+      <span class="area-tag">Wednesbury</span>
+      <span class="area-tag">Codsall</span>
+      <span class="area-tag">Perton</span>
+      <span class="area-tag">Wombourne</span>
+      <span class="area-tag">Stafford</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Request a Free Quote</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Speak to Raj Today</h3>
+        <div class="contact-detail">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span><a href="tel:07980045536">07980 045 536</a></span>
+        </div>
+        <div class="contact-detail">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span><a href="mailto:info@rselectrical.org">info@rselectrical.org</a></span>
+        </div>
+        <div class="contact-detail">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Wolverhampton, WV11 3SJ</span>
+        </div>
+        <div class="contact-detail">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>NICEIC Approved · Part P · TrustMark · 18th Edition · JIB Registered · Fully Insured</span>
+        </div>
+        <div class="contact-logo">
+          <img src="/mockups/rs-security/logo.png" alt="RS Electrical & Security logo">
+        </div>
+      </div>
+      <div class="contact-form-card reveal">
+        <form action="">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Your phone number">
+          </div>
+          <div class="form-group">
+            <label for="email">Email (Optional)</label>
+            <input type="email" id="email" name="email" placeholder="Your email address">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="electrical-installation">Electrical Installation</option>
+              <option value="rewiring">Rewiring & Upgrades</option>
+              <option value="consumer-unit">Consumer Unit Upgrade</option>
+              <option value="alarms-cctv">Alarms & CCTV</option>
+              <option value="lighting">Lighting Installation</option>
+              <option value="eicr">Periodic Inspection Report (EICR)</option>
+              <option value="landlord-cert">Landlord Certificate</option>
+              <option value="fault-finding">Fault Finding & Repairs</option>
+              <option value="earthing-bonding">Earthing & Bonding</option>
+              <option value="sockets-points">Extra Sockets & Points</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-company">RS Electrical & Security</div>
+  <p>&copy; 2026 RS Electrical & Security. All rights reserved.</p>
+  <p style="margin-top: 8px;">Site by <a href="https://construction-sites.co.uk" target="_blank">construction-sites.co.uk</a></p>
+</footer>
+
+<!-- Floating CTAs -->
+<div class="fab-container" id="fabContainer">
+  <a href="tel:07980045536" class="fab fab-call" aria-label="Call RS Electrical & Security">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/447980045536?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab fab-wa" target="_blank" aria-label="WhatsApp RS Electrical & Security">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(function(el) {
+  observer.observe(el);
+});
+
+// Floating CTA visibility
+var fabContainer = document.getElementById('fabContainer');
+var heroButtons = document.querySelector('.hero-btns');
+
+window.addEventListener('scroll', function() {
+  if (fabContainer && heroButtons) {
+    if (heroButtons.getBoundingClientRect().bottom < 0) {
+      fabContainer.classList.add('visible');
+    } else {
+      fabContainer.classList.remove('visible');
+    }
+  }
+});
+
+// Lightbox
+var galleryImages = [
+  '/mockups/rs-security/photo-1.webp',
+  '/mockups/rs-security/photo-3.webp',
+  '/mockups/rs-security/photo-4.webp',
+  '/mockups/rs-security/photo-5.webp',
+  '/mockups/rs-security/photo-2.webp',
+  '/mockups/rs-security/photo-6.webp'
+];
+var currentLightbox = 0;
+
+function openLightbox(index) {
+  currentLightbox = index;
+  document.getElementById('lightboxImg').src = galleryImages[index];
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function changeLightbox(dir) {
+  currentLightbox = (currentLightbox + dir + galleryImages.length) % galleryImages.length;
+  document.getElementById('lightboxImg').src = galleryImages[currentLightbox];
+}
+
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') changeLightbox(-1);
+  if (e.key === 'ArrowRight') changeLightbox(1);
+});
+</script>
+
+</body>
+</html>
