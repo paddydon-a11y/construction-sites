@@ -119,7 +119,7 @@ function PasswordGate({ onAuth }: { onAuth: (userId: string, role: string, label
 
 // ─── Stats Bar ───────────────────────────────────────────────────────────────
 
-function StatsBar({ leads, callbacksDueToday }: { leads: Lead[]; callbacksDueToday: number }) {
+function StatsBar({ leads, callbacksDueToday, isAdmin }: { leads: Lead[]; callbacksDueToday: number; isAdmin?: boolean }) {
   const now = new Date();
   const thisMonth = (l: Lead) => {
     const d = new Date(l.dateAdded);
@@ -155,8 +155,10 @@ function StatsBar({ leads, callbacksDueToday }: { leads: Lead[]; callbacksDueTod
     { label: "Leads This Month", value: newThisMonth },
     { label: "Mockups Sent", value: mockupsSent },
     { label: "Signed This Month", value: signed },
-    { label: "Live Clients", value: liveClients },
-    { label: "MRR", value: `£${mrr.toLocaleString()}` },
+    ...(isAdmin ? [
+      { label: "Live Clients", value: liveClients },
+      { label: "MRR", value: `£${mrr.toLocaleString()}` },
+    ] : []),
     { label: "Callbacks Due", value: callbacksDueToday, highlight: callbacksDueToday > 0 },
   ];
 
@@ -2208,7 +2210,7 @@ export default function DashboardPage() {
 
       {/* Stats bar — hide on admin overview */}
       {view !== "admin" && (
-        <StatsBar leads={activeLeads} callbacksDueToday={callbacksDueToday} />
+        <StatsBar leads={activeLeads} callbacksDueToday={callbacksDueToday} isAdmin={userRole === "admin"} />
       )}
 
       {/* Main content */}
@@ -2227,7 +2229,7 @@ export default function DashboardPage() {
       ) : view === "pipeline" ? (
         <div className="flex-1 p-4">
           <div className="flex gap-3 h-full min-h-[calc(100vh-200px)]">
-            {COLUMNS.map((col) => (
+            {COLUMNS.filter((col) => userRole === "admin" || col.id !== "live").map((col) => (
               <KanbanColumn
                 key={col.id}
                 column={col}
