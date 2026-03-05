@@ -1556,6 +1556,110 @@ function ChurnedLeadsTable({
   );
 }
 
+// ─── Live Clients Table ─────────────────────────────────────────────────────
+
+function LiveClientsTable({
+  leads,
+  onCardClick,
+  onChurn,
+}: {
+  leads: Lead[];
+  onCardClick: (lead: Lead) => void;
+  onChurn: (id: string) => void;
+}) {
+  if (leads.length === 0) {
+    return (
+      <div className="flex items-center justify-center flex-1 text-[#94a3b8] py-20">
+        No live clients
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex-1 overflow-auto p-4">
+      <div className="bg-[#22c55e]/10 border border-[#22c55e]/30 rounded-lg px-5 py-3 mb-4 flex items-center gap-3">
+        <div className="w-3 h-3 rounded-full bg-[#22c55e]" />
+        <span className="text-[#22c55e] font-semibold text-sm">
+          {leads.length} live client{leads.length !== 1 ? "s" : ""}
+        </span>
+      </div>
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="text-left text-xs text-[#94a3b8] uppercase tracking-wider border-b border-[#2a2a4a]">
+            <th className="pb-3 pr-4 font-semibold">Business</th>
+            <th className="pb-3 pr-4 font-semibold">Contact</th>
+            <th className="pb-3 pr-4 font-semibold">Phone</th>
+            <th className="pb-3 pr-4 font-semibold">Trade</th>
+            <th className="pb-3 pr-4 font-semibold">Date Added</th>
+            <th className="pb-3 pr-4 font-semibold">Went Live</th>
+            <th className="pb-3 font-semibold"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {leads.map((lead) => {
+            const liveEntry = [...(lead.statusHistory || [])]
+              .reverse()
+              .find((h) => h.status === "live");
+            return (
+              <tr
+                key={lead.id}
+                className="border-b border-[#2a2a4a]/50 hover:bg-[#1a1a2e]/50 cursor-pointer"
+                onClick={() => onCardClick(lead)}
+              >
+                <td className="py-3 pr-4 text-white font-medium">
+                  {lead.businessName || "Untitled"}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {lead.contactName || "—"}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {lead.phone || "—"}
+                </td>
+                <td className="py-3 pr-4">
+                  {lead.trade ? (
+                    <span className="text-xs bg-[#1a1a2e] text-[#f59e0b] px-2 py-0.5 rounded">
+                      {lead.trade}
+                    </span>
+                  ) : (
+                    <span className="text-[#94a3b8]">—</span>
+                  )}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {new Date(lead.dateAdded).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </td>
+                <td className="py-3 pr-4 text-[#94a3b8]">
+                  {liveEntry
+                    ? new Date(liveEntry.date).toLocaleDateString("en-GB", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })
+                    : "—"}
+                </td>
+                <td className="py-3">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onChurn(lead.id);
+                    }}
+                    className="px-3 py-1.5 bg-[#ef4444] text-white rounded hover:bg-[#dc2626] transition-colors text-xs font-semibold"
+                  >
+                    Churn
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 // ─── Callback Table ─────────────────────────────────────────────────────────
 
 function CallbackTable({
@@ -1942,7 +2046,7 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
-  const [view, setView] = useState<"pipeline" | "cold" | "churned" | "callback" | "admin">("pipeline");
+  const [view, setView] = useState<"pipeline" | "cold" | "churned" | "callback" | "admin" | "live">("pipeline");
   const [callbackModal, setCallbackModal] = useState<{ leadId: string } | null>(null);
   const [cbDateInput, setCbDateInput] = useState("");
   const [cbNoteInput, setCbNoteInput] = useState("");
@@ -1990,6 +2094,7 @@ export default function DashboardPage() {
   const activeLeads = leads.filter((l) => l.status !== "cold" && l.status !== "churned" && l.status !== "callback");
   const coldLeads = leads.filter((l) => l.status === "cold");
   const churnedLeads = leads.filter((l) => l.status === "churned");
+  const liveLeads = leads.filter((l) => l.status === "live");
   const callbackLeads = leads
     .filter((l) => l.status === "callback")
     .sort((a, b) => (a.callbackDate || "").localeCompare(b.callbackDate || ""));
@@ -2163,6 +2268,18 @@ export default function DashboardPage() {
               >
                 Churned{churnedLeads.length > 0 && ` (${churnedLeads.length})`}
               </button>
+              {(userId === "zs1" || userRole === "admin") && (
+                <button
+                  onClick={() => setView("live")}
+                  className={`px-3 py-1 text-xs font-semibold transition-colors ${
+                    view === "live"
+                      ? "bg-[#22c55e] text-white"
+                      : "text-[#22c55e] hover:text-white"
+                  }`}
+                >
+                  Live Clients{liveLeads.length > 0 && ` (${liveLeads.length})`}
+                </button>
+              )}
             </div>
           )}
 
@@ -2256,6 +2373,12 @@ export default function DashboardPage() {
           onPushCallback={pushCallback}
           onMoveToCold={moveCallbackToCold}
           onUpdateNote={updateCallbackNote}
+        />
+      ) : view === "live" ? (
+        <LiveClientsTable
+          leads={liveLeads}
+          onCardClick={setSelectedLead}
+          onChurn={churnLead}
         />
       ) : (
         <ChurnedLeadsTable
