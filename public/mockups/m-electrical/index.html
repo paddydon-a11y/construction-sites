@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M Electrical | Doncaster</title>
+<meta name="description" content="5-star rated electrician in Doncaster. Domestic rewiring, socket installations, fault finding &amp; repairs. Part P certified. Open 24 hours. Call Mark for a free quote.">
+<meta property="og:title" content="M Electrical | Electrician in Doncaster">
+<meta property="og:description" content="5-star rated electrician in Doncaster. Part P certified, open 24 hours. Free quotes from Mark.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://construction-sites.co.uk/mockups/m-electrical/">
+<meta property="og:locale" content="en_GB">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17958918628"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17958918628');
+  gtag('config', 'G-WG747WXNB6');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f6f2;--bg-off:#f1efe9;--card:#ffffff;--card-hover:#fafaf8;
+  --border:#e5e2db;--border-light:#d4d0c8;
+  --accent:#1a1a2e;--accent-hover:#0f0f1f;--accent-light:#2d2d4a;--accent-glow:rgba(26,26,46,0.06);
+  --accent-rgb:26,26,46;
+  --pop:#c9a84c;--pop-hover:#b8963f;--pop-glow:rgba(201,168,76,0.15);
+  --green:#22c55e;--white:#1a1a2e;
+  --gray-50:#1e293b;--gray-100:#334155;--gray-200:#475569;--gray-300:#64748b;
+  --gray-400:#64748b;--gray-500:#94a3b8;
+  --heading:'Plus Jakarta Sans',sans-serif;
+  --body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:#475569;line-height:1.7;padding-bottom:80px}
+h1,h2,h3,h4,h5{font-family:var(--heading);color:#1a1a2e;letter-spacing:-0.03em;font-weight:800}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--pop);font-weight:600;margin-bottom:10px}
+.section-title{font-size:2.2rem;margin-bottom:16px}
+.section-sub{color:#64748b;max-width:600px;font-size:1rem}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(248,246,242,0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:center}
+.nav-inner{max-width:1200px;width:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--heading);font-size:1.2rem;font-weight:800;color:#1a1a2e;white-space:nowrap}
+.nav-logo span{color:var(--pop)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{color:#64748b;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#1a1a2e}
+
+/* HERO */
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:90vh;padding:140px 24px 0;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 20%,var(--pop-glow),transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%;max-width:1200px;position:relative;z-index:1}
+.hero-images{display:flex;gap:16px;opacity:0;animation:fadeScale 0.8s ease forwards 0.6s}
+.hero-img-wrap{flex:1;min-width:0;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.hero-img-wrap img{width:100%;height:320px;object-fit:cover}
+.hero-image-badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:600;color:#1a1a2e}
+.hero-image-badge svg{flex-shrink:0}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:8px 16px;font-size:0.75rem;font-weight:500;color:#64748b;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease forwards 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;animation:dot-pulse 2s ease-in-out infinite}
+.hero h1{font-size:3.5rem;line-height:1.1;letter-spacing:-0.04em;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease forwards 0.5s}
+.hero h1 .accent{background:linear-gradient(135deg,var(--pop),#e0c06a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{color:#64748b;font-size:1.1rem;margin-bottom:32px;max-width:540px;opacity:0;animation:fadeUp 0.6s ease forwards 0.7s}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp 0.6s ease forwards 0.9s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-weight:600;font-size:0.95rem;border:none;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;font-family:var(--body)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-hover)}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:#1eae53}
+
+/* TRUST BAR */
+.trust-bar{padding:80px 0 20px;position:relative;z-index:1;width:100%;max-width:1200px}
+.trust-items{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:500;color:#475569}
+.trust-item svg{flex-shrink:0;color:var(--pop)}
+
+/* SECTIONS */
+section{padding:80px 0}
+.services-section{padding-top:20px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:40px}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pop);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{border-color:var(--border-light);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+.service-icon{width:40px;height:40px;border-radius:10px;background:var(--pop-glow);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-icon svg{color:var(--pop)}
+.service-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.service-card p{font-size:0.85rem;color:#64748b;line-height:1.6}
+
+/* CTA BAND */
+.cta-band{background:var(--accent);text-align:center;padding:60px 24px}
+.cta-band h2{font-size:2rem;margin-bottom:12px;color:#fff}
+.cta-band p{color:rgba(255,255,255,0.7);margin-bottom:28px;font-size:1.05rem}
+.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta-band .btn-accent{background:var(--pop);color:#000}
+.cta-band .btn-accent:hover{background:var(--pop-hover)}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:40px}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:border-color 0.3s,box-shadow 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+.why-card:hover{border-color:var(--border-light);box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+.why-icon{width:44px;height:44px;border-radius:12px;background:var(--pop-glow);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.why-icon svg{color:var(--pop)}
+.why-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.why-card p{font-size:0.85rem;color:#64748b;line-height:1.6}
+
+/* REVIEWS */
+.reviews-header{display:flex;align-items:center;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+.google-rating{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+.google-rating .g-logo{width:20px;height:20px;flex-shrink:0}
+.google-rating .stars{display:flex;gap:2px}
+.google-rating .stars svg{width:16px;height:16px;fill:var(--pop)}
+.google-rating .rating-text{font-size:0.85rem;font-weight:600;color:#1a1a2e}
+.google-rating .review-count{font-size:0.75rem;color:#64748b}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:32px}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:border-color 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+.review-card:hover{border-color:var(--border-light)}
+.review-stars{display:flex;gap:2px;margin-bottom:12px}
+.review-stars svg{width:14px;height:14px;fill:var(--pop)}
+.review-text{font-style:italic;font-size:0.9rem;color:#475569;margin-bottom:16px;line-height:1.7}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:36px;height:36px;border-radius:50%;background:var(--pop-glow);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;color:var(--pop)}
+.review-name{font-weight:600;font-size:0.85rem;color:#1a1a2e}
+.review-source{font-size:0.7rem;color:#94a3b8}
+
+/* AREAS */
+.areas-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.area-tag{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:0.8rem;font-weight:500;color:#475569;transition:border-color 0.2s,color 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+.area-tag:hover{border-color:var(--pop);color:#1a1a2e}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+.contact-info h3{font-size:1.3rem;margin-bottom:16px}
+.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:#475569;font-size:0.9rem}
+.contact-detail svg{flex-shrink:0;color:var(--pop)}
+.contact-detail a{color:var(--pop);font-weight:600}
+.contact-form-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;color:#64748b;margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#1a1a2e;font-family:var(--body);font-size:0.9rem;transition:border-color 0.2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--pop)}
+.form-group textarea{min-height:100px;resize:vertical}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-group select option{background:var(--card);color:#1a1a2e}
+.btn-submit{width:100%;justify-content:center;font-size:1rem;padding:14px 28px}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);text-align:center;padding:40px 24px;background:var(--bg-off)}
+.footer-name{font-family:var(--heading);font-size:1.1rem;font-weight:800;color:#1a1a2e;margin-bottom:8px}
+.footer p{font-size:0.75rem;color:#94a3b8}
+.footer a{color:var(--pop);font-weight:500}
+
+/* FLOATING CTAS */
+.fab-container{position:fixed;bottom:16px;right:16px;display:flex;flex-direction:column;gap:10px;z-index:1500;opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity 0.3s,visibility 0.3s,transform 0.3s}
+.fab-container.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.fab{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.15)}
+.fab-call{background:var(--accent);animation:pulse-ring 2s ease-in-out infinite}
+.fab-call:hover{animation:none}
+.fab-call svg{stroke:#fff}
+.fab-wa{background:#25d366;animation:pulse-ring-wa 2s ease-in-out infinite}
+.fab-wa:hover{animation:none}
+.fab-wa svg{fill:#fff}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeScale{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+@keyframes dot-pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{opacity:0.7;box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(26,26,46,0.3)}70%{box-shadow:0 0 0 12px rgba(26,26,46,0)}100%{box-shadow:0 0 0 0 rgba(26,26,46,0)}}
+@keyframes pulse-ring-wa{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.revealed{opacity:1;transform:translateY(0)}
+.service-card:nth-child(1){transition-delay:0s}
+.service-card:nth-child(2){transition-delay:0.1s}
+.service-card:nth-child(3){transition-delay:0.15s}
+.service-card:nth-child(4){transition-delay:0.2s}
+.service-card:nth-child(5){transition-delay:0.25s}
+.service-card:nth-child(6){transition-delay:0.3s}
+.service-card:nth-child(7){transition-delay:0.35s}
+.service-card:nth-child(8){transition-delay:0.4s}
+.review-card:nth-child(1){transition-delay:0s}
+.review-card:nth-child(2){transition-delay:0.1s}
+.review-card:nth-child(3){transition-delay:0.15s}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links .nav-link-text{display:none}
+  .hero{min-height:auto;padding:120px 24px 40px}
+  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h1{font-size:2.2rem}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-btns{justify-content:center}
+  .hero-images{justify-content:center}
+  .hero-img-wrap{flex:1;min-width:0}
+  .hero-img-wrap img{height:220px}
+  .trust-items{gap:16px}
+  .trust-item{font-size:0.72rem}
+  .section-title{font-size:1.7rem}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .cta-band h2{font-size:1.5rem}
+}
+@media(max-width:480px){
+  .services-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">M <span>Electrical</span></a>
+    <ul class="nav-links">
+      <li><a href="#services" class="nav-link-text">Services</a></li>
+      <li><a href="#reviews" class="nav-link-text">Reviews</a></li>
+      <li><a href="#contact" class="nav-link-text">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> Available 24 Hours &middot; Part P Certified</div>
+      <h1>Your Trusted <span class="accent">Electrician</span> in Doncaster</h1>
+      <p class="hero-sub">Professional domestic electrical services from Mark. Rewiring, socket installations, fault finding and more. 5-star rated, available around the clock.</p>
+      <div class="hero-btns">
+        <a href="tel:07776092327" class="btn btn-accent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> 07776 092 327</a>
+        <a href="https://wa.me/447776092327?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Mark</a>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-img-wrap">
+        <img src="/mockups/m-electrical/photo-1.jpg" alt="Exterior wall lighting installation by M Electrical" loading="eager">
+        <div class="hero-image-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Part P Certified
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="/mockups/m-electrical/photo-2.jpg" alt="Garden lighting installation in Doncaster" loading="eager">
+        <div class="hero-image-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--pop)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          5.0 on Google
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Part P Certified
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        18th Edition
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Fully Insured
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        5-Star Rated
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Open 24 Hours
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Electrical Services in Doncaster</h2>
+      <p class="section-sub">From new socket installations to full rewires, Mark provides reliable, high-quality electrical work for homes across Doncaster.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Domestic Rewiring</h3>
+        <p>Full and partial rewires to bring your home up to current safety standards.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Fuse Board Upgrades</h3>
+        <p>Modern consumer unit replacements with full certification and compliance.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+        <h3>Socket &amp; Switch Installation</h3>
+        <p>New sockets, switches, and USB charging points installed neatly and safely.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Fault Finding &amp; Repairs</h3>
+        <p>Fast diagnosis and repair of electrical faults, tripping circuits, and power outages.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+        <h3>Lighting Installation</h3>
+        <p>Indoor and outdoor lighting, downlights, LED upgrades, and feature lighting.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>EICR Testing &amp; Inspection</h3>
+        <p>Electrical Installation Condition Reports for landlords, homeowners, and businesses.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Smoke &amp; Fire Alarms</h3>
+        <p>Supply, installation, and replacement of smoke detectors and fire alarm systems.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Emergency Call-Outs</h3>
+        <p>Available 24 hours for electrical emergencies across the Doncaster area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band reveal">
+  <h2>Need an Electrician in Doncaster?</h2>
+  <p>Call Mark for a fast, friendly quote &mdash; available 24 hours</p>
+  <div class="cta-band-btns">
+    <a href="tel:07776092327" class="btn btn-accent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> 07776 092 327</a>
+    <a href="https://wa.me/447776092327?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="btn btn-wa" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Mark</a>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">Why Doncaster Trusts Mark</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Available 24 Hours</h3>
+        <p>Electrical emergencies don't keep office hours. Mark is available around the clock to get your power back on safely.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3>Diligent &amp; Thorough</h3>
+        <p>"Personable, efficient and very diligent" &mdash; Mark doesn't cut corners. Every job is completed to the highest standard with full attention to detail.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Friendly &amp; Professional</h3>
+        <p>Every customer mentions how friendly and approachable Mark is. He keeps you updated throughout and always leaves things tidy.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3>5-Star Google Rating</h3>
+        <p>100% five-star reviews from happy customers. On time, professional, reasonable prices &mdash; exactly what you want from your electrician.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Customer Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="reviews-header">
+        <div class="google-rating">
+          <svg class="g-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <span class="rating-text">5.0</span>
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <span class="review-count">3 reviews on Google</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Having just moved in, we needed some extensive electrical reworking including new sockets and some safety and reparation work. Mark quoted almost immediately and completed all the work and more. He is personable, efficient and very diligent."</p>
+        <div class="review-author">
+          <div class="review-avatar">G</div>
+          <div><div class="review-name">Grahame Bullock</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Friendly, knowledgeable electrician. Sorted out our problem. Kept us updated throughout. Would highly recommend. Thank you Mark."</p>
+        <div class="review-author">
+          <div class="review-avatar">L</div>
+          <div><div class="review-name">Lisa Swaby</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="review-text">"Excellent service, highly recommended. On time, professional, friendly, efficient, reasonable price and tidy! Thank you."</p>
+        <div class="review-author">
+          <div class="review-avatar">H</div>
+          <div><div class="review-name">Helen Chew</div><div class="review-source">Google Review</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section id="areas">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Areas We Cover</p>
+      <h2 class="section-title">Electrician Covering Doncaster &amp; Surrounding Areas</h2>
+    </div>
+    <div class="areas-grid reveal">
+      <span class="area-tag">Doncaster</span>
+      <span class="area-tag">Balby</span>
+      <span class="area-tag">Hexthorpe</span>
+      <span class="area-tag">Bessacarr</span>
+      <span class="area-tag">Cantley</span>
+      <span class="area-tag">Bentley</span>
+      <span class="area-tag">Sprotbrough</span>
+      <span class="area-tag">Conisbrough</span>
+      <span class="area-tag">Mexborough</span>
+      <span class="area-tag">Thorne</span>
+      <span class="area-tag">Armthorpe</span>
+      <span class="area-tag">Hatfield</span>
+      <span class="area-tag">Edenthorpe</span>
+      <span class="area-tag">Warmsworth</span>
+      <span class="area-tag">Adwick le Street</span>
+      <span class="area-tag">Askern</span>
+      <span class="area-tag">Tickhill</span>
+      <span class="area-tag">Rossington</span>
+      <span class="area-tag">Barnby Dun</span>
+      <span class="area-tag">Intake</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Request a Free Quote</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Contact Mark</h3>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:07776092327">07776 092 327</a>
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Middlefield Rd, Doncaster DN4 7EB
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--pop)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Open 24 hours
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--pop)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <a href="https://wa.me/447776092327?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" target="_blank" rel="noopener">WhatsApp Mark</a>
+        </div>
+        <img src="/mockups/m-electrical/photo-3.webp" alt="M Electrical logo" style="width:160px;margin-top:24px;border-radius:12px;border:1px solid var(--border);padding:12px;background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,0.03)">
+      </div>
+      <div class="contact-form-card reveal">
+        <form action="" method="POST">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="e.g. John Smith">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="e.g. 07700 900 000">
+          </div>
+          <div class="form-group">
+            <label for="email">Email (Optional)</label>
+            <input type="email" id="email" name="email" placeholder="e.g. john@example.com">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>Domestic Rewiring</option>
+              <option>Fuse Board Upgrade</option>
+              <option>Socket &amp; Switch Installation</option>
+              <option>Fault Finding &amp; Repairs</option>
+              <option>Lighting Installation</option>
+              <option>EICR Testing &amp; Inspection</option>
+              <option>Smoke &amp; Fire Alarms</option>
+              <option>Emergency Call-Out</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent btn-submit">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-name">M Electrical</div>
+  <p>&copy; 2026 M Electrical. All rights reserved.</p>
+  <p>Site by <a href="https://construction-sites.co.uk" target="_blank" rel="noopener">construction-sites.co.uk</a></p>
+</footer>
+
+<!-- FLOATING CTAS -->
+<div class="fab-container" id="fab-container">
+  <a href="tel:07776092327" class="fab fab-call" aria-label="Call Mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></a>
+  <a href="https://wa.me/447776092327?text=Hi%2C%20I%20found%20you%20online%20and%20would%20like%20a%20quote%20please" class="fab fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp Mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+</div>
+
+<script>
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Floating CTA visibility
+var fabContainer = document.getElementById('fab-container');
+var heroButtons = document.querySelector('.hero-btns');
+window.addEventListener('scroll', function() {
+  if (fabContainer && heroButtons) {
+    if (heroButtons.getBoundingClientRect().bottom < 0) {
+      fabContainer.classList.add('visible');
+    } else {
+      fabContainer.classList.remove('visible');
+    }
+  }
+});
+</script>
+</body>
+</html>
